@@ -1,46 +1,60 @@
 <!DOCTYPE html>
-<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Skylight Crypto</title>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>Skylight Mining</title>
 <style>
-body{background:#0b0f1a;color:#fff;font-family:Arial;margin:0;padding:10px}
-.tabs{display:flex;gap:5px;margin:10px 0;overflow:auto}
-.tab{padding:8px 12px;background:#1a2332;border-radius:20px;cursor:pointer;white-space:nowrap}
+*{box-sizing:border-box}body{margin:0;background:#0b0f1a;color:#fff;font-family:Arial;padding-bottom:80px}
+.header{text-align:center;padding:15px;font-size:22px;font-weight:bold}
+.tabs{display:flex;gap:6px;padding:0 10px;overflow-x:auto;white-space:nowrap}
+.tab{padding:8px 14px;background:#1e293b;border-radius:20px;font-size:14px}
 .tab.active{background:#7c3aed}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.card{background:#151e2f;border-radius:12px;padding:8px;text-align:center;border:1px solid #2a3a5a}
-.card img{width:100%;height:80px;object-fit:contain;background:#0f172a;border-radius:8px}
-.card.vip{border:1px solid gold;box-shadow:0 0 10px gold}
-.btn{width:100%;background:#7c3aed;color:#fff;border:none;padding:8px;border-radius:8px;margin-top:5px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px}
+.card{background:#151e2f;border-radius:12px;padding:10px;text-align:center;border:1px solid #2a3a5a}
+.card.vip{border:1px solid #fbbf24;box-shadow:0 0 8px rgba(251,191,36,0.3)}
+.card img{width:100%;height:90px;object-fit:contain;background:#0f172a;border-radius:8px}
+.price{color:#fbbf24;margin:4px 0;font-weight:bold}
+.btn{width:100%;background:#7c3aed;color:#fff;border:none;padding:10px;border-radius:8px;font-weight:bold}
+.bottom{position:fixed;bottom:0;left:0;right:0;background:#0f172a;display:flex;justify-content:space-around;padding:10px 0;border-top:1px solid #1e293b;z-index:99}
+.b-item{text-align:center;font-size:11px;color:#64748b}
+.b-item.active{color:#7c3aed}
+.b-item span{display:block;font-size:20px}
 </style></head><body>
-<h2 style="text-align:center">⚡ Skylight Mining</h2>
+<div class="header">⚡ Skylight Mining</div>
 <div class="tabs">
-<div class="tab active" onclick="show('all',this)">All (36)</div>
-<div class="tab" onclick="show('m',this)">M (6)</div>
-<div class="tab" onclick="show('y',this)">Y (6)</div>
-<div class="tab" onclick="show('u',this)">U/L/Y (18)</div>
-<div class="tab" onclick="show('vip',this)">VIP (6)</div>
+<div class="tab active" onclick="filter('all',this)">All (36)</div>
+<div class="tab" onclick="filter('m',this)">M (6)</div>
+<div class="tab" onclick="filter('y',this)">Y (6)</div>
+<div class="tab" onclick="filter('u',this)">U/L/Y (18)</div>
+<div class="tab" onclick="filter('vip',this)">VIP (6)</div>
 </div>
 <div id="grid" class="grid"></div>
+
+<div class="bottom">
+<div class="b-item active"><span>🏠</span>Home</div>
+<div class="b-item" onclick="location.href='deposit.html'"><span>💰</span>Deposit</div>
+<div class="b-item" onclick="alert('Team page coming')"><span>👥</span>Team</div>
+<div class="b-item" onclick="alert('Profile page coming')"><span>👤</span>Me</div>
+</div>
+
 <script>
-const machines=[
-...Array(6).fill(0).map((_,i)=>({id:`M${i+1}`,cat:'m',name:`Miner M${i+1}`,img:'m.png.jpg',price:10+i*5})),
-...Array(6).fill(0).map((_,i)=>({id:`Y${i+1}`,cat:'y',name:`Tower Y${i+1}`,img:'y.png.jpg',price:20+i*5})),
-...Array(18).fill(0).map((_,i)=>({id:`U${i+1}`,cat:'u',name:`Unit U${i+1}`,img:'u.png.jpg',price:30+i*2})),
-...Array(6).fill(0).map((_,i)=>({id:`VIP${i+1}`,cat:'vip',name:`VIP Miner ${i+1}`,img:'png.vip.jpg',price:100+i*50})),
+const ms=[
+...Array(6).fill(0).map((_,i)=>({id:`M${i+1}`,c:'m',n:`Miner M${i+1}`,img:'m.png.jpg',p:10+i*5})),
+...Array(6).fill(0).map((_,i)=>({id:`Y${i+1}`,c:'y',n:`Tower Y${i+1}`,img:'y.png.jpg',p:20+i*5})),
+...Array(18).fill(0).map((_,i)=>({id:`U${i+1}`,c:'u',n:`Unit U${i+1}`,img:'u.png.jpg',p:30+i*2})),
+...Array(6).fill(0).map((_,i)=>({id:`VIP${i+1}`,c:'vip',n:`VIP Miner ${i+1}`,img:'png.vip.jpg',p:100+i*50})),
 ];
 function render(list){
- document.getElementById('grid').innerHTML=list.map(m=>`
-  <div class="card ${m.cat=='vip'?'vip':''}">
-   <img src="${m.img}" onerror="this.src='https://via.placeholder.com/150?text=${m.id}'">
-   <div style="font-size:12px;margin:5px 0">${m.name} ${m.cat=='vip'?'👑':''}</div>
-   <div style="color:#fbbf24">$${m.price}</div>
-   <button class="btn" onclick="alert('Buy ${m.id} - $${m.price}')">Buy</button>
+ document.getElementById('grid').innerHTML=list.map(x=>`
+  <div class="card ${x.c=='vip'?'vip':''}">
+   <img src="${x.img}">
+   <div style="font-size:13px;margin:6px 0">${x.n} ${x.c=='vip'?'👑':''}</div>
+   <div class="price">$${x.p}</div>
+   <button class="btn" onclick="alert('Buy ${x.id}')">Buy</button>
   </div>`).join('');
 }
-function show(cat,el){
+function filter(cat,el){
  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active')); el.classList.add('active');
- if(cat=='all') render(machines); else render(machines.filter(x=>x.cat==cat));
+ if(cat=='all') render(ms); else render(ms.filter(m=>m.c==cat));
 }
-render(machines);
+render(ms);
 </script>
 </body></html>
