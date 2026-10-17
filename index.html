@@ -35,7 +35,13 @@ body{background:#070e1f;color:#fff;padding-bottom:85px}
 .btn{width:100%;padding:12px;margin-top:10px;border-radius:20px;border:none;font-weight:bold;font-size:13px;cursor:pointer}
 .wa{background:#25D366;color:#fff}
 .tg{background:#0088cc;color:#fff}
+.momo{background:#ffcc00;color:#000}
 .usdt{background:#0c1a30;border:1px solid #233a5c;color:#00b7ff}
+.depTab{display:flex;gap:8px;margin:10px 0}
+.depTab div{flex:1;text-align:center;padding:10px;border-radius:12px;border:1px solid #1b2c4d;background:#0c1a30;font-size:12px;cursor:pointer}
+.depTab .on{background:#00d4ff;color:#000;border-color:#00d4ff;font-weight:bold}
+.qr{background:#fff;padding:10px;border-radius:12px;width:170px;margin:10px auto;display:block}
+input[type=file]{width:100%;margin-top:10px;background:#070e1f;border:1px solid #1b2c4d;padding:10px;border-radius:10px;color:#fff}
 .person{display:flex;align-items:center;background:#0d1a33;border-radius:12px;padding:10px;margin:8px 0}
 .person img{width:42px;height:42px;border-radius:50%;margin-right:10px}
 </style>
@@ -57,51 +63,65 @@ body{background:#070e1f;color:#fff;padding-bottom:85px}
 
 <div id="page-home" class="page">
 <div class="box" style="border:2px solid #00d4ff">
-<h3>🏠 Welcome to SKYLIGHT AI COMPANY</h3>
-<div class="sub">Kampala, Uganda • 6% Daily • Since 2023<br>Official AI Mining Platform • 12,000+ Members LIVE</div>
-<button class="btn usdt" onclick="openBottom('wallet')">💰 Deposit USDT TRC20</button>
-</div>
-<div class="box">
-<h3>🤖 About Company - SKYLIGHT AI COMPANY</h3>
-<div class="sub">Skylight AI Company is Uganda's #1 AI Server Mining Platform. We operate 24 AI servers in Kampala generating daily income. Founded 2023, HQ Nakawa, Kampala.<br><br>📍 Location: Kampala, Uganda<br>📞 Support: 0779434443 / 0793814204<br>📧 Email: skylightai.ug@gmail.com<br>🌐 Official Sites: Skylight AI Company</div>
-</div>
-<div class="box">
-<h3>👑 Founding Team - 4 Leaders</h3>
-<div class="person"><img src="https://i.pravatar.cc/100?img=32"><div><b style="font-size:13px">Dr. Sarah Nakimuli - CTO</b><br><span class="sub">AI Engineer, Makerere</span></div></div>
-<div class="person"><img src="https://i.pravatar.cc/100?img=15"><div><b style="font-size:13px">Alex Kintu - Operations</b><br><span class="sub">Manages 24 AI Servers</span></div></div>
-<div class="person"><img src="https://i.pravatar.cc/100?img=23"><div><b style="font-size:13px">Grace Achieng - Finance</b><br><span class="sub">CPA - Payouts to 12K+ members</span></div></div>
-<div class="person"><img src="https://i.pravatar.cc/100?img=12"><div><b style="font-size:13px">Musa Okello - Community Lead</b><br><span class="sub">Group Admin - 0793814204</span></div></div>
+<h3>🏠 SKYLIGHT AI COMPANY</h3>
+<div class="sub">Kampala, Uganda • 6% Daily • Since 2023<br>12,000+ Members LIVE • Real AI Servers</div>
+<button class="btn usdt" onclick="openBottom('wallet')">💰 How to Deposit - Click Here</button>
 </div>
 <div class="box">
 <h3>🔗 Join Official Groups</h3>
-<button class="btn wa" onclick="window.open('https://chat.whatsapp.com/BNeCwxPjLk95w3QejfjjM6?s=cl&p=a&mlu=4&ilr=4','_blank')">💬 Join WhatsApp Group</button>
-<button class="btn tg" onclick="window.open('https://t.me/+vyEcluEH54c0NTk0','_blank')">✈️ Join Telegram Channel</button>
+<button class="btn wa" onclick="window.open('https://chat.whatsapp.com/BNeCwxPjLk95w3QejfjjM6?s=cl&p=a&mlu=4&ilr=4','_blank')">💬 WhatsApp Group</button>
+<button class="btn tg" onclick="window.open('https://t.me/+vyEcluEH54c0NTk0','_blank')">✈️ Telegram Group</button>
 </div>
 </div>
 
 <div id="page-wallet" class="page">
 <div class="box" style="text-align:center;border:2px solid #22c55e">
-<h3>💰 USDT TRC20 Wallet</h3>
-<div class="sub" style="margin:10px 0">Send USDT TRC20 to this address:</div>
-<p style="background:#070e1f;padding:10px;border-radius:10px;font-size:11px;word-break:break-all;border:1px solid #1b2c4d">TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb</p>
-<button class="btn wa" onclick="navigator.clipboard.writeText('TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb');alert('Copied USDT Address!')">📋 Copy Address</button>
-<div class="sub" style="margin-top:10px;color:#22c55e">✅ Network: TRC20 • Min: 1 USDT</div>
+<h3>💰 Choose Deposit Method</h3>
+<div class="depTab">
+<div id="d-usdt" class="on" onclick="switchDep('usdt')">💎 USDT TRC20</div>
+<div id="d-momo" onclick="switchDep('momo')">📱 MTN MoMo</div>
+</div>
+
+<div id="dep-usdt">
+<div class="sub">Send USDT TRC20 to this address:</div>
+<img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=170x170&data=TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb" alt="USDT QR">
+<p style="background:#070e1f;padding:10px;border-radius:10px;font-size:11px;word-break:break-all;border:1px solid #1b2c4d;margin:10px 0">TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb</p>
+<button class="btn wa" onclick="navigator.clipboard.writeText('TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb');alert('USDT Address Copied!')">📋 Copy USDT Address</button>
+<div class="sub" style="color:#22c55e;margin-top:8px">✅ Network: TRC20 • Min: 1 USDT • Confirm in 2 mins</div>
+</div>
+
+<div id="dep-momo" style="display:none">
+<div class="sub">Send Mobile Money to:</div>
+<div style="background:#070e1f;padding:12px;border-radius:10px;border:1px solid #ffcc00;margin:10px 0;text-align:left">
+<b style="color:#ffcc00">MTN: 0779434443</b><br>
+<span style="font-size:12px">Name: Benson Mulyatha</span><br><br>
+<b style="color:#ff3300">Airtel: 0793814204</b><br>
+<span style="font-size:12px">Name: Benson Mulyatha</span><br><br>
+<div class="sub">UGX Rate: 1 USDT = 3,750 UGX<br>Example: M1 2,000 UGX = Send 2,000 UGX</div>
+</div>
+<button class="btn momo" onclick="navigator.clipboard.writeText('0779434443');alert('MoMo Number Copied: 0779434443')">📋 Copy MTN Number</button>
+</div>
+
+<div style="margin-top:15px;text-align:left;border-top:1px solid #1b2c4d;padding-top:12px">
+<h3 style="font-size:13px">📤 Step 2: Upload Proof</h3>
+<div class="sub">After payment, upload screenshot here:</div>
+<input type="file" id="proof" accept="image/*">
+<button class="btn wa" onclick="sendProof()">✅ I Have Paid - Send Proof to Admin</button>
+<div class="sub" style="margin-top:8px">Your proof will open WhatsApp to admin 0779434443 automatically</div>
+</div>
 </div>
 </div>
 
 <div id="page-group" class="page">
 <div class="box" style="text-align:center">
 <h3>👥 Official Community</h3>
-<div class="sub">Join 12,000+ members - Real support LIVE</div>
-<button class="btn wa" onclick="window.open('https://chat.whatsapp.com/BNeCwxPjLk95w3QejfjjM6?s=cl&p=a&mlu=4&ilr=4','_blank')">💬 WhatsApp Group - 12K Members - JOIN NOW</button>
-<button class="btn tg" onclick="window.open('https://t.me/+vyEcluEH54c0NTk0','_blank')">✈️ Telegram Group - JOIN NOW</button>
-<button class="btn" style="background:#ff0050;color:#fff" onclick="window.open('https://www.tiktok.com/@bensonthembo413','_blank')">🎵 TikTok Lite - @bensonthembo413</button>
-<div class="sub" style="margin-top:15px">📞 Admins: 0779434443 | 0793814204<br>💬 Click WhatsApp or Telegram to join</div>
+<button class="btn wa" onclick="window.open('https://chat.whatsapp.com/BNeCwxPjLk95w3QejfjjM6?s=cl&p=a&mlu=4&ilr=4','_blank')">💬 WhatsApp - JOIN NOW</button>
+<button class="btn tg" onclick="window.open('https://t.me/+vyEcluEH54c0NTk0','_blank')">✈️ Telegram - JOIN NOW</button>
 </div>
 </div>
 
-<div id="page-rules" class="page"><div class="box"><h3>📜 Rules</h3><div class="sub">• VIP 17% unlock after inviting 5 friends<br>• Daily 6% profit for 30 days = 180% total<br>• Withdrawal: 9AM-6PM daily<br>• Min withdraw: 2,000 UGX<br>• Invite bonus: 17% of friend's first purchase</div></div></div>
-<div id="page-set" class="page"><div class="box"><h3>⚙️ Settings</h3><div class="sub">User: Benson Mulyatha<br>Phone: 0779434443<br>ID: SKY-1250<br>Pass: 1234<br>USDT: TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb<br><br>App Version: Skylight AI v7 2026</div></div></div>
+<div id="page-rules" class="page"><div class="box"><h3>📜 How to Deposit</h3><div class="sub">1. Choose USDT or MoMo in Wallet<br>2. Send money<br>3. Upload proof screenshot<br>4. Click Send to Admin<br>5. Admin activates in 5 mins<br><br>Min: 2,000 UGX or 1 USDT<br>Withdraw 9AM-6PM</div></div></div>
+<div id="page-set" class="page"><div class="box"><h3>⚙️ Settings</h3><div class="sub">Benson Mulyatha<br>0779434443<br>TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb</div></div></div>
 
 <div class="bottom">
 <div id="b-home" class="on" onclick="openBottom('home')">🏠<br>Home</div>
@@ -136,11 +156,13 @@ const ULY=`<div class="card u"><div class="img"><div class="imgbox"><span class=
 <div class="card y"><div class="img"><div class="imgbox"><span class="badge">Y4</span>🔥<small>SKY AI</small></div></div><div class="info"><b style="color:#ff8a6b">Y4 SKY 6% 🔥</b><div class="price">Price:35,000 Daily:2,100 Total:63,000</div><div class="btns"><button class="buy" style="background:#ff8a6b" onclick="openBottom('wallet')">Buy</button><button class="rec">Receive</button></div></div></div>
 <div class="card y"><div class="img"><div class="imgbox"><span class="badge">Y5</span>🔥<small>SKY AI</small></div></div><div class="info"><b style="color:#ff8a6b">Y5 SKY 6% 🔥</b><div class="price">Price:70,000 Daily:4,200 Total:126,000</div><div class="btns"><button class="buy" style="background:#ff8a6b" onclick="openBottom('wallet')">Buy</button><button class="rec">Receive</button></div></div></div>
 <div class="card y"><div class="img"><div class="imgbox"><span class="badge">Y6</span>🔥<small>SKY AI</small></div></div><div class="info"><b style="color:#ff8a6b">Y6 SKY 6% 🔥</b><div class="price">Price:150,000 Daily:9,000 Total:270,000</div><div class="btns"><button class="buy" style="background:#ff8a6b" onclick="openBottom('wallet')">Buy</button><button class="rec">Receive</button></div></div></div>`;
+
 document.getElementById('page-m').innerHTML=M;
 document.getElementById('page-a').innerHTML=A;
 document.getElementById('page-uly').innerHTML=ULY;
 document.getElementById('page-vip').innerHTML='<div class="box"><h3>🔒 VIP Locked</h3><div class="sub">Invite 5 friends to unlock VIP 17% machines</div></div>';
 document.getElementById('page-all').innerHTML=M+A+ULY;
+
 function openTop(t){
  document.querySelectorAll('#tabs div').forEach(d=>d.classList.remove('on'));
  document.getElementById('tab-'+t).classList.add('on');
@@ -159,10 +181,24 @@ function openBottom(b){
  else{document.getElementById('page-'+b).style.display='block'; document.getElementById('page-'+b).classList.add('on');}
  document.getElementById('b-'+b).classList.add('on');
 }
+function switchDep(type){
+ document.getElementById('d-usdt').classList.remove('on');
+ document.getElementById('d-momo').classList.remove('on');
+ document.getElementById('dep-usdt').style.display='none';
+ document.getElementById('dep-momo').style.display='none';
+ if(type==='usdt'){document.getElementById('d-usdt').classList.add('on'); document.getElementById('dep-usdt').style.display='block';}
+ else{document.getElementById('d-momo').classList.add('on'); document.getElementById('dep-momo').style.display='block';}
+}
+function sendProof(){
+ const file = document.getElementById('proof').files[0];
+ if(!file){alert('Please select proof screenshot first!'); return;}
+ const msg = encodeURIComponent("Hello Admin Benson, I have paid for SKYLIGHT AI COMPANY.\n\nName: \nMachine: \nAmount: \nTransaction ID: \n\nI have uploaded proof. Please activate my machine. My number is:");
+ window.open('https://wa.me/256779434443?text='+msg,'_blank');
+}
 document.querySelectorAll('.page').forEach(p=>p.style.display='none');
 document.getElementById('page-home').style.display='block';
 document.getElementById('page-home').classList.add('on');
 document.getElementById('tabs').style.display='none';
 </script>
 </body>
-</html>
+ </html>
