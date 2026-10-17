@@ -6,127 +6,112 @@
 <title>SKYLIGHT AI COMPANY</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
-body{background:#070e1f;color:#fff;padding-bottom:80px}
+body{background:#070e1f;color:#fff;padding-bottom:80px;overflow:auto}
 .top{padding:12px 14px;display:flex;justify-content:space-between;align-items:center;background:#070e1f;border-bottom:1px solid #0f2340;position:sticky;top:0;z-index:10}
-.top b{color:#00d4ff;font-size:16px;letter-spacing:0.5px}
+.top b{color:#00d4ff;font-size:16px}
 .top span{color:#22c55e;font-size:11px}
-.tabs{display:flex;gap:18px;padding:12px 14px;background:#070e1f;border-bottom:1px solid #0f2340;overflow:auto}
-.tabs div{font-size:14px;color:#5a7294;white-space:nowrap;padding-bottom:6px}
+.tabs{display:flex;gap:16px;padding:12px 14px;background:#070e1f;border-bottom:1px solid #0f2340;overflow:auto;position:sticky;top:42px;z-index:9}
+.tabs div{font-size:13px;color:#5a7294;white-space:nowrap;padding-bottom:6px;cursor:pointer}
 .tabs .on{color:#00d4ff;border-bottom:2px solid #00d4ff;font-weight:bold}
+.section{display:none}
+.section.on{display:block}
 .card{display:flex;background:linear-gradient(90deg,#0a1930,#0c2240);border:1px solid #16305a;border-radius:16px;margin:10px 12px;overflow:hidden}
 .card .img{width:38%;background:#000;display:flex;align-items:center;justify-content:center;padding:8px}
-.card .img div{width:100%;height:90px;border:1.5px solid #00e5ff;border-radius:10px;background:#0a0a0a;display:flex;align-items:center;justify-content:center;box-shadow:0 0 10px rgba(0,229,255,0.3)}
+.card .img-inner{width:100%;height:90px;border:1.5px solid #00e5ff;border-radius:10px;background:#0a0a0a;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 0 10px rgba(0,229,255,0.3)}
 .card .info{padding:10px 12px;flex:1}
-.card .info b{font-size:13px}
 .price{font-size:12px;color:#c9d6ea;margin-top:4px}
 .btns{margin-top:8px;display:flex;gap:8px}
 .buy{background:#6ecbff;color:#002033;border:none;padding:6px 14px;border-radius:14px;font-weight:bold;font-size:12px}
 .rec{background:#00c853;color:#fff;border:none;padding:6px 14px;border-radius:14px;font-weight:bold;font-size:12px}
 .badge{position:absolute;top:6px;left:6px;background:#00c8ff;color:#000;font-weight:bold;font-size:10px;padding:3px 7px;border-radius:10px}
-.m-wrap{position:relative;width:100%}
 .u-card{background:linear-gradient(90deg,#1a0a2e,#2a1550);border-color:#5a2fa8}
-.u-card .img div{border-color:#c084fc}
+.u-card .img-inner{border-color:#c084fc}
 .y-card{background:linear-gradient(90deg,#2a0f0f,#4a1a1a);border-color:#7a2a2a}
-.y-card .img div{border-color:#ff8a6b}
+.y-card .img-inner{border-color:#ff8a6b}
 .u-badge{background:#c084fc}
 .y-badge{background:#ff8a6b}
 .bottom{position:fixed;bottom:0;left:0;right:0;background:#08152a;border-top:1px solid #132a4d;display:flex;justify-content:space-around;padding:8px 0;z-index:20}
 .bottom div{text-align:center;font-size:10px;color:#4a6490}
 .bottom .on{color:#00d4ff}
-.m-icon{font-size:36px}
 </style>
 </head>
 <body>
 <div class="top"><b>SKYLIGHT AI COMPANY</b><span>● VIP 17% + INVITE LOCK</span></div>
 <div class="tabs">
-<div>All<br>36</div><div>A(6)</div><div class="on">M(6)</div><div>U/L/Y(18)</div><div>VIP(6) 🔒</div>
+<div onclick="showTab('all')" id="t-all" class="on">All<br>36</div>
+<div onclick="showTab('a')" id="t-a">A(6)</div>
+<div onclick="showTab('m')" id="t-m">M(6)</div>
+<div onclick="showTab('uly')" id="t-uly">U/L/Y(18)</div>
+<div onclick="showTab('vip')" id="t-vip">VIP(6) 🔒</div>
 </div>
 
-<!-- M SERIES -->
-<div class="card">
-<div class="img"><div class="m-wrap"><span class="badge">M1</span><div style="text-align:center"><div class="m-icon">💎</div><small style="color:#00e5ff;font-weight:bold">SKY AI</small></div></div></div>
-<div class="info"><b style="color:#00e5ff">M1 SKY 6% ❄️</b><div class="price">Price:2,000 Daily:120 Total:3,600</div><div class="btns"><button class="buy">Buy</button><button class="rec">Receive</button></div></div>
+<div id="sec-all" class="section on">
+<!-- ALL MACHINES WILL BE DUPLICATED HERE VIA JS -->
 </div>
 
-<div class="card">
-<div class="img"><div class="m-wrap"><span class="badge">M2</span><div style="text-align:center"><div class="m-icon">💎</div><small style="color:#00e5ff;font-weight:bold">SKY AI</small></div></div></div>
-<div class="info"><b style="color:#00e5ff">M2 SKY 6% ❄️</b><div class="price">Price:5,000 Daily:300 Total:9,000</div><div class="btns"><button class="buy">Buy</button><button class="rec">Receive</button></div></div>
+<div id="sec-m" class="section">
+<div class="card"><div class="img"><div class="img-inner"><span class="badge">M1</span>💎 SKY AI</div></div><div class="info"><b style="color:#00e5ff">M1 SKY 6% ❄️</b><div class="price">Price:2,000 Daily:120 Total:3,600</div><div class="btns"><button class="buy">Buy</button><button class="rec">Receive</button></div></div></div>
+<div class="card"><div class="img"><div class="img-inner"><span class="badge">M2</span>💎 SKY AI</div></div><div class="info"><b style="color:#00e5ff">M2 SKY 6% ❄️</b><div class="price">Price:5,000 Daily:300 Total:9,000</div><div class="btns"><button class="buy">Buy</button><button class="rec">Receive</button></div></div></div>
+<div class="card"><div class="img"><div class="img-inner"><span class="badge">M3</span>💎 SKY AI</div></div><div class="info"><b style="color:#00e5ff">M3 SKY 6% ❄️</b><div class="price">Price:10,000 Daily:600 Total:18,000</div><div class="btns"><button class="buy">Buy</button><button class="rec">Receive</button></div></div></div>
+<div class="card"><div class="img"><div class="img-inner"><span class="badge">M4</span>💎 SKY AI</div></div><div class="info"><b style="color:#00e5ff">M4 SKY 6% ❄️</b><div class="price">Price:20,000 Daily:1,200 Total:36,000</div><div class="btns"><button class="buy">Buy</button><button class="rec">Receive</button></div></div></div>
+<div class="card"><div class="img"><div class="img-inner"><span class="badge">M5</span>💎 SKY AI</div></div><div class="info"><b style="color:#00e5ff">M5 SKY 6% ❄️</b><div class="price">Price:40,000 Daily:2,400 Total:72,000</div><div class="btns"><button class="buy">Buy</button><button class="rec">Receive</button></div></div></div>
+<div class="card"><div class="img"><div class="img-inner"><span class="badge">M6</span>💎 SKY AI</div></div><div class="info"><b style="color:#00e5ff">M6 SKY 6% ❄️</b><div class="price">Price:80,000 Daily:4,800 Total:144,000</div><div class="btns"><button class="buy">Buy</button><button class="rec">Receive</button></div></div></div>
 </div>
 
-<div class="card">
-<div class="img"><div class="m-wrap"><span class="badge">M3</span><div style="text-align:center"><div class="m-icon">💎</div><small style="color:#00e5ff;font-weight:bold">SKY AI</small></div></div></div>
-<div class="info"><b style="color:#00e5ff">M3 SKY 6% ❄️</b><div class="price">Price:10,000 Daily:600 Total:18,000</div><div class="btns"><button class="buy">Buy</button><button class="rec">Receive</button></div></div>
+<div id="sec-uly" class="section">
+<div class="card u-card"><div class="img"><div class="img-inner"><span class="badge u-badge">U1</span>🔮 SKY AI</div></div><div class="info"><b style="color:#d8b4fe">U1 SKY 6% 🔮</b><div class="price">Price:4,000 Daily:240 Total:7,200</div><div class="btns"><button class="buy" style="background:#d8b4fe">Buy</button><button class="rec">Receive</button></div></div></div>
+<div class="card u-card"><div class="img"><div class="img-inner"><span class="badge u-badge">U2</span>🔮 SKY AI</div></div><div class="info"><b style="color:#d8b4fe">U2 SKY 6% 🔮</b><div class="price">Price:8,000 Daily:480 Total:14,400</div><div class="btns"><button class="buy" style="background:#d8b4fe">Buy</button><button class="rec">Receive</button></div></div></div>
+<div class="card u-card"><div class="img"><div class="img-inner"><span class="badge u-badge">U3</span>🔮 SKY AI</div></div><div class="info"><b style="color:#d8b4fe">U3 SKY 6% 🔮</b><div class="price">Price:15,000 Daily:900 Total:27,000</div><div class="btns"><button class="buy" style="background:#d8b4fe">Buy</button><button class="rec">Receive</button></div></div></div>
+<div class="card u-card"><div class="img"><div class="img-inner"><span class="badge u-badge">U4</span>🔮 SKY AI</div></div><div class="info"><b style="color:#d8b4fe">U4 SKY 6% 🔮</b><div class="price">Price:30,000 Daily:1,800 Total:54,000</div><div class="btns"><button class="buy" style="background:#d8b4fe">Buy</button><button class="rec">Receive</button></div></div></div>
+<div class="card u-card"><div class="img"><div class="img-inner"><span class="badge u-badge">U5</span>🔮 SKY AI</div></div><div class="info"><b style="color:#d8b4fe">U5 SKY 6% 🔮</b><div class="price">Price:60,000 Daily:3,600 Total:108,000</div><div class="btns"><button class="buy" style="background:#d8b4fe">Buy</button><button class="rec">Receive</button></div></div></div>
+<div class="card y-card"><div class="img"><div class="img-inner"><span class="badge y-badge">Y1</span>🔥 SKY AI</div></div><div class="info"><b style="color:#ff8a6b">Y1 SKY 6% 🔥</b><div class="price">Price:2,500 Daily:150 Total:4,500</div><div class="btns"><button class="buy" style="background:#ff8a6b">Buy</button><button class="rec">Receive</button></div></div></div>
+<div class="card y-card"><div class="img"><div class="img-inner"><span class="badge y-badge">Y2</span>🔥 SKY AI</div></div><div class="info"><b style="color:#ff8a6b">Y2 SKY 6% 🔥</b><div class="price">Price:7,000 Daily:420 Total:12,600</div><div class="btns"><button class="buy" style="background:#ff8a6b">Buy</button><button class="rec">Receive</button></div></div></div>
+<div class="card y-card"><div class="img"><div class="img-inner"><span class="badge y-badge">Y3</span>🔥 SKY AI</div></div><div class="info"><b style="color:#ff8a6b">Y3 SKY 6% 🔥</b><div class="price">Price:18,000 Daily:1,080 Total:32,400</div><div class="btns"><button class="buy" style="background:#ff8a6b">Buy</button><button class="rec">Receive</button></div></div></div>
+<div class="card y-card"><div class="img"><div class="img-inner"><span class="badge y-badge">Y4</span>🔥 SKY AI</div></div><div class="info"><b style="color:#ff8a6b">Y4 SKY 6% 🔥</b><div class="price">Price:35,000 Daily:2,100 Total:63,000</div><div class="btns"><button class="buy" style="background:#ff8a6b">Buy</button><button class="rec">Receive</button></div></div></div>
+<div class="card y-card"><div class="img"><div class="img-inner"><span class="badge y-badge">Y5</span>🔥 SKY AI</div></div><div class="info"><b style="color:#ff8a6b">Y5 SKY 6% 🔥</b><div class="price">Price:70,000 Daily:4,200 Total:126,000</div><div class="btns"><button class="buy" style="background:#ff8a6b">Buy</button><button class="rec">Receive</button></div></div></div>
+<div class="card y-card"><div class="img"><div class="img-inner"><span class="badge y-badge">Y6</span>🔥 SKY AI</div></div><div class="info"><b style="color:#ff8a6b">Y6 SKY 6% 🔥</b><div class="price">Price:150,000 Daily:9,000 Total:270,000</div><div class="btns"><button class="buy" style="background:#ff8a6b">Buy</button><button class="rec">Receive</button></div></div></div>
 </div>
 
-<div class="card">
-<div class="img"><div class="m-wrap"><span class="badge">M4</span><div style="text-align:center"><div class="m-icon">💎</div><small style="color:#00e5ff;font-weight:bold">SKY AI</small></div></div></div>
-<div class="info"><b style="color:#00e5ff">M4 SKY 6% ❄️</b><div class="price">Price:20,000 Daily:1,200 Total:36,000</div><div class="btns"><button class="buy">Buy</button><button class="rec">Receive</button></div></div>
-</div>
-
-<div class="card">
-<div class="img"><div class="m-wrap"><span class="badge">M5</span><div style="text-align:center"><div class="m-icon">💎</div><small style="color:#00e5ff;font-weight:bold">SKY AI</small></div></div></div>
-<div class="info"><b style="color:#00e5ff">M5 SKY 6% ❄️</b><div class="price">Price:40,000 Daily:2,400 Total:72,000</div><div class="btns"><button class="buy">Buy</button><button class="rec">Receive</button></div></div>
-</div>
-
-<!-- U SERIES -->
-<div class="card u-card">
-<div class="img"><div class="m-wrap"><span class="badge u-badge">U1</span><div style="text-align:center"><div class="m-icon">🔮</div><small style="color:#c084fc;font-weight:bold">SKY AI</small></div></div></div>
-<div class="info"><b style="color:#d8b4fe">U1 SKY 6% 🔮</b><div class="price">Price:4,000 Daily:240 Total:7,200</div><div class="btns"><button class="buy" style="background:#d8b4fe">Buy</button><button class="rec">Receive</button></div></div>
-</div>
-
-<div class="card u-card">
-<div class="img"><div class="m-wrap"><span class="badge u-badge">U2</span><div style="text-align:center"><div class="m-icon">🔮</div><small style="color:#c084fc;font-weight:bold">SKY AI</small></div></div></div>
-<div class="info"><b style="color:#d8b4fe">U2 SKY 6% 🔮</b><div class="price">Price:8,000 Daily:480 Total:14,400</div><div class="btns"><button class="buy" style="background:#d8b4fe">Buy</button><button class="rec">Receive</button></div></div>
-</div>
-
-<div class="card u-card">
-<div class="img"><div class="m-wrap"><span class="badge u-badge">U3</span><div style="text-align:center"><div class="m-icon">🔮</div><small style="color:#c084fc;font-weight:bold">SKY AI</small></div></div></div>
-<div class="info"><b style="color:#d8b4fe">U3 SKY 6% 🔮</b><div class="price">Price:15,000 Daily:900 Total:27,000</div><div class="btns"><button class="buy" style="background:#d8b4fe">Buy</button><button class="rec">Receive</button></div></div>
-</div>
-
-<div class="card u-card">
-<div class="img"><div class="m-wrap"><span class="badge u-badge">U4</span><div style="text-align:center"><div class="m-icon">🔮</div><small style="color:#c084fc;font-weight:bold">SKY AI</small></div></div></div>
-<div class="info"><b style="color:#d8b4fe">U4 SKY 6% 🔮</b><div class="price">Price:30,000 Daily:1,800 Total:54,000</div><div class="btns"><button class="buy" style="background:#d8b4fe">Buy</button><button class="rec">Receive</button></div></div>
-</div>
-
-<div class="card u-card">
-<div class="img"><div class="m-wrap"><span class="badge u-badge">U5</span><div style="text-align:center"><div class="m-icon">🔮</div><small style="color:#c084fc;font-weight:bold">SKY AI</small></div></div></div>
-<div class="info"><b style="color:#d8b4fe">U5 SKY 6% 🔮</b><div class="price">Price:60,000 Daily:3,600 Total:108,000</div><div class="btns"><button class="buy" style="background:#d8b4fe">Buy</button><button class="rec">Receive</button></div></div>
-</div>
-
-<!-- Y SERIES -->
-<div class="card y-card">
-<div class="img"><div class="m-wrap"><span class="badge y-badge">Y1</span><div style="text-align:center"><div class="m-icon">🔥</div><small style="color:#ff8a6b;font-weight:bold">SKY AI</small></div></div></div>
-<div class="info"><b style="color:#ff8a6b">Y1 SKY 6% 🔥</b><div class="price">Price:2,500 Daily:150 Total:4,500</div><div class="btns"><button class="buy" style="background:#ff8a6b">Buy</button><button class="rec">Receive</button></div></div>
-</div>
-
-<div class="card y-card">
-<div class="img"><div class="m-wrap"><span class="badge y-badge">Y2</span><div style="text-align:center"><div class="m-icon">🔥</div><small style="color:#ff8a6b;font-weight:bold">SKY AI</small></div></div></div>
-<div class="info"><b style="color:#ff8a6b">Y2 SKY 6% 🔥</b><div class="price">Price:7,000 Daily:420 Total:12,600</div><div class="btns"><button class="buy" style="background:#ff8a6b">Buy</button><button class="rec">Receive</button></div></div>
-</div>
-
-<div class="card y-card">
-<div class="img"><div class="m-wrap"><span class="badge y-badge">Y3</span><div style="text-align:center"><div class="m-icon">🔥</div><small style="color:#ff8a6b;font-weight:bold">SKY AI</small></div></div></div>
-<div class="info"><b style="color:#ff8a6b">Y3 SKY 6% 🔥</b><div class="price">Price:18,000 Daily:1,080 Total:32,400</div><div class="btns"><button class="buy" style="background:#ff8a6b">Buy</button><button class="rec">Receive</button></div></div>
-</div>
-
-<div class="card y-card">
-<div class="img"><div class="m-wrap"><span class="badge y-badge">Y4</span><div style="text-align:center"><div class="m-icon">🔥</div><small style="color:#ff8a6b;font-weight:bold">SKY AI</small></div></div></div>
-<div class="info"><b style="color:#ff8a6b">Y4 SKY 6% 🔥</b><div class="price">Price:35,000 Daily:2,100 Total:63,000</div><div class="btns"><button class="buy" style="background:#ff8a6b">Buy</button><button class="rec">Receive</button></div></div>
-</div>
-
-<div class="card y-card">
-<div class="img"><div class="m-wrap"><span class="badge y-badge">Y5</span><div style="text-align:center"><div class="m-icon">🔥</div><small style="color:#ff8a6b;font-weight:bold">SKY AI</small></div></div></div>
-<div class="info"><b style="color:#ff8a6b">Y5 SKY 6% 🔥</b><div class="price">Price:70,000 Daily:4,200 Total:126,000</div><div class="btns"><button class="buy" style="background:#ff8a6b">Buy</button><button class="rec">Receive</button></div></div>
-</div>
-
-<div class="card y-card">
-<div class="img"><div class="m-wrap"><span class="badge y-badge">Y6</span><div style="text-align:center"><div class="m-icon">🔥</div><small style="color:#ff8a6b;font-weight:bold">SKY AI</small></div></div></div>
-<div class="info"><b style="color:#ff8a6b">Y6 SKY 6% 🔥</b><div class="price">Price:150,000 Daily:9,000 Total:270,000</div><div class="btns"><button class="buy" style="background:#ff8a6b">Buy</button><button class="rec">Receive</button></div></div>
-</div>
+<div id="sec-a" class="section"><div style="padding:40px;text-align:center;color:#5a7294">A Machines coming soon - VIP 17% + INVITE LOCK</div></div>
+<div id="sec-vip" class="section"><div style="padding:40px;text-align:center;color:#ff8a6b">🔒 VIP(6) Locked - Invite 5 friends to unlock</div></div>
 
 <div class="bottom">
 <div>🏠<br>Home</div><div class="on">⚙️<br>Machines</div><div>💰<br>Wallet</div><div>👥<br>Group</div><div>📜<br>Rules</div><div>⚙️<br>Set</div>
 </div>
+
+<script>
+function showTab(name){
+ document.querySelectorAll('.section').forEach(s=>s.classList.remove('on'));
+ document.querySelectorAll('.tabs div').forEach(t=>t.classList.remove('on'));
+ if(name==='all'){
+   document.getElementById('sec-m').classList.add('on');
+   document.getElementById('sec-uly').classList.add('on');
+   document.getElementById('t-all').classList.add('on');
+   document.getElementById('sec-all').classList.remove('on');
+   // show both m and uly for all
+   document.getElementById('sec-m').style.display='block';
+   document.getElementById('sec-uly').style.display='block';
+   document.getElementById('sec-a').style.display='none';
+   document.getElementById('sec-vip').style.display='none';
+   return;
+ }
+ document.getElementById('sec-m').style.display='none';
+ document.getElementById('sec-uly').style.display='none';
+ document.getElementById('sec-a').style.display='none';
+ document.getElementById('sec-vip').style.display='none';
+ document.getElementById('sec-all').style.display='none';
+ document.getElementById('sec-'+name).style.display='block';
+ document.getElementById('sec-'+name).classList.add('on');
+ document.getElementById('t-'+name).classList.add('on');
+}
+// init all
+document.getElementById('sec-all').innerHTML = document.getElementById('sec-m').innerHTML + document.getElementById('sec-uly').innerHTML;
+document.getElementById('sec-all').classList.add('on');
+document.getElementById('sec-all').style.display='block';
+document.getElementById('sec-m').style.display='none';
+document.getElementById('sec-uly').style.display='none';
+function initAll(){ showTab('all'); }
+initAll();
+</script>
 </body>
-                                                        </html>
+                                                                                                             </html>
