@@ -2,21 +2,30 @@
 <html>
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Skylight BenYt - USDT TRC20 Payment</title>
+<title>Skylight BenYt - USDT Payment</title>
 <style>
-body{font-family:Arial;background:#0f172a;color:white;margin:0;padding:20px}
-.card{background:#1e293b;padding:20px;border-radius:12px;margin:20px auto;max-width:400px;text-align:center}
-.btn{background:#22c55e;padding:14px;border-radius:8px;border:none;color:white;font-weight:bold;width:100%;cursor:pointer;margin-top:12px}
-.addr{background:#0f172a;padding:12px;border-radius:8px;word-break:break-all;border:1px dashed #22c55e;margin:15px 0;font-size:14px}
+body{font-family:Arial;background:#0f172a;color:white;margin:0;padding:20px;display:flex;justify-content:center}
+.card{background:#1e293b;padding:25px;border-radius:16px;max-width:380px;width:100%;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,0.3)}
+.logo{width:80px;height:80px;border-radius:50%;margin:0 auto 10px;background:#000;display:flex;align-items:center;justify-content:center;font-size:30px}
+.qr{background:white;padding:12px;border-radius:12px;margin:15px auto;display:inline-block}
+.addr{background:#0f172a;padding:12px;border-radius:8px;word-break:break-all;border:1px dashed #22c55e;margin:15px 0;font-size:13px}
+.btn{background:#22c55e;padding:14px;border-radius:8px;border:none;color:white;font-weight:bold;width:100%;cursor:pointer}
 </style>
 </head>
 <body>
 <div class="card">
-<h2>USDT TRC20 Payment</h2>
-<p>Send only USDT on TRON (TRC20) network</p>
-<div class="addr" id="addr">TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb</div>
-<button class="btn" onclick="navigator.clipboard.writeText('TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb');alert('Address Copied!')">COPY ADDRESS</button>
-<p style="font-size:12px;color:#94a3b8;margin-top:15px">Network: TRC20 | Asset: USDT<br>Always verify address before sending.</p>
+<div class="logo">👑</div>
+<h2>Skylight BenYt</h2>
+<p style="color:#94a3b8">USDT TRC20 Payment</p>
+
+<div class="qr">
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb" alt="QR">
+</div>
+
+<div class="addr" id="a">TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb</div>
+<button class="btn" onclick="navigator.clipboard.writeText('TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb');this.innerText='COPIED ✅'">COPY ADDRESS</button>
+
+<p style="font-size:11px;color:#94a3b8;margin-top:15px">Network: TRON (TRC20) | Asset: USDT<br>Send only USDT TRC20 to this address.<br><br>ID: 8801919905</p>
 </div>
 </body>
 </html>
