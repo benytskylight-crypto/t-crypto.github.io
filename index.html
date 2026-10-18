@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SKYLIGHT AI COMPANY v14.8 BRUNO MICKEAL - FINAL FIXED</title>
+<title>SKYLIGHT AI v15.0 BRUNO MICKEAL - REAL LOGO</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
 body{background:#070e1f;color:#fff;padding-bottom:85px}
@@ -15,8 +15,9 @@ body{background:#070e1f;color:#fff;padding-bottom:85px}
 .page.on{display:block}
 .card{display:flex;background:#0c1e3a;border:1px solid #17305a;border-radius:14px;margin:10px 12px;overflow:hidden}
 .img{width:38%;background:#000;display:flex;align-items:center;justify-content:center;padding:8px}
-.imgbox{width:100%;height:88px;border:1.5px solid #00e5ff;border-radius:10px;background:#0a0a0a;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative}
-.badge{position:absolute;top:5px;left:5px;background:#00c8ff;color:#000;font-size:9px;font-weight:bold;padding:2px 6px;border-radius:8px}
+.imgbox{width:100%;height:88px;border:1.5px solid #00e5ff;border-radius:10px;background:#0a0a0a;display:flex;flex-direction:column;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.imgbox img{width:100%;height:100%;object-fit:contain}
+.badge{position:absolute;top:5px;left:5px;background:#00c8ff;color:#000;font-size:9px;font-weight:bold;padding:2px 6px;border-radius:8px;z-index:2}
 .info{padding:9px 10px;flex:1}
 .price{font-size:11px;color:#b9c9dd;margin-top:3px}
 .btns{margin-top:7px;display:flex;gap:7px}
@@ -40,9 +41,9 @@ body{background:#070e1f;color:#fff;padding-bottom:85px}
 input,select{width:100%;margin-top:8px;background:#070e1f;border:1px solid #1b2c4d;padding:10px;border-radius:10px;color:#fff}
 .bal{font-size:22px;color:#22c55e;font-weight:bold}
 .active{border:2px solid #22c55e!important;background:#0a2215!important}
-.person{display:flex;align-items:center;background:#0d1a33;border-radius:12px;padding:12px;margin:10px 0;border:1px solid #1a2d4d;transition:0.3s}
-.person img{width:60px;height:60px;border-radius:50%;margin-right:12px;border:2px solid #00d4ff;object-fit:cover;transition:0.3s}
-.person.talking{border:2px solid #ffcc00;background:linear-gradient(135deg,#0c1e3a,#101c33);box-shadow:0 0 20px #ffcc0088;transform:scale(1.02)}
+.person{display:flex;align-items:center;background:#0d1a33;border-radius:12px;padding:12px;margin:10px 0;border:1px solid #1a2d4d}
+.person img{width:60px;height:60px;border-radius:50%;margin-right:12px;border:2px solid #00d4ff;object-fit:cover}
+.person.talking{border:2px solid #ffcc00;background:linear-gradient(135deg,#0c1e3a,#101c33);box-shadow:0 0 20px #ffcc0088}
 .person.talking img{border:3px solid #ffcc00;box-shadow:0 0 15px #ffcc00;animation:pulse 1s infinite}
 @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.08)}100%{transform:scale(1)}}
 .site{display:flex;justify-content:space-between;background:#0d1a33;border-radius:10px;padding:10px;margin:6px 0;border-left:3px solid #22c55e}
@@ -51,7 +52,7 @@ input,select{width:100%;margin-top:8px;background:#070e1f;border:1px solid #1b2c
 .loginBox{width:100%;max-width:380px;background:#101c33;border:2px solid #00d4ff;border-radius:20px;padding:22px;text-align:center}
 #liveChatBtn{position:fixed;bottom:85px;right:14px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 4px 14px #0008;z-index:300;cursor:pointer;border:2px solid #fff}
 #chatBox{position:fixed;bottom:150px;right:14px;width:300px;background:#101c33;border:2px solid #00d4ff;border-radius:16px;padding:14px;z-index:301;display:none}
-.talkBtn{padding:7px 14px;border-radius:20px;border:none;font-size:11px;font-weight:bold;cursor:pointer;margin-top:6px;transition:0.2s}
+.talkBtn{padding:7px 14px;border-radius:20px;border:none;font-size:11px;font-weight:bold;cursor:pointer;margin-top:6px}
 .talkLug{background:#ffcc00;color:#000}
 .talkEn{background:#00d4ff;color:#000}
 .wave{display:inline-block;width:4px;height:14px;background:#ffcc00;margin:0 2px;border-radius:3px;animation:wave 0.7s infinite}
@@ -59,37 +60,60 @@ input,select{width:100%;margin-top:8px;background:#070e1f;border:1px solid #1b2c
 @keyframes wave{0%,100%{height:6px}50%{height:18px}}
 .subtitle{background:#000;border:1px solid #ffcc00;color:#ffcc00;padding:8px 10px;border-radius:10px;margin-top:8px;font-size:12px;line-height:1.4;display:none}
 .subtitle.en{border-color:#00d4ff;color:#00d4ff}
+.vipLocked{opacity:0.5;border:1px dashed #444!important}
+.vipUnlocked{border:2px solid #ffcc00!important;opacity:1!important;background:#1a1a00!important}
+.logoImg{width:100%;max-width:280px;height:auto;border-radius:12px;border:2px solid #00d4ff;display:block;margin:0 auto;box-shadow:0 0 20px #00d4ff44}
+.logoTop{width:40px;height:40px;border-radius:10px;border:2px solid #00d4ff;object-fit:contain;background:#000}
 </style>
 </head>
 <body>
 <div id="liveChatBtn" onclick="toggleChat()">💬</div>
 <div id="chatBox"><div style="display:flex;justify-content:space-between"><b style="color:#00d4ff">💬 Support 0793814204</b><span onclick="toggleChat()" style="cursor:pointer">✖️</span></div><button class="btn wa" style="padding:10px" onclick="window.open('https://wa.me/256793814204','_blank')">WhatsApp 0793814204</button></div>
-<div id="loginScreen"><div class="loginBox"><div style="width:80px;height:80px;border-radius:16px;background:radial-gradient(circle at 30% 30%, #00e5ff, #0066ff);border:2px solid #00d4ff;display:flex;align-items:center;justify-content:center;font-size:42px;margin:0 auto">💎</div><h2 style="color:#00d4ff;margin-top:14px">SKYLIGHT AI COMPANY</h2><p class="sub">v14.8 BRUNO MICKEAL CEO • Admin 0793814204 • Pass 1234 • FIXED LOGIN</p><button class="btn wa" onclick="window.open('https://chat.whatsapp.com/BNeCwxPjLk95w3QejfjjM6','_blank')">💬 WhatsApp Group</button><button class="btn tg" onclick="window.open('https://t.me/+vyEcluEH54c0NTk0','_blank')">✈️ Telegram</button><div style="background:#08152a;border-radius:12px;padding:12px;text-align:left;border:1px solid #1b2c4d;margin-top:10px"><b style="color:#00d4ff">🔐 LOGIN - Bruno Mickeal CEO - v14.8 FIXED - No More Stuck!</b><div class="sub">Enter ANY name + 1234 → Will LOGIN! Fixed!</div><input type="text" id="loginName" placeholder="Your Name: Bruno Mickeal"><input type="password" id="loginPass" placeholder="Password: 1234" value="1234"><button class="btn wa" style="background:#00d4ff;color:#000;font-size:17px;font-weight:bold;padding:14px" onclick="doLogin()">🚀 LOGIN - Bruno Mickeal CEO - CLICK HERE</button><button class="btn" style="background:#ff3300;color:#fff;font-size:12px;margin-top:8px" onclick="emergencyReset()">🚨 EMERGENCY RESET - If Still Stuck Click Here</button><div style="display:flex;gap:6px;margin-top:8px"><button class="btn" style="background:#333;color:#fff;padding:8px;font-size:11px;flex:1" onclick="forceReset()">🗑️ Clear Old Data</button><button class="btn" style="background:#0c1e3a;border:1px solid #1b2c4d;color:#6b84a8;padding:8px;font-size:11px;flex:1" onclick="alert('Just enter any name and 1234 - v14.8 will login! Bruno Mickeal CEO')">❓ Help?</button></div></div></div></div>
-<div class="top"><div style="display:flex;align-items:center;gap:8px"><div style="width:38px;height:38px;border-radius:10px;background:radial-gradient(circle at 30% 30%, #00e5ff, #0066ff);border:2px solid #00d4ff;display:flex;align-items:center;justify-content:center;font-size:20px">💎</div><div style="line-height:1.1"><b style="color:#00d4ff;font-size:13px">SKYLIGHT AI COMPANY</b><br><span style="font-size:9px;color:#6b84a8">ADMIN 0793814204 | Bruno Mickeal CEO | v14.8 FIXED</span></div></div><span id="topBal">Bal: 0 UGX</span></div>
-<div class="tabs" id="tabs"><div id="tab-all" class="on" onclick="openTop('all')">All<br>36</div><div id="tab-a" onclick="openTop('a')">A(6)</div><div id="tab-m" onclick="openTop('m')">M(6)</div><div id="tab-uly" onclick="openTop('uly')">U/L/Y(18)</div><div id="tab-vip" onclick="openTop('vip')">VIP(6) 🔒</div><div id="tab-my" onclick="openTop('my')">MY(0)</div></div>
+<div id="loginScreen"><div class="loginBox"><img src="logo.png" onerror="this.src='skylight_logo.png';this.onerror=function(){this.style.display='none';document.getElementById('fallbackLogo').style.display='flex'}}" class="logoImg" style="max-width:200px;margin-bottom:12px" alt="SKYLIGHT AI"><div id="fallbackLogo" style="width:80px;height:80px;border-radius:16px;background:radial-gradient(circle at 30% 30%, #00e5ff, #0066ff);border:2px solid #00d4ff;display:none;align-items:center;justify-content:center;font-size:42px;margin:0 auto 12px">💎</div><h2 style="color:#00d4ff;margin-top:8px">SKYLIGHT AI COMPANY</h2><p class="sub">v15.0 REAL LOGO • BRUNO MICKEAL CEO • Admin 0793814204 • Pass 1234</p><button class="btn wa" onclick="window.open('https://chat.whatsapp.com/BNeCwxPjLk95w3QejfjjM6','_blank')">💬 WhatsApp Group</button><button class="btn tg" onclick="window.open('https://t.me/+vyEcluEH54c0NTk0','_blank')">✈️ Telegram</button><div style="background:#08152a;border-radius:12px;padding:12px;text-align:left;border:1px solid #1b2c4d;margin-top:10px"><b style="color:#00d4ff">🔐 LOGIN - Bruno Mickeal CEO - v15.0 REAL LOGO</b><input type="text" id="loginName" placeholder="Your Name: Bruno Mickeal"><input type="password" id="loginPass" placeholder="Password: 1234" value="1234"><button class="btn wa" style="background:#00d4ff;color:#000;font-size:17px;font-weight:bold;padding:14px" onclick="doLogin()">🚀 LOGIN - Bruno Mickeal CEO</button><button class="btn" style="background:#ff3300;color:#fff;font-size:12px;margin-top:8px" onclick="emergencyReset()">🚨 EMERGENCY RESET - If Stuck</button></div></div></div>
+<div class="top"><div style="display:flex;align-items:center;gap:8px"><img src="logo.png" onerror="this.src='skylight_logo.png';this.onerror=function(){this.style.display='none'}" class="logoTop" alt="logo"><div style="line-height:1.1"><b style="color:#00d4ff;font-size:13px">SKYLIGHT AI COMPANY</b><br><span style="font-size:9px;color:#6b84a8">ADMIN 0793814204 | Bruno Mickeal CEO | v15.0 LOGO</span></div></div><span id="topBal">Bal: 0 UGX</span></div>
+<div class="tabs" id="tabs"><div id="tab-all" class="on" onclick="openTop('all')">All<br>36</div><div id="tab-a" onclick="openTop('a')">A(6)</div><div id="tab-m" onclick="openTop('m')">M(6)</div><div id="tab-uly" onclick="openTop('uly')">U/L/Y(18)</div><div id="tab-vip" onclick="openTop('vip')">VIP(8) 🔒</div><div id="tab-my" onclick="openTop('my')">MY(0)</div></div>
 <div id="page-all" class="page on"></div><div id="page-m" class="page"></div><div id="page-a" class="page"></div><div id="page-uly" class="page"></div><div id="page-vip" class="page"></div><div id="page-my" class="page"></div>
 <div id="page-home" class="page">
-<div class="box" style="text-align:center;border:2px solid #00d4ff"><div style="width:80px;height:80px;border-radius:16px;background:radial-gradient(circle at 30% 30%, #00e5ff, #0066ff);border:2px solid #00d4ff;display:flex;align-items:center;justify-content:center;font-size:42px;margin:0 auto">💎</div><b style="color:#00d4ff;font-size:20px;letter-spacing:1px;margin-top:10px">SKYLIGHT AI COMPANY</b><br><span class="sub">v14.8 BRUNO MICKEAL CEO | Kampala HQ | Admin 0793814204 | 36 Machines | Pass 1234 | Talking Founders FIXED LOGIN</span></div>
-<div class="box" style="border:2px solid #22c55e;text-align:center"><h3>💰 Live Balance - <span id="homeUser">Bruno Mickeal</span> - CEO Bruno Mickeal</h3><div class="bal" id="homeBal">0 UGX</div><div class="sub">Daily: <span id="homeDaily">0</span> | Machines: <span id="homeCount">0</span> | Ref: <span id="homeRef">0</span>/5 VIP | Pass: <span id="homePass">1234</span></div><button class="btn wa" onclick="claimAll()">💸 Claim Daily Profit</button><button class="btn usdt" onclick="openBottom('wallet')">💰 Deposit Now - 0793814204</button></div>
-<div class="box" style="border:2px solid #ffcc00"><h3>👑 FOUNDERS & TEAM - v14.8 - BRUNO MICKEAL CEO - LIVE TALKING UPGRADED + FIXED</h3><div class="sub" style="margin-bottom:10px">🔊 <b style="color:#ffcc00">Bruno Mickeal speaks Luganda</b> | <b style="color:#00d4ff">Sarah, Alex, Grace speak English</b> | Upgraded + Fixed Login!</div>
-<button class="btn" style="background:linear-gradient(90deg,#ffcc00,#00d4ff);color:#000;font-size:14px;font-weight:bold" onclick="playAllFounders()">▶️ PLAY ALL FOUNDERS - Bruno Luganda First, Then English One By One</button>
+<div class="box" style="text-align:center;border:2px solid #00d4ff"><img src="logo.png" onerror="this.src='skylight_logo.png'" class="logoImg" alt="SKYLIGHT AI COMPANY LOGO"><div style="margin-top:10px"><b style="color:#00d4ff;font-size:18px;letter-spacing:1px">SKYLIGHT AI COMPANY</b><br><span class="sub">v15.0 REAL LOGO • BRUNO MICKEAL CEO • Kampala HQ • Admin 0793814204 • 36 Machines + VIP 8 • Pass 1234</span></div></div>
+<div class="box" style="border:2px solid #22c55e;text-align:center"><h3>💰 Live Balance - <span id="homeUser">Bruno Mickeal</span></h3><div class="bal" id="homeBal">0 UGX</div><div class="sub">Daily: <span id="homeDaily">0</span> | Machines: <span id="homeCount">0</span> | Ref: <span id="homeRef">0</span> | Pass: <span id="homePass">1234</span></div><button class="btn wa" onclick="claimAll()">💸 Claim Daily Profit</button><button class="btn usdt" onclick="openBottom('wallet')">💰 Deposit Now - 0793814204</button></div>
+<div class="box" style="border:2px solid #ffcc00"><h3>👑 FOUNDERS & TEAM - v15.0 - BRUNO MICKEAL CEO - LIVE TALKING - REAL LOGO</h3><div class="sub" style="margin-bottom:10px">🔊 <b style="color:#ffcc00">Bruno Mickeal speaks Luganda</b> | <b style="color:#00d4ff">Sarah, Alex, Grace speak English</b> | Real Logo Uploaded!</div>
+<button class="btn" style="background:linear-gradient(90deg,#ffcc00,#00d4ff);color:#000;font-size:14px;font-weight:bold" onclick="playAllFounders()">▶️ PLAY ALL FOUNDERS - Bruno Luganda First, Then English</button>
 <button class="btn" style="background:#222;color:#fff;font-size:11px;padding:8px" onclick="stopAllTalk()">⏹️ Stop All Talking</button>
-<div id="founder-bruno" class="person"><img src="https://i.pravatar.cc/150?img=33"><div style="flex:1"><b style="color:#ffcc00">Bruno Mickeal - CEO & Founder ⭐</b><br><span class="sub">Kampala HQ • 0793814204 • Founded 2023 • 12K+ Members • <b style="color:#ffcc00;background:#000;padding:2px 6px;border-radius:6px">LUGANDA SPEAKER - CEO</b></span><br><button class="talkBtn talkLug" onclick="talkBruno()">▶️ 🔊 Play Luganda - Bruno Mickeal CEO Talking</button><span id="wave-bruno" style="display:none;margin-left:8px"><span class="wave"></span><span class="wave" style="animation-delay:0.1s"></span><span class="wave" style="animation-delay:0.2s"></span><span class="wave" style="animation-delay:0.3s"></span> <small style="color:#ffcc00">Speaking Luganda...</small></span><div id="text-bruno" class="subtitle" style="display:none">Mwasuze mutya banange ba SKYLIGHT! Nze Bruno Mickeal, CEO era omutandisi wa SKYLIGHT AI COMPANY. Kampala HQ. Tutandika mu 2023 ne servers 44 - Nakawa 24, Entebbe 12, Jinja 8. Tulina members 12,000+. Mwebale okwegatta kuffe. Tukola 6 percent buli lunaku, VIP 17 percent. Mukole deposit ku 0793814204. Mwebale nnyo, twagala sente wamu! Admin 0793814204.</div></div></div>
-<div id="founder-sarah" class="person"><img src="https://i.pravatar.cc/150?img=32"><div style="flex:1"><b>Dr. Sarah Nakimuli - CTO</b><br><span class="sub">PhD AI Makerere • 44 AI Servers • 24/7 Trading • ENGLISH</span><br><button class="talkBtn talkEn" onclick="talkSarah()">▶️ 🔊 Play English - Dr. Sarah Talking</button><span id="wave-sarah" style="display:none;margin-left:8px"><span class="wave en"></span><span class="wave en" style="animation-delay:0.1s"></span><span class="wave en" style="animation-delay:0.2s"></span><span class="wave en" style="animation-delay:0.3s"></span> <small style="color:#00d4ff">Speaking English...</small></span><div id="text-sarah" class="subtitle en" style="display:none">Hello everyone! I am Dr. Sarah Nakimuli, CTO of Skylight AI Company led by our CEO Bruno Mickeal. PhD in AI from Makerere University. I manage our 44 AI trading servers running 24/7. Our AI brings 6 percent daily profit, VIP 17 percent. Trusted since 2023. Thank you! Admin 0793814204.</div></div></div>
-<div id="founder-alex" class="person"><img src="https://i.pravatar.cc/150?img=12"><div style="flex:1"><b>Alex Kintu - Operations</b><br><span class="sub">Nakawa 24 • Entebbe 12 • Jinja 8 Servers • ENGLISH</span><br><button class="talkBtn talkEn" onclick="talkAlex()">▶️ 🔊 Play English - Alex Talking</button><span id="wave-alex" style="display:none;margin-left:8px"><span class="wave en"></span><span class="wave en" style="animation-delay:0.1s"></span><span class="wave en" style="animation-delay:0.2s"></span><span class="wave en" style="animation-delay:0.3s"></span> <small style="color:#00d4ff">Speaking...</small></span><div id="text-alex" class="subtitle en" style="display:none">Hi, I'm Alex Kintu, Operations Manager under CEO Bruno Mickeal. I manage our three sites: Nakawa Headquarters 24 servers, Entebbe Data Center 12 servers, and Jinja Solar Farm 8 servers green energy. All live and secure. Thank you for joining Skylight AI Company.</div></div></div>
-<div id="founder-grace" class="person"><img src="https://i.pravatar.cc/150?img=15"><div style="flex:1"><b>Grace Achieng - CFO</b><br><span class="sub">Finance & Payouts • 0758764116 • 12K Members • ENGLISH</span><br><button class="talkBtn talkEn" onclick="talkGrace()">▶️ 🔊 Play English - Grace Talking</button><span id="wave-grace" style="display:none;margin-left:8px"><span class="wave en"></span><span class="wave en" style="animation-delay:0.1s"></span><span class="wave en" style="animation-delay:0.2s"></span><span class="wave en" style="animation-delay:0.3s"></span> <small style="color:#00d4ff">Speaking...</small></span><div id="text-grace" class="subtitle en" style="display:none">Hello, I'm Grace Achieng, CFO under CEO Bruno Mickeal. I handle finance and payouts for over 12,000 members. Your withdrawals are safe and paid within 24 hours to MTN MoMo 0793814204. Welcome to Skylight AI Company. Trusted since 2023.</div></div></div>
+<div id="founder-bruno" class="person"><img src="https://i.pravatar.cc/150?img=33"><div style="flex:1"><b style="color:#ffcc00">Bruno Mickeal - CEO & Founder ⭐</b><br><span class="sub">Kampala HQ • 0793814204 • Founded 2023 • 12K+ Members • LUGANDA</span><br><button class="talkBtn talkLug" onclick="talkBruno()">▶️ 🔊 Play Luganda - Bruno Mickeal</button><span id="wave-bruno" style="display:none;margin-left:8px"><span class="wave"></span><span class="wave" style="animation-delay:0.1s"></span><span class="wave" style="animation-delay:0.2s"></span> <small style="color:#ffcc00">Speaking Luganda...</small></span><div id="text-bruno" class="subtitle" style="display:none">Mwasuze mutya banange ba SKYLIGHT! Nze Bruno Mickeal, CEO era omutandisi wa SKYLIGHT AI COMPANY. Kampala HQ. Tutandika mu 2023 ne servers 44 - Nakawa 24, Entebbe 12, Jinja 8. Tulina members 12,000+. Mwebale okwegatta kuffe. Tukola 6 percent buli lunaku, VIP 17 percent. Mukole deposit ku 0793814204. Mwebale nnyo!</div></div></div>
+<div id="founder-sarah" class="person"><img src="https://i.pravatar.cc/150?img=32"><div style="flex:1"><b>Dr. Sarah Nakimuli - CTO</b><br><span class="sub">PhD AI Makerere • 44 AI Servers • 24/7 Trading • ENGLISH</span><br><button class="talkBtn talkEn" onclick="talkSarah()">▶️ 🔊 Play English - Dr. Sarah</button><span id="wave-sarah" style="display:none;margin-left:8px"><span class="wave en"></span><span class="wave en" style="animation-delay:0.1s"></span><span class="wave en" style="animation-delay:0.2s"></span> <small style="color:#00d4ff">Speaking...</small></span><div id="text-sarah" class="subtitle en" style="display:none">Hello everyone! I am Dr. Sarah Nakimuli, CTO of Skylight AI Company led by our CEO Bruno Mickeal. PhD in AI from Makerere University. I manage our 44 AI trading servers running 24/7. Our AI brings 6 percent daily profit, VIP 17 percent. Trusted since 2023. Thank you!</div></div></div>
+<div id="founder-alex" class="person"><img src="https://i.pravatar.cc/150?img=12"><div style="flex:1"><b>Alex Kintu - Operations</b><br><span class="sub">Nakawa 24 • Entebbe 12 • Jinja 8 Servers • ENGLISH</span><br><button class="talkBtn talkEn" onclick="talkAlex()">▶️ 🔊 Play English - Alex</button><span id="wave-alex" style="display:none;margin-left:8px"><span class="wave en"></span><span class="wave en" style="animation-delay:0.1s"></span><span class="wave en" style="animation-delay:0.2s"></span> <small style="color:#00d4ff">Speaking...</small></span><div id="text-alex" class="subtitle en" style="display:none">Hi, I'm Alex Kintu, Operations Manager under CEO Bruno Mickeal. I manage our three sites: Nakawa 24, Entebbe 12, Jinja 8 green energy. All live and secure. Thank you!</div></div></div>
+<div id="founder-grace" class="person"><img src="https://i.pravatar.cc/150?img=15"><div style="flex:1"><b>Grace Achieng - CFO</b><br><span class="sub">Finance & Payouts • 0758764116 • 12K Members • ENGLISH</span><br><button class="talkBtn talkEn" onclick="talkGrace()">▶️ 🔊 Play English - Grace</button><span id="wave-grace" style="display:none;margin-left:8px"><span class="wave en"></span><span class="wave en" style="animation-delay:0.1s"></span><span class="wave en" style="animation-delay:0.2s"></span> <small style="color:#00d4ff">Speaking...</small></span><div id="text-grace" class="subtitle en" style="display:none">Hello, I'm Grace Achieng, CFO under CEO Bruno Mickeal. I handle finance and payouts for over 12,000 members. Your withdrawals are safe and paid within 24 hours to MTN MoMo 0793814204. Welcome!</div></div></div>
 <div class="site"><span>🏢 Nakawa HQ - 24 Servers - Bruno Mickeal CEO Main</span><span style="color:#22c55e">● Live 2023</span></div><div class="site"><span>🏢 Entebbe Data Center - 12 Servers</span><span style="color:#22c55e">● Live</span></div><div class="site"><span>🏢 Jinja Solar Farm - 8 Servers Green</span><span style="color:#22c55e">● Live Green</span></div>
 </div>
-<div class="box" style="text-align:center"><h3>👥 Community - Bruno Mickeal CEO 0793814204</h3><button class="btn wa" onclick="window.open('https://chat.whatsapp.com/BNeCwxPjLk95w3QejfjjM6','_blank')">💬 WhatsApp Group</button><button class="btn tg" onclick="window.open('https://t.me/+vyEcluEH54c0NTk0','_blank')">✈️ Telegram Group</button></div>
 </div>
-<div id="page-wallet" class="page"><div class="box" style="text-align:center;border:2px solid #22c55e"><h3>💰 Wallet - Bal: <span id="walletBal">0</span> UGX - Bruno Mickeal CEO</h3><div class="depTab"><div id="d-usdt" class="on" onclick="switchDep('usdt')">💎 USDT</div><div id="d-momo" onclick="switchDep('momo')">📱 MoMo 0793814204</div></div><div id="dep-usdt"><img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=170x170&data=TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb"><p style="background:#070e1f;padding:8px;border-radius:8px;font-size:10px;word-break:break-all;border:1px solid #1b2c4d">TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb</p><button class="btn wa" onclick="navigator.clipboard.writeText('TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb');alert('Copied USDT')">📋 Copy USDT</button></div><div id="dep-momo" style="display:none"><div style="background:#070e1f;padding:10px;border-radius:10px;border:1px solid #ffcc00;text-align:left"><b style="color:#ffcc00">0793814204 - BRUNO MICKEAL CEO MAIN</b><br><b style="color:#00ff88">0758764116 - ADMIN 2</b><br><span class="sub">Name: Bruno Mickeal - Pass 1234</span></div><button class="btn momo" onclick="navigator.clipboard.writeText('0793814204');alert('Copied 0793814204')">📋 Copy 0793814204</button></div><div style="margin-top:12px;text-align:left;border-top:1px solid #1b2c4d;padding-top:10px"><h3>🛒 Buy Machine - 36 Options - Bruno Mickeal CEO</h3><select id="buySelect"></select><input type="text" id="txnId" placeholder="Transaction ID"><input type="file" id="proof" accept="image/*"><button class="btn wa" onclick="buyWithProof()">✅ Confirm - Auto Activate</button></div><div style="margin-top:12px"><button class="btn" style="background:#ff3300;color:#fff" onclick="withdraw()">💸 Withdraw to MoMo 0793814204</button></div></div></div>
-<div id="page-group" class="page"><div class="box" style="text-align:center;border:2px solid #22c55e"><h3>🎁 Referral - Invite 5 → VIP 17% - Bruno Mickeal CEO</h3><div style="background:#070e1f;padding:10px;border-radius:10px;border:1px solid #00d4ff;margin:10px 0;word-break:break-all;font-size:11px" id="refLink">Generating...</div><button class="btn wa" onclick="copyRef()">📋 Copy Link - Bruno Mickeal CEO</button><button class="btn tg" onclick="shareWhatsApp()">💬 Share WhatsApp - 0793814204</button><div style="display:flex;gap:8px;margin-top:10px"><div style="flex:1;background:#0c1e3a;padding:10px;border-radius:10px"><b style="color:#00d4ff;font-size:20px" id="refCount">0</b><br><span class="sub">Referrals</span></div><div style="flex:1;background:#0c1e3a;padding:10px;border-radius:10px"><b style="color:#22c55e;font-size:20px">5</b><br><span class="sub">Needed</span></div><div style="flex:1;background:#0c1e3a;padding:10px;border-radius:10px"><b style="color:#ffcc00;font-size:20px" id="vipStatus">🔒</b><br><span class="sub">VIP</span></div></div><div style="margin-top:10px;background:#070e1f;height:10px;border-radius:10px;overflow:hidden"><div id="vipBar" style="height:100%;width:0%;background:linear-gradient(90deg,#ffcc00,#00d4ff)"></div></div><div class="sub" id="vipText" style="margin-top:6px">Invite 5 friends - Pass 1234 - Bruno Mickeal CEO</div></div></div>
-<div id="page-rules" class="page"><div class="box" style="border:2px solid #00d4ff"><h3>📜 FULL RULES v14.8 - BRUNO MICKEAL CEO - FIXED LOGIN - 36 Machines + Talking</h3><div class="sub" style="text-align:left;line-height:1.7;margin-top:10px;font-size:12px">
-<b style="color:#ffcc00">1. ABOUT + BRUNO MICKEAL CEO v14.8 FIXED LOGIN:</b><br>Founded 2023 Nakawa Kampala by CEO Bruno Mickeal 0793814204 (Luganda speaker), CTO Dr. Sarah Nakimuli, Ops Alex Kintu, CFO Grace Achieng. v14.8 fixes stuck login bug - now login always works! Enter any name + 1234 → Home! Talking upgraded: Bruno Luganda, others English, pulse animation, subtitles.<br><br>
-<b style="color:#22c55e">2. 36 MACHINES 6% DAILY:</b><br>M1-M6: 2K-80K 120-4800/day, A1-A6: 3K-96K 180-5760/day, U1-U6: 4K-128K 240-7680/day, L1-L6: 5K-160K 300-9600/day, Y1-Y6: 6K-192K 360-11520/day = 30 machines 6%. VIP1-VIP6: 5K-250K 850-42500/day 17% 6 machines. Total 36 machines Bruno Mickeal CEO.<br><br>
-<b style="color:#ffcc00">3. LOGIN FIXED v14.8:</b><br>v14.8 FIXED: doLogin() now ALWAYS allows login! No more checking old password! Just enter any name (e.g., Bruno Mickeal) + any password (e.g., 1234) → Click LOGIN → Enters Home! If still stuck, click EMERGENCY RESET button to clear old data and reload. Bruno Mickeal is CEO everywhere.<br><br>
-</div><button class="btn wa" onclick="window.open('https://wa.me/256793814204?text=I read v14.8 Bruno Mickeal CEO fixed login 36 machines','_blank')">✅ I Understand v14.8 Bruno Mickeal CEO FIXED</button></div></div>
-<div id="page-set" class="page"><div class="box" style="text-align:center;border:2px solid #ffcc00"><img id="profilePic" class="profPic" src="https://i.pravatar.cc/150?img=33"><h3 style="margin-top:10px" id="setName">Bruno Mickeal</h3><div class="sub" id="setId">ID: SKY-1250 | Bruno Mickeal CEO | Admin 0793814204 | Pass 1234</div><input type="file" id="picInput" accept="image/*" style="display:none" onchange="changePic(event)"><button class="btn usdt" onclick="document.getElementById('picInput').click()">📷 Change Pic</button></div><div class="box"><h3>⚙️ Account - v14.8 BRUNO MICKEAL CEO - FIXED</h3><div class="sub">Name: <span id="setName2">Bruno</span><br>Pass: <span id="setPass">1234</span><br>CEO: Bruno Mickeal - v14.8 FIXED LOGIN</div><input type="text" id="newName" placeholder="Change Name"><button class="btn usdt" onclick="changeName()">✏️ Change Name</button></div><div class="box" style="border:2px solid #22c55e"><h3>🔒 Change Password - v14.8 - Bruno Mickeal CEO</h3><input type="password" id="oldPass" placeholder="Old (1234)"><input type="password" id="newPass" placeholder="New Password (min 4)"><input type="password" id="confirmPass" placeholder="Confirm New"><button class="btn wa" onclick="changePassword()">🔑 Update Password</button></div><div class="box" style="border:2px solid #ffcc00"><h3>🔐 ADMIN ONLY - Bruno Mickeal CEO - Unlock VIP - 0793814204</h3><input type="password" id="adminUnlockCode" placeholder="Admin Code 0793814204"><input type="text" id="adminUnlockName" placeholder="Member Name"><button class="btn" style="background:#ffcc00;color:#000" onclick="adminUnlockVIP()">👑 Unlock VIP 17% - Bruno Mickeal</button></div><div class="box"><h3>🚪 Logout</h3><button class="btn" style="background:#ff3300;color:#fff" onclick="logout()">🚪 Logout</button></div></div>
+<div id="page-wallet" class="page"><div class="box" style="text-align:center;border:2px solid #22c55e"><h3>💰 Wallet - Bal: <span id="walletBal">0</span> UGX</h3><div class="depTab"><div id="d-usdt" class="on" onclick="switchDep('usdt')">💎 USDT</div><div id="d-momo" onclick="switchDep('momo')">📱 MoMo 0793814204</div></div><div id="dep-usdt"><img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=170x170&data=TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb"><p style="background:#070e1f;padding:8px;border-radius:8px;font-size:10px;word-break:break-all;border:1px solid #1b2c4d">TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb</p><button class="btn wa" onclick="navigator.clipboard.writeText('TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb');alert('Copied USDT')">📋 Copy USDT</button></div><div id="dep-momo" style="display:none"><div style="background:#070e1f;padding:10px;border-radius:10px;border:1px solid #ffcc00;text-align:left"><b style="color:#ffcc00">0793814204 - BRUNO MICKEAL CEO MAIN</b><br><b style="color:#00ff88">0758764116 - ADMIN 2</b><br><span class="sub">Name: Bruno Mickeal - Pass 1234</span></div><button class="btn momo" onclick="navigator.clipboard.writeText('0793814204');alert('Copied 0793814204')">📋 Copy 0793814204</button></div><div style="margin-top:12px;text-align:left;border-top:1px solid #1b2c4d;padding-top:10px"><h3>🛒 Buy Machine - 36 Options - Bruno Mickeal CEO</h3><select id="buySelect"></select><input type="text" id="txnId" placeholder="Transaction ID"><input type="file" id="proof" accept="image/*"><button class="btn wa" onclick="buyWithProof()">✅ Confirm - Auto Activate</button></div><div style="margin-top:12px"><button class="btn" style="background:#ff3300;color:#fff" onclick="withdraw()">💸 Withdraw to MoMo 0793814204</button></div></div></div>
+
+<div id="page-group" class="page"><div class="box" style="text-align:center;border:2px solid #22c55e"><h3>🎁 Referral - Invite Friends → Unlock VIP 1-8</h3><div class="sub">Invite 3 → VIP1, 6 → VIP2, 12 → VIP3, 20 → VIP4, 30 → VIP5, 45 → VIP6, 60 → VIP7, 80 → VIP8 - 36 Machines!</div>
+<div style="background:#070e1f;padding:12px;border-radius:12px;border:2px solid #00d4ff;margin:10px 0;word-break:break-all;font-size:12px;color:#00ff88;font-weight:bold" id="refLink">https://benytskylight-crypto.github.io/t-crypto.github.io/?ref=USER</div>
+<button class="btn wa" style="background:#00ff88;color:#000;font-weight:bold" onclick="copyRef()">📋 Copy Link</button>
+<button class="btn tg" style="background:#0088cc;color:#fff" onclick="shareWhatsApp()">💬 Share WhatsApp</button>
+<div style="display:flex;gap:8px;margin-top:12px"><div style="flex:1;background:#0c1e3a;padding:10px;border-radius:10px"><b style="color:#00d4ff;font-size:22px" id="refCount">0</b><br><span class="sub">Referrals</span></div><div style="flex:1;background:#0c1e3a;padding:10px;border-radius:10px"><b style="color:#ffcc00;font-size:16px" id="vipLevel">VIP 0</b><br><span class="sub">Level</span></div><div style="flex:1;background:#0c1e3a;padding:10px;border-radius:10px"><b style="color:#22c55e;font-size:16px" id="vipStatus">🔒</b><br><span class="sub">VIP Status</span></div></div>
+<div style="margin-top:10px;background:#070e1f;height:12px;border-radius:10px;overflow:hidden;border:1px solid #1a2d4d"><div id="vipBar" style="height:100%;width:0%;background:linear-gradient(90deg,#ffcc00,#00d4ff,#22c55e)"></div></div><div class="sub" id="vipText" style="margin-top:8px">Invite 3 friends to unlock VIP1! Pass 1234</div>
+<div style="text-align:left;margin-top:14px;background:#070e1f;padding:10px;border-radius:12px;border:1px solid #1a2d4d"><b style="color:#ffcc00">🔓 VIP Unlock Levels - 36 Machines:</b><br>
+<div class="sub" id="vipLevelsList" style="font-size:11px;line-height:1.6;margin-top:6px">
+- 3 refs → VIP1 (5K→850/day 17%)<br>
+- 6 refs → VIP2 (15K→2550/day)<br>
+- 12 refs → VIP3 (30K→5100/day)<br>
+- 20 refs → VIP4 (60K→10200/day)<br>
+- 30 refs → VIP5 (120K→20400/day)<br>
+- 45 refs → VIP6 (250K→42500/day)<br>
+- 60 refs → VIP7 (400K→68000/day)<br>
+- 80 refs → VIP8 (600K→102000/day) + All 36 Machines Unlocked!
+</div></div>
+<button class="btn wa" style="padding:8px;font-size:11px;margin-top:10px" onclick="window.open('https://wa.me/256793814204?text=Hello Admin 0793814204, I have referrals - '+encodeURIComponent(userName),'_blank')">💬 Send Proof to 0793814204</button>
+</div></div>
+
+<div id="page-rules" class="page"><div class="box" style="border:2px solid #00d4ff"><div style="text-align:center;margin-bottom:10px"><img src="logo.png" onerror="this.src='skylight_logo.png'" class="logoImg" style="max-width:180px"></div><h3>📜 FULL RULES v15.0 - BRUNO MICKEAL CEO - REAL LOGO - VIP 8 + 36 Machines</h3><div class="sub" style="text-align:left;line-height:1.7;margin-top:10px;font-size:12px">
+<b style="color:#00d4ff">1. ABOUT + BRUNO MICKEAL CEO + REAL LOGO v15.0:</b><br>Logo is now your real Skylight AI logo - blue diamond S circuit! Founded 2023 Nakawa Kampala by CEO Bruno Mickeal 0793814204 (Luganda), CTO Dr. Sarah, Ops Alex, CFO Grace. Real logo uploaded to logo.png - appears on login, top bar, home, rules! 3 sites: Nakawa 24, Entebbe 12, Jinja 8 Green. 12K+ members. Admin 0793814204/0758764116.<br><br>
+<b style="color:#22c55e">2. 36 MACHINES + VIP 8:</b><br>M1-M6: 2K-80K, A1-A6: 3K-96K, U1-U6: 4K-128K, L1-L6: 5K-160K, Y1-Y6: 6K-192K = 30 machines 6%. VIP1-VIP8: 5K-600K 850-102000/day 17% = 8 machines. Total 36+8 = 44 but core 36 + VIP8 unlocks all 36 machines! Invite: 3→VIP1, 6→VIP2, 12→VIP3, 20→VIP4, 30→VIP5, 45→VIP6, 60→VIP7, 80→VIP8!<br><br>
+<b style="color:#ffcc00">3. REFERRAL + LOGO:</b><br>Referral link fixed - shows real link, Copy Link button no CEO name. Logo is real - upload logo.png to GitHub root. Code uses logo.png with fallback to skylight_logo.png and then to emoji. Logo appears with blue border and glow! All 36 machines use logo in imgbox!<br><br>
+</div><button class="btn wa" onclick="window.open('https://wa.me/256793814204?text=I read v15.0 Bruno Mickeal CEO real logo VIP 8 36 machines','_blank')">✅ I Understand v15.0 Real Logo VIP 8</button></div></div>
+<div id="page-set" class="page"><div class="box" style="text-align:center;border:2px solid #ffcc00"><img id="profilePic" class="profPic" src="https://i.pravatar.cc/150?img=33"><h3 style="margin-top:10px" id="setName">Bruno Mickeal</h3><div class="sub" id="setId">ID: SKY-1250 | Bruno Mickeal CEO | Admin 0793814204 | Pass 1234</div><input type="file" id="picInput" accept="image/*" style="display:none" onchange="changePic(event)"><button class="btn usdt" onclick="document.getElementById('picInput').click()">📷 Change Pic</button></div><div class="box"><h3>⚙️ Account - v15.0 BRUNO MICKEAL CEO - REAL LOGO</h3><div class="sub">Name: <span id="setName2">Bruno</span><br>Pass: <span id="setPass">1234</span><br>CEO: Bruno Mickeal - v15.0 REAL LOGO + VIP 8</div><input type="text" id="newName" placeholder="Change Name"><button class="btn usdt" onclick="changeName()">✏️ Change Name</button></div><div class="box" style="border:2px solid #22c55e"><h3>🔒 Change Password - v15.0 - Bruno Mickeal CEO</h3><input type="password" id="oldPass" placeholder="Old (1234)"><input type="password" id="newPass" placeholder="New Password (min 4)"><input type="password" id="confirmPass" placeholder="Confirm New"><button class="btn wa" onclick="changePassword()">🔑 Update Password</button></div><div class="box" style="border:2px solid #ffcc00"><h3>🔐 ADMIN ONLY - Bruno Mickeal CEO - Unlock VIP 1-8 - 0793814204</h3><div class="sub">Enter referrals to unlock VIP level:</div><input type="password" id="adminUnlockCode" placeholder="Admin Code 0793814204"><input type="number" id="adminUnlockRefs" placeholder="Referrals: 3=VIP1, 6=VIP2, 12=VIP3, 20=VIP4, 30=VIP5, 45=VIP6, 60=VIP7, 80=VIP8"><button class="btn" style="background:#ffcc00;color:#000" onclick="adminUnlockVIP()">👑 Unlock VIP 1-8</button></div><div class="box"><h3>🚪 Logout</h3><button class="btn" style="background:#ff3300;color:#fff" onclick="logout()">🚪 Logout</button></div></div>
 <div class="bottom"><div id="b-home" class="on" onclick="openBottom('home')">🏠<br>Home</div><div id="b-machines" onclick="openBottom('machines')">⚙️<br>Machines</div><div id="b-wallet" onclick="openBottom('wallet')">💰<br>Wallet</div><div id="b-group" onclick="openBottom('group')">👥<br>Group</div><div id="b-rules" onclick="openBottom('rules')">📜<br>Rules</div><div id="b-set" onclick="openBottom('set')">⚙️<br>Set</div></div>
 <script>
 let balance=parseInt(localStorage.getItem('sky_bal')||'0');
@@ -100,6 +124,18 @@ let userPass=localStorage.getItem('sky_pass')||'1234';
 let profPicData=localStorage.getItem('sky_pic')||'https://i.pravatar.cc/150?img=33';
 let isLogged=localStorage.getItem('sky_logged')==='yes';
 let referrals=parseInt(localStorage.getItem('sky_ref')||'0');
+const vipLevels=[
+  {level:1, refs:3, id:'VIP1', price:5000, daily:850},
+  {level:2, refs:6, id:'VIP2', price:15000, daily:2550},
+  {level:3, refs:12, id:'VIP3', price:30000, daily:5100},
+  {level:4, refs:20, id:'VIP4', price:60000, daily:10200},
+  {level:5, refs:30, id:'VIP5', price:120000, daily:20400},
+  {level:6, refs:45, id:'VIP6', price:250000, daily:42500},
+  {level:7, refs:60, id:'VIP7', price:400000, daily:68000},
+  {level:8, refs:80, id:'VIP8', price:600000, daily:102000}
+];
+function getVipLevel(){let lvl=0;vipLevels.forEach(v=>{if(referrals>=v.refs) lvl=v.level;});return lvl;}
+function getUnlockedVips(){return vipLevels.filter(v=>referrals>=v.refs);}
 function save(){
   localStorage.setItem('sky_bal',balance);
   localStorage.setItem('sky_macs',JSON.stringify(machines));
@@ -113,8 +149,8 @@ function save(){
   }
   updateUI();
 }
-function forceReset(){localStorage.clear();balance=0;machines=[];userName='';userPass='1234';isLogged=false;referrals=0;alert('Cleared Old Data! Now login with Bruno Mickeal / 1234 - v14.8 FIXED');location.href=location.pathname+'?v=148FIXED';}
-function emergencyReset(){if(confirm('EMERGENCY RESET - Clear all old data? This will fix stuck login!')){localStorage.clear();alert('Cleared! Reloading fresh v14.8 Bruno Mickeal CEO...');location.href=location.pathname+'?reset=148&v=148BRUNOFIXED';}}
+function forceReset(){localStorage.clear();balance=0;machines=[];userName='';userPass='1234';isLogged=false;referrals=0;alert('Cleared! Login with 1234');location.href=location.pathname+'?v=150LOGO';}
+function emergencyReset(){if(confirm('EMERGENCY RESET - Clear all old data?')){localStorage.clear();alert('Cleared! Reloading v15.0 LOGO...');location.href=location.pathname+'?reset=150&v=150LOGO';}}
 function updateUI(){
   document.getElementById('topBal').innerText='Bal: '+balance+' UGX';
   document.getElementById('homeBal').innerText=balance+' UGX';
@@ -136,39 +172,70 @@ function updateUI(){
 }
 function renderMy(){
   let html='';
-  if(machines.length==0) html='<div class="box"><div class="sub">No machines - Buy 36 available - Bruno Mickeal CEO - Pass '+userPass+' - 0793814204</div></div>';
-  else machines.forEach((m,i)=>{html+=`<div class="card active"><div class="img"><div class="imgbox"><span class="badge">ACTIVE</span>💎<small>${m.id}</small></div></div><div class="info"><b style="color:#22c55e">${m.id} ACTIVE ✅ Bruno Mickeal CEO</b><div class="price">Daily: ${m.daily} UGX</div><div class="btns"><button class="rec" onclick="claimOne(${i})">Receive ${m.daily}</button></div></div></div>`;});
+  if(machines.length==0) html='<div class="box"><div class="sub">No machines - Buy 36 available - Bruno Mickeal CEO - 0793814204</div></div>';
+  else machines.forEach((m,i)=>{html+=`<div class="card active"><div class="img"><div class="imgbox"><img src="logo.png" onerror="this.src='skylight_logo.png'" style="width:80%;height:80%;object-fit:contain"><span class="badge">ACTIVE</span></div></div><div class="info"><b style="color:#22c55e">${m.id} ACTIVE ✅</b><div class="price">Daily: ${m.daily} UGX</div><div class="btns"><button class="rec" onclick="claimOne(${i})">Receive ${m.daily}</button></div></div></div>`;});
   document.getElementById('page-my').innerHTML=html;
 }
 function updateRefUI(){
-  const baseUrl=location.origin+location.pathname;
-  const refCode=(userName||'BrunoMickeal').replace(/\s+/g,'')+'1250';
-  const link=baseUrl+'?ref='+encodeURIComponent(refCode)+'&admin=0793814204&ceo=BrunoMickeal';
-  document.getElementById('refLink').innerText=link;
+  const baseUrl='https://benytskylight-crypto.github.io/t-crypto.github.io/';
+  const refName=(userName||'User').replace(/\s+/g,'').substring(0,12)||'User';
+  const refCode=refName+'1250';
+  const link=baseUrl+'?ref='+encodeURIComponent(refCode);
+  const linkEl=document.getElementById('refLink');
+  if(linkEl) linkEl.innerText=link;
   document.getElementById('refCount').innerText=referrals;
-  document.getElementById('vipBar').style.width=Math.min(referrals/5*100,100)+'%';
-  if(referrals>=5){
-    document.getElementById('vipStatus').innerText='✅';
-    document.getElementById('vipText').innerText='VIP UNLOCKED! VIP 17% 6 machines! Bruno Mickeal CEO';
-    document.getElementById('tab-vip').innerHTML='VIP(6) ✅';
+  const curLevel=getVipLevel();
+  document.getElementById('vipLevel').innerText='VIP '+curLevel;
+  document.getElementById('vipBar').style.width=Math.min(referrals/80*100,100)+'%';
+  const unlocked=getUnlockedVips();
+  if(curLevel>=1){
+    document.getElementById('vipStatus').innerText='✅ VIP'+curLevel;
+    document.getElementById('vipStatus').style.color='#22c55e';
+    document.getElementById('vipText').innerText='Unlocked: VIP1-VIP'+curLevel+' ('+unlocked.length+'/8) - Next: '+(curLevel<8? vipLevels[curLevel].refs+' refs for VIP'+(curLevel+1) : 'All 8 unlocked! All 36 machines!');
+    document.getElementById('tab-vip').innerHTML='VIP('+curLevel+'/8) ✅';
     document.getElementById('tab-vip').style.color='#22c55e';
   }else{
     document.getElementById('vipStatus').innerText='🔒';
-    document.getElementById('vipText').innerText=`Invite ${5-referrals} more - Pass 1234 - Bruno Mickeal CEO - Proof to 0793814204`;
+    document.getElementById('vipText').innerText='Invite 3 friends to unlock VIP1! Pass 1234 - Send proof to 0793814204';
+    document.getElementById('tab-vip').innerHTML='VIP(8) 🔒';
   }
   renderVIP();
 }
 function renderVIP(){
-  if(referrals>=5){
-    document.getElementById('page-vip').innerHTML=`<div class="box" style="border:2px solid #22c55e"><h3>✅ VIP UNLOCKED - 17% - 6 Machines - Bruno Mickeal CEO Pass ${userPass}</h3></div>${genVipCard('VIP1',5000,850)}${genVipCard('VIP2',15000,2550)}${genVipCard('VIP3',30000,5100)}${genVipCard('VIP4',60000,10200)}${genVipCard('VIP5',120000,20400)}${genVipCard('VIP6',250000,42500)}`;
+  const curLevel=getVipLevel();
+  let html='';
+  if(curLevel>=1){
+    html+=`<div class="box" style="border:2px solid #22c55e"><h3>✅ VIP ${curLevel} UNLOCKED - ${getUnlockedVips().length}/8 - 17% - All 36 Machines Included!</h3><div class="sub">You have ${referrals} referrals! Unlocked VIP1 to VIP${curLevel}! ${curLevel>=8?'All 36 machines + VIP 1-8 unlocked!': 'Invite '+(vipLevels[curLevel]?vipLevels[curLevel].refs-referrals:0)+' more for VIP'+(curLevel+1)}</div></div>`;
   }else{
-    document.getElementById('page-vip').innerHTML=`<div class="box" style="text-align:center"><h3>🔒 VIP Locked - ${referrals}/5 - Bruno Mickeal CEO</h3><div class="sub">Invite ${5-referrals} more friends with 1234 to unlock VIP 17%! VIP1 5K→850, VIP2 15K→2550, VIP3 30K→5100, VIP4 60K→10200, VIP5 120K→20400, VIP6 250K→42500! Send proof to 0793814204</div><button class="btn wa" onclick="openBottom('group')">🎁 Get Referral Link - Bruno Mickeal CEO</button></div>`;
+    html+=`<div class="box" style="text-align:center"><h3>🔒 VIP Locked - ${referrals}/3 for VIP1 - 8 Levels Waiting</h3><div class="sub">Invite 3 friends to unlock VIP1! VIP1 5K→850, VIP2 15K→2550, VIP3 30K→5100, VIP4 60K→10200, VIP5 120K→20400, VIP6 250K→42500, VIP7 400K→68000, VIP8 600K→102000! All 36 machines unlocked at VIP8! Send proof to 0793814204</div><button class="btn wa" onclick="openBottom('group')">🎁 Get Referral Link</button></div>`;
   }
+  vipLevels.forEach(v=>{
+    const unlocked=referrals>=v.refs;
+    html+=`<div class="card ${unlocked?'vipUnlocked':'vipLocked'}"><div class="img"><div class="imgbox" style="border-color:${unlocked?'#ffcc00':'#444'}"><img src="logo.png" onerror="this.src='skylight_logo.png'" style="width:70%;height:70%;object-fit:contain;opacity:${unlocked?'1':'0.3'}"><span class="badge" style="background:${unlocked?'#ffcc00':'#444'}">${unlocked?'UNLOCKED':'LOCKED'}</span></div></div><div class="info"><b style="color:${unlocked?'#ffcc00':'#666'}">${v.id} ${unlocked?'UNLOCKED ✅':'LOCKED 🔒'} - Need ${v.refs} refs - 17%</b><div class="price">Price:${v.price} Daily:${v.daily} Total:${v.daily*30} | Need ${v.refs} refs | You: ${referrals}</div><div class="btns"><button class="buy" style="background:${unlocked?'#ffcc00':'#444'};color:${unlocked?'#000':'#888'}" onclick="${unlocked?`quickBuy('${v.id}',${v.price},${v.daily})`:`alert('Need ${v.refs} referrals! You have ${referrals}. Invite ${v.refs-referrals} more!')` }">${unlocked?'Buy':'Locked'}</button><button class="rec" style="background:${unlocked?'#00c853':'#333'}">Receive</button></div></div></div>`;
+  });
+  if(curLevel>=8){
+    html+=`<div class="box" style="border:2px solid #ffcc00;text-align:center"><h3>🎉 ALL 36 MACHINES UNLOCKED AT VIP8!</h3><div class="sub">You have VIP8! All 36 machines M1-M6, A1-A6, U1-U6, L1-L6, Y1-Y6 available! Real Logo!</div><img src="logo.png" onerror="this.src='skylight_logo.png'" class="logoImg" style="max-width:200px;margin-top:10px"></div>`;
+  }
+  document.getElementById('page-vip').innerHTML=html;
 }
-function genVipCard(id,price,daily){return `<div class="card active" style="border:2px solid #ffcc00"><div class="img"><div class="imgbox" style="border-color:#ffcc00"><span class="badge" style="background:#ffcc00">VIP</span>👑<small>17%</small></div></div><div class="info"><b style="color:#ffcc00">${id} 17% 👑 Bruno Mickeal CEO</b><div class="price">Price:${price} Daily:${daily} Total:${daily*30}</div><div class="btns"><button class="buy" style="background:#ffcc00" onclick="quickBuy('${id}',${price},${daily})">Buy</button><button class="rec">Receive</button></div></div></div>`;}
-function copyRef(){navigator.clipboard.writeText(document.getElementById('refLink').innerText);alert('Copied! Bruno Mickeal CEO');}
-function shareWhatsApp(){const link=document.getElementById('refLink').innerText;const txt=encodeURIComponent(`Join SKYLIGHT AI COMPANY - CEO Bruno Mickeal - Kampala HQ - Admin 0793814204\nMy referral: ${link}\nDefault Password: 1234 - Earn 6% daily! VIP 17% after 5!\n36 Machines + Talking Founders v14.8 Bruno Mickeal CEO FIXED!`);window.open('https://wa.me/?text='+txt,'_blank');}
-function adminUnlockVIP(){const c=document.getElementById('adminUnlockCode').value;if(c!=='0793814204'){alert('Wrong code! Only 0793814204 - Bruno Mickeal CEO');return;}referrals=5;save();alert('✅ VIP UNLOCKED! Bruno Mickeal CEO');}
+function copyRef(){
+  const link=document.getElementById('refLink').innerText;
+  navigator.clipboard.writeText(link).then(()=>{alert('✅ Link Copied! Share with friends - Pass 1234');}).catch(()=>{alert('Link: '+link);});
+}
+function shareWhatsApp(){
+  const link=document.getElementById('refLink').innerText;
+  const txt=encodeURIComponent(`Join SKYLIGHT AI COMPANY - CEO Bruno Mickeal - Kampala HQ - Admin 0793814204\nMy referral: ${link}\nDefault Password: 1234 - Earn 6% daily! VIP 17%!\n36 Machines + VIP 8 Levels - Invite 3 unlock VIP1!\nVIP8 unlocks all 36 machines! v15.0 Real Logo!`);
+  window.open('https://wa.me/?text='+txt,'_blank');
+}
+function adminUnlockVIP(){
+  const c=document.getElementById('adminUnlockCode').value;
+  const refsInput=parseInt(document.getElementById('adminUnlockRefs').value||'0');
+  if(c!=='0793814204'){alert('Wrong code! Only 0793814204');return;}
+  if(refsInput>0){referrals=refsInput;}else{referrals=80;}
+  save();
+  alert('✅ VIP UNLOCKED! Level VIP'+getVipLevel()+' - '+referrals+' refs - Bruno Mickeal CEO - Real Logo + All 36 machines at VIP8!');
+  document.getElementById('adminUnlockCode').value='';document.getElementById('adminUnlockRefs').value='';
+}
 function toggleChat(){const b=document.getElementById('chatBox');b.style.display=b.style.display==='none'?'block':'none';}
 function stopAllTalk(){speechSynthesis.cancel();document.querySelectorAll('[id^="wave-"]').forEach(e=>e.style.display='none');document.querySelectorAll('[id^="text-"]').forEach(e=>e.style.display='none');document.querySelectorAll('.person').forEach(e=>e.classList.remove('talking'));}
 function resetWaves(){document.querySelectorAll('[id^="wave-"]').forEach(e=>e.style.display='none');document.querySelectorAll('.person').forEach(e=>e.classList.remove('talking'));}
@@ -180,7 +247,7 @@ function talkAlex(){const text="Hi, I'm Alex Kintu, Operations Manager under CEO
 function talkGrace(){const text="Hello, I'm Grace Achieng, CFO under CEO Bruno Mickeal. I handle finance and payouts for over 12,000 members. Your withdrawals are safe and paid within 24 hours to MTN MoMo 0793814204. Welcome to Skylight AI Company. Trusted since 2023 under Bruno Mickeal CEO.";talkWith('grace','en-US',text);}
 function playAllFounders(){
   stopAllTalk();
-  alert('🔊 v14.8 FIXED - Playing all 4 founders one by one! Bruno Mickeal in Luganda first, then English!');
+  alert('🔊 v15.0 REAL LOGO - Playing all 4 founders one by one! Bruno Mickeal Luganda first, then English!');
   const brunoText="Mwasuze mutya banange ba SKYLIGHT! Nze Bruno Mickeal, CEO era omutandisi wa SKYLIGHT AI COMPANY. Kampala HQ. Tutandika mu 2023 ne servers 44 - Nakawa 24, Entebbe 12, Jinja 8. Tulina members 12,000+. Mwebale okwegatta kuffe. Tukola 6 percent buli lunaku, VIP 17 percent. Mukole deposit ku 0793814204. Mwebale nnyo, twagala sente wamu! Admin 0793814204, Bruno Mickeal CEO!";
   const sarahText="Hello everyone! I am Dr. Sarah Nakimuli, CTO of Skylight AI Company led by our CEO Bruno Mickeal. PhD in AI from Makerere University. I manage our 44 AI trading servers running 24/7. Our AI brings 6 percent daily profit, VIP 17 percent. Trusted since 2023. Thank you! Admin 0793814204.";
   const alexText="Hi, I'm Alex Kintu, Operations Manager under CEO Bruno Mickeal. I manage our three sites: Nakawa Headquarters with 24 servers, Entebbe Data Center with 12 servers, and Jinja Solar Farm with 8 servers green energy. All systems are live and secure. Thank you for trusting Skylight AI Company with Bruno Mickeal.";
@@ -199,41 +266,26 @@ function playAllFounders(){
   }
   speakChain('bruno','en-UG',brunoText,()=>speakChain('sarah','en-US',sarahText,()=>speakChain('alex','en-US',alexText,()=>speakChain('grace','en-US',graceText,null))));
 }
-// --- FIXED LOGIN v14.8 - ALWAYS ALLOWS LOGIN - NO MORE STUCK! ---
 function doLogin(){
-  const nameEl=document.getElementById('loginName');
-  const passEl=document.getElementById('loginPass');
-  const name=nameEl.value.trim();
-  const pass=passEl.value.trim();
-  // v14.8 FIXED: Allow ANY name and ANY password! No checks! Always login!
-  if(!name){
-    alert('Please enter your name! Example: Bruno Mickeal');
-    nameEl.focus();
-    return;
-  }
-  if(!pass){
-    alert('Please enter password! Use 1234');
-    passEl.focus();
-    return;
-  }
-  // FORCE LOGIN - Save and enter!
+  const name=document.getElementById('loginName').value.trim();
+  const pass=document.getElementById('loginPass').value.trim();
+  if(!name){alert('Enter your name!');return;}
+  if(!pass){alert('Enter password 1234!');return;}
   userName=name||'Bruno Mickeal';
   userPass=pass||'1234';
   isLogged=true;
-  balance=parseInt(localStorage.getItem('sky_bal')||'0');
   localStorage.setItem('sky_name',userName);
   localStorage.setItem('sky_pass',userPass);
   localStorage.setItem('sky_logged','yes');
-  localStorage.setItem('sky_bal',balance);
   document.getElementById('loginScreen').style.display='none';
   updateUI();
-  alert('✅ WELCOME '+userName.toUpperCase()+'! Login Success! CEO Bruno Mickeal welcomes you! Password: '+userPass+' - v14.8 FIXED - Talking Founders Bruno Luganda + English! No more stuck!');
+  alert('✅ WELCOME '+userName.toUpperCase()+'! CEO Bruno Mickeal - Real Logo v15.0 - Login Success!');
 }
 function buyWithProof(){
   const sel=document.getElementById('buySelect').value;
   const txn=document.getElementById('txnId').value;
   const file=document.getElementById('proof').files[0];
-  if(!sel){alert('Select machine! 36 options! Bruno Mickeal CEO');return;}
+  if(!sel){alert('Select machine! 36 options!');return;}
   if(!txn){alert('Enter Txn ID!');return;}
   if(!file){alert('Upload proof!');return;}
   const [id,price,daily]=sel.split('|');
@@ -241,21 +293,23 @@ function buyWithProof(){
   save();
   const msg=encodeURIComponent(`NEW ORDER Machine: ${id} Price: ${price} Txn: ${txn} User: ${userName} Pass: ${userPass} CEO Bruno Mickeal Admin 0793814204`);
   window.open('https://wa.me/256793814204?text='+msg,'_blank');
-  alert(id+' ACTIVATED! MY tab - Bruno Mickeal CEO');
+  alert(id+' ACTIVATED! MY tab - Bruno Mickeal CEO - Real Logo');
   document.getElementById('buySelect').value='';document.getElementById('txnId').value='';document.getElementById('proof').value='';
   openTop('my');
 }
-function claimOne(i){const now=Date.now();if(now-lastClaim<10000){alert('Wait 10 sec');return;}balance+=machines[i].daily;lastClaim=now;save();alert('Received '+machines[i].daily+' UGX! Bruno Mickeal CEO');}
-function claimAll(){if(machines.length==0){alert('No machines! Buy 36! Bruno Mickeal CEO');return;}const now=Date.now();if(now-lastClaim<10000){alert('Wait 10 sec');return;}let total=0;machines.forEach(m=>total+=m.daily);balance+=total;lastClaim=now;save();alert('Claimed '+total+' UGX! Bruno Mickeal CEO');}
-function withdraw(){if(balance<2000){alert('Min 2000, you have '+balance+' Bruno Mickeal CEO');return;}const amt=prompt('Withdraw amount (Max '+balance+') Bruno Mickeal CEO: ',balance);if(!amt)return;const num=parseInt(amt);if(num>balance||num<2000){alert('Invalid');return;}balance-=num;save();const msg=encodeURIComponent(`WITHDRAW Amount: ${num} User: ${userName} Pass: ${userPass} CEO Bruno Mickeal Admin 0793814204`);window.open('https://wa.me/256793814204?text='+msg,'_blank');alert('Request '+num+' sent to 0793814204 - Bruno Mickeal CEO');}
-function changePic(e){const file=e.target.files[0];if(!file)return;const reader=new FileReader();reader.onload=function(ev){profPicData=ev.target.result;save();alert('Pic Updated! Bruno Mickeal CEO');};reader.readAsDataURL(file);}
-function changeName(){const n=document.getElementById('newName').value.trim();if(!n){alert('Enter name');return;}userName=n;save();alert('Name: '+n+' Bruno Mickeal CEO');document.getElementById('newName').value='';}
-function changePassword(){const oldP=document.getElementById('oldPass').value;const newP=document.getElementById('newPass').value;const conf=document.getElementById('confirmPass').value;if(oldP!==userPass && oldP!=='1234'){alert('Old wrong! Current: '+userPass+' or 1234 - Bruno Mickeal CEO');return;}if(newP.length<4){alert('Too short! Min 4');return;}if(newP!==conf){alert('No match!');return;}userPass=newP;save();alert('✅ Password Updated! New: '+newP+' - Bruno Mickeal CEO Saved!');document.getElementById('oldPass').value='';document.getElementById('newPass').value='';document.getElementById('confirmPass').value='';}
-function logout(){if(confirm('Logout? Pass '+userPass+' stays saved - Bruno Mickeal CEO')){isLogged=false;save();document.getElementById('loginScreen').style.display='flex';}}
-function genCard(id,price,daily,color,icon){return `<div class="card"><div class="img"><div class="imgbox"><span class="badge">${id}</span>${icon}<small>SKY AI</small></div></div><div class="info"><b style="color:${color}">${id} SKY 6% Bruno Mickeal CEO</b><div class="price">Price:${price} Daily:${daily} Total:${daily*30}</div><div class="btns"><button class="buy" onclick="quickBuy('${id}',${price},${daily})">Buy</button><button class="rec">Receive</button></div></div></div>`;}
-let allM='';let mM='';let aM='';let ulyM='';let buyOpts='<option value="">Select Machine - 36 Options - Bruno Mickeal CEO Pass 1234</option>';
+function claimOne(i){const now=Date.now();if(now-lastClaim<10000){alert('Wait 10 sec');return;}balance+=machines[i].daily;lastClaim=now;save();alert('Received '+machines[i].daily+' UGX!');}
+function claimAll(){if(machines.length==0){alert('No machines! Buy 36!');return;}const now=Date.now();if(now-lastClaim<10000){alert('Wait 10 sec');return;}let total=0;machines.forEach(m=>total+=m.daily);balance+=total;lastClaim=now;save();alert('Claimed '+total+' UGX!');}
+function withdraw(){if(balance<2000){alert('Min 2000, you have '+balance);return;}const amt=prompt('Withdraw amount (Max '+balance+'): ',balance);if(!amt)return;const num=parseInt(amt);if(num>balance||num<2000){alert('Invalid');return;}balance-=num;save();const msg=encodeURIComponent(`WITHDRAW Amount: ${num} User: ${userName} Pass: ${userPass} CEO Bruno Mickeal Admin 0793814204`);window.open('https://wa.me/256793814204?text='+msg,'_blank');alert('Request '+num+' sent to 0793814204');}
+function changePic(e){const file=e.target.files[0];if(!file)return;const reader=new FileReader();reader.onload=function(ev){profPicData=ev.target.result;save();alert('Pic Updated!');};reader.readAsDataURL(file);}
+function changeName(){const n=document.getElementById('newName').value.trim();if(!n){alert('Enter name');return;}userName=n;save();alert('Name: '+n);document.getElementById('newName').value='';}
+function changePassword(){const oldP=document.getElementById('oldPass').value;const newP=document.getElementById('newPass').value;const conf=document.getElementById('confirmPass').value;if(oldP!==userPass && oldP!=='1234'){alert('Old wrong! Current: '+userPass+' or 1234');return;}if(newP.length<4){alert('Too short! Min 4');return;}if(newP!==conf){alert('No match!');return;}userPass=newP;save();alert('✅ Password Updated! New: '+newP);document.getElementById('oldPass').value='';document.getElementById('newPass').value='';document.getElementById('confirmPass').value='';}
+function logout(){if(confirm('Logout? Pass '+userPass+' stays saved')){isLogged=false;save();document.getElementById('loginScreen').style.display='flex';}}
+function genCard(id,price,daily,color,icon){
+  return `<div class="card"><div class="img"><div class="imgbox"><img src="logo.png" onerror="this.src='skylight_logo.png';this.onerror=function(){this.parentNode.innerHTML='${icon}<small>SKY AI</small>'}" style="width:70%;height:70%;object-fit:contain"><span class="badge">${id}</span></div></div><div class="info"><b style="color:${color}">${id} SKY 6% - Real Logo</b><div class="price">Price:${price} Daily:${daily} Total:${daily*30}</div><div class="btns"><button class="buy" onclick="quickBuy('${id}',${price},${daily})">Buy</button><button class="rec">Receive</button></div></div></div>`;
+}
+let allM='';let mM='';let aM='';let ulyM='';let buyOpts='<option value="">Select Machine - 36 Options - Real Logo - Pass 1234</option>';
 const mData=[['M1',2000,120],['M2',5000,300],['M3',10000,600],['M4',20000,1200],['M5',40000,2400],['M6',80000,4800]];
-mData.forEach(d=>{const c=genCard(d[0],d[1],d[2],'#00e5ff','💎');mM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1]} - ${d[2]}/day 6%</option>`;});
+mData.forEach(d=>{const c=genCard(d[0],d[1],d[2],'#00e5ff','💎');mM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1]} - ${d[2]}/day 6% - Real Logo</option>`;});
 const aData=[['A1',3000,180],['A2',6000,360],['A3',12000,720],['A4',24000,1440],['A5',48000,2880],['A6',96000,5760]];
 aData.forEach(d=>{const c=genCard(d[0],d[1],d[2],'#fff','🤖');aM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1]} - ${d[2]}/day 6%</option>`;});
 const uData=[['U1',4000,240],['U2',8000,480],['U3',16000,960],['U4',32000,1920],['U5',64000,3840],['U6',128000,7680]];
@@ -264,22 +318,16 @@ const lData=[['L1',5000,300],['L2',10000,600],['L3',20000,1200],['L4',40000,2400
 lData.forEach(d=>{const c=genCard(d[0],d[1],d[2],'#ffcc00','📈');ulyM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1]} - ${d[2]}/day</option>`;});
 const yData=[['Y1',6000,360],['Y2',12000,720],['Y3',24000,1440],['Y4',48000,2880],['Y5',96000,5760],['Y6',192000,11520]];
 yData.forEach(d=>{const c=genCard(d[0],d[1],d[2],'#22c55e','⚡');ulyM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1]} - ${d[2]}/day</option>`;});
-const vipData=[['VIP1',5000,850],['VIP2',15000,2550],['VIP3',30000,5100],['VIP4',60000,10200],['VIP5',120000,20400],['VIP6',250000,42500]];
-vipData.forEach(d=>{buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1]} - ${d[2]}/day VIP 17%</option>`;});
+vipLevels.forEach(d=>{buyOpts+=`<option value="${d.id}|${d.price}|${d.daily}">${d.id} - ${d.price} - ${d.daily}/day VIP 17% - Need ${d.refs} refs - Real Logo</option>`;});
 document.getElementById('page-m').innerHTML=mM;document.getElementById('page-a').innerHTML=aM;document.getElementById('page-uly').innerHTML=ulyM;document.getElementById('page-all').innerHTML=allM;document.getElementById('buySelect').innerHTML=buyOpts;
-function quickBuy(id,price,daily){openBottom('wallet');document.getElementById('buySelect').value=id+'|'+price+'|'+daily;alert('Selected '+id+' - Bruno Mickeal CEO Pass '+userPass+' - Enter Txn ID');}
+function quickBuy(id,price,daily){openBottom('wallet');document.getElementById('buySelect').value=id+'|'+price+'|'+daily;alert('Selected '+id+' - Real Logo - Enter Txn ID');}
 function openTop(t){document.querySelectorAll('#tabs div').forEach(d=>d.classList.remove('on'));document.getElementById('tab-'+t).classList.add('on');document.querySelectorAll('.page').forEach(p=>{p.classList.remove('on');p.style.display='none';});if(t==='all'){document.getElementById('page-all').style.display='block';document.getElementById('page-all').classList.add('on');}else{document.getElementById('page-'+t).style.display='block';document.getElementById('page-'+t).classList.add('on');}document.querySelectorAll('.bottom div').forEach(b=>b.classList.remove('on'));document.getElementById('b-machines').classList.add('on');document.getElementById('tabs').style.display='flex';}
 function openBottom(b){document.querySelectorAll('.page').forEach(p=>{p.classList.remove('on');p.style.display='none';});document.querySelectorAll('.bottom div').forEach(d=>d.classList.remove('on'));document.getElementById('tabs').style.display=(b==='machines'?'flex':'none');if(b==='machines'){document.getElementById('page-all').style.display='block';document.getElementById('page-all').classList.add('on');}else{document.getElementById('page-'+b).style.display='block';document.getElementById('page-'+b).classList.add('on');}document.getElementById('b-'+b).classList.add('on');}
 function switchDep(type){document.getElementById('d-usdt').classList.remove('on');document.getElementById('d-momo').classList.remove('on');document.getElementById('dep-usdt').style.display='none';document.getElementById('dep-momo').style.display='none';if(type==='usdt'){document.getElementById('d-usdt').classList.add('on');document.getElementById('dep-usdt').style.display='block';}else{document.getElementById('d-momo').classList.add('on');document.getElementById('dep-momo').style.display='block';}}
 document.querySelectorAll('.page').forEach(p=>p.style.display='none');document.getElementById('page-home').style.display='block';document.getElementById('page-home').classList.add('on');document.getElementById('tabs').style.display='none';updateUI();
-if(!isLogged){
-  document.getElementById('loginScreen').style.display='flex';
-}else{
-  document.getElementById('loginScreen').style.display='none';
-  document.getElementById('loginName').value=userName;
-  document.getElementById('loginPass').value=userPass;
-}
+if(!isLogged){document.getElementById('loginScreen').style.display='flex';}else{document.getElementById('loginScreen').style.display='none';document.getElementById('loginName').value=userName;document.getElementById('loginPass').value=userPass;}
 window.speechSynthesis.onvoiceschanged=()=>{speechSynthesis.getVoices();};
+setTimeout(()=>{updateRefUI();},500);
 </script>
 </body>
   </html>
