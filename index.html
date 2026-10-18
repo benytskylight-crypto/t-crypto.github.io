@@ -8,9 +8,6 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
 body{background:#070e1f;color:#fff;padding-bottom:85px}
 .top{padding:8px 12px;display:flex;align-items:center;justify-content:space-between;background:#070e1f;border-bottom:1px solid #12305a;position:sticky;top:0;z-index:100}
-.logoBox{display:flex;align-items:center;gap:8px}
-.top b{color:#00d4ff;font-size:13px}
-.top span{color:#22c55e;font-size:10px}
 .tabs{display:flex;gap:14px;padding:10px 14px;background:#070e1f;border-bottom:1px solid #12305a;overflow-x:auto;position:sticky;top:52px;z-index:99}
 .tabs div{color:#5a7294;font-size:13px;white-space:nowrap;padding:6px 2px;cursor:pointer}
 .tabs .on{color:#00d4ff;border-bottom:2px solid #00d4ff;font-weight:bold}
@@ -51,50 +48,31 @@ input,select{width:100%;margin-top:8px;background:#070e1f;border:1px solid #1b2c
 .logoBig{width:100%;max-width:320px;margin:0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px;background:radial-gradient(circle at 50% 30%, #0c1e3a, #070e1f);border:2px solid #00d4ff;border-radius:16px}
 #loginScreen{position:fixed;inset:0;background:#070e1f;z-index:999;display:flex;align-items:center;justify-content:center;padding:20px}
 .loginBox{width:100%;max-width:380px;background:#101c33;border:2px solid #00d4ff;border-radius:20px;padding:22px;text-align:center}
-#liveChatBtn{position:fixed;bottom:85px;right:14px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 4px 14px #0008;z-index:300;cursor:pointer;border:2px solid #fff;animation:pulse 2s infinite}
-@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.1)}100%{transform:scale(1)}}
-#chatBox{position:fixed;bottom:150px;right:14px;width:300px;background:#101c33;border:2px solid #00d4ff;border-radius:16px;padding:14px;z-index:301;display:none;box-shadow:0 8px 24px #000a}
+#liveChatBtn{position:fixed;bottom:85px;right:14px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 4px 14px #0008;z-index:300;cursor:pointer;border:2px solid #fff}
+#chatBox{position:fixed;bottom:150px;right:14px;width:300px;background:#101c33;border:2px solid #00d4ff;border-radius:16px;padding:14px;z-index:301;display:none}
 </style>
 </head>
 <body>
 <div id="liveChatBtn" onclick="toggleChat()">💬</div>
 <div id="chatBox">
-<div style="display:flex;justify-content:space-between;align-items:center"><b style="color:#00d4ff">💬 Live Support - 0793814204</b><span onclick="toggleChat()" style="cursor:pointer;color:#6b84a8">✖️</span></div>
-<div class="sub" style="margin-top:8px;background:#0c1e3a;padding:10px;border-radius:10px">Hello <span id="chatName">Benson</span>! 👋<br>Need help? I'm online!</div>
-<button class="btn wa" style="padding:10px" onclick="window.open('https://wa.me/256793814204?text=Hello Admin 0793814204, I need live help','_blank')">💬 WhatsApp 0793814204</button>
-<button class="btn tg" style="padding:10px" onclick="window.open('https://t.me/+vyEcluEH54c0NTk0','_blank')">✈️ Telegram</button>
-<button class="btn usdt" style="padding:10px" onclick="openBottom('rules')">📜 Read Rules</button>
-<div class="sub" style="margin-top:8px;font-size:10px;text-align:center">Online • Reply 2 mins • 0793814204</div>
+<div style="display:flex;justify-content:space-between"><b style="color:#00d4ff">💬 Live Support 0793814204</b><span onclick="toggleChat()" style="cursor:pointer">✖️</span></div>
+<button class="btn wa" style="padding:10px" onclick="window.open('https://wa.me/256793814204','_blank')">WhatsApp 0793814204</button>
 </div>
 
-<div id="loginScreen">
-<div class="loginBox">
-<div style="width:80px;height:80px;border-radius:16px;background:radial-gradient(circle at 30% 30%, #00e5ff, #0066ff);border:2px solid #00d4ff;display:flex;align-items:center;justify-content:center;font-size:42px;margin:0 auto;box-shadow:0 0 20px #00d4ff88">💎</div>
+<div id="loginScreen"><div class="loginBox">
+<div style="width:80px;height:80px;border-radius:16px;background:radial-gradient(circle at 30% 30%, #00e5ff, #0066ff);border:2px solid #00d4ff;display:flex;align-items:center;justify-content:center;font-size:42px;margin:0 auto">💎</div>
 <h2 style="color:#00d4ff;margin-top:14px">SKYLIGHT AI COMPANY</h2>
-<p class="sub" style="margin-top:6px">Kampala HQ • Admin 0793814204<br>Join groups first, then login</p>
-<div style="background:#0c1e3a;border-radius:12px;padding:12px;margin:14px 0;text-align:left">
-<b style="color:#22c55e;font-size:13px">📲 JOIN OFFICIAL GROUPS:</b><br>
-<button class="btn wa" style="padding:10px" onclick="window.open('https://chat.whatsapp.com/BNeCwxPjLk95w3QejfjjM6?s=cl&p=a&mlu=4&ilr=4','_blank')">💬 Join WhatsApp</button>
-<button class="btn tg" style="padding:10px" onclick="window.open('https://t.me/+vyEcluEH54c0NTk0','_blank')">✈️ Join Telegram</button>
-<div class="sub" style="margin-top:6px">Admin: 0793814204 / 0758764116</div>
-</div>
-<div style="background:#08152a;border-radius:12px;padding:12px;text-align:left;border:1px solid #1b2c4d">
-<b style="color:#00d4ff">🔐 FIRST LOGIN - Password 1234</b><br>
-<div class="sub">Default: <b style="color:#fff;background:#00d4ff;padding:2px 8px;border-radius:6px;color:#000">1234</b></div>
-<input type="text" id="loginName" placeholder="Your Name: Benson mulyatha">
+<p class="sub">Kampala HQ • Admin 0793814204<br>Join groups first</p>
+<button class="btn wa" onclick="window.open('https://chat.whatsapp.com/BNeCwxPjLk95w3QejfjjM6','_blank')">💬 Join WhatsApp</button>
+<button class="btn tg" onclick="window.open('https://t.me/+vyEcluEH54c0NTk0','_blank')">✈️ Join Telegram</button>
+<div style="background:#08152a;border-radius:12px;padding:12px;text-align:left;border:1px solid #1b2c4d;margin-top:10px">
+<b style="color:#00d4ff">🔐 FIRST LOGIN - Password 1234</b>
+<input type="text" id="loginName" placeholder="Your Name">
 <input type="password" id="loginPass" placeholder="Password: 1234">
-<button class="btn wa" style="background:#00d4ff;color:#000;font-size:15px" onclick="doLogin()">🚀 LOGIN</button>
-</div>
-</div>
-</div>
+<button class="btn wa" style="background:#00d4ff;color:#000" onclick="doLogin()">🚀 LOGIN</button>
+</div></div></div>
 
-<div class="top">
-<div class="logoBox">
-<div style="width:38px;height:38px;border-radius:10px;background:radial-gradient(circle at 30% 30%, #00e5ff, #0066ff);border:2px solid #00d4ff;display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 0 12px #00d4ff88">💎</div>
-<div style="display:flex;flex-direction:column;line-height:1.1"><b>SKYLIGHT AI COMPANY</b><span style="font-size:9px;color:#6b84a8;letter-spacing:1px">ADMIN 0793814204</span></div>
-</div>
-<span id="topBal">Bal: 0 UGX</span>
-</div>
+<div class="top"><div style="display:flex;align-items:center;gap:8px"><div style="width:38px;height:38px;border-radius:10px;background:radial-gradient(circle at 30% 30%, #00e5ff, #0066ff);border:2px solid #00d4ff;display:flex;align-items:center;justify-content:center;font-size:20px">💎</div><div style="line-height:1.1"><b style="color:#00d4ff;font-size:13px">SKYLIGHT AI COMPANY</b><br><span style="font-size:9px;color:#6b84a8">ADMIN 0793814204</span></div></div><span id="topBal">Bal: 0 UGX</span></div>
 
 <div class="tabs" id="tabs">
 <div id="tab-all" class="on" onclick="openTop('all')">All<br>36</div>
@@ -113,76 +91,83 @@ input,select{width:100%;margin-top:8px;background:#070e1f;border:1px solid #1b2c
 <div id="page-my" class="page"></div>
 
 <div id="page-home" class="page">
-<div class="box" style="text-align:center;border:2px solid #00d4ff">
-<div class="logoBig">
-<div style="width:80px;height:80px;border-radius:16px;background:radial-gradient(circle at 30% 30%, #00e5ff, #0066ff);border:2px solid #00d4ff;display:flex;align-items:center;justify-content:center;font-size:42px;box-shadow:0 0 20px #00d4ff88">💎</div>
-<div style="margin-top:12px;text-align:center"><b style="color:#00d4ff;font-size:20px;letter-spacing:2px">SKYLIGHT</b><br><span style="color:#6b84a8;font-size:10px;letter-spacing:4px">AI COMPANY</span><br><span class="sub">Kampala HQ | Admin 0793814204</span></div>
+<div class="box" style="text-align:center;border:2px solid #00d4ff"><div class="logoBig"><div style="width:80px;height:80px;border-radius:16px;background:radial-gradient(circle at 30% 30%, #00e5ff, #0066ff);border:2px solid #00d4ff;display:flex;align-items:center;justify-content:center;font-size:42px">💎</div><b style="color:#00d4ff;font-size:20px;letter-spacing:2px;margin-top:10px">SKYLIGHT AI COMPANY</b><br><span class="sub">Kampala HQ | Admin 0793814204 | Trusted Since 2023</span></div></div>
+<div class="box" style="border:2px solid #22c55e;text-align:center"><h3>💰 Live Balance - <span id="homeUser">Benson</span></h3><div class="bal" id="homeBal">0 UGX</div><div class="sub">Daily: <span id="homeDaily">0</span> | Machines: <span id="homeCount">0</span> | Ref: <span id="homeRef">0</span>/5 VIP</div><button class="btn wa" onclick="claimAll()">💸 Claim Daily Profit</button><button class="btn usdt" onclick="openBottom('wallet')">💰 Deposit Now</button></div>
+
+<div class="box" style="border:2px solid #c084fc"><h3>👑 FOUNDERS & TEAM - SKYLIGHT AI</h3>
+<div class="person"><img src="https://i.pravatar.cc/150?img=33"><div><b>Benson Mulyatha - CEO</b><br><span class="sub">Founder • Kampala HQ • 0793814204</span></div></div>
+<div class="person"><img src="https://i.pravatar.cc/150?img=32"><div><b>Sarah Namatovu - CTO</b><br><span class="sub">AI Engineer • 44 Servers</span></div></div>
+<div class="person"><img src="https://i.pravatar.cc/150?img=12"><div><b>David Okello - Operations</b><br><span class="sub">Nakawa • Entebbe • Jinja Sites</span></div></div>
+<div class="site"><span>🏢 Nakawa HQ - 24 Servers</span><span style="color:#22c55e">● Live</span></div>
+<div class="site"><span>🏢 Entebbe Site - 12 Servers</span><span style="color:#22c55e">● Live</span></div>
+<div class="site"><span>🏢 Jinja Site - 8 Servers</span><span style="color:#22c55e">● Live</span></div>
 </div>
-</div>
-<div class="box" style="border:2px solid #22c55e;text-align:center">
-<h3>💰 Live Balance - <span id="homeUser">Benson</span></h3>
-<div class="bal" id="homeBal">0 UGX</div>
-<div class="sub">Daily: <span id="homeDaily">0</span> UGX | Machines: <span id="homeCount">0</span> | Referrals: <span id="homeRef">0</span>/5 VIP</div>
-<button class="btn wa" onclick="claimAll()">💸 Claim Daily Profit</button>
-<button class="btn usdt" onclick="openBottom('wallet')">💰 Deposit Now</button>
-</div>
-<div class="box" style="border:2px solid #00d4ff">
-<h3>🎥 Tutorial</h3>
-<div class="videoBox" style="background:#070e1f;border-radius:14px;overflow:hidden;border:2px solid #00d4ff;margin:10px 0;padding:0">
-<div id="stepSlide" style="padding:18px;text-align:center;min-height:190px;background:#0c1e3a">
-<div style="font-size:52px;margin:8px" id="slideIcon">💰</div>
-<h4 id="slideTitle" style="color:#00d4ff">Step 1: Go to Wallet</h4>
-<p id="slideText" class="sub" style="margin-top:8px;font-size:13px">Click Wallet tab → Choose USDT or MoMo 0793814204</p>
-<div style="margin-top:14px;display:flex;gap:7px;justify-content:center" id="slideDots"></div>
-</div>
-</div>
-</div>
-<div class="box" style="text-align:center"><h3>👥 Community</h3><button class="btn wa" onclick="window.open('https://chat.whatsapp.com/BNeCwxPjLk95w3QejfjjM6','_blank')">💬 WhatsApp Group</button><button class="btn tg" onclick="window.open('https://t.me/+vyEcluEH54c0NTk0','_blank')">✈️ Telegram</button></div>
+
+<div class="box" style="border:2px solid #00d4ff"><h3>🎥 How To Start - Tutorial</h3>
+<div class="videoBox"><div id="stepSlide" style="padding:18px;text-align:center;min-height:170px;background:#0c1e3a"><div style="font-size:52px" id="slideIcon">💰</div><h4 id="slideTitle" style="color:#00d4ff">Step 1: Go to Wallet</h4><p id="slideText" class="sub">Wallet → USDT or MoMo 0793814204</p><div id="slideDots" style="margin-top:10px;display:flex;gap:7px;justify-content:center"></div></div></div></div>
+
+<div class="box" style="text-align:center"><h3>👥 Community - Admin 0793814204</h3><button class="btn wa" onclick="window.open('https://chat.whatsapp.com/BNeCwxPjLk95w3QejfjjM6','_blank')">💬 WhatsApp Group</button><button class="btn tg" onclick="window.open('https://t.me/+vyEcluEH54c0NTk0','_blank')">✈️ Telegram</button></div>
 </div>
 
 <div id="page-wallet" class="page">
-<div class="box" style="text-align:center;border:2px solid #22c55e">
-<h3>💰 Wallet - Bal: <span id="walletBal">0</span> UGX</h3>
+<div class="box" style="text-align:center;border:2px solid #22c55e"><h3>💰 Wallet - Bal: <span id="walletBal">0</span> UGX</h3>
 <div class="depTab"><div id="d-usdt" class="on" onclick="switchDep('usdt')">💎 USDT</div><div id="d-momo" onclick="switchDep('momo')">📱 MoMo</div></div>
-<div id="dep-usdt"><img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=170x170&data=TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb"><p style="background:#070e1f;padding:8px;border-radius:8px;font-size:10px;word-break:break-all;border:1px solid #1b2c4d">TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb</p><button class="btn wa" onclick="navigator.clipboard.writeText('TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb');alert('Copied!')">📋 Copy USDT</button></div>
+<div id="dep-usdt"><img class="qr" src="https://api.qrserver.com/v1/create-qr-code/?size=170x170&data=TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb"><p style="background:#070e1f;padding:8px;border-radius:8px;font-size:10px;word-break:break-all;border:1px solid #1b2c4d">TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb</p><button class="btn wa" onclick="navigator.clipboard.writeText('TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb');alert('Copied USDT')">📋 Copy USDT</button></div>
 <div id="dep-momo" style="display:none"><div style="background:#070e1f;padding:10px;border-radius:10px;border:1px solid #ffcc00;text-align:left"><b style="color:#ffcc00">0793814204 - ADMIN MAIN</b><br><b style="color:#00ff88">0758764116 - ADMIN 2</b><br><span class="sub">Name: Benson Mulyatha</span></div><button class="btn momo" onclick="navigator.clipboard.writeText('0793814204');alert('Copied 0793814204')">📋 Copy 0793814204</button></div>
-<div style="margin-top:12px;text-align:left;border-top:1px solid #1b2c4d;padding-top:10px"><h3 style="font-size:13px">🛒 Buy Machine</h3><select id="buySelect"><option value="">Select Machine...</option><option value="M1|2000|120">M1 - 2,000 - 120/day</option><option value="M2|5000|300">M2 - 5K - 300/day</option><option value="M3|10000|600">M3 - 10K - 600/day</option><option value="M4|20000|1200">M4 - 20K - 1200/day</option><option value="M5|40000|2400">M5 - 40K - 2400/day</option><option value="M6|80000|4800">M6 - 80K - 4800/day</option></select><input type="text" id="txnId" placeholder="Enter Transaction ID"><input type="file" id="proof" accept="image/*"><button class="btn wa" onclick="buyWithProof()">✅ Confirm - Auto Activate</button></div><div style="margin-top:12px"><button class="btn" style="background:#ff3300;color:#fff" onclick="withdraw()">💸 Withdraw to MoMo 0793814204</button></div>
-</div>
+<div style="margin-top:12px;text-align:left;border-top:1px solid #1b2c4d;padding-top:10px"><h3>🛒 Buy Machine</h3><select id="buySelect"><option value="">Select Machine...</option></select><input type="text" id="txnId" placeholder="Txn ID"><input type="file" id="proof" accept="image/*"><button class="btn wa" onclick="buyWithProof()">✅ Confirm - Auto Activate</button></div>
+<div style="margin-top:12px"><button class="btn" style="background:#ff3300;color:#fff" onclick="withdraw()">💸 Withdraw to MoMo 0793814204</button></div></div>
 </div>
 
 <div id="page-group" class="page">
-<div class="box" style="text-align:center;border:2px solid #22c55e">
-<h3>🎁 YOUR REFERRAL LINK - Invite 5 Friends → VIP 17%</h3>
-<div style="background:#070e1f;padding:10px;border-radius:10px;border:1px solid #00d4ff;margin:10px 0;word-break:break-all;font-size:11px" id="refLink">Generating...</div>
-<button class="btn wa" onclick="copyRef()">📋 Copy Referral Link</button>
-<button class="btn tg" onclick="shareWhatsApp()">💬 Share on WhatsApp</button>
-<div style="display:flex;gap:8px;margin-top:10px"><div style="flex:1;background:#0c1e3a;padding:10px;border-radius:10px"><b style="color:#00d4ff;font-size:20px" id="refCount">0</b><br><span class="sub">Referrals</span></div><div style="flex:1;background:#0c1e3a;padding:10px;border-radius:10px"><b style="color:#22c55e;font-size:20px">5</b><br><span class="sub">Needed VIP</span></div><div style="flex:1;background:#0c1e3a;padding:10px;border-radius:10px"><b style="color:#ffcc00;font-size:20px" id="vipStatus">🔒</b><br><span class="sub">VIP Status</span></div></div>
-<div id="vipProgress" style="margin-top:10px;background:#070e1f;height:10px;border-radius:10px;overflow:hidden"><div id="vipBar" style="height:100%;width:0%;background:linear-gradient(90deg,#00d4ff,#22c55e)"></div></div>
-<div class="sub" id="vipText" style="margin-top:6px">Invite 5 friends to unlock VIP 17%! Send proof to Admin 0793814204</div>
-<button class="btn wa" style="padding:8px;font-size:11px;margin-top:8px" onclick="window.open('https://wa.me/256793814204?text=Hello Admin 0793814204, I have 5 referrals, please unlock VIP - My name: '+encodeURIComponent(userName),'_blank')">💬 Send Proof to Admin 0793814204</button>
-</div>
-<div class="box" style="text-align:center"><h3>👥 Community - Admin 0793814204</h3><button class="btn wa" onclick="window.open('https://chat.whatsapp.com/BNeCwxPjLk95w3QejfjjM6','_blank')">💬 WhatsApp Group</button><button class="btn tg" onclick="window.open('https://t.me/+vyEcluEH54c0NTk0','_blank')">✈️ Telegram Group</button></div>
+<div class="box" style="text-align:center;border:2px solid #22c55e"><h3>🎁 YOUR REFERRAL LINK - Invite 5 → VIP 17%</h3><div style="background:#070e1f;padding:10px;border-radius:10px;border:1px solid #00d4ff;margin:10px 0;word-break:break-all;font-size:11px" id="refLink">Generating...</div><button class="btn wa" onclick="copyRef()">📋 Copy Link</button><button class="btn tg" onclick="shareWhatsApp()">💬 Share WhatsApp</button><div style="display:flex;gap:8px;margin-top:10px"><div style="flex:1;background:#0c1e3a;padding:10px;border-radius:10px"><b style="color:#00d4ff;font-size:20px" id="refCount">0</b><br><span class="sub">Referrals</span></div><div style="flex:1;background:#0c1e3a;padding:10px;border-radius:10px"><b style="color:#22c55e;font-size:20px">5</b><br><span class="sub">Needed</span></div><div style="flex:1;background:#0c1e3a;padding:10px;border-radius:10px"><b style="color:#ffcc00;font-size:20px" id="vipStatus">🔒</b><br><span class="sub">VIP</span></div></div><div style="margin-top:10px;background:#070e1f;height:10px;border-radius:10px;overflow:hidden"><div id="vipBar" style="height:100%;width:0%;background:linear-gradient(90deg,#00d4ff,#22c55e)"></div></div><div class="sub" id="vipText" style="margin-top:6px">Invite 5 friends - Send proof to 0793814204</div><button class="btn wa" style="padding:8px;font-size:11px;margin-top:8px" onclick="window.open('https://wa.me/256793814204?text=Hello Admin 0793814204, I have 5 referrals - '+encodeURIComponent(userName),'_blank')">💬 Send Proof to 0793814204</button></div>
 </div>
 
 <div id="page-rules" class="page">
-<div class="box" style="border:2px solid #00d4ff">
-<h3>📜 SKYLIGHT AI - OFFICIAL RULES v14.2</h3>
+<div class="box" style="border:2px solid #00d4ff"><h3>📜 SKYLIGHT AI - FULL OFFICIAL RULES v14.3</h3>
 <div class="sub" style="text-align:left;line-height:1.7;margin-top:10px;font-size:12px">
-<b style="color:#00d4ff">1. ABOUT:</b><br>HQ Nakawa Kampala, 2023, 44 AI Servers<br><br>
-<b style="color:#22c55e">2. MACHINES:</b><br>M1-M6: 2K-80K 6% daily<br>VIP: 17% daily after 5 referrals<br><br>
-<b style="color:#ffcc00">3. DEPOSIT:</b><br>MoMo 0793814204 / 0758764116 Name Benson Mulyatha<br>USDT TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb<br><br>
-<b style="color:#c084fc">4. VIP:</b><br>Share link, 5 friends register, Send proof to 0793814204<br><br>
+<b style="color:#00d4ff">1. ABOUT US - FOUNDED 2023:</b><br>
+SKYLIGHT AI COMPANY founded in 2023 in Nakawa Kampala. We have 44 AI Servers across 3 sites: Nakawa HQ 24 servers (Main), Entebbe 12 servers, Jinja 8 servers. CEO Benson Mulyatha, CTO Sarah Namatovu, Operations David Okello. Trusted since 2023, 1000s of members. Admin contacts: 0793814204 (Main) / 0758764116 (Secondary).<br><br>
+
+<b style="color:#22c55e">2. MACHINES - TOTAL 36 MACHINES (6% Daily):</b><br>
+M-SERIES (6): M1 2,000→120/day, M2 5K→300, M3 10K→600, M4 20K→1200, M5 40K→2400, M6 80K→4800<br>
+A-SERIES (6): A1 3K→180, A2 6K→360, A3 12K→720, A4 24K→1440, A5 48K→2880, A6 96K→5760<br>
+U-SERIES (6): U1 4K→240, U2 8K→480, U3 16K→960, U4 32K→1920, U5 64K→3840, U6 128K→7680<br>
+L-SERIES (6): L1 5K→300, L2 10K→600, L3 20K→1200, L4 40K→2400, L5 80K→4800, L6 160K→9600<br>
+Y-SERIES (6): Y1 6K→360, Y2 12K→720, Y3 24K→1440, Y4 48K→2880, Y5 96K→5760, Y6 192K→11520<br>
+Total All: 36 machines - Price 2K to 192K - Daily 6%<br><br>
+
+<b style="color:#ffcc00">3. DEPOSIT METHODS:</b><br>
+MoMo: 0793814204 (Benson Mulyatha) - MAIN, 0758764116 - Secondary<br>
+USDT TRC20: TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb<br>
+Process: Wallet tab → Choose USDT or MoMo → Send → Copy Txn ID → Select Machine → Upload Screenshot → Confirm → Auto Activate to MY tab<br><br>
+
+<b style="color:#c084fc">4. VIP SYSTEM - 17% DAILY - 6 VIP MACHINES:</b><br>
+VIP1: 5,000→850/day, VIP2: 15,000→2,550/day, VIP3: 30,000→5,100/day, VIP4: 60,000→10,200/day, VIP5: 120,000→20,400/day, VIP6: 250,000→42,500/day<br>
+How to unlock: Group tab → Copy referral link → Share to 5 friends → Friends register with your link → Send proof screenshot to Admin 0793814204 on WhatsApp → Admin verifies → Unlock VIP tab → Buy VIP machines 17% daily. No cheat - Admin manual unlock only!<br><br>
+
+<b style="color:#00ff88">5. WITHDRAW & CLAIM:</b><br>
+Claim: MY tab → Receive button → 10 sec cooldown, or Home → Claim All<br>
+Withdraw: Wallet tab → Withdraw → Min 2000 UGX → Sent to Admin 0793814204 for verification → Paid to your MoMo within 24h<br><br>
+
+<b style="color:#ff6b6b">6. REFERRAL RULES:</b><br>
+Default password for new referrals: 1234. Share your link from Group tab. Each friend must use your link. 5 friends = VIP unlock. Unlimited referrals bonus coming soon.<br><br>
+
+<b style="color:#00d4ff">7. CONTACT & COMMUNITY:</b><br>
+WhatsApp Group: https://chat.whatsapp.com/BNeCwxPjLk95w3QejfjjM6<br>
+Telegram: https://t.me/+vyEcluEH54c0NTk0<br>
+Admin WhatsApp: 0793814204 / 0758764116<br>
+Support 24/7 - Reply within 2 mins during working hours<br>
 </div>
-<button class="btn wa" onclick="window.open('https://wa.me/256793814204?text=I read rules','_blank')">✅ I Understand</button>
+<button class="btn wa" onclick="window.open('https://wa.me/256793814204?text=I read full rules v14.3','_blank')">✅ I Understand Full Rules</button>
 </div>
 </div>
 
 <div id="page-set" class="page">
-<div class="box" style="text-align:center;border:2px solid #00d4ff"><img id="profilePic" class="profPic" src="https://i.pravatar.cc/150?img=33"><h3 style="margin-top:10px" id="setName">Benson</h3><div class="sub" id="setId">ID: SKY-1250 | Admin: 0793814204</div><input type="file" id="picInput" accept="image/*" style="margin-top:10px" onchange="changePic(event)"><button class="btn usdt" onclick="document.getElementById('picInput').click()">📷 Change Profile Pic</button></div>
-<div class="box"><h3>⚙️ Account</h3><div class="sub">Name: <span id="setName2">Benson</span><br>Contacts: 0793814204 / 0758764116<br>Version: v14.2 Fixed Login</div><input type="text" id="newName" placeholder="Change Name"><button class="btn usdt" onclick="changeName()">✏️ Change Name</button></div>
-<div class="box"><h3>🔒 Change Password - Default 1234</h3><input type="password" id="oldPass" placeholder="Old (1234)"><input type="password" id="newPass" placeholder="New Password"><input type="password" id="confirmPass" placeholder="Confirm"><button class="btn wa" onclick="changePassword()">🔑 Update Password</button></div>
-<div class="box"><h3>🔐 ADMIN ONLY - Unlock VIP</h3><input type="password" id="adminUnlockCode" placeholder="Admin Code 0793814204"><input type="text" id="adminUnlockName" placeholder="Member Name"><button class="btn" style="background:#ffcc00;color:#000" onclick="adminUnlockVIP()">👑 Admin Unlock VIP</button></div>
-<div class="box"><h3>🚪 Logout</h3><button class="btn" style="background:#ff3300;color:#fff" onclick="logout()">🚪 Logout</button><button class="btn" style="background:#333;color:#fff" onclick="resetAll()">🗑️ Reset All Data</button></div>
+<div class="box" style="text-align:center;border:2px solid #00d4ff"><img id="profilePic" class="profPic" src="https://i.pravatar.cc/150?img=33"><h3 style="margin-top:10px" id="setName">Benson</h3><div class="sub" id="setId">ID: SKY-1250 | Admin 0793814204</div><input type="file" id="picInput" accept="image/*" style="display:none" onchange="changePic(event)"><button class="btn usdt" onclick="document.getElementById('picInput').click()">📷 Change Pic</button></div>
+<div class="box"><h3>⚙️ Account</h3><div class="sub">Name: <span id="setName2">Benson</span><br>Version: v14.3 FULL RESTORE</div><input type="text" id="newName" placeholder="Change Name"><button class="btn usdt" onclick="changeName()">✏️ Change Name</button></div>
+<div class="box"><h3>🔒 Change Password</h3><input type="password" id="oldPass" placeholder="Old (1234)"><input type="password" id="newPass" placeholder="New"><input type="password" id="confirmPass" placeholder="Confirm"><button class="btn wa" onclick="changePassword()">🔑 Update Password</button></div>
+<div class="box"><h3>🔐 ADMIN ONLY - Unlock VIP</h3><input type="password" id="adminUnlockCode" placeholder="Admin Code 0793814204"><input type="text" id="adminUnlockName" placeholder="Member Name"><button class="btn" style="background:#ffcc00;color:#000" onclick="adminUnlockVIP()">👑 Unlock VIP</button></div>
+<div class="box"><h3>🚪 Logout</h3><button class="btn" style="background:#ff3300;color:#fff" onclick="logout()">🚪 Logout</button></div>
 </div>
 
 <div class="bottom">
@@ -222,8 +207,7 @@ function updateUI(){
 document.getElementById('topBal').innerText='Bal: '+balance+' UGX';
 document.getElementById('homeBal').innerText=balance+' UGX';
 document.getElementById('walletBal').innerText=balance;
-let daily=0;
-machines.forEach(m=>daily+=m.daily);
+let daily=0;machines.forEach(m=>daily+=m.daily);
 document.getElementById('homeDaily').innerText=daily;
 document.getElementById('homeCount').innerText=machines.length;
 document.getElementById('homeRef').innerText=referrals;
@@ -231,16 +215,14 @@ document.getElementById('tab-my').innerHTML='MY('+machines.length+')';
 document.getElementById('setName').innerText=userName||'Benson';
 document.getElementById('setName2').innerText=userName||'Benson';
 document.getElementById('homeUser').innerText=userName||'Benson';
-document.getElementById('chatName').innerText=userName||'Benson';
-document.getElementById('setId').innerText='ID: SKY-1250 | Admin: 0793814204 | '+(userName||'Benson');
+document.getElementById('setId').innerText='ID: SKY-1250 | Admin 0793814204 | '+(userName||'Benson');
 document.getElementById('profilePic').src=profPicData;
-renderMy();
-updateRefUI();
+renderMy();updateRefUI();
 }
 
 function renderMy(){
 let html='';
-if(machines.length==0) html='<div class="box"><div class="sub">No machines yet. Buy in Wallet - Admin 0793814204</div></div>';
+if(machines.length==0) html='<div class="box"><div class="sub">No machines - Buy in Wallet - 0793814204</div></div>';
 else machines.forEach((m,i)=>{
 html+=`<div class="card active"><div class="img"><div class="imgbox"><span class="badge">ACTIVE</span>💎<small>${m.id}</small></div></div><div class="info"><b style="color:#22c55e">${m.id} ACTIVE ✅</b><div class="price">Daily: ${m.daily} UGX</div><div class="btns"><button class="rec" onclick="claimOne(${i})">Receive ${m.daily}</button></div></div></div>`;
 });
@@ -261,35 +243,37 @@ document.getElementById('tab-vip').innerHTML='VIP(6) ✅';
 document.getElementById('tab-vip').style.color='#22c55e';
 }else{
 document.getElementById('vipStatus').innerText='🔒';
-document.getElementById('vipText').innerText=`Invite ${5-referrals} more friends - Send proof to Admin 0793814204`;
+document.getElementById('vipText').innerText=`Invite ${5-referrals} more - Send proof to 0793814204`;
 }
 renderVIP();
 }
 
 function renderVIP(){
 if(referrals>=5){
-document.getElementById('page-vip').innerHTML=`<div class="box" style="border:2px solid #22c55e"><h3>✅ VIP UNLOCKED - 17% Daily!</h3><div class="sub">You invited ${referrals} friends!</div></div>
-<div class="card active" style="border:2px solid #ffcc00"><div class="img"><div class="imgbox" style="border-color:#ffcc00"><span class="badge" style="background:#ffcc00">VIP1</span>👑<small>17%</small></div></div><div class="info"><b style="color:#ffcc00">VIP1 17% 👑</b><div class="price">Price:5,000 Daily:850 Total:25,500</div><div class="btns"><button class="buy" style="background:#ffcc00" onclick="quickBuy('VIP1',5000,850)">Buy</button><button class="rec">Receive</button></div></div></div>`;
+document.getElementById('page-vip').innerHTML=`
+<div class="box" style="border:2px solid #22c55e"><h3>✅ VIP UNLOCKED - 17% Daily - 6 Machines!</h3><div class="sub">You invited ${referrals} friends! Admin 0793814204</div></div>
+${genVipCard('VIP1',5000,850)}${genVipCard('VIP2',15000,2550)}${genVipCard('VIP3',30000,5100)}${genVipCard('VIP4',60000,10200)}${genVipCard('VIP5',120000,20400)}${genVipCard('VIP6',250000,42500)}`;
 }else{
-document.getElementById('page-vip').innerHTML=`<div class="box" style="text-align:center"><h3>🔒 VIP Locked - ${referrals}/5</h3><div class="sub">Invite ${5-referrals} more friends to unlock VIP 17%! Send proof to Admin 0793814204</div><button class="btn wa" onclick="openBottom('group')">🎁 Get Referral Link</button></div>`;
+document.getElementById('page-vip').innerHTML=`<div class="box" style="text-align:center"><h3>🔒 VIP Locked - ${referrals}/5</h3><div class="sub">Invite ${5-referrals} more friends to unlock VIP 17%! 6 VIP Machines waiting! Send proof to 0793814204</div><button class="btn wa" onclick="openBottom('group')">🎁 Get Referral Link</button></div>`;
 }
 }
+function genVipCard(id,price,daily){return `<div class="card active" style="border:2px solid #ffcc00"><div class="img"><div class="imgbox" style="border-color:#ffcc00"><span class="badge" style="background:#ffcc00">VIP</span>👑<small>17%</small></div></div><div class="info"><b style="color:#ffcc00">${id} 17% 👑</b><div class="price">Price:${price} Daily:${daily} Total:${daily*30}</div><div class="btns"><button class="buy" style="background:#ffcc00" onclick="quickBuy('${id}',${price},${daily})">Buy</button><button class="rec">Receive</button></div></div></div>`;}
 
-function copyRef(){navigator.clipboard.writeText(document.getElementById('refLink').innerText);alert('Referral link copied!');}
-function shareWhatsApp(){const link=document.getElementById('refLink').innerText;const text=encodeURIComponent(`Join SKYLIGHT AI COMPANY - Kampala HQ - Admin 0793814204\nMy referral: ${link}\nPassword 1234 - Earn 6% daily! VIP 17% after 5 friends!`);window.open('https://wa.me/?text='+text,'_blank');}
-function adminUnlockVIP(){const code=document.getElementById('adminUnlockCode').value;if(code!=='0793814204'){alert('Wrong admin code! Only 0793814204');return;}referrals=5;save();alert('✅ VIP UNLOCKED!');document.getElementById('adminUnlockCode').value='';}
-function toggleChat(){const box=document.getElementById('chatBox');box.style.display=box.style.display==='none'?'block':'none';}
+function copyRef(){navigator.clipboard.writeText(document.getElementById('refLink').innerText);alert('Copied!');}
+function shareWhatsApp(){const link=document.getElementById('refLink').innerText;const txt=encodeURIComponent(`Join SKYLIGHT AI COMPANY - Kampala HQ - Admin 0793814204\nMy referral: ${link}\nPass 1234 - Earn 6% daily! VIP 17% after 5!`);window.open('https://wa.me/?text='+txt,'_blank');}
+function adminUnlockVIP(){const c=document.getElementById('adminUnlockCode').value;if(c!=='0793814204'){alert('Wrong admin code!');return;}referrals=5;save();alert('✅ VIP UNLOCKED!');document.getElementById('adminUnlockCode').value='';}
+function toggleChat(){const b=document.getElementById('chatBox');b.style.display=b.style.display==='none'?'block':'none';}
 function doLogin(){
 const name=document.getElementById('loginName').value.trim();
 const pass=document.getElementById('loginPass').value.trim();
-if(!name){alert('Enter your name!');return;}
+if(!name){alert('Enter name!');return;}
 if(!pass){alert('Enter password! Default 1234');return;}
 if(userName!=='' && pass!==userPass && pass!=='1234'){alert('Wrong password! Default 1234 or '+userPass);return;}
 userName=name;
 isLogged=true;
 save();
 document.getElementById('loginScreen').style.display='none';
-alert('Welcome '+userName+'! ✅ Admin 0793814204');
+alert('Welcome '+userName+'! ✅ Admin 0793814204 - All 36 machines restored!');
 }
 function buyWithProof(){
 const sel=document.getElementById('buySelect').value;
@@ -303,45 +287,59 @@ machines.push({id,price:parseInt(price),daily:parseInt(daily),bought:Date.now()}
 save();
 const msg=encodeURIComponent(`NEW ORDER Machine: ${id} Price: ${price} Txn: ${txn} User: ${userName} Admin 0793814204`);
 window.open('https://wa.me/256793814204?text='+msg,'_blank');
-alert(id+' ACTIVATED! Check MY tab');
-document.getElementById('buySelect').value='';
-document.getElementById('txnId').value='';
-document.getElementById('proof').value='';
-openTop('my');
+alert(id+' ACTIVATED! Check MY tab - 36 machines system!');
+document.getElementById('buySelect').value='';document.getElementById('txnId').value='';document.getElementById('proof').value='';openTop('my');
 }
 function claimOne(i){const now=Date.now();if(now-lastClaim<10000){alert('Wait 10 sec');return;}balance+=machines[i].daily;lastClaim=now;save();alert('Received '+machines[i].daily+' UGX!');}
-function claimAll(){if(machines.length==0){alert('No machines yet!');return;}const now=Date.now();if(now-lastClaim<10000){alert('Wait 10 sec');return;}let total=0;machines.forEach(m=>total+=m.daily);balance+=total;lastClaim=now;save();alert('Claimed '+total+' UGX!');}
+function claimAll(){if(machines.length==0){alert('No machines!');return;}const now=Date.now();if(now-lastClaim<10000){alert('Wait 10 sec');return;}let total=0;machines.forEach(m=>total+=m.daily);balance+=total;lastClaim=now;save();alert('Claimed '+total+' UGX!');}
 function withdraw(){if(balance<2000){alert('Min 2000, you have '+balance);return;}const amt=prompt('Withdraw amount (Max '+balance+'): ',balance);if(!amt)return;const num=parseInt(amt);if(num>balance||num<2000){alert('Invalid');return;}balance-=num;save();const msg=encodeURIComponent(`WITHDRAW Amount: ${num} User: ${userName} Admin 0793814204`);window.open('https://wa.me/256793814204?text='+msg,'_blank');alert('Request '+num+' sent to 0793814204');}
-function resetAll(){if(confirm('Reset all data?')){localStorage.clear();location.reload();}}
-function changePic(e){const file=e.target.files[0];if(!file)return;const reader=new FileReader();reader.onload=function(ev){profPicData=ev.target.result;save();alert('Profile Pic Updated!');};reader.readAsDataURL(file);}
-function changeName(){const n=document.getElementById('newName').value.trim();if(!n){alert('Enter new name');return;}userName=n;save();alert('Name changed to '+n);document.getElementById('newName').value='';}
-function changePassword(){const oldP=document.getElementById('oldPass').value;const newP=document.getElementById('newPass').value;const conf=document.getElementById('confirmPass').value;if(oldP!==userPass){alert('Old wrong! Default 1234 or '+userPass);return;}if(newP.length<4){alert('Too short');return;}if(newP!==conf){alert('Not match');return;}userPass=newP;save();alert('Password Updated! New: '+newP);document.getElementById('oldPass').value='';document.getElementById('newPass').value='';document.getElementById('confirmPass').value='';}
+function changePic(e){const file=e.target.files[0];if(!file)return;const reader=new FileReader();reader.onload=function(ev){profPicData=ev.target.result;save();alert('Pic Updated!');};reader.readAsDataURL(file);}
+function changeName(){const n=document.getElementById('newName').value.trim();if(!n){alert('Enter name');return;}userName=n;save();alert('Name: '+n);document.getElementById('newName').value='';}
+function changePassword(){const oldP=document.getElementById('oldPass').value;const newP=document.getElementById('newPass').value;const conf=document.getElementById('confirmPass').value;if(oldP!==userPass){alert('Old wrong! '+userPass);return;}if(newP.length<4){alert('Too short');return;}if(newP!==conf){alert('No match');return;}userPass=newP;save();alert('Password Updated!');document.getElementById('oldPass').value='';document.getElementById('newPass').value='';document.getElementById('confirmPass').value='';}
 function logout(){if(confirm('Logout?')){isLogged=false;save();document.getElementById('loginScreen').style.display='flex';}}
 
-const M=`<div class="card"><div class="img"><div class="imgbox"><span class="badge">M1</span>💎<small>SKY AI</small></div></div><div class="info"><b style="color:#00e5ff">M1 SKY 6% ❄️</b><div class="price">Price:2,000 Daily:120 Total:3,600</div><div class="btns"><button class="buy" onclick="quickBuy('M1',2000,120)">Buy</button><button class="rec">Receive</button></div></div></div><div class="card"><div class="img"><div class="imgbox"><span class="badge">M2</span>💎<small>SKY AI</small></div></div><div class="info"><b style="color:#00e5ff">M2 SKY 6% ❄️</b><div class="price">Price:5,000 Daily:300 Total:9,000</div><div class="btns"><button class="buy" onclick="quickBuy('M2',5000,300)">Buy</button><button class="rec">Receive</button></div></div></div><div class="card"><div class="img"><div class="imgbox"><span class="badge">M3</span>💎<small>SKY AI</small></div></div><div class="info"><b style="color:#00e5ff">M3 SKY 6% ❄️</b><div class="price">Price:10,000 Daily:600 Total:18,000</div><div class="btns"><button class="buy" onclick="quickBuy('M3',10000,600)">Buy</button><button class="rec">Receive</button></div></div></div>`;
+function genCard(id,price,daily,color,icon){
+return `<div class="card"><div class="img"><div class="imgbox"><span class="badge">${id}</span>${icon}<small>SKY AI</small></div></div><div class="info"><b style="color:${color}">${id} SKY 6%</b><div class="price">Price:${price} Daily:${daily} Total:${daily*30}</div><div class="btns"><button class="buy" onclick="quickBuy('${id}',${price},${daily})">Buy</button><button class="rec">Receive</button></div></div></div>`;
+}
 
-const A=`<div class="card"><div class="img"><div class="imgbox"><span class="badge">A1</span>🤖<small>SKY AI</small></div></div><div class="info"><b>A1 SKY 6%</b><div class="price">Price:3,000 Daily:180</div><div class="btns"><button class="buy" onclick="quickBuy('A1',3000,180)">Buy</button><button class="rec">Receive</button></div></div></div><div class="card"><div class="img"><div class="imgbox"><span class="badge">A2</span>🤖<small>SKY AI</small></div></div><div class="info"><b>A2 SKY 6%</b><div class="price">Price:6,000 Daily:360</div><div class="btns"><button class="buy" onclick="quickBuy('A2',6000,360)">Buy</button><button class="rec">Receive</button></div></div></div>`;
+let allM='';let mM='';let aM='';let ulyM='';let buyOpts='<option value="">Select Machine...</option>';
 
-const ULY=`<div class="card u"><div class="img"><div class="imgbox"><span class="badge">U1</span>🔮<small>SKY AI</small></div></div><div class="info"><b style="color:#d8b4fe">U1 SKY 6% 🔮</b><div class="price">Price:4,000 Daily:240</div><div class="btns"><button class="buy" style="background:#d8b4fe" onclick="quickBuy('U1',4000,240)">Buy</button><button class="rec">Receive</button></div></div></div>`;
+const mData=[['M1',2000,120],['M2',5000,300],['M3',10000,600],['M4',20000,1200],['M5',40000,2400],['M6',80000,4800]];
+mData.forEach(d=>{const c=genCard(d[0],d[1],d[2],'#00e5ff','💎');mM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1]} - ${d[2]}/day</option>`;});
 
-document.getElementById('page-m').innerHTML=M;
-document.getElementById('page-a').innerHTML=A;
-document.getElementById('page-uly').innerHTML=ULY;
-document.getElementById('page-all').innerHTML=M+A+ULY;
+const aData=[['A1',3000,180],['A2',6000,360],['A3',12000,720],['A4',24000,1440],['A5',48000,2880],['A6',96000,5760]];
+aData.forEach(d=>{const c=genCard(d[0],d[1],d[2],'#fff','🤖');aM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1]} - ${d[2]}/day</option>`;});
+
+const uData=[['U1',4000,240],['U2',8000,480],['U3',16000,960],['U4',32000,1920],['U5',64000,3840],['U6',128000,7680]];
+uData.forEach(d=>{const c=genCard(d[0],d[1],d[2],'#d8b4fe','🔮');ulyM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1]} - ${d[2]}/day</option>`;});
+
+const lData=[['L1',5000,300],['L2',10000,600],['L3',20000,1200],['L4',40000,2400],['L5',80000,4800],['L6',160000,9600]];
+lData.forEach(d=>{const c=genCard(d[0],d[1],d[2],'#ffcc00','📈');ulyM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1]} - ${d[2]}/day</option>`;});
+
+const yData=[['Y1',6000,360],['Y2',12000,720],['Y3',24000,1440],['Y4',48000,2880],['Y5',96000,5760],['Y6',192000,11520]];
+yData.forEach(d=>{const c=genCard(d[0],d[1],d[2],'#22c55e','⚡');ulyM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1]} - ${d[2]}/day</option>`;});
+
+const vipData=[['VIP1',5000,850],['VIP2',15000,2550],['VIP3',30000,5100],['VIP4',60000,10200],['VIP5',120000,20400],['VIP6',250000,42500]];
+vipData.forEach(d=>{buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1]} - ${d[2]}/day VIP 17%</option>`;});
+
+document.getElementById('page-m').innerHTML=mM;
+document.getElementById('page-a').innerHTML=aM;
+document.getElementById('page-uly').innerHTML=ulyM;
+document.getElementById('page-all').innerHTML=allM;
+document.getElementById('buySelect').innerHTML=buyOpts;
 
 function quickBuy(id,price,daily){openBottom('wallet');document.getElementById('buySelect').value=id+'|'+price+'|'+daily;alert('Selected '+id+' - Enter Txn ID in Wallet');}
 function openTop(t){document.querySelectorAll('#tabs div').forEach(d=>d.classList.remove('on'));document.getElementById('tab-'+t).classList.add('on');document.querySelectorAll('.page').forEach(p=>{p.classList.remove('on');p.style.display='none';});if(t==='all'){document.getElementById('page-all').style.display='block';document.getElementById('page-all').classList.add('on');}else{document.getElementById('page-'+t).style.display='block';document.getElementById('page-'+t).classList.add('on');}document.querySelectorAll('.bottom div').forEach(b=>b.classList.remove('on'));document.getElementById('b-machines').classList.add('on');document.getElementById('tabs').style.display='flex';}
 function openBottom(b){document.querySelectorAll('.page').forEach(p=>{p.classList.remove('on');p.style.display='none';});document.querySelectorAll('.bottom div').forEach(d=>d.classList.remove('on'));document.getElementById('tabs').style.display=(b==='machines'?'flex':'none');if(b==='machines'){document.getElementById('page-all').style.display='block';document.getElementById('page-all').classList.add('on');}else{document.getElementById('page-'+b).style.display='block';document.getElementById('page-'+b).classList.add('on');}document.getElementById('b-'+b).classList.add('on');}
 function switchDep(type){document.getElementById('d-usdt').classList.remove('on');document.getElementById('d-momo').classList.remove('on');document.getElementById('dep-usdt').style.display='none';document.getElementById('dep-momo').style.display='none';if(type==='usdt'){document.getElementById('d-usdt').classList.add('on');document.getElementById('dep-usdt').style.display='block';}else{document.getElementById('d-momo').classList.add('on');document.getElementById('dep-momo').style.display='block';}}
 
-const slides=[{icon:"💰",title:"Step 1: Go to Wallet",text:"Wallet → USDT or MoMo 0793814204"},{icon:"📤",title:"Step 2: Send Money",text:"Send to 0793814204 - Benson Mulyatha"},{icon:"🧾",title:"Step 3: Txn ID + Proof",text:"Copy Code + Upload Screenshot"},{icon:"✅",title:"Step 4: Auto Activate!",text:"Confirm - Machine to MY tab!"},{icon:"💸",title:"Step 5: MY → Receive 6%",text:"MY tab → Receive daily!"}];
+const slides=[{icon:"💰",title:"Step 1: Go to Wallet",text:"Wallet → USDT or MoMo 0793814204"},{icon:"📤",title:"Step 2: Send Money",text:"Send to 0793814204 - Benson Mulyatha"},{icon:"🧾",title:"Step 3: Txn ID + Proof",text:"Copy Code + Upload Screenshot"},{icon:"✅",title:"Step 4: Auto Activate!",text:"Confirm - Machine to MY tab! 36 machines!"},{icon:"💸",title:"Step 5: MY → Receive 6%",text:"MY tab → Receive daily! VIP 17% after 5 friends!"}];
 let cur=0;function showSlide(){const s=slides[cur];document.getElementById('slideIcon').innerText=s.icon;document.getElementById('slideTitle').innerText=s.title;document.getElementById('slideText').innerText=s.text;let dots='';for(let i=0;i<5;i++){dots+=`<div style="width:10px;height:10px;border-radius:50%;background:${i===cur?'#00d4ff':'#1b2c4d'}"></div>`;}document.getElementById('slideDots').innerHTML=dots;}setInterval(()=>{cur=(cur+1)%5;showSlide();},3000);showSlide();
 
 document.querySelectorAll('.page').forEach(p=>p.style.display='none');
 document.getElementById('page-home').style.display='block';
 document.getElementById('page-home').classList.add('on');
 document.getElementById('tabs').style.display='none';
-
 updateUI();
 if(!isLogged){document.getElementById('loginScreen').style.display='flex';}else{document.getElementById('loginScreen').style.display='none';document.getElementById('loginName').value=userName;}
 </script>
