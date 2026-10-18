@@ -9,7 +9,6 @@
 body{background:#070e1f;color:#fff;padding-bottom:85px}
 .top{padding:8px 12px;display:flex;align-items:center;justify-content:space-between;background:#070e1f;border-bottom:1px solid #12305a;position:sticky;top:0;z-index:100}
 .logoBox{display:flex;align-items:center;gap:8px}
-.logoBox img{width:36px;height:36px;border-radius:8px;border:1.5px solid #00d4ff;background:#000}
 .top b{color:#00d4ff;font-size:13px}
 .top span{color:#22c55e;font-size:10px}
 .tabs{display:flex;gap:14px;padding:10px 14px;background:#070e1f;border-bottom:1px solid #12305a;overflow-x:auto;position:sticky;top:52px;z-index:99}
@@ -49,17 +48,16 @@ input,select{width:100%;margin-top:8px;background:#070e1f;border:1px solid #1b2c
 .site{display:flex;justify-content:space-between;background:#0d1a33;border-radius:10px;padding:10px;margin:6px 0;border-left:3px solid #22c55e}
 .profPic{width:90px;height:90px;border-radius:50%;border:3px solid #00d4ff;margin:0 auto;display:block;object-fit:cover;background:#000}
 .videoBox{background:#000;border-radius:14px;overflow:hidden;border:2px solid #00d4ff;margin:10px 0}
-.videoBox video,.videoBox iframe{width:100%;height:210px;display:block}
-.logoBig{width:100%;max-width:320px;margin:0 auto;display:block;border-radius:16px;border:2px solid #00d4ff}
+.logoBig{width:100%;max-width:320px;margin:0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px;background:radial-gradient(circle at 50% 30%, #0c1e3a, #070e1f);border:2px solid #00d4ff;border-radius:16px}
 </style>
 </head>
 <body>
 <div class="top">
 <div class="logoBox">
-<img src="logo.png" onerror="this.src='https://i.ibb.co/8D5Q2nM3/skylight-placeholder.png'" alt="SKYLIGHT">
-<b>SKYLIGHT AI COMPANY</b>
+<div style="width:38px;height:38px;border-radius:10px;background:radial-gradient(circle at 30% 30%, #00e5ff, #0066ff);border:2px solid #00d4ff;display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 0 12px #00d4ff88">💎</div>
+<div style="display:flex;flex-direction:column;line-height:1.1"><b>SKYLIGHT AI COMPANY</b><span style="font-size:9px;color:#6b84a8;letter-spacing:1px">ADMIN 0793814204</span></div>
 </div>
-<span id="topBal">Admin 0793814204</span>
+<span id="topBal">Bal: 0 UGX</span>
 </div>
 
 <div class="tabs" id="tabs">
@@ -80,9 +78,10 @@ input,select{width:100%;margin-top:8px;background:#070e1f;border:1px solid #1b2c
 
 <div id="page-home" class="page">
 <div class="box" style="text-align:center;border:2px solid #00d4ff">
-<img src="logo.png" class="logoBig" onerror="this.style.display='none'" alt="SKYLIGHT AI LOGO">
-<h3 style="margin-top:10px">🏠 SKYLIGHT AI COMPANY - Official</h3>
-<div class="sub">Kampala HQ | Admin 0793814204 | Since 2023 | 12K+ Members</div>
+<div class="logoBig">
+<div style="width:80px;height:80px;border-radius:16px;background:radial-gradient(circle at 30% 30%, #00e5ff, #0066ff);border:2px solid #00d4ff;display:flex;align-items:center;justify-content:center;font-size:42px;box-shadow:0 0 20px #00d4ff88">💎</div>
+<div style="margin-top:12px;text-align:center"><b style="color:#00d4ff;font-size:20px;letter-spacing:2px">SKYLIGHT</b><br><span style="color:#6b84a8;font-size:10px;letter-spacing:4px">AI COMPANY</span><br><span class="sub">Kampala HQ | Admin 0793814204 | Since 2023</span></div>
+</div>
 </div>
 
 <div class="box" style="border:2px solid #22c55e;text-align:center">
@@ -93,11 +92,21 @@ input,select{width:100%;margin-top:8px;background:#070e1f;border:1px solid #1b2c
 <button class="btn usdt" onclick="openBottom('wallet')">💰 Deposit Now</button>
 </div>
 
-<!-- VIDEO TUTORIAL -->
 <div class="box" style="border:2px solid #00d4ff">
 <h3>🎥 Video Tutorial - How to Deposit & Earn</h3>
-<div class="videoBox">
-<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ?rel=0" title="SKYLIGHT AI Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div class="videoBox" style="background:#070e1f;border-radius:14px;overflow:hidden;border:2px solid #00d4ff;margin:10px 0;padding:0">
+<div id="stepSlide" style="padding:18px;text-align:center;min-height:190px;background:#0c1e3a">
+<div style="font-size:52px;margin:8px" id="slideIcon">💰</div>
+<h4 id="slideTitle" style="color:#00d4ff">Step 1: Go to Wallet</h4>
+<p id="slideText" class="sub" style="margin-top:8px;font-size:13px">Click Wallet tab → Choose USDT or MoMo 0793814204</p>
+<div style="margin-top:14px;display:flex;gap:7px;justify-content:center" id="slideDots"></div>
+</div>
+<div style="border-top:1px solid #1b2c4d;padding:10px;text-align:center;background:#000">
+<p class="sub" style="font-size:11px;color:#6b84a8">When you have internet, full video here:</p>
+<div style="background:#101c33;border-radius:10px;padding:10px;margin-top:6px;text-align:left">
+<span class="sub">▶️ YouTube: SKYLIGHT AI Tutorial<br>Search on YouTube: <b style="color:#00d4ff">SKYLIGHT AI COMPANY Uganda</b></span>
+</div>
+</div>
 </div>
 <div class="sub" style="margin-top:8px">
 <b style="color:#00d4ff">Steps in Video:</b><br>
@@ -105,10 +114,9 @@ input,select{width:100%;margin-top:8px;background:#070e1f;border:1px solid #1b2c
 2. Send money to Admin 0793814204 / 0758764116<br>
 3. Copy Transaction ID + Upload Proof<br>
 4. Click Confirm - Auto Activate!<br>
-5. Go to MY tab → Click Receive daily 6%<br><br>
-<span style="color:#22c55e">💡 If video not loading, watch on YouTube: How to use SKYLIGHT</span>
+5. Go to MY tab → Click Receive daily 6%<br>
 </div>
-<button class="btn wa" onclick="window.open('https://wa.me/256793814204?text=Hello Admin 0793814204, I need video tutorial help','_blank')">💬 Need Help? Chat Admin 0793814204</button>
+<button class="btn wa" onclick="window.open('https://wa.me/256793814204?text=Hello Admin 0793814204, I need help','_blank')">💬 Need Help? Chat Admin 0793814204</button>
 </div>
 
 <div class="box">
@@ -116,6 +124,7 @@ input,select{width:100%;margin-top:8px;background:#070e1f;border:1px solid #1b2c
 <div class="site"><div><b style="color:#22c55e">● Kampala HQ - Nakawa</b><br><span class="sub">24 AI Servers • 98% Uptime</span></div><div style="color:#22c55e;font-weight:bold">LIVE</div></div>
 <div class="site"><div><b style="color:#00d4ff">● Entebbe Data Center</b><br><span class="sub">12 AI Servers • 95% Uptime</span></div><div style="color:#22c55e;font-weight:bold">LIVE</div></div>
 <div class="site"><div><b style="color:#c084fc">● Jinja Solar Farm</b><br><span class="sub">8 AI Servers • Green Energy • 97% Uptime</span></div><div style="color:#22c55e;font-weight:bold">LIVE</div></div>
+<div class="sub" style="margin-top:8px">Total Payout Today: 4,250,000 UGX • 12,847 Members Online</div>
 </div>
 
 <div class="box">
@@ -144,13 +153,13 @@ input,select{width:100%;margin-top:8px;background:#070e1f;border:1px solid #1b2c
 </div>
 
 <div id="page-group" class="page"><div class="box" style="text-align:center"><h3>👥 Community - Admin 0793814204</h3><button class="btn wa" onclick="window.open('https://chat.whatsapp.com/BNeCwxPjLk95w3QejfjjM6?s=cl&p=a&mlu=4&ilr=4','_blank')">💬 WhatsApp</button><button class="btn tg" onclick="window.open('https://t.me/+vyEcluEH54c0NTk0','_blank')">✈️ Telegram</button></div></div>
-<div id="page-rules" class="page"><div class="box"><h3>📜 Rules</h3><div class="sub">Deposit to 0793814204 or USDT → Txn + Proof → Auto Activate → Daily 6% → Withdraw</div></div></div>
+<div id="page-rules" class="page"><div class="box"><h3>📜 Rules</h3><div class="sub">Deposit to 0793814204 or USDT → Txn + Proof → Auto Activate → Daily 6% → Withdraw to MoMo 0793814204</div></div></div>
 
 <div id="page-set" class="page">
 <div class="box" style="text-align:center;border:2px solid #00d4ff"><img id="profilePic" class="profPic" src="https://i.pravatar.cc/150?img=33"><h3 style="margin-top:10px" id="setName">Benson Mulyatha</h3><div class="sub" id="setId">ID: SKY-1250 | Admin: 0793814204</div><input type="file" id="picInput" accept="image/*" style="margin-top:10px" onchange="changePic(event)"><button class="btn usdt" onclick="document.getElementById('picInput').click()">📷 Change Profile Pic</button></div>
-<div class="box"><h3>⚙️ Account</h3><div class="sub">Name: <span id="setName2">Benson Mulyatha</span><br>Contacts: 0793814204 / 0758764116<br>Version: v11 - Logo + Video</div><input type="text" id="newName" placeholder="Change Name"><button class="btn usdt" onclick="changeName()">✏️ Change Name</button></div>
+<div class="box"><h3>⚙️ Account</h3><div class="sub">Name: <span id="setName2">Benson Mulyatha</span><br>Contacts: 0793814204 / 0758764116<br>Version: v12 - Full Fixed</div><input type="text" id="newName" placeholder="Change Name"><button class="btn usdt" onclick="changeName()">✏️ Change Name</button></div>
 <div class="box"><h3>🔒 Change Password</h3><input type="password" id="oldPass" placeholder="Old Password"><input type="password" id="newPass" placeholder="New Password"><input type="password" id="confirmPass" placeholder="Confirm New"><button class="btn wa" onclick="changePassword()">🔑 Update Password</button><div class="sub">Default 1234</div></div>
-<div class="box"><h3>🚪 Logout</h3><button class="btn" style="background:#ff3300;color:#fff" onclick="logout()">🚪 Logout</button><button class="btn" style="background:#333" onclick="resetAll()">🗑️ Reset All Data</button></div>
+<div class="box"><h3>🚪 Logout</h3><button class="btn" style="background:#ff3300;color:#fff" onclick="logout()">🚪 Logout</button><button class="btn" style="background:#333;color:#fff" onclick="resetAll()">🗑️ Reset All Data</button></div>
 <div class="box"><h3>📞 Support - 0793814204</h3><button class="btn wa" onclick="window.open('https://wa.me/256793814204','_blank')">💬 Chat Admin 0793814204</button></div>
 </div>
 
@@ -167,16 +176,16 @@ input,select{width:100%;margin-top:8px;background:#070e1f;border:1px solid #1b2c
 let balance=parseInt(localStorage.getItem('sky_bal')||'0');let machines=JSON.parse(localStorage.getItem('sky_macs')||'[]');let lastClaim=parseInt(localStorage.getItem('sky_last')||'0');let userName=localStorage.getItem('sky_name')||'Benson Mulyatha';let userPass=localStorage.getItem('sky_pass')||'1234';let profPicData=localStorage.getItem('sky_pic')||'https://i.pravatar.cc/150?img=33';
 function save(){localStorage.setItem('sky_bal',balance);localStorage.setItem('sky_macs',JSON.stringify(machines));localStorage.setItem('sky_last',lastClaim);localStorage.setItem('sky_name',userName);localStorage.setItem('sky_pass',userPass);if(profPicData.startsWith('data:'))localStorage.setItem('sky_pic',profPicData);updateUI();}
 function updateUI(){document.getElementById('topBal').innerText='Bal: '+balance+' UGX';document.getElementById('homeBal').innerText=balance+' UGX';document.getElementById('walletBal').innerText=balance;let daily=0;machines.forEach(m=>daily+=m.daily);document.getElementById('homeDaily').innerText=daily;document.getElementById('homeCount').innerText=machines.length;document.getElementById('tab-my').innerHTML='MY('+machines.length+')';document.getElementById('setName').innerText=userName;document.getElementById('setName2').innerText=userName;document.getElementById('setId').innerText='ID: SKY-1250 | Admin: 0793814204 | '+userName;document.getElementById('profilePic').src=profPicData;renderMy();}
-function renderMy(){let html='';if(machines.length==0) html='<div class="box"><div class="sub">No machines yet. Buy in Wallet.</div></div>';else machines.forEach((m,i)=>{html+=`<div class="card active"><div class="img"><div class="imgbox"><span class="badge">ACTIVE</span>💎<small>${m.id}</small></div></div><div class="info"><b style="color:#22c55e">${m.id} ACTIVE ✅</b><div class="price">Daily: ${m.daily} UGX</div><div class="btns"><button class="rec" onclick="claimOne(${i})">Receive ${m.daily}</button></div></div></div>`;});document.getElementById('page-my').innerHTML=html;}
-function buyWithProof(){const sel=document.getElementById('buySelect').value;const txn=document.getElementById('txnId').value;const file=document.getElementById('proof').files[0];if(!sel){alert('Select machine!');return;}if(!txn){alert('Enter Txn ID!');return;}if(!file){alert('Upload proof!');return;}const [id,price,daily]=sel.split('|');machines.push({id,price:parseInt(price),daily:parseInt(daily),bought:Date.now()});save();const msg=encodeURIComponent(`NEW ORDER\nMachine: ${id}\nPrice: ${price}\nTxn: ${txn}\nUser: ${userName}\nAdmin 0793814204`);window.open('https://wa.me/256793814204?text='+msg,'_blank');alert(id+' ACTIVATED! Check MY tab');document.getElementById('buySelect').value='';document.getElementById('txnId').value='';document.getElementById('proof').value='';openTop('my');}
+function renderMy(){let html='';if(machines.length==0) html='<div class="box"><div class="sub">No machines yet. Buy in Wallet tab.</div></div>';else machines.forEach((m,i)=>{html+=`<div class="card active"><div class="img"><div class="imgbox"><span class="badge">ACTIVE</span>💎<small>${m.id}</small></div></div><div class="info"><b style="color:#22c55e">${m.id} ACTIVE ✅</b><div class="price">Daily: ${m.daily} UGX</div><div class="btns"><button class="rec" onclick="claimOne(${i})">Receive ${m.daily}</button></div></div></div>`;});document.getElementById('page-my').innerHTML=html;}
+function buyWithProof(){const sel=document.getElementById('buySelect').value;const txn=document.getElementById('txnId').value;const file=document.getElementById('proof').files[0];if(!sel){alert('Select machine!');return;}if(!txn){alert('Enter Transaction ID!');return;}if(!file){alert('Upload proof!');return;}const [id,price,daily]=sel.split('|');machines.push({id,price:parseInt(price),daily:parseInt(daily),bought:Date.now()});save();const msg=encodeURIComponent(`NEW ORDER\nMachine: ${id}\nPrice: ${price}\nTxn: ${txn}\nUser: ${userName}\nAdmin 0793814204`);window.open('https://wa.me/256793814204?text='+msg,'_blank');alert(id+' ACTIVATED! Check MY tab');document.getElementById('buySelect').value='';document.getElementById('txnId').value='';document.getElementById('proof').value='';openTop('my');}
 function claimOne(i){const now=Date.now();if(now-lastClaim<10000){alert('Wait 10 sec');return;}balance+=machines[i].daily;lastClaim=now;save();alert('Received '+machines[i].daily+' UGX!');}
-function claimAll(){if(machines.length==0){alert('No machines!');return;}const now=Date.now();if(now-lastClaim<10000){alert('Wait 10 sec');return;}let total=0;machines.forEach(m=>total+=m.daily);balance+=total;lastClaim=now;save();alert('Claimed '+total+' UGX!');}
+function claimAll(){if(machines.length==0){alert('No machines yet!');return;}const now=Date.now();if(now-lastClaim<10000){alert('Wait 10 seconds');return;}let total=0;machines.forEach(m=>total+=m.daily);balance+=total;lastClaim=now;save();alert('Claimed '+total+' UGX!');}
 function withdraw(){if(balance<2000){alert('Min 2000, you have '+balance);return;}const amt=prompt('Withdraw amount (Max '+balance+'): ',balance);if(!amt)return;const num=parseInt(amt);if(num>balance||num<2000){alert('Invalid');return;}balance-=num;save();const msg=encodeURIComponent(`WITHDRAW\nAmount: ${num}\nUser: ${userName}\nAdmin 0793814204`);window.open('https://wa.me/256793814204?text='+msg,'_blank');alert('Request '+num+' sent to 0793814204');}
-function resetAll(){if(confirm('Reset all?')){localStorage.clear();balance=0;machines=[];lastClaim=0;userName='Benson Mulyatha';userPass='1234';profPicData='https://i.pravatar.cc/150?img=33';updateUI();alert('Reset done');}}
+function resetAll(){if(confirm('Reset all data?')){localStorage.clear();balance=0;machines=[];lastClaim=0;userName='Benson Mulyatha';userPass='1234';profPicData='https://i.pravatar.cc/150?img=33';updateUI();alert('Reset done');}}
 function changePic(e){const file=e.target.files[0];if(!file)return;const reader=new FileReader();reader.onload=function(ev){profPicData=ev.target.result;save();alert('Profile Pic Updated! ✅');};reader.readAsDataURL(file);}
 function changeName(){const n=document.getElementById('newName').value.trim();if(!n){alert('Enter new name');return;}userName=n;save();alert('Name changed to '+n+' ✅');document.getElementById('newName').value='';}
-function changePassword(){const oldP=document.getElementById('oldPass').value;const newP=document.getElementById('newPass').value;const conf=document.getElementById('confirmPass').value;if(oldP!==userPass){alert('Old password wrong! Current: '+userPass);return;}if(newP.length<4){alert('New password too short');return;}if(newP!==conf){alert('Confirm not match');return;}userPass=newP;save();alert('Password Updated! ✅');document.getElementById('oldPass').value='';document.getElementById('newPass').value='';document.getElementById('confirmPass').value='';}
-function logout(){if(confirm('Logout?')){alert('Logged out! Your data still saved.');openBottom('home');}}
+function changePassword(){const oldP=document.getElementById('oldPass').value;const newP=document.getElementById('newPass').value;const conf=document.getElementById('confirmPass').value;if(oldP!==userPass){alert('Old password wrong! Current is: '+userPass);return;}if(newP.length<4){alert('New password too short');return;}if(newP!==conf){alert('Confirm not match');return;}userPass=newP;save();alert('Password Updated! New: '+newP+' ✅');document.getElementById('oldPass').value='';document.getElementById('newPass').value='';document.getElementById('confirmPass').value='';}
+function logout(){if(confirm('Logout? Your data stays saved.')){alert('Logged out!');openBottom('home');}}
 const M=`<div class="card"><div class="img"><div class="imgbox"><span class="badge">M1</span>💎<small>SKY AI</small></div></div><div class="info"><b style="color:#00e5ff">M1 SKY 6% ❄️</b><div class="price">Price:2,000 Daily:120 Total:3,600</div><div class="btns"><button class="buy" onclick="quickBuy('M1',2000,120)">Buy</button><button class="rec">Receive</button></div></div></div>
 <div class="card"><div class="img"><div class="imgbox"><span class="badge">M2</span>💎<small>SKY AI</small></div></div><div class="info"><b style="color:#00e5ff">M2 SKY 6% ❄️</b><div class="price">Price:5,000 Daily:300 Total:9,000</div><div class="btns"><button class="buy" onclick="quickBuy('M2',5000,300)">Buy</button><button class="rec">Receive</button></div></div></div>
 <div class="card"><div class="img"><div class="imgbox"><span class="badge">M3</span>💎<small>SKY AI</small></div></div><div class="info"><b style="color:#00e5ff">M3 SKY 6% ❄️</b><div class="price">Price:10,000 Daily:600 Total:18,000</div><div class="btns"><button class="buy" onclick="quickBuy('M3',10000,600)">Buy</button><button class="rec">Receive</button></div></div></div>
@@ -190,13 +199,27 @@ const A=`<div class="card"><div class="img"><div class="imgbox"><span class="bad
 <div class="card"><div class="img"><div class="imgbox"><span class="badge">A5</span>🤖<small>SKY AI</small></div></div><div class="info"><b>A5 SKY 6%</b><div class="price">Price:50,000 Daily:3,000 Total:90,000</div><div class="btns"><button class="buy" onclick="quickBuy('A5',50000,3000)">Buy</button><button class="rec">Receive</button></div></div></div>
 <div class="card"><div class="img"><div class="imgbox"><span class="badge">A6</span>🤖<small>SKY AI</small></div></div><div class="info"><b>A6 SKY 6%</b><div class="price">Price:100,000 Daily:6,000 Total:180,000</div><div class="btns"><button class="buy" onclick="quickBuy('A6',100000,6000)">Buy</button><button class="rec">Receive</button></div></div></div>`;
 const ULY=`<div class="card u"><div class="img"><div class="imgbox"><span class="badge">U1</span>🔮<small>SKY AI</small></div></div><div class="info"><b style="color:#d8b4fe">U1 SKY 6% 🔮</b><div class="price">Price:4,000 Daily:240 Total:7,200</div><div class="btns"><button class="buy" style="background:#d8b4fe" onclick="quickBuy('U1',4000,240)">Buy</button><button class="rec">Receive</button></div></div></div>
-<div class="card y"><div class="img"><div class="imgbox"><span class="badge">Y1</span>🔥<small>SKY AI</small></div></div><div class="info"><b style="color:#ff8a6b">Y1 SKY 6% 🔥</b><div class="price">Price:2,500 Daily:150 Total:4,500</div><div class="btns"><button class="buy" style="background:#ff8a6b" onclick="quickBuy('Y1',2500,150)">Buy</button><button class="rec">Receive</button></div></div></div>`;
-
+<div class="card y"><div class="img"><div class="imgbox"><span class="badge">Y1</span>🔥<small>SKY AI</small></div></div><div class="info"><b style="color:#ff8a6b">Y1 SKY 6% 🔥</b><div class="price">Price:2,500 Daily:150 Total:4,500</div><div class="btns"><button class="buy" style="background:#ff8a6b" onclick="quickBuy('Y1',2500,150)">Buy</button><button class="rec">Receive</button></div></div></div>
+<div class="card y"><div class="img"><div class="imgbox"><span class="badge">Y2</span>🔥<small>SKY AI</small></div></div><div class="info"><b style="color:#ff8a6b">Y2 SKY 6% 🔥</b><div class="price">Price:7,000 Daily:420 Total:12,600</div><div class="btns"><button class="buy" style="background:#ff8a6b" onclick="quickBuy('Y2',7000,420)">Buy</button><button class="rec">Receive</button></div></div></div>`;
 document.getElementById('page-m').innerHTML=M;document.getElementById('page-a').innerHTML=A;document.getElementById('page-uly').innerHTML=ULY;document.getElementById('page-vip').innerHTML='<div class="box"><h3>🔒 VIP Locked - Admin 0793814204</h3><div class="sub">Invite 5 friends to unlock VIP 17%</div></div>';document.getElementById('page-all').innerHTML=M+A+ULY;
 function quickBuy(id,price,daily){openBottom('wallet');document.getElementById('buySelect').value=id+'|'+price+'|'+daily;alert('Selected '+id+' - Now enter Txn ID in Wallet');}
 function openTop(t){document.querySelectorAll('#tabs div').forEach(d=>d.classList.remove('on'));document.getElementById('tab-'+t).classList.add('on');document.querySelectorAll('.page').forEach(p=>{p.classList.remove('on');p.style.display='none';});if(t==='all'){document.getElementById('page-all').style.display='block';document.getElementById('page-all').classList.add('on');}else{document.getElementById('page-'+t).style.display='block';document.getElementById('page-'+t).classList.add('on');}document.querySelectorAll('.bottom div').forEach(b=>b.classList.remove('on'));document.getElementById('b-machines').classList.add('on');document.getElementById('tabs').style.display='flex';}
 function openBottom(b){document.querySelectorAll('.page').forEach(p=>{p.classList.remove('on');p.style.display='none';});document.querySelectorAll('.bottom div').forEach(d=>d.classList.remove('on'));document.getElementById('tabs').style.display=(b==='machines'?'flex':'none');if(b==='machines'){document.getElementById('page-all').style.display='block';document.getElementById('page-all').classList.add('on');}else{document.getElementById('page-'+b).style.display='block';document.getElementById('page-'+b).classList.add('on');}document.getElementById('b-'+b).classList.add('on');}
 function switchDep(type){document.getElementById('d-usdt').classList.remove('on');document.getElementById('d-momo').classList.remove('on');document.getElementById('dep-usdt').style.display='none';document.getElementById('dep-momo').style.display='none';if(type==='usdt'){document.getElementById('d-usdt').classList.add('on');document.getElementById('dep-usdt').style.display='block';}else{document.getElementById('d-momo').classList.add('on');document.getElementById('dep-momo').style.display='block';}}
+// Offline slideshow fix
+const slides=[{icon:"💰",title:"Step 1: Go to Wallet",text:"Click Wallet tab → Choose USDT or MoMo 0793814204"},{icon:"📤",title:"Step 2: Send Money",text:"Send to Admin 0793814204 / 0758764116 - Name Benson Mulyatha"},{icon:"🧾",title:"Step 3: Copy Txn ID + Proof",text:"Copy Transaction Code + Upload Screenshot"},{icon:"✅",title:"Step 4: Confirm - Auto Activate!",text:"Click Confirm - Machine goes to MY tab instantly!"},{icon:"💸",title:"Step 5: MY tab → Receive 6%",text:"Go to MY(1) tab → Click Receive daily - Balance grows!"}];
+let cur=0;
+function showSlide(){
+const s=slides[cur];
+document.getElementById('slideIcon').innerText=s.icon;
+document.getElementById('slideTitle').innerText=s.title;
+document.getElementById('slideText').innerText=s.text;
+let dots='';
+for(let i=0;i<5;i++){dots+=`<div style="width:10px;height:10px;border-radius:50%;background:${i===cur?'#00d4ff':'#1b2c4d'}"></div>`;}
+document.getElementById('slideDots').innerHTML=dots;
+}
+setInterval(()=>{cur=(cur+1)%5;showSlide();},3000);
+showSlide();
 document.querySelectorAll('.page').forEach(p=>p.style.display='none');document.getElementById('page-home').style.display='block';document.getElementById('page-home').classList.add('on');document.getElementById('tabs').style.display='none';
 profPicData=localStorage.getItem('sky_pic')||profPicData;updateUI();
 </script>
