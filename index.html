@@ -51,21 +51,18 @@ input,select{width:100%;margin-top:8px;background:#070e1f;border:1px solid #1b2c
 .logoBig{width:100%;max-width:320px;margin:0 auto;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px;background:radial-gradient(circle at 50% 30%, #0c1e3a, #070e1f);border:2px solid #00d4ff;border-radius:16px}
 #loginScreen{position:fixed;inset:0;background:#070e1f;z-index:999;display:flex;align-items:center;justify-content:center;padding:20px}
 .loginBox{width:100%;max-width:380px;background:#101c33;border:2px solid #00d4ff;border-radius:20px;padding:22px;text-align:center}
-/* LIVE CHAT FLOAT */
 #liveChatBtn{position:fixed;bottom:85px;right:14px;width:56px;height:56px;background:#25D366;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;box-shadow:0 4px 14px #0008;z-index:300;cursor:pointer;border:2px solid #fff;animation:pulse 2s infinite}
 @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.1)}100%{transform:scale(1)}}
 #chatBox{position:fixed;bottom:150px;right:14px;width:300px;background:#101c33;border:2px solid #00d4ff;border-radius:16px;padding:14px;z-index:301;display:none;box-shadow:0 8px 24px #000a}
 </style>
 </head>
 <body>
-
-<!-- LIVE CHAT FLOATING -->
 <div id="liveChatBtn" onclick="toggleChat()">💬</div>
 <div id="chatBox">
 <div style="display:flex;justify-content:space-between;align-items:center"><b style="color:#00d4ff">💬 Live Support - Admin 0793814204</b><span onclick="toggleChat()" style="cursor:pointer;color:#6b84a8">✖️</span></div>
-<div class="sub" style="margin-top:8px;background:#0c1e3a;padding:10px;border-radius:10px">Hello <span id="chatName">Benson</span>! 👋<br>Need help with deposit? I'm online now!</div>
-<button class="btn wa" style="padding:10px" onclick="window.open('https://wa.me/256793814204?text=Hello Admin 0793814204, I need live help','_blank')">💬 Chat on WhatsApp 0793814204</button>
-<button class="btn tg" style="padding:10px" onclick="window.open('https://t.me/+vyEcluEH54c0NTk0','_blank')">✈️ Chat on Telegram</button>
+<div class="sub" style="margin-top:8px;background:#0c1e3a;padding:10px;border-radius:10px">Hello <span id="chatName">Benson</span>! 👋<br>Need help? I'm online!</div>
+<button class="btn wa" style="padding:10px" onclick="window.open('https://wa.me/256793814204?text=Hello Admin 0793814204, I need live help','_blank')">💬 Chat WhatsApp 0793814204</button>
+<button class="btn tg" style="padding:10px" onclick="window.open('https://t.me/+vyEcluEH54c0NTk0','_blank')">✈️ Chat Telegram</button>
 <button class="btn usdt" style="padding:10px" onclick="openBottom('rules')">📜 Read Rules</button>
 <div class="sub" style="margin-top:8px;font-size:10px;text-align:center">Online now • Reply in 2 mins • 0793814204 / 0758764116</div>
 </div>
@@ -162,28 +159,39 @@ input,select{width:100%;margin-top:8px;background:#070e1f;border:1px solid #1b2c
 <div id="page-group" class="page">
 <div class="box" style="text-align:center;border:2px solid #22c55e">
 <h3>🎁 YOUR REFERRAL LINK - Invite 5 Friends → VIP 17% UNLOCK</h3>
-<div class="sub" style="margin-top:6px">Share this link, when friends register you get referral count</div>
+<div class="sub" style="margin-top:6px">Share this link, when friends register using your link you get count. Send proof to Admin 0793814204 to unlock VIP</div>
 <div style="background:#070e1f;padding:10px;border-radius:10px;border:1px solid #00d4ff;margin:10px 0;word-break:break-all;font-size:11px" id="refLink">Generating...</div>
 <button class="btn wa" onclick="copyRef()">📋 Copy Referral Link</button>
 <button class="btn tg" onclick="shareWhatsApp()">💬 Share on WhatsApp</button>
 <div style="display:flex;gap:8px;margin-top:10px"><div style="flex:1;background:#0c1e3a;padding:10px;border-radius:10px"><b style="color:#00d4ff;font-size:20px" id="refCount">0</b><br><span class="sub">Referrals</span></div><div style="flex:1;background:#0c1e3a;padding:10px;border-radius:10px"><b style="color:#22c55e;font-size:20px">5</b><br><span class="sub">Needed for VIP</span></div><div style="flex:1;background:#0c1e3a;padding:10px;border-radius:10px"><b style="color:#ffcc00;font-size:20px" id="vipStatus">🔒</b><br><span class="sub">VIP Status</span></div></div>
 <div id="vipProgress" style="margin-top:10px;background:#070e1f;height:10px;border-radius:10px;overflow:hidden"><div id="vipBar" style="height:100%;width:0%;background:linear-gradient(90deg,#00d4ff,#22c55e)"></div></div>
-<div class="sub" id="vipText" style="margin-top:6px">Invite 5 friends to unlock VIP 17% daily machines!</div>
-<button class="btn" style="background:#ff8a6b;color:#000" onclick="simulateInvite()">➕ Simulate 1 Referral (For Testing)</button>
+<div class="sub" id="vipText" style="margin-top:6px">Invite 5 friends to unlock VIP 17%! Send proof to Admin 0793814204</div>
+<div style="margin-top:12px;background:#08152a;padding:10px;border-radius:10px;border:1px solid #1b2c4d;text-align:left">
+<b style="color:#00d4ff;font-size:12px">📋 HOW TO UNLOCK VIP (Real System):</b><br>
+<div class="sub" style="font-size:11px;margin-top:6px">
+1. Copy your referral link above<br>
+2. Share to 5 friends on WhatsApp<br>
+3. Friends must register with your link: ?ref=YOURNAME<br>
+4. Take screenshot of 5 friends who joined<br>
+5. Send proof to Admin <b style="color:#25D366">0793814204</b> on WhatsApp<br>
+6. Admin will verify and unlock your VIP 17% within 1 hour!
+</div>
+<button class="btn wa" style="padding:8px;font-size:11px" onclick="window.open('https://wa.me/256793814204?text=Hello Admin 0793814204, I have 5 referrals, please unlock my VIP - My name: '+encodeURIComponent(userName),'_blank')">💬 Send Proof to Admin 0793814204</button>
+</div>
 </div>
 <div class="box" style="text-align:center"><h3>👥 Community - Admin 0793814204</h3><button class="btn wa" onclick="window.open('https://chat.whatsapp.com/BNeCwxPjLk95w3QejfjjM6?s=cl&p=a&mlu=4&ilr=4','_blank')">💬 WhatsApp Group</button><button class="btn tg" onclick="window.open('https://t.me/+vyEcluEH54c0NTk0','_blank')">✈️ Telegram Group</button></div>
 </div>
 
 <div id="page-rules" class="page">
 <div class="box" style="border:2px solid #00d4ff">
-<h3>📜 SKYLIGHT AI - OFFICIAL RULES v14</h3>
+<h3>📜 SKYLIGHT AI - OFFICIAL RULES v14.1</h3>
 <div class="sub" style="text-align:left;line-height:1.7;margin-top:10px;font-size:12px">
 <b style="color:#00d4ff">1. ABOUT:</b><br>- HQ Nakawa Kampala, 2023, 44 AI Servers, 3 Live Sites<br><br>
-<b style="color:#22c55e">2. MACHINES:</b><br>- M1-M6: 2K-80K, 6% daily, 30 days total 180% return<br>- A1-A6: 3K-100K 6%<br>- U/L/Y: 2.5K-7K 6%<br>- VIP: 17% daily - Unlock after 5 referrals<br><br>
+<b style="color:#22c55e">2. MACHINES:</b><br>- M1-M6: 2K-80K, 6% daily, 30 days total<br>- A1-A6: 3K-100K 6%<br>- U/L/Y: 2.5K-7K 6%<br>- VIP: 17% daily - Unlock after 5 verified referrals<br><br>
 <b style="color:#ffcc00">3. DEPOSIT:</b><br>- MoMo 0793814204 / 0758764116 Name Benson Mulyatha<br>- USDT TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb<br>- Must: Txn ID + Proof → Auto Activate → MY tab<br><br>
 <b style="color:#ff8a6b">4. DAILY CLAIM:</b><br>- MY tab → Receive every 24h, 10 sec anti-spam<br><br>
 <b style="color:#00d4ff">5. WITHDRAW:</b><br>- Min 2,000, Max full balance, Fee 0%, Time 2h to MoMo<br><br>
-<b style="color:#c084fc">6. REFERRAL & VIP:</b><br>- Share link in Group tab, 5 active referrals = VIP 17% unlock<br>- VIP M1: 5K → 850/day 17%<br><br>
+<b style="color:#c084fc">6. REFERRAL & VIP - CHEAT PROOF:</b><br>- Share link in Group tab, 5 real friends must register<br>- Send proof screenshot to Admin 0793814204<br>- Admin verifies and unlocks VIP 17% manually<br>- No simulate button - Real invites only!<br>- VIP M1: 5K → 850/day 17%<br><br>
 <b style="color:#22c55e">7. SECURITY:</b><br>- First Password 1234, Change in Set, Official contacts 0793814204 only<br><br>
 </div>
 <button class="btn wa" onclick="window.open('https://wa.me/256793814204?text=I read rules','_blank')">✅ I Understand - Chat Admin</button>
@@ -192,8 +200,9 @@ input,select{width:100%;margin-top:8px;background:#070e1f;border:1px solid #1b2c
 
 <div id="page-set" class="page">
 <div class="box" style="text-align:center;border:2px solid #00d4ff"><img id="profilePic" class="profPic" src="https://i.pravatar.cc/150?img=33"><h3 style="margin-top:10px" id="setName">Benson Mulyatha</h3><div class="sub" id="setId">ID: SKY-1250 | Admin: 0793814204</div><input type="file" id="picInput" accept="image/*" style="margin-top:10px" onchange="changePic(event)"><button class="btn usdt" onclick="document.getElementById('picInput').click()">📷 Change Profile Pic</button></div>
-<div class="box"><h3>⚙️ Account</h3><div class="sub">Name: <span id="setName2">Benson Mulyatha</span><br>Contacts: 0793814204 / 0758764116<br>Version: v14 Referral+VIP+LiveChat</div><input type="text" id="newName" placeholder="Change Name"><button class="btn usdt" onclick="changeName()">✏️ Change Name</button></div>
+<div class="box"><h3>⚙️ Account</h3><div class="sub">Name: <span id="setName2">Benson Mulyatha</span><br>Contacts: 0793814204 / 0758764116<br>Version: v14.1 No Cheat Production</div><input type="text" id="newName" placeholder="Change Name"><button class="btn usdt" onclick="changeName()">✏️ Change Name</button></div>
 <div class="box"><h3>🔒 Change Password - First 1234</h3><input type="password" id="oldPass" placeholder="Old (Default 1234)"><input type="password" id="newPass" placeholder="New Password"><input type="password" id="confirmPass" placeholder="Confirm"><button class="btn wa" onclick="changePassword()">🔑 Update Password</button></div>
+<div class="box"><h3>🔐 ADMIN ONLY - Unlock VIP</h3><div class="sub" style="font-size:11px">For Admin 0793814204 only - Enter code to unlock member VIP after verifying 5 referrals</div><input type="password" id="adminUnlockCode" placeholder="Admin Code 0793814204"><input type="text" id="adminUnlockName" placeholder="Member Name to Unlock (leave blank for self)"><button class="btn" style="background:#ffcc00;color:#000" onclick="adminUnlockVIP()">👑 Admin Unlock VIP 17%</button></div>
 <div class="box"><h3>🚪 Logout</h3><button class="btn" style="background:#ff3300;color:#fff" onclick="logout()">🚪 Logout</button><button class="btn" style="background:#333;color:#fff" onclick="resetAll()">🗑️ Reset All Data</button></div>
 </div>
 
@@ -208,17 +217,17 @@ input,select{width:100%;margin-top:8px;background:#070e1f;border:1px solid #1b2c
 
 <script>
 let balance=parseInt(localStorage.getItem('sky_bal')||'0');let machines=JSON.parse(localStorage.getItem('sky_macs')||'[]');let lastClaim=parseInt(localStorage.getItem('sky_last')||'0');let userName=localStorage.getItem('sky_name')||'';let userPass=localStorage.getItem('sky_pass')||'1234';let profPicData=localStorage.getItem('sky_pic')||'https://i.pravatar.cc/150?img=33';let isLogged=localStorage.getItem('sky_logged')==='yes';let referrals=parseInt(localStorage.getItem('sky_ref')||'0');
-function save(){localStorage.setItem('sky_bal',balance);localStorage.setItem('sky_macs',JSON.stringify(machines));localStorage.setItem('sky_last',lastClaim);localStorage.setItem('sky_name',userName);localStorage.setItem('sky_pass',userPass);localStorage.setItem('sky_ref',referrals);if(profPicData.startsWith('data:'))localStorage.setItem('sky_pic',profPicData);localStorage.setItem('sky_logged',isLogged?'yes':'no');updateUI();}
+function save(){localStorage.setItem('sky_bal',balance);localStorage.setItem('sky_macs',JSON.stringify(machines));localStorage.setItem('sky_last',lastClaim);localStorage.setItem('sky_name',userName);localStorage.setItem('sky_pass',userPass);localStorage.setItem('sky_ref',referrals);if(profPicData.startsWith('data:'))localStorage.setItem('sky_pic',[STRIPPED]
 function updateUI(){document.getElementById('topBal').innerText='Bal: '+balance+' UGX';document.getElementById('homeBal').innerText=balance+' UGX';document.getElementById('walletBal').innerText=balance;let daily=0;machines.forEach(m=>daily+=m.daily);document.getElementById('homeDaily').innerText=daily;document.getElementById('homeCount').innerText=machines.length;document.getElementById('homeRef').innerText=referrals;document.getElementById('tab-my').innerHTML='MY('+machines.length+')';document.getElementById('setName').innerText=userName||'Benson Mulyatha';document.getElementById('setName2').innerText=userName||'Benson Mulyatha';document.getElementById('homeUser').innerText=userName||'Benson Mulyatha';document.getElementById('chatName').innerText=userName||'Benson';document.getElementById('setId').innerText='ID: SKY-1250 | Admin: 0793814204 | '+(userName||'Benson Mulyatha');document.getElementById('profilePic').src=profPicData;renderMy();updateRefUI();}
 function renderMy(){let html='';if(machines.length==0) html='<div class="box"><div class="sub">No machines yet. Buy in Wallet - Admin 0793814204</div></div>';else machines.forEach((m,i)=>{html+=`<div class="card active"><div class="img"><div class="imgbox"><span class="badge">ACTIVE</span>💎<small>${m.id}</small></div></div><div class="info"><b style="color:#22c55e">${m.id} ACTIVE ✅</b><div class="price">Daily: ${m.daily} UGX</div><div class="btns"><button class="rec" onclick="claimOne(${i})">Receive ${m.daily}</button></div></div></div>`;});document.getElementById('page-my').innerHTML=html;}
-function updateRefUI(){const baseUrl=location.origin+location.pathname;const refCode=(userName||'Benson').replace(/\s+/g,'')+'1250';const link=baseUrl+'?ref='+encodeURIComponent(refCode)+'&admin=0793814204';document.getElementById('refLink').innerText=link;document.getElementById('refCount').innerText=referrals;document.getElementById('vipBar').style.width=Math.min(referrals/5*100,100)+'%';if(referrals>=5){document.getElementById('vipStatus').innerText='✅';document.getElementById('vipText').innerText='VIP UNLOCKED! Go to VIP tab - 17% daily machines! 🎉';document.getElementById('tab-vip').innerHTML='VIP(6) ✅';document.getElementById('tab-vip').style.color='#22c55e';}else{document.getElementById('vipStatus').innerText='🔒';document.getElementById('vipText').innerText=`Invite ${5-referrals} more friends to unlock VIP 17%!`;}renderVIP();}
+function updateRefUI(){const baseUrl=location.origin+location.pathname;const refCode=(userName||'Benson').replace(/\s+/g,'')+'1250';const link=baseUrl+'?ref='+encodeURIComponent(refCode)+'&admin=0793814204';document.getElementById('refLink').innerText=link;document.getElementById('refCount').innerText=referrals;document.getElementById('vipBar').style.width=Math.min(referrals/5*100,100)+'%';if(referrals>=5){document.getElementById('vipStatus').innerText='✅';document.getElementById('vipText').innerText='VIP UNLOCKED! Go to VIP tab - 17% daily machines! 🎉';document.getElementById('tab-vip').innerHTML='VIP(6) ✅';document.getElementById('tab-vip').style.color='#22c55e';}else{document.getElementById('vipStatus').innerText='🔒';document.getElementById('vipText').innerText=`Invite ${5-referrals} more friends - Send proof to Admin 0793814204 to unlock VIP!`;}renderVIP();}
 function renderVIP(){if(referrals>=5){document.getElementById('page-vip').innerHTML=`<div class="box" style="border:2px solid #22c55e"><h3>✅ VIP UNLOCKED - 17% Daily!</h3><div class="sub">You invited ${referrals} friends - VIP machines unlocked!</div></div>
 <div class="card active" style="border:2px solid #ffcc00"><div class="img"><div class="imgbox" style="border-color:#ffcc00"><span class="badge" style="background:#ffcc00">VIP1</span>👑<small>17%</small></div></div><div class="info"><b style="color:#ffcc00">VIP1 17% Daily 👑</b><div class="price">Price:5,000 Daily:850 Total:25,500 (30 days)</div><div class="btns"><button class="buy" style="background:#ffcc00" onclick="quickBuy('VIP1',5000,850)">Buy</button><button class="rec">Receive</button></div></div></div>
 <div class="card active" style="border:2px solid #ffcc00"><div class="img"><div class="imgbox" style="border-color:#ffcc00"><span class="badge" style="background:#ffcc00">VIP2</span>👑<small>17%</small></div></div><div class="info"><b style="color:#ffcc00">VIP2 17% Daily 👑</b><div class="price">Price:15,000 Daily:2,550 Total:76,500</div><div class="btns"><button class="buy" style="background:#ffcc00" onclick="quickBuy('VIP2',15000,2550)">Buy</button><button class="rec">Receive</button></div></div></div>
-<div class="card active" style="border:2px solid #ffcc00"><div class="img"><div class="imgbox" style="border-color:#ffcc00"><span class="badge" style="background:#ffcc00">VIP3</span>👑<small>17%</small></div></div><div class="info"><b style="color:#ffcc00">VIP3 17% Daily 👑</b><div class="price">Price:30,000 Daily:5,100 Total:153,000</div><div class="btns"><button class="buy" style="background:#ffcc00" onclick="quickBuy('VIP3',30000,5100)">Buy</button><button class="rec">Receive</button></div></div></div>`;}else{document.getElementById('page-vip').innerHTML=`<div class="box" style="text-align:center"><h3>🔒 VIP Locked - ${referrals}/5 Referrals</h3><div class="sub">Invite ${5-referrals} more friends to unlock VIP 17% daily!<br>Share your referral link in Group tab</div><div style="margin-top:10px;background:#070e1f;height:10px;border-radius:10px;overflow:hidden"><div style="height:100%;width:${referrals/5*100}%;background:linear-gradient(90deg,#00d4ff,#22c55e)"></div></div><button class="btn wa" onclick="openBottom('group')">🎁 Get Referral Link</button></div>`;}}
-function copyRef(){navigator.clipboard.writeText(document.getElementById('refLink').innerText);alert('Referral link copied! Share to friends!');}
-function shareWhatsApp(){const link=document.getElementById('refLink').innerText;const text=encodeURIComponent(`Join SKYLIGHT AI COMPANY - Kampala HQ - Admin 0793814204\nMy referral link: ${link}\nDefault password 1234 - Earn 6% daily!`);window.open('https://wa.me/?text='+text,'_blank');}
-function simulateInvite(){referrals++;save();alert(`Referral +1! Now ${referrals}/5 - ${referrals>=5?'VIP UNLOCKED! 🎉 Go to VIP tab':'Need '+(5-referrals)+' more'}`);}
+<div class="card active" style="border:2px solid #ffcc00"><div class="img"><div class="imgbox" style="border-color:#ffcc00"><span class="badge" style="background:#ffcc00">VIP3</span>👑<small>17%</small></div></div><div class="info"><b style="color:#ffcc00">VIP3 17% Daily 👑</b><div class="price">Price:30,000 Daily:5,100 Total:153,000</div><div class="btns"><button class="buy" style="background:#ffcc00" onclick="quickBuy('VIP3',30000,5100)">Buy</button><button class="rec">Receive</button></div></div></div>`;}else{document.getElementById('page-vip').innerHTML=`<div class="box" style="text-align:center"><h3>🔒 VIP Locked - ${referrals}/5 Referrals</h3><div class="sub">Invite ${5-referrals} more friends to unlock VIP 17%!<br><b>How to unlock:</b><br>1. Share your link in Group tab<br>2. Friends register with your link<br>3. Screenshot proof<br>4. Send to Admin 0793814204<br>5. Admin unlocks you!</div><div style="margin-top:10px;background:#070e1f;height:10px;border-radius:10px;overflow:hidden"><div style="height:100%;width:${referrals/5*100}%;background:linear-gradient(90deg,#00d4ff,#22c55e)"></div></div><button class="btn wa" onclick="openBottom('group')">🎁 Get Referral Link</button><button class="btn" style="background:#ffcc00;color:#000;margin-top:8px" onclick="window.open('https://wa.me/256793814204?text=Hello Admin 0793814204, I have ${referrals} referrals, need ${5-referrals} more for VIP - My name: '+encodeURIComponent(userName),'_blank')">💬 Chat Admin 0793814204</button></div>`;}}
+function copyRef(){navigator.clipboard.writeText(document.getElementById('refLink').innerText);alert('Referral link copied! Share to 5 friends on WhatsApp!');}
+function shareWhatsApp(){const link=document.getElementById('refLink').innerText;const text=encodeURIComponent(`Join SKYLIGHT AI COMPANY - Kampala HQ - Admin 0793814204\nMy referral link: ${link}\nDefault password 1234 - Earn 6% daily!\nVIP 17% unlocks after 5 friends!`);window.open('https://wa.me/?text='+text,'_blank');}
+function adminUnlockVIP(){const code=document.getElementById('adminUnlockCode').value;const name=document.getElementById('adminUnlockName').value;if(code!=='0793814204'){alert('Wrong admin code! Only 0793814204');return;}referrals=5;save();alert('✅ VIP UNLOCKED! '+(name||userName)+' now has VIP 17%!');document.getElementById('adminUnlockCode').value='';document.getElementById('adminUnlockName').value='';}
 function toggleChat(){const box=document.getElementById('chatBox');box.style.display=box.style.display==='none'?'block':'none';}
 function doLogin(){const name=document.getElementById('loginName').value.trim();const pass=document.getElementById('loginPass').value.trim();if(!name){alert('Enter your name!');return;}if(!pass){alert('Enter password! Default 1234');return;}if(userName!=='' && pass!==userPass && pass!=='1234'){alert('Wrong password! Default 1234 or '+userPass);return;}userName=name;isLogged=true;save();document.getElementById('loginScreen').style.display='none';alert('Welcome '+userName+'! ✅ Admin 0793814204');}
 function buyWithProof(){const sel=document.getElementById('buySelect').value;const txn=document.getElementById('txnId').value;const file=document.getElementById('proof').files[0];if(!sel){alert('Select machine!');return;}if(!txn){alert('Enter Txn ID!');return;}if(!file){alert('Upload proof!');return;}const [id,price,daily]=sel.split('|');machines.push({id,price:parseInt(price),daily:parseInt(daily),bought:Date.now()});save();const msg=encodeURIComponent(`NEW ORDER\nMachine: ${id}\nPrice: ${price}\nTxn: ${txn}\nUser: ${userName}\nAdmin 0793814204`);window.open('https://wa.me/256793814204?text='+msg,'_blank');alert(id+' ACTIVATED! Check MY tab');document.getElementById('buySelect').value='';document.getElementById('txnId').value='';document.getElementById('proof').value='';openTop('my');}
@@ -243,8 +252,6 @@ let cur=0;function showSlide(){const s=slides[cur];document.getElementById('slid
 document.querySelectorAll('.page').forEach(p=>p.style.display='none');document.getElementById('page-home').style.display='block';document.getElementById('page-home').classList.add('on');document.getElementById('tabs').style.display='none';
 profPicData=localStorage.getItem('sky_pic')||profPicData;updateUI();
 if(!isLogged){document.getElementById('loginScreen').style.display='flex';}else{document.getElementById('loginScreen').style.display='none';document.getElementById('loginName').value=userName;}
-// Check ref from URL
-const urlParams=new URLSearchParams(window.location.search);const ref=urlParams.get('ref');if(ref){const key='ref_'+ref;if(!localStorage.getItem(key)){localStorage.setItem(key,'1');let currentRef=parseInt(localStorage.getItem('sky_ref_total')||'0');localStorage.setItem('sky_ref_total',currentRef+1);}}
 </script>
 </body>
  </html>
