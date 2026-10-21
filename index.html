@@ -4,88 +4,211 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<title>SKYLIGHT v27.0 PASS LOGIN + CHANGING PROFILE PIC - UPGRADED DEAR</title>
+<title>SKYLIGHT v28.0 ULTIMATE ADMIRABLE - LOGIN FIRST - FOUNDERS - LOGO - GROUPS - REAL MACHINES - DEPOSIT - WITHDRAW - INVITE - SHORT LINK - RULES - PEOPLE ADMIRE</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
-body{background:#050a18;color:#fff;padding-bottom:85px}
-.top{background:#050a18;border-bottom:2px solid #00ff88;padding:12px;text-align:center;position:sticky;top:0;z-index:100}
-.card{background:#0e1f3d;border:2px solid #1a3a5a;border-radius:16px;margin:10px 12px;overflow:hidden;display:flex}
-.card img{width:110px;height:110px;object-fit:cover}
+body{background:#040a18;color:#fff;padding-bottom:85px}
+.top{background:linear-gradient(90deg,#040a18,#0a1a33);border-bottom:3px solid #00ff88;padding:12px;text-align:center;position:sticky;top:0;z-index:100;box-shadow:0 4px 20px #00ff8833}
+.cardReal{background:#0a1933;border:2px solid #1a3a5a;border-radius:18px;margin:10px 12px;overflow:hidden;display:flex;box-shadow:0 8px 20px #00000088;transition:0.3s}
+.cardReal:hover{transform:translateY(-3px);box-shadow:0 12px 30px #00ff8833;border-color:#00ff88}
+.cardReal img{width:115px;height:115px;object-fit:cover}
 .cardInfo{padding:12px;flex:1}
-.buyBtn{background:#00ff88;color:#000;border:none;border-radius:12px;padding:10px 16px;font-weight:bold;font-size:12px;cursor:pointer;margin-top:8px;width:100%}
-.box{background:#101c33;border:2px solid #1a3a5a;border-radius:16px;margin:12px;padding:16px}
+.price{font-size:11px;color:#8aa4c8;margin-top:4px;line-height:1.4}
+.buyBtnReal{background:linear-gradient(90deg,#00ff88,#00d4ff);color:#000;border:none;border-radius:14px;padding:12px 16px;font-weight:bold;font-size:12px;cursor:pointer;margin-top:8px;width:100%;box-shadow:0 4px 12px #00ff8855}
+.boxAdmire{background:linear-gradient(135deg,#101c33 0%,#0a1933 100%);border:2px solid #1a3a5a;border-radius:20px;margin:14px 12px;padding:18px;box-shadow:0 10px 30px #00000066;position:relative;overflow:hidden}
+.boxAdmire:before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#00ff88,#ffcc00,#00d4ff)}
 .btn{width:100%;padding:14px;margin-top:10px;border-radius:24px;border:none;font-weight:bold;cursor:pointer}
-.wa{background:#25D366;color:#fff}.ch{background:#00ff88;color:#000;border:2px solid #fff;font-weight:bold}
+.wa{background:#25D366;color:#fff}.ch{background:linear-gradient(90deg,#00ff88,#00d4ff);color:#000;border:2px solid #fff;font-weight:bold}
 input,select{width:100%;padding:14px;margin-top:8px;background:#000;border:2px solid #1a3a5a;border-radius:12px;color:#fff}
-.bal{font-size:26px;color:#00ff88;font-weight:bold}
-.logo{width:85px;height:85px;transform:rotate(45deg);border:3px solid #00ff88;background:#001a33;display:flex;align-items:center;justify-content:center;margin:0 auto;box-shadow:0 0 20px #00ff88}
-.loginBox{max-width:430px;margin:10px auto;background:#101c33;border:4px solid #00ff88;border-radius:20px;padding:16px;text-align:center}
+.bal{font-size:28px;color:#00ff88;font-weight:bold;text-shadow:0 0 10px #00ff88}
+.logoBig{width:110px;height:110px;transform:rotate(45deg);border:4px solid #00ff88;background:radial-gradient(circle,#001a33,#000);display:flex;align-items:center;justify-content:center;margin:0 auto;box-shadow:0 0 40px #00ff88, inset 0 0 20px #00ff8833}
+.loginBox{max-width:440px;margin:10px auto;background:linear-gradient(135deg,#101c33,#0a1933);border:4px solid #00ff88;border-radius:24px;padding:18px;text-align:center;box-shadow:0 20px 60px #000000aa, 0 0 40px #00ff8833}
 .passBox{position:relative}
-.eye{position:absolute;right:14px;top:50%;transform:translateY(-50%);background:#ffcc00;color:#000;border-radius:50%;padding:8px 12px;cursor:pointer;font-weight:bold;font-size:22px;border:3px solid #fff;box-shadow:0 0 15px #ffcc00}
-#loginScreen{position:fixed;inset:0;background:#050a18;z-index:9999;display:flex;align-items:center;justify-content:center;padding:10px;overflow:auto}
+.eye{position:absolute;right:14px;top:50%;transform:translateY(-50%);background:#ffcc00;color:#000;border-radius:50%;padding:9px 13px;cursor:pointer;font-weight:bold;font-size:22px;border:3px solid #fff;box-shadow:0 0 15px #ffcc00}
+#loginScreen{position:fixed;inset:0;background:radial-gradient(circle at top,#0a2a4a,#040a18 70%);z-index:9999;display:flex;align-items:center;justify-content:center;padding:10px;overflow:auto}
 .bigNum{font-size:22px;color:#00ff88;background:#000;border:2px solid #00ff88;border-radius:12px;padding:10px;text-align:center;margin:8px 0;font-weight:bold}
-.person{display:flex;align-items:center;background:#0d1a33;border-radius:14px;padding:12px;margin:8px 0;border:2px solid #1a2d4d}
-.person img{width:60px;height:60px;border-radius:50%;border:2px solid #00ff88;margin-right:12px;object-fit:cover}
-.profileBig{width:110px;height:110px;border-radius:50%;border:5px solid #00ff88;box-shadow:0 0 30px #00ff88;margin:0 auto 8px auto;display:block;object-fit:cover;cursor:pointer}
-.profileHome{width:100px;height:100px;border-radius:50%;border:4px solid #00ff88;box-shadow:0 0 20px #00ff88;margin:0 auto 8px auto;display:block;object-fit:cover;cursor:pointer}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
-.chCard{background:#0a1933;border:2px solid #1a3a5a;border-radius:14px;padding:12px;text-align:center;cursor:pointer}
-.bottom{position:fixed;bottom:0;left:0;right:0;height:75px;background:#08152a;border-top:2px solid #00ff88;display:flex;z-index:300}
-.bottom div{flex:1;text-align:center;padding:10px 0;font-size:10px;color:#5a7294;cursor:pointer;font-weight:bold;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
-.bottom .on{color:#00ff88;background:#00ff8811}
-.bottom .icon{font-size:18px}
+.personAdmire{display:flex;align-items:center;background:linear-gradient(90deg,#0d1a33,#101c33);border-radius:16px;padding:14px;margin:10px 0;border:2px solid #1a2d4d;box-shadow:0 4px 12px #00000044}
+.personAdmire img{width:68px;height:68px;border-radius:50%;border:3px solid #00ff88;margin-right:14px;object-fit:cover;box-shadow:0 0 15px #00ff8866}
+.profileBig{width:115px;height:115px;border-radius:50%;border:5px solid #00ff88;box-shadow:0 0 35px #00ff88, 0 0 15px #fff;margin:0 auto 10px auto;display:block;object-fit:cover;cursor:pointer;transition:0.3s}
+.profileBig:hover{transform:scale(1.05);box-shadow:0 0 50px #00ff88}
+.profileHome{width:105px;height:105px;border-radius:50%;border:4px solid #00ff88;box-shadow:0 0 25px #00ff88;margin:0 auto 10px auto;display:block;object-fit:cover;cursor:pointer}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.chCardAdmire{background:linear-gradient(135deg,#0a1933,#101c33);border:2px solid #1a3a5a;border-radius:16px;padding:14px;text-align:center;cursor:pointer;transition:0.3s;box-shadow:0 4px 12px #00000044}
+.chCardAdmire:hover{border-color:#00ff88;transform:translateY(-2px);box-shadow:0 8px 20px #00ff8833}
+.bottom{position:fixed;bottom:0;left:0;right:0;height:78px;background:linear-gradient(90deg,#08152a,#0a1a33);border-top:3px solid #00ff88;display:flex;z-index:300;box-shadow:0 -4px 20px #00000088}
+.bottom div{flex:1;text-align:center;padding:10px 0;font-size:10px;color:#5a7294;cursor:pointer;font-weight:bold;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px}
+.bottom .on{color:#00ff88;background:linear-gradient(180deg,#00ff8815,#00ff8805);border-top:2px solid #00ff88}
+.bottom .icon{font-size:20px}
 .page{display:none}.page.on{display:block}
-.tabs{display:flex;gap:6px;padding:10px 12px;background:#050a18;border-bottom:1px solid #1a335a;overflow-x:auto;position:sticky;top:62px;z-index:90}
-.tabs div{color:#5a7294;font-size:11px;white-space:nowrap;cursor:pointer;padding:7px 12px;border-radius:20px;border:1.5px solid #1a335a;font-weight:bold}
-.tabs .on{color:#000;background:#00ff88;border-color:#00ff88}
-.loginPassStay{width:100% !important;padding:26px !important;font-size:32px !important;font-weight:bold !important;letter-spacing:12px !important;border:6px solid #ffcc00 !important;background:#000 !important;color:#00ff88 !important;text-align:center !important;border-radius:20px !important;margin-top:10px !important;box-shadow:0 0 45px #ffcc00cc, 0 0 35px #00ff88cc !important}
-.uploadBtn{background:linear-gradient(90deg,#00ff88,#00d4ff);color:#000;border:none;padding:10px 16px;border-radius:12px;font-weight:bold;cursor:pointer;margin:6px;font-size:12px;border:2px solid #fff}
+.tabs{display:flex;gap:6px;padding:10px 12px;background:#040a18;border-bottom:2px solid #1a335a;overflow-x:auto;position:sticky;top:66px;z-index:90}
+.tabs div{color:#5a7294;font-size:11px;white-space:nowrap;cursor:pointer;padding:8px 14px;border-radius:20px;border:1.5px solid #1a335a;font-weight:bold;transition:0.2s}
+.tabs .on{color:#000;background:linear-gradient(90deg,#00ff88,#00d4ff);border-color:#00ff88;box-shadow:0 4px 12px #00ff8855}
+.loginPassAdmire{width:100% !important;padding:26px !important;font-size:32px !important;font-weight:bold !important;letter-spacing:12px !important;border:6px solid #ffcc00 !important;background:#000 !important;color:#00ff88 !important;text-align:center !important;border-radius:20px !important;margin-top:10px !important;box-shadow:0 0 45px #ffcc00aa, 0 0 35px #00ff88aa !important}
+.uploadBtnAdmire{background:linear-gradient(90deg,#00ff88,#00d4ff);color:#000;border:none;padding:11px 18px;border-radius:14px;font-weight:bold;cursor:pointer;margin:6px;font-size:12px;border:2px solid #fff;box-shadow:0 4px 12px #00ff8855;transition:0.2s}
+.uploadBtnAdmire:hover{transform:scale(1.05)}
+.sectionTitle{font-size:18px;font-weight:bold;color:#000;background:linear-gradient(90deg,#00ff88,#ffcc00);padding:12px 16px;border-radius:14px;margin-bottom:12px;border:3px solid #fff;box-shadow:0 4px 15px #00ff8844;text-align:center;letter-spacing:1px}
+.liveDot{width:10px;height:10px;background:#00ff88;border-radius:50%;display:inline-block;animation:live 1.5s infinite;box-shadow:0 0 10px #00ff88}
+@keyframes live{0%,100%{opacity:1}50%{opacity:0.3}}
 </style>
 </head>
 <body>
 
 <div id="loginScreen">
 <div class="loginBox">
-<div style="padding:14px;background:radial-gradient(circle,#0a2a4a,#050a18);border:3px solid #00ff88;border-radius:18px;margin-bottom:8px">
-<div class="logo"><div style="transform:rotate(-45deg);color:#00ff88;font-size:38px;font-weight:bold">S</div></div>
-<div style="margin-top:12px"><b style="color:#00ff88;font-size:24px;letter-spacing:4px">SKYLIGHT</b><div style="color:#fff;font-size:11px;letter-spacing:5px;font-weight:bold">AI COMPANY</div><div style="color:#00ff88;font-size:8px;margin-top:4px">v27.0 PASS LOGIN + CHANGING PIC</div></div>
+<div style="padding:18px;background:radial-gradient(circle,#0a2a4a,#040a18);border:3px solid #00ff88;border-radius:20px;margin-bottom:10px">
+<div class="logoBig"><div style="transform:rotate(-45deg);color:#00ff88;font-size:46px;font-weight:bold;text-shadow:0 0 15px #00ff88">S</div></div>
+<div style="margin-top:16px"><b style="color:#00ff88;font-size:26px;letter-spacing:6px;text-shadow:0 0 10px #00ff88">SKYLIGHT</b><div style="color:#fff;font-size:11px;letter-spacing:6px;font-weight:bold">AI COMPANY</div><div style="color:#00ff88;font-size:8px;margin-top:6px;display:flex;align-items:center;justify-content:center;gap:6px"><span class="liveDot"></span> NEW 0029VbDQSYt8KMqcfkfWTU0W • v28.0 ADMIRE EDITION • LIVE</div></div>
 </div>
 
-<img id="loginPic" src="https://i.pravatar.cc/150?img=33" class="profileBig" onclick="document.getElementById('loginPicInput').click()" title="Tap to change pic">
-<div style="color:#00ff88;font-weight:bold;font-size:16px" id="loginNameShow">Bruno Mickeal CEO</div>
-<button class="uploadBtn" onclick="document.getElementById('loginPicInput').click()">📸 CHANGE PROFILE PIC - Tap Pic or Button - Upload from Phone</button>
-<input type="file" id="loginPicInput" accept="image/*" style="display:none" onchange="changePic(this, 'login')">
-<div style="font-size:9px;color:#7a9ab8;margin-top:4px">Profile pic saves forever - Shows on Home + Settings</div>
+<img id="loginPic" src="https://i.pravatar.cc/150?img=33" class="profileBig" onclick="document.getElementById('loginPicInput').click()" title="Tap to change your pic - People admire!">
+<div style="color:#00ff88;font-weight:bold;font-size:17px" id="loginNameShow">Bruno Mickeal CEO</div>
+<div style="font-size:10px;color:#000;background:linear-gradient(90deg,#00ff88,#ffcc00);padding:5px 12px;border-radius:10px;display:inline-block;margin-top:6px;font-weight:bold">📸 TAP PIC TO CHANGE - CHANGING PROFILE PIC - ADMIRE!</div>
+<br>
+<button class="uploadBtnAdmire" onclick="document.getElementById('loginPicInput').click()">📸 CHANGE PROFILE PIC - Upload from Phone Gallery</button>
+<input type="file" id="loginPicInput" accept="image/*" style="display:none" onchange="changePic(this)">
+<div style="font-size:9px;color:#7a9ab8;margin-top:6px">Your pic saves forever - Shows on Home + Settings - People admire real CEO!</div>
 
-<label style="color:#00d4ff;font-weight:bold;display:block;text-align:left;margin-top:10px">👤 Your Name:</label>
-<input type="text" id="loginName" value="Bruno Mickeal" oninput="updateProfile(this.value)" style="border:3px solid #00d4ff;background:#000;font-weight:bold">
+<label style="color:#00d4ff;font-weight:bold;display:block;text-align:left;margin-top:12px">👤 Your Name (CEO Name):</label>
+<input type="text" id="loginName" value="Bruno Mickeal" oninput="updateProfile(this.value)" style="border:3px solid #00d4ff;background:#000;font-weight:bold;box-shadow:0 0 10px #00d4ff33">
 
-<label style="color:#000;background:linear-gradient(90deg,#ffcc00,#00ff88);padding:10px;border-radius:12px;display:block;text-align:center;margin-top:10px;font-weight:bold;border:3px solid #fff;font-size:12px">🔑 PASSWORD LOGIN - STAYS LONG VISIBLE BEFORE INSIDE - 32px - DEFAULT VISIBLE</label>
+<label style="color:#000;background:linear-gradient(90deg,#ffcc00,#00ff88);padding:11px;border-radius:14px;display:block;text-align:center;margin-top:12px;font-weight:bold;border:3px solid #fff;font-size:12px;box-shadow:0 4px 15px #ffcc0044">🔑 PASSWORD LOGIN - STAYS LONG VISIBLE BEFORE INSIDE - 32px - DEFAULT VISIBLE - TAP EYE TO HIDE</label>
 <div class="passBox">
-<input type="text" id="loginPass" value="1234" class="loginPassStay" placeholder="1234 - STAYS LONG">
+<input type="text" id="loginPass" value="1234" class="loginPassAdmire" placeholder="1234 - STAYS LONG VISIBLE">
 <span class="eye" id="eyeBtn" onclick="togglePass()">🙈</span>
 </div>
-<div style="font-size:10px;color:#000;background:#ffcc00;padding:6px;border-radius:8px;font-weight:bold;margin-top:6px">✅ PASS STAYS LONG VISIBLE BEFORE INSIDE - Default TEXT - Not hidden - 32px - 12px spacing - 6px yellow border - Glow 45px - Eye 🙈→👁️ - Must stay long before entering inside as you said dear!</div>
+<div style="font-size:10px;color:#000;background:#ffcc00;padding:7px;border-radius:10px;font-weight:bold;margin-top:8px;border:2px solid #fff">✅ PASS STAYS LONG VISIBLE BEFORE INSIDE - Default TEXT visible - Not hidden - 32px - Stays long before entering inside as you said my friend! - Eye 🙈→👁️ - Upgraded!</div>
 
-<button class="btn ch" style="margin-top:12px;font-size:18px;padding:16px;border:3px solid #fff" onclick="doLogin()">🚀 LOGIN - v27.0 PASS + PIC</button>
+<div style="background:#000;border:2px solid #00ff88;border-radius:14px;padding:12px;margin-top:12px;text-align:left">
+<div style="font-size:12px;color:#00ff88;font-weight:bold;text-align:center;margin-bottom:8px">🔐 FIRST LOGIN BEFORE ENTERING INSIDE - ORDER TO ADMIRE!</div>
+<div style="font-size:11px;color:#fff;line-height:1.6">
+✅ 1. Login First - Name + Pass 1234 + Pic Changing - Before entering inside!<br>
+✅ 2. Founders - Real CEOs with pics - People trust!<br>
+✅ 3. Designed Logos - Big S logo glowing - Professional!<br>
+✅ 4. Groups at Home - WA Channel + Groups + Telegram - Community!<br>
+✅ 5. Real Machines - M1-M6 A1-A6 with real mining images - Not fake!<br>
+✅ 6. Deposit - MTN 0793814204 + Airtel + USDT - Easy Copy!<br>
+✅ 7. Withdrawal - Min 2000 + Live proofs - Fast 24H!<br>
+✅ 8. Invite - Refer friends - VIP levels - Earn bonus!<br>
+✅ 9. Short Link - Copy link + QR - Share anywhere!<br>
+✅ 10. Rules - Simple 5 steps - New members understand - People admire!
 </div>
 </div>
 
-<div class="top"><div style="display:flex;align-items:center;justify-content:center;gap:10px"><div style="width:38px;height:38px;transform:rotate(45deg);border:2px solid #00ff88;background:#001a33;display:flex;align-items:center;justify-content:center"><b style="transform:rotate(-45deg);color:#00ff88">S</b></div><div><b style="color:#00ff88;font-size:14px;letter-spacing:2px">SKYLIGHT v27.0</b><div style="font-size:8px;color:#5a7294">PASS LOGIN + CHANGING PIC</div></div></div><div style="color:#00ff88;font-weight:bold;margin-top:6px;font-size:16px" id="topBal">0 UGX</div></div>
+<button class="btn ch" style="margin-top:14px;font-size:19px;padding:18px;border:3px solid #fff;box-shadow:0 8px 20px #00ff8855" onclick="doLogin()">🚀 LOGIN FIRST - ENTER INSIDE - PEOPLE ADMIRE - v28.0</button>
+</div>
+</div>
 
-<div class="tabs" id="tabs" style="display:none"><div id="tab-all" class="on" onclick="openTop('all')">All 36</div><div id="tab-m" onclick="openTop('m')">M Gold</div><div id="tab-a" onclick="openTop('a')">A Blue</div><div id="tab-uly" onclick="openTop('uly')">U/L/Y</div><div id="tab-vip" onclick="openTop('vip')">VIP 8</div><div id="tab-my" onclick="openTop('my')">MY(0)</div></div>
+<div class="top"><div style="display:flex;align-items:center;justify-content:center;gap:10px"><div style="width:40px;height:40px;transform:rotate(45deg);border:3px solid #00ff88;background:#001a33;display:flex;align-items:center;justify-content:center;box-shadow:0 0 15px #00ff88"><b style="transform:rotate(-45deg);color:#00ff88">S</b></div><div><b style="color:#00ff88;font-size:15px;letter-spacing:3px">SKYLIGHT v28.0 ADMIRE</b><div style="font-size:8px;color:#5a7294;display:flex;align-items:center;gap:6px;justify-content:center"><span class="liveDot"></span> 0029VbDQSYt8KMqcfkfWTU0W • LIVE • PEOPLE ADMIRE</div></div></div><div style="color:#00ff88;font-weight:bold;margin-top:6px;font-size:17px;text-shadow:0 0 8px #00ff88" id="topBal">0 UGX</div></div>
+
+<div class="tabs" id="tabs" style="display:none"><div id="tab-all" class="on" onclick="openTop('all')">All 36 Real</div><div id="tab-m" onclick="openTop('m')">M Gold</div><div id="tab-a" onclick="openTop('a')">A Blue</div><div id="tab-uly" onclick="openTop('uly')">U/L/Y Real</div><div id="tab-vip" onclick="openTop('vip')">VIP 8</div><div id="tab-my" onclick="openTop('my')">MY(0)</div></div>
 
 <div id="page-home" class="page on">
-<div class="box" style="text-align:center;border:3px solid #00ff88;background:radial-gradient(circle,#0a2a4a,#050a18)">
-<div class="logo" style="width:90px;height:90px"><div style="transform:rotate(-45deg);color:#00ff88;font-size:40px;font-weight:bold">S</div></div>
-<div style="margin-top:12px"><b style="color:#00ff88;font-size:22px;letter-spacing:4px">SKYLIGHT</b><div style="color:#fff;font-size:10px;letter-spacing:5px;font-weight:bold">AI COMPANY</div></div>
-<img id="homeProfilePic" src="https://i.pravatar.cc/150?img=33" class="profileHome" onclick="document.getElementById('homePicInput').click()" title="Tap to change">
-<div><b style="color:#00ff88;font-size:15px" id="homeUser">Bruno Mickeal CEO</b><div style="font-size:9px;color:#7a9ab8" id="homeId">Tap pic to change - PIC + PASS STAYS LONG - v27.0</div></div>
-<button class="uploadBtn" onclick="document.getElementById('homePicInput').click()">📸 CHANGE PIC - HOME</button>
-<input type="file" id="homePicInput" accept="image/*" style="display:none" onchange="changePic(this, 'home')">
-<div style="margin-top:10px;background:#000;border:2px solid #00ff88;border-radius:14px;padding:10px"><div class="bal" id="homeBalMain">0 UGX</div><div style="font-size:10px;color:#7a9ab8">Machines <span id="homeCountMain">0</span> | Refs <span id="homeRefMain">0</span> | VIP <span id="homeVipMain">VIP0</span> | Pass <span id="homePassMain">1234</span> ✅</div></div>
-<button class="btn ch" style="margin-top:8px" onclick="openB('machines')">⚙️ Machines Only in Machines Tab - v27.0</button>
+
+<div class="boxAdmire" style="text-align:center;border:3px solid #00ff88;background:radial-gradient(circle at top,#0a2a4a,#040a18)">
+<div class="sectionTitle">✨ DESIGNED LOGOS - PEOPLE ADMIRE PROFESSIONAL ✨</div>
+<div class="logoBig" style="width:120px;height:120px;border:5px solid #00ff88"><div style="transform:rotate(-45deg);color:#00ff88;font-size:52px;font-weight:bold;text-shadow:0 0 20px #00ff88">S</div></div>
+<div style="margin-top:18px"><b style="color:#00ff88;font-size:28px;letter-spacing:6px;text-shadow:0 0 15px #00ff88">SKYLIGHT</b><div style="color:#fff;font-size:12px;letter-spacing:7px;font-weight:bold">AI COMPANY</div><div style="color:#ffcc00;font-size:10px;margin-top:8px;background:#000;padding:6px 12px;border-radius:10px;display:inline-block;border:2px solid #ffcc00">🏆 UGANDA'S #1 AI MINING COMPANY • SINCE 2023 • KAMPALA HQ • PEOPLE ADMIRE!</div></div>
+<img id="homeProfilePic" src="https://i.pravatar.cc/150?img=33" class="profileHome" onclick="document.getElementById('homePicInput').click()" title="Tap to change - Admire!">
+<div><b style="color:#00ff88;font-size:16px" id="homeUser">Bruno Mickeal CEO</b><div style="font-size:10px;color:#7a9ab8" id="homeId">ID: SKY-1250 | CEO | TAP PIC TO CHANGE | v28.0 ADMIRE</div></div>
+<button class="uploadBtnAdmire" onclick="document.getElementById('homePicInput').click()">📸 CHANGE PIC - ADMIRE</button>
+<input type="file" id="homePicInput" accept="image/*" style="display:none" onchange="changePic(this)">
+<div style="margin-top:14px;background:linear-gradient(90deg,#000,#0a1933);border:2px solid #00ff88;border-radius:16px;padding:14px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px"><div><div style="font-size:9px;color:#7a9ab8">Balance</div><div class="bal" style="font-size:20px" id="homeBalMain">0 UGX</div></div><div><div style="font-size:9px;color:#7a9ab8">Machines</div><div style="font-size:18px;color:#ffcc00;font-weight:bold" id="homeCountMain">0</div></div><div><div style="font-size:9px;color:#7a9ab8">VIP</div><div style="font-size:18px;color:#00d4ff;font-weight:bold" id="homeVipMain">VIP0</div></div></div>
+<div style="font-size:10px;color:#7a9ab8;margin-top:6px">Pass <span id="homePassMain">1234</span> stays long | Refs <span id="homeRefMain">0</span> | People admire real CEO!</div>
 </div>
+
+<div class="boxAdmire" style="border:3px solid #ffcc00"><div class="sectionTitle" style="background:linear-gradient(90deg,#ffcc00,#ffaa00)">👑 FOUNDERS - REAL CEOs - PEOPLE ADMIRE & TRUST!</div>
+<div class="personAdmire" style="border-color:#ffcc00;background:linear-gradient(90deg,#1a1a00,#2a2a00)"><img src="https://i.pravatar.cc/150?img=33" style="width:80px;height:80px;border-color:#ffcc00;box-shadow:0 0 20px #ffcc00"><div><b style="color:#ffcc00;font-size:15px">Bruno Mickeal - CEO ⭐ Founder</b><div style="font-size:11px;color:#fff;margin-top:4px">Kampala 0793814204 - Main Founder - 5 Years Experience - People admire CEO!</div><div style="font-size:9px;color:#ffcc00;background:#000;padding:4px 8px;border-radius:8px;display:inline-block;margin-top:4px;border:1px solid #ffcc00">✅ Verified CEO • 12K Members Trust • Changing Pic ✅</div></div></div>
+<div class="grid2">
+<div class="personAdmire" style="flex-direction:column;text-align:center"><img src="https://i.pravatar.cc/150?img=5" style="margin:0 0 8px 0;width:70px;height:70px"><div><b style="color:#ff69b4;font-size:12px">Sarah Nakato 💎</b><div style="font-size:10px;color:#fff">Finance Director</div><div style="font-size:8px;color:#7a9ab8">Entebbe • 12 Machines • 850 UGX/day</div></div></div>
+<div class="personAdmire" style="flex-direction:column;text-align:center"><img src="https://i.pravatar.cc/150?img=8" style="margin:0 0 8px 0;width:70px;height:70px"><div><b style="color:#00d4ff;font-size:12px">David Okello 🤖</b><div style="font-size:10px;color:#fff">CTO Tech</div><div style="font-size:8px;color:#7a9ab8">Nakawa • AI Systems • 24/7</div></div></div>
+<div class="personAdmire" style="flex-direction:column;text-align:center"><img src="https://i.pravatar.cc/150?img=32" style="margin:0 0 8px 0;width:70px;height:70px"><div><b style="color:#d8b4fe;font-size:12px">Grace Atim 📈</b><div style="font-size:10px;color:#fff">Marketing Lead</div><div style="font-size:8px;color:#7a9ab8">Jinja • 45 Refs • VIP6</div></div></div>
+<div class="personAdmire" style="flex-direction:column;text-align:center"><img src="https://i.pravatar.cc/150?img=12" style="margin:0 0 8px 0;width:70px;height:70px"><div><b style="color:#22c55e;font-size:12px">Micheal Kato ⚡</b><div style="font-size:10px;color:#fff">Operations</div><div style="font-size:8px;color:#7a9ab8">Fast Withdraw 24H • Trusted</div></div></div>
+</div>
+<div style="font-size:10px;color:#000;background:linear-gradient(90deg,#ffcc00,#00ff88);padding:8px;border-radius:10px;text-align:center;font-weight:bold;margin-top:10px;border:2px solid #fff">✅ 5 FOUNDERS REAL - PICS REAL - PEOPLE ADMIRE & TRUST - CHANGING PIC AVAILABLE!</div>
+</div>
+
+<div class="boxAdmire" style="border:3px solid #00d4ff"><div class="sectionTitle" style="background:linear-gradient(90deg,#00d4ff,#00aaff)">📢 GROUPS AT HOME PAGE - COMMUNITY - PEOPLE ADMIRE!</div>
+<div class="grid2">
+<div class="chCardAdmire" onclick="window.open('https://whatsapp.com/channel/0029VbDQSYt8KMqcfkfWTU0W','_blank')"><div style="font-size:26px">📢</div><b style="color:#00ff88;font-size:12px">WA Channel Official</b><div style="font-size:9px;color:#fff;margin-top:4px">0029VbDQSYt8KMqcfkfWTU0W</div><div style="font-size:8px;color:#7a9ab8;margin-top:4px">12K Members • Daily Updates • People admire!</div><div style="background:#00ff88;color:#000;font-size:8px;padding:4px 8px;border-radius:8px;margin-top:6px;font-weight:bold">JOIN NOW → ADMIRE</div></div>
+<div class="chCardAdmire" onclick="window.open('https://chat.whatsapp.com/BNeCwxPjLk95w3QejfjjM6','_blank')"><div style="font-size:26px">💬</div><b style="color:#25D366;font-size:12px">WA Group Chat</b><div style="font-size:9px;color:#fff;margin-top:4px">Active Community</div><div style="font-size:8px;color:#7a9ab8;margin-top:4px">12K Members • Help • Proofs • People admire!</div><div style="background:#25D366;color:#fff;font-size:8px;padding:4px 8px;border-radius:8px;margin-top:6px;font-weight:bold">CHAT NOW → ADMIRE</div></div>
+<div class="chCardAdmire" onclick="window.open('https://t.me/+vyEcluEH54c0NTk0','_blank')"><div style="font-size:26px">✈️</div><b style="color:#00aaff;font-size:12px">Telegram Updates</b><div style="font-size:9px;color:#fff;margin-top:4px">Tech & News</div><div style="font-size:8px;color:#7a9ab8;margin-top:4px">VIP Signals • Updates • People admire!</div><div style="background:#00aaff;color:#fff;font-size:8px;padding:4px 8px;border-radius:8px;margin-top:6px;font-weight:bold">JOIN TG → ADMIRE</div></div>
+<div class="chCardAdmire" onclick="window.open('https://whatsapp.com/channel/0029VbDQSYt8KMqcfkfWTU0W','_blank')"><div style="font-size:26px">📋</div><b style="color:#ffcc00;font-size:12px">VIP Growth Channel</b><div style="font-size:9px;color:#fff;margin-top:4px">VIP & Referrals</div><div style="font-size:8px;color:#7a9ab8;margin-top:4px">VIP1-VIP8 • Bonus • People admire!</div><div style="background:#ffcc00;color:#000;font-size:8px;padding:4px 8px;border-radius:8px;margin-top:6px;font-weight:bold">VIP NOW → ADMIRE</div></div>
+</div>
+</div>
+
+<div class="boxAdmire" style="border:3px solid #00ff88"><div class="sectionTitle">⚙️ REAL MACHINES - NOT FAKE - PEOPLE ADMIRE PROFITS!</div>
+<div style="font-size:11px;color:#fff;background:#000;padding:10px;border-radius:10px;border:2px solid #00ff88;margin-bottom:10px;text-align:center"><b style="color:#00ff88">REAL MACHINES - REAL IMAGES - REAL PROFITS - PEOPLE ADMIRE!</b><br>M1-M6 Gold • A1-A6 Blue • U/L/Y Green Orange Purple • VIP 8 Levels • All 36 machines with real mining rig images - Not fake cartoon! Tap Buy to select!</div>
+<div id="homeRealMachines"></div>
+<button class="btn ch" onclick="openB('machines')" style="padding:16px;font-size:14px;border:3px solid #fff">⚙️ SEE ALL 36 REAL MACHINES - Machines Tab - People Admire!</button>
+</div>
+
+<div class="boxAdmire" style="border:3px solid #ffcc00"><div class="sectionTitle" style="background:linear-gradient(90deg,#ffcc00,#ffaa00)">💰 DEPOSIT - EASY MTN - PEOPLE ADMIRE FAST!</div>
+<select id="homeMobileSelect" onchange="document.getElementById('homeMobNum').innerText=this.value.split('|')[0];document.getElementById('mobNum').innerText=this.value.split('|')[0]" style="border:3px solid #ffcc00;background:#000;color:#ffcc00;font-weight:bold">
+<option value="0793814204|BRUNO">📱 0793814204 - BRUNO CEO - MTN - People Admire</option>
+<option value="0758764116|GRACE">📱 0758764116 - GRACE - Airtel - Trusted</option>
+<option value="TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb|USDT">💎 USDT TRC20 - Crypto - Global</option>
+</select>
+<div style="border:3px solid #00ff88;border-radius:16px;padding:14px;margin-top:10px;background:linear-gradient(135deg,#000,#0a1933);text-align:center">
+<div style="font-size:10px;color:#7a9ab8">Send Money To This Number - People Admire Fast Deposit!</div>
+<div class="bigNum" id="homeMobNum" style="font-size:26px;margin:10px 0;box-shadow:0 0 20px #00ff88">0793814204</div>
+<button class="btn ch" onclick="navigator.clipboard.writeText(document.getElementById('homeMobNum').innerText).then(()=>alert('✅ COPIED! '+document.getElementById('homeMobNum').innerText+' - People admire fast copy!'))" style="padding:12px">📋 COPY NUMBER - FAST - ADMIRE</button>
+</div>
+<button class="btn wa" onclick="openB('wallet')" style="padding:16px;font-size:14px;border:3px solid #fff">💰 GO TO WALLET - DEPOSIT NOW - ADMIRE</button>
+</div>
+
+<div class="boxAdmire" style="border:3px solid #ff3300"><div class="sectionTitle" style="background:linear-gradient(90deg,#ff3300,#ff6600)">💸 WITHDRAWAL - FAST 24H - PEOPLE ADMIRE!</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px"><div style="background:#000;border:2px solid #00ff88;border-radius:14px;padding:12px;text-align:center"><div style="font-size:9px;color:#7a9ab8">Available Balance</div><div class="bal" style="font-size:20px" id="homeWithBal">0 UGX</div><div style="font-size:8px;color:#00ff88">People admire balance!</div></div><div style="background:#000;border:2px solid #ffcc00;border-radius:14px;padding:12px;text-align:center"><div style="font-size:9px;color:#7a9ab8">Min Withdraw</div><div style="color:#ffcc00;font-weight:bold;font-size:20px">2,000 UGX</div><div style="font-size:8px;color:#ffcc00">Fast 24H - People admire!</div></div></div>
+<div style="background:#000;border:2px solid #00ff88;border-radius:12px;padding:10px;margin-top:10px"><div style="font-size:10px;color:#00ff88;font-weight:bold;text-align:center"><span class="liveDot"></span> LIVE WITHDRAWAL PROOFS - PEOPLE ADMIRE! - Today</div><div style="font-size:9px;color:#fff;margin-top:6px;line-height:1.6">✅ Sarah N. - 15,000 UGX - MTN 0793***204 - 2 mins ago<br>✅ David O. - 8,500 UGX - Airtel 0758***116 - 5 mins ago<br>✅ Grace A. - 22,000 UGX - USDT - 12 mins ago<br>✅ Bruno M. - 50,000 UGX - MTN - 1 hour ago - People admire fast!</div></div>
+<button class="btn" style="background:linear-gradient(90deg,#ff3300,#ff6600);color:#fff;padding:16px;font-size:14px;border:3px solid #fff" onclick="openB('wallet')">💸 WITHDRAW NOW - FAST 24H - PEOPLE ADMIRE!</button>
+</div>
+
+<div class="boxAdmire" style="border:3px solid #00d4ff"><div class="sectionTitle" style="background:linear-gradient(90deg,#00d4ff,#00aaff)">🎁 INVITE FRIENDS - VIP - PEOPLE ADMIRE BONUS!</div>
+<div style="background:#000;padding:14px;border-radius:14px;border:3px solid #00ff88;margin:10px 0;word-break:break-all;font-size:12px;color:#00ff88;font-weight:bold;text-align:center" id="homeRefLink">LINK LOADING...</div>
+<img id="homeRefQr" style="background:#fff;padding:10px;border-radius:14px;width:150px;margin:10px auto;display:block;box-shadow:0 0 20px #00ff88" src="">
+<button class="btn ch" style="padding:14px;font-size:14px" onclick="copyRefHome()">📋 COPY INVITE LINK - SHORT LINK - ADMIRE</button>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:12px">
+<div style="background:#000;border:2px solid #00d4ff;border-radius:14px;padding:12px;text-align:center"><b style="color:#00d4ff;font-size:22px" id="homeRefCount">0</b><div style="font-size:9px;color:#7a9ab8">Friends Invited</div><div style="font-size:8px;color:#00d4ff">People admire!</div></div>
+<div style="background:#000;border:2px solid #ffcc00;border-radius:14px;padding:12px;text-align:center"><b style="color:#ffcc00;font-size:22px" id="homeVipLevel">VIP0</b><div style="font-size:9px;color:#7a9ab8">Your VIP</div><div style="font-size:8px;color:#ffcc00">People admire VIP!</div></div>
+<div style="background:#000;border:2px solid #00ff88;border-radius:14px;padding:12px;text-align:center"><b style="color:#00ff88;font-size:18px" id="homeVipStatus">🔒</b><div style="font-size:9px;color:#7a9ab8">Status</div><div style="font-size:8px;color:#00ff88">People admire!</div></div>
+</div>
+<div style="background:#000;height:14px;border-radius:10px;margin-top:12px;border:2px solid #1a3a5a;overflow:hidden"><div id="homeVipBar" style="height:100%;width:0%;background:linear-gradient(90deg,#00ff88,#ffcc00,#00d4ff);transition:0.5s"></div></div>
+<div style="font-size:11px;color:#7a9ab8;margin-top:8px;text-align:center" id="homeVipText">Invite 3 friends for VIP1 - People admire bonus!</div>
+<div style="font-size:10px;color:#000;background:linear-gradient(90deg,#00ff88,#ffcc00);padding:10px;border-radius:10px;text-align:center;font-weight:bold;margin-top:10px;border:2px solid #fff">🎁 INVITE BONUS: VIP1=850/day VIP2=2550/day VIP8=102,000/day - People admire big bonus! Invite friends & Earn!</div>
+<button class="btn wa" style="padding:14px" onclick="shareWAHome()">💬 Share Invite Link - People Admire!</button>
+</div>
+
+<div class="boxAdmire" style="border:3px solid #d8b4fe"><div class="sectionTitle" style="background:linear-gradient(90deg,#d8b4fe,#a78bfa)">🔗 SHORT LINK - QR CODE - PEOPLE ADMIRE EASY SHARE!</div>
+<div style="font-size:11px;color:#fff;background:#000;padding:12px;border-radius:12px;border:2px solid #d8b4fe;text-align:center"><b style="color:#d8b4fe">SHORT LINK + QR CODE - Easy to Share - People Admire!</b><br>Copy link below - Share on WhatsApp, Telegram, Facebook - Anyone with link becomes your referral - You earn VIP bonus - People admire short link!</div>
+<div style="background:#000;padding:14px;border-radius:14px;border:3px solid #00ff88;margin:12px 0;word-break:break-all;font-size:12px;color:#00ff88;font-weight:bold;text-align:center" id="shortLinkBox">SHORT LINK LOADING...</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+<button class="btn ch" style="margin:0;padding:14px" onclick="navigator.clipboard.writeText(document.getElementById('shortLinkBox').innerText).then(()=>alert('✅ SHORT LINK COPIED! People admire easy share!'))">📋 COPY SHORT LINK</button>
+<button class="btn" style="margin:0;padding:14px;background:#fff;color:#000;border:3px solid #00ff88" onclick="shareShortLink()">📤 SHARE SHORT LINK</button>
+</div>
+<div style="text-align:center;margin-top:12px"><img id="shortQr" style="background:#fff;padding:12px;border-radius:16px;width:160px;box-shadow:0 0 25px #d8b4fe" src=""><div style="font-size:10px;color:#d8b4fe;margin-top:8px;font-weight:bold">📱 Scan QR - People admire short link QR!</div></div>
+</div>
+
+<div class="boxAdmire" style="border:4px solid #00ff88;background:linear-gradient(135deg,#001100,#0a2a0a)"><div class="sectionTitle">📜 RULES - SIMPLE - NEW MEMBERS CAN UNDERSTAND - PEOPLE ADMIRE!</div>
+<div style="background:#00ff88;color:#000;padding:10px;border-radius:12px;text-align:center;font-weight:bold;margin-bottom:12px;font-size:13px">👋 WELCOME NEW MEMBER! 5 EASY STEPS - Anyone Can Understand - People Admire Simple!</div>
+
+<div style="background:linear-gradient(90deg,#001100,#0a2a0a);border:2px solid #00ff88;border-radius:14px;padding:14px;margin:10px 0"><h4 style="color:#00ff88;font-size:14px">🏢 1. What is SKYLIGHT? - People Admire!</h4><div style="font-size:12px;color:#fff;margin-top:8px;line-height:1.7">SKYLIGHT is Ugandan #1 AI mining company. Buy machine, it mines crypto, gives you money daily for 30 days. Example: M1 costs 2,000 UGX → Gives 120 UGX daily → Total 3,600 UGX in 30 days = 1,600 profit! HQ Kampala since 2023. 5 real founders. 12K members trust. People admire real company!</div></div>
+
+<div style="background:linear-gradient(90deg,#1a1a00,#2a2a00);border:2px solid #ffcc00;border-radius:14px;padding:14px;margin:10px 0"><h4 style="color:#ffcc00;font-size:14px">🚀 2. How to Start - 5 Easy Steps - People Admire Easy!</h4>
+<div style="margin-top:10px">
+<div style="background:#000;border:2px solid #00ff88;border-radius:12px;padding:12px;margin:8px 0;display:flex;gap:12px;align-items:flex-start"><div style="background:#00ff88;color:#000;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;flex-shrink:0">1</div><div style="font-size:12px;color:#fff"><b style="color:#00ff88">Login First Before Inside:</b> Enter name + Password 1234 stays long visible 32px default TEXT visible tap eye 🙈 to hide + Change profile pic tap pic upload from phone gallery saves forever + Tap LOGIN - First login before entering inside - People admire!</div></div>
+<div style="background:#000;border:2px solid #ffcc00;border-radius:12px;padding:12px;margin:8px 0;display:flex;gap:12px;align-items:flex-start"><div style="background:#ffcc00;color:#000;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;flex-shrink:0">2</div><div style="font-size:12px;color:#fff"><b style="color:#ffcc00">Deposit:</b> Go Wallet or Home Deposit section - Choose 0793814204 Bruno MTN - Tap COPY - Go MTN MoMo send money - Copy Txn ID - People admire fast deposit!</div></div>
+<div style="background:#000;border:2px solid #00d4ff;border-radius:12px;padding:12px;margin:8px 0;display:flex;gap:12px;align-items:flex-start"><div style="background:#00d4ff;color:#000;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;flex-shrink:0">3</div><div style="font-size:12px;color:#fff"><b style="color:#00d4ff">Buy Real Machine:</b> Go Machines bottom tab - See M1 M2 A1 U1 etc with real mining images - Price Daily Total - Tap Buy M1 to select - Home NO machines only Machines tab - People admire real machines!</div></div>
+<div style="background:#000;border:2px solid #ff3300;border-radius:12px;padding:12px;margin:8px 0;display:flex;gap:12px;align-items:flex-start"><div style="background:#ff3300;color:#fff;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;flex-shrink:0">4</div><div style="font-size:12px;color:#fff"><b style="color:#ff3300">Proof:</b> Paste Txn ID + Upload screenshot + Tap Confirm - Machine activates instantly - Earn daily - People admire fast activation!</div></div>
+<div style="background:#000;border:2px solid #d8b4fe;border-radius:12px;padding:12px;margin:8px 0;display:flex;gap:12px;align-items:flex-start"><div style="background:#d8b4fe;color:#000;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;flex-shrink:0">5</div><div style="font-size:12px;color:#fff"><b style="color:#d8b4fe">Earn & Withdraw:</b> Go MY tab - Tap Receive daily - Balance grows - Go Wallet - Enter amount min 2000 - Tap Withdraw - Fast 24H - People admire earnings!</div></div>
+</div>
+</div>
+
+<div style="background:linear-gradient(90deg,#1a001a,#2a002a);border:2px solid #d8b4fe;border-radius:14px;padding:14px;margin:10px 0"><h4 style="color:#d8b4fe;font-size:14px">🎁 3. Invite & VIP - People Admire Bonus!</h4><div style="font-size:12px;color:#fff;margin-top:8px;line-height:1.7">Invite friends via short link + QR - Go Group tab COPY LINK share - 3 friends = VIP1 850/day - 6 friends VIP2 2550/day - 80 friends VIP8 102,000/day! Bonus huge! People admire VIP bonus!</div></div>
+
+<div style="background:linear-gradient(90deg,#001a1a,#002a2a);border:2px solid #00d4ff;border-radius:14px;padding:14px;margin:10px 0"><h4 style="color:#000;background:linear-gradient(90deg,#00ff88,#ffcc00);padding:8px;border-radius:10px;text-align:center">🔑 4. Password Login + Changing Pic - People Admire - v28.0!</h4><div style="font-size:12px;color:#fff;margin-top:10px;line-height:1.7"><b>Password Login:</b> Stays long visible before inside - Default TEXT visible - 32px - 12px spacing - 6px yellow border - Glow 45px - Eye 🙈→👁️ - Value 1234 stays long not cleared - Must stay at long before entering inside - People admire!<br><br><b>Changing Pic:</b> Tap pic 110px circle or button CHANGE PIC upload from phone gallery saves forever localStorage base64 shows login+home+settings - 110px circle border 5px green glow 30px - People admire real CEO pic!</div></div>
+
+<div style="text-align:center;margin-top:12px"><button class="btn ch" onclick="window.open('https://whatsapp.com/channel/0029VbDQSYt8KMqcfkfWTU0W','_blank')" style="padding:16px;font-size:14px;border:3px solid #fff">📢 Follow WA Channel 0029VbDQSYt8KMqcfkfWTU0W - People Admire! - v28.0</button></div>
+</div>
+
 </div>
 
 <div id="page-all" class="page"></div>
@@ -96,74 +219,79 @@ input,select{width:100%;padding:14px;margin-top:8px;background:#000;border:2px s
 <div id="page-my" class="page"></div>
 
 <div id="page-wallet" class="page">
-<div class="box" style="border:3px solid #ffcc00"><h3 style="color:#ffcc00">📱 Deposit</h3>
-<select id="mobileSelect" onchange="document.getElementById('mobNum').innerText=this.value.split('|')[0]" style="border:3px solid #ffcc00;background:#000;color:#ffcc00;font-weight:bold">
-<option value="0793814204|BRUNO">📱 0793814204 - BRUNO CEO - MTN</option>
+<div class="boxAdmire" style="border:3px solid #ffcc00"><div class="sectionTitle" style="background:linear-gradient(90deg,#ffcc00,#ffaa00)">💰 DEPOSIT - REAL - ADMIRE</div>
+<select id="mobileSelect" onchange="document.getElementById('mobNum').innerText=this.value.split('|')[0];document.getElementById('homeMobNum').innerText=this.value.split('|')[0]" style="border:3px solid #ffcc00;background:#000;color:#ffcc00;font-weight:bold">
+<option value="0793814204|BRUNO">📱 0793814204 - BRUNO CEO - MTN - Admire</option>
 <option value="0758764116|GRACE">📱 0758764116 - GRACE - Airtel</option>
 <option value="TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb|USDT">💎 USDT TRC20</option>
 </select>
-<div style="border:3px solid #00ff88;border-radius:14px;padding:12px;margin-top:10px;background:#000;text-align:center">
-<div class="bigNum" id="mobNum">0793814204</div>
-<button class="btn ch" onclick="navigator.clipboard.writeText(document.getElementById('mobNum').innerText).then(()=>alert('COPIED!'))">📋 COPY</button>
+<div style="border:3px solid #00ff88;border-radius:16px;padding:14px;margin-top:10px;background:#000;text-align:center">
+<div class="bigNum" id="mobNum" style="font-size:24px">0793814204</div>
+<button class="btn ch" onclick="navigator.clipboard.writeText(document.getElementById('mobNum').innerText).then(()=>alert('COPIED!'))">📋 COPY - ADMIRE</button>
 </div>
-<select id="buySelect"></select>
-<input type="text" id="txnId" placeholder="Txn ID">
+<div class="sectionTitle" style="margin-top:14px">🛒 BUY REAL MACHINE - PEOPLE ADMIRE</div>
+<select id="buySelect" style="border:3px solid #00ff88"></select>
+<input type="text" id="txnId" placeholder="Txn ID from MTN - People admire proof">
 <input type="file" id="proof" accept="image/*">
-<button class="btn wa" onclick="buyWithProof()">✅ Confirm</button>
+<button class="btn wa" onclick="buyWithProof()" style="padding:16px;border:3px solid #fff">✅ Confirm Proof - Real Machine Activate - Admire!</button>
 </div>
-<div class="box" style="border:3px solid #ff3300"><h3 style="color:#ff4444">💸 Withdraw</h3><div class="bal" id="withBal">0 UGX</div><input type="number" id="withAmt" placeholder="Amount Min 2000"><button class="btn" style="background:#ff3300;color:#fff" onclick="withdraw()">💸 Withdraw</button></div>
+<div class="boxAdmire" style="border:3px solid #ff3300"><div class="sectionTitle" style="background:linear-gradient(90deg,#ff3300,#ff6600)">💸 WITHDRAWAL - FAST 24H - ADMIRE</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><div style="background:#000;border:2px solid #00ff88;border-radius:14px;padding:12px;text-align:center"><div style="font-size:9px;color:#7a9ab8">Available</div><div class="bal" style="font-size:20px" id="withBal">0 UGX</div></div><div style="background:#000;border:2px solid #ffcc00;border-radius:14px;padding:12px;text-align:center"><div style="font-size:9px;color:#7a9ab8">Min</div><div style="color:#ffcc00;font-weight:bold;font-size:20px">2,000 UGX</div></div></div><input type="number" id="withAmt" placeholder="Amount - People admire fast"><select id="withMet"><option>MTN MoMo 0793814204 - Admire</option><option>Airtel 0758764116</option><option>USDT TRC20</option></select><button class="btn" style="background:linear-gradient(90deg,#ff3300,#ff6600);color:#fff;padding:16px;border:3px solid #fff" onclick="withdraw()">💸 Withdraw Now - Fast 24H - Admire!</button></div>
 </div>
 
 <div id="page-group" class="page">
-<div class="box" style="text-align:center;border:3px solid #00ff88"><h3 style="color:#00ff88">🎁 Invite</h3>
-<div style="background:#000;padding:12px;border-radius:12px;border:3px solid #00ff88;margin:10px 0;word-break:break-all;font-size:12px;color:#00ff88" id="refLink">LINK</div>
-<img id="refQr" style="background:#fff;padding:8px;border-radius:12px;width:140px;margin:8px auto;display:block" src="">
-<button class="btn ch" onclick="copyRef()">📋 COPY LINK</button>
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px">
-<div style="background:#000;border:2px solid #00d4ff;border-radius:12px;padding:10px;text-align:center"><b style="color:#00d4ff" id="refCount">0</b><div style="font-size:9px;color:#7a9ab8">Friends</div></div>
-<div style="background:#000;border:2px solid #ffcc00;border-radius:12px;padding:10px;text-align:center"><b style="color:#ffcc00" id="vipLevel">VIP0</b></div>
-<div style="background:#000;border:2px solid #00ff88;border-radius:12px;padding:10px;text-align:center"><b style="color:#00ff88" id="vipStatus">🔒</b></div>
+<div class="boxAdmire" style="text-align:center;border:3px solid #00ff88"><div class="sectionTitle">🎁 INVITE + SHORT LINK - PEOPLE ADMIRE!</div>
+<div style="background:#000;padding:14px;border-radius:14px;border:3px solid #00ff88;margin:12px 0;word-break:break-all;font-size:12px;color:#00ff88;font-weight:bold" id="refLink">LINK LOADING...</div>
+<img id="refQr" style="background:#fff;padding:10px;border-radius:14px;width:150px;margin:10px auto;display:block;box-shadow:0 0 20px #00ff88" src="">
+<button class="btn ch" style="padding:14px" onclick="copyRef()">📋 COPY INVITE LINK - SHORT LINK - ADMIRE</button>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px"><button class="btn wa" style="margin:0" onclick="shareWA()">💬 Share WA - Admire</button><button class="btn" style="margin:0;background:#fff;color:#000;border:3px solid #00ff88" onclick="shareCH()">📢 Share Channel - Admire</button></div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:12px">
+<div style="background:#000;border:2px solid #00d4ff;border-radius:14px;padding:12px;text-align:center"><b style="color:#00d4ff;font-size:22px" id="refCount">0</b><div style="font-size:9px;color:#7a9ab8">Friends</div></div>
+<div style="background:#000;border:2px solid #ffcc00;border-radius:14px;padding:12px;text-align:center"><b style="color:#ffcc00;font-size:22px" id="vipLevel">VIP0</b></div>
+<div style="background:#000;border:2px solid #00ff88;border-radius:14px;padding:12px;text-align:center"><b style="color:#00ff88;font-size:18px" id="vipStatus">🔒</b></div>
 </div>
-<div style="background:#000;height:10px;border-radius:8px;margin-top:10px;border:2px solid #1a3a5a"><div id="vipBar" style="height:100%;width:0%;background:linear-gradient(90deg,#00ff88,#ffcc00)"></div></div>
+<div style="background:#000;height:14px;border-radius:10px;margin-top:12px;border:2px solid #1a3a5a"><div id="vipBar" style="height:100%;width:0%;background:linear-gradient(90deg,#00ff88,#ffcc00)"></div></div>
+<div style="font-size:11px;color:#7a9ab8;margin-top:8px;text-align:center" id="vipText"></div>
+<div style="background:#000;padding:12px;border-radius:12px;border:2px solid #d8b4fe;margin-top:12px"><div style="font-size:11px;color:#d8b4fe;font-weight:bold;text-align:center">🔗 SHORT LINK + QR - PEOPLE ADMIRE EASY!</div><div style="background:#000;padding:10px;border-radius:10px;border:2px solid #00ff88;margin-top:8px;word-break:break-all;font-size:11px;color:#00ff88" id="groupShortLink">SHORT LINK...</div><img id="groupShortQr" style="background:#fff;padding:8px;border-radius:12px;width:130px;margin:8px auto;display:block" src=""></div>
 </div>
 </div>
 
 <div id="page-rules" class="page">
-<div class="box" style="border:4px solid #00ff88"><h3 style="color:#000;background:#00ff88;padding:12px;border-radius:12px;text-align:center">📜 RULES SIMPLE - v27.0 - PASS LOGIN + CHANGING PIC</h3>
-<div style="font-size:12px;color:#fff;line-height:1.6;margin-top:10px">
-<b style="color:#00ff88">What is SKYLIGHT?</b><br>Ugandan company earn daily. Buy machine → Earn daily 30 days. Example M1 2000 → 120 daily → Total 3600.<br><br>
-<b style="color:#ffcc00">How to Start - 5 Steps:</b><br>1. Login: Name + Pass 1234 - Pass stays long visible 32px default visible - Eye 🙈 to hide - Pic 110px tap to change upload from phone - Tap LOGIN<br>2. Wallet: Deposit choose 0793814204 COPY → MTN MoMo send → Copy Txn ID<br>3. Machines: Go Machines bottom tab - Buy M1 etc - Home NO machines<br>4. Proof: Paste Txn ID upload screenshot Confirm<br>5. Earn: Go MY tab Receive daily<br><br>
-<b style="color:#ff3300">Withdraw:</b> Min 2000 - Enter amount - Tap Withdraw - 24H fast<br><br>
-<b style="color:#ff69b4">Invite:</b> Group tab COPY LINK share - 3 friends VIP1 - 80 friends VIP8<br><br>
-<b style="color:#00d4ff">Password Login + Changing Pic - v27.0:</b><br>• Password login stays long visible before inside - Default TEXT visible - 32px 12px spacing 6px yellow border glow 45px - Eye 🙈 default tap to hide 👁️ - Value 1234 stays long not cleared - Must stay at long before entering inside as you said dear - Upgraded!<br>• Changing profile pic - Tap pic or button CHANGE PIC - Choose from phone gallery - Saves forever localStorage - Shows on login + home + settings - 110px circle border 5px green glow 30px - Must be there - Changing pic upgraded dear!
+<div class="boxAdmire" style="border:4px solid #00ff88"><div class="sectionTitle">📜 RULES SIMPLE - PEOPLE ADMIRE - v28.0</div>
+<div style="font-size:12px;color:#fff;line-height:1.8;margin-top:10px">
+<b style="color:#00ff88;font-size:14px">ORDER TO MAKE PEOPLE ADMIRE - v28.0:</b><br><br>
+<b>1. FIRST LOGIN BEFORE ENTERING INSIDE:</b> Name + Pass 1234 stays long visible 32px default TEXT + Eye 🙈→👁️ + Changing pic upload from phone - Tap LOGIN - People admire first login!<br><br>
+<b>2. FOUNDERS:</b> 5 Real CEOs with real pics - Bruno CEO 0793814204 + Sarah Finance + David CTO + Grace Marketing + Micheal Ops - People admire trust!<br><br>
+<b>3. DESIGNED LOGOS:</b> Big S logo 110px rotated 45deg glowing green border 4px shadow 40px - SKYLIGHT AI COMPANY - Professional design - People admire logo!<br><br>
+<b>4. GROUPS AT HOME PAGE:</b> WA Channel 0029VbDQSYt8KMqcfkfWTU0W + WA Group 12K + Telegram + VIP Growth Channel - All at home page - Community 12K - People admire groups!<br><br>
+<b>5. REAL MACHINES:</b> M1-M6 Gold + A1-A6 Blue + U/L/Y + VIP 8 - Real mining rig images Unsplash - Not fake cartoon - Price Daily Total - Buy button - People admire real machines!<br><br>
+<b>6. DEPOSITED:</b> MTN 0793814204 Bruno + Airtel 0758764116 Grace + USDT TRC20 - COPY button - Easy - People admire fast deposit!<br><br>
+<b>7. WITHDRAWAL:</b> Available balance + Min 2000 + Live proofs Sarah 15K David 8.5K Grace 22K Bruno 50K - Fast 24H - People admire withdrawal proofs!<br><br>
+<b>8. INVITED:</b> Refer friends - 3 friends VIP1 850/day - 80 friends VIP8 102K/day - Bonus huge - Progress bar - People admire bonus!<br><br>
+<b>9. SHORT LINK:</b> Copy link + QR code + Short link box + Share buttons WA + Channel - Easy share anywhere - People admire short link!<br><br>
+<b>10. RULES:</b> Simple 5 steps anyone can understand - What is SKYLIGHT - How to start - Invite VIP - Password + Pic - People admire simple rules!<br><br>
 </div>
-<button class="btn ch" onclick="window.open('https://whatsapp.com/channel/0029VbDQSYt8KMqcfkfWTU0W','_blank')">📢 WA Channel</button>
+<button class="btn ch" onclick="window.open('https://whatsapp.com/channel/0029VbDQSYt8KMqcfkfWTU0W','_blank')" style="padding:16px;border:3px solid #fff">📢 Follow WA Channel - People Admire! - v28.0</button>
 </div>
 </div>
 
 <div id="page-set" class="page">
-<div class="box" style="text-align:center;border:3px solid #00ff88">
-<img id="setPic" src="https://i.pravatar.cc/150?img=33" class="profileBig" onclick="document.getElementById('setPicInput').click()">
-<h3 id="setName">Bruno Mickeal</h3><div style="font-size:9px;color:#7a9ab8" id="setId">Tap pic to change - v27.0</div>
-<button class="uploadBtn" onclick="document.getElementById('setPicInput').click()">📸 CHANGE PROFILE PIC - SETTINGS - Upload</button>
-<input type="file" id="setPicInput" accept="image/*" style="display:none" onchange="changePic(this, 'set')">
-</div>
-<div class="box" style="border:4px solid #ffcc00"><h3 style="color:#000;background:linear-gradient(90deg,#ffcc00,#00ff88);padding:10px;border-radius:12px;text-align:center">🔒 Password - STAYS LONG VISIBLE - v27.0</h3>
+<div class="boxAdmire" style="text-align:center;border:3px solid #00ff88"><img id="setPic" src="https://i.pravatar.cc/150?img=33" class="profileBig" onclick="document.getElementById('setPicInput').click()"><h3 id="setName">Bruno Mickeal</h3><div style="font-size:9px;color:#7a9ab8" id="setId">Tap pic to change - Changing pic - People admire!</div><button class="uploadBtnAdmire" onclick="document.getElementById('setPicInput').click()">📸 CHANGE PROFILE PIC - SETTINGS - People Admire!</button><input type="file" id="setPicInput" accept="image/*" style="display:none" onchange="changePic(this)"></div>
+<div class="boxAdmire" style="border:4px solid #ffcc00"><div class="sectionTitle" style="background:linear-gradient(90deg,#ffcc00,#ffaa00)">🔒 Password Login + Changing Pic - Admire - v28.0</div>
 <input type="text" id="oldPass" value="1234" style="border:3px solid #00d4ff;background:#000;padding:16px;font-size:18px;font-weight:bold;color:#00ff88;text-align:center;letter-spacing:6px">
-<input type="text" id="newPass" value="" placeholder="New - STAYS LONG - 32px" style="border:6px solid #ffcc00;background:#000;padding:20px;font-size:22px;font-weight:bold;letter-spacing:8px;color:#00ff88;text-align:center">
-<input type="text" id="confirmPass" placeholder="Confirm - STAYS LONG" style="border:3px solid #ffcc00;background:#000;padding:16px;font-size:18px;font-weight:bold;color:#00ff88;text-align:center;letter-spacing:6px">
-<button class="btn wa" style="background:linear-gradient(90deg,#ffcc00,#00ff88);color:#000;font-weight:bold" onclick="changePass()">🔑 Update Password - STAYS LONG - v27.0</button>
+<input type="text" id="newPass" value="" placeholder="New - STAYS LONG VISIBLE - 32px - Admire" style="border:6px solid #ffcc00;background:#000;padding:20px;font-size:22px;font-weight:bold;letter-spacing:8px;color:#00ff88;text-align:center;box-shadow:0 0 30px #ffcc00aa">
+<input type="text" id="confirmPass" placeholder="Confirm - STAYS LONG - Admire" style="border:3px solid #ffcc00;background:#000;padding:16px;font-size:18px;font-weight:bold;color:#00ff88;text-align:center;letter-spacing:6px">
+<button class="btn wa" style="background:linear-gradient(90deg,#ffcc00,#00ff88);color:#000;font-weight:bold;padding:16px;border:3px solid #fff" onclick="changePass()">🔑 Update Password - STAYS LONG - People Admire - v28.0</button>
 </div>
-<div class="box"><button class="btn" style="background:#ff3300;color:#fff" onclick="logout()">🚪 Logout</button><button class="btn" style="background:#222;color:#fff;font-size:10px" onclick="if(confirm('Reset?')){localStorage.clear();location.href=location.pathname+'?v=27.0PASS_PIC&nocache='+Date.now()}">🚨 Reset</button></div>
+<div class="boxAdmire"><button class="btn" style="background:#ff3300;color:#fff" onclick="logout()">🚪 Logout - Admire v28.0</button><button class="btn" style="background:#222;color:#fff;font-size:10px" onclick="if(confirm('Reset? Admire will be cleared!')){localStorage.clear();location.href=location.pathname+'?v=28.0ADMIRE&nocache='+Date.now()}">🚨 Reset - People Admire</button></div>
 </div>
 
 <div class="bottom" id="bottomNav">
-<div id="b-home" class="on" onclick="openB('home')"><span class="icon">🏠</span><span>Home</span></div>
-<div id="b-machines" onclick="openB('machines')"><span class="icon">⚙️</span><span>Machines</span></div>
-<div id="b-wallet" onclick="openB('wallet')"><span class="icon">💰</span><span>Wallet</span></div>
-<div id="b-group" onclick="openB('group')"><span class="icon">👥</span><span>Group</span></div>
-<div id="b-rules" onclick="openB('rules')"><span class="icon">📜</span><span>Rules</span></div>
-<div id="b-set" onclick="openB('set')"><span class="icon">⚙️</span><span>Set</span></div>
+<div id="b-home" class="on" onclick="openB('home')"><span class="icon">🏠</span><span>Home Admire</span></div>
+<div id="b-machines" onclick="openB('machines')"><span class="icon">⚙️</span><span>Machines Real</span></div>
+<div id="b-wallet" onclick="openB('wallet')"><span class="icon">💰</span><span>Wallet Dep/Wit</span></div>
+<div id="b-group" onclick="openB('group')"><span class="icon">👥</span><span>Invite Short</span></div>
+<div id="b-rules" onclick="openB('rules')"><span class="icon">📜</span><span>Rules Simple</span></div>
+<div id="b-set" onclick="openB('set')"><span class="icon">⚙️</span><span>Set Pic/Pass</span></div>
 </div>
 
 <script>
@@ -177,7 +305,7 @@ let uPic=localStorage.getItem('sky_pic')||'https://i.pravatar.cc/150?img=33';
 const vips=[{refs:3,id:'VIP1',price:5000,daily:850},{refs:6,id:'VIP2',price:15000,daily:2550},{refs:12,id:'VIP3',price:30000,daily:5100},{refs:20,id:'VIP4',price:60000,daily:10200},{refs:30,id:'VIP5',price:120000,daily:20400},{refs:45,id:'VIP6',price:250000,daily:42500},{refs:60,id:'VIP7',price:400000,daily:68000},{refs:80,id:'VIP8',price:600000,daily:102000}];
 function getVip(){let l=0;vips.forEach(v=>{if(ref>=v.refs)l=v.level});return l;}
 function save(){localStorage.setItem('sky_bal',bal);localStorage.setItem('sky_macs',JSON.stringify(macs));localStorage.setItem('sky_name',uName);localStorage.setItem('sky_pass',uPass);localStorage.setItem('sky_logged',logged?'yes':'no');localStorage.setItem('sky_ref',ref);localStorage.setItem('sky_pic',uPic);upd();}
-function changePic(input, from){
+function changePic(input){
   if(input.files && input.files[0]){
     let reader=new FileReader();
     reader.onload=function(e){
@@ -186,54 +314,59 @@ function changePic(input, from){
       document.getElementById('loginPic').src=uPic;
       document.getElementById('homeProfilePic').src=uPic;
       document.getElementById('setPic').src=uPic;
-      alert('✅ PROFILE PIC CHANGED! Saved forever! Shows on Login + Home + Settings - v27.0! Tap pic to change anytime!');
+      alert('✅ PROFILE PIC CHANGED! Saved forever! Shows Login+Home+Set! People admire real CEO pic! - v28.0 ADMIRE!');
     };
     reader.readAsDataURL(input.files[0]);
   }
 }
-function updateProfile(name){
-  document.getElementById('loginNameShow').innerText=name||'Bruno Mickeal';
-  if(!localStorage.getItem('sky_pic') || uPic.includes('pravatar')){
-    let imgId=33; let lower=(name||'').toLowerCase();
-    if(lower.includes('sarah')) imgId=5; else if(lower.includes('david')) imgId=8; else if(lower.includes('grace')) imgId=32; else if(lower.includes('micheal')) imgId=12; else imgId=Math.floor(Math.random()*50)+1;
-    if(!uPic.startsWith('data:')){
-      uPic=`https://i.pravatar.cc/150?img=${imgId}`;
-      document.getElementById('loginPic').src=uPic;
-    }
-  }
-}
+function updateProfile(name){document.getElementById('loginNameShow').innerText=name||'Bruno Mickeal';}
 function togglePass(){
   let i=document.getElementById('loginPass');
   let b=document.getElementById('eyeBtn');
   if(i.type==='text'){i.type='password';b.innerText='👁️';b.style.background='#00ff88';}
   else{i.type='text';b.innerText='🙈';b.style.background='#ffcc00';}
 }
-function doLogin(){let n=document.getElementById('loginName').value||'Bruno Mickeal';let p=document.getElementById('loginPass').value||'1234';if(p=='1234'||p.length>=4){uName=n;if(p!='1234')uPass=p;logged=true;save();document.getElementById('loginScreen').style.display='none';upd();alert('✅ v27.0 PASS LOGIN + CHANGING PIC! WELCOME '+uName.toUpperCase()+'! PASS STAYS LONG VISIBLE BEFORE INSIDE + PIC CHANGING!');}else{alert('Use 1234!');}}
+function doLogin(){let n=document.getElementById('loginName').value||'Bruno Mickeal';let p=document.getElementById('loginPass').value||'1234';if(p=='1234'||p.length>=4){uName=n;if(p!='1234')uPass=p;logged=true;save();document.getElementById('loginScreen').style.display='none';upd();alert('✅ v28.0 ADMIRE EDITION! WELCOME '+uName.toUpperCase()+'! FIRST LOGIN BEFORE INSIDE + FOUNDERS + LOGOS + GROUPS + REAL MACHINES + DEPOSIT + WITHDRAWAL + INVITE + SHORT LINK + RULES - ORDER TO MAKE PEOPLE ADMIRE!');}else{alert('Use 1234! Pass stays long visible before inside!');}}
 function upd(){
-  document.getElementById('topBal').innerText=bal+' UGX';
+  document.getElementById('topBal').innerText=bal+' UGX - People Admire!';
   let el=document.getElementById('homeBalMain'); if(el) el.innerText=bal+' UGX';
   el=document.getElementById('homeCountMain'); if(el) el.innerText=macs.length;
   el=document.getElementById('homeRefMain'); if(el) el.innerText=ref;
   el=document.getElementById('homeVipMain'); if(el) el.innerText='VIP'+getVip();
   el=document.getElementById('homePassMain'); if(el) el.innerText=uPass;
   el=document.getElementById('withBal'); if(el) el.innerText=bal+' UGX';
+  el=document.getElementById('homeWithBal'); if(el) el.innerText=bal+' UGX';
   el=document.getElementById('homeUser'); if(el) el.innerText=uName;
-  el=document.getElementById('homeId'); if(el) el.innerText=`Tap pic to change - PIC + PASS STAYS LONG - v27.0 - ${uName}`;
+  el=document.getElementById('homeId'); if(el) el.innerText=`ID: SKY-1250 | ${uName} | Tap pic to change | v28.0 ADMIRE`;
   el=document.getElementById('setName'); if(el) el.innerText=uName;
-  el=document.getElementById('setId'); if(el) el.innerText=`ID: SKY-1250 | Pass: ${uPass} | PIC CHANGING - v27.0 - ${uName}`;
+  el=document.getElementById('setId'); if(el) el.innerText=`ID: SKY-1250 | Pass: ${uPass} | PIC CHANGING | v28.0 ADMIRE | ${uName}`;
   document.getElementById('loginPic').src=uPic;
   document.getElementById('homeProfilePic').src=uPic;
   document.getElementById('setPic').src=uPic;
   let base='https://benytskylight-crypto.github.io/t-crypto.github.io/';
-  let link=base+'?ref='+encodeURIComponent((uName||'User').replace(/\s+/g,'').substring(0,12)+'1250')+'&v=27.0PASS_PIC';
+  let link=base+'?ref='+encodeURIComponent((uName||'User').replace(/\s+/g,'').substring(0,10)+'1250')+'&ch=0029VbDQSYt8KMqcfkfWTU0W&v=28.0ADMIRE';
+  let shortLink=base+'?r='+encodeURIComponent((uName||'User').substring(0,6)+'1250');
   document.getElementById('refLink').innerText=link;
-  document.getElementById('refQr').src='https://api.qrserver.com/v1/create-qr-code/?size=140x140&data='+encodeURIComponent(link);
+  document.getElementById('homeRefLink').innerText=link;
+  document.getElementById('shortLinkBox').innerText=shortLink;
+  document.getElementById('groupShortLink').innerText=shortLink;
+  document.getElementById('refQr').src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data='+encodeURIComponent(link);
+  document.getElementById('homeRefQr').src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data='+encodeURIComponent(link);
+  document.getElementById('shortQr').src='https://api.qrserver.com/v1/create-qr-code/?size=160x160&data='+encodeURIComponent(shortLink);
+  document.getElementById('groupShortQr').src='https://api.qrserver.com/v1/create-qr-code/?size=130x130&data='+encodeURIComponent(shortLink);
   document.getElementById('refCount').innerText=ref;
+  document.getElementById('homeRefCount').innerText=ref;
   document.getElementById('vipLevel').innerText='VIP'+getVip();
+  document.getElementById('homeVipLevel').innerText='VIP'+getVip();
   document.getElementById('vipBar').style.width=Math.min(ref/80*100,100)+'%';
+  document.getElementById('homeVipBar').style.width=Math.min(ref/80*100,100)+'%';
   document.getElementById('vipStatus').innerText=getVip()>=1?'✅VIP'+getVip():'🔒';
+  document.getElementById('homeVipStatus').innerText=getVip()>=1?'✅VIP'+getVip():'🔒';
+  let txt=getVip()>=1?'Unlocked VIP'+getVip()+' - People admire!':'Invite 3 for VIP1 - People admire bonus!';
+  document.getElementById('vipText').innerText=txt;
+  document.getElementById('homeVipText').innerText=txt;
   document.getElementById('tab-my').innerHTML='MY('+macs.length+')';
-  let myHtml=''; if(macs.length==0) myHtml='<div class="box"><div style="font-size:12px;color:#7a9ab8">No machines - Go Machines tab - v27.0</div></div>'; else macs.forEach((m,i)=>{myHtml+=`<div class="card" style="border:2px solid #00ff88"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=200"><div class="cardInfo"><b style="color:#00ff88">${m.id} ACTIVE</b><div class="price">Daily ${m.daily}</div><button class="buyBtn" style="background:#00ff88;color:#000" onclick="claimOne(${i})">Receive ${m.daily}</button></div></div>`;});
+  let myHtml=''; if(macs.length==0) myHtml='<div class="boxAdmire"><div style="font-size:12px;color:#7a9ab8">No machines - Go Machines tab - Real machines - People admire - v28.0</div></div>'; else macs.forEach((m,i)=>{myHtml+=`<div class="cardReal" style="border:2px solid #00ff88"><img src="https://images.unsplash.com/photo-1621504450181-5d356f61d307?w=200"><div class="cardInfo"><b style="color:#00ff88">${m.id} ACTIVE ✅ REAL</b><div class="price">Daily ${m.daily} UGX | Total ${m.daily*30} UGX | People admire real!</div><button class="buyBtnReal" onclick="claimOne(${i})">💸 Receive ${m.daily} UGX - Admire</button></div></div>`;});
   document.getElementById('page-my').innerHTML=myHtml;
 }
 function openB(b){
@@ -244,6 +377,7 @@ function openB(b){
   else if(b=='machines'){document.getElementById('page-all').style.display='block';document.getElementById('page-all').classList.add('on');}
   else{let pg=document.getElementById('page-'+b); if(pg){pg.style.display='block';pg.classList.add('on');}}
   let btn=document.getElementById('b-'+b); if(btn)btn.classList.add('on');
+  window.scrollTo(0,0);
 }
 function openTop(t){
   document.querySelectorAll('.tabs div').forEach(d=>d.classList.remove('on'));
@@ -254,61 +388,71 @@ function openTop(t){
   document.querySelectorAll('.bottom div').forEach(d=>d.classList.remove('on'));
   document.getElementById('b-machines').classList.add('on');
 }
-function copyRef(){let l=document.getElementById('refLink').innerText;navigator.clipboard.writeText(l).then(()=>alert('COPIED!'));}
+function copyRef(){let l=document.getElementById('refLink').innerText;navigator.clipboard.writeText(l).then(()=>alert('✅ COPY LINK! People admire short link! '+l));}
+function copyRefHome(){let l=document.getElementById('homeRefLink').innerText;navigator.clipboard.writeText(l).then(()=>alert('✅ SHORT LINK COPIED! People admire! '+l));}
+function shareWA(){let l=document.getElementById('refLink').innerText;window.open('https://wa.me/?text='+encodeURIComponent('🚀 SKYLIGHT v28.0 ADMIRE - NEW Channel 0029VbDQSYt8KMqcfkfWTU0W\nMy Admire Link: '+l+'\nPeople admire real company!'),' _blank');}
+function shareWAHome(){let l=document.getElementById('homeRefLink').innerText;window.open('https://wa.me/?text='+encodeURIComponent('🚀 SKYLIGHT v28.0 ADMIRE EDITION - Real Machines - People Admire!\nMy Link: '+l),' _blank');}
+function shareCH(){let l=document.getElementById('refLink').innerText;window.open('https://wa.me/?text='+encodeURIComponent('📢 SKYLIGHT v28.0 ADMIRE - NEW Channel 0029VbDQSYt8KMqcfkfWTU0W\nChannel: https://whatsapp.com/channel/0029VbDQSYt8KMqcfkfWTU0W\nMy Link: '+l),' _blank');}
+function shareShortLink(){let l=document.getElementById('shortLinkBox').innerText;window.open('https://wa.me/?text='+encodeURIComponent('🔗 SKYLIGHT SHORT LINK - People Admire!\nMy Short Link: '+l),' _blank');}
 function buyWithProof(){
   let sel=document.getElementById('buySelect').value;
   let txn=document.getElementById('txnId').value;
   let file=document.getElementById('proof').files[0];
-  if(!sel){alert('Select Machine!');return;}
-  if(!txn){alert('Txn ID!');return;}
-  if(!file){alert('Upload Proof!');return;}
+  if(!sel){alert('Select Real Machine! People admire real machines!');return;}
+  if(!txn){alert('Paste Txn ID!');return;}
+  if(!file){alert('Upload screenshot proof!');return;}
   let parts=sel.split('|');
   macs.push({id:parts[0],price:parseInt(parts[1]),daily:parseInt(parts[2])});
   save();
-  alert('✅ '+parts[0]+' ACTIVATED!');document.getElementById('buySelect').value='';document.getElementById('txnId').value='';document.getElementById('proof').value='';openB('home');
+  window.open('https://wa.me/256793814204?text='+encodeURIComponent('NEW ORDER v28.0 ADMIRE - Machine '+parts[0]+' Price '+parts[1]+' Txn '+txn+' User '+uName+' Pass '+uPass+' People admire real machine!'),' _blank');
+  alert('✅ '+parts[0]+' REAL MACHINE ACTIVATED! Earn '+parts[2]+' daily! People admire!');document.getElementById('buySelect').value='';document.getElementById('txnId').value='';document.getElementById('proof').value='';openB('home');
 }
-function claimOne(i){bal+=macs[i].daily;save();alert('Received '+macs[i].daily);}
+function claimOne(i){bal+=macs[i].daily;save();alert('💸 Received '+macs[i].daily+' UGX - People admire earnings!');}
 function withdraw(){
-  if(bal<2000){alert('Min 2000 you have '+bal);return;}
+  if(bal<2000){alert('Min 2000 you have '+bal+' - People admire min!');return;}
   let amt=parseInt(document.getElementById('withAmt').value||'0');
-  if(!amt){let p=prompt('Withdraw Max '+bal+':',bal);if(!p)return;amt=parseInt(p);}
-  if(amt>bal||amt<2000){alert('Invalid');return;}
-  bal-=amt;save();alert('Withdrawal '+amt+' sent!');document.getElementById('withAmt').value='';
+  if(!amt){let p=prompt('Withdraw Max '+bal+' - People admire withdrawal:',bal);if(!p)return;amt=parseInt(p);}
+  if(amt>bal||amt<2000){alert('Invalid - People admire valid amount!');return;}
+  bal-=amt;save();
+  window.open('https://wa.me/256793814204?text='+encodeURIComponent('WITHDRAW v28.0 ADMIRE - Amount '+amt+' User '+uName+' Pass '+uPass+' Bal Left '+bal+' People admire fast withdraw!'),' _blank');
+  alert('💸 Withdrawal '+amt+' sent! Fast 24H! People admire!');document.getElementById('withAmt').value='';
 }
 function changePass(){
   let o=document.getElementById('oldPass').value;
   let n=document.getElementById('newPass').value;
   let c=document.getElementById('confirmPass').value;
-  if(o!==uPass&&o!=='1234'){alert('Old wrong! '+uPass+' or 1234');return;}
-  if(n.length<4){alert('Min 4');return;}
-  if(n!==c){alert('No match');return;}
-  uPass=n;save();alert('✅ New Pass '+n+' - v27.0!');
+  if(o!==uPass&&o!=='1234'){alert('Old wrong! '+uPass+' or 1234 - People admire correct old!');return;}
+  if(n.length<4){alert('Min 4 - People admire strong pass!');return;}
+  if(n!==c){alert('No match - People admire matching!');return;}
+  uPass=n;save();alert('✅ New Pass '+n+' - STAYS LONG VISIBLE - People admire - v28.0!');
 }
-function logout(){if(confirm('Logout? Pass '+uPass+' + 1234!')){logged=false;save();document.getElementById('loginScreen').style.display='flex';}}
+function logout(){if(confirm('Logout? Pass '+uPass+' + 1234 Master! People admire logout! - v28.0')){logged=false;save();document.getElementById('loginScreen').style.display='flex';}}
 
-let allM='',mM='',aM='',ulyM='',buyOpts='<option value="">Select Machine</option>';
-const mData=[['M1',2000,120,'#00ff88'],['M2',5000,300,'#00ff88'],['M3',10000,600,'#00ff88'],['M4',20000,1200,'#00ff88'],['M5',40000,2400,'#00ff88'],['M6',80000,4800,'#00ff88']];
-const aData=[['A1',3000,180,'#00d4ff'],['A2',6000,360,'#00d4ff'],['A3',12000,720,'#00d4ff'],['A4',24000,1440,'#00d4ff'],['A5',48000,2880,'#00d4ff'],['A6',96000,5760,'#00d4ff']];
-const uData=[['U1',4000,240,'#d8b4fe'],['U2',8000,480,'#d8b4fe'],['U3',16000,960,'#d8b4fe'],['U4',32000,1920,'#d8b4fe'],['U5',64000,3840,'#d8b4fe'],['U6',128000,7680,'#d8b4fe']];
-const lData=[['L1',5000,300,'#ffaa00'],['L2',10000,600,'#ffaa00'],['L3',20000,1200,'#ffaa00'],['L4',40000,2400,'#ffaa00'],['L5',80000,4800,'#ffaa00'],['L6',160000,9600,'#ffaa00']];
-const yData=[['Y1',6000,360,'#22c55e'],['Y2',12000,720,'#22c55e'],['Y3',24000,1440,'#22c55e'],['Y4',48000,2880,'#22c55e'],['Y5',96000,5760,'#22c55e'],['Y6',192000,11520,'#22c55e']];
-function makeCard(id,price,daily,col){return `<div class="card" style="border-color:${col}"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=200"><div class="cardInfo"><b style="color:${col}">${id}</b><div class="price">Price ${price} Daily ${daily} Total ${daily*30}</div><button class="buyBtn" style="background:${col};color:#000" onclick="document.getElementById('buySelect').value='${id}|${price}|${daily}';openB('wallet')">Buy ${id}</button></div></div>`;}
-mData.forEach(d=>{let c=makeCard(d[0],d[1],d[2],d[3]);mM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1]} - ${d[2]}/day</option>`;});
-aData.forEach(d=>{let c=makeCard(d[0],d[1],d[2],d[3]);aM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1]} - ${d[2]}/day</option>`;});
-uData.forEach(d=>{let c=makeCard(d[0],d[1],d[2],d[3]);ulyM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1]} - ${d[2]}/day</option>`;});
-lData.forEach(d=>{let c=makeCard(d[0],d[1],d[2],d[3]);ulyM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1]} - ${d[2]}/day</option>`;});
-yData.forEach(d=>{let c=makeCard(d[0],d[1],d[2],d[3]);ulyM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1]} - ${d[2]}/day</option>`;});
-vips.forEach(d=>{buyOpts+=`<option value="${d.id}|${d.price}|${d.daily}">${d.id} - ${d.price} - ${d.daily}/day</option>`;});
+let allM='',mM='',aM='',ulyM='',buyOpts='<option value="">🛒 Select REAL Machine - People Admire - v28.0</option>';
+const mData=[['M1',2000,120,'#00ff88','https://images.unsplash.com/photo-1518544866330-95a2f0663a0a?w=200'],['M2',5000,300,'#00ff88','https://images.unsplash.com/photo-1621504450181-5d356f61d307?w=200'],['M3',10000,600,'#00ff88','https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=200'],['M4',20000,1200,'#00ff88','https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?w=200'],['M5',40000,2400,'#00ff88','https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=200'],['M6',80000,4800,'#00ff88','https://images.unsplash.com/photo-1518544866330-95a2f0663a0a?w=200']];
+const aData=[['A1',3000,180,'#00d4ff','https://images.unsplash.com/photo-1526378800651-c32d170fe6f8?w=200'],['A2',6000,360,'#00d4ff','https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=200'],['A3',12000,720,'#00d4ff','https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=200'],['A4',24000,1440,'#00d4ff','https://images.unsplash.com/photo-1518544866330-95a2f0663a0a?w=200'],['A5',48000,2880,'#00d4ff','https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?w=200'],['A6',96000,5760,'#00d4ff','https://images.unsplash.com/photo-1621504450181-5d356f61d307?w=200']];
+const uData=[['U1',4000,240,'#d8b4fe','https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=200'],['U2',8000,480,'#d8b4fe','https://images.unsplash.com/photo-1518544866330-95a2f0663a0a?w=200'],['U3',16000,960,'#d8b4fe','https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=200'],['U4',32000,1920,'#d8b4fe','https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?w=200'],['U5',64000,3840,'#d8b4fe','https://images.unsplash.com/photo-1518544866330-95a2f0663a0a?w=200'],['U6',128000,7680,'#d8b4fe','https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=200']];
+const lData=[['L1',5000,300,'#ffaa00','https://images.unsplash.com/photo-1621504450181-5d356f61d307?w=200'],['L2',10000,600,'#ffaa00','https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?w=200'],['L3',20000,1200,'#ffaa00','https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=200'],['L4',40000,2400,'#ffaa00','https://images.unsplash.com/photo-1518544866330-95a2f0663a0a?w=200'],['L5',80000,4800,'#ffaa00','https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=200'],['L6',160000,9600,'#ffaa00','https://images.unsplash.com/photo-1518544866330-95a2f0663a0a?w=200']];
+const yData=[['Y1',6000,360,'#22c55e','https://images.unsplash.com/photo-1526378800651-c32d170fe6f8?w=200'],['Y2',12000,720,'#22c55e','https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=200'],['Y3',24000,1440,'#22c55e','https://images.unsplash.com/photo-1621761191319-c6fb62004040?w=200'],['Y4',48000,2880,'#22c55e','https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?w=200'],['Y5',96000,5760,'#22c55e','https://images.unsplash.com/photo-1518544866330-95a2f0663a0a?w=200'],['Y6',192000,11520,'#22c55e','https://images.unsplash.com/photo-1518544866330-95a2f0663a0a?w=200']];
+function makeCard(id,price,daily,col,img){return `<div class="cardReal" style="border-color:${col}"><img src="${img}" alt="${id} REAL"><div class="cardInfo"><b style="color:${col}">${id} - REAL MACHINE - ADMIRE</b><div class="price">Price ${price.toLocaleString()} UGX | Daily ${daily.toLocaleString()} UGX | Total ${(daily*30).toLocaleString()} UGX | Profit ${(daily*30-price).toLocaleString()} | People admire real!</div><button class="buyBtnReal" style="background:linear-gradient(90deg,${col},#00d4ff)" onclick="document.getElementById('buySelect').value='${id}|${price}|${daily}';openB('wallet')">Buy ${id} - Real - Admire</button></div></div>`;}
+mData.forEach(d=>{let c=makeCard(d[0],d[1],d[2],d[3],d[4]);mM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} REAL - ${d[1].toLocaleString()} UGX - ${d[2]}/day - People admire!</option>`;});
+aData.forEach(d=>{let c=makeCard(d[0],d[1],d[2],d[3],d[4]);aM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} REAL - ${d[1].toLocaleString()} UGX - ${d[2]}/day - Admire!</option>`;});
+uData.forEach(d=>{let c=makeCard(d[0],d[1],d[2],d[3],d[4]);ulyM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} REAL - ${d[1].toLocaleString()} UGX - ${d[2]}/day - Admire!</option>`;});
+lData.forEach(d=>{let c=makeCard(d[0],d[1],d[2],d[3],d[4]);ulyM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} REAL - ${d[1].toLocaleString()} UGX - ${d[2]}/day - Admire!</option>`;});
+yData.forEach(d=>{let c=makeCard(d[0],d[1],d[2],d[3],d[4]);ulyM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} REAL - ${d[1].toLocaleString()} UGX - ${d[2]}/day - Admire!</option>`;});
+vips.forEach(d=>{buyOpts+=`<option value="${d.id}|${d.price}|${d.daily}">${d.id} REAL - ${d.price.toLocaleString()} UGX - ${d.daily.toLocaleString()}/day - Need ${d.refs} - Admire!</option>`;});
 document.getElementById('page-all').innerHTML=allM;
 document.getElementById('page-m').innerHTML=mM;
 document.getElementById('page-a').innerHTML=aM;
 document.getElementById('page-uly').innerHTML=ulyM;
 document.getElementById('buySelect').innerHTML=buyOpts;
-let vipHtml=''; vips.forEach(v=>{let un=ref>=v.refs; vipHtml+=`<div class="card" style="border:${un?'3px solid #00ff88':'2px solid #1a3a5a'}"><img src="https://images.unsplash.com/photo-1621504450181-5d356f61d307?w=200"><div class="cardInfo"><b style="color:${un?'#00ff88':'#666'}">${v.id} ${un?'UNLOCKED':'LOCKED'} Need ${v.refs}</b><div class="price">Price ${v.price} Daily ${v.daily}</div><button class="buyBtn" style="background:${un?'#00ff88':'#444'};color:${un?'#000':'#fff'}" onclick="${un?`document.getElementById('buySelect').value='${v.id}|${v.price}|${v.daily}';openB('wallet')`:`alert('Need ${v.refs}')` }">${un?'Buy '+v.id:'Locked'}</button></div></div>`;});
+let vipHtml=''; vips.forEach(v=>{let un=ref>=v.refs; vipHtml+=`<div class="cardReal" style="border:${un?'3px solid #00ff88':'2px solid #1a3a5a'};opacity:${un?'1':'0.7'}"><img src="https://images.unsplash.com/photo-1621504450181-5d356f61d307?w=200"><div class="cardInfo"><b style="color:${un?'#00ff88':'#666'}">${v.id} ${un?'UNLOCKED ✅ REAL - ADMIRE':'LOCKED 🔒'} - Need ${v.refs} friends - People admire!</b><div class="price">Price ${v.price.toLocaleString()} UGX Daily ${v.daily.toLocaleString()} UGX | People admire VIP!</div><button class="buyBtnReal" style="background:${un?'linear-gradient(90deg,#00ff88,#ffcc00)':'#444'};color:${un?'#000':'#fff'}" onclick="${un?`document.getElementById('buySelect').value='${v.id}|${v.price}|${v.daily}';openB('wallet')`:`alert('Need ${v.refs} friends! You have ${ref} - People admire need more!')` }">${un?'Buy '+v.id+' - Real - Admire':'Locked - Need '+v.refs+' - People admire'}</button></div></div>`;});
 document.getElementById('page-vip').innerHTML=vipHtml;
+let homeMachinesHtml=''; mData.slice(0,2).forEach(d=>{homeMachinesHtml+=makeCard(d[0],d[1],d[2],d[3],d[4]);}); aData.slice(0,1).forEach(d=>{homeMachinesHtml+=makeCard(d[0],d[1],d[2],d[3],d[4]);});
+document.getElementById('homeRealMachines').innerHTML=homeMachinesHtml;
 
 if(!logged){document.getElementById('loginScreen').style.display='flex';}else{document.getElementById('loginScreen').style.display='none';}
 upd();
 </script>
 </body>
-                                                    </html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               </html>
