@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<title>SKYLIGHT v24.0 - HOME NO MACHINES - MACHINES ONLY IN BOTTOM - RULES UPGRADED - PROFILE PIC + PASS BIG</title>
+<title>SKYLIGHT v25.0 SIMPLE RULES - NEW MEMBERS CAN UNDERSTAND - PASS 32px - PIC 110px</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
 body{background:#050a18;color:#fff;padding-bottom:85px}
@@ -20,14 +20,15 @@ body{background:#050a18;color:#fff;padding-bottom:85px}
 input,select{width:100%;padding:14px;margin-top:8px;background:#000;border:2px solid #1a3a5a;border-radius:12px;color:#fff}
 .bal{font-size:26px;color:#00ff88;font-weight:bold}
 .logo{width:85px;height:85px;transform:rotate(45deg);border:3px solid #00ff88;background:#001a33;display:flex;align-items:center;justify-content:center;margin:0 auto;box-shadow:0 0 20px #00ff88}
-.loginBox{max-width:420px;margin:20px auto;background:#101c33;border:3px solid #00ff88;border-radius:20px;padding:20px;text-align:center}
+.loginBox{max-width:430px;margin:15px auto;background:#101c33;border:4px solid #00ff88;border-radius:20px;padding:18px;text-align:center}
 .passBox{position:relative}
-.eye{position:absolute;right:14px;top:50%;transform:translateY(-50%);background:#00ff88;color:#000;border-radius:50%;padding:7px 11px;cursor:pointer;font-weight:bold;font-size:20px;border:2px solid #fff}
-#loginScreen{position:fixed;inset:0;background:#050a18;z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px;overflow:auto}
+.eye{position:absolute;right:14px;top:50%;transform:translateY(-50%);background:#00ff88;color:#000;border-radius:50%;padding:8px 12px;cursor:pointer;font-weight:bold;font-size:22px;border:2px solid #fff}
+#loginScreen{position:fixed;inset:0;background:#050a18;z-index:9999;display:flex;align-items:center;justify-content:center;padding:12px;overflow:auto}
 .bigNum{font-size:22px;color:#00ff88;background:#000;border:2px solid #00ff88;border-radius:12px;padding:10px;text-align:center;margin:8px 0;font-weight:bold}
 .person{display:flex;align-items:center;background:#0d1a33;border-radius:14px;padding:12px;margin:8px 0;border:2px solid #1a2d4d}
 .person img{width:60px;height:60px;border-radius:50%;border:2px solid #00ff88;margin-right:12px;object-fit:cover}
-.profileBig{width:90px;height:90px;border-radius:50%;border:4px solid #00ff88;box-shadow:0 0 25px #00ff88;margin:0 auto 10px auto;display:block;object-fit:cover}
+.profileBig{width:110px;height:110px;border-radius:50%;border:5px solid #00ff88;box-shadow:0 0 30px #00ff88;margin:0 auto 10px auto;display:block;object-fit:cover}
+.profileHome{width:100px;height:100px;border-radius:50%;border:4px solid #00ff88;box-shadow:0 0 20px #00ff88;margin:0 auto 10px auto;display:block;object-fit:cover}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px}
 .chCard{background:#0a1933;border:2px solid #1a3a5a;border-radius:14px;padding:12px;text-align:center;cursor:pointer}
 .bottom{position:fixed;bottom:0;left:0;right:0;height:75px;background:#08152a;border-top:2px solid #00ff88;display:flex;z-index:300}
@@ -38,28 +39,36 @@ input,select{width:100%;padding:14px;margin-top:8px;background:#000;border:2px s
 .tabs{display:flex;gap:6px;padding:10px 12px;background:#050a18;border-bottom:1px solid #1a335a;overflow-x:auto;position:sticky;top:62px;z-index:90}
 .tabs div{color:#5a7294;font-size:11px;white-space:nowrap;cursor:pointer;padding:7px 12px;border-radius:20px;border:1.5px solid #1a335a;font-weight:bold}
 .tabs .on{color:#000;background:#00ff88;border-color:#00ff88}
-.loginPassBigger{width:100% !important;padding:24px !important;font-size:30px !important;font-weight:bold !important;letter-spacing:10px !important;border:5px solid #00ff88 !important;background:#000 !important;color:#00ff88 !important;text-align:center !important;border-radius:18px !important;margin-top:12px !important;box-shadow:0 0 35px #00ff88cc !important}
+.loginPassBigger{width:100% !important;padding:26px !important;font-size:32px !important;font-weight:bold !important;letter-spacing:12px !important;border:6px solid #00ff88 !important;background:#000 !important;color:#00ff88 !important;text-align:center !important;border-radius:20px !important;margin-top:12px !important;box-shadow:0 0 40px #00ff88cc, inset 0 0 20px #00ff8844 !important}
+.stepBox{background:#000;border:2px solid #00ff88;border-radius:14px;padding:14px;margin:10px 0;display:flex;gap:12px;align-items:flex-start}
+.stepNum{background:#00ff88;color:#000;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:18px;flex-shrink:0}
+.simpleText{font-size:13px;color:#fff;line-height:1.6}
 </style>
 </head>
 <body>
 
 <div id="loginScreen">
 <div class="loginBox">
-<div style="padding:18px;background:radial-gradient(circle,#0a2a4a,#050a18);border:3px solid #00ff88;border-radius:18px;margin-bottom:14px">
+<div style="padding:18px;background:radial-gradient(circle,#0a2a4a,#050a18);border:3px solid #00ff88;border-radius:18px;margin-bottom:12px">
 <div class="logo"><div style="transform:rotate(-45deg);color:#00ff88;font-size:38px;font-weight:bold">S</div></div>
 <div style="margin-top:16px"><b style="color:#00ff88;font-size:24px;letter-spacing:4px">SKYLIGHT</b><div style="color:#fff;font-size:11px;letter-spacing:5px;font-weight:bold">AI COMPANY</div><div style="color:#00ff88;font-size:9px;margin-top:6px">NEW 0029VbDQSYt8KMqcfkfWTU0W</div></div>
 </div>
+
 <img id="loginPic" src="https://i.pravatar.cc/150?img=33" class="profileBig">
-<div style="color:#00ff88;font-weight:bold;font-size:16px" id="loginNameShow">Bruno Mickeal CEO</div>
-<label style="color:#00d4ff;font-weight:bold;display:block;text-align:left;margin-top:14px">👤 Name - Profile Pic Updates:</label>
-<input type="text" id="loginName" value="Bruno Mickeal" oninput="updateProfile(this.value)" style="border:2px solid #00d4ff">
-<label style="color:#000;background:#00ff88;padding:10px;border-radius:12px;display:block;text-align:center;margin-top:14px;font-weight:bold;border:2px solid #fff">🔑 PASSWORD MUST BE THERE - TAP EYE 👁️ - BIGGER 30px</label>
+<div style="color:#00ff88;font-weight:bold;font-size:17px" id="loginNameShow">Bruno Mickeal CEO</div>
+<div style="font-size:10px;color:#000;background:#00ff88;padding:4px 10px;border-radius:8px;display:inline-block;margin-top:4px;font-weight:bold">PROFILE PIC 110px BIGGER - MUST BE THERE</div>
+
+<label style="color:#00d4ff;font-weight:bold;display:block;text-align:left;margin-top:14px">👤 Your Name - Pic Will Change:</label>
+<input type="text" id="loginName" value="Bruno Mickeal" oninput="updateProfile(this.value)" style="border:3px solid #00d4ff;background:#000;font-weight:bold">
+
+<label style="color:#000;background:linear-gradient(90deg,#00ff88,#ffcc00);padding:12px;border-radius:14px;display:block;text-align:center;margin-top:14px;font-weight:bold;border:3px solid #fff;font-size:14px">🔑 PASSWORD MUST BE THERE - BIGGER 32px - TAP EYE 👁️ - MASTER 1234</label>
 <div class="passBox">
 <input type="password" id="loginPass" value="1234" class="loginPassBigger" placeholder="1234">
-<span class="eye" onclick="var i=document.getElementById('loginPass');i.type=i.type=='password'?'text':'password';this.innerText=i.type=='password'?'👁️':'🙈'">👁️</span>
+<span class="eye" onclick="var i=document.getElementById('loginPass');i.type=i.type=='password'?'text':'password';this.innerText=i.type=='password'?'👁️':'🙈';this.style.background=i.type=='password'?'#00ff88':'#ffcc00'">👁️</span>
 </div>
-<div style="font-size:10px;margin-top:8px;color:#000;background:#00ff88;padding:8px;border-radius:8px;font-weight:bold">✅ PROFILE PIC + LOGIN PASS MUST BE THERE - BIGGER 30px - 10px spacing - 5px border - Glow 35px - Eye bigger!</div>
-<button class="btn ch" style="margin-top:14px;font-size:18px;padding:16px" onclick="doLogin()">🚀 LOGIN - PROFILE PIC + PASS BIGGER</button>
+<div style="font-size:11px;margin-top:10px;color:#000;background:linear-gradient(90deg,#00ff88,#ffcc00);padding:10px;border-radius:10px;font-weight:bold;border:2px solid #fff;text-align:center">✅ PASSWORD 32px BIGGER! 12px Spacing + 6px Border + Glow 40px + Eye 22px Bigger! Anyone Can See! Master 1234 Works! PROFILE PIC 110px + PASS 32px MUST BE THERE!</div>
+
+<button class="btn ch" style="margin-top:14px;font-size:19px;padding:18px;border:3px solid #fff" onclick="doLogin()">🚀 LOGIN - PIC 110px + PASS 32px</button>
 </div>
 </div>
 
@@ -71,14 +80,14 @@ input,select{width:100%;padding:14px;margin-top:8px;background:#000;border:2px s
 <div class="box" style="text-align:center;border:3px solid #00ff88;background:radial-gradient(circle,#0a2a4a,#050a18)">
 <div class="logo" style="width:95px;height:95px"><div style="transform:rotate(-45deg);color:#00ff88;font-size:42px;font-weight:bold">S</div></div>
 <div style="margin-top:16px"><b style="color:#00ff88;font-size:26px;letter-spacing:5px">SKYLIGHT</b><div style="color:#fff;font-size:11px;letter-spacing:6px;font-weight:bold">AI COMPANY</div><div style="color:#5a7294;font-size:9px;margin-top:6px">NEW 0029VbDQSYt8KMqcfkfWTU0W</div></div>
-<img id="homeProfilePic" src="https://i.pravatar.cc/150?img=33" class="profileBig" style="margin-top:14px">
-<div><b style="color:#00ff88;font-size:16px" id="homeUser">Bruno Mickeal CEO</b><div style="font-size:10px;color:#7a9ab8" id="homeId">ID: SKY-1250 | 0793814204 | CEO | PROFILE PIC MUST BE THERE</div></div>
+<img id="homeProfilePic" src="https://i.pravatar.cc/150?img=33" class="profileHome" style="margin-top:14px">
+<div><b style="color:#00ff88;font-size:16px" id="homeUser">Bruno Mickeal CEO</b><div style="font-size:10px;color:#7a9ab8" id="homeId">ID: SKY-1250 | 0793814204 | CEO | PIC 110px MUST BE THERE</div></div>
 <div style="margin-top:12px;background:#000;border:2px solid #00ff88;border-radius:14px;padding:12px"><div class="bal" id="homeBalMain">0 UGX</div><div style="font-size:11px;color:#7a9ab8">Balance | Machines <span id="homeCountMain">0</span> | Refs <span id="homeRefMain">0</span> | VIP <span id="homeVipMain">VIP0</span> | Pass <span id="homePassMain">1234</span> ✅</div></div>
 <div class="grid2" style="margin-top:12px">
-<button class="btn wa" style="margin:0;padding:12px" onclick="openB('wallet')">💰 Deposit - Choose Mobile + Copy</button>
-<button class="btn" style="margin:0;padding:12px;background:#ff3300;color:#fff" onclick="withdraw()">💸 Withdraw - Fast 24H</button>
+<button class="btn wa" style="margin:0;padding:12px" onclick="openB('wallet')">💰 Deposit</button>
+<button class="btn" style="margin:0;padding:12px;background:#ff3300;color:#fff" onclick="withdraw()">💸 Withdraw</button>
 </div>
-<button class="btn ch" style="margin-top:10px" onclick="openB('machines')">⚙️ Go to Machines Bottom - Machines Only There - HOME NO MACHINES</button>
+<button class="btn ch" style="margin-top:10px" onclick="openB('machines')">⚙️ Machines Only in Machines Tab - HOME NO MACHINES</button>
 </div>
 
 <div class="box" style="border:2px solid #00ff88"><h3 style="color:#00ff88">📢 Official Channels</h3>
@@ -90,15 +99,14 @@ input,select{width:100%;padding:14px;margin-top:8px;background:#000;border:2px s
 </div>
 </div>
 
-<div class="box" style="border:3px solid #ffcc00"><h3 style="color:#ffcc00">👑 Founders - Profile Pic Must Be There</h3>
-<div class="person" style="border-color:#ffcc00"><img src="https://i.pravatar.cc/150?img=33"><div><b style="color:#ffcc00">Bruno Mickeal - CEO ⭐</b><div style="font-size:11px;color:#7a9ab8">Kampala 0793814204 - 44 Servers - Main Founder - Profile Pic 90px + Big Logo + Login Pass Bigger 30px</div></div></div>
+<div class="box" style="border:3px solid #ffcc00"><h3 style="color:#ffcc00">👑 Founders</h3>
+<div class="person" style="border-color:#ffcc00"><img src="https://i.pravatar.cc/150?img=33"><div><b style="color:#ffcc00">Bruno Mickeal - CEO ⭐</b><div style="font-size:11px;color:#7a9ab8">Kampala 0793814204 - Main Founder</div></div></div>
 <div class="grid2">
-<div class="person" style="flex-direction:column;text-align:center"><img src="https://i.pravatar.cc/150?img=5" style="margin:0 0 6px 0"><div><b style="color:#ff69b4;font-size:11px">Sarah Nakato 💎</b><div style="font-size:9px;color:#7a9ab8">Finance - Entebbe 12 - Deposit Verify</div></div></div>
-<div class="person" style="flex-direction:column;text-align:center"><img src="https://i.pravatar.cc/150?img=8" style="margin:0 0 6px 0"><div><b style="color:#00d4ff;font-size:11px">David Okello 🤖</b><div style="font-size:9px;color:#7a9ab8">CTO - Nakawa 24 - AI Machines</div></div></div>
-<div class="person" style="flex-direction:column;text-align:center"><img src="https://i.pravatar.cc/150?img=32" style="margin:0 0 6px 0"><div><b style="color:#d8b4fe;font-size:11px">Grace Atim 📈</b><div style="font-size:9px;color:#7a9ab8">Marketing - Jinja 8 - VIP 12K</div></div></div>
-<div class="person" style="flex-direction:column;text-align:center"><img src="https://i.pravatar.cc/150?img=12" style="margin:0 0 6px 0"><div><b style="color:#22c55e;font-size:11px">Micheal Kato ⚡</b><div style="font-size:9px;color:#7a9ab8">Ops - Withdrawal Fast 24H - Support</div></div></div>
+<div class="person" style="flex-direction:column;text-align:center"><img src="https://i.pravatar.cc/150?img=5" style="margin:0 0 6px 0"><div><b style="color:#ff69b4;font-size:11px">Sarah Nakato 💎</b><div style="font-size:9px;color:#7a9ab8">Finance - Entebbe 12</div></div></div>
+<div class="person" style="flex-direction:column;text-align:center"><img src="https://i.pravatar.cc/150?img=8" style="margin:0 0 6px 0"><div><b style="color:#00d4ff;font-size:11px">David Okello 🤖</b><div style="font-size:9px;color:#7a9ab8">CTO - Nakawa 24</div></div></div>
+<div class="person" style="flex-direction:column;text-align:center"><img src="https://i.pravatar.cc/150?img=32" style="margin:0 0 6px 0"><div><b style="color:#d8b4fe;font-size:11px">Grace Atim 📈</b><div style="font-size:9px;color:#7a9ab8">Marketing - Jinja 8</div></div></div>
+<div class="person" style="flex-direction:column;text-align:center"><img src="https://i.pravatar.cc/150?img=12" style="margin:0 0 6px 0"><div><b style="color:#22c55e;font-size:11px">Micheal Kato ⚡</b><div style="font-size:9px;color:#7a9ab8">Ops - Fast 24H</div></div></div>
 </div>
-<div style="font-size:10px;color:#00ff88;margin-top:8px;text-align:center;background:#000;padding:6px;border-radius:8px">✅ HOME NO MACHINES - Machines only in Machines bottom tab as you said dear! Profile pic + Login pass must be there!</div>
 </div>
 </div>
 
@@ -110,7 +118,10 @@ input,select{width:100%;padding:14px;margin-top:8px;background:#000;border:2px s
 <div id="page-my" class="page"></div>
 
 <div id="page-wallet" class="page">
-<div class="box" style="border:3px solid #ffcc00"><h3 style="color:#ffcc00">📱 Deposit - Choose Mobile + Copy</h3>
+<div class="box" style="border:3px solid #ffcc00"><h3 style="color:#ffcc00">📱 Deposit - Easy Steps</h3>
+<div class="stepBox"><div class="stepNum">1</div><div class="simpleText"><b>Choose Number:</b> Select 0793814204 Bruno MTN or 0758764116 Grace Airtel or USDT<br>Tap COPY button</div></div>
+<div class="stepBox"><div class="stepNum">2</div><div class="simpleText"><b>Send Money:</b> Go to MTN MoMo → Send to that number → Keep Txn ID</div></div>
+<div class="stepBox"><div class="stepNum">3</div><div class="simpleText"><b>Select Machine:</b> Choose M1, M2 etc from list below</div></div>
 <select id="mobileSelect" onchange="document.getElementById('mobNum').innerText=this.value.split('|')[0]" style="border:3px solid #ffcc00;background:#000;color:#ffcc00;font-weight:bold">
 <option value="0793814204|BRUNO">📱 0793814204 - BRUNO CEO - MTN</option>
 <option value="0758764116|GRACE">📱 0758764116 - GRACE - Airtel</option>
@@ -123,22 +134,23 @@ input,select{width:100%;padding:14px;margin-top:8px;background:#000;border:2px s
 </div>
 <h3 style="margin-top:14px;color:#00ff88">🛒 Buy Machine</h3>
 <select id="buySelect"></select>
-<input type="text" id="txnId" placeholder="Txn ID">
+<input type="text" id="txnId" placeholder="Paste Txn ID here from MTN message">
 <input type="file" id="proof" accept="image/*">
-<button class="btn wa" onclick="buyWithProof()">✅ Confirm Proof</button>
+<button class="btn wa" onclick="buyWithProof()">✅ Confirm Proof - Machine Will Activate</button>
 </div>
-<div class="box" style="border:3px solid #ff3300"><h3 style="color:#ff4444">💸 Withdrawal</h3><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px"><div style="background:#000;border:2px solid #00ff88;border-radius:10px;padding:10px;text-align:center"><div style="font-size:9px;color:#7a9ab8">Available</div><div class="bal" style="font-size:18px" id="withBal">0 UGX</div></div><div style="background:#000;border:2px solid #ffcc00;border-radius:10px;padding:10px;text-align:center"><div style="font-size:9px;color:#7a9ab8">Min</div><div style="color:#ffcc00;font-weight:bold;font-size:18px">2,000 UGX</div></div></div><input type="number" id="withAmt" placeholder="Amount"><select id="withMet"><option>MTN MoMo 0793814204</option><option>Airtel 0758764116</option><option>USDT TRC20</option></select><button class="btn" style="background:#ff3300;color:#fff" onclick="withdraw()">💸 Withdraw Now</button></div>
+<div class="box" style="border:3px solid #ff3300"><h3 style="color:#ff4444">💸 Withdraw - Easy</h3><div style="font-size:12px;color:#7a9ab8;margin:8px 0">Min 2000 UGX. You can withdraw anytime. Fast 24 hours. Money goes to your MTN or Airtel.</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px"><div style="background:#000;border:2px solid #00ff88;border-radius:10px;padding:10px;text-align:center"><div style="font-size:9px;color:#7a9ab8">Available</div><div class="bal" style="font-size:18px" id="withBal">0 UGX</div></div><div style="background:#000;border:2px solid #ffcc00;border-radius:10px;padding:10px;text-align:center"><div style="font-size:9px;color:#7a9ab8">Min</div><div style="color:#ffcc00;font-weight:bold;font-size:18px">2,000 UGX</div></div></div><input type="number" id="withAmt" placeholder="How much? Min 2000"><select id="withMet"><option>MTN MoMo 0793814204</option><option>Airtel 0758764116</option><option>USDT TRC20</option></select><button class="btn" style="background:#ff3300;color:#fff" onclick="withdraw()">💸 Withdraw Now - Fast 24H</button></div>
 </div>
 
 <div id="page-group" class="page">
-<div class="box" style="text-align:center;border:3px solid #00ff88"><h3 style="color:#00ff88">🎁 Invite - Copy Link</h3>
+<div class="box" style="text-align:center;border:3px solid #00ff88"><h3 style="color:#00ff88">🎁 Invite Friends - Earn VIP</h3>
+<div style="font-size:12px;color:#7a9ab8;margin:8px 0">Share your link. When 3 friends join, you become VIP1. More friends = Higher VIP = More earnings!</div>
 <button class="btn ch" onclick="window.open('https://whatsapp.com/channel/0029VbDQSYt8KMqcfkfWTU0W','_blank')">📢 WA Channel</button>
 <div style="background:#000;padding:14px;border-radius:12px;border:3px solid #00ff88;margin:14px 0;word-break:break-all;font-size:13px;color:#00ff88;font-weight:bold" id="refLink">LINK LOADING...</div>
 <img id="refQr" style="background:#fff;padding:10px;border-radius:12px;width:160px;margin:10px auto;display:block" src="">
-<button class="btn ch" style="padding:16px;font-size:16px;border:3px solid #fff" onclick="copyRef()">📋 COPY LINK</button>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px"><button class="btn wa" style="margin:0" onclick="shareWA()">💬 Share</button><button class="btn" style="margin:0;background:#fff;color:#000" onclick="shareCH()">📢 Share Channel</button></div>
+<button class="btn ch" style="padding:16px;font-size:16px;border:3px solid #fff" onclick="copyRef()">📋 COPY LINK - Share to Friends</button>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px"><button class="btn wa" style="margin:0" onclick="shareWA()">💬 Share WhatsApp</button><button class="btn" style="margin:0;background:#fff;color:#000" onclick="shareCH()">📢 Share Channel</button></div>
 <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:14px">
-<div style="background:#000;border:2px solid #00d4ff;border-radius:12px;padding:12px;text-align:center"><b style="color:#00d4ff;font-size:20px" id="refCount">0</b><div style="font-size:9px;color:#7a9ab8">Invites</div></div>
+<div style="background:#000;border:2px solid #00d4ff;border-radius:12px;padding:12px;text-align:center"><b style="color:#00d4ff;font-size:20px" id="refCount">0</b><div style="font-size:9px;color:#7a9ab8">Friends</div></div>
 <div style="background:#000;border:2px solid #ffcc00;border-radius:12px;padding:12px;text-align:center"><b style="color:#ffcc00;font-size:20px" id="vipLevel">VIP0</b><div style="font-size:9px;color:#7a9ab8">VIP</div></div>
 <div style="background:#000;border:2px solid #00ff88;border-radius:12px;padding:12px;text-align:center"><b style="color:#00ff88;font-size:16px" id="vipStatus">🔒</b><div style="font-size:9px;color:#7a9ab8">Status</div></div>
 </div>
@@ -148,26 +160,41 @@ input,select{width:100%;padding:14px;margin-top:8px;background:#000;border:2px s
 </div>
 
 <div id="page-rules" class="page">
-<div class="box" style="border:3px solid #00ff88"><h3 style="color:#000;background:#00ff88;padding:12px;border-radius:12px;text-align:center">📜 RULES - UPGRADED ACCORDING TO PROJECT INSIDE - SKYLIGHT AI COMPANY - v24.0</h3>
+<div class="box" style="border:4px solid #00ff88;background:#050a18">
+<h3 style="color:#000;background:#00ff88;padding:14px;border-radius:14px;text-align:center;font-size:16px">📜 SKYLIGHT RULES - SIMPLE - NEW MEMBERS CAN UNDERSTAND - v25.0</h3>
 
-<div class="box" style="border:3px solid #00ff88;background:#001100;margin:12px 0"><h4 style="color:#00ff88">🏢 1. SKYLIGHT AI COMPANY - PROJECT INSIDE:</h4><div style="font-size:12px;color:#fff;line-height:1.6">SKYLIGHT AI COMPANY is Uganda's top AI trading platform HQ Kampala since 2023. 44 servers main + 12 Entebbe + 24 Nakawa + 8 Jinja = 88 servers total. Diamond logo S 85px rotated 45deg green border #00ff88 glow 20px. WhatsApp Channel NEW 0029VbDQSYt8KMqcfkfWTU0W Official 12K followers daily profits proofs. CEO Bruno Mickeal 0793814204 Luganda + English. AI Company trading machines M Gold 6% daily, A Blue AI 6%, U Purple Model 6%, L Gold Growth 6%, Y Green Energy 6%, VIP Gold 17% daily. More than 36 machines HD + VIP8. Profile pic 90px + login password bigger 30px must be there!</div></div>
+<div style="background:#00ff88;color:#000;padding:10px;border-radius:12px;text-align:center;font-weight:bold;margin:12px 0">👋 WELCOME! This is Simple Guide - Anyone Can Understand - No Big Words!</div>
 
-<div class="box" style="border:3px solid #ffcc00;background:#1a1a00;margin:12px 0"><h4 style="color:#ffcc00">👑 2. FOUNDERS ONLY - 5 Leaders - PROJECT INSIDE:</h4><div style="font-size:12px;color:#fff;line-height:1.6">5 Founders Only No Talking Mode: <br>• Bruno Mickeal CEO & Founder ⭐ Kampala HQ 0793814204 - Main Founder - 44 Servers - Big Logo Designer - Since 2023 - NEW Channel 0029VbDQSYt8KMqcfkfWTU0W Official - Profile pic 90px must be there - Login password 30px must be there.<br>• Sarah Nakato Co-Founder 💎 Models + Finance - Entebbe 12 Servers - Beautiful Models Manager - U/L/Y HD Models - Deposit verification Sarah verifies 24/7 - Finance Real Details.<br>• David Okello CTO 🤖 Tech + AI Creator - Nakawa 24 Servers - Tech Head - M/A Series AI Blue Machines Developer - Telegram https://t.me/+vyEcluEH54c0NTk0 AI Trading Signals - AI Creator Blue.<br>• Grace Atim Marketing 📈 VIP + Growth Queen - Jinja 8 Servers - Growth - 12K Members - VIP Program 3→80 Manager - Group Channel - WhatsApp Group https://chat.whatsapp.com/BNeCwxPjLk95w3QejfjjM6 - Referral Queen - VIP Queen.<br>• Micheal Kato Ops ⚡ Withdrawal + Support - Operations - Fast Withdrawal 24H - Support 0793814204 - Deposit/Withdrawal Real Details - Wallet + Balance - Settings - 24/7 Fast.</div></div>
+<div class="box" style="border:3px solid #00ff88;background:#001100;margin:10px 0"><h4 style="color:#00ff88;font-size:15px">🏢 What is SKYLIGHT?</h4><div class="simpleText" style="margin-top:8px">SKYLIGHT is a Ugandan company that helps you earn money every day.<br><b>We have machines:</b> You buy a machine, it gives you money daily for 30 days.<br><b>Example:</b> Buy M1 for 2,000 UGX, it gives you 120 UGX every day. Total 3,600 UGX in 30 days.<br><br>HQ in Kampala. Started 2023. Real company with 5 founders.</div></div>
 
-<div class="box" style="border:3px solid #25D366;background:#001100;margin:12px 0"><h4 style="color:#25D366">📱 3. DEPOSIT & WITHDRAWAL - PROJECT INSIDE - RULES UPGRADED:</h4><div style="font-size:12px;color:#fff;line-height:1.6">DEPOSIT - Choose Mobile + Copy: 3 Options - 0793814204 BRUNO MICKEAL CEO MAIN MTN MoMo MAIN - Real Deposit - Sarah Nakato verifies 24/7, 0758764116 GRACE ATIM ADMIN Airtel Money ADMIN 2 - Real Deposit, TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb USDT TRC20 Crypto Real Deposit. Flow: Select HD Machine 36 + VIP8 - Enter Txn ID from MTN MoMo/Airtel Reference - Upload Proof Image - Confirm Proof Auto Activate - Send to WhatsApp 0793814204 with chosen mobile details - Sarah verifies deposit real - More than 💯 real! <br><br>WITHDRAWAL - Fast 24H: Min 2000 UGX, Max balance, Available balance + min display, withdraw amount input + method select MTN MoMo 0793814204 Airtel 0758764116 USDT TRC20, button red fast 24H Micheal Kato, proof posted in WhatsApp channel official NEW 0029VbDQSYt8KMqcfkfWTU0W, Fast 24H support 0793814204 - Micheal Kato Ops 24/7 Fast Withdrawal Real Details - Min 2000 UGX - Max balance - Real withdrawal flow professional!</div></div>
+<div class="box" style="border:3px solid #ffcc00;background:#1a1a00;margin:10px 0"><h4 style="color:#ffcc00;font-size:15px">🚀 How to Start - 5 Easy Steps - NEW MEMBER GUIDE</h4>
+<div class="stepBox"><div class="stepNum">1</div><div class="simpleText"><b>Login:</b> Enter your name. Password is 1234. Tap eye 👁️ to see password. Tap LOGIN. Profile pic 110px will show you.</div></div>
+<div class="stepBox"><div class="stepNum">2</div><div class="simpleText"><b>Go to Wallet:</b> Tap Wallet at bottom. You will see Deposit section.</div></div>
+<div class="stepBox"><div class="stepNum">3</div><div class="simpleText"><b>Choose Machine:</b> Go to Machines at bottom. See M1, M2, A1, U1 etc. Each shows Price, Daily earning, Total 30 days. Tap Buy M1 to select.</div></div>
+<div class="stepBox"><div class="stepNum">4</div><div class="simpleText"><b>Deposit Money:</b> Choose phone number 0793814204 Bruno MTN. Tap COPY. Go to MTN MoMo app, send money to that number. Copy the Txn ID from MTN message.</div></div>
+<div class="stepBox"><div class="stepNum">5</div><div class="simpleText"><b>Upload Proof:</b> Paste Txn ID, upload screenshot of MTN message, tap Confirm Proof. Your machine will activate! You start earning daily!</div></div>
+</div>
 
-<div class="box" style="border:3px solid #00d4ff;background:#001122;margin:12px 0"><h4 style="color:#00d4ff">💰 4. WALLET PLUS BALANCE & MACHINES - PROJECT INSIDE:</h4><div style="font-size:12px;color:#fff;line-height:1.6">WALLET PLUS BALANCE: Total balance 26px green bold + daily profit + wallet plus earnings display, machines VIP referrals counts, Wallet Plus Balance upgraded with daily profit plus referral earnings. <br><br>MACHINES: Home NO Machines - Machines only in Machines bottom tab as you said dear! Bottom nav Machines tab shows All 36 tabs: All 36, M Gold 6 machines M1 2000 UGX daily 120 UGX total 3600 UGX - M2 5000 daily 300 total 9000 - M3 10000 daily 600 total 18000 - M4 20000 daily 1200 - M5 40000 daily 2400 - M6 80000 daily 4800, A Blue 6 machines A1 3000 daily 180 - A2 6000 daily 360 - A3 12000 daily 720 - A4 24000 daily 1440 - A5 48000 daily 2880 - A6 96000 daily 5760, U/L/Y 18 machines U1 4000 daily 240 - U2 8000 daily 480 - U3 16000 daily 960 - U4 32000 daily 1920 - U5 64000 daily 3840 - U6 128000 daily 7680 - L1 5000 daily 300 - L2 10000 daily 600 - L3 20000 daily 1200 - L4 40000 daily 2400 - L5 80000 daily 4800 - L6 160000 daily 9600 - Y1 6000 daily 360 - Y2 12000 daily 720 - Y3 24000 daily 1440 - Y4 48000 daily 2880 - Y5 96000 daily 5760 - Y6 192000 daily 11520, VIP 8 machines VIP1 5000 daily 850 need 3 refs - VIP2 15000 daily 2550 need 6 refs - VIP3 30000 daily 5100 need 12 refs - VIP4 60000 daily 10200 need 20 refs - VIP5 120000 daily 20400 need 30 refs - VIP6 250000 daily 42500 need 45 refs - VIP7 400000 daily 68000 need 60 refs - VIP8 600000 daily 102000 need 80 refs - 17% daily VIP Gold. Clean: M1 Price 2,000 UGX | Daily 120 UGX | Total 3,600 UGX Button Buy M1 - No extra words!</div></div>
+<div class="box" style="border:3px solid #00d4ff;background:#001122;margin:10px 0"><h4 style="color:#00d4ff;font-size:15px">💰 How to Earn Money?</h4><div class="simpleText"><b>1. From Machines:</b> Each machine gives daily money.<br>• M Gold: M1 2,000 → 120 daily, M2 5,000 → 300 daily etc. 6% daily.<br>• A Blue: AI machines same 6%<br>• U/L/Y: Model & Growth machines 6%<br>• VIP: 17% daily! Need friends to unlock.<br><br><b>2. How to Collect:</b> Go to MY tab in Machines. Tap Receive daily. Money goes to your balance.<br><br><b>3. Example:</b> If you have 3 machines M1+M2+M3 = 120+300+600 = 1,020 UGX daily!</div></div>
 
-<div class="box" style="border:3px solid #ff69b4;background:#1a0011;margin:12px 0"><h4 style="color:#ff69b4">🎁 5. COPY LINK + INVITE SHOWS & PROFILE PIC + LOGIN PASS - MUST BE THERE:</h4><div style="font-size:12px;color:#fff;line-height:1.6">COPY LINK + INVITE SHOWS: Referral link with base + ref name + channel ID 0029VbDQSYt8KMqcfkfWTU0W + v24.0, QR code 160px white background, copy link button green black text bold, share WhatsApp + share new channel + link, invites real count + VIP level + status 3 columns, VIP bar gradient green yellow width referrals/80, VIP progress bars, invite history. Copy link must be there! <br><br>PROFILE PIC MUST BE THERE: Login screen profile pic 90px circle border 4px green #00ff88 shadow glow 25px, home page profile pic 90px circle border 4px green glow, founders pics 60px circle border 2px green, set page profile pic 80px, login name input updates profile pic ID based on name Sarah 5 David 8 Grace 32 Micheal 12 Bruno 33 random. Profile pic must be there as you said dear! <br><br>LOGIN PASSWORD MUST BE THERE: Password bigger upgraded 30px bold 10px spacing 5px green border #00ff88 black BG green center glow 35px! Eye bigger 20px green background white border! Label green background black text bold: PASSWORD MUST BE THERE - TAP EYE - BIGGER 30px. Always visible! Master 1234 Always Works! Profile pic + login password must be there as you said dear! Upgrade dear!</div></div>
+<div class="box" style="border:3px solid #25D366;background:#001100;margin:10px 0"><h4 style="color:#25D366;font-size:15px">📱 How to Deposit - Simple</h4><div class="simpleText"><b>We have 3 numbers:</b><br>• <b>0793814204</b> - Bruno CEO - MTN MoMo - MAIN - Use this<br>• <b>0758764116</b> - Grace Admin - Airtel Money<br>• <b>USDT TRC20</b> - For crypto - TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb<br><br><b>Steps:</b><br>1. Tap Wallet → Select number → Tap COPY<br>2. Open MTN MoMo → Send Money → Paste number → Send<br>3. You get MTN message with Txn ID like 1234567890<br>4. Come back, select machine, paste Txn ID, upload screenshot, tap Confirm<br>5. Sarah will verify in 1 hour. Machine activates!</div></div>
 
-<div class="box" style="border:3px solid #d8b4fe;background:#11001a;margin:12px 0"><h4 style="color:#d8b4fe">📢 6. GROUPS - 4 CHANNELS - PROJECT INSIDE:</h4><div style="font-size:12px;color:#fff;line-height:1.6">4 Channels Official: <br>• WhatsApp Channel NEW 0029VbDQSYt8KMqcfkfWTU0W Official https://whatsapp.com/channel/0029VbDQSYt8KMqcfkfWTU0W 12K followers daily profits proofs - Bruno CEO Official - NEW - Main channel.<br>• WhatsApp Group https://chat.whatsapp.com/BNeCwxPjLk95w3QejfjjM6 Sarah Models Tips 12K Members Trading Signals - Sarah Nakato Co-Founder Finance Models Manager - Beautiful Models Manager - U/L/Y HD Models.<br>• Telegram https://t.me/+vyEcluEH54c0NTk0 David Tech AI Signals 24/7 Updates - David Okello CTO Tech AI Creator Blue - AI Trading Signals - 24 Servers - Tech Head.<br>• Group Channel Grace VIP Marketing Growth VIP Program 3→80 Manager - Grace Atim Marketing Growth Queen - Jinja 8 Servers - Growth - 12K Members - VIP Queen - Group Channel - WhatsApp Group - Referral Queen.<br>All channels clickable cards hover border green! Official channels must be there!</div></div>
+<div class="box" style="border:3px solid #ff3300;background:#220000;margin:10px 0"><h4 style="color:#ff4444;font-size:15px">💸 How to Withdraw - Simple</h4><div class="simpleText"><b>Min 2,000 UGX only!</b><br><br><b>Steps:</b><br>1. Go to Wallet → Withdraw section<br>2. See your balance - Example 5,000 UGX<br>3. Enter amount - Min 2,000 - Example 3,000<br>4. Choose method - MTN MoMo 0793814204 or Airtel 0758764116 or USDT<br>5. Tap Withdraw Now<br>6. Money sent to you in 24 hours! Fast! Micheal will send.<br><br><b>Note:</b> Withdraw proof posted in WhatsApp Channel 0029VbDQSYt8KMqcfkfWTU0W</div></div>
 
-<button class="btn ch" onclick="window.open('https://whatsapp.com/channel/0029VbDQSYt8KMqcfkfWTU0W','_blank')">📢 Follow NEW Channel 0029VbDQSYt8KMqcfkfWTU0W - RULES UPGRADED ACCORDING TO PROJECT INSIDE</button>
+<div class="box" style="border:3px solid #ff69b4;background:#1a0011;margin:10px 0"><h4 style="color:#ff69b4;font-size:15px">🎁 How to Invite Friends - Become VIP - Simple</h4><div class="simpleText"><b>Your Link:</b> Go to Group tab → See your link → Tap COPY LINK<br><br><b>Share:</b> Send link to friends on WhatsApp. When friend joins using your link, you get 1 invite.<br><br><b>VIP Levels - Easy:</b><br>• 3 friends = VIP1 - Can buy VIP1 machine 5,000 → 850 daily (17%)<br>• 6 friends = VIP2 - 15,000 → 2,550 daily<br>• 12 friends = VIP3 - 30,000 → 5,100 daily<br>• 20 friends = VIP4 - 60,000 → 10,200 daily<br>• 30 friends = VIP5 - 120,000 → 20,400 daily<br>• 45 friends = VIP6 - 250,000 → 42,500 daily<br>• 60 friends = VIP7 - 400,000 → 68,000 daily<br>• 80 friends = VIP8 - 600,000 → 102,000 daily<br><br><b>More friends = More VIP = More money daily!</b></div></div>
+
+<div class="box" style="border:3px solid #d8b4fe;background:#11001a;margin:10px 0"><h4 style="color:#d8b4fe;font-size:15px">👑 Who are Founders? - Simple</h4><div class="simpleText">We have 5 founders - Real people - Profile pics must be there:<br><br>• <b>Bruno Mickeal - CEO ⭐</b> - Main boss - Kampala - 0793814204 - Big Logo designer - 44 servers - Since 2023<br>• <b>Sarah Nakato 💎</b> - Finance - Entebbe 12 - Checks your deposit - Verifies money<br>• <b>David Okello 🤖</b> - Tech - Nakawa 24 - Makes AI machines - Telegram channel<br>• <b>Grace Atim 📈</b> - Marketing - Jinja 8 - Brings 12K members - VIP program<br>• <b>Micheal Kato ⚡</b> - Support - Fast withdrawal 24H - Helps you<br><br>All real - All online - Tap their pics!</div></div>
+
+<div class="box" style="border:3px solid #00ff88;background:#001100;margin:10px 0"><h4 style="color:#00ff88;font-size:15px">📢 Official Groups - Join All!</h4><div class="simpleText">Join our 4 official groups - All free:<br><br>• <b>📢 WA Channel NEW</b> - 0029VbDQSYt8KMqcfkfWTU0W - Official - 12K followers - Daily profits proof - Tap to follow - https://whatsapp.com/channel/0029VbDQSYt8KMqcfkfWTU0W<br>• <b>💬 WA Group</b> - 12K Members - Sarah gives tips - Trading signals - https://chat.whatsapp.com/BNeCwxPjLk95w3QejfjjM6<br>• <b>✈️ Telegram</b> - David Tech - AI signals - 24/7 updates - https://t.me/+vyEcluEH54c0NTk0<br>• <b>📋 Group Channel</b> - Grace VIP - Growth - Same as WA Channel<br><br>Follow all 4 to get daily updates!</div></div>
+
+<div class="box" style="border:3px solid #ffcc00;background:#1a1a00;margin:10px 0"><h4 style="color:#000;background:#ffcc00;padding:8px;border-radius:8px;text-align:center">❓ Questions? - Simple Answers</h4><div class="simpleText" style="margin-top:10px"><b>Q: Is this real?</b><br>A: Yes! HQ Kampala since 2023. 88 servers. Real MTN numbers. Withdrawal proof in channel. 12K members.<br><br><b>Q: What if I forget password?</b><br>A: Use 1234 master password always works! Or WhatsApp Bruno 0793814204<br><br><b>Q: Profile pic + login password must be there?</b><br>A: Yes! Profile pic 110px bigger on login + home must be there! Login password 32px bigger must be there! Always visible! Tap eye to see!<br><br><b>Q: Home no machines?</b><br>A: Yes! Home has NO machines - Only big logo, balance, profile pic 100px, founders, channels. Machines only in Machines bottom tab - Clean home as you said dear!</div></div>
+
+<button class="btn ch" onclick="window.open('https://whatsapp.com/channel/0029VbDQSYt8KMqcfkfWTU0W','_blank')">📢 Follow WA Channel - NEW 0029VbDQSYt8KMqcfkfWTU0W - SIMPLE RULES - NEW MEMBERS CAN UNDERSTAND</button>
 </div></div>
 
-<div id="page-set" class="page"><div class="box" style="text-align:center;border:3px solid #00ff88"><img id="setPic" src="https://i.pravatar.cc/150?img=33" class="profileBig"><h3 id="setName">Bruno Mickeal</h3><div style="font-size:10px;color:#7a9ab8" id="setId">ID: SKY-1250 | 0793814204 | Pass 1234 | PROFILE PIC + PASS MUST BE THERE</div></div>
-<div class="box" style="border:3px solid #00ff88"><h3 style="color:#00ff88">🔒 Password - BIGGER 30px - MUST BE THERE</h3><div style="position:relative;margin-top:10px"><input type="password" id="oldPass" placeholder="Old: 1234"><span class="eye" onclick="var i=document.getElementById('oldPass');i.type=i.type=='password'?'text':'password'">👁️</span></div><div style="position:relative"><input type="password" id="newPass" placeholder="New Min 4 - BIGGER 30px - MUST BE THERE" style="border:5px solid #00ff88;background:#000;padding:20px;font-size:22px;font-weight:bold"><span class="eye" onclick="var i=document.getElementById('newPass');i.type=i.type=='password'?'text':'password'">👁️</span></div><div style="position:relative"><input type="password" id="confirmPass" placeholder="Confirm - MUST BE THERE"><span class="eye" onclick="var i=document.getElementById('confirmPass');i.type=i.type=='password'?'text':'password'">👁️</span></div><button class="btn wa" style="background:#00ff88;color:#000;font-weight:bold" onclick="changePass()">🔑 Update Password - BIGGER 30px - MUST BE THERE</button></div>
-<div class="box"><button class="btn" style="background:#ff3300;color:#fff" onclick="logout()">🚪 Logout - PROFILE PIC + PASS MUST BE THERE</button><button class="btn" style="background:#222;color:#fff;font-size:11px" onclick="if(confirm('Reset?')){localStorage.clear();location.href=location.pathname+'?v=24.0HOME_NOMACHINE&nocache='+Date.now()}">🚨 Reset</button></div>
+<div id="page-set" class="page"><div class="box" style="text-align:center;border:3px solid #00ff88"><img id="setPic" src="https://i.pravatar.cc/150?img=33" class="profileBig"><h3 id="setName">Bruno Mickeal</h3><div style="font-size:10px;color:#7a9ab8" id="setId">ID: SKY-1250 | 0793814204 | Pass 1234 | PIC 110px + PASS 32px MUST BE THERE</div></div>
+<div class="box" style="border:4px solid #00ff88"><h3 style="color:#00ff88">🔒 Password - BIGGER 32px - MUST BE THERE - UPGRADED</h3><div style="position:relative;margin-top:10px"><input type="password" id="oldPass" placeholder="Old: 1234 - Type old"><span class="eye" onclick="var i=document.getElementById('oldPass');i.type=i.type=='password'?'text':'password'">👁️</span></div><div style="position:relative"><input type="password" id="newPass" placeholder="New Min 4 - BIGGER 32px MUST BE THERE" style="border:6px solid #00ff88;background:#000;padding:22px;font-size:24px;font-weight:bold;letter-spacing:8px"><span class="eye" onclick="var i=document.getElementById('newPass');i.type=i.type=='password'?'text':'password'">👁️</span></div><div style="position:relative"><input type="password" id="confirmPass" placeholder="Confirm new - MUST BE THERE"><span class="eye" onclick="var i=document.getElementById('confirmPass');i.type=i.type=='password'?'text':'password'">👁️</span></div><button class="btn wa" style="background:#00ff88;color:#000;font-weight:bold;padding:16px;font-size:16px" onclick="changePass()">🔑 Update Password - BIGGER 32px - MUST BE THERE</button></div>
+<div class="box"><button class="btn" style="background:#ff3300;color:#fff" onclick="logout()">🚪 Logout - PIC 110px + PASS 32px MUST BE THERE</button><button class="btn" style="background:#222;color:#fff;font-size:11px" onclick="if(confirm('Reset?')){localStorage.clear();location.href=location.pathname+'?v=25.0SIMPLE_RULES&nocache='+Date.now()}">🚨 Reset - SIMPLE RULES</button></div>
 </div>
 
 <div class="bottom" id="bottomNav">
@@ -195,7 +222,7 @@ function updateProfile(name){
   if(lower.includes('sarah')) imgId=5; else if(lower.includes('david')) imgId=8; else if(lower.includes('grace')) imgId=32; else if(lower.includes('micheal')) imgId=12; else imgId=Math.floor(Math.random()*50)+1;
   document.getElementById('loginPic').src=`https://i.pravatar.cc/150?img=${imgId}`;
 }
-function doLogin(){let n=document.getElementById('loginName').value||'Bruno Mickeal';let p=document.getElementById('loginPass').value||'1234';if(p=='1234'||p.length>=4){uName=n;if(p!='1234')uPass=p;logged=true;localStorage.setItem('sky_name',uName);localStorage.setItem('sky_pass',uPass);localStorage.setItem('sky_logged','yes');document.getElementById('loginScreen').style.display='none';upd();alert('✅ v24.0 HOME NO MACHINES - MACHINES ONLY IN BOTTOM TAB - RULES UPGRADED - PROFILE PIC + PASS MUST BE THERE! WELCOME '+uName.toUpperCase()+'!');}else{alert('Use 1234!');document.getElementById('loginPass').value='1234';}}
+function doLogin(){let n=document.getElementById('loginName').value||'Bruno Mickeal';let p=document.getElementById('loginPass').value||'1234';if(p=='1234'||p.length>=4){uName=n;if(p!='1234')uPass=p;logged=true;localStorage.setItem('sky_name',uName);localStorage.setItem('sky_pass',uPass);localStorage.setItem('sky_logged','yes');document.getElementById('loginScreen').style.display='none';upd();alert('✅ v25.0 SIMPLE RULES LOADED! NEW MEMBERS CAN UNDERSTAND! WELCOME '+uName.toUpperCase()+'! PIC 110px + PASS 32px MUST BE THERE!');}else{alert('Use 1234!');document.getElementById('loginPass').value='1234';}}
 function upd(){
   let daily=0;macs.forEach(m=>daily+=m.daily);
   document.getElementById('topBal').innerText=bal+' UGX';
@@ -206,25 +233,24 @@ function upd(){
   el=document.getElementById('homePassMain'); if(el) el.innerText=uPass;
   el=document.getElementById('withBal'); if(el) el.innerText=bal+' UGX';
   el=document.getElementById('homeUser'); if(el) el.innerText=uName;
-  el=document.getElementById('homeId'); if(el) el.innerText=`ID: SKY-1250 | ${uName} | 0793814204 | CEO | PROFILE PIC MUST BE THERE | HOME NO MACHINES`;
+  el=document.getElementById('homeId'); if(el) el.innerText=`ID: SKY-1250 | ${uName} | 0793814204 | CEO | PIC 110px MUST BE THERE | HOME NO MACHINES`;
   el=document.getElementById('setName'); if(el) el.innerText=uName;
-  el=document.getElementById('setId'); if(el) el.innerText=`ID: SKY-1250 | NEW 0029VbDQSYt8KMqcfkfWTU0W | ${uName} | 0793814204 | Pass: ${uPass} | PROFILE PIC + PASS MUST BE THERE | HOME NO MACHINES`;
-  // profile pics update
+  el=document.getElementById('setId'); if(el) el.innerText=`ID: SKY-1250 | NEW 0029VbDQSYt8KMqcfkfWTU0W | ${uName} | 0793814204 | Pass: ${uPass} | PIC 110px + PASS 32px MUST BE THERE`;
   let imgId=33; let lower=uName.toLowerCase(); if(lower.includes('sarah')) imgId=5; else if(lower.includes('david')) imgId=8; else if(lower.includes('grace')) imgId=32; else if(lower.includes('micheal')) imgId=12;
   let hp=document.getElementById('homeProfilePic'); if(hp) hp.src=`https://i.pravatar.cc/150?img=${imgId}`;
   let sp=document.getElementById('setPic'); if(sp) sp.src=`https://i.pravatar.cc/150?img=${imgId}`;
   let lp=document.getElementById('loginPic'); if(lp) lp.src=`https://i.pravatar.cc/150?img=${imgId}`;
   let base='https://benytskylight-crypto.github.io/t-crypto.github.io/';
-  let link=base+'?ref='+encodeURIComponent((uName||'User').replace(/\s+/g,'').substring(0,12)+'1250')+'&ch=0029VbDQSYt8KMqcfkfWTU0W&v=24.0HOME_NOMACHINE';
+  let link=base+'?ref='+encodeURIComponent((uName||'User').replace(/\s+/g,'').substring(0,12)+'1250')+'&ch=0029VbDQSYt8KMqcfkfWTU0W&v=25.0SIMPLE_RULES';
   document.getElementById('refLink').innerText=link;
   document.getElementById('refQr').src='https://api.qrserver.com/v1/create-qr-code/?size=160x160&data='+encodeURIComponent(link);
   document.getElementById('refCount').innerText=ref;
   document.getElementById('vipLevel').innerText='VIP'+getVip();
   document.getElementById('vipBar').style.width=Math.min(ref/80*100,100)+'%';
   document.getElementById('vipStatus').innerText=getVip()>=1?'✅VIP'+getVip():'🔒';
-  document.getElementById('vipText').innerText=getVip()>=1?'Unlocked VIP'+getVip()+' - HOME NO MACHINES - MACHINES ONLY IN BOTTOM!':'Invite 3 for VIP1 - HOME NO MACHINES - MACHINES ONLY IN BOTTOM!';
+  document.getElementById('vipText').innerText=getVip()>=1?'Unlocked VIP'+getVip()+' - SIMPLE RULES - NEW MEMBERS CAN UNDERSTAND!':'Invite 3 friends for VIP1 - SIMPLE RULES!';
   document.getElementById('tab-my').innerHTML='MY('+macs.length+')';
-  let myHtml=''; if(macs.length==0) myHtml='<div class="box"><div style="font-size:12px;color:#7a9ab8">No machines yet - Buy from Machines bottom tab - HOME NO MACHINES - Machines only in Machines bottom as you said dear!</div></div>'; else macs.forEach((m,i)=>{myHtml+=`<div class="card" style="border:2px solid #00ff88"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=200"><div class="cardInfo"><b style="color:#00ff88">${m.id} ACTIVE ✅</b><div class="price">Daily ${m.daily} UGX</div><button class="buyBtn" style="background:#00ff88;color:#000" onclick="claimOne(${i})">💸 Receive ${m.daily}</button></div></div>`;});
+  let myHtml=''; if(macs.length==0) myHtml='<div class="box"><div style="font-size:12px;color:#7a9ab8">No machines yet - Go to Machines tab at bottom to buy! Home has NO machines - Machines only in Machines tab!</div></div>'; else macs.forEach((m,i)=>{myHtml+=`<div class="card" style="border:2px solid #00ff88"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=200"><div class="cardInfo"><b style="color:#00ff88">${m.id} ACTIVE ✅</b><div class="price">Daily ${m.daily} UGX</div><button class="buyBtn" style="background:#00ff88;color:#000" onclick="claimOne(${i})">💸 Receive ${m.daily}</button></div></div>`;});
   document.getElementById('page-my').innerHTML=myHtml;
 }
 function openB(b){
@@ -245,44 +271,44 @@ function openTop(t){
   document.querySelectorAll('.bottom div').forEach(d=>d.classList.remove('on'));
   document.getElementById('b-machines').classList.add('on');
 }
-function copyRef(){let l=document.getElementById('refLink').innerText;navigator.clipboard.writeText(l).then(()=>alert('✅ COPY LINK! COPIED! HOME NO MACHINES - MACHINES ONLY IN BOTTOM! Link: '+l));}
-function shareWA(){let l=document.getElementById('refLink').innerText;window.open('https://wa.me/?text='+encodeURIComponent('🚀 SKYLIGHT v24.0 HOME NO MACHINES - MACHINES ONLY IN BOTTOM TAB - RULES UPGRADED - PROFILE PIC + PASS MUST BE THERE - NEW Channel 0029VbDQSYt8KMqcfkfWTU0W\nMy Link: '+l),'_blank');}
-function shareCH(){let l=document.getElementById('refLink').innerText;window.open('https://wa.me/?text='+encodeURIComponent('📢 SKYLIGHT v24.0 HOME NO MACHINES - MACHINES ONLY IN BOTTOM - NEW Channel 0029VbDQSYt8KMqcfkfWTU0W\nWA Channel: https://whatsapp.com/channel/0029VbDQSYt8KMqcfkfWTU0W\nMy Link: '+l+'\nHOME NO MACHINES - MACHINES ONLY IN BOTTOM TAB - RULES UPGRADED - PROFILE PIC + PASS MUST BE THERE!'),' _blank');}
+function copyRef(){let l=document.getElementById('refLink').innerText;navigator.clipboard.writeText(l).then(()=>alert('✅ COPY LINK! COPIED! SIMPLE RULES - NEW MEMBERS CAN UNDERSTAND! Link: '+l));}
+function shareWA(){let l=document.getElementById('refLink').innerText;window.open('https://wa.me/?text='+encodeURIComponent('🚀 SKYLIGHT v25.0 SIMPLE RULES - NEW MEMBERS CAN UNDERSTAND - NEW Channel 0029VbDQSYt8KMqcfkfWTU0W\nMy Link: '+l+'\nSimple guide: Buy machine → Earn daily → Withdraw!'),' _blank');}
+function shareCH(){let l=document.getElementById('refLink').innerText;window.open('https://wa.me/?text='+encodeURIComponent('📢 SKYLIGHT v25.0 SIMPLE RULES - NEW Channel 0029VbDQSYt8KMqcfkfWTU0W\nWA Channel: https://whatsapp.com/channel/0029VbDQSYt8KMqcfkfWTU0W\nMy Link: '+l+'\nSIMPLE RULES - NEW MEMBERS CAN UNDERSTAND - PIC 110px + PASS 32px MUST BE THERE!'),' _blank');}
 function buyWithProof(){
   let sel=document.getElementById('buySelect').value;
   let txn=document.getElementById('txnId').value;
   let file=document.getElementById('proof').files[0];
-  if(!sel){alert('Select Machine!');return;}
-  if(!txn){alert('Txn ID Required!');return;}
-  if(!file){alert('Upload Proof!');return;}
+  if(!sel){alert('Select Machine! Go to Machines tab at bottom to see machines!');return;}
+  if(!txn){alert('Paste Txn ID from MTN message! Example 1234567890');return;}
+  if(!file){alert('Upload screenshot of MTN message!');return;}
   let parts=sel.split('|');
   macs.push({id:parts[0],price:parseInt(parts[1]),daily:parseInt(parts[2])});
   save();
-  window.open('https://wa.me/256793814204?text='+encodeURIComponent('NEW ORDER v24.0 HOME NO MACHINES - Machine '+parts[0]+' Price '+parts[1]+' Txn '+txn+' User '+uName+' Pass '+uPass+' HOME NO MACHINES - MACHINES ONLY IN BOTTOM - RULES UPGRADED - PROFILE PIC + PASS MUST BE THERE'),' _blank');
-  alert('✅ '+parts[0]+' ACTIVATED! HOME NO MACHINES - MACHINES ONLY IN BOTTOM TAB!');document.getElementById('buySelect').value='';document.getElementById('txnId').value='';document.getElementById('proof').value='';openB('home');
+  window.open('https://wa.me/256793814204?text='+encodeURIComponent('NEW ORDER v25.0 SIMPLE RULES - NEW MEMBERS CAN UNDERSTAND - Machine '+parts[0]+' Price '+parts[1]+' Txn '+txn+' User '+uName+' Pass '+uPass+' PIC 110px + PASS 32px MUST BE THERE'),' _blank');
+  alert('✅ '+parts[0]+' ACTIVATED! You will earn '+parts[2]+' UGX daily! Go to MY tab to collect! SIMPLE RULES!');document.getElementById('buySelect').value='';document.getElementById('txnId').value='';document.getElementById('proof').value='';openB('home');
 }
-function claimOne(i){bal+=macs[i].daily;save();alert('💸 Received '+macs[i].daily+' UGX');}
+function claimOne(i){bal+=macs[i].daily;save();alert('💸 Received '+macs[i].daily+' UGX - Added to balance!');}
 function withdraw(){
-  if(bal<2000){alert('Min 2000 you have '+bal);return;}
+  if(bal<2000){alert('Min 2000 UGX. You have '+bal+' UGX. Earn more from machines!');return;}
   let amt=parseInt(document.getElementById('withAmt').value||'0');
-  if(!amt){let p=prompt('Withdraw Max '+bal+':',bal);if(!p)return;amt=parseInt(p);}
-  if(amt>bal||amt<2000){alert('Invalid Min 2000 Max '+bal);return;}
+  if(!amt){let p=prompt('How much to withdraw? Min 2000. You have '+bal+' UGX:',bal);if(!p)return;amt=parseInt(p);}
+  if(amt>bal||amt<2000){alert('Invalid. Min 2000 Max '+bal);return;}
   bal-=amt;save();
-  window.open('https://wa.me/256793814204?text='+encodeURIComponent('WITHDRAW v24.0 HOME NO MACHINES - Amount '+amt+' User '+uName+' Pass '+uPass+' Bal Left '+bal),' _blank');
-  alert('💸 Withdrawal '+amt+' sent!');document.getElementById('withAmt').value='';
+  window.open('https://wa.me/256793814204?text='+encodeURIComponent('WITHDRAW v25.0 SIMPLE RULES - NEW MEMBERS CAN UNDERSTAND - Amount '+amt+' User '+uName+' Pass '+uPass+' Bal Left '+bal+' PIC 110px + PASS 32px MUST BE THERE'),' _blank');
+  alert('💸 Withdrawal '+amt+' UGX sent! You will receive in 24 hours to MTN MoMo!');document.getElementById('withAmt').value='';
 }
 function changePass(){
   let o=document.getElementById('oldPass').value;
   let n=document.getElementById('newPass').value;
   let c=document.getElementById('confirmPass').value;
-  if(o!==uPass&&o!=='1234'){alert('Old wrong! '+uPass+' or 1234');return;}
-  if(n.length<4){alert('Min 4');return;}
-  if(n!==c){alert('No match');return;}
-  uPass=n;save();alert('✅ New Pass '+n+' - BIGGER 30px - MUST BE THERE!');
+  if(o!==uPass&&o!=='1234'){alert('Old password wrong! Your pass is '+uPass+' or use 1234 master!');return;}
+  if(n.length<4){alert('New password min 4 characters!');return;}
+  if(n!==c){alert('New and Confirm not same! Type same!');return;}
+  uPass=n;save();alert('✅ New Password is '+n+' - BIGGER 32px - PIC 110px + PASS MUST BE THERE! Remember it!');
 }
-function logout(){if(confirm('Logout? Pass '+uPass+' + 1234 Master! PROFILE PIC + PASS MUST BE THERE! HOME NO MACHINES!')){logged=false;save();document.getElementById('loginScreen').style.display='flex';}}
+function logout(){if(confirm('Logout? Your password is '+uPass+' + 1234 master works! PIC 110px + PASS 32px MUST BE THERE!')){logged=false;save();document.getElementById('loginScreen').style.display='flex';}}
 
-let allM='',mM='',aM='',ulyM='',buyOpts='<option value="">🛒 Select Machine - Machines Only in Bottom Tab</option>';
+let allM='',mM='',aM='',ulyM='',buyOpts='<option value="">🛒 Select Machine - Go to Machines Tab to See All</option>';
 const mData=[['M1',2000,120,'#00ff88'],['M2',5000,300,'#00ff88'],['M3',10000,600,'#00ff88'],['M4',20000,1200,'#00ff88'],['M5',40000,2400,'#00ff88'],['M6',80000,4800,'#00ff88']];
 const aData=[['A1',3000,180,'#00d4ff'],['A2',6000,360,'#00d4ff'],['A3',12000,720,'#00d4ff'],['A4',24000,1440,'#00d4ff'],['A5',48000,2880,'#00d4ff'],['A6',96000,5760,'#00d4ff']];
 const uData=[['U1',4000,240,'#d8b4fe'],['U2',8000,480,'#d8b4fe'],['U3',16000,960,'#d8b4fe'],['U4',32000,1920,'#d8b4fe'],['U5',64000,3840,'#d8b4fe'],['U6',128000,7680,'#d8b4fe']];
@@ -291,18 +317,18 @@ const yData=[['Y1',6000,360,'#22c55e'],['Y2',12000,720,'#22c55e'],['Y3',24000,14
 function makeCard(id,price,daily,col){
   return `<div class="card" style="border-color:${col}"><img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=200" alt="${id}"><div class="cardInfo"><b style="color:${col}">${id}</b><div class="price">Price ${price.toLocaleString()} UGX | Daily ${daily.toLocaleString()} UGX | Total ${(daily*30).toLocaleString()} UGX</div><button class="buyBtn" style="background:${col};color:#000" onclick="document.getElementById('buySelect').value='${id}|${price}|${daily}';openB('wallet')">Buy ${id}</button></div></div>`;
 }
-mData.forEach(d=>{let c=makeCard(d[0],d[1],d[2],d[3]);mM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1].toLocaleString()} UGX - ${d[2]}/day</option>`;});
-aData.forEach(d=>{let c=makeCard(d[0],d[1],d[2],d[3]);aM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1].toLocaleString()} UGX - ${d[2]}/day</option>`;});
-uData.forEach(d=>{let c=makeCard(d[0],d[1],d[2],d[3]);ulyM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1].toLocaleString()} UGX - ${d[2]}/day</option>`;});
-lData.forEach(d=>{let c=makeCard(d[0],d[1],d[2],d[3]);ulyM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1].toLocaleString()} UGX - ${d[2]}/day</option>`;});
-yData.forEach(d=>{let c=makeCard(d[0],d[1],d[2],d[3]);ulyM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1].toLocaleString()} UGX - ${d[2]}/day</option>`;});
-vips.forEach(d=>{buyOpts+=`<option value="${d.id}|${d.price}|${d.daily}">${d.id} - ${d.price.toLocaleString()} UGX - ${d.daily.toLocaleString()}/day - ${d.refs} refs</option>`;});
+mData.forEach(d=>{let c=makeCard(d[0],d[1],d[2],d[3]);mM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1].toLocaleString()} UGX - ${d[2]} UGX/day - Total ${(d[2]*30).toLocaleString()} UGX</option>`;});
+aData.forEach(d=>{let c=makeCard(d[0],d[1],d[2],d[3]);aM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1].toLocaleString()} UGX - ${d[2]} UGX/day</option>`;});
+uData.forEach(d=>{let c=makeCard(d[0],d[1],d[2],d[3]);ulyM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1].toLocaleString()} UGX - ${d[2]} UGX/day</option>`;});
+lData.forEach(d=>{let c=makeCard(d[0],d[1],d[2],d[3]);ulyM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1].toLocaleString()} UGX - ${d[2]} UGX/day</option>`;});
+yData.forEach(d=>{let c=makeCard(d[0],d[1],d[2],d[3]);ulyM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1].toLocaleString()} UGX - ${d[2]} UGX/day</option>`;});
+vips.forEach(d=>{buyOpts+=`<option value="${d.id}|${d.price}|${d.daily}">${d.id} - ${d.price.toLocaleString()} UGX - ${d.daily.toLocaleString()} UGX/day - Need ${d.refs} friends</option>`;});
 document.getElementById('page-all').innerHTML=allM;
 document.getElementById('page-m').innerHTML=mM;
 document.getElementById('page-a').innerHTML=aM;
 document.getElementById('page-uly').innerHTML=ulyM;
 document.getElementById('buySelect').innerHTML=buyOpts;
-let vipHtml=''; vips.forEach(v=>{let un=ref>=v.refs; vipHtml+=`<div class="card" style="border:${un?'3px solid #00ff88':'2px solid #1a3a5a'};opacity:${un?'1':'0.6'}"><img src="https://images.unsplash.com/photo-1621504450181-5d356f61d307?w=200"><div class="cardInfo"><b style="color:${un?'#00ff88':'#666'}">${v.id} ${un?'UNLOCKED ✅':'LOCKED 🔒'} - Need ${v.refs} refs</b><div class="price">Price ${v.price.toLocaleString()} UGX Daily ${v.daily.toLocaleString()} UGX</div><button class="buyBtn" style="background:${un?'#00ff88':'#444'};color:${un?'#000':'#fff'}" onclick="${un?`document.getElementById('buySelect').value='${v.id}|${v.price}|${v.daily}';openB('wallet')`:`alert('Need ${v.refs} refs! You have ${ref}.')` }">${un?'Buy '+v.id:'Locked'}</button></div></div>`;});
+let vipHtml=''; vips.forEach(v=>{let un=ref>=v.refs; vipHtml+=`<div class="card" style="border:${un?'3px solid #00ff88':'2px solid #1a3a5a'};opacity:${un?'1':'0.6'}"><img src="https://images.unsplash.com/photo-1621504450181-5d356f61d307?w=200"><div class="cardInfo"><b style="color:${un?'#00ff88':'#666'}">${v.id} ${un?'UNLOCKED ✅':'LOCKED 🔒'} - Need ${v.refs} friends</b><div class="price">Price ${v.price.toLocaleString()} UGX Daily ${v.daily.toLocaleString()} UGX</div><button class="buyBtn" style="background:${un?'#00ff88':'#444'};color:${un?'#000':'#fff'}" onclick="${un?`document.getElementById('buySelect').value='${v.id}|${v.price}|${v.daily}';openB('wallet')`:`alert('You need ${v.refs} friends! You have ${ref}. Invite ${v.refs-ref} more friends! Go to Group tab → Copy Link → Share to WhatsApp!')` }">${un?'Buy '+v.id:'Locked - Need '+v.refs+' friends'}</button></div></div>`;});
 document.getElementById('page-vip').innerHTML=vipHtml;
 
 if(!logged){document.getElementById('loginScreen').style.display='flex';}else{document.getElementById('loginScreen').style.display='none';}
@@ -310,4 +336,4 @@ upd();
 setTimeout(upd,500);
 </script>
 </body>
-</html>
+  </html>
