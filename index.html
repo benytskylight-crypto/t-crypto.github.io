@@ -65,3 +65,81 @@ window.db=db; window.collection=collection; window.doc=doc; window.setDoc=setDoc
 <h2 style="color:#facc15">🔐 Login - REAL</h2><input id="logPhone" placeholder="Phone"><input id="logPass" type="password" placeholder="Password"><button class="btn btn-gold" onclick="loginReal()">LOGIN - REAL</button><span class="small" onclick="showRegister()" style="cursor:pointer">No account? Register</span>
 </div>
 </div>
+<div id="machinesTab" class="box" style="max-width:460px">
+<div style="display:flex;justify-content:space-between"><span id="userName" style="color:#facc15;font-weight:900"></span><span id="userPhoneTag" class="small"></span><button onclick="logout()" style="font-size:10px;padding:2px 6px">Logout</button></div>
+<div style="background:#1e293b;padding:8px;border-radius:8px;margin:8px 0;display:flex;justify-content:space-around"><div>Balance: <b id="bal" style="color:#22c55e">0</b></div><div>Referrals: <b id="refCount" style="color:#facc15">0</b></div></div>
+<div class="tabs-m">
+<button onclick="filterM('all')" id="f-all" class="active">All 36</button><button onclick="filterM('A')" id="f-A">A(6)</button><button onclick="filterM('M')" id="f-M">M(6)</button><button onclick="filterM('L')" id="f-L">L(6)</button><button onclick="filterM('U')" id="f-U">U(6)</button><button onclick="filterM('Y')" id="f-Y">Y(6)</button><button onclick="filterM('VIP')" id="f-VIP">VIP(6) 👑</button>
+</div>
+<div id="machineGrid" class="machine-grid"></div>
+<div style="margin-top:12px;background:#0f172a;border:1px solid #334155;padding:10px;border-radius:10px"><div class="small">Deposit: MTN/Airtel to <b style="color:#facc15">0793814204</b><br>Send screenshot to Manager<br>Withdraw fee 8% • Daily 6% for 30D, VIP 7% for 10D</div></div>
+</div>
+<div id="ordersTab" class="box" style="display:none"><h2>📦 Your Orders</h2><div id="ordersList" class="small">Loading...</div></div>
+<div id="referralTab" class="box" style="display:none;text-align:center"><h2 style="color:#facc15">🔗 REAL Referral</h2><div id="myRefLink" class="refBox">Login first</div><button class="btn btn-green" onclick="shareWhatsApp()">Share WhatsApp</button><div id="referralList" class="small" style="text-align:left;margin-top:10px"></div></div>
+<div id="managerTab" class="box" style="display:none"><h2>💬 Manager</h2><input id="managerMsg" placeholder="I paid 20k for A3..." style="width:100%;padding:10px"><button class="btn btn-gold" onclick="sendManagerReal()">SEND to WhatsApp 0793814204</button><div id="chatList" class="small"></div></div>
+<div id="adminTab" class="box" style="display:none"><h2>🔐 ADMIN 0793814204</h2><input id="adminPass" type="password" placeholder="Enter 0793814204"><button class="btn btn-gold" onclick="adminLogin()">LOGIN ADMIN</button><div id="adminPanel" style="display:none"><h3>Orders</h3><div id="allOrdersList" class="small"></div><h3>Users</h3><div id="allUsersList" class="small"></div></div></div>
+<script type="module">
+let currentUser=null,currentPhone=null,currentFilter='all';
+const IMG_A="https://i.ibb.co/NgJcMBYs/M1.jpg", IMG_M="https://i.ibb.co/nMFhSgZ7/M2.jpg", IMG_L="https://i.ibb.co/W4cgPCst/M3.jpg", IMG_U="https://i.ibb.co/JjzPSSsV/Sky-machine.jpg";
+const machines=[];
+const prices=[2000,5000,10000,20000,40000,80000];
+const cats=[
+ {cat:'A',img:IMG_A,label:'A'},
+ {cat:'M',img:IMG_M,label:'M'},
+ {cat:'L',img:IMG_L,label:'L'},
+ {cat:'U',img:IMG_U,label:'U'},
+ {cat:'Y',img:IMG_A,label:'Y',red:true},
+ {cat:'VIP',img:IMG_U,label:'VIP',vip:true}
+];
+cats.forEach(c=>{
+ for(let i=0;i<6;i++){
+   let price=prices[i];
+   let daily=c.cat==='VIP'?0.07:0.06;
+   let days=c.cat==='VIP'?10:30;
+   let total=Math.round(price*daily*days);
+   machines.push({id:c.cat+(i+1),cat:c.cat,name:c.label+"-MACHINE "+(i+1),price,daily,days,total,img:c.img,red:c.red||false,vip:c.vip||false});
+ }
+});
+function renderMachines(){
+ const grid=document.getElementById('machineGrid');
+ let list=machines;
+ if(currentFilter!=='all') list=machines.filter(m=>m.cat===currentFilter);
+ grid.innerHTML=list.map(m=>`
+  <div class="machine ${m.vip?'vip':''} ${m.red?'y':''}">
+   <div class="badge ${m.vip?'vipb':''} ${m.red?'red':''}">${m.cat} ${m.vip?'👑 VIP':''} ${m.red?'🔥':''}</div>
+   <img src="${m.img}" loading="lazy">
+   <div class="m-info">
+    <div class="m-name">${m.name}</div>
+    <div class="m-price">${m.price.toLocaleString()} UGX</div>
+    <div class="m-profit">Daily ${m.daily*100}% x ${m.days}D = ${m.total.toLocaleString()} UGX</div>
+    <button class="btn btn-gold" style="padding:6px;font-size:11px;margin-top:4px" onclick="buyMachine('${m.id}',${m.price})">BUY NOW</button>
+   </div>
+  </div>
+ `).join('');
+}
+window.filterM=(cat)=>{currentFilter=cat; document.querySelectorAll('.tabs-m button').forEach(b=>b.classList.remove('active')); document.getElementById('f-'+cat).classList.add('active'); renderMachines();}
+renderMachines();function getRefFromUrl(){const p=new URLSearchParams(window.location.search); return p.get('ref')||'';}
+document.getElementById('regRef').value=getRefFromUrl();
+window.showTab=(t)=>{['machines','orders','referral','manager','admin'].forEach(x=>{document.getElementById(x+'Tab').style.display='none'; const btn=document.getElementById('tab-'+x); if(btn)btn.classList.remove('active');}); document.getElementById(t+'Tab').style.display='block'; const b=document.getElementById('tab-'+t); if(b)b.classList.add('active'); if(t==='orders') loadMyOrders(); if(t==='referral') loadMyReferrals(); if(t==='manager') loadChats();}
+window.showLogin=()=>{document.getElementById('registerBox').style.display='none';document.getElementById('loginBox').style.display='block';}
+window.showRegister=()=>{document.getElementById('loginBox').style.display='none';document.getElementById('registerBox').style.display='block';}
+window.copyLink=()=>{const phone=currentPhone||'YOURPHONE'; const link=`https://benytskylight-crypto.github.io/t-crypto.github.io/?ref=${phone}`; navigator.clipboard.writeText(link); alert('Copied: '+link);}
+window.shareWhatsApp=()=>{const phone=currentPhone||'YOURPHONE'; const link=`https://benytskylight-crypto.github.io/t-crypto.github.io/?ref=${phone}`; window.open('https://wa.me/?text='+encodeURIComponent('Join SKYLIGHT 36 MACHINES! 💡 Earn 6% daily! '+link),'_blank');}
+window.registerReal=async()=>{const name=document.getElementById('regName').value.trim(); const phone=document.getElementById('regPhone').value.trim(); const pass=document.getElementById('regPass').value.trim(); const refCode=document.getElementById('regRef').value.trim(); if(!name||!phone||!pass){alert('Fill all');return;} try{const userRef=doc(db,'users',phone); const snap=await getDoc(userRef); if(snap.exists()){alert('Exists - Login');return;} await setDoc(userRef,{name,phone,pass,balance:0,referrals:0,created:serverTimestamp(),referredBy:refCode||null}); if(refCode && refCode!==phone){const refUserRef=doc(db,'users',refCode); const refSnap=await getDoc(refUserRef); if(refSnap.exists()){await addDoc(collection(db,'referrals'),{from:phone,to:refCode,fromName:name,time:serverTimestamp()}); const cnt=refSnap.data().referrals||0; await updateDoc(refUserRef,{referrals:cnt+1});}} localStorage.setItem('skylight_phone',phone); currentPhone=phone; currentUser={name,phone,balance:0}; enterApp(); alert('Registered REAL!');}catch(e){alert(e.message);}}
+window.loginReal=async()=>{const phone=document.getElementById('logPhone').value.trim(); const pass=document.getElementById('logPass').value.trim(); try{const snap=await getDoc(doc(db,'users',phone)); if(!snap.exists()){alert('Not found');return;} const data=snap.data(); if(data.pass!==pass){alert('Wrong pass');return;} localStorage.setItem('skylight_phone',phone); currentPhone=phone; currentUser=data; enterApp();}catch(e){alert(e.message);}}
+function enterApp(){document.getElementById('authBox').style.display='none'; document.getElementById('machinesTab').style.display='block'; document.querySelector('.nav').style.display='flex'; document.getElementById('userName').innerText=currentUser.name||currentPhone; document.getElementById('userPhoneTag').innerText=currentPhone; document.getElementById('myRefLink').innerText=`https://benytskylight-crypto.github.io/t-crypto.github.io/?ref=${currentPhone}`; document.getElementById('bal').innerText=(currentUser.balance||0).toLocaleString(); loadMyReferrals();}
+window.logout=()=>{localStorage.removeItem('skylight_phone'); location.reload();}
+window.buyMachine=async(id,price)=>{if(!currentPhone){alert('Login first'); showLogin(); return;} try{await addDoc(collection(db,'orders'),{phone:currentPhone,name:currentUser.name,machineId:id,price,type:id+" - "+price+" UGX",status:'pending',time:serverTimestamp()}); alert(id+' Order '+price.toLocaleString()+' UGX sent! Pay MoMo 0793814204 then send screenshot to Manager'); window.showTab('orders');}catch(e){alert(e.message);}}
+window.loadMyOrders=async()=>{if(!currentPhone) return; const q=query(collection(db,'orders'),where('phone','==',currentPhone)); const snap=await getDocs(q); let html=''; snap.forEach(d=>{const o=d.data(); html+=`<div style="border-bottom:1px solid #334155;padding:6px 0"><b>${o.machineId||o.type}</b> ${o.price?o.price.toLocaleString()+' UGX':''} - <b style="color:${o.status==='approved'?'#22c55e':'#facc15'}">${o.status}</b></div>`;}); document.getElementById('ordersList').innerHTML=html||'No orders yet';}
+window.loadMyReferrals=async()=>{if(!currentPhone) return; const q=query(collection(db,'referrals'),where('to','==',currentPhone)); const snap=await getDocs(q); document.getElementById('refCount').innerText=snap.size; let html=''; snap.forEach(d=>{const r=d.data(); html+=`<div>${r.fromName} (${r.from})</div>`;}); document.getElementById('referralList').innerHTML=html||'No referrals yet - Share your link!';}
+window.sendManagerReal=async()=>{const msg=document.getElementById('managerMsg').value.trim(); if(!msg||!currentPhone) return; await addDoc(collection(db,'chats'),{phone:currentPhone,name:currentUser.name,msg,time:serverTimestamp()}); document.getElementById('managerMsg').value=''; window.open('https://wa.me/256793814204?text='+encodeURIComponent(currentUser.name+' ('+currentPhone+'): '+msg),'_blank');}
+window.loadChats=async()=>{const snap=await getDocs(collection(db,'chats')); let html=''; snap.forEach(d=>{const c=d.data(); html+=`<div style="border-bottom:1px solid #334155;padding:4px 0"><b>${c.name}</b> ${c.phone}<br>${c.msg}</div>`;}); document.getElementById('chatList').innerHTML=html||'No chats';}
+window.adminLogin=async()=>{const p=document.getElementById('adminPass').value; if(p!=='0793814204'){alert('Wrong');return;} document.getElementById('adminPanel').style.display='block'; const snap=await getDocs(collection(db,'orders')); let html=''; snap.forEach(d=>{const o=d.data(); html+=`<div style="border:1px solid #334155;padding:6px;margin:4px 0"><b>${o.name} ${o.phone}</b> - ${o.machineId} ${o.price} - ${o.status} <br><button onclick="approveOrder('${d.id}')" style="padding:4px 8px;background:#22c55e;border:none;border-radius:6px">Approve</button></div>`;}); document.getElementById('allOrdersList').innerHTML=html||'No orders'; const usnap=await getDocs(collection(db,'users')); let uhtml=''; usnap.forEach(d=>{const u=d.data(); uhtml+=`<div>${u.name} ${u.phone} Ref:${u.referrals||0} Bal:${u.balance||0}</div>`;}); document.getElementById('allUsersList').innerHTML=uhtml;}
+window.approveOrder=async(id)=>{await updateDoc(doc(db,'orders',id),{status:'approved'}); alert('Approved');}
+const saved=localStorage.getItem('skylight_phone'); if(saved){getDoc(doc(db,'users',saved)).then(s=>{if(s.exists()){currentPhone=saved; currentUser=s.data(); enterApp();}});}
+</script>
+<script>
+if(!localStorage.getItem('skylight_phone')){document.getElementById('machinesTab').style.display='none'; document.querySelector('.nav').style.display='none';}else{document.getElementById('authBox').style.display='none';}
+</script>
+</body>
+</html>
