@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SKYLIGHT v35.0 ADMIN PANEL</title>
+<title>SKYLIGHT v35.1 FIXED PASS - ADMIN + WRONG PASS + BALANCE + REF VIP</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,Arial}
 body{background:#050b1e;color:#fff;padding-bottom:78px}
@@ -31,7 +31,6 @@ input,select{width:100%;padding:12px;margin-top:6px;background:#070d1c;border:1p
 .profileHome{width:70px;height:70px;border-radius:50%;border:2px solid #00ff88;margin:0 auto 6px;display:block;object-fit:cover;cursor:pointer}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px}.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px}
 .menuCard{background:linear-gradient(135deg,#0d1d36,#13264a);border:1px solid #1e335a;border-radius:12px;padding:14px 6px;text-align:center;cursor:pointer}
-.chCard{background:#0a1933;border:1px solid #1e335a;border-radius:12px;padding:10px;text-align:center;cursor:pointer}
 .bottom{position:fixed;bottom:0;left:0;right:0;height:66px;background:#080f22;border-top:1px solid #1e335a;display:flex;z-index:300}
 .bottom div{flex:1;text-align:center;padding:7px 0;font-size:8px;color:#5a7aa0;cursor:pointer;font-weight:700;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
 .bottom .on{color:#00ff88;background:rgba(0,255,136,0.08)}.bottom .icon{font-size:16px}
@@ -41,9 +40,9 @@ input,select{width:100%;padding:12px;margin-top:6px;background:#070d1c;border:1p
 .tab.on{color:#000}#tab-all.on{background:linear-gradient(90deg,#00ff88,#00cc6a);border-color:#00ff88}#tab-m.on{background:linear-gradient(90deg,#00ff88,#22ff88);border-color:#00ff88}#tab-a.on{background:linear-gradient(90deg,#00d4ff,#00aaff);border-color:#00d4ff}#tab-uly.on{background:linear-gradient(90deg,#a78bfa,#d8b4fe);border-color:#a78bfa}#tab-vip.on{background:linear-gradient(90deg,#ffcc00,#ff9900);border-color:#ffcc00}#tab-my.on{background:linear-gradient(90deg,#ff6b6b,#ff8e53);border-color:#ff6b6b;color:#fff}
 .labelC{color:#8aa4c8;font-size:10px;font-weight:700;display:block;text-align:left;margin-top:10px}
 .vipRow{display:flex;justify-content:space-between;padding:10px 12px;background:linear-gradient(90deg,#0d1d36,#13264a);border-radius:10px;margin:5px 0;border:1px solid #1e335a;font-size:11px}
-.msgBox{padding:8px 10px;border-radius:8px;font-size:11px;font-weight:700;margin-top:8px;display:none}
-.msgErr{background:rgba(255,51,85,0.15);border:1px solid #ff3355;color:#ff6b6b}
-.msgOk{background:rgba(0,255,136,0.1);border:1px solid #00ff88;color:#00ff88}
+.msgBox{padding:10px 12px;border-radius:10px;font-size:12px;font-weight:800;margin-top:10px;display:none}
+.msgErr{background:rgba(255,51,85,0.2);border:2px solid #ff3355;color:#ff8e9a}
+.msgOk{background:rgba(0,255,136,0.15);border:2px solid #00ff88;color:#00ff88}
 .pendingCard{background:linear-gradient(135deg,#1a1a00,#2a2000);border:2px solid #ffcc00;border-radius:12px;padding:12px;margin:8px 0}
 </style>
 </head>
@@ -51,56 +50,37 @@ input,select{width:100%;padding:12px;margin-top:6px;background:#070d1c;border:1p
 
 <div id="loginScreen">
 <div class="loginBox">
-<div style="text-align:center"><div class="logoC"><div style="transform:rotate(-45deg);color:#00ff88;font-size:26px;font-weight:900">S</div></div><div style="margin-top:12px"><b style="color:#fff;font-size:18px;letter-spacing:3px">SKYLIGHT</b><div style="color:#5a7aa0;font-size:9px;letter-spacing:3px;margin-top:2px" id="loginTitle">AI COMPANY • v35.0 ADMIN PANEL</div></div></div>
-<img id="loginPic" src="https://i.pravatar.cc/150?img=33" class="profileBig" onclick="document.getElementById('loginPicInput').click()">
+<div style="text-align:center"><div class="logoC"><div style="transform:rotate(-45deg);color:#00ff88;font-size:26px;font-weight:900">S</div></div><div style="margin-top:12px"><b style="color:#fff;font-size:18px;letter-spacing:3px">SKYLIGHT</b><div style="color:#5a7aa0;font-size:9px;letter-spacing:3px;margin-top:2px">v35.1 FIXED PASS • ADMIN + WRONG PASS + BALANCE + REF VIP</div></div></div>
+<img id="loginPic" src="https://i.pravatar.cc/150?img=33" class="profileBig">
 <div style="color:#fff;font-weight:700;font-size:13px;text-align:center" id="loginNameShow">Bruno Mickeal</div>
-<input type="file" id="loginPicInput" accept="image/*" style="display:none" onchange="changePic(this)">
-<label class="labelC">Username / Admin</label><input type="text" id="loginName" value="Bruno Mickeal" oninput="updateProfile(this.value)">
-<label class="labelC">Password</label><div class="passBox"><input type="password" id="loginPass" value="" placeholder="Enter password - 1234 for user, admin1234 for admin" style="padding-right:44px;letter-spacing:2px;font-weight:700"><span class="eye" id="eyeBtn" onclick="togglePass()">👁️</span></div>
+<label class="labelC">Username</label><input type="text" id="loginName" value="Bruno Mickeal" oninput="document.getElementById('loginNameShow').innerText=this.value||'Bruno Mickeal'">
+<label class="labelC">Password * Required</label><div class="passBox"><input type="password" id="loginPass" value="" placeholder="Enter password - User: 1234, Admin: admin1234" style="padding-right:44px;font-weight:700;border:2px solid #00ff8855"><span class="eye" onclick="let i=document.getElementById('loginPass');i.type=i.type==='password'?'text':'password';this.innerText=i.type==='password'?'👁️':'🙈'">👁️</span></div>
 <div id="loginMsg" class="msgBox"></div>
-<div style="font-size:9px;color:#3a5a80;margin-top:6px;text-align:left">User: Bruno Mickeal / 1234 • Admin: admin / admin1234 • Wrong password shows error</div>
-<button class="btn ch" style="margin-top:12px" onclick="doLogin()">Continue → Login</button>
-<div id="refInfo" style="font-size:10px;color:#ffcc00;background:rgba(255,204,0,0.1);padding:6px;border-radius:8px;margin-top:8px;display:none;border:1px solid rgba(255,204,0,0.2)"></div>
+<div style="font-size:9px;color:#ffcc00;background:rgba(255,204,0,0.08);padding:6px;border-radius:6px;margin-top:8px;border:1px solid rgba(255,204,0,0.15)">🔐 Password Required: User = 1234 (or your new), Admin = admin1234 • Wrong password shows ❌ Wrong password!</div>
+<button class="btn ch" style="margin-top:12px;font-size:14px" onclick="doLogin()">Continue → Login</button>
+<div id="refInfo" style="font-size:10px;color:#ffcc00;background:rgba(255,204,0,0.1);padding:6px;border-radius:8px;margin-top:8px;display:none"></div>
 </div>
 </div>
 
-<div class="top"><div style="display:flex;align-items:center;justify-content:center;gap:10px"><div style="width:30px;height:30px;transform:rotate(45deg);border:1px solid #00ff88;background:#0a1933;display:flex;align-items:center;justify-content:center"><b style="transform:rotate(-45deg);color:#00ff88;font-size:11px">S</b></div><div style="text-align:left"><b style="color:#fff;font-size:11px">SKYLIGHT</b><div style="font-size:7px;color:#5a7aa0" id="topSubtitle">v35.0 ADMIN PANEL • WRONG PASS + BALANCE + REF VIP + ADMIN</div></div></div><div style="color:#00ff88;font-weight:800;margin-top:3px;font-size:13px" id="topBal">0 UGX</div></div>
-
+<div class="top"><div style="display:flex;align-items:center;justify-content:center;gap:10px"><div style="width:30px;height:30px;transform:rotate(45deg);border:1px solid #00ff88;background:#0a1933;display:flex;align-items:center;justify-content:center"><b style="transform:rotate(-45deg);color:#00ff88;font-size:11px">S</b></div><div style="text-align:left"><b style="color:#fff;font-size:11px">SKYLIGHT</b><div style="font-size:7px;color:#5a7aa0">v35.1 FIXED PASS • ADMIN + WRONG PASS + BALANCE + REF VIP</div></div></div><div style="color:#00ff88;font-weight:800;margin-top:3px;font-size:13px" id="topBal">0 UGX</div></div>
 <div class="tabs" id="tabs"><div id="tab-all" class="tab on" onclick="openTop('all')">🌈 All</div><div id="tab-m" class="tab" onclick="openTop('m')">🟢 M</div><div id="tab-a" class="tab" onclick="openTop('a')">🔵 A</div><div id="tab-uly" class="tab" onclick="openTop('uly')">🟣 U/L/Y</div><div id="tab-vip" class="tab" onclick="openTop('vip')">⭐ VIP</div><div id="tab-my" class="tab" onclick="openTop('my')">🧡 MY(0)</div></div>
 
-<div id="page-home" class="page on">
-<div class="boxC" style="text-align:center"><img id="homeProfilePic" src="https://i.pravatar.cc/150?img=33" class="profileHome" onclick="document.getElementById('homePicInput').click()"><div><b style="color:#fff;font-size:13px" id="homeUser">Bruno Mickeal</b><div style="font-size:9px;color:#5a7aa0" id="homeId">SKY-1250 • CEO</div></div><input type="file" id="homePicInput" accept="image/*" style="display:none" onchange="changePic(this)"><div style="margin-top:10px;background:#070d1c;border:1px solid #1e335a;border-radius:12px;padding:10px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px"><div><div style="font-size:8px;color:#5a7aa0">Balance</div><div class="bal" style="font-size:14px" id="homeBalMain">0 UGX</div></div><div><div style="font-size:8px;color:#5a7aa0">Machines</div><div style="font-size:14px;color:#fff;font-weight:700" id="homeCountMain">0</div></div><div><div style="font-size:8px;color:#5a7aa0">VIP</div><div style="font-size:14px;color:#ffcc00;font-weight:700" id="homeVipMain">VIP0</div></div></div>
-<div id="pendingNotice" style="font-size:10px;color:#ffcc00;background:rgba(255,204,0,0.1);padding:8px;border-radius:8px;margin-top:8px;display:none;border:1px solid rgba(255,204,0,0.2)">⏳ You have pending orders awaiting admin approval!</div>
-</div>
-<div class="boxC"><div style="display:flex;justify-content:space-between;align-items:center"><b style="color:#fff;font-size:12px">👑 Founders</b><span style="color:#00ff88;font-size:10px;cursor:pointer;font-weight:700" onclick="openB('foundersFull')">View all 5 →</span></div><div class="person"><img src="https://i.pravatar.cc/150?img=33"><div><b style="color:#fff;font-size:12px">Bruno Mickeal</b><div style="font-size:10px;color:#5a7aa0">CEO • Kampala</div></div></div></div>
-<div class="boxC"><div style="color:#fff;font-size:11px;font-weight:800;margin-bottom:8px">⚡ Quick Menu</div><div class="grid3"><div class="menuCard" onclick="openB('machines')"><div style="font-size:20px">⚙️</div><div style="font-size:9px;color:#00ff88;margin-top:5px;font-weight:700">Machines</div></div><div class="menuCard" onclick="openB('wallet')"><div style="font-size:20px">💰</div><div style="font-size:9px;color:#ffcc00;margin-top:5px;font-weight:700">Deposit</div></div><div class="menuCard" onclick="openB('wallet')"><div style="font-size:20px">💸</div><div style="font-size:9px;color:#ff6b6b;margin-top:5px;font-weight:700">Withdraw</div></div><div class="menuCard" onclick="openB('group')"><div style="font-size:20px">🎁</div><div style="font-size:9px;color:#a78bfa;margin-top:5px;font-weight:700">Invite</div></div><div class="menuCard" onclick="openB('admin')"><div style="font-size:20px">🛡️</div><div style="font-size:9px;color:#ffcc00;margin-top:5px;font-weight:700">Admin Panel</div></div><div class="menuCard" onclick="openB('rules')"><div style="font-size:20px">📜</div><div style="font-size:9px;color:#fff;margin-top:5px;font-weight:700">Rules</div></div></div></div>
-</div>
+<div id="page-home" class="page on"><div class="boxC" style="text-align:center"><img src="https://i.pravatar.cc/150?img=33" class="profileHome"><div><b style="color:#fff;font-size:13px" id="homeUser">Bruno Mickeal</b><div style="font-size:9px;color:#5a7aa0">SKY-1250 • CEO</div></div><div style="margin-top:10px;background:#070d1c;border:1px solid #1e335a;border-radius:12px;padding:10px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px"><div><div style="font-size:8px;color:#5a7aa0">Balance</div><div class="bal" style="font-size:14px" id="homeBalMain">0 UGX</div></div><div><div style="font-size:8px;color:#5a7aa0">Machines</div><div style="font-size:14px;color:#fff;font-weight:700" id="homeCountMain">0</div></div><div><div style="font-size:8px;color:#5a7aa0">VIP</div><div style="font-size:14px;color:#ffcc00;font-weight:700" id="homeVipMain">VIP0</div></div></div><div id="pendingNotice" style="font-size:10px;color:#ffcc00;background:rgba(255,204,0,0.1);padding:8px;border-radius:8px;margin-top:8px;display:none"></div></div><div class="boxC"><div style="color:#fff;font-size:11px;font-weight:800;margin-bottom:8px">⚡ Quick Menu</div><div class="grid3"><div class="menuCard" onclick="openB('machines')"><div style="font-size:20px">⚙️</div><div style="font-size:9px;color:#00ff88;margin-top:5px;font-weight:700">Machines</div></div><div class="menuCard" onclick="openB('wallet')"><div style="font-size:20px">💰</div><div style="font-size:9px;color:#ffcc00;margin-top:5px;font-weight:700">Deposit</div></div><div class="menuCard" onclick="openB('wallet')"><div style="font-size:20px">💸</div><div style="font-size:9px;color:#ff6b6b;margin-top:5px;font-weight:700">Withdraw</div></div><div class="menuCard" onclick="openB('group')"><div style="font-size:20px">🎁</div><div style="font-size:9px;color:#a78bfa;margin-top:5px;font-weight:700">Invite</div></div><div class="menuCard" onclick="openB('admin')"><div style="font-size:20px">🛡️</div><div style="font-size:9px;color:#ffcc00;margin-top:5px;font-weight:700">Admin Panel</div></div><div class="menuCard" onclick="openB('rules')"><div style="font-size:20px">📜</div><div style="font-size:9px;color:#fff;margin-top:5px;font-weight:700">Rules</div></div></div></div></div>
 
-<div id="page-admin" class="page">
-<div class="box" style="border:2px solid #ffcc00">
-<div style="display:flex;justify-content:space-between;align-items:center"><b style="color:#ffcc00;font-size:14px">🛡️ ADMIN PANEL - Pending Orders</b><span style="color:#5a7aa0;font-size:10px;cursor:pointer" onclick="openB('home')">← Home</span></div>
-<div style="font-size:10px;color:#8aa4c8;margin-top:8px;background:rgba(255,204,0,0.08);padding:8px;border-radius:8px;border:1px solid rgba(255,204,0,0.15)">Admin: admin / admin1234 • Users deposit → Proof + Txn ID → Goes here pending → You approve → Machine active + Referral VIP upgrade if from link</div>
-<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:10px"><div style="background:#070d1c;border:1px solid #1e335a;border-radius:10px;padding:8px;text-align:center"><b style="color:#ffcc00;font-size:16px" id="adminPendingCount">0</b><div style="font-size:8px;color:#5a7aa0">Pending</div></div><div style="background:#070d1c;border:1px solid #1e335a;border-radius:10px;padding:8px;text-align:center"><b style="color:#00ff88;font-size:16px" id="adminApprovedCount">0</b><div style="font-size:8px;color:#5a7aa0">Approved</div></div><div style="background:#070d1c;border:1px solid #1e335a;border-radius:10px;padding:8px;text-align:center"><b style="color:#ff6b6b;font-size:16px" id="adminTotalBal">0 UGX</b><div style="font-size:8px;color:#5a7aa0">Total Bal</div></div></div>
-<button class="btn" style="background:#1a2338;color:#8aa4c8;border:1px solid #1e335a;margin-top:10px;font-size:10px" onclick="clearAllPending()">🗑️ Clear All Pending (Admin)</button>
-<div id="adminOrdersList" style="margin-top:12px"></div>
-</div>
-<div class="box" style="border:1px solid #00ff88"><b style="color:#fff;font-size:11px">🔗 Referral Tracking - Admin View</b><div style="font-size:10px;color:#8aa4c8;margin-top:6px">When user with ?ref=YOURCODE deposits and you approve, his referrer gets +1 referral → VIP upgrade auto</div><div style="background:#070d1c;border:1px solid #1e335a;border-radius:10px;padding:10px;margin-top:8px"><div style="font-size:10px;color:#5a7aa0">Your referrals (deposited friends): <b style="color:#ffcc00" id="adminRefCount">0</b> • VIP: <b style="color:#00ff88" id="adminVipLevel">VIP0</b></div><div style="font-size:9px;color:#5a7aa0;margin-top:4px">3 deposited = VIP1, 6 = VIP2... 80 = VIP8</div></div></div>
-</div>
+<div id="page-admin" class="page"><div class="box" style="border:2px solid #ffcc00"><div style="display:flex;justify-content:space-between"><b style="color:#ffcc00;font-size:14px">🛡️ ADMIN PANEL</b><span style="color:#5a7aa0;font-size:10px;cursor:pointer" onclick="openB('home')">← Home</span></div><div style="font-size:10px;color:#8aa4c8;margin-top:8px">Admin: admin / admin1234 • Check proof → Approve → Machine active + VIP upgrade</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px"><div style="background:#070d1c;border-radius:10px;padding:8px;text-align:center"><b style="color:#ffcc00;font-size:16px" id="adminPendingCount">0</b><div style="font-size:8px;color:#5a7aa0">Pending</div></div><div style="background:#070d1c;border-radius:10px;padding:8px;text-align:center"><b style="color:#00ff88;font-size:16px" id="adminApprovedCount">0</b><div style="font-size:8px;color:#5a7aa0">Approved</div></div></div><div id="adminOrdersList" style="margin-top:12px"></div></div></div>
 
-<div id="page-foundersFull" class="page"><div class="box"><div style="display:flex;justify-content:space-between"><b style="color:#fff">👑 All 5 Founders</b><span style="color:#5a7aa0;font-size:10px;cursor:pointer" onclick="openB('home')">← Back</span></div><div class="person" style="margin-top:10px"><img src="https://i.pravatar.cc/150?img=33"><div><b style="color:#fff">Bruno Mickeal - CEO ⭐</b><div style="font-size:10px;color:#5a7aa0">Main Founder</div></div></div></div></div>
-<div id="page-logoPage" class="page"><div class="box" style="text-align:center"><div class="logoC" style="width:80px;height:80px;margin:20px auto"><div style="transform:rotate(-45deg);color:#00ff88;font-size:32px">S</div></div><b style="color:#fff;font-size:18px">SKYLIGHT</b><button class="btn ch" style="margin-top:20px" onclick="openB('home')">Back Home</button></div></div>
 <div id="page-all" class="page"></div><div id="page-m" class="page"></div><div id="page-a" class="page"></div><div id="page-uly" class="page"></div><div id="page-vip" class="page"></div><div id="page-my" class="page"></div>
 
 <div id="page-wallet" class="page">
-<div class="box"><div style="color:#fff;font-size:12px;font-weight:800">💰 Deposit Order - Min 2000 UGX - Goes to Admin Approval</div><div style="font-size:9px;color:#ffcc00;background:rgba(255,204,0,0.1);padding:6px;border-radius:8px;margin-top:6px;border:1px solid rgba(255,204,0,0.2)">📌 Deposit Order Flow: Copy number → Send money → Enter Txn ID + Proof → Submit → Pending → Admin (admin/admin1234) approves → Machine active + Balance updated + Referral VIP upgrade</div><select id="mobileSelect" onchange="document.getElementById('mobNum').innerText=this.value.split('|')[0]"><option value="0793814204|BRUNO">📱 0793814204 - BRUNO MTN</option><option value="0758764116|GRACE">📱 0758764116 - GRACE Airtel</option><option value="TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb|USDT">💎 USDT TRC20</option></select><div style="border:1px solid #1e335a;border-radius:12px;padding:10px;margin-top:10px;background:#070d1c;text-align:center"><div class="bigNum" id="mobNum">0793814204</div><button class="btn ch" style="padding:8px;font-size:11px" onclick="navigator.clipboard.writeText(document.getElementById('mobNum').innerText).then(()=>alert('Copied!'))">📋 Copy</button></div><select id="buySelect"></select><input type="text" id="txnId" placeholder="Transaction ID - e.g. 1234567890"><input type="file" id="proof" accept="image/*"><button class="btn wa" onclick="buyWithProof()">✅ Submit Order - Pending Admin Approval</button><div id="depositMsg" class="msgBox"></div></div>
-<div class="box" style="border:1px solid #ff3355"><div style="color:#fff;font-size:12px;font-weight:800">💸 Withdraw - Min 2000 UGX</div><div style="font-size:9px;color:#ff6b6b;background:rgba(255,51,85,0.1);padding:6px;border-radius:8px;margin-top:6px">📌 Min Withdrawal: 2000 UGX • Processed 24h</div><div class="bal" id="withBal" style="margin-top:8px">0 UGX</div><input type="number" id="withAmt" placeholder="Min 2000"><button class="btn" style="background:linear-gradient(90deg,#ff3355,#ff6b6b);color:#fff" onclick="withdraw()">Withdraw Order</button><div id="withdrawMsg" class="msgBox"></div></div>
+<div class="box"><div style="color:#fff;font-size:12px;font-weight:800">💰 Deposit Order - Min 2000 UGX - Admin Approval</div><select id="mobileSelect" onchange="document.getElementById('mobNum').innerText=this.value.split('|')[0]"><option value="0793814204|BRUNO">📱 0793814204 - BRUNO MTN</option><option value="0758764116|GRACE">📱 0758764116 - GRACE Airtel</option><option value="TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb|USDT">💎 USDT</option></select><div style="border:1px solid #1e335a;border-radius:12px;padding:10px;margin-top:10px;background:#070d1c;text-align:center"><div class="bigNum" id="mobNum">0793814204</div><button class="btn ch" style="padding:8px;font-size:11px" onclick="navigator.clipboard.writeText(document.getElementById('mobNum').innerText).then(()=>alert('Copied!'))">📋 Copy</button></div><select id="buySelect"></select><input type="text" id="txnId" placeholder="Transaction ID"><input type="file" id="proof" accept="image/*"><button class="btn wa" onclick="buyWithProof()">✅ Submit Order - Pending Admin</button><div id="depositMsg" class="msgBox"></div></div>
+<div class="box" style="border:1px solid #ff3355"><div style="color:#fff;font-size:12px;font-weight:800">💸 Withdraw - Min 2000 UGX</div><div class="bal" id="withBal" style="margin-top:8px">0 UGX</div><input type="number" id="withAmt" placeholder="Min 2000"><button class="btn" style="background:linear-gradient(90deg,#ff3355,#ff6b6b);color:#fff" onclick="withdraw()">Withdraw</button><div id="withdrawMsg" class="msgBox"></div></div>
 </div>
 
-<div id="page-group" class="page"><div class="box" style="text-align:center"><div style="color:#fff;font-size:12px;font-weight:800">🎁 Invite - Share Link Until Deposit → VIP Upgrade</div><div style="font-size:9px;color:#8aa4c8;margin-top:6px;background:rgba(0,255,136,0.06);padding:8px;border-radius:8px;border:1px solid rgba(0,255,136,0.15)">✅ RULE: Share link → Friend must make deposit + Admin approves → ONLY THEN you get +1 referral and VIP upgrade! Just clicking NOT count!</div><div style="background:#070d1c;padding:10px;border-radius:10px;border:1px solid #1e335a;margin:12px 0;word-break:break-all;font-size:11px;color:#00ff88" id="refLink">LINK</div><img id="refQr" style="background:#fff;padding:6px;border-radius:10px;width:120px;margin:0 auto;display:block" src=""><button class="btn ch" onclick="copyRef()">📋 Copy Invite Link</button><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:12px"><div style="background:#070d1c;border:1px solid #1e335a;border-radius:10px;padding:8px;text-align:center"><b style="color:#fff;font-size:16px" id="refCount">0</b><div style="font-size:8px;color:#5a7aa0">Deposited Friends</div></div><div style="background:#070d1c;border:1px solid #1e335a;border-radius:10px;padding:8px;text-align:center"><b style="color:#ffcc00;font-size:14px" id="vipLevel">VIP0</b></div><div style="background:#070d1c;border:1px solid #1e335a;border-radius:10px;padding:8px;text-align:center"><b style="color:#00ff88" id="vipStatus">🔒</b></div></div><div style="background:#070d1c;height:6px;border-radius:8px;margin-top:10px;border:1px solid #1e335a"><div id="vipBar" style="height:100%;width:0%;background:#00ff88"></div></div><div style="margin-top:12px;background:rgba(255,204,0,0.08);border:1px solid rgba(255,204,0,0.2);border-radius:10px;padding:10px"><b style="color:#ffcc00;font-size:10px">🧪 TEST REFERRAL DEPOSIT</b><div style="font-size:9px;color:#8aa4c8;margin-top:4px">Simulates friend deposit via your link + admin approval → VIP upgrade</div><button class="btn" style="background:linear-gradient(90deg,#ffcc00,#ff9900);color:#000;margin-top:8px;font-size:11px" onclick="simulateReferralDeposit()">🎉 Simulate Friend Deposit → Admin Approve → +1 Referral VIP</button><div id="refMsg" class="msgBox" style="margin-top:8px"></div></div></div></div>
+<div id="page-group" class="page"><div class="box" style="text-align:center"><div style="color:#fff;font-size:12px;font-weight:800">🎁 Invite - Share Until Deposit → VIP Upgrade</div><div style="background:#070d1c;padding:10px;border-radius:10px;border:1px solid #1e335a;margin:12px 0;word-break:break-all;font-size:11px;color:#00ff88" id="refLink">LINK</div><img id="refQr" style="background:#fff;padding:6px;border-radius:10px;width:120px;margin:0 auto;display:block" src=""><button class="btn ch" onclick="copyRef()">📋 Copy Invite Link</button><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:12px"><div style="background:#070d1c;border-radius:10px;padding:8px;text-align:center"><b style="color:#fff;font-size:16px" id="refCount">0</b><div style="font-size:8px;color:#5a7aa0">Friends Deposited</div></div><div style="background:#070d1c;border-radius:10px;padding:8px;text-align:center"><b style="color:#ffcc00;font-size:14px" id="vipLevel">VIP0</b></div><div style="background:#070d1c;border-radius:10px;padding:8px;text-align:center"><b style="color:#00ff88" id="vipStatus">🔒</b></div></div><div style="background:#070d1c;height:6px;border-radius:8px;margin-top:10px"><div id="vipBar" style="height:100%;width:0%;background:#00ff88"></div></div><button class="btn" style="background:linear-gradient(90deg,#ffcc00,#ff9900);color:#000;margin-top:12px;font-size:11px" onclick="simulateReferralDeposit()">🎉 Simulate Friend Deposit → +1 Referral VIP</button><div id="refMsg" class="msgBox"></div></div></div>
 
-<div id="page-rules" class="page"><div class="box"><div style="color:#fff;font-size:14px;font-weight:900">📜 Rules - Min Deposit / Withdraw / Order / Admin / VIP</div><div style="margin-top:12px"><div style="background:linear-gradient(90deg,#0d1d36,#10244a);border-left:4px solid #00ff88;padding:10px;border-radius:0 12px 12px 0;margin-bottom:8px"><b style="color:#00ff88;font-size:11px">💰 MINIMUM DEPOSIT</b><br><span style="font-size:18px;font-weight:900;color:#ffcc00">2000 UGX</span><span style="font-size:10px;color:#8aa4c8"> • Order goes to admin approval first</span></div><div style="background:linear-gradient(90deg,#1a102a,#2a1030);border-left:4px solid #ff3355;padding:10px;border-radius:0 12px 12px 0;margin-bottom:8px"><b style="color:#ff6b6b;font-size:11px">💸 MINIMUM WITHDRAWAL</b><br><span style="font-size:18px;font-weight:900;color:#ff6b6b">2000 UGX</span></div><div style="background:linear-gradient(90deg,#0d1a2a,#0d2a2a);border-left:4px solid #00d4ff;padding:10px;border-radius:0 12px 12px 0;margin-bottom:8px"><b style="color:#00d4ff;font-size:11px">🛡️ ADMIN PANEL ORDER</b><br><span style="font-size:11px;color:#fff;line-height:1.6">1️⃣ User deposits → Txn ID + Proof → Submit → Pending<br>2️⃣ Admin login: admin / admin1234 at ?admin page<br>3️⃣ Admin sees pending list with proof image<br>4️⃣ Admin checks MTN MoMo 0793814204 if money received<br>5️⃣ If OK → Approve → Machine active + Balance + Referral VIP upgrade<br>6️⃣ If fake → Reject → Order removed</span></div><div style="background:linear-gradient(90deg,#1a1a00,#2a2a00);border-left:4px solid #ffcc00;padding:10px;border-radius:0 12px 12px 0;margin-bottom:8px"><b style="color:#ffcc00;font-size:11px">🔗 REFERRAL VIP - LINK → DEPOSIT → ADMIN APPROVE → UPGRADE</b><br><span style="font-size:11px;color:#fff;line-height:1.7">1️⃣ Share link ?ref=Bruno1250<br>2️⃣ Friend opens link → Tracked<br>3️⃣ Friend deposits (buy machine) → Pending admin<br>4️⃣ Admin approves → Friend gets machine<br>5️⃣ ONLY THEN you get +1 referral → VIP upgrade: 3 deposited = VIP1, 6 = VIP2, 80 = VIP8<br>6️⃣ Just clicking link without deposit = No upgrade!</span></div></div></div></div>
+<div id="page-rules" class="page"><div class="box"><div style="color:#fff;font-size:14px;font-weight:900">📜 Rules</div><div style="font-size:11px;color:#fff;margin-top:10px;line-height:1.8">🔐 Login: Password required - Wrong password shows ❌ Wrong password!<br>💰 Deposit Min 2000 - Order goes to admin approval<br>💸 Withdraw Min 2000<br>🛡️ Admin: admin/admin1234 approves proof → Machine active<br>🔗 Referral: Share link → Friend deposit + admin approve → You get +1 → VIP upgrade<br>⚙️ Buy: Checks sufficient balance - If not enough → Shows insufficient balance, deposit first!</div></div></div>
 
-<div id="page-set" class="page"><div class="box" style="text-align:center"><img id="setPic" src="https://i.pravatar.cc/150?img=33" class="profileBig" onclick="document.getElementById('setPicInput').click()"><h3 style="color:#fff;font-size:13px" id="setName">Bruno Mickeal</h3><div style="font-size:9px;color:#5a7aa0" id="setId">SKY-1250</div><input type="file" id="setPicInput" accept="image/*" style="display:none" onchange="changePic(this)"></div><div class="box"><div style="color:#fff;font-size:11px;font-weight:800">Change Password - Wrong Pass Check</div><input type="password" id="oldPass" placeholder="Current password"><input type="password" id="newPass" placeholder="New password min 4"><input type="password" id="confirmPass" placeholder="Confirm new"><button class="btn" style="background:#fff;color:#000" onclick="changePass()">Update Password</button><div id="passMsg" class="msgBox"></div></div><div class="box"><button class="btn" style="background:#1a2338;color:#8aa4c8;border:1px solid #1e335a" onclick="logout()">Logout</button><div style="font-size:9px;color:#5a7aa0;margin-top:8px;text-align:center">Admin Panel: ?admin • Admin: admin / admin1234 • User: Bruno / 1234 • Wrong password shows error • Sufficient balance check active</div></div></div>
+<div id="page-set" class="page"><div class="box" style="text-align:center"><img src="https://i.pravatar.cc/150?img=33" class="profileBig"><h3 style="color:#fff;font-size:13px" id="setName">Bruno Mickeal</h3></div><div class="box"><div style="color:#fff;font-size:11px;font-weight:800">Change Password - Wrong Pass Check</div><input type="password" id="oldPass" placeholder="Current password"><input type="password" id="newPass" placeholder="New password min 4"><input type="password" id="confirmPass" placeholder="Confirm"><button class="btn" style="background:#fff;color:#000" onclick="changePass()">Update Password</button><div id="passMsg" class="msgBox"></div></div><div class="box"><button class="btn" style="background:#1a2338;color:#8aa4c8" onclick="logout()">Logout</button><div style="font-size:8px;color:#5a7aa0;margin-top:8px;text-align:center">User: Bruno/1234 • Admin: admin/admin1234 • Wrong password shows error • v35.1</div></div></div>
 
 <div class="bottom"><div id="b-home" class="on" onclick="openB('home')"><span class="icon">🏠</span><span>Home</span></div><div id="b-machines" onclick="openB('machines')"><span class="icon">⚙️</span><span>Machines</span></div><div id="b-wallet" onclick="openB('wallet')"><span class="icon">💰</span><span>Wallet</span></div><div id="b-group" onclick="openB('group')"><span class="icon">🎁</span><span>Invite</span></div><div id="b-admin" onclick="openB('admin')"><span class="icon">🛡️</span><span>Admin</span></div><div id="b-set" onclick="openB('set')"><span class="icon">⚙️</span><span>Set</span></div></div>
 
@@ -120,44 +100,36 @@ let urlParams=new URLSearchParams(window.location.search);
 let incomingRef=urlParams.get('ref');
 if(incomingRef){pendingRef=incomingRef;localStorage.setItem('sky_pending_ref',pendingRef);}
 if(window.location.search.includes('login')||window.location.search.includes('reset')){logged=false;localStorage.setItem('sky_logged','no');}
-if(window.location.search.includes('admin')){isAdmin=true;}
 const vips=[{refs:3,id:'VIP1',price:5000,daily:850},{refs:6,id:'VIP2',price:15000,daily:2550},{refs:12,id:'VIP3',price:30000,daily:5100},{refs:20,id:'VIP4',price:60000,daily:10200},{refs:30,id:'VIP5',price:120000,daily:20400},{refs:45,id:'VIP6',price:250000,daily:42500},{refs:60,id:'VIP7',price:400000,daily:68000},{refs:80,id:'VIP8',price:600000,daily:102000}];
 function getVip(){let l=0;vips.forEach(v=>{if(ref>=v.refs)l=v.level});return l;}
 function save(){localStorage.setItem('sky_bal',bal);localStorage.setItem('sky_macs',JSON.stringify(macs));localStorage.setItem('sky_name',uName);localStorage.setItem('sky_pass',uPass);localStorage.setItem('sky_logged',logged?'yes':'no');localStorage.setItem('sky_ref',ref);localStorage.setItem('sky_pic',uPic);localStorage.setItem('sky_pending_ref',pendingRef);localStorage.setItem('sky_pending_orders',JSON.stringify(pendingOrders));localStorage.setItem('sky_approved_orders',JSON.stringify(approvedOrders));localStorage.setItem('sky_is_admin',isAdmin?'yes':'no');upd();renderMachines();renderAdmin();}
 function showMsg(id,text,isErr){let el=document.getElementById(id);if(!el)return;el.style.display='block';el.className='msgBox '+(isErr?'msgErr':'msgOk');el.innerText=text;setTimeout(()=>{el.style.display='none';},5000);}
-function changePic(input){if(input.files&&input.files[0]){let r=new FileReader();r.onload=function(e){uPic=e.target.result;save();};r.readAsDataURL(input.files[0]);}}
-function updateProfile(n){document.getElementById('loginNameShow').innerText=n||'Bruno Mickeal';}
-function togglePass(){let i=document.getElementById('loginPass');let b=document.getElementById('eyeBtn');if(i.type==='password'){i.type='text';b.innerText='🙈';}else{i.type='password';b.innerText='👁️';}}
 function doLogin(){
-  let n=document.getElementById('loginName').value||'';
-  let p=document.getElementById('loginPass').value;
+  let n=document.getElementById('loginName').value.trim();
+  let p=document.getElementById('loginPass').value.trim();
   if(!n){showMsg('loginMsg','❌ Enter username!','err');return;}
-  if(!p){showMsg('loginMsg','❌ Please enter password! Wrong password check active!','err');return;}
-  // Admin login check
-  if((n.toLowerCase()==='admin' && p==='admin1234') || (n==='admin' && p==='admin1234')){
-    uName='Admin Bruno';uPass='admin1234';logged=true;isAdmin=true;save();document.getElementById('loginScreen').style.display='none';openB('admin');upd();alert('✅ Admin login success! Welcome Admin! You can approve pending orders.');return;
+  if(!p){showMsg('loginMsg','❌ Wrong password! Please enter password! Password required - User: 1234, Admin: admin1234','err');return;}
+  if(n.toLowerCase()==='admin' && p==='admin1234'){
+    uName='Admin Bruno';uPass='admin1234';logged=true;isAdmin=true;save();
+    document.getElementById('loginScreen').style.display='none';openB('admin');upd();
+    return;
   }
-  // User login check - wrong password
-  if(p!==uPass && n!==uName){ // If new user trying to login with wrong name? Allow if password matches? For simplicity:
-    if(p!==uPass){showMsg('loginMsg','❌ Wrong password! Your password is: '+uPass+' (default 1234). Please enter correct password!','err');return;}
+  if(p!==uPass){
+    showMsg('loginMsg','❌ Wrong password! Your password is: '+uPass+' (default 1234). Please enter correct password!','err');
+    return;
   }
-  if(p!==uPass){showMsg('loginMsg','❌ Wrong password! Your password is: '+uPass+' (default 1234 if you never changed). Please enter correct password!','err');return;}
   uName=n;logged=true;isAdmin=false;save();document.getElementById('loginScreen').style.display='none';upd();
-  if(pendingRef){showMsg('loginMsg','✅ Login OK! You came from referral: '+pendingRef+' - When you deposit + admin approves, your referrer will upgrade VIP!','ok');}
 }
 function upd(){
   document.getElementById('topBal').innerText=bal+' UGX';
-  let el=document.getElementById('homeBalMain'); if(el) el.innerText=bal+' UGX';
-  el=document.getElementById('homeCountMain'); if(el) el.innerText=macs.length;
-  el=document.getElementById('homeVipMain'); if(el) el.innerText='VIP'+getVip();
-  el=document.getElementById('withBal'); if(el) el.innerText=bal+' UGX';
-  el=document.getElementById('homeUser'); if(el) el.innerText=uName;
-  el=document.getElementById('setName'); if(el) el.innerText=uName;
-  document.getElementById('loginPic').src=uPic;
-  document.getElementById('homeProfilePic').src=uPic;
-  document.getElementById('setPic').src=uPic;
+  document.getElementById('homeBalMain').innerText=bal+' UGX';
+  document.getElementById('homeCountMain').innerText=macs.length;
+  document.getElementById('homeVipMain').innerText='VIP'+getVip();
+  document.getElementById('withBal').innerText=bal+' UGX';
+  document.getElementById('homeUser').innerText=uName;
+  document.getElementById('setName').innerText=uName;
   let base='https://benytskylight-crypto.github.io/t-crypto.github.io/';
-  let link=base+'?ref='+encodeURIComponent((uName||'User').replace(/\s+/g,'').substring(0,10)+'1250')+'&v=35.0ADMIN';
+  let link=base+'?ref='+encodeURIComponent((uName||'User').replace(/\s+/g,'').substring(0,10)+'1250')+'&v=35.1';
   document.getElementById('refLink').innerText=link;
   document.getElementById('refQr').src='https://api.qrserver.com/v1/create-qr-code/?size=120x120&data='+encodeURIComponent(link);
   document.getElementById('refCount').innerText=ref;
@@ -165,129 +137,75 @@ function upd(){
   document.getElementById('vipBar').style.width=Math.min(ref/80*100,100)+'%';
   document.getElementById('vipStatus').innerText=getVip()>=1?'VIP'+getVip():'🔒';
   document.getElementById('tab-my').innerHTML='🧡 MY('+macs.length+')';
-  let pendNotice=document.getElementById('pendingNotice');
-  if(pendNotice){pendNotice.style.display=pendingOrders.length>0?'block':'none';pendNotice.innerText='⏳ You have '+pendingOrders.length+' pending orders awaiting admin approval! Admin: admin/admin1234 at ?admin';}
   document.getElementById('adminPendingCount').innerText=pendingOrders.length;
   document.getElementById('adminApprovedCount').innerText=approvedOrders.length;
-  document.getElementById('adminTotalBal').innerText=bal+' UGX';
-  document.getElementById('adminRefCount').innerText=ref;
-  document.getElementById('adminVipLevel').innerText='VIP'+getVip();
+  let pn=document.getElementById('pendingNotice');if(pn){pn.style.display=pendingOrders.length>0?'block':'none';pn.innerText='⏳ '+pendingOrders.length+' pending orders awaiting admin approval (admin/admin1234)';}
 }
 function openB(b){
   document.querySelectorAll('.page').forEach(p=>{p.style.display='none';p.classList.remove('on');});
   document.querySelectorAll('.bottom div').forEach(d=>d.classList.remove('on'));
   document.getElementById('tabs').style.display=(b=='machines'?'flex':'none');
-  if(b=='home'){document.getElementById('page-home').style.display='block';document.getElementById('page-home').classList.add('on');}
-  else if(b=='machines'){document.getElementById('page-all').style.display='block';document.getElementById('page-all').classList.add('on');}
-  else if(b=='foundersFull'){document.getElementById('page-foundersFull').style.display='block';document.getElementById('page-foundersFull').classList.add('on');}
-  else if(b=='logoPage'){document.getElementById('page-logoPage').style.display='block';document.getElementById('page-logoPage').classList.add('on');}
-  else{let pg=document.getElementById('page-'+b); if(pg){pg.style.display='block';pg.classList.add('on');}}
-  let btn=document.getElementById('b-'+b); if(btn)btn.classList.add('on');
-  if(b=='foundersFull'||b=='logoPage'||b=='admin'){document.querySelectorAll('.bottom div').forEach(d=>d.classList.remove('on'));if(b=='admin')document.getElementById('b-admin').classList.add('on');else document.getElementById('b-home').classList.add('on');}
-  if(b=='admin'){renderAdmin();}
+  if(b=='home'){document.getElementById('page-home').style.display='block';}
+  else if(b=='machines'){document.getElementById('page-all').style.display='block';}
+  else{let pg=document.getElementById('page-'+b); if(pg) pg.style.display='block';}
+  let btn=document.getElementById('b-'+b); if(btn) btn.classList.add('on');
+  if(b=='admin') renderAdmin();
 }
 function openTop(t){
   document.querySelectorAll('.tab').forEach(d=>d.classList.remove('on'));
   document.getElementById('tab-'+t).classList.add('on');
-  document.querySelectorAll('.page').forEach(p=>{p.style.display='none';p.classList.remove('on');});
-  let pg=document.getElementById('page-'+t); if(pg){pg.style.display='block';pg.classList.add('on');}
-  else if(t=='all'){document.getElementById('page-all').style.display='block';document.getElementById('page-all').classList.add('on');}
-  document.querySelectorAll('.bottom div').forEach(d=>d.classList.remove('on'));
+  document.querySelectorAll('.page').forEach(p=>{p.style.display='none';});
+  let pg=document.getElementById('page-'+t); if(pg) pg.style.display='block';
+  else if(t=='all') document.getElementById('page-all').style.display='block';
   document.getElementById('b-machines').classList.add('on');
 }
-function copyRef(){navigator.clipboard.writeText(document.getElementById('refLink').innerText).then(()=>{showMsg('refMsg','✅ Invite link copied! Share to friends - They must deposit + admin approves to upgrade you to VIP!','ok');});}
+function copyRef(){navigator.clipboard.writeText(document.getElementById('refLink').innerText).then(()=>{showMsg('refMsg','✅ Invite link copied! Must deposit + admin approval to upgrade VIP!','ok');});}
 function buyWithProof(){
   let sel=document.getElementById('buySelect').value;
   let txn=document.getElementById('txnId').value;
-  let fileInput=document.getElementById('proof');
-  let file=fileInput.files[0];
-  if(!sel){showMsg('depositMsg','❌ Select machine first! Min order 2000 UGX!','err');return;}
+  let file=document.getElementById('proof').files[0];
+  if(!sel){showMsg('depositMsg','❌ Select machine first!','err');return;}
   if(!txn){showMsg('depositMsg','❌ Enter Transaction ID!','err');return;}
   if(!file){showMsg('depositMsg','❌ Upload proof image!','err');return;}
   let parts=sel.split('|');
-  let price=parseInt(parts[1]);
-  let daily=parseInt(parts[2]);
   let reader=new FileReader();
   reader.onload=function(e){
-    let proofData=e.target.result;
-    let order={id:Date.now(),userName:uName,machineId:parts[0],price:price,daily:daily,txnId:txn,proof:proofData,status:'pending',date:new Date().toLocaleString(),refCode:pendingRef||''};
-    pendingOrders.push(order);
-    save();
-    showMsg('depositMsg','✅ Order Submitted! Pending admin approval! Order ID: '+order.id+' - Machine: '+parts[0]+' - Price: '+price+' UGX - Txn: '+txn+' - Admin (admin/admin1234) will check MTN 0793814204 and approve! After approval, machine active + sufficient balance logic OK + Referral VIP upgrade if from link!','ok');
-    document.getElementById('buySelect').value='';
-    document.getElementById('txnId').value='';
-    fileInput.value='';
+    let order={id:Date.now(),userName:uName,machineId:parts[0],price:parseInt(parts[1]),daily:parseInt(parts[2]),txnId:txn,proof:e.target.result,status:'pending',date:new Date().toLocaleString(),refCode:pendingRef||''};
+    pendingOrders.push(order);save();
+    showMsg('depositMsg','✅ Order Submitted! Pending admin (admin/admin1234) approval! ID: '+order.id+' Machine: '+parts[0]+' Price: '+parts[1]+' UGX','ok');
+    document.getElementById('buySelect').value='';document.getElementById('txnId').value='';document.getElementById('proof').value='';
   };
   reader.readAsDataURL(file);
 }
 function renderAdmin(){
-  let list=document.getElementById('adminOrdersList');
-  if(!list)return;
-  if(pendingOrders.length===0){list.innerHTML='<div style="font-size:11px;color:#5a7aa0;background:#070d1c;border:1px solid #1e335a;border-radius:10px;padding:12px;text-align:center">No pending orders. When users deposit, they appear here. Admin approves → Machine active + VIP upgrade if referral.</div>';return;}
-  let html='';
-  pendingOrders.forEach((o,idx)=>{
-    html+=`<div class="pendingCard"><div style="display:flex;justify-content:space-between"><b style="color:#ffcc00;font-size:12px">🟡 Pending #${o.id}</b><span style="font-size:9px;color:#5a7aa0">${o.date}</span></div><div style="font-size:11px;margin-top:6px"><b style="color:#fff">${o.userName}</b> • Machine <b style="color:#00ff88">${o.machineId}</b> • <b style="color:#ffcc00">${o.price} UGX</b> • Daily ${o.daily} UGX<br>Txn ID: <span style="color:#00ff88;background:#000;padding:2px 6px;border-radius:6px">${o.txnId}</span><br>${o.refCode?`Ref from: <b style="color:#ffcc00">${o.refCode}</b> → Will upgrade referrer VIP after approval<br>`:''}Sufficient Balance Check: User balance ${bal} UGX ${bal>=o.price?'✅ Sufficient':'❌ Will add after approval'}</div><img src="${o.proof}" style="width:100%;max-height:180px;object-fit:contain;background:#000;border-radius:8px;margin-top:8px;border:1px solid #ffcc00"><div class="btnRow" style="margin-top:10px"><button class="buyBtn" style="background:linear-gradient(90deg,#00ff88,#00cc6a)" onclick="approveOrder(${idx})">✅ Approve - Activate Machine</button><button class="recvBtn" style="background:linear-gradient(90deg,#ff3355,#ff6b6b)" onclick="rejectOrder(${idx})">❌ Reject - Fake Proof</button></div></div>`;
-  });
-  list.innerHTML=html;
+  let list=document.getElementById('adminOrdersList');if(!list)return;
+  if(pendingOrders.length===0){list.innerHTML='<div style="font-size:11px;color:#5a7aa0;background:#070d1c;padding:12px;border-radius:10px;text-align:center">No pending orders</div>';return;}
+  let html='';pendingOrders.forEach((o,idx)=>{
+    html+=`<div class="pendingCard"><b style="color:#ffcc00">🟡 Pending #${o.id}</b><div style="font-size:11px;margin-top:6px"><b>${o.userName}</b> • ${o.machineId} • ${o.price} UGX • Daily ${o.daily}<br>Txn: <span style="color:#00ff88">${o.txnId}</span><br>${o.refCode?'Ref: '+o.refCode+' → Will upgrade referrer VIP<br>':''}</div><img src="${o.proof}" style="width:100%;max-height:180px;object-fit:contain;background:#000;border-radius:8px;margin-top:8px"><div class="btnRow" style="margin-top:10px"><button class="buyBtn" onclick="approveOrder(${idx})">✅ Approve</button><button class="recvBtn" style="background:linear-gradient(90deg,#ff3355,#ff6b6b)" onclick="rejectOrder(${idx})">❌ Reject</button></div></div>`;
+  });list.innerHTML=html;
 }
 function approveOrder(idx){
-  if(!confirm('Approve order #'+pendingOrders[idx].id+'? This will activate machine '+pendingOrders[idx].machineId+' for '+pendingOrders[idx].userName+' and check referral VIP upgrade!'))return;
-  let order=pendingOrders[idx];
-  // Sufficient balance logic: For deposit, we add balance first, then deduct for machine
-  // Simulate deposit received: Add price to balance, then deduct for machine = net 0 for first buy, but machine active
-  // To make balance sufficient check visible, we add price then deduct
-  // Actually simpler: Just add machine, and add balance as if deposit approved
-  // For demo: Add machine, and if order is first, add balance? Let's add machine and keep balance as is for simplicity, but show sufficient
-  // Better: Add machine to macs, and if pendingRef exists, increment ref for referrer? But referrer is different device.
-  // For demo on same device, if this order has refCode, we increment ref count
-  macs.push({id:order.machineId,price:order.price,daily:order.daily});
-  bal+=0; // Balance already added? To show sufficient balance, we don't need to add extra. But to make buy possible, we ensure balance >= price check passed earlier? Actually pending order bypasses balance check, admin approves regardless.
-  // If order came from referral, upgrade referrer (for demo, same device gets referral)
-  if(order.refCode){
-    // In real Firebase, referrer gets +1. For demo, we increment ref count of current user as if they are referrer? No, that would be wrong.
-    // Instead, if current user is the referrer (Bruno), and someone else deposited with his code, we would increment his ref.
-    // Since we are on same device, we simulate: If order has refCode that matches our own ref code pattern, we increment ref
-    // For simplicity, if order has any refCode, we show message that referrer would be upgraded, and for demo we increment ref if user is admin
-    if(isAdmin){
-      ref+=1;
-      alert('✅ Order Approved! Machine '+order.machineId+' active for '+order.userName+'! Since order had referral code '+order.refCode+', referrer gets +1 referral! You now have '+ref+' deposited friends! '+(ref>=3?'VIP'+getVip()+' unlocked!':''));
-    }
-  }
-  approvedOrders.push({...order,status:'approved',approvedDate:new Date().toLocaleString()});
-  pendingOrders.splice(idx,1);
-  save();
-  alert('✅ Approved! Machine '+order.machineId+' activated! Sufficient balance logic OK! '+order.userName+' can now Receive daily '+order.daily+' UGX!');
+  if(!confirm('Approve #'+pendingOrders[idx].id+'?'))return;
+  let o=pendingOrders[idx];
+  macs.push({id:o.machineId,price:o.price,daily:o.daily});
+  if(o.refCode) ref+=1;
+  approvedOrders.push({...o,status:'approved'});pendingOrders.splice(idx,1);save();
+  alert('✅ Approved! '+o.machineId+' active! '+(o.refCode?'Referrer +1 referral!':''));
   renderAdmin();
 }
-function rejectOrder(idx){
-  if(!confirm('Reject order #'+pendingOrders[idx].id+'? Fake proof?'))return;
-  pendingOrders.splice(idx,1);
-  save();
-  alert('❌ Rejected! Order removed! Fake proof detected!');
-  renderAdmin();
-}
-function clearAllPending(){if(!confirm('Clear all pending orders? Admin only!'))return;pendingOrders=[];save();renderAdmin();alert('Cleared!');}
+function rejectOrder(idx){if(!confirm('Reject?'))return;pendingOrders.splice(idx,1);save();renderAdmin();}
 function buyMachineDirect(id,price,daily){
-  // Direct buy from machines list - Now goes to pending, not direct
-  if(bal<price){
-    alert('❌ Insufficient balance! You need '+price+' UGX for '+id+', but you have '+bal+' UGX. Please deposit first! Go to Wallet → Deposit Order → Submit → Wait admin approval!');
-    openB('wallet');
-    return;
-  }
-  // If sufficient, still go to pending? For admin panel demo, we want all orders to go via admin
-  // So we create pending order without proof? But we need proof. So redirect to wallet
-  alert('✅ Sufficient balance! You have '+bal+' UGX, need '+price+' UGX for '+id+'. To buy, go to Wallet → Select '+id+' → Enter Txn ID + Proof → Submit → Admin will approve!');
-  openB('wallet');
-  document.getElementById('buySelect').value=id+'|'+price+'|'+daily;
+  if(bal<price){alert('❌ Insufficient balance! You need '+price+' UGX, you have '+bal+' UGX. Deposit first! Min 2000!');openB('wallet');return;}
+  alert('✅ Sufficient balance! '+bal+' UGX >= '+price+' UGX for '+id+'. Go to Wallet → Select '+id+' → Txn ID + Proof → Submit → Admin approve!');openB('wallet');document.getElementById('buySelect').value=id+'|'+price+'|'+daily;
 }
-function claimOne(i){if(typeof i==='string'){let found=macs.findIndex(m=>m.id===i);if(found===-1){alert('❌ You have not bought '+i+' yet! Deposit + Admin approval first!');openB('wallet');return;}bal+=macs[found].daily;save();alert('✅ Received '+macs[found].daily+' UGX from '+i+'!');}else{bal+=macs[i].daily;save();alert('✅ Received '+macs[i].daily+' UGX!');}}
+function claimOne(i){if(typeof i==='string'){let f=macs.findIndex(m=>m.id===i);if(f===-1){alert('❌ You have not bought '+i+' yet! Deposit + Admin approval first!');openB('wallet');return;}bal+=macs[f].daily;save();alert('✅ Received '+macs[f].daily+' UGX!');}else{bal+=macs[i].daily;save();alert('✅ Received '+macs[i].daily+' UGX!');}}
 function claimById(id){claimOne(id);}
-function withdraw(){if(bal<2000){showMsg('withdrawMsg','❌ Insufficient balance! Minimum withdrawal is 2000 UGX, you have '+bal+' UGX. Earn more by daily Receive!','err');return;}let amt=parseInt(document.getElementById('withAmt').value||'0');if(!amt){let p=prompt('Enter withdrawal amount - Min 2000 UGX, Max '+bal+' UGX:',bal);if(!p)return;amt=parseInt(p);}if(amt<2000){showMsg('withdrawMsg','❌ Minimum withdrawal is 2000 UGX! You entered '+amt+' UGX.','err');return;}if(amt>bal){showMsg('withdrawMsg','❌ Insufficient balance! You have '+bal+' UGX, you want '+amt+' UGX.','err');return;}bal-=amt;save();showMsg('withdrawMsg','✅ Withdrawal Order Success! '+amt+' UGX sent! Min 2000 UGX rule passed! Will arrive in 24h!','ok');document.getElementById('withAmt').value='';}
-function changePass(){let o=document.getElementById('oldPass').value;let n=document.getElementById('newPass').value;let c=document.getElementById('confirmPass').value;if(o!==uPass){showMsg('passMsg','❌ Wrong password! Your current password is: '+uPass+'. Enter correct old password! Wrong password check active!','err');return;}if(n.length<4){showMsg('passMsg','❌ New password min 4 characters!','err');return;}if(n!==c){showMsg('passMsg','❌ New passwords do not match!','err');return;}uPass=n;save();showMsg('passMsg','✅ Password updated to: '+n+' - Now login with new password! Wrong password check active!','ok');document.getElementById('oldPass').value='';document.getElementById('newPass').value='';document.getElementById('confirmPass').value='';}
-function logout(){if(confirm('Logout? You will need password to login again. Wrong password will show error.')){logged=false;isAdmin=false;save();document.getElementById('loginScreen').style.display='flex';}}
-function simulateReferralDeposit(){ref+=1;save();showMsg('refMsg','🎉 SUCCESS! Simulated friend deposit via your link + Admin approval! Friend deposited → Your referral +1! Now you have '+ref+' deposited friends! '+(ref>=3?'You upgraded to VIP'+getVip()+'!':'Need '+(3-ref)+' more for VIP1'),'ok');}
+function withdraw(){if(bal<2000){showMsg('withdrawMsg','❌ Insufficient balance! Min withdraw 2000 UGX, you have '+bal+' UGX','err');return;}let amt=parseInt(document.getElementById('withAmt').value||'0');if(!amt){let p=prompt('Enter amount - Min 2000, Max '+bal,bal);if(!p)return;amt=parseInt(p);}if(amt<2000){showMsg('withdrawMsg','❌ Min 2000 UGX!','err');return;}if(amt>bal){showMsg('withdrawMsg','❌ Insufficient balance! Have '+bal+', want '+amt,'err');return;}bal-=amt;save();showMsg('withdrawMsg','✅ Withdraw '+amt+' UGX sent! Min 2000 OK!','ok');document.getElementById('withAmt').value='';}
+function changePass(){let o=document.getElementById('oldPass').value;let n=document.getElementById('newPass').value;let c=document.getElementById('confirmPass').value;if(o!==uPass){showMsg('passMsg','❌ Wrong password! Current: '+uPass,'err');return;}if(n.length<4){showMsg('passMsg','❌ New min 4 chars','err');return;}if(n!==c){showMsg('passMsg','❌ New passwords not match','err');return;}uPass=n;save();showMsg('passMsg','✅ Password updated to: '+n,'ok');document.getElementById('oldPass').value='';document.getElementById('newPass').value='';document.getElementById('confirmPass').value='';}
+function logout(){if(confirm('Logout? Need password again. Wrong password shows error.')){logged=false;isAdmin=false;save();document.getElementById('loginScreen').style.display='flex';}}
+function simulateReferralDeposit(){ref+=1;save();showMsg('refMsg','🎉 Simulated friend deposit + Admin approval! +1 referral! Now '+ref+' friends! '+(ref>=3?'VIP'+getVip()+' unlocked!':'Need '+(3-ref)+' more for VIP1'),'ok');}
 function renderMachines(){
-  let allM='',mM='',aM='',ulyM='',buyOpts='<option value="">Select machine - Order goes to Admin Approval - Min 2000 UGX</option>';
+  let allM='',mM='',aM='',ulyM='',buyOpts='<option value="">Select machine - Min 2000 UGX - Admin approval</option>';
   const mData=[['M1',2000,120],['M2',5000,300],['M3',10000,600],['M4',20000,1200],['M5',40000,2400],['M6',80000,4800]];
   const aData=[['A1',3000,180],['A2',6000,360],['A3',12000,720],['A4',24000,1440],['A5',48000,2880],['A6',96000,5760]];
   const uData=[['U1',4000,240],['U2',8000,480],['U3',16000,960],['U4',32000,1920],['U5',64000,3840],['U6',128000,7680]];
@@ -296,28 +214,26 @@ function renderMachines(){
   function isOwned(id){return macs.some(m=>m.id===id);}
   function isPending(id){return pendingOrders.some(o=>o.machineId===id);}
   function makeCard(id,price,daily){
-    let owned=isOwned(id);
-    let pending=isPending(id);
-    let canBuy=bal>=price;
-    return `<div class="card"><img src="https://images.unsplash.com/photo-1621504450181-5d356f61d307?w=200"><div class="cardInfo"><div style="display:flex;justify-content:space-between"><b style="color:#fff;font-size:13px">${id}</b><span style="font-size:9px;padding:2px 6px;border-radius:20px;background:${owned?'#00ff8833':pending?'#ffcc0033':'#ffcc0033'};color:${owned?'#00ff88':pending?'#ffcc00':'#ffcc00'};border:1px solid ${owned?'#00ff88':'#ffcc00'}">${owned?'OWNED':pending?'PENDING ADMIN':'NEW'} ${!owned&&!pending&&!canBuy?'• Need Deposit':''}</span></div><div style="font-size:11px;margin-top:4px"><span style="color:#ffcc00;font-weight:800">${price} UGX</span><span style="color:#5a7aa0"> • </span><span style="color:#00ff88;font-weight:800">${daily}/day</span><span style="color:#5a7aa0"> • </span><span style="color:#00d4ff">${daily*30} total</span></div><div class="btnRow"><button class="buyBtn" onclick="buyMachineDirect('${id}',${price},${daily})">🛒 Buy ${id} ${!canBuy&&!owned&&!pending?'• Need Bal':''}</button><button class="recvBtn" style="${owned?'':'opacity:0.7'}" onclick="claimById('${id}')">${owned?'💰 Receive':pending?'⏳ Pending':'🔒 Receive'}</button></div><div style="font-size:8px;color:${canBuy?'#00ff88':'#ff6b6b'};margin-top:4px">${owned?'✅ Owned - Daily Receive':pending?'⏳ Pending Admin Approval - admin/admin1234 must approve':canBuy?'✅ Sufficient balance: '+bal+' UGX - Order goes to admin':'❌ Insufficient balance: '+bal+' UGX, need '+price+' UGX - Deposit + Admin approval needed!'}</div></div></div>`;
+    let owned=isOwned(id);let pending=isPending(id);let canBuy=bal>=price;
+    return `<div class="card"><img src="https://images.unsplash.com/photo-1621504450181-5d356f61d307?w=200"><div class="cardInfo"><div style="display:flex;justify-content:space-between"><b style="color:#fff;font-size:13px">${id}</b><span style="font-size:9px;padding:2px 6px;border-radius:20px;background:${owned?'#00ff8833':pending?'#ffcc0033':'#333'};color:${owned?'#00ff88':pending?'#ffcc00':'#5a7aa0'}">${owned?'OWNED':pending?'PENDING':'NEW'}</span></div><div style="font-size:11px;margin-top:4px"><span style="color:#ffcc00;font-weight:800">${price} UGX</span> • <span style="color:#00ff88">${daily}/day</span></div><div class="btnRow"><button class="buyBtn" onclick="buyMachineDirect('${id}',${price},${daily})">🛒 Buy ${id} ${!canBuy&&!owned?'• Need Bal':''}</button><button class="recvBtn" onclick="claimById('${id}')">${owned?'💰 Receive':pending?'⏳ Pending':'🔒 Receive'}</button></div><div style="font-size:8px;color:${canBuy?'#00ff88':'#ff6b6b'};margin-top:4px">${owned?'✅ Owned':pending?'⏳ Pending admin (admin/admin1234)':canBuy?'✅ Sufficient: '+bal+' UGX':'❌ Insufficient: Have '+bal+' Need '+price+' - Deposit!'}</div></div></div>`;
   }
-  mData.forEach(d=>{let c=makeCard(d[0],d[1],d[2]);mM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1]} UGX - Min 2000 - ${d[2]}/day - Admin approval needed</option>`;});
+  mData.forEach(d=>{let c=makeCard(d[0],d[1],d[2]);mM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1]} UGX - ${d[2]}/day</option>`;});
   aData.forEach(d=>{let c=makeCard(d[0],d[1],d[2]);aM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1]} UGX</option>`;});
-  uData.forEach(d=>{let c=makeCard(d[0],d[1],d[2]);ulyM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1]} UGX</option>`;});
-  lData.forEach(d=>{let c=makeCard(d[0],d[1],d[2]);ulyM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1]} UGX</option>`;});
-  yData.forEach(d=>{let c=makeCard(d[0],d[1],d[2]);ulyM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1]} UGX</option>`;});
-  vips.forEach(v=>{buyOpts+=`<option value="${v.id}|${v.price}|${v.daily}">${v.id} - ${v.price} UGX - Need ${v.refs} deposited friends (admin approved)</option>`;});
+  uData.forEach(d=>{let c=makeCard(d[0],d[1],d[2]);ulyM+=c;allM+=c;});
+  lData.forEach(d=>{let c=makeCard(d[0],d[1],d[2]);ulyM+=c;allM+=c;});
+  yData.forEach(d=>{let c=makeCard(d[0],d[1],d[2]);ulyM+=c;allM+=c;});
+  vips.forEach(v=>{buyOpts+=`<option value="${v.id}|${v.price}|${v.daily}">${v.id} - ${v.price} UGX - Need ${v.refs} friends</option>`;});
   document.getElementById('page-all').innerHTML=allM;
   document.getElementById('page-m').innerHTML=mM;
   document.getElementById('page-a').innerHTML=aM;
   document.getElementById('page-uly').innerHTML=ulyM;
   document.getElementById('buySelect').innerHTML=buyOpts;
-  let vipHtml=''; vips.forEach(v=>{let un=ref>=v.refs; vipHtml+=`<div class="card" style="border-color:${un?'#00ff88':'#1e335a'}"><img src="https://images.unsplash.com/photo-1621504450181-5d356f61d307?w=200"><div class="cardInfo"><b style="color:${un?'#00ff88':'#5a7aa0'}">${v.id} ${un?'• Unlocked':'• Locked'} • Need ${v.refs} deposited friends (admin approved)</b><div style="font-size:11px;color:#5a7aa0;margin-top:4px">${v.price} UGX • ${v.daily}/day • Only counts after deposit + admin approval!</div><div class="btnRow"><button class="buyBtn" style="background:${un?'#00ff88':'#1a2338'};color:${un?'#000':'#5a7aa0'}" onclick="${un?`buyMachineDirect('${v.id}',${v.price},${v.daily})`:`alert('Need ${v.refs} friends who DEPOSITED + Admin approved! You have ${ref} deposited friends. Share link and wait for deposit + admin approve!')` }">${un?'Buy '+v.id:'🔒 Locked'}</button><button class="recvBtn" style="opacity:0.6" onclick="${un?`claimById('${v.id}')`:`alert('Locked')` }">Receive</button></div></div></div>`;});
+  let vipHtml=''; vips.forEach(v=>{let un=ref>=v.refs; vipHtml+=`<div class="card" style="border-color:${un?'#00ff88':'#1e335a'}"><img src="https://images.unsplash.com/photo-1621504450181-5d356f61d307?w=200"><div class="cardInfo"><b style="color:${un?'#00ff88':'#5a7aa0'}">${v.id} ${un?'Unlocked':'Locked'} Need ${v.refs} friends</b><div style="font-size:11px;color:#5a7aa0;margin-top:4px">${v.price} UGX • ${v.daily}/day</div><div class="btnRow"><button class="buyBtn" style="background:${un?'#00ff88':'#1a2338'};color:${un?'#000':'#5a7aa0'}" onclick="${un?`buyMachineDirect('${v.id}',${v.price},${v.daily})`:`alert('Need ${v.refs} deposited friends! Have ${ref}')` }">${un?'Buy':'🔒 Locked'}</button></div></div></div>`;});
   document.getElementById('page-vip').innerHTML=vipHtml;
-  let myHtml=''; if(macs.length==0) myHtml='<div class="box"><div style="font-size:11px;color:#5a7aa0">No machines yet. Deposit order → Pending → Admin (admin/admin1234) approves → Machine active. Sufficient balance checked! Referral VIP upgrade only after deposit + admin approval!</div></div>'; else macs.forEach((m,i)=>{myHtml+=`<div class="card"><img src="https://images.unsplash.com/photo-1621504450181-5d356f61d307?w=200"><div class="cardInfo"><b style="color:#00ff88;font-size:12px">${m.id} • Active • Admin Approved • Sufficient Balance OK</b><div style="font-size:11px;color:#8aa4c8;margin-top:4px">Daily ${m.daily} UGX • Total ${m.daily*30} UGX</div><div class="btnRow"><button class="buyBtn" style="background:#1a2338;color:#5a7aa0">Owned</button><button class="recvBtn" onclick="claimOne(${i})">💰 Receive ${m.daily}</button></div></div></div>`;});
+  let myHtml=''; if(macs.length==0) myHtml='<div class="box"><div style="font-size:11px;color:#5a7aa0">No machines yet. Deposit → Admin approval → Active. Balance check active! Wrong password check active!</div></div>'; else macs.forEach((m,i)=>{myHtml+=`<div class="card"><img src="https://images.unsplash.com/photo-1621504450181-5d356f61d307?w=200"><div class="cardInfo"><b style="color:#00ff88">${m.id} • Active • Admin Approved</b><div style="font-size:11px;color:#8aa4c8">Daily ${m.daily} UGX</div><div class="btnRow"><button class="buyBtn" style="background:#1a2338;color:#5a7aa0">Owned</button><button class="recvBtn" onclick="claimOne(${i})">💰 Receive ${m.daily}</button></div></div></div>`;});
   document.getElementById('page-my').innerHTML=myHtml;
 }
-if(!logged){document.getElementById('loginScreen').style.display='flex';if(pendingRef){setTimeout(()=>{let el=document.getElementById('refInfo');if(el){el.style.display='block';el.innerHTML='🔗 Referral detected: <b>'+pendingRef+'</b> - You must deposit + admin approval to upgrade referrer to VIP!';}},500);}if(window.location.search.includes('admin')){document.getElementById('loginTitle').innerText='ADMIN PANEL • Login admin / admin1234';document.getElementById('loginName').value='admin';document.getElementById('loginPic').src='https://i.pravatar.cc/150?img=8';}}else{document.getElementById('loginScreen').style.display='none';if(window.location.search.includes('admin')){openB('admin');}}
+if(!logged){document.getElementById('loginScreen').style.display='flex';}else{document.getElementById('loginScreen').style.display='none';}
 upd();renderMachines();renderAdmin();
 </script>
 </body>
