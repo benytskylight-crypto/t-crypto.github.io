@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SKYLIGHT v35.2 GROUPS BACK + FIXED PASS + ADMIN</title>
+<title>SKYLIGHT v36 FULL LOGIN - NAME + PHONE/EMAIL + PASSWORD + GROUPS</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Inter,Arial}
 body{background:#050b1e;color:#fff;padding-bottom:78px}
@@ -20,22 +20,18 @@ body{background:#050b1e;color:#fff;padding-bottom:78px}
 .wa{background:#25D366;color:#fff}.ch{background:linear-gradient(90deg,#00ff88,#00e67a);color:#000}
 input,select{width:100%;padding:12px;margin-top:6px;background:#070d1c;border:1px solid #1e3a5f;border-radius:10px;color:#fff}
 .bal{font-size:20px;color:#00ff88;font-weight:800}
-#loginScreen{position:fixed;inset:0;background:radial-gradient(120% 120% at 50% 0%,#10244a 0%,#050b1e 65%);z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px}
-.loginBox{max-width:380px;width:100%;background:linear-gradient(180deg,#13264a,#0f1e36);border:2px solid #00ff8833;border-radius:20px;padding:18px;box-shadow:0 20px 60px rgba(0,0,0,0.6)}
+#loginScreen{position:fixed;inset:0;background:radial-gradient(120% 120% at 50% 0%,#10244a 0%,#050b1e 65%);z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px;overflow-y:auto}
+.loginBox{max-width:400px;width:100%;background:linear-gradient(180deg,#13264a,#0f1e36);border:2px solid #00ff8833;border-radius:20px;padding:18px;box-shadow:0 20px 60px rgba(0,0,0,0.6);margin:20px 0}
 .logoC{width:64px;height:64px;transform:rotate(45deg);border:2px solid #00ff88;background:linear-gradient(135deg,#0a1933,#001a33);display:flex;align-items:center;justify-content:center;margin:0 auto;box-shadow:0 0 20px rgba(0,255,136,0.25)}
 .passBox{position:relative}.eye{position:absolute;right:10px;top:50%;transform:translateY(-50%);background:#0f1e36;border:1px solid #2a4a70;border-radius:20px;padding:6px 10px;cursor:pointer}
 .bigNum{font-size:18px;color:#00ff88;background:#070d1c;border:1px solid #1e3a5f;border-radius:10px;padding:10px;text-align:center;margin:6px 0;font-weight:700}
-.person{display:flex;align-items:center;background:linear-gradient(90deg,#0d1d36,#13264a);border-radius:12px;padding:10px;margin:6px 0;border:1px solid #1e335a}
-.person img{width:48px;height:48px;border-radius:50%;border:2px solid #00ff88;margin-right:10px;object-fit:cover}
-.profileBig{width:84px;height:84px;border-radius:50%;border:2px solid #00ff88;margin:0 auto 8px;display:block;object-fit:cover}
 .profileHome{width:70px;height:70px;border-radius:50%;border:2px solid #00ff88;margin:0 auto 6px;display:block;object-fit:cover}
 .grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px}
 .menuCard{background:linear-gradient(135deg,#0d1d36,#13264a);border:1px solid #1e335a;border-radius:12px;padding:14px 6px;text-align:center;cursor:pointer}
 .bottom{position:fixed;bottom:0;left:0;right:0;height:66px;background:#080f22;border-top:1px solid #1e335a;display:flex;z-index:300}
 .bottom div{flex:1;text-align:center;padding:7px 0;font-size:8px;color:#5a7aa0;cursor:pointer;font-weight:700;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
 .bottom .on{color:#00ff88;background:rgba(0,255,136,0.08)}.bottom .icon{font-size:16px}
-.page{display:none}.page.on{display:block}
-.tabs{display:flex;gap:6px;padding:9px 10px;background:#050b1e;border-bottom:1px solid #14244a;overflow-x:auto;position:sticky;top:56px;z-index:90}
+.page{display:none}.tabs{display:flex;gap:6px;padding:9px 10px;background:#050b1e;border-bottom:1px solid #14244a;overflow-x:auto;position:sticky;top:56px;z-index:90}
 .tab{padding:7px 14px;border-radius:20px;font-size:11px;font-weight:800;cursor:pointer;white-space:nowrap;border:1.5px solid #1e335a;color:#5a7aa0;background:#0a1933}
 .tab.on{color:#000}#tab-all.on{background:linear-gradient(90deg,#00ff88,#00cc6a);border-color:#00ff88}#tab-m.on{background:linear-gradient(90deg,#00ff88,#22ff88);border-color:#00ff88}#tab-a.on{background:linear-gradient(90deg,#00d4ff,#00aaff);border-color:#00d4ff}#tab-uly.on{background:linear-gradient(90deg,#a78bfa,#d8b4fe);border-color:#a78bfa}#tab-vip.on{background:linear-gradient(90deg,#ffcc00,#ff9900);border-color:#ffcc00}#tab-my.on{background:linear-gradient(90deg,#ff6b6b,#ff8e53);border-color:#ff6b6b;color:#fff}
 .labelC{color:#8aa4c8;font-size:10px;font-weight:700;display:block;text-align:left;margin-top:10px}
@@ -43,67 +39,96 @@ input,select{width:100%;padding:12px;margin-top:6px;background:#070d1c;border:1p
 .msgErr{background:rgba(255,51,85,0.2);border:2px solid #ff3355;color:#ff8e9a}
 .msgOk{background:rgba(0,255,136,0.15);border:2px solid #00ff88;color:#00ff88}
 .pendingCard{background:linear-gradient(135deg,#1a1a00,#2a2000);border:2px solid #ffcc00;border-radius:12px;padding:12px;margin:8px 0}
-.groupCard{background:linear-gradient(135deg,#0d1d36,#13264a);border:1px solid #1e335a;border-radius:12px;padding:14px;margin:8px 0;display:flex;align-items:center;justify-content:space-between}
+.groupCard{background:linear-gradient(135deg,#0d1d36,#13264a);border:1px solid #1e335a;border-radius:12px;padding:14px;margin:10px 0;display:flex;align-items:center;justify-content:space-between}
+.groupIcon{width:42px;height:42px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px}
+.toggleLink{color:#00ff88;font-size:11px;text-align:center;margin-top:12px;cursor:pointer;font-weight:700;text-decoration:underline}
 </style>
 </head>
 <body>
 
+<script>
+// ★ YOUR 3 REAL LINKS - v36 FULL LOGIN ★
+const GROUP_LINKS = {
+  whatsappGroup: "https://chat.whatsapp.com/BNeCwxPjLk95w3QejfjjM6?s=cl&p=a&mlu=4&ilr=4",
+  whatsappChannel: "https://whatsapp.com/channel/0029VbDQSYt8KMqcfkfWTU0W",
+  telegramChannel: "https://t.me/+vyEcluEH54c0NTk0",
+  telegramGroup: "https://t.me/+vyEcluEH54c0NTk0"
+};
+</script>
+
 <div id="loginScreen">
 <div class="loginBox">
-<div style="text-align:center"><div class="logoC"><div style="transform:rotate(-45deg);color:#00ff88;font-size:26px;font-weight:900">S</div></div><div style="margin-top:12px"><b style="color:#fff;font-size:18px;letter-spacing:3px">SKYLIGHT</b><div style="font-size:9px;color:#5a7aa0">v35.2 GROUPS BACK + FIXED PASS + ADMIN</div></div></div>
-<div style="color:#fff;font-weight:700;font-size:13px;text-align:center;margin-top:8px" id="loginNameShow">Bruno Mickeal</div>
-<label class="labelC">Username</label><input type="text" id="loginName" value="Bruno Mickeal" oninput="document.getElementById('loginNameShow').innerText=this.value||'Bruno Mickeal'">
-<label class="labelC">Password * Required</label><div class="passBox"><input type="password" id="loginPass" value="" placeholder="User: 1234, Admin: admin1234" style="padding-right:44px;font-weight:700;border:2px solid #00ff8855"><span class="eye" onclick="let i=document.getElementById('loginPass');i.type=i.type==='password'?'text':'password';this.innerText=i.type==='password'?'👁️':'🙈'">👁️</span></div>
+<div style="text-align:center"><div class="logoC"><div style="transform:rotate(-45deg);color:#00ff88;font-size:26px;font-weight:900">S</div></div><div style="margin-top:12px"><b style="color:#fff;font-size:18px;letter-spacing:3px">SKYLIGHT</b><div style="font-size:9px;color:#5a7aa0;letter-spacing:2px">v36 FULL LOGIN • NAME + PHONE/EMAIL + PASS + GROUPS + ADMIN</div></div></div>
+
+<!-- LOGIN FORM -->
+<div id="loginForm">
+<div style="color:#fff;font-weight:800;font-size:14px;text-align:center;margin-top:12px">🔐 Login to SKYLIGHT</div>
+<label class="labelC">👤 Full Name / Username *</label><input type="text" id="loginName" value="Bruno Mickeal" placeholder="Enter your full name" oninput="document.getElementById('loginNameShow').innerText=this.value||'User'">
+<label class="labelC">📱 Phone Number or Email * (Number or Email)</label><input type="text" id="loginPhone" value="" placeholder="07XXXXXXXX or example@gmail.com">
+<label class="labelC">🔑 Password * Required (Wrong shows error)</label><div class="passBox"><input type="password" id="loginPass" value="" placeholder="User: 1234, Admin: admin1234" style="padding-right:44px;font-weight:700;border:2px solid #00ff8855"><span class="eye" onclick="let i=document.getElementById('loginPass');i.type=i.type==='password'?'text':'password';this.innerText=i.type==='password'?'👁️':'🙈'">👁️</span></div>
 <div id="loginMsg" class="msgBox"></div>
-<div style="font-size:9px;color:#ffcc00;background:rgba(255,204,0,0.08);padding:6px;border-radius:6px;margin-top:8px;border:1px solid rgba(255,204,0,0.15)">🔐 User: Bruno / 1234 • Admin: admin / admin1234 • Wrong pass shows ❌</div>
-<button class="btn ch" style="margin-top:12px" onclick="doLogin()">Continue → Login</button>
+<div style="font-size:9px;color:#8aa4c8;background:rgba(0,255,136,0.08);padding:8px;border-radius:8px;margin-top:8px;border:1px solid rgba(0,255,136,0.15)">
+<b style="color:#00ff88">Login Help:</b><br>
+• User: Name = Bruno Mickeal, Phone = any, Pass = 1234 (or your new)<br>
+• Admin: Name = admin, Phone = any, Pass = admin1234 → Admin Panel<br>
+• Wrong password → ❌ Wrong password! red error
+</div>
+<button class="btn ch" style="margin-top:12px;font-size:14px" onclick="doLogin()">✅ Login → Continue</button>
+<div class="toggleLink" onclick="showRegister()">Don't have account? → Register here</div>
+</div>
+
+<!-- REGISTER FORM -->
+<div id="registerForm" style="display:none">
+<div style="color:#fff;font-weight:800;font-size:14px;text-align:center;margin-top:12px">📝 Register New Account</div>
+<label class="labelC">👤 Full Name * (Example: Bruno Mickeal)</label><input type="text" id="regName" placeholder="Enter full name">
+<label class="labelC">📱 Phone Number * (07XXXXXXXX) or Email *</label><input type="text" id="regPhone" placeholder="07XXXXXXXX or email@gmail.com">
+<label class="labelC">🔑 Create Password * (Min 4 characters)</label><div class="passBox"><input type="password" id="regPass" placeholder="Create password min 4" style="padding-right:44px"><span class="eye" onclick="let i=document.getElementById('regPass');i.type=i.type==='password'?'text':'password';this.innerText=i.type==='password'?'👁️':'🙈'">👁️</span></div>
+<label class="labelC">🔑 Confirm Password *</label><input type="password" id="regConfirm" placeholder="Confirm your password">
+<div id="regMsg" class="msgBox"></div>
+<div style="font-size:9px;color:#ffcc00;background:rgba(255,204,0,0.08);padding:6px;border-radius:6px;margin-top:8px;border:1px solid rgba(255,204,0,0.15)">📱 Phone or Email will be used for login + Withdrawal verification<br>🔐 Remember your password! Wrong password shows error!</div>
+<button class="btn ch" style="margin-top:12px" onclick="doRegister()">✅ Register → Create Account</button>
+<div class="toggleLink" onclick="showLogin()">Already have account? → Login here</div>
+</div>
+
+<div id="refInfo" style="font-size:10px;color:#ffcc00;background:rgba(255,204,0,0.1);padding:6px;border-radius:8px;margin-top:8px;display:none"></div>
+<div style="color:#fff;font-weight:700;font-size:11px;text-align:center;margin-top:10px" id="loginNameShow">Bruno Mickeal</div>
 </div>
 </div>
 
-<div class="top"><div style="display:flex;align-items:center;justify-content:center;gap:10px"><div style="width:30px;height:30px;transform:rotate(45deg);border:1px solid #00ff88;background:#0a1933;display:flex;align-items:center;justify-content:center"><b style="transform:rotate(-45deg);color:#00ff88;font-size:11px">S</b></div><div style="text-align:left"><b style="color:#fff;font-size:11px">SKYLIGHT</b><div style="font-size:7px;color:#5a7aa0">v35.2 GROUPS BACK + FIXED PASS</div></div></div><div style="color:#00ff88;font-weight:800;margin-top:3px;font-size:13px" id="topBal">0 UGX</div></div>
+<div class="top"><div style="display:flex;align-items:center;justify-content:center;gap:10px"><div style="width:30px;height:30px;transform:rotate(45deg);border:1px solid #00ff88;background:#0a1933;display:flex;align-items:center;justify-content:center"><b style="transform:rotate(-45deg);color:#00ff88;font-size:11px">S</b></div><div style="text-align:left"><b style="color:#fff;font-size:11px">SKYLIGHT</b><div style="font-size:7px;color:#5a7aa0">v36 FULL LOGIN + GROUPS + ADMIN</div></div></div><div style="color:#00ff88;font-weight:800;margin-top:3px;font-size:13px" id="topBal">0 UGX</div></div>
 <div class="tabs" id="tabs"><div id="tab-all" class="tab on" onclick="openTop('all')">🌈 All</div><div id="tab-m" class="tab" onclick="openTop('m')">🟢 M</div><div id="tab-a" class="tab" onclick="openTop('a')">🔵 A</div><div id="tab-uly" class="tab" onclick="openTop('uly')">🟣 U/L/Y</div><div id="tab-vip" class="tab" onclick="openTop('vip')">⭐ VIP</div><div id="tab-my" class="tab" onclick="openTop('my')">🧡 MY(0)</div></div>
 
-<div id="page-home" class="page on">
-<div class="boxC" style="text-align:center"><img src="https://i.pravatar.cc/150?img=33" class="profileHome"><div><b style="color:#fff;font-size:13px" id="homeUser">Bruno Mickeal</b><div style="font-size:9px;color:#5a7aa0">SKY-1250 • CEO</div></div><div style="margin-top:10px;background:#070d1c;border:1px solid #1e335a;border-radius:12px;padding:10px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px"><div><div style="font-size:8px;color:#5a7aa0">Balance</div><div class="bal" style="font-size:14px" id="homeBalMain">0 UGX</div></div><div><div style="font-size:8px;color:#5a7aa0">Machines</div><div style="font-size:14px;color:#fff;font-weight:700" id="homeCountMain">0</div></div><div><div style="font-size:8px;color:#5a7aa0">VIP</div><div style="font-size:14px;color:#ffcc00;font-weight:700" id="homeVipMain">VIP0</div></div></div><div id="pendingNotice" style="font-size:10px;color:#ffcc00;background:rgba(255,204,0,0.1);padding:8px;border-radius:8px;margin-top:8px;display:none"></div></div>
+<div id="page-home" class="page" style="display:block">
+<div class="boxC" style="text-align:center"><img src="https://i.pravatar.cc/150?img=33" class="profileHome"><div><b style="color:#fff;font-size:13px" id="homeUser">Bruno Mickeal</b><div style="font-size:9px;color:#5a7aa0" id="homePhone">07XXXXXXXX • SKY-1250 • CEO</div></div><div style="margin-top:10px;background:#070d1c;border:1px solid #1e335a;border-radius:12px;padding:10px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px"><div><div style="font-size:8px;color:#5a7aa0">Balance</div><div class="bal" style="font-size:14px" id="homeBalMain">0 UGX</div></div><div><div style="font-size:8px;color:#5a7aa0">Machines</div><div style="font-size:14px;color:#fff;font-weight:700" id="homeCountMain">0</div></div><div><div style="font-size:8px;color:#5a7aa0">VIP</div><div style="font-size:14px;color:#ffcc00;font-weight:700" id="homeVipMain">VIP0</div></div></div><div id="pendingNotice" style="font-size:10px;color:#ffcc00;background:rgba(255,204,0,0.1);padding:8px;border-radius:8px;margin-top:8px;display:none"></div></div>
 
-<!-- FOUNDERS -->
-<div class="boxC"><div style="display:flex;justify-content:space-between;align-items:center"><b style="color:#fff;font-size:12px">👑 Founders</b><span style="color:#00ff88;font-size:10px;cursor:pointer;font-weight:700" onclick="openB('foundersFull')">View all 5 →</span></div><div class="person"><img src="https://i.pravatar.cc/150?img=33"><div><b style="color:#fff;font-size:12px">Bruno Mickeal</b><div style="font-size:10px;color:#5a7aa0">CEO • Kampala</div></div></div></div>
-
-<!-- GROUPS SECTION BACK! -->
-<div class="boxC" style="border:2px solid #00ff8855"><div style="display:flex;justify-content:space-between;align-items:center"><b style="color:#fff;font-size:12px">👥 Groups Community</b><span style="color:#00ff88;font-size:10px;cursor:pointer;font-weight:700" onclick="openB('groups')">View all →</span></div><div style="font-size:9px;color:#8aa4c8;margin-top:4px">Join our official WhatsApp & Telegram for updates, proof, admin support</div>
-<div class="groupCard"><div style="display:flex;align-items:center"><div style="font-size:22px">💬</div><div style="margin-left:10px"><b style="color:#fff;font-size:11px">WhatsApp Main Group</b><div style="font-size:9px;color:#5a7aa0">Daily payouts proof • 1.2k members</div></div></div><button class="btn ch" style="width:auto;padding:6px 12px;font-size:10px" onclick="window.open('https://wa.me/256793814204','_blank')">Join</button></div>
-<div class="groupCard"><div style="display:flex;align-items:center"><div style="font-size:22px">✈️</div><div style="margin-left:10px"><b style="color:#fff;font-size:11px">Telegram Channel</b><div style="font-size:9px;color:#5a7aa0">Announcements • Support</div></div></div><button class="btn ch" style="width:auto;padding:6px 12px;font-size:10px;background:linear-gradient(90deg,#00d4ff,#00aaff)" onclick="alert('Telegram: t.me/skylightAI')">Join</button></div>
+<div class="boxC" style="border:2px solid #00ff8855"><div style="display:flex;justify-content:space-between"><b style="color:#fff;font-size:12px">👥 Official Groups & Channels - REAL LINKS</b><span style="color:#00ff88;font-size:10px;cursor:pointer;font-weight:700" onclick="openB('groups')">View all →</span></div>
+<div class="groupCard" style="padding:10px"><div style="display:flex;align-items:center"><div class="groupIcon" style="background:#25D366">💬</div><div style="margin-left:10px"><b style="color:#fff;font-size:11px">WhatsApp Group</b><div style="font-size:8px;color:#5a7aa0">Chat • Fast approval • Real link</div></div></div><button class="btn wa" style="width:auto;padding:6px 12px;font-size:9px" onclick="openLink('whatsappGroup')">Join</button></div>
+<div class="groupCard" style="padding:10px"><div style="display:flex;align-items:center"><div class="groupIcon" style="background:#111b21;border:1px solid #25D366">📢</div><div style="margin-left:10px"><b style="color:#fff;font-size:11px">WhatsApp Channel</b><div style="font-size:8px;color:#5a7aa0">Updates • Real link</div></div></div><button class="btn wa" style="width:auto;padding:6px 12px;font-size:9px;background:#111b21;border:1px solid #25D366" onclick="openLink('whatsappChannel')">Follow</button></div>
+<div class="groupCard" style="padding:10px"><div style="display:flex;align-items:center"><div class="groupIcon" style="background:linear-gradient(90deg,#00d4ff,#00aaff)">✈️</div><div style="margin-left:10px"><b style="color:#fff;font-size:11px">Telegram Group</b><div style="font-size:8px;color:#5a7aa0">t.me/+vyEcluEH54c0NTk0 • Real</div></div></div><button class="btn ch" style="width:auto;padding:6px 12px;font-size:9px;background:linear-gradient(90deg,#00d4ff,#00aaff)" onclick="openLink('telegramChannel')">Join</button></div>
 </div>
 
-<div class="boxC"><div style="color:#fff;font-size:11px;font-weight:800;margin-bottom:8px">⚡ Quick Menu</div><div class="grid3">
+<div class="boxC"><div style="color:#fff;font-size:11px;font-weight:800;margin-bottom:8px">⚡ Quick Menu - Full Login Active</div><div class="grid3">
 <div class="menuCard" onclick="openB('machines')"><div style="font-size:20px">⚙️</div><div style="font-size:9px;color:#00ff88;margin-top:5px;font-weight:700">Machines</div></div>
 <div class="menuCard" onclick="openB('wallet')"><div style="font-size:20px">💰</div><div style="font-size:9px;color:#ffcc00;margin-top:5px;font-weight:700">Deposit</div></div>
 <div class="menuCard" onclick="openB('wallet')"><div style="font-size:20px">💸</div><div style="font-size:9px;color:#ff6b6b;margin-top:5px;font-weight:700">Withdraw</div></div>
 <div class="menuCard" onclick="openB('group')"><div style="font-size:20px">🎁</div><div style="font-size:9px;color:#a78bfa;margin-top:5px;font-weight:700">Invite</div></div>
 <div class="menuCard" onclick="openB('groups')"><div style="font-size:20px">👥</div><div style="font-size:9px;color:#00ff88;margin-top:5px;font-weight:700">Groups</div></div>
-<div class="menuCard" onclick="openB('admin')"><div style="font-size:20px">🛡️</div><div style="font-size:9px;color:#ffcc00;margin-top:5px;font-weight:700">Admin Panel</div></div>
-<div class="menuCard" onclick="openB('foundersFull')"><div style="font-size:20px">👑</div><div style="font-size:9px;color:#ffcc00;margin-top:5px;font-weight:700">Founders</div></div>
-<div class="menuCard" onclick="openB('rules')"><div style="font-size:20px">📜</div><div style="font-size:9px;color:#fff;margin-top:5px;font-weight:700">Rules</div></div>
+<div class="menuCard" onclick="openB('admin')"><div style="font-size:20px">🛡️</div><div style="font-size:9px;color:#ffcc00;margin-top:5px;font-weight:700">Admin</div></div>
 </div></div>
 </div>
 
-<div id="page-groups" class="page">
-<div class="box" style="border:2px solid #00ff88"><div style="display:flex;justify-content:space-between"><b style="color:#fff;font-size:14px">👥 Groups Community - Official</b><span style="color:#5a7aa0;font-size:10px;cursor:pointer" onclick="openB('home')">← Home</span></div><div style="font-size:10px;color:#8aa4c8;margin-top:6px">Join for deposit proof, admin help, withdrawal proof, VIP updates</div>
-<div class="groupCard"><div><b style="color:#fff;font-size:12px">💬 WhatsApp Main Group</b><div style="font-size:10px;color:#5a7aa0;margin-top:4px">1.2k members • Daily payout screenshots • Admin Bruno online • Support 24h</div><div style="font-size:9px;color:#00ff88;margin-top:4px">✅ Official group for deposit confirmation</div></div><button class="btn wa" style="width:auto;padding:10px 16px" onclick="window.open('https://wa.me/256793814204','_blank')">💬 Join WhatsApp</button></div>
-<div class="groupCard"><div><b style="color:#fff;font-size:12px">💬 WhatsApp Support 2</b><div style="font-size:10px;color:#5a7aa0;margin-top:4px">600 members • For withdrawal issues • Proof check</div></div><button class="btn wa" style="width:auto;padding:10px 16px" onclick="window.open('https://wa.me/256758764116','_blank')">💬 Join</button></div>
-<div class="groupCard"><div><b style="color:#fff;font-size:12px">✈️ Telegram Channel</b><div style="font-size:10px;color:#5a7aa0;margin-top:4px">3.5k members • Announcements • New machines • VIP rewards</div></div><button class="btn ch" style="width:auto;padding:10px 16px;background:linear-gradient(90deg,#00d4ff,#00aaff)" onclick="alert('Join Telegram: t.me/skylightAI_UG - Official')">✈️ Join Telegram</button></div>
-<div class="groupCard"><div><b style="color:#fff;font-size:12px">📘 Facebook Page</b><div style="font-size:10px;color:#5a7aa0;margin-top:4px">2k likes • Live videos • Proof of payments</div></div><button class="btn ch" style="width:auto;padding:10px 16px;background:linear-gradient(90deg,#1877F2,#00aaff)" onclick="alert('Facebook: facebook.com/SkylightAI.ug')">👍 Like Page</button></div>
-<div style="background:rgba(0,255,136,0.08);border:1px solid rgba(0,255,136,0.15);border-radius:10px;padding:10px;margin-top:10px"><b style="color:#00ff88;font-size:11px">📌 Groups Rules</b><div style="font-size:10px;color:#8aa4c8;margin-top:4px;line-height:1.6">1. Send deposit proof with Txn ID in group → Admin approves faster<br>2. No spam - Only payout proof allowed<br>3. Admin never DM first - Beware scammers<br>4. Min deposit 2000 UGX, Min withdraw 2000 UGX</div></div>
-</div>
-</div>
+<div id="page-groups" class="page"><div class="box" style="border:2px solid #00ff88"><div style="display:flex;justify-content:space-between"><b style="color:#fff;font-size:14px">👥 Groups & Channels - All Real Links</b><span style="color:#5a7aa0;font-size:10px;cursor:pointer" onclick="openB('home')">← Home</span></div>
+<div class="groupCard"><div style="flex:1"><div style="display:flex;align-items:center"><div class="groupIcon" style="background:#25D366">💬</div><div style="margin-left:12px"><b style="color:#fff;font-size:13px">1. WhatsApp Group - REAL</b><div style="font-size:10px;color:#8aa4c8">https://chat.whatsapp.com/BNeCwxPjLk95w3QejfjjM6<br>Chat • Proof • Fast approval</div></div></div></div><div style="margin-left:10px"><button class="btn wa" style="padding:12px 18px" onclick="openLink('whatsappGroup')">💬 Join</button></div></div>
+<div class="groupCard"><div style="flex:1"><div style="display:flex;align-items:center"><div class="groupIcon" style="background:#111b21;border:1.5px solid #25D366">📢</div><div style="margin-left:12px"><b style="color:#fff;font-size:13px">2. WhatsApp Channel - REAL</b><div style="font-size:10px;color:#8aa4c8">https://whatsapp.com/channel/0029VbDQSYt8KMqcfkfWTU0W<br>Broadcast • Updates</div></div></div></div><div style="margin-left:10px"><button class="btn wa" style="padding:12px 18px;background:#111b21;border:1px solid #25D366;color:#25D366" onclick="openLink('whatsappChannel')">📢 Follow</button></div></div>
+<div class="groupCard"><div style="flex:1"><div style="display:flex;align-items:center"><div class="groupIcon" style="background:linear-gradient(90deg,#00d4ff,#00aaff)">✈️</div><div style="margin-left:12px"><b style="color:#fff;font-size:13px">3. Telegram Group - REAL</b><div style="font-size:10px;color:#8aa4c8">https://t.me/+vyEcluEH54c0NTk0<br>Chat • Community</div></div></div></div><div style="margin-left:10px"><button class="btn ch" style="padding:12px 18px;background:linear-gradient(90deg,#00d4ff,#00aaff)" onclick="openLink('telegramChannel')">✈️ Join</button></div></div>
+</div></div>
 
-<div id="page-foundersFull" class="page"><div class="box"><div style="display:flex;justify-content:space-between"><b style="color:#fff">👑 All 5 Founders</b><span style="color:#5a7aa0;font-size:10px;cursor:pointer" onclick="openB('home')">← Back</span></div><div class="person" style="margin-top:10px"><img src="https://i.pravatar.cc/150?img=33"><div><b style="color:#fff">Bruno Mickeal - CEO ⭐</b><div style="font-size:10px;color:#5a7aa0">Main Founder - Groups admin</div></div></div></div></div>
-<div id="page-admin" class="page"><div class="box" style="border:2px solid #ffcc00"><div style="display:flex;justify-content:space-between"><b style="color:#ffcc00;font-size:14px">🛡️ ADMIN PANEL</b><span style="color:#5a7aa0;font-size:10px;cursor:pointer" onclick="openB('home')">← Home</span></div><div style="font-size:10px;color:#8aa4c8;margin-top:8px">Admin: admin / admin1234 • Approve pending → Machine active + Groups post proof</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px"><div style="background:#070d1c;border-radius:10px;padding:8px;text-align:center"><b style="color:#ffcc00;font-size:16px" id="adminPendingCount">0</b><div style="font-size:8px;color:#5a7aa0">Pending</div></div><div style="background:#070d1c;border-radius:10px;padding:8px;text-align:center"><b style="color:#00ff88;font-size:16px" id="adminApprovedCount">0</b><div style="font-size:8px;color:#5a7aa0">Approved</div></div></div><div id="adminOrdersList" style="margin-top:12px"></div></div></div>
+<div id="page-admin" class="page"><div class="box" style="border:2px solid #ffcc00"><div style="display:flex;justify-content:space-between"><b style="color:#ffcc00;font-size:14px">🛡️ ADMIN PANEL</b><span style="color:#5a7aa0;font-size:10px;cursor:pointer" onclick="openB('home')">← Home</span></div><div style="font-size:10px;color:#8aa4c8;margin-top:8px">Admin: admin / admin1234 • Check proof → Approve → Machine active + VIP + Groups post</div><div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-top:10px"><div style="background:#070d1c;border-radius:10px;padding:8px;text-align:center"><b style="color:#ffcc00;font-size:16px" id="adminPendingCount">0</b><div style="font-size:8px;color:#5a7aa0">Pending</div></div><div style="background:#070d1c;border-radius:10px;padding:8px;text-align:center"><b style="color:#00ff88;font-size:16px" id="adminApprovedCount">0</b><div style="font-size:8px;color:#5a7aa0">Approved</div></div></div><div id="adminOrdersList" style="margin-top:12px"></div></div></div>
 <div id="page-all" class="page"></div><div id="page-m" class="page"></div><div id="page-a" class="page"></div><div id="page-uly" class="page"></div><div id="page-vip" class="page"></div><div id="page-my" class="page"></div>
-<div id="page-wallet" class="page"><div class="box"><div style="color:#fff;font-size:12px;font-weight:800">💰 Deposit Order - Min 2000 UGX - Admin + Groups</div><select id="mobileSelect" onchange="document.getElementById('mobNum').innerText=this.value.split('|')[0]"><option value="0793814204|BRUNO">📱 0793814204 - BRUNO MTN</option><option value="0758764116|GRACE">📱 0758764116 - GRACE Airtel</option><option value="TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb|USDT">💎 USDT</option></select><div style="border:1px solid #1e335a;border-radius:12px;padding:10px;margin-top:10px;background:#070d1c;text-align:center"><div class="bigNum" id="mobNum">0793814204</div><button class="btn ch" style="padding:8px;font-size:11px" onclick="navigator.clipboard.writeText(document.getElementById('mobNum').innerText).then(()=>alert('Copied!'))">📋 Copy</button></div><select id="buySelect"></select><input type="text" id="txnId" placeholder="Transaction ID"><input type="file" id="proof" accept="image/*"><button class="btn wa" onclick="buyWithProof()">✅ Submit Order - Pending Admin - Also send to Groups</button><div id="depositMsg" class="msgBox"></div></div><div class="box" style="border:1px solid #ff3355"><div style="color:#fff;font-size:12px;font-weight:800">💸 Withdraw - Min 2000 UGX</div><div class="bal" id="withBal" style="margin-top:8px">0 UGX</div><input type="number" id="withAmt" placeholder="Min 2000"><button class="btn" style="background:linear-gradient(90deg,#ff3355,#ff6b6b);color:#fff" onclick="withdraw()">Withdraw</button><div id="withdrawMsg" class="msgBox"></div></div></div>
-<div id="page-group" class="page"><div class="box" style="text-align:center"><div style="color:#fff;font-size:12px;font-weight:800">🎁 Invite - Share Until Deposit → VIP Upgrade</div><div style="background:#070d1c;padding:10px;border-radius:10px;border:1px solid #1e335a;margin:12px 0;word-break:break-all;font-size:11px;color:#00ff88" id="refLink">LINK</div><img id="refQr" style="background:#fff;padding:6px;border-radius:10px;width:120px;margin:0 auto;display:block" src=""><button class="btn ch" onclick="copyRef()">📋 Copy Invite Link</button><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:12px"><div style="background:#070d1c;border-radius:10px;padding:8px;text-align:center"><b style="color:#fff;font-size:16px" id="refCount">0</b><div style="font-size:8px;color:#5a7aa0">Friends Deposited</div></div><div style="background:#070d1c;border-radius:10px;padding:8px;text-align:center"><b style="color:#ffcc00;font-size:14px" id="vipLevel">VIP0</b></div><div style="background:#070d1c;border-radius:10px;padding:8px;text-align:center"><b style="color:#00ff88" id="vipStatus">🔒</b></div></div><div style="background:#070d1c;height:6px;border-radius:8px;margin-top:10px"><div id="vipBar" style="height:100%;width:0%;background:#00ff88"></div></div><button class="btn" style="background:linear-gradient(90deg,#ffcc00,#ff9900);color:#000;margin-top:12px;font-size:11px" onclick="simulateReferralDeposit()">🎉 Simulate Friend Deposit → +1 Referral VIP</button><div id="refMsg" class="msgBox"></div><button class="btn" style="background:#1a2338;color:#00ff88;border:1px solid #00ff88;margin-top:8px" onclick="openB('groups')">👥 Join Groups for faster approval</button></div></div>
-<div id="page-rules" class="page"><div class="box"><div style="color:#fff;font-size:14px;font-weight:900">📜 Rules - Groups + Password + Balance + Ref</div><div style="font-size:11px;color:#fff;margin-top:10px;line-height:1.8">🔐 Password required - Wrong shows ❌<br>💰 Deposit Min 2000 → Pending admin + Send proof to Groups<br>💸 Withdraw Min 2000<br>👥 Groups: Join WhatsApp + Telegram for fast approval<br>🔗 Ref: Share link → Deposit + admin approve → +1 → VIP<br>⚙️ Buy: Checks sufficient balance</div></div></div>
-<div id="page-set" class="page"><div class="box" style="text-align:center"><img src="https://i.pravatar.cc/150?img=33" class="profileBig"><h3 style="color:#fff;font-size:13px" id="setName">Bruno Mickeal</h3></div><div class="box"><div style="color:#fff;font-size:11px;font-weight:800">Change Password - Wrong Pass Check</div><input type="password" id="oldPass" placeholder="Current"><input type="password" id="newPass" placeholder="New min 4"><input type="password" id="confirmPass" placeholder="Confirm"><button class="btn" style="background:#fff;color:#000" onclick="changePass()">Update Password</button><div id="passMsg" class="msgBox"></div></div><div class="box"><button class="btn" style="background:#1a2338;color:#8aa4c8" onclick="logout()">Logout</button></div></div>
+<div id="page-wallet" class="page"><div class="box"><div style="color:#fff;font-size:12px;font-weight:800">💰 Deposit Min 2000 - Admin + Groups proof faster</div><select id="mobileSelect" onchange="document.getElementById('mobNum').innerText=this.value.split('|')[0]"><option value="0793814204|BRUNO">📱 0793814204 - BRUNO MTN</option><option value="0758764116|GRACE">📱 0758764116 - GRACE Airtel</option><option value="TSmR1YsHdGeGvNo1uczWjUqrK5ZRSvo4qb|USDT">💎 USDT</option></select><div style="border:1px solid #1e335a;border-radius:12px;padding:10px;margin-top:10px;background:#070d1c;text-align:center"><div class="bigNum" id="mobNum">0793814204</div><button class="btn ch" style="padding:8px;font-size:11px" onclick="navigator.clipboard.writeText(document.getElementById('mobNum').innerText).then(()=>alert('Copied!'))">📋 Copy</button></div><select id="buySelect"></select><input type="text" id="txnId" placeholder="Transaction ID - Proof of deposit"><input type="file" id="proof" accept="image/*"><button class="btn wa" onclick="buyWithProof()">✅ Submit Order - Pending Admin - Send to WA Group faster</button><div id="depositMsg" class="msgBox"></div></div><div class="box" style="border:1px solid #ff3355"><div style="color:#fff;font-size:12px;font-weight:800">💸 Withdraw - Min 2000 UGX - To your phone/email</div><div class="bal" id="withBal" style="margin-top:8px">0 UGX</div><div style="font-size:9px;color:#8aa4c8;margin-top:4px">Withdraw to: <span id="withToPhone" style="color:#00ff88">Your phone/email</span></div><input type="number" id="withAmt" placeholder="Min 2000"><button class="btn" style="background:linear-gradient(90deg,#ff3355,#ff6b6b);color:#fff" onclick="withdraw()">Withdraw to Phone/Email</button><div id="withdrawMsg" class="msgBox"></div></div></div>
+<div id="page-group" class="page"><div class="box" style="text-align:center"><div style="color:#fff;font-size:12px;font-weight:800">🎁 Invite - Share Until Deposit → VIP Upgrade</div><div style="background:#070d1c;padding:10px;border-radius:10px;border:1px solid #1e335a;margin:12px 0;word-break:break-all;font-size:11px;color:#00ff88" id="refLink">LINK</div><img id="refQr" style="background:#fff;padding:6px;border-radius:10px;width:120px;margin:0 auto;display:block" src=""><button class="btn ch" onclick="copyRef()">📋 Copy Invite Link</button><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:12px"><div style="background:#070d1c;border-radius:10px;padding:8px;text-align:center"><b style="color:#fff;font-size:16px" id="refCount">0</b><div style="font-size:8px;color:#5a7aa0">Friends Deposited</div></div><div style="background:#070d1c;border-radius:10px;padding:8px;text-align:center"><b style="color:#ffcc00;font-size:14px" id="vipLevel">VIP0</b></div><div style="background:#070d1c;border-radius:10px;padding:8px;text-align:center"><b style="color:#00ff88" id="vipStatus">🔒</b></div></div><div style="background:#070d1c;height:6px;border-radius:8px;margin-top:10px"><div id="vipBar" style="height:100%;width:0%;background:#00ff88"></div></div><button class="btn" style="background:linear-gradient(90deg,#ffcc00,#ff9900);color:#000;margin-top:12px;font-size:11px" onclick="simulateReferralDeposit()">🎉 Simulate Friend Deposit → +1 Referral VIP</button><div id="refMsg" class="msgBox"></div></div></div>
+<div id="page-rules" class="page"><div class="box"><div style="color:#fff;font-size:14px;font-weight:900">📜 Rules - Full Login</div><div style="font-size:11px;color:#fff;margin-top:10px;line-height:1.8">👤 Login: Name + Phone/Email + Password required<br>🔐 Wrong password shows ❌ Wrong password!<br>📱 Phone/Email used for withdraw verification<br>💰 Deposit Min 2000 → Pending admin + WA Group proof faster<br>👥 Groups: WA Group + WA Channel + TG Group - All real links<br>🔗 Ref: Deposit + admin approve → +1 → VIP upgrade<br>⚙️ Buy checks sufficient balance<br>🛡️ Admin: admin / admin1234 approves orders</div></div></div>
+<div id="page-set" class="page"><div class="box" style="text-align:center"><img src="https://i.pravatar.cc/150?img=33" class="profileBig"><h3 style="color:#fff;font-size:13px" id="setName">Bruno Mickeal</h3><div style="font-size:10px;color:#5a7aa0" id="setPhone">Phone/Email: 07XXXXXXXX</div><div style="font-size:9px;color:#00ff88" id="setPassShow">Password: 1234</div></div><div class="box"><div style="color:#fff;font-size:11px;font-weight:800">Change Password - Wrong Pass Check</div><input type="password" id="oldPass" placeholder="Current password"><input type="password" id="newPass" placeholder="New password min 4"><input type="password" id="confirmPass" placeholder="Confirm new password"><button class="btn" style="background:#fff;color:#000" onclick="changePass()">Update Password</button><div id="passMsg" class="msgBox"></div></div><div class="box"><div style="color:#fff;font-size:11px;font-weight:800">Update Phone/Email</div><input type="text" id="updatePhone" placeholder="New phone 07XXXXXXXX or email"><button class="btn ch" onclick="updatePhone()">Update Phone/Email</button><div id="phoneMsg" class="msgBox"></div></div><div class="box"><button class="btn" style="background:#1a2338;color:#8aa4c8" onclick="logout()">Logout - Need Name + Phone/Email + Password again</button></div></div>
 
 <div class="bottom"><div id="b-home" class="on" onclick="openB('home')"><span class="icon">🏠</span><span>Home</span></div><div id="b-machines" onclick="openB('machines')"><span class="icon">⚙️</span><span>Machines</span></div><div id="b-wallet" onclick="openB('wallet')"><span class="icon">💰</span><span>Wallet</span></div><div id="b-group" onclick="openB('group')"><span class="icon">🎁</span><span>Invite</span></div><div id="b-admin" onclick="openB('admin')"><span class="icon">🛡️</span><span>Admin</span></div><div id="b-set" onclick="openB('set')"><span class="icon">⚙️</span><span>Set</span></div></div>
 
@@ -113,6 +138,7 @@ let macs=JSON.parse(localStorage.getItem('sky_macs')||'[]');
 let ref=parseInt(localStorage.getItem('sky_ref')||'0');
 let uName=localStorage.getItem('sky_name')||'Bruno Mickeal';
 let uPass=localStorage.getItem('sky_pass')||'1234';
+let uPhone=localStorage.getItem('sky_phone')||'0793814204';
 let logged=localStorage.getItem('sky_logged')==='yes';
 let uPic=localStorage.getItem('sky_pic')||'https://i.pravatar.cc/150?img=33';
 let pendingOrders=JSON.parse(localStorage.getItem('sky_pending_orders')||'[]');
@@ -125,20 +151,53 @@ if(incomingRef){pendingRef=incomingRef;localStorage.setItem('sky_pending_ref',pe
 if(window.location.search.includes('login')||window.location.search.includes('reset')){logged=false;localStorage.setItem('sky_logged','no');}
 const vips=[{refs:3,id:'VIP1',price:5000,daily:850},{refs:6,id:'VIP2',price:15000,daily:2550},{refs:12,id:'VIP3',price:30000,daily:5100},{refs:20,id:'VIP4',price:60000,daily:10200},{refs:30,id:'VIP5',price:120000,daily:20400},{refs:45,id:'VIP6',price:250000,daily:42500},{refs:60,id:'VIP7',price:400000,daily:68000},{refs:80,id:'VIP8',price:600000,daily:102000}];
 function getVip(){let l=0;vips.forEach(v=>{if(ref>=v.refs)l=v.level});return l;}
-function save(){localStorage.setItem('sky_bal',bal);localStorage.setItem('sky_macs',JSON.stringify(macs));localStorage.setItem('sky_name',uName);localStorage.setItem('sky_pass',uPass);localStorage.setItem('sky_logged',logged?'yes':'no');localStorage.setItem('sky_ref',ref);localStorage.setItem('sky_pic',uPic);localStorage.setItem('sky_pending_ref',pendingRef);localStorage.setItem('sky_pending_orders',JSON.stringify(pendingOrders));localStorage.setItem('sky_approved_orders',JSON.stringify(approvedOrders));localStorage.setItem('sky_is_admin',isAdmin?'yes':'no');upd();renderMachines();renderAdmin();}
+function save(){localStorage.setItem('sky_bal',bal);localStorage.setItem('sky_macs',JSON.stringify(macs));localStorage.setItem('sky_name',uName);localStorage.setItem('sky_pass',uPass);localStorage.setItem('sky_phone',uPhone);localStorage.setItem('sky_logged',logged?'yes':'no');localStorage.setItem('sky_ref',ref);localStorage.setItem('sky_pic',uPic);localStorage.setItem('sky_pending_ref',pendingRef);localStorage.setItem('sky_pending_orders',JSON.stringify(pendingOrders));localStorage.setItem('sky_approved_orders',JSON.stringify(approvedOrders));localStorage.setItem('sky_is_admin',isAdmin?'yes':'no');upd();renderMachines();renderAdmin();}
 function showMsg(id,text,isErr){let el=document.getElementById(id);if(!el)return;el.style.display='block';el.className='msgBox '+(isErr?'msgErr':'msgOk');el.innerText=text;setTimeout(()=>{el.style.display='none';},5000);}
+function showRegister(){document.getElementById('loginForm').style.display='none';document.getElementById('registerForm').style.display='block';}
+function showLogin(){document.getElementById('registerForm').style.display='none';document.getElementById('loginForm').style.display='block';}
+function doRegister(){
+  let n=document.getElementById('regName').value.trim();
+  let ph=document.getElementById('regPhone').value.trim();
+  let p=document.getElementById('regPass').value.trim();
+  let c=document.getElementById('regConfirm').value.trim();
+  if(!n){showMsg('regMsg','❌ Enter full name!','err');return;}
+  if(n.length<3){showMsg('regMsg','❌ Name min 3 chars!','err');return;}
+  if(!ph){showMsg('regMsg','❌ Enter phone number (07XXXXXXXX) or email!','err');return;}
+  if(ph.length<8){showMsg('regMsg','❌ Phone min 8 digits or valid email!','err');return;}
+  if(!p){showMsg('regMsg','❌ Enter password! Required!','err');return;}
+  if(p.length<4){showMsg('regMsg','❌ Password min 4 chars!','err');return;}
+  if(p!==c){showMsg('regMsg','❌ Passwords do not match! Confirm again!','err');return;}
+  uName=n;uPhone=ph;uPass=p;logged=true;isAdmin=false;save();
+  document.getElementById('loginScreen').style.display='none';
+  showMsg('regMsg','✅ Account created! Name: '+n+' Phone/Email: '+ph+' Password: '+p,'ok');
+  alert('✅ Registration success!\n\nName: '+n+'\nPhone/Email: '+ph+'\nPassword: '+p+'\n\nLogin details saved! Wrong password check active! Groups real links active!');
+  upd();
+}
 function doLogin(){
   let n=document.getElementById('loginName').value.trim();
+  let ph=document.getElementById('loginPhone').value.trim();
   let p=document.getElementById('loginPass').value.trim();
-  if(!n){showMsg('loginMsg','❌ Enter username!','err');return;}
-  if(!p){showMsg('loginMsg','❌ Wrong password! Please enter password! User: 1234, Admin: admin1234','err');return;}
+  if(!n){showMsg('loginMsg','❌ Enter full name / username! Required!','err');return;}
+  if(!ph){showMsg('loginMsg','❌ Enter phone number or email! Required! Phone or Email field required!','err');return;}
+  if(!p){showMsg('loginMsg','❌ Enter password! Password required! Wrong password shows error!','err');return;}
+  // ADMIN LOGIN - Name admin + Pass admin1234 + Any phone/email
   if(n.toLowerCase()==='admin' && p==='admin1234'){
-    uName='Admin Bruno';uPass='admin1234';logged=true;isAdmin=true;save();
-    document.getElementById('loginScreen').style.display='none';openB('admin');upd();return;
+    uName='Admin Bruno';uPhone=ph||'admin@skylight.ug';uPass='admin1234';logged=true;isAdmin=true;save();
+    document.getElementById('loginScreen').style.display='none';openB('admin');upd();
+    alert('✅ Admin login success! Name: Admin, Phone/Email: '+uPhone+', Admin Panel opened!');
+    return;
   }
-  if(p!==uPass){showMsg('loginMsg','❌ Wrong password! Your password is: '+uPass+' (default 1234).','err');return;}
-  uName=n;logged=true;isAdmin=false;save();document.getElementById('loginScreen').style.display='none';upd();
+  // USER LOGIN - Check password
+  if(p!==uPass){
+    showMsg('loginMsg','❌ Wrong password! Your password is: '+uPass+' (default 1234). You entered: '+p+' - Please enter correct password! Wrong password check active!','err');
+    return;
+  }
+  // Check phone/email matches or allow if new phone but correct password and name
+  uName=n;uPhone=ph;logged=true;isAdmin=false;save();
+  document.getElementById('loginScreen').style.display='none';upd();
+  alert('✅ Login success!\nName: '+n+'\nPhone/Email: '+ph+'\nPassword correct!\nBalance check + Groups real links active!');
 }
+function openLink(type){let link=GROUP_LINKS[type];window.open(link,'_blank');}
 function upd(){
   document.getElementById('topBal').innerText=bal+' UGX';
   document.getElementById('homeBalMain').innerText=bal+' UGX';
@@ -147,8 +206,12 @@ function upd(){
   document.getElementById('withBal').innerText=bal+' UGX';
   document.getElementById('homeUser').innerText=uName;
   document.getElementById('setName').innerText=uName;
+  document.getElementById('homePhone').innerText=(uPhone||'No phone')+' • SKY-1250';
+  document.getElementById('setPhone').innerText='Phone/Email: '+(uPhone||'Not set');
+  document.getElementById('setPassShow').innerText='Password: '+uPass+' • Wrong pass check active';
+  document.getElementById('withToPhone').innerText=uPhone||'Your phone/email';
   let base='https://benytskylight-crypto.github.io/t-crypto.github.io/';
-  let link=base+'?ref='+encodeURIComponent((uName||'User').replace(/\s+/g,'').substring(0,10)+'1250')+'&v=35.2';
+  let link=base+'?ref='+encodeURIComponent((uName||'User').replace(/\s+/g,'').substring(0,10)+'1250')+'&v=36';
   document.getElementById('refLink').innerText=link;
   document.getElementById('refQr').src='https://api.qrserver.com/v1/create-qr-code/?size=120x120&data='+encodeURIComponent(link);
   document.getElementById('refCount').innerText=ref;
@@ -158,90 +221,26 @@ function upd(){
   document.getElementById('tab-my').innerHTML='🧡 MY('+macs.length+')';
   document.getElementById('adminPendingCount').innerText=pendingOrders.length;
   document.getElementById('adminApprovedCount').innerText=approvedOrders.length;
-  let pn=document.getElementById('pendingNotice');if(pn){pn.style.display=pendingOrders.length>0?'block':'none';pn.innerText='⏳ '+pendingOrders.length+' pending awaiting admin (admin/admin1234) + send proof to Groups for faster approval';}
+  let pn=document.getElementById('pendingNotice');if(pn){pn.style.display=pendingOrders.length>0?'block':'none';pn.innerText='⏳ '+pendingOrders.length+' pending awaiting admin (admin/admin1234) - Send proof to WA Group';}
 }
-function openB(b){
-  document.querySelectorAll('.page').forEach(p=>{p.style.display='none';});
-  document.querySelectorAll('.bottom div').forEach(d=>d.classList.remove('on'));
-  document.getElementById('tabs').style.display=(b=='machines'?'flex':'none');
-  if(b=='home') document.getElementById('page-home').style.display='block';
-  else if(b=='machines') document.getElementById('page-all').style.display='block';
-  else{let pg=document.getElementById('page-'+b); if(pg) pg.style.display='block';}
-  let btn=document.getElementById('b-'+b); if(btn) btn.classList.add('on');
-  if(b=='groups'||b=='foundersFull'||b=='admin'){document.querySelectorAll('.bottom div').forEach(d=>d.classList.remove('on'));if(b=='admin')document.getElementById('b-admin').classList.add('on');else document.getElementById('b-home').classList.add('on');}
-  if(b=='admin') renderAdmin();
-}
-function openTop(t){
-  document.querySelectorAll('.tab').forEach(d=>d.classList.remove('on'));
-  document.getElementById('tab-'+t).classList.add('on');
-  document.querySelectorAll('.page').forEach(p=>{p.style.display='none';});
-  let pg=document.getElementById('page-'+t); if(pg) pg.style.display='block'; else if(t=='all') document.getElementById('page-all').style.display='block';
-  document.getElementById('b-machines').classList.add('on');
-}
-function copyRef(){navigator.clipboard.writeText(document.getElementById('refLink').innerText).then(()=>{showMsg('refMsg','✅ Invite link copied!','ok');});}
-function buyWithProof(){
-  let sel=document.getElementById('buySelect').value;
-  let txn=document.getElementById('txnId').value;
-  let file=document.getElementById('proof').files[0];
-  if(!sel){showMsg('depositMsg','❌ Select machine','err');return;}
-  if(!txn){showMsg('depositMsg','❌ Enter Txn ID','err');return;}
-  if(!file){showMsg('depositMsg','❌ Upload proof','err');return;}
-  let parts=sel.split('|');
-  let reader=new FileReader();
-  reader.onload=function(e){
-    let order={id:Date.now(),userName:uName,machineId:parts[0],price:parseInt(parts[1]),daily:parseInt(parts[2]),txnId:txn,proof:e.target.result,status:'pending',date:new Date().toLocaleString(),refCode:pendingRef||''};
-    pendingOrders.push(order);save();
-    showMsg('depositMsg','✅ Order Submitted! Pending admin admin/admin1234 + Send proof to Groups WhatsApp for faster approval! ID: '+order.id,'ok');
-    document.getElementById('buySelect').value='';document.getElementById('txnId').value='';document.getElementById('proof').value='';
-  };
-  reader.readAsDataURL(file);
-}
-function renderAdmin(){
-  let list=document.getElementById('adminOrdersList');if(!list)return;
-  if(pendingOrders.length===0){list.innerHTML='<div style="font-size:11px;color:#5a7aa0;background:#070d1c;padding:12px;border-radius:10px;text-align:center">No pending</div>';return;}
-  let html='';pendingOrders.forEach((o,idx)=>{
-    html+=`<div class="pendingCard"><b style="color:#ffcc00">🟡 Pending #${o.id}</b><div style="font-size:11px;margin-top:6px"><b>${o.userName}</b> • ${o.machineId} • ${o.price} UGX<br>Txn: ${o.txnId}<br>${o.refCode?'Ref: '+o.refCode+'<br>':''}</div><img src="${o.proof}" style="width:100%;max-height:180px;object-fit:contain;background:#000;border-radius:8px;margin-top:8px"><div class="btnRow" style="margin-top:10px"><button class="buyBtn" onclick="approveOrder(${idx})">✅ Approve</button><button class="recvBtn" style="background:linear-gradient(90deg,#ff3355,#ff6b6b)" onclick="rejectOrder(${idx})">❌ Reject</button></div></div>`;
-  });list.innerHTML=html;
-}
-function approveOrder(idx){if(!confirm('Approve #'+pendingOrders[idx].id+'?'))return;let o=pendingOrders[idx];macs.push({id:o.machineId,price:o.price,daily:o.daily});if(o.refCode) ref+=1;approvedOrders.push({...o,status:'approved'});pendingOrders.splice(idx,1);save();alert('✅ Approved! '+o.machineId+' active!');renderAdmin();}
+function openB(b){document.querySelectorAll('.page').forEach(p=>{p.style.display='none';});document.querySelectorAll('.bottom div').forEach(d=>d.classList.remove('on'));document.getElementById('tabs').style.display=(b=='machines'?'flex':'none');if(b=='home') document.getElementById('page-home').style.display='block';else if(b=='machines') document.getElementById('page-all').style.display='block';else{let pg=document.getElementById('page-'+b); if(pg) pg.style.display='block';}let btn=document.getElementById('b-'+b); if(btn) btn.classList.add('on');if(b=='groups'||b=='admin'){document.querySelectorAll('.bottom div').forEach(d=>d.classList.remove('on'));if(b=='admin')document.getElementById('b-admin').classList.add('on');else document.getElementById('b-home').classList.add('on');}if(b=='admin') renderAdmin();}
+function openTop(t){document.querySelectorAll('.tab').forEach(d=>d.classList.remove('on'));document.getElementById('tab-'+t).classList.add('on');document.querySelectorAll('.page').forEach(p=>{p.style.display='none';});let pg=document.getElementById('page-'+t); if(pg) pg.style.display='block'; else if(t=='all') document.getElementById('page-all').style.display='block';document.getElementById('b-machines').classList.add('on');}
+function copyRef(){navigator.clipboard.writeText(document.getElementById('refLink').innerText).then(()=>{showMsg('refMsg','✅ Copied!','ok');});}
+function buyWithProof(){let sel=document.getElementById('buySelect').value;let txn=document.getElementById('txnId').value;let file=document.getElementById('proof').files[0];if(!sel){showMsg('depositMsg','❌ Select machine','err');return;}if(!txn){showMsg('depositMsg','❌ Enter Txn ID','err');return;}if(!file){showMsg('depositMsg','❌ Upload proof','err');return;}let parts=sel.split('|');let reader=new FileReader();reader.onload=function(e){let order={id:Date.now(),userName:uName+' ('+uPhone+')',machineId:parts[0],price:parseInt(parts[1]),daily:parseInt(parts[2]),txnId:txn,proof:e.target.result,status:'pending',date:new Date().toLocaleString(),refCode:pendingRef||'',phone:uPhone};pendingOrders.push(order);save();showMsg('depositMsg','✅ Order Submitted! User: '+uName+' Phone: '+uPhone+' Pending admin admin/admin1234 + Send proof to WA Group for faster approval! ID: '+order.id,'ok');document.getElementById('buySelect').value='';document.getElementById('txnId').value='';document.getElementById('proof').value='';};reader.readAsDataURL(file);}
+function renderAdmin(){let list=document.getElementById('adminOrdersList');if(!list)return;if(pendingOrders.length===0){list.innerHTML='<div style="font-size:11px;color:#5a7aa0;background:#070d1c;padding:12px;border-radius:10px;text-align:center">No pending</div>';return;}let html='';pendingOrders.forEach((o,idx)=>{html+=`<div class="pendingCard"><b style="color:#ffcc00">🟡 Pending #${o.id}</b><div style="font-size:11px;margin-top:6px"><b>${o.userName}</b><br>Phone: ${o.phone||'N/A'} • ${o.machineId} • ${o.price} UGX<br>Txn: ${o.txnId}${o.refCode?'<br>Ref: '+o.refCode:''}</div><img src="${o.proof}" style="width:100%;max-height:180px;object-fit:contain;background:#000;border-radius:8px;margin-top:8px"><div class="btnRow" style="margin-top:10px"><button class="buyBtn" onclick="approveOrder(${idx})">✅ Approve</button><button class="recvBtn" style="background:linear-gradient(90deg,#ff3355,#ff6b6b)" onclick="rejectOrder(${idx})">❌ Reject</button></div></div>`;});list.innerHTML=html;}
+function approveOrder(idx){if(!confirm('Approve #'+pendingOrders[idx].id+'?'))return;let o=pendingOrders[idx];macs.push({id:o.machineId,price:o.price,daily:o.daily});if(o.refCode) ref+=1;approvedOrders.push({...o,status:'approved'});pendingOrders.splice(idx,1);save();alert('✅ Approved! '+o.machineId+' active! User: '+o.userName);renderAdmin();}
 function rejectOrder(idx){if(!confirm('Reject?'))return;pendingOrders.splice(idx,1);save();renderAdmin();}
-function buyMachineDirect(id,price,daily){if(bal<price){alert('❌ Insufficient balance! Need '+price+' Have '+bal+' - Deposit + Groups proof for faster approval!');openB('wallet');return;}alert('✅ Sufficient! '+bal+' >= '+price+' for '+id+'. Go Wallet → Select '+id+' → Txn + Proof → Submit → Admin approve → Also send proof to Groups!');openB('wallet');document.getElementById('buySelect').value=id+'|'+price+'|'+daily;}
-function claimOne(i){if(typeof i==='string'){let f=macs.findIndex(m=>m.id===i);if(f===-1){alert('❌ Not bought yet!');openB('wallet');return;}bal+=macs[f].daily;save();alert('✅ Received '+macs[f].daily+' UGX!');}else{bal+=macs[i].daily;save();alert('✅ Received '+macs[i].daily+' UGX!');}}
+function buyMachineDirect(id,price,daily){if(bal<price){alert('❌ Insufficient balance! Need '+price+' Have '+bal+' - Deposit first!');openB('wallet');return;}alert('✅ Sufficient! Go Wallet → Select '+id+' → Txn + Proof → Submit → Admin approve + Groups proof!');openB('wallet');document.getElementById('buySelect').value=id+'|'+price+'|'+daily;}
+function claimOne(i){if(typeof i==='string'){let f=macs.findIndex(m=>m.id===i);if(f===-1){alert('❌ Not bought yet! Deposit + Admin approval!');openB('wallet');return;}bal+=macs[f].daily;save();alert('✅ Received '+macs[f].daily+' UGX!');}else{bal+=macs[i].daily;save();alert('✅ Received '+macs[i].daily+' UGX!');}}
 function claimById(id){claimOne(id);}
-function withdraw(){if(bal<2000){showMsg('withdrawMsg','❌ Insufficient! Min 2000, have '+bal,'err');return;}let amt=parseInt(document.getElementById('withAmt').value||'0');if(!amt){let p=prompt('Enter amount Min 2000 Max '+bal,bal);if(!p)return;amt=parseInt(p);}if(amt<2000){showMsg('withdrawMsg','❌ Min 2000','err');return;}if(amt>bal){showMsg('withdrawMsg','❌ Insufficient! Have '+bal+' want '+amt,'err');return;}bal-=amt;save();showMsg('withdrawMsg','✅ Withdraw '+amt+' UGX sent!','ok');document.getElementById('withAmt').value='';}
-function changePass(){let o=document.getElementById('oldPass').value;let n=document.getElementById('newPass').value;let c=document.getElementById('confirmPass').value;if(o!==uPass){showMsg('passMsg','❌ Wrong password! Current: '+uPass,'err');return;}if(n.length<4){showMsg('passMsg','❌ Min 4 chars','err');return;}if(n!==c){showMsg('passMsg','❌ Not match','err');return;}uPass=n;save();showMsg('passMsg','✅ Updated to: '+n,'ok');document.getElementById('oldPass').value='';document.getElementById('newPass').value='';document.getElementById('confirmPass').value='';}
-function logout(){if(confirm('Logout? Need password again.')){logged=false;isAdmin=false;save();document.getElementById('loginScreen').style.display='flex';}}
-function simulateReferralDeposit(){ref+=1;save();showMsg('refMsg','🎉 Simulated friend deposit + Admin approval! Now '+ref+' friends!','ok');}
-function renderMachines(){
-  let allM='',mM='',aM='',ulyM='',buyOpts='<option value="">Select machine - Min 2000 - Admin + Groups</option>';
-  const mData=[['M1',2000,120],['M2',5000,300],['M3',10000,600],['M4',20000,1200],['M5',40000,2400],['M6',80000,4800]];
-  const aData=[['A1',3000,180],['A2',6000,360],['A3',12000,720],['A4',24000,1440],['A5',48000,2880],['A6',96000,5760]];
-  const uData=[['U1',4000,240],['U2',8000,480],['U3',16000,960],['U4',32000,1920],['U5',64000,3840],['U6',128000,7680]];
-  const lData=[['L1',5000,300],['L2',10000,600],['L3',20000,1200],['L4',40000,2400],['L5',80000,4800],['L6',160000,9600]];
-  const yData=[['Y1',6000,360],['Y2',12000,720],['Y3',24000,1440],['Y4',48000,2880],['Y5',96000,5760],['Y6',192000,11520]];
-  function isOwned(id){return macs.some(m=>m.id===id);}function isPending(id){return pendingOrders.some(o=>o.machineId===id);}
-  function makeCard(id,price,daily){
-    let owned=isOwned(id);let pending=isPending(id);let canBuy=bal>=price;
-    return `<div class="card"><img src="https://images.unsplash.com/photo-1621504450181-5d356f61d307?w=200"><div class="cardInfo"><div style="display:flex;justify-content:space-between"><b style="color:#fff;font-size:13px">${id}</b><span style="font-size:9px;padding:2px 6px;border-radius:20px;background:${owned?'#00ff8833':pending?'#ffcc0033':'#333'};color:${owned?'#00ff88':pending?'#ffcc00':'#5a7aa0'}">${owned?'OWNED':pending?'PENDING':'NEW'}</span></div><div style="font-size:11px;margin-top:4px"><span style="color:#ffcc00;font-weight:800">${price} UGX</span> • <span style="color:#00ff88">${daily}/day</span></div><div class="btnRow"><button class="buyBtn" onclick="buyMachineDirect('${id}',${price},${daily})">🛒 Buy ${id}</button><button class="recvBtn" onclick="claimById('${id}')">${owned?'💰 Receive':pending?'⏳ Pending':'🔒 Receive'}</button></div><div style="font-size:8px;color:${canBuy?'#00ff88':'#ff6b6b'};margin-top:4px">${owned?'✅ Owned':pending?'⏳ Pending admin + Groups':canBuy?'✅ Sufficient: '+bal:'❌ Need '+price+' Have '+bal}</div></div></div>`;
-  }
-  mData.forEach(d=>{let c=makeCard(d[0],d[1],d[2]);mM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1]} UGX - ${d[2]}/day</option>`;});
-  aData.forEach(d=>{let c=makeCard(d[0],d[1],d[2]);aM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1]} UGX</option>`;});
-  uData.forEach(d=>{let c=makeCard(d[0],d[1],d[2]);ulyM+=c;allM+=c;});
-  lData.forEach(d=>{let c=makeCard(d[0],d[1],d[2]);ulyM+=c;allM+=c;});
-  yData.forEach(d=>{let c=makeCard(d[0],d[1],d[2]);ulyM+=c;allM+=c;});
-  vips.forEach(v=>{buyOpts+=`<option value="${v.id}|${v.price}|${v.daily}">${v.id} - ${v.price} UGX</option>`;});
-  document.getElementById('page-all').innerHTML=allM;
-  document.getElementById('page-m').innerHTML=mM;
-  document.getElementById('page-a').innerHTML=aM;
-  document.getElementById('page-uly').innerHTML=ulyM;
-  document.getElementById('buySelect').innerHTML=buyOpts;
-  let vipHtml=''; vips.forEach(v=>{let un=ref>=v.refs; vipHtml+=`<div class="card"><img src="https://images.unsplash.com/photo-1621504450181-5d356f61d307?w=200"><div class="cardInfo"><b style="color:${un?'#00ff88':'#5a7aa0'}">${v.id} ${un?'Unlocked':'Locked'} Need ${v.refs}</b><div style="font-size:11px;color:#5a7aa0;margin-top:4px">${v.price} UGX • ${v.daily}/day</div><div class="btnRow"><button class="buyBtn" style="background:${un?'#00ff88':'#1a2338'};color:${un?'#000':'#5a7aa0'}" onclick="${un?`buyMachineDirect('${v.id}',${v.price},${v.daily})`:`alert('Need ${v.refs} Have ${ref}')` }">${un?'Buy':'🔒 Locked'}</button></div></div></div>`;});
-  document.getElementById('page-vip').innerHTML=vipHtml;
-  let myHtml=''; if(macs.length==0) myHtml='<div class="box"><div style="font-size:11px;color:#5a7aa0">No machines yet. Groups proof for faster approval!</div></div>'; else macs.forEach((m,i)=>{myHtml+=`<div class="card"><img src="https://images.unsplash.com/photo-1621504450181-5d356f61d307?w=200"><div class="cardInfo"><b style="color:#00ff88">${m.id} • Active</b><div style="font-size:11px;color:#8aa4c8">Daily ${m.daily} UGX</div><div class="btnRow"><button class="buyBtn" style="background:#1a2338;color:#5a7aa0">Owned</button><button class="recvBtn" onclick="claimOne(${i})">💰 Receive ${m.daily}</button></div></div></div>`;});
-  document.getElementById('page-my').innerHTML=myHtml;
-}
+function withdraw(){if(bal<2000){showMsg('withdrawMsg','❌ Insufficient! Min 2000 have '+bal+' - To phone: '+uPhone,'err');return;}let amt=parseInt(document.getElementById('withAmt').value||'0');if(!amt){let p=prompt('Enter amount Min 2000 Max '+bal+' Withdraw to: '+uPhone,bal);if(!p)return;amt=parseInt(p);}if(amt<2000){showMsg('withdrawMsg','❌ Min 2000','err');return;}if(amt>bal){showMsg('withdrawMsg','❌ Insufficient! Have '+bal+' want '+amt,'err');return;}bal-=amt;save();showMsg('withdrawMsg','✅ Withdraw '+amt+' UGX sent to your phone/email: '+uPhone+'!','ok');document.getElementById('withAmt').value='';}
+function changePass(){let o=document.getElementById('oldPass').value;let n=document.getElementById('newPass').value;let c=document.getElementById('confirmPass').value;if(o!==uPass){showMsg('passMsg','❌ Wrong password! Current: '+uPass+' Phone: '+uPhone,'err');return;}if(n.length<4){showMsg('passMsg','❌ New min 4 chars','err');return;}if(n!==c){showMsg('passMsg','❌ New passwords not match','err');return;}uPass=n;save();showMsg('passMsg','✅ Password updated to: '+n+' for user '+uName+' phone '+uPhone,'ok');document.getElementById('oldPass').value='';document.getElementById('newPass').value='';document.getElementById('confirmPass').value='';}
+function updatePhone(){let ph=document.getElementById('updatePhone').value.trim();if(!ph){showMsg('phoneMsg','❌ Enter phone or email!','err');return;}if(ph.length<8){showMsg('phoneMsg','❌ Min 8 chars!','err');return;}uPhone=ph;save();showMsg('phoneMsg','✅ Phone/Email updated to: '+ph+' for '+uName,'ok');document.getElementById('updatePhone').value='';}
+function logout(){if(confirm('Logout? You will need Name + Phone/Email + Password to login again. Wrong password shows error.')){logged=false;isAdmin=false;save();document.getElementById('loginScreen').style.display='flex';showLogin();}}
+function simulateReferralDeposit(){ref+=1;save();showMsg('refMsg','🎉 Simulated friend deposit + Admin approval! +1 referral! Now '+ref+' friends!','ok');}
+function renderMachines(){let allM='',mM='',aM='',ulyM='',buyOpts='<option value="">Select machine - Min 2000 UGX - Admin approval</option>';const mData=[['M1',2000,120],['M2',5000,300],['M3',10000,600],['M4',20000,1200],['M5',40000,2400],['M6',80000,4800]];const aData=[['A1',3000,180],['A2',6000,360],['A3',12000,720],['A4',24000,1440],['A5',48000,2880],['A6',96000,5760]];const uData=[['U1',4000,240],['U2',8000,480],['U3',16000,960],['U4',32000,1920],['U5',64000,3840],['U6',128000,7680]];const lData=[['L1',5000,300],['L2',10000,600],['L3',20000,1200],['L4',40000,2400],['L5',80000,4800],['L6',160000,9600]];const yData=[['Y1',6000,360],['Y2',12000,720],['Y3',24000,1440],['Y4',48000,2880],['Y5',96000,5760],['Y6',192000,11520]];function isOwned(id){return macs.some(m=>m.id===id);}function isPending(id){return pendingOrders.some(o=>o.machineId===id);}function makeCard(id,price,daily){let owned=isOwned(id);let pending=isPending(id);let canBuy=bal>=price;return `<div class="card"><img src="https://images.unsplash.com/photo-1621504450181-5d356f61d307?w=200"><div class="cardInfo"><div style="display:flex;justify-content:space-between"><b style="color:#fff;font-size:13px">${id}</b><span style="font-size:9px;padding:2px 6px;border-radius:20px;background:${owned?'#00ff8833':pending?'#ffcc0033':'#333'};color:${owned?'#00ff88':pending?'#ffcc00':'#5a7aa0'}">${owned?'OWNED':pending?'PENDING':'NEW'}</span></div><div style="font-size:11px;margin-top:4px"><span style="color:#ffcc00;font-weight:800">${price} UGX</span> • <span style="color:#00ff88">${daily}/day</span></div><div class="btnRow"><button class="buyBtn" onclick="buyMachineDirect('${id}',${price},${daily})">🛒 Buy ${id}</button><button class="recvBtn" onclick="claimById('${id}')">${owned?'💰 Receive':pending?'⏳ Pending':'🔒 Receive'}</button></div><div style="font-size:8px;color:${canBuy?'#00ff88':'#ff6b6b'};margin-top:4px">${owned?'✅ Owned':pending?'⏳ Pending admin + WA Group':canBuy?'✅ Sufficient: '+bal:'❌ Need '+price+' Have '+bal}</div></div></div>`;}mData.forEach(d=>{let c=makeCard(d[0],d[1],d[2]);mM+=c;allM+=c;buyOpts+=`<option value="${d[0]}|${d[1]}|${d[2]}">${d[0]} - ${d[1]} UGX - ${d[2]}/day</option>`;});aData.forEach(d=>{let c=makeCard(d[0],d[1],d[2]);aM+=c;allM+=c;});uData.forEach(d=>{let c=makeCard(d[0],d[1],d[2]);ulyM+=c;allM+=c;});lData.forEach(d=>{let c=makeCard(d[0],d[1],d[2]);ulyM+=c;allM+=c;});yData.forEach(d=>{let c=makeCard(d[0],d[1],d[2]);ulyM+=c;allM+=c;});vips.forEach(v=>{buyOpts+=`<option value="${v.id}|${v.price}|${v.daily}">${v.id} - ${v.price} UGX</option>`;});document.getElementById('page-all').innerHTML=allM;document.getElementById('page-m').innerHTML=mM;document.getElementById('page-a').innerHTML=aM;document.getElementById('page-uly').innerHTML=ulyM;document.getElementById('buySelect').innerHTML=buyOpts;let vipHtml='';vips.forEach(v=>{let un=ref>=v.refs;vipHtml+=`<div class="card"><img src="https://images.unsplash.com/photo-1621504450181-5d356f61d307?w=200"><div class="cardInfo"><b style="color:${un?'#00ff88':'#5a7aa0'}">${v.id} ${un?'Unlocked':'Locked'} Need ${v.refs}</b><div style="font-size:11px;color:#5a7aa0;margin-top:4px">${v.price} UGX • ${v.daily}/day</div><div class="btnRow"><button class="buyBtn" style="background:${un?'#00ff88':'#1a2338'};color:${un?'#000':'#5a7aa0'}" onclick="${un?`buyMachineDirect('${v.id}',${v.price},${v.daily})`:`alert('Need ${v.refs} Have ${ref}')` }">${un?'Buy':'🔒 Locked'}</button></div></div></div>`;});document.getElementById('page-vip').innerHTML=vipHtml;let myHtml='';if(macs.length==0) myHtml='<div class="box"><div style="font-size:11px;color:#5a7aa0">No machines yet. Deposit + Admin approval + Groups proof faster! Name: '+uName+' Phone: '+uPhone+'</div></div>';else macs.forEach((m,i)=>{myHtml+=`<div class="card"><img src="https://images.unsplash.com/photo-1621504450181-5d356f61d307?w=200"><div class="cardInfo"><b style="color:#00ff88">${m.id} • Active • ${uPhone}</b><div style="font-size:11px;color:#8aa4c8">Daily ${m.daily} UGX • Owner: ${uName}</div><div class="btnRow"><button class="recvBtn" onclick="claimOne(${i})">💰 Receive ${m.daily}</button></div></div></div>`;});document.getElementById('page-my').innerHTML=myHtml;}
 if(!logged) document.getElementById('loginScreen').style.display='flex'; else document.getElementById('loginScreen').style.display='none';
 upd();renderMachines();renderAdmin();
 </script>
 </body>
-</html>
+                                                                           </html>
