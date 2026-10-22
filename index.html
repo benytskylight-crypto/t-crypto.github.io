@@ -4,7 +4,25 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SKYLIGHT GAMES - Real Firebase</title>
-<style>... (see full file) ...</style>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#020617;color:white;font-family:Arial;text-align:center}
+.header{background:#0f172a;padding:14px;border-bottom:3px solid #facc15;position:sticky;top:0;z-index:10}
+.logo{font-size:26px;font-weight:900;color:#facc15;letter-spacing:2px}
+.nav{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:10px}
+.nav button{padding:7px 13px;border-radius:20px;border:1px solid #334155;background:#1e293b;color:white;font-size:11px;font-weight:700;cursor:pointer}
+.nav button.active{background:#facc15;color:black}
+.box{background:#0f172a;max-width:420px;margin:15px auto;padding:18px;border-radius:14px;border:1px solid #1e293b;text-align:left}
+input,select,textarea{width:100%;padding:12px;margin:7px 0;border-radius:8px;border:1px solid #334155;background:#1e293b;color:white}
+.btn{width:100%;padding:13px;margin:8px 0;border:none;border-radius:8px;font-weight:900;cursor:pointer}
+.btn-gold{background:#facc15;color:black}
+.btn-purple{background:#a855f7;color:white}
+.btn-green{background:#22c55e;color:black}
+canvas{background:#000;border:3px solid #facc15;border-radius:12px;display:block;margin:10px auto}
+.small{font-size:12px;color:#94a3b8}
+.tag{display:inline-block;background:#1e293b;border:1px solid #334155;padding:4px 8px;border-radius:12px;font-size:11px;margin:2px}
+.refBox{background:#facc15;color:black;padding:10px;border-radius:10px;font-weight:900;text-align:center;word-break:break-all;margin:8px 0}
+</style>
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getFirestore, collection, doc, setDoc, getDoc, getDocs, addDoc, updateDoc, query, where, orderBy, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
@@ -18,5 +36,90 @@ const firebaseConfig = {
 };
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
-// ... full logic ...
+window.db=db; window.collection=collection; window.doc=doc; window.setDoc=setDoc; window.getDoc=getDoc; window.getDocs=getDocs; window.addDoc=addDoc; window.updateDoc=updateDoc; window.query=query; window.where=where; window.orderBy=orderBy; window.serverTimestamp=serverTimestamp;
 </script>
+</head>
+<body>
+<div class="header">
+<div class="logo">💡 SKYLIGHT GAMES</div>
+<div class="small">REAL Firebase • MoMo: 0793814204 - Project: skylight-ug</div>
+<div class="nav">
+<button onclick="showTab('game')" id="tab-game" class="active">🎮 GAME</button>
+<button onclick="showTab('orders')" id="tab-orders">📦 ORDERS</button>
+<button onclick="showTab('referral')" id="tab-referral">🔗 REFERRAL</button>
+<button onclick="showTab('group')" id="tab-group">👥 GROUP</button>
+<button onclick="showTab('manager')" id="tab-manager">💬 MANAGER</button>
+<button onclick="showTab('admin')" id="tab-admin">🔐 ADMIN</button>
+</div>
+</div>
+<div id="authBox">
+<div id="registerBox" class="box" style="text-align:center">
+<h2 style="color:#facc15">📝 Create Account - REAL DB</h2>
+<div style="background:#1e293b;padding:10px;border-radius:10px;margin:10px 0;border:1px dashed #facc15">
+<div class="small">YOUR LINK - Share for REAL referrals:</div>
+<div style="color:#facc15;font-weight:900;font-size:13px;word-break:break-all">https://skylight-1.onrender.com/?ref=YOURPHONE</div>
+<button class="btn" style="background:#22c55e;color:black;padding:6px" onclick="copyLink()">📋 COPY LINK</button>
+</div>
+<input id="regName" placeholder="Full Name">
+<input id="regPhone" placeholder="Phone 07XX">
+<input id="regPass" type="password" placeholder="Password">
+<input id="regRef" placeholder="Referral Code (Friend Phone)">
+<select id="regLevel"><option value="low">LOW</option><option value="medium" selected>MEDIUM</option><option value="high">HIGH</option></select>
+<button class="btn btn-gold" onclick="registerReal()">REGISTER - REAL</button>
+<span class="small" onclick="showLogin()" style="display:block;cursor:pointer">Already have account? Login</span>
+</div>
+<div id="loginBox" class="box" style="display:none;text-align:center">
+<h2 style="color:#facc15">🔐 Login - REAL DB</h2>
+<input id="logPhone" placeholder="Phone">
+<input id="logPass" type="password" placeholder="Password">
+<button class="btn btn-gold" onclick="loginReal()">LOGIN - REAL</button>
+<span class="small" onclick="showRegister()" style="display:block;cursor:pointer">No account? Register</span>
+</div>
+</div>
+<div id="gameTab">
+<div style="padding:8px"><span class="small">Welcome</span> <b id="userName" style="color:#facc15"></b> <span class="tag" id="userLevelTag">MEDIUM</span> <span class="tag" id="userPhoneTag"></span> <button onclick="logout()" style="font-size:10px;padding:3px 6px;border-radius:4px">Logout</button></div>
+<div>Score: <b id="score">0</b> | High: <b id="high" style="color:#facc15">0</b> | Real Referrals: <b id="refCount" style="color:#22c55e">0</b></div>
+<canvas id="game" width="300" height="300"></canvas>
+<div><button onclick="setDir(0,-1)" style="padding:10px 20px">▲</button><br><button onclick="setDir(-1,0)" style="padding:10px 20px">◀</button><button onclick="setDir(0,1)" style="padding:10px 20px">▼</button><button onclick="setDir(1,0)" style="padding:10px 20px">▶</button></div>
+<div class="box" style="text-align:center">
+<button class="btn btn-gold" onclick="createOrder('GOLD 2K')">🔓 GOLD 2K - MoMo 0793814204</button>
+<button class="btn btn-purple" onclick="createOrder('VIP 5K')">👑 VIP 5K - MoMo 0793814204</button>
+</div>
+</div>
+<div id="ordersTab" class="box" style="display:none"><h2 style="color:#facc15">📦 Your Orders</h2><div id="ordersList" class="small">Loading...</div></div>
+<div id="referralTab" class="box" style="display:none;text-align:center"><h2 style="color:#facc15">🔗 REAL Referral</h2><div id="myRefLink" class="refBox">Login first</div><button class="btn btn-green" onclick="shareWhatsApp()">Share WhatsApp</button><div id="referralList" class="small" style="text-align:left;margin-top:10px"></div><div>Count: <b id="myRefCount" style="color:#facc15">0</b></div></div>
+<div id="groupTab" class="box" style="display:none;text-align:center"><h2 style="color:#facc15">👥 Groups</h2><button class="btn btn-green" onclick="window.open('https://chat.whatsapp.com/Fi8k9a4tGdZ2K6Q7ZQ7ZQ7','_blank')">GROUP 1</button><button class="btn btn-green" onclick="window.open('https://chat.whatsapp.com/Gh9j8b5cGdZ3K6Q7ZQ7ZQ7','_blank')">GROUP 2</button><button class="btn btn-green" onclick="window.open('https://chat.whatsapp.com/Ii0k9c6dGdZ4K6Q7ZQ7ZQ7','_blank')">GROUP 3</button><div class="small">Replace GROUP1/2/3 links in code with your real 3 groups!</div></div>
+<div id="managerTab" class="box" style="display:none"><h2 style="color:#facc15">💬 Manager</h2><textarea id="managerMsg" rows="3" placeholder="I paid..."></textarea><button class="btn btn-gold" onclick="sendManagerReal()">SEND</button><div id="chatList" class="small"></div></div>
+<div id="adminTab" class="box" style="display:none"><h2 style="color:#facc15">🔐 ADMIN</h2><input id="adminPass" type="password" placeholder="Admin: 0793814204"><button class="btn btn-gold" onclick="adminLogin()">LOGIN ADMIN</button><div id="adminPanel" style="display:none"><div id="allOrdersList" class="small"></div><div id="allUsersList" class="small" style="margin-top:15px"></div></div></div>
+<script type="module">
+let currentUser=null; let currentPhone=null;
+function getRefFromUrl(){const p=new URLSearchParams(window.location.search); return p.get('ref')||'';}
+document.getElementById('regRef').value=getRefFromUrl();
+window.showTab=(t)=>{['game','orders','referral','group','manager','admin'].forEach(x=>{const el=document.getElementById(x+'Tab'); if(el) el.style.display='none'; const btn=document.getElementById('tab-'+x); if(btn) btn.classList.remove('active');}); document.getElementById(t+'Tab').style.display='block'; document.getElementById('tab-'+t).classList.add('active'); if(t==='orders') loadMyOrders(); if(t==='referral') loadMyReferrals(); if(t==='manager') loadChats();}
+window.showLogin=()=>{document.getElementById('registerBox').style.display='none';document.getElementById('loginBox').style.display='block';}
+window.showRegister=()=>{document.getElementById('loginBox').style.display='none';document.getElementById('registerBox').style.display='block';}
+window.copyLink=()=>{const phone=currentPhone||'YOURPHONE'; const link=`https://skylight-1.onrender.com/?ref=${phone}`; navigator.clipboard.writeText(link); alert('Copied: '+link);}
+window.shareWhatsApp=()=>{const phone=currentPhone||'YOURPHONE'; const link=`https://skylight-1.onrender.com/?ref=${phone}`; window.open('https://wa.me/?text='+encodeURIComponent('Join SKYLIGHT! '+link),'_blank');}
+window.registerReal=async()=>{const name=document.getElementById('regName').value.trim(); const phone=document.getElementById('regPhone').value.trim(); const pass=document.getElementById('regPass').value.trim(); const refCode=document.getElementById('regRef').value.trim(); const level=document.getElementById('regLevel').value; if(!name||!phone||!pass){alert('Fill all');return;} try{const userRef=doc(db,'users',phone); const snap=await getDoc(userRef); if(snap.exists()){alert('Exists - Login');return;} await setDoc(userRef,{name,phone,pass,level,high:0,referrals:0,created:serverTimestamp(),referredBy:refCode||null}); if(refCode && refCode!==phone){const refUserRef=doc(db,'users',refCode); const refSnap=await getDoc(refUserRef); if(refSnap.exists()){await addDoc(collection(db,'referrals'),{from:phone,to:refCode,fromName:name,time:serverTimestamp()}); const cnt=refSnap.data().referrals||0; await updateDoc(refUserRef,{referrals:cnt+1});}} localStorage.setItem('skylight_phone',phone); currentPhone=phone; currentUser={name,phone,level,high:0}; enterGame(); alert('Registered REAL!');}catch(e){alert(e.message);}}
+window.loginReal=async()=>{const phone=document.getElementById('logPhone').value.trim(); const pass=document.getElementById('logPass').value.trim(); try{const snap=await getDoc(doc(db,'users',phone)); if(!snap.exists()){alert('Not found');return;} const data=snap.data(); if(data.pass!==pass){alert('Wrong pass');return;} localStorage.setItem('skylight_phone',phone); currentPhone=phone; currentUser=data; enterGame();}catch(e){alert(e.message);}}
+function enterGame(){document.getElementById('authBox').style.display='none'; document.getElementById('gameTab').style.display='block'; document.querySelector('.nav').style.display='flex'; document.getElementById('userName').innerText=currentUser.name||currentPhone; document.getElementById('userPhoneTag').innerText=currentPhone; document.getElementById('userLevelTag').innerText=(currentUser.level||'medium').toUpperCase(); document.getElementById('high').innerText=currentUser.high||0; document.getElementById('myRefLink').innerText=`https://skylight-1.onrender.com/?ref=${currentPhone}`; initGame(); loadMyReferrals();}
+window.logout=()=>{localStorage.removeItem('skylight_phone'); location.reload();}
+window.createOrder=async(type)=>{if(!currentPhone){alert('Login');return;} try{await addDoc(collection(db,'orders'),{phone:currentPhone,name:currentUser.name,type,status:'pending',time:serverTimestamp()}); alert(type+' Order Sent REAL!'); window.showTab('orders');}catch(e){alert(e.message);}}
+window.loadMyOrders=async()=>{if(!currentPhone) return; const q=query(collection(db,'orders'),where('phone','==',currentPhone)); const snap=await getDocs(q); let html=''; snap.forEach(d=>{const o=d.data(); html+=`<div style="border-bottom:1px solid #334155;padding:6px 0"><b>${o.type}</b> - ${o.status}</div>`;}); document.getElementById('ordersList').innerHTML=html||'No orders';}
+window.loadMyReferrals=async()=>{if(!currentPhone) return; const q=query(collection(db,'referrals'),where('to','==',currentPhone)); const snap=await getDocs(q); document.getElementById('refCount').innerText=snap.size; document.getElementById('myRefCount').innerText=snap.size; let html=''; snap.forEach(d=>{const r=d.data(); html+=`<div>${r.fromName} (${r.from})</div>`;}); document.getElementById('referralList').innerHTML=html||'No referrals - Share link!';}
+window.sendManagerReal=async()=>{const msg=document.getElementById('managerMsg').value.trim(); if(!msg||!currentPhone) return; await addDoc(collection(db,'chats'),{phone:currentPhone,name:currentUser.name,msg,time:serverTimestamp()}); document.getElementById('managerMsg').value=''; window.open('https://wa.me/256793814204?text='+encodeURIComponent(currentUser.name+': '+msg),'_blank');}
+window.loadChats=async()=>{const snap=await getDocs(collection(db,'chats')); let html=''; snap.forEach(d=>{const c=d.data(); html+=`<div style="border-bottom:1px solid #334155;padding:4px 0"><b>${c.name}</b> ${c.phone}<br>${c.msg}</div>`;}); document.getElementById('chatList').innerHTML=html||'No chats';}
+window.adminLogin=async()=>{const p=document.getElementById('adminPass').value; if(p!=='0793814204'){alert('Wrong');return;} document.getElementById('adminPanel').style.display='block'; const snap=await getDocs(collection(db,'orders')); let html=''; snap.forEach(d=>{const o=d.data(); html+=`<div style="border:1px solid #334155;padding:6px;margin:4px 0"><b>${o.name} ${o.phone}</b> - ${o.type} - ${o.status} <br><button onclick="approveOrder('${d.id}')" style="padding:4px 8px;background:#22c55e;border:none">Approve</button></div>`;}); document.getElementById('allOrdersList').innerHTML=html; const usnap=await getDocs(collection(db,'users')); let uhtml=''; usnap.forEach(d=>{const u=d.data(); uhtml+=`<div>${u.name} ${u.phone} Ref:${u.referrals||0}</div>`;}); document.getElementById('allUsersList').innerHTML=uhtml;}
+window.approveOrder=async(id)=>{await updateDoc(doc(db,'orders',id),{status:'approved'}); alert('Approved');}
+const saved=localStorage.getItem('skylight_phone'); if(saved){getDoc(doc(db,'users',saved)).then(s=>{if(s.exists()){currentPhone=saved; currentUser=s.data(); enterGame();}});}
+let snake,food,dir,nextDir,score,gameInterval; let settings={level:'medium'};
+window.initGame=()=>{if(gameInterval)clearInterval(gameInterval); snake=[{x:10,y:10}]; food={x:15,y:15}; dir={x:1,y:0}; nextDir={x:1,y:0}; score=0; document.getElementById('score').innerText=0; if(currentUser) document.getElementById('high').innerText=currentUser.high||0; randFood(); let lvl=currentUser?.level||'medium'; settings.level=lvl; let speed=lvl==='low'?180:lvl==='high'?70:120; gameInterval=setInterval(gameLoop,speed);}
+window.setDir=(x,y)=>{if(dir.x===-x&&dir.y===-y)return; nextDir={x,y};}
+function randFood(){food={x:Math.floor(Math.random()*20),y:Math.floor(Math.random()*20)};}
+function gameLoop(){dir=nextDir; let head={x:snake[0].x+dir.x,y:snake[0].y+dir.y}; if(head.x<0)head.x=19; if(head.x>19)head.x=0; if(head.y<0)head.y=19; if(head.y>19)head.y=0; if(snake.some(s=>s.x===head.x&&s.y===head.y)){if(currentUser&&score>(currentUser.high||0)){currentUser.high=score; updateDoc(doc(db,'users',currentPhone),{high:score}); document.getElementById('high').innerText=score;} snake=[{x:10,y:10}]; score=0; document.getElementById('score').innerText=0; dir={x:1,y:0}; nextDir={x:1,y:0}; return;} snake.unshift(head); if(head.x===food.x&&head.y===food.y){let add=settings.level==='high'?20:settings.level==='low'?5:10; score+=add; document.getElementById('score').innerText=score; randFood();}else snake.pop(); const c=document.getElementById('game'); const ctx=c.getContext('2d'); ctx.fillStyle='#000'; ctx.fillRect(0,0,300,300); ctx.fillStyle='#22c55e'; ctx.fillRect(food.x*15,food.y*15,14,14); ctx.fillStyle='#4ade80'; snake.forEach(s=>ctx.fillRect(s.x*15,s.y*15,14,14));}
+</script>
+<script>
+if(!localStorage.getItem('skylight_phone')){document.getElementById('gameTab').style.display='none'; document.querySelector('.nav').style.display='none';}else{document.getElementById('authBox').style.display='none';}
+</script>
+</body>
+  </html>
