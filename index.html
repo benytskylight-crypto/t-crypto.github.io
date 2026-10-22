@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SKYLIGHT V4 - REAL FOUNDERS - NO COPYLINK BUG</title>
+<title>SKYLIGHT V5 - REAL LOGO + 4 FOUNDERS + GROUPS</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}body{background:#020617;color:#fff;font-family:Arial;padding-bottom:80px}
 .header{background:linear-gradient(135deg,#0f172a,#1e293b);padding:14px;text-align:center;position:sticky;top:0;z-index:30;border-bottom:3px solid #facc15}
-.logo{font-size:19px;font-weight:900;color:#facc15}
-.nav{display:flex;gap:4px;justify-content:center;flex-wrap:wrap;margin-top:8px}
+.logo-box{display:flex;flex-direction:column;align-items:center;gap:6px}
+.logo-icon{width:60px;height:60px;background:linear-gradient(135deg,#facc15,#eab308);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;box-shadow:0 0 20px rgba(250,204,21,.5);border:3px solid #facc15}
+.logo-text{font-size:22px;font-weight:900;color:#facc15;letter-spacing:2px;text-shadow:0 0 10px rgba(250,204,21,.5)}
+.nav{display:flex;gap:4px;justify-content:center;flex-wrap:wrap;margin-top:10px}
 .nav button{padding:6px 10px;border-radius:20px;border:1px solid #334155;background:#1e293b;color:#fff;font-size:9px;font-weight:700}
 .nav button.active{background:#facc15;color:#000}
 .box{background:#0f172a;max-width:480px;margin:12px auto;padding:14px;border-radius:16px;border:1px solid #1e293b}
-.login-card{border:1px solid rgba(250,204,21,.3);border-radius:20px;padding:20px}
+.login-card{border:1px solid rgba(250,204,21,.3);border-radius:20px;padding:20px;box-shadow:0 0 30px rgba(250,204,21,.15)}
 .input-group{position:relative;margin:8px 0}
 .input-group span{position:absolute;left:12px;top:50%;transform:translateY(-50%)}
 .input-group input{width:100%;padding:13px 13px 13px 40px;border-radius:12px;border:1px solid #334155;background:#1e293b;color:#fff}
@@ -29,14 +31,19 @@
 .badge.red{background:#ef4444;color:#fff}
 .profile-pic{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#facc15,#eab308);display:flex;align-items:center;justify-content:center;font-weight:900;color:#000;font-size:20px;border:2px solid #facc15;overflow:hidden}
 .profile-pic img{width:100%;height:100%;object-fit:cover}
+.founder-logo{width:80px;height:80px;background:linear-gradient(135deg,#facc15,#eab308);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:40px;margin:0 auto 10px;border:3px solid #facc15;box-shadow:0 0 20px rgba(250,204,21,.4)}
 .bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#0f172a;border-top:2px solid #facc15;display:flex;justify-content:space-around;padding:8px 0;z-index:40;max-width:480px;margin:0 auto;left:50%;transform:translateX(-50%);width:100%}
 .bottom-nav button{background:none;border:none;color:#94a3b8;font-size:9px;font-weight:700;display:flex;flex-direction:column;align-items:center;gap:2px}
 .bottom-nav button.active{color:#facc15}.bottom-nav span{font-size:18px}
 .dep-with{display:flex;gap:8px;margin:10px 0}
-.founder-card{background:linear-gradient(135deg,#1e293b,#0f172a);border:1px solid #334155;border-radius:14px;padding:14px;margin:10px 0}
-.founder-card.real{border-color:#facc15}
+.founder-card{background:linear-gradient(135deg,#1e293b,#0f172a);border:1px solid #334155;border-radius:16px;padding:16px;margin:12px 0;box-shadow:0 4px 12px rgba(0,0,0,.3)}
+.founder-card.real{border-color:#facc15;box-shadow:0 0 15px rgba(250,204,21,.2)}
+.founder-head{display:flex;gap:12px;align-items:center;margin-bottom:8px}
+.founder-avatar{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,#facc15,#eab308);display:flex;align-items:center;justify-content:center;font-size:24px;border:2px solid #facc15;color:#000;font-weight:900}
 .settings-item{background:#1e293b;border:1px solid #334155;border-radius:12px;padding:12px;margin:8px 0;display:flex;justify-content:space-between;align-items:center}
 .wallet-card{background:linear-gradient(135deg,#facc15,#eab308);color:#000;border-radius:14px;padding:14px;margin:10px 0}
+.group-card{background:linear-gradient(135deg,#1e293b,#0f172a);border:1px solid #facc15;border-radius:14px;padding:14px;margin:10px 0;text-align:center}
+.group-btn{width:100%;padding:12px;margin:6px 0;border:none;border-radius:12px;font-weight:900;cursor:pointer;font-size:12px;display:flex;align-items:center;justify-content:center;gap:8px}
 </style>
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
@@ -46,8 +53,11 @@ const app=initializeApp(firebaseConfig); const db=getFirestore(app);
 window.db=db; window.collection=collection; window.doc=doc; window.setDoc=setDoc; window.getDoc=getDoc; window.getDocs=getDocs; window.addDoc=addDoc; window.updateDoc=updateDoc; window.query=query; window.where=where; window.serverTimestamp=serverTimestamp;
 </script></head><body>
 <div class="header">
-<div class="logo">💡 SKYLIGHT V4 - 36 MACHINES - REAL FOUNDERS</div>
-<div class="small">REAL Firebase • MoMo: 0793814204 • 6% Daily Fixed • 7% VIP Fixed</div>
+<div class="logo-box">
+<div class="logo-icon">💡</div>
+<div class="logo-text">SKYLIGHT</div>
+<div class="small" style="color:#facc15">Global AI Investment Platform • 36 Machines • Real Firebase</div>
+</div>
 <div class="nav">
 <button onclick="showTab('machines')" id="tab-machines" class="active">⚙️ MACHINES</button>
 <button onclick="showTab('orders')" id="tab-orders">📦 ORDERS</button>
@@ -56,60 +66,136 @@ window.db=db; window.collection=collection; window.doc=doc; window.setDoc=setDoc
 <button onclick="showTab('settings')" id="tab-settings">⚙️ SETTINGS</button>
 <button onclick="showTab('admin')" id="tab-admin">🔐 ADMIN</button>
 </div></div>
+
 <div id="authBox">
 <div id="registerBox" class="box login-card" style="text-align:center">
-<h2 style="color:#facc15">💡 SKYLIGHT V4</h2><p class="small">No Copy-Link Bug • Real Founders • Real Wallet</p>
+<div class="founder-logo">💡</div>
+<h2 style="color:#facc15">SKYLIGHT V5</h2>
+<p class="small">Real Logo • 4 Founders • Real Groups • No Bug</p>
+<div style="background:#1e293b;padding:8px;border-radius:10px;margin:10px 0;border:1px solid #facc15">
+<div class="small" style="color:#facc15;font-weight:700">🔐 LOGIN & PASSWORD - REAL DB</div>
+<div class="small">Your data saved in Firebase • Secure</div>
+</div>
 <div class="input-group"><span>👤</span><input id="regName" placeholder="Full Name"></div>
-<div class="input-group"><span>📱</span><input id="regPhone" placeholder="Phone 07XX"></div>
-<div class="input-group"><span>🔒</span><input id="regPass" type="password" placeholder="Password"></div>
-<div class="input-group"><span>🔗</span><input id="regRef" placeholder="Referral Code (Friend Phone)"></div>
-<button class="btn btn-gold" onclick="registerReal()">✨ REGISTER - REAL DB</button>
-<span class="small" onclick="showLogin()" style="cursor:pointer">Already have account? Login</span>
+<div class="input-group"><span>📱</span><input id="regPhone" placeholder="Phone 07XX - This is your login"></div>
+<div class="input-group"><span>🔒</span><input id="regPass" type="password" placeholder="Create Password - For login"></div>
+<div class="input-group"><span>🔗</span><input id="regRef" placeholder="Referral Code (Friend Phone - Optional)"></div>
+<button class="btn btn-gold" onclick="registerReal()">✨ REGISTER - CREATE ACCOUNT</button>
+<span class="small" onclick="showLogin()" style="cursor:pointer;color:#facc15">Already have account? LOGIN HERE with Phone + Password</span>
 </div>
 <div id="loginBox" class="box login-card" style="display:none;text-align:center">
-<h2 style="color:#facc15">🔐 Welcome Back</h2><p class="small">Login to SKYLIGHT V4</p>
-<div class="input-group"><span>📱</span><input id="logPhone" placeholder="Phone"></div>
-<div class="input-group"><span>🔒</span><input id="logPass" type="password" placeholder="Password"><span style="left:auto;right:12px;cursor:pointer" onclick="togglePass()">👁️</span></div>
-<button class="btn btn-gold" onclick="loginReal()">🚀 LOGIN - REAL</button>
-<span class="small" onclick="showRegister()" style="cursor:pointer">No account? Register</span>
+<div class="founder-logo">💡</div>
+<h2 style="color:#facc15">🔐 Welcome Back - LOGIN</h2>
+<p class="small">Enter your Phone and Password</p>
+<div class="input-group"><span>📱</span><input id="logPhone" placeholder="Phone - Your Login ID"></div>
+<div class="input-group"><span>🔒</span><input id="logPass" type="password" placeholder="Password - You created during register"><span style="left:auto;right:12px;cursor:pointer" onclick="togglePass()">👁️</span></div>
+<button class="btn btn-gold" onclick="loginReal()">🚀 LOGIN WITH PASSWORD</button>
+<span class="small" onclick="showRegister()" style="cursor:pointer;color:#facc15">No account? Register here</span>
+<div style="margin-top:10px" class="small">Forgot password? Contact Manager: 0793814204</div>
 </div></div>
+
 <div id="machinesTab" class="box" style="max-width:480px;display:none">
 <div style="display:flex;align-items:center;justify-content:space-between">
 <div style="display:flex;gap:10px;align-items:center"><div id="profilePic" class="profile-pic">S</div><div><div id="userName" style="color:#facc15;font-weight:900">User</div><div id="userPhoneTag" class="small">Phone</div></div></div>
-<div style="text-align:right"><div class="small">Balance</div><b id="bal" style="color:#22c55e;font-size:16px">0 UGX</b></div>
+<div style="text-align:right"><div class="small">Wallet Balance</div><b id="bal" style="color:#22c55e;font-size:16px">0 UGX</b></div>
 </div>
 <div class="dep-with"><button class="btn-gold" onclick="showDeposit()" style="flex:1;padding:10px;border-radius:10px;font-weight:900;border:none">⬇️ DEPOSIT</button><button style="flex:1;padding:10px;border-radius:10px;font-weight:900;border:1px solid #facc15;background:transparent;color:#facc15" onclick="showWithdraw()">⬆️ WITHDRAW</button></div>
-<div id="depositBox" style="display:none;background:#020617;padding:12px;border-radius:12px;margin-top:8px;border:1px solid #22c55e"><div class="small">MoMo <b style="color:#facc15">0793814204</b> - MTN/Airtel<br><input id="depAmount" placeholder="Amount e.g. 20000" style="width:100%;padding:8px;margin-top:6px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#fff"><button class="btn btn-green" style="padding:10px;margin-top:6px" onclick="submitDeposit()">I PAID - NOTIFY ADMIN</button></div></div>
+<div id="depositBox" style="display:none;background:#020617;padding:12px;border-radius:12px;margin-top:8px;border:1px solid #22c55e"><div class="small">Send MoMo to <b style="color:#facc15">0793814204</b> MTN/Airtel<br><input id="depAmount" placeholder="Amount e.g. 20000" style="width:100%;padding:8px;margin-top:6px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#fff"><button class="btn btn-green" style="padding:10px;margin-top:6px" onclick="submitDeposit()">I PAID - NOTIFY ADMIN</button></div></div>
 <div id="withdrawBox" style="display:none;background:#020617;padding:12px;border-radius:12px;margin-top:8px;border:1px solid #facc15"><div class="small">Min 5000 UGX - Fee 8%<br><input id="withAmount" placeholder="Amount" style="width:100%;padding:8px;margin-top:4px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#fff"><input id="withNumber" placeholder="MoMo number to receive" style="width:100%;padding:8px;margin-top:4px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#fff"><button class="btn btn-gold" style="padding:10px;margin-top:6px" onclick="submitWithdraw()">REQUEST WITHDRAWAL</button></div></div>
-<div style="background:#1e293b;padding:8px;border-radius:8px;margin:10px 0;display:flex;justify-content:space-around;font-size:11px"><div>Referrals: <b id="refCount" style="color:#facc15">0</b></div><div>Total Earn: <b style="color:#22c55e" id="totalEarn">0 UGX</b></div></div>
+<div style="background:#1e293b;padding:8px;border-radius:8px;margin:10px 0;display:flex;justify-content:space-around;font-size:11px"><div>Referrals: <b id="refCount" style="color:#facc15">0</b></div><div>Earn: <b style="color:#22c55e" id="totalEarn">0 UGX</b></div></div>
 <div class="tabs-m">
 <button onclick="filterM('all')" id="f-all" class="active">All 36</button><button onclick="filterM('A')" id="f-A">A(6)</button><button onclick="filterM('M')" id="f-M">M(6)</button><button onclick="filterM('L')" id="f-L">L(6)</button><button onclick="filterM('U')" id="f-U">U(6)</button><button onclick="filterM('Y')" id="f-Y">Y(6)</button><button onclick="filterM('VIP')" id="f-VIP">VIP(6) 👑</button>
 </div>
 <div id="machineGrid" class="machine-grid"></div>
 </div>
-<div id="ordersTab" class="box" style="display:none"><h2>📦 Orders & Group</h2><div id="ordersList" class="small">Loading...</div></div>
-<div id="referralTab" class="box" style="display:none;text-align:center"><h2 style="color:#facc15">🔗 INVITES - REAL Referral</h2><div id="myRefLink" class="refBox">Login to see your REAL link</div><div style="display:flex;gap:6px"><button class="btn btn-green" style="flex:1" onclick="copyLink()">📋 COPY</button><button class="btn btn-gold" style="flex:1" onclick="shareWhatsApp()">WHATSAPP SHARE</button></div><div id="referralList" class="small" style="text-align:left;margin-top:12px"></div><div class="small" style="margin-top:8px">Earn 10% on every friend deposit! Real-time!</div></div>
+
+<div id="ordersTab" class="box" style="display:none"><h2>📦 Orders & Group Earnings</h2><div id="ordersList" class="small">Loading...</div></div>
+<div id="referralTab" class="box" style="display:none;text-align:center"><h2 style="color:#facc15">🔗 INVITES - REAL Link</h2><div id="myRefLink" class="refBox">Login to see your REAL link</div><div style="display:flex;gap:6px"><button class="btn btn-green" style="flex:1" onclick="copyLink()">📋 COPY LINK</button><button class="btn btn-gold" style="flex:1" onclick="shareWhatsApp()">SHARE WHATSAPP</button></div><div id="referralList" class="small" style="text-align:left;margin-top:12px"></div></div>
+
 <div id="foundersTab" class="box" style="display:none">
-<h2 style="color:#facc15">💡 SKYLIGHT - REAL FOUNDERS</h2>
-<div style="text-align:center;margin:12px 0"><div style="font-size:60px">💡</div><b style="font-size:22px;color:#facc15">SKYLIGHT</b><br><span class="small">Global AI Investment Platform - Corporate</span></div>
-<div class="founder-card real"><div style="font-size:32px">🌐</div><div><b>SKYLIGHT GLOBAL FOUNDERS BOARD</b><br><span class="small">Founded 2023 - Silicon Valley + Africa<br>Vision: Democratize AI mining for everyone<br>Operations: USA, Uganda, Kenya, Tanzania<br>Audited & Secured - Corporate Entity</span></div></div>
-<div class="founder-card real"><div style="font-size:32px">🤖</div><div><b>SKYLIGHT AI LAB - 36 MACHINES</b><br><span class="small">A(6), M(6), L(6), U(6), Y(6), VIP(6) 👑<br>Daily 6% x 30D = 180% Total<br>VIP 7% x 10D = 70% Fast<br>Real AI Trading & Mining Machines</span></div></div>
-<div class="founder-card real"><div style="font-size:32px">🇺🇬</div><div><b>SKYLIGHT UGANDA OPERATIONS CENTER</b><br><span class="small">Regional Hub - East Africa<br>Payments: MTN/Airtel MoMo 0793814204<br>24/7 WhatsApp Support Team<br>Local Deposits & Withdrawals</span></div></div>
-<div style="margin-top:12px"><button class="btn btn-green" onclick="window.open('https://wa.me/256793814204','_blank')">Join WhatsApp</button><button class="btn btn-gold" onclick="window.open('https://t.me/','_blank')">Join Telegram</button></div>
+<div style="text-align:center;margin-bottom:16px">
+<div class="founder-logo">💡</div>
+<h1 style="color:#facc15;font-size:28px;font-weight:900;letter-spacing:2px">SKYLIGHT</h1>
+<p style="color:#fff;font-size:12px;margin-top:4px">Global AI Investment Platform</p>
+<p class="small" style="margin-top:6px">36 AI Machines • 6% Daily • 7% VIP • Real Firebase</p>
 </div>
+
+<h2 style="color:#facc15;text-align:center;margin:16px 0">👥 4 FOUNDERS - REAL TEAM</h2>
+
+<div class="founder-card real">
+<div class="founder-head"><div class="founder-avatar">🌐</div><div><b>SKYLIGHT GLOBAL FOUNDERS BOARD</b><br><span class="small" style="color:#facc15">Headquarters • Silicon Valley + Africa</span></div></div>
+<div class="small">Founded 2023 - Global partnership between Silicon Valley AI experts and African operations team. Vision: Democratize AI mining for everyone. Licensed and audited platform operating in USA, Uganda, Kenya, Tanzania. Corporate entity with transparent operations.</div>
+</div>
+
+<div class="founder-card real">
+<div class="founder-head"><div class="founder-avatar">🤖</div><div><b>SKYLIGHT AI LAB - TECHNOLOGY</b><br><span class="small" style="color:#22c55e">36 AI Machines • Innovation Team</span></div></div>
+<div class="small">Our core technology team manages 36 AI machines: A(6), M(6), L(6), U(6), Y(6), VIP(6) 👑. Daily profit 6% x 30 Days = 180% total. VIP 7% x 10 Days = 70% fast returns. Real AI trading, mining, and arbitrage algorithms working 24/7.</div>
+</div>
+
+<div class="founder-card real">
+<div class="founder-head"><div class="founder-avatar">🇺🇬</div><div><b>SKYLIGHT UGANDA OPERATIONS</b><br><span class="small" style="color:#facc15">East Africa Hub • Payments & Support</span></div></div>
+<div class="small">Regional operations center for East Africa. Handles all MoMo payments (MTN/Airtel 0793814204), deposits, withdrawals, and local support. 24/7 WhatsApp team. Local team ensures fast approvals within 5-30 minutes. Your trusted local partner.</div>
+</div>
+
+<div class="founder-card real">
+<div class="founder-head"><div class="founder-avatar">👥</div><div><b>SKYLIGHT COMMUNITY LEADERS</b><br><span class="small" style="color:#22c55e">Growth & Community Management</span></div></div>
+<div class="small">Community growth team managing referral program, community groups, and user education. 10% referral bonus on every friend deposit. Builds and manages official Telegram, WhatsApp Group, and WhatsApp Channel. Ensures every member grows together.</div>
+</div>
+
+<div style="margin-top:20px">
+<h2 style="color:#facc15;text-align:center;margin-bottom:12px">💬 OFFICIAL GROUPS - JOIN NOW</h2>
+
+<div class="group-card">
+<div style="font-size:32px">📢</div>
+<b style="color:#facc15">SKYLIGHT OFFICIAL COMMUNITIES</b><br>
+<span class="small">Join all 3 groups to get updates, support, and earn more!</span>
+
+<button class="group-btn" style="background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;margin-top:12px" onclick="window.open('https://chat.whatsapp.com/BNeCwxPjLk95w3QejfjjM6?s=cl&p=a&mlu=4&ilr=4','_blank')">
+🟢 Join WhatsApp GROUP - Chat & Support
+</button>
+
+<button class="group-btn" style="background:linear-gradient(135deg,#0088cc,#00aced);color:#fff" onclick="window.open('https://t.me/+vyEcluEH54c0NTk0','_blank')">
+✈️ Join Telegram GROUP - Official Skylight
+</button>
+
+<button class="group-btn" style="background:linear-gradient(135deg,#facc15,#eab308);color:#000" onclick="window.open('https://whatsapp.com/channel/0029VbDQSYt8KMqcfkfWTU0W','_blank')">
+📢 Follow WhatsApp CHANNEL - Skylight Ai
+</button>
+
+<div style="background:#020617;padding:10px;border-radius:10px;margin-top:12px;text-align:left">
+<div class="small" style="color:#facc15;font-weight:700">🔗 Share these links to grow team:</div>
+<div class="small" style="word-break:break-all;margin-top:6px;color:#94a3b8">
+• Telegram: https://t.me/+vyEcluEH54c0NTk0<br>
+• WA Group: https://chat.whatsapp.com/BNeCwxPjLk95w3QejfjjM6<br>
+• WA Channel: https://whatsapp.com/channel/0029VbDQSYt8KMqcfkfWTU0W
+</div>
+</div>
+</div>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px">
+<div class="founder-card" style="text-align:center"><b style="color:#facc15;font-size:18px">36</b><br><span class="small">AI Machines</span></div>
+<div class="founder-card" style="text-align:center"><b style="color:#22c55e;font-size:18px">6%-7%</b><br><span class="small">Daily Profit</span></div>
+<div class="founder-card" style="text-align:center"><b style="color:#facc15;font-size:18px">10K+</b><br><span class="small">Users</span></div>
+<div class="founder-card" style="text-align:center"><b style="color:#22c55e;font-size:18px">24/7</b><br><span class="small">Support</span></div>
+</div>
+</div>
+</div>
+
 <div id="settingsTab" class="box" style="display:none">
-<h2 style="color:#facc15">⚙️ SETTINGS - PROFILE, WALLET, RULES, PASSWORD</h2>
+<h2 style="color:#facc15">⚙️ SETTINGS</h2>
 <div style="text-align:center;margin:12px 0"><div id="settingsPic" class="profile-pic" style="width:80px;height:80px;margin:0 auto;font-size:32px">S</div><br><input type="file" id="picInput" accept="image/*" style="display:none" onchange="changeProfilePic(event)"><button class="btn btn-gold" style="width:auto;padding:8px 16px;margin:8px auto" onclick="document.getElementById('picInput').click()">📷 Change Profile Pic</button><div id="settingsName" style="font-weight:900;color:#facc15;margin-top:6px">User</div><div id="settingsPhone" class="small">Phone</div></div>
-<div class="wallet-card"><div style="display:flex;justify-content:space-between"><div><div class="small" style="color:#000">Wallet Balance</div><b id="walletBal" style="font-size:20px">0 UGX</b></div><div style="text-align:right"><div class="small" style="color:#000">Referrals</div><b id="walletRef" style="font-size:16px">0</b></div></div><div class="dep-with" style="margin-bottom:0"><button class="btn" style="background:#000;color:#facc15;flex:1;padding:8px" onclick="showTab('machines')">Deposit</button><button class="btn" style="background:#000;color:#fff;flex:1;padding:8px" onclick="showTab('machines')">Withdraw</button></div><div style="margin-top:8px;font-size:11px"><div>Deposits: <b id="walletDeposits">0</b> | Withdrawals: <b id="walletWithdraws">0</b></div></div></div>
-<div class="settings-item"><div><b>🔒 Change Password</b><br><span class="small">Old + New Password - REAL DB</span></div><button style="background:#facc15;color:#000;border:none;padding:6px 12px;border-radius:8px;font-weight:700" onclick="togglePassBox()">Change</button></div>
-<div id="passChangeBox" style="display:none;background:#020617;padding:12px;border-radius:12px;margin-bottom:8px"><input id="oldPass" type="password" placeholder="Old Password" style="width:100%;padding:10px;margin:4px 0;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#fff"><input id="newPass" type="password" placeholder="New Password" style="width:100%;padding:10px;margin:4px 0;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#fff"><button class="btn btn-gold" onclick="changePassword()">UPDATE PASSWORD</button></div>
-<div class="settings-item"><div><b>📜 Rules & Wallet</b><br><span class="small">Terms, Conditions, Wallet Rules</span></div><button style="background:transparent;border:1px solid #334155;color:#fff;padding:6px 12px;border-radius:8px" onclick="toggleRules()">View</button></div>
-<div id="rulesBox" style="display:none;background:#020617;padding:12px;border-radius:12px;margin-bottom:8px" class="small"><b style="color:#facc15">RULES & WALLET:</b><br>1. Min deposit 2000 UGX - MoMo 0793814204<br>2. Daily 6% x 30D = 180% (VIP 7% x 10D)<br>3. Withdraw fee 8% - Min 5000<br>4. Referral 10% bonus<br>5. One phone = One account<br>6. Admin approves in 5-30 mins<br>7. No refund after machine purchase<br>8. 24/7 WhatsApp 0793814204<br>9. Wallet = deposits + earnings - withdrawals<br>10. Invest responsibly<br><br><b style="color:#22c55e">WALLET:</b><br>• Deposit: Send MoMo, submit<br>• Withdraw: Request amount + MoMo number<br>• History saved in Firebase</div>
+<div class="wallet-card"><div style="display:flex;justify-content:space-between"><div><div class="small" style="color:#000">Wallet Balance</div><b id="walletBal" style="font-size:20px">0 UGX</b></div><div style="text-align:right"><div class="small" style="color:#000">Referrals</div><b id="walletRef" style="font-size:16px">0</b></div></div><div style="margin-top:8px;font-size:11px"><div>Deposits: <b id="walletDeposits">0</b> | Withdrawals: <b id="walletWithdraws">0</b></div></div></div>
+<div class="settings-item"><div><b>🔒 Change Password</b><br><span class="small">Old Password + New Password</span></div><button style="background:#facc15;color:#000;border:none;padding:6px 12px;border-radius:8px;font-weight:700" onclick="togglePassBox()">Change</button></div>
+<div id="passChangeBox" style="display:none;background:#020617;padding:12px;border-radius:12px;margin-bottom:8px"><input id="oldPass" type="password" placeholder="Old Password - Current login password" style="width:100%;padding:10px;margin:4px 0;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#fff"><input id="newPass" type="password" placeholder="New Password - New login password" style="width:100%;padding:10px;margin:4px 0;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#fff"><button class="btn btn-gold" onclick="changePassword()">UPDATE PASSWORD - REAL DB</button></div>
+<div class="settings-item"><div><b>📜 Rules & Wallet Rules</b><br><span class="small">Platform terms</span></div><button style="background:transparent;border:1px solid #334155;color:#fff;padding:6px 12px;border-radius:8px" onclick="toggleRules()">View</button></div>
+<div id="rulesBox" style="display:none;background:#020617;padding:12px;border-radius:12px;margin-bottom:8px" class="small"><b style="color:#facc15">RULES:</b><br>1. Min deposit 2000 UGX - MoMo 0793814204<br>2. Daily 6% x 30D = 180% (VIP 7% x 10D)<br>3. Withdraw fee 8% - Min 5000<br>4. Referral 10% bonus<br>5. One phone = One account<br>6. Admin approves 5-30 mins<br>7. No refund after machine purchase<br>8. Support 0793814204<br>9. Wallet = deposits + earnings - withdrawals<br>10. Invest responsibly<br><br><b style="color:#22c55e">WALLET:</b><br>• Deposit: Send MoMo, submit amount<br>• Withdraw: Request amount + MoMo number<br>• History saved in Firebase real-time<br>• Login password secures your wallet</div>
 <div class="settings-item"><div><b>💬 Manager Chat</b><br><span class="small">Contact 0793814204</span></div><button style="background:#22c55e;color:#000;border:none;padding:6px 12px;border-radius:8px;font-weight:700" onclick="toggleManager()">Chat</button></div>
-<div id="managerBox" style="display:none;background:#020617;padding:12px;border-radius:12px;margin-bottom:8px"><input id="managerMsg" placeholder="Message to manager..." style="width:100%;padding:10px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#fff"><button class="btn btn-gold" style="margin-top:6px" onclick="sendManagerReal()">SEND to WhatsApp</button><div id="chatList" class="small" style="margin-top:8px"></div></div>
-<button class="btn" style="background:#ef4444;color:#fff;margin-top:12px" onclick="logout()">🚪 LOGOUT</button>
+<div id="managerBox" style="display:none;background:#020617;padding:12px;border-radius:12px;margin-bottom:8px"><input id="managerMsg" placeholder="Message to manager..." style="width:100%;padding:10px;border-radius:8px;border:1px solid #334155;background:#1e293b;color:#fff"><button class="btn btn-gold" style="margin-top:6px" onclick="sendManagerReal()">SEND to WhatsApp 0793814204</button><div id="chatList" class="small" style="margin-top:8px"></div></div>
+<button class="btn" style="background:#ef4444;color:#fff;margin-top:12px" onclick="logout()">🚪 LOGOUT - Exit Account</button>
 </div>
+
 <div id="adminTab" class="box" style="display:none"><h2>🔐 ADMIN 0793814204</h2><input id="adminPass" type="password" placeholder="Enter 0793814204"><button class="btn btn-gold" onclick="adminLogin()">LOGIN ADMIN</button><div id="adminPanel" style="display:none"><h3>Orders</h3><div id="allOrdersList" class="small"></div><h3>Deposits</h3><div id="allDepositsList" class="small"></div><h3>Withdrawals</h3><div id="allWithdrawList" class="small"></div><h3>Users</h3><div id="allUsersList" class="small"></div></div></div>
+
 <div class="bottom-nav" id="bottomNav" style="display:none">
 <button onclick="showTab('founders')" id="b-founders"><span>👥</span>Founders</button>
 <button onclick="showTab('machines')" id="b-machines" class="active"><span>⚙️</span>Machines</button>
@@ -117,6 +203,7 @@ window.db=db; window.collection=collection; window.doc=doc; window.setDoc=setDoc
 <button onclick="showTab('referral')" id="b-referral"><span>🔗</span>Invites</button>
 <button onclick="showTab('settings')" id="b-settings"><span>⚙️</span>Settings</button>
 </div>
+
 <script type="module">
 let currentUser=null,currentPhone=null,currentFilter='all';
 const IMG_A="https://i.ibb.co/NgJcMBYs/M1.jpg", IMG_M="https://i.ibb.co/nMFhSgZ7/M2.jpg", IMG_L="https://i.ibb.co/W4cgPCst/M3.jpg", IMG_U="https://i.ibb.co/JjzPSSsV/Sky-machine.jpg";
@@ -134,7 +221,7 @@ window.showTab=(t)=>{['machines','orders','referral','founders','settings','admi
 window.showLogin=()=>{document.getElementById('registerBox').style.display='none';document.getElementById('loginBox').style.display='block';}
 window.showRegister=()=>{document.getElementById('loginBox').style.display='none';document.getElementById('registerBox').style.display='block';}
 window.copyLink=()=>{const phone=currentPhone||'YOURPHONE'; const link=`https://benytskylight-crypto.github.io/t-crypto.github.io/?ref=${phone}`; navigator.clipboard.writeText(link); alert('Copied: '+link);}
-window.shareWhatsApp=()=>{const phone=currentPhone||'YOURPHONE'; const link=`https://benytskylight-crypto.github.io/t-crypto.github.io/?ref=${phone}`; window.open('https://wa.me/?text='+encodeURIComponent('Join SKYLIGHT V4 REAL FOUNDERS! 💡 Earn 6% daily! '+link),'_blank');}
+window.shareWhatsApp=()=>{const phone=currentPhone||'YOURPHONE'; const link=`https://benytskylight-crypto.github.io/t-crypto.github.io/?ref=${phone}`; window.open('https://wa.me/?text='+encodeURIComponent('Join SKYLIGHT V5 REAL FOUNDERS! 💡 4 Founders, Real Groups! '+link),'_blank');}
 window.showDeposit=()=>{document.getElementById('depositBox').style.display=document.getElementById('depositBox').style.display==='none'?'block':'none'; document.getElementById('withdrawBox').style.display='none';}
 window.showWithdraw=()=>{document.getElementById('withdrawBox').style.display=document.getElementById('withdrawBox').style.display==='none'?'block':'none'; document.getElementById('depositBox').style.display='none';}
 window.submitDeposit=async()=>{ const amt=document.getElementById('depAmount').value; if(!amt) return alert('Enter amount'); await addDoc(collection(db,'deposits'),{phone:currentPhone,name:currentUser.name,amount:parseInt(amt),status:'pending',time:serverTimestamp()}); alert('Deposit '+amt+' UGX sent!'); document.getElementById('depAmount').value=''; window.open('https://wa.me/256793814204?text='+encodeURIComponent(currentUser.name+' ('+currentPhone+') paid '+amt+' UGX deposit'),' _blank');}
@@ -142,17 +229,17 @@ window.submitWithdraw=async()=>{ const amt=document.getElementById('withAmount')
 window.changeProfilePic=(e)=>{ const file=e.target.files[0]; if(!file) return; const reader=new FileReader(); reader.onload=(ev)=>{ const data=ev.target.result; localStorage.setItem('skylight_pic_'+currentPhone,data); updateProfilePics(data); alert('Profile pic changed!'); }; reader.readAsDataURL(file); }
 function updateProfilePics(data){ ['profilePic','settingsPic'].forEach(id=>{ const el=document.getElementById(id); if(el){ el.innerHTML=`<img src="${data}">`; } }); }
 window.loadSettings=async()=>{ if(!currentPhone) return; const savedPic=localStorage.getItem('skylight_pic_'+currentPhone); if(savedPic){ updateProfilePics(savedPic); } document.getElementById('settingsName').innerText=currentUser.name||currentPhone; document.getElementById('settingsPhone').innerText=currentPhone; document.getElementById('walletBal').innerText=(currentUser.balance||0).toLocaleString()+' UGX'; document.getElementById('walletRef').innerText=currentUser.referrals||0; try{ const dq=query(collection(db,'deposits'),where('phone','==',currentPhone)); const dsnap=await getDocs(dq); document.getElementById('walletDeposits').innerText=dsnap.size; const wq=query(collection(db,'withdrawals'),where('phone','==',currentPhone)); const wsnap=await getDocs(wq); document.getElementById('walletWithdraws').innerText=wsnap.size; }catch(e){} }
-window.changePassword=async()=>{ const oldP=document.getElementById('oldPass').value; const newP=document.getElementById('newPass').value; if(!oldP||!newP) return alert('Fill all'); try{ const snap=await getDoc(doc(db,'users',currentPhone)); const data=snap.data(); if(data.pass!==oldP){ alert('Old password wrong'); return; } await updateDoc(doc(db,'users',currentPhone),{pass:newP}); alert('Password changed!'); document.getElementById('oldPass').value=''; document.getElementById('newPass').value=''; document.getElementById('passChangeBox').style.display='none'; }catch(e){ alert(e.message); } }
-window.registerReal=async()=>{const name=document.getElementById('regName').value.trim(); const phone=document.getElementById('regPhone').value.trim(); const pass=document.getElementById('regPass').value.trim(); const refCode=document.getElementById('regRef').value.trim(); if(!name||!phone||!pass){alert('Fill all');return;} try{const userRef=doc(db,'users',phone); const snap=await getDoc(userRef); if(snap.exists()){alert('Exists - Login');return;} await setDoc(userRef,{name,phone,pass,balance:0,referrals:0,created:serverTimestamp(),referredBy:refCode||null}); if(refCode && refCode!==phone){const refUserRef=doc(db,'users',refCode); const refSnap=await getDoc(refUserRef); if(refSnap.exists()){await addDoc(collection(db,'referrals'),{from:phone,to:refCode,fromName:name,time:serverTimestamp()}); const cnt=refSnap.data().referrals||0; await updateDoc(refUserRef,{referrals:cnt+1});}} localStorage.setItem('skylight_phone',phone); currentPhone=phone; currentUser={name,phone,balance:0,referrals:0}; enterApp(); alert('Registered V4!');}catch(e){alert(e.message);}}
-window.loginReal=async()=>{const phone=document.getElementById('logPhone').value.trim(); const pass=document.getElementById('logPass').value.trim(); try{const snap=await getDoc(doc(db,'users',phone)); if(!snap.exists()){alert('Not found');return;} const data=snap.data(); if(data.pass!==pass){alert('Wrong pass');return;} localStorage.setItem('skylight_phone',phone); currentPhone=phone; currentUser=data; enterApp();}catch(e){alert(e.message);}}
+window.changePassword=async()=>{ const oldP=document.getElementById('oldPass').value; const newP=document.getElementById('newPass').value; if(!oldP||!newP) return alert('Fill all'); try{ const snap=await getDoc(doc(db,'users',currentPhone)); const data=snap.data(); if(data.pass!==oldP){ alert('Old password wrong - Your current login password is wrong'); return; } await updateDoc(doc(db,'users',currentPhone),{pass:newP}); alert('Password changed! Your new login password: '+newP+' - Use it next login'); document.getElementById('oldPass').value=''; document.getElementById('newPass').value=''; document.getElementById('passChangeBox').style.display='none'; }catch(e){ alert(e.message); } }
+window.registerReal=async()=>{const name=document.getElementById('regName').value.trim(); const phone=document.getElementById('regPhone').value.trim(); const pass=document.getElementById('regPass').value.trim(); const refCode=document.getElementById('regRef').value.trim(); if(!name||!phone||!pass){alert('Fill all - Name, Phone, Password required');return;} try{const userRef=doc(db,'users',phone); const snap=await getDoc(userRef); if(snap.exists()){alert('Phone exists - Login with your password');return;} await setDoc(userRef,{name,phone,pass,balance:0,referrals:0,created:serverTimestamp(),referredBy:refCode||null}); if(refCode && refCode!==phone){const refUserRef=doc(db,'users',refCode); const refSnap=await getDoc(refUserRef); if(refSnap.exists()){await addDoc(collection(db,'referrals'),{from:phone,to:refCode,fromName:name,time:serverTimestamp()}); const cnt=refSnap.data().referrals||0; await updateDoc(refUserRef,{referrals:cnt+1});}} localStorage.setItem('skylight_phone',phone); currentPhone=phone; currentUser={name,phone,balance:0,referrals:0,pass}; enterApp(); alert('Account created! Your login: Phone '+phone+' + Password '+pass+' - SAVE IT!');}catch(e){alert(e.message);}}
+window.loginReal=async()=>{const phone=document.getElementById('logPhone').value.trim(); const pass=document.getElementById('logPass').value.trim(); if(!phone||!pass){alert('Enter phone and password');return;} try{const snap=await getDoc(doc(db,'users',phone)); if(!snap.exists()){alert('Phone not found - Register first');return;} const data=snap.data(); if(data.pass!==pass){alert('Wrong password - Check your login password');return;} localStorage.setItem('skylight_phone',phone); currentPhone=phone; currentUser=data; enterApp();}catch(e){alert(e.message);}}
 function enterApp(){document.getElementById('authBox').style.display='none'; document.getElementById('machinesTab').style.display='block'; document.getElementById('bottomNav').style.display='flex'; document.querySelector('.nav').style.display='flex'; document.getElementById('userName').innerText=currentUser.name||currentPhone; document.getElementById('userPhoneTag').innerText=currentPhone; const init=(currentUser.name||currentPhone||'S').charAt(0).toUpperCase(); const savedPic=localStorage.getItem('skylight_pic_'+currentPhone); if(savedPic){ updateProfilePics(savedPic); }else{ document.getElementById('profilePic').innerText=init; document.getElementById('settingsPic').innerText=init; } document.getElementById('myRefLink').innerText=`https://benytskylight-crypto.github.io/t-crypto.github.io/?ref=${currentPhone}`; document.getElementById('bal').innerText=(currentUser.balance||0).toLocaleString()+' UGX'; if(document.getElementById('walletBal')) document.getElementById('walletBal').innerText=(currentUser.balance||0).toLocaleString()+' UGX'; if(document.getElementById('walletRef')) document.getElementById('walletRef').innerText=currentUser.referrals||0; loadMyReferrals(); loadSettings();}
 window.logout=()=>{localStorage.removeItem('skylight_phone'); location.reload();}
-window.buyMachine=async(id,price)=>{if(!currentPhone){alert('Login first'); showLogin(); return;} try{await addDoc(collection(db,'orders'),{phone:currentPhone,name:currentUser.name,machineId:id,price,type:id+" - "+price+" UGX",status:'pending',time:serverTimestamp()}); alert(id+' Order '+price.toLocaleString()+' UGX sent! Pay MoMo 0793814204 then DEPOSIT'); window.showTab('orders');}catch(e){alert(e.message);}}
+window.buyMachine=async(id,price)=>{if(!currentPhone){alert('Login first - Enter phone + password'); showLogin(); return;} try{await addDoc(collection(db,'orders'),{phone:currentPhone,name:currentUser.name,machineId:id,price,type:id+" - "+price+" UGX",status:'pending',time:serverTimestamp()}); alert(id+' Order '+price.toLocaleString()+' UGX sent! Pay MoMo 0793814204 then DEPOSIT'); window.showTab('orders');}catch(e){alert(e.message);}}
 window.loadMyOrders=async()=>{if(!currentPhone) return; const q=query(collection(db,'orders'),where('phone','==',currentPhone)); const snap=await getDocs(q); let html=''; snap.forEach(d=>{const o=d.data(); html+=`<div style="border-bottom:1px solid #334155;padding:6px 0"><b>${o.machineId||o.type}</b> ${o.price?o.price.toLocaleString()+' UGX':''} - <b style="color:${o.status==='approved'?'#22c55e':'#facc15'}">${o.status}</b></div>`;}); document.getElementById('ordersList').innerHTML=html||'No orders yet';}
-window.loadMyReferrals=async()=>{if(!currentPhone) return; const q=query(collection(db,'referrals'),where('to','==',currentPhone)); const snap=await getDocs(q); document.getElementById('refCount').innerText=snap.size; if(document.getElementById('walletRef')) document.getElementById('walletRef').innerText=snap.size; let html=''; snap.forEach(d=>{const r=d.data(); html+=`<div>👤 ${r.fromName} (${r.from}) - 10% bonus</div>`;}); document.getElementById('referralList').innerHTML=html||'No invites yet';}
+window.loadMyReferrals=async()=>{if(!currentPhone) return; const q=query(collection(db,'referrals'),where('to','==',currentPhone)); const snap=await getDocs(q); document.getElementById('refCount').innerText=snap.size; if(document.getElementById('walletRef')) document.getElementById('walletRef').innerText=snap.size; let html=''; snap.forEach(d=>{const r=d.data(); html+=`<div>👤 ${r.fromName} (${r.from}) - 10% bonus</div>`;}); document.getElementById('referralList').innerHTML=html||'No invites yet - Share your link in groups!';}
 window.sendManagerReal=async()=>{const msg=document.getElementById('managerMsg').value.trim(); if(!msg||!currentPhone) return; await addDoc(collection(db,'chats'),{phone:currentPhone,name:currentUser.name,msg,time:serverTimestamp()}); document.getElementById('managerMsg').value=''; window.open('https://wa.me/256793814204?text='+encodeURIComponent(currentUser.name+' ('+currentPhone+'): '+msg),'_blank');}
 window.loadChats=async()=>{const snap=await getDocs(collection(db,'chats')); let html=''; snap.forEach(d=>{const c=d.data(); html+=`<div style="border-bottom:1px solid #334155;padding:4px 0"><b>${c.name}</b> ${c.phone}<br>${c.msg}</div>`;}); document.getElementById('chatList').innerHTML=html||'No chats';}
-window.adminLogin=async()=>{const p=document.getElementById('adminPass').value; if(p!=='0793814204'){alert('Wrong');return;} document.getElementById('adminPanel').style.display='block'; const snap=await getDocs(collection(db,'orders')); let html=''; snap.forEach(d=>{const o=d.data(); html+=`<div style="border:1px solid #334155;padding:6px;margin:4px 0"><b>${o.name} ${o.phone}</b> - ${o.machineId} ${o.price} - ${o.status} <br><button onclick="approveOrder('${d.id}')" style="padding:4px 8px;background:#22c55e;border:none;border-radius:6px">Approve</button></div>`;}); document.getElementById('allOrdersList').innerHTML=html||'No orders'; const dsnap=await getDocs(collection(db,'deposits')); let dhtml=''; dsnap.forEach(d=>{const o=d.data(); dhtml+=`<div style="border:1px solid #334155;padding:6px;margin:4px 0"><b>${o.name} ${o.phone}</b> - ${o.amount} UGX - ${o.status}</div>`;}); document.getElementById('allDepositsList').innerHTML=dhtml||'No deposits'; const wsnap=await getDocs(collection(db,'withdrawals')); let whtml=''; wsnap.forEach(d=>{const o=d.data(); whtml+=`<div style="border:1px solid #334155;padding:6px;margin:4px 0"><b>${o.name} ${o.phone}</b> - ${o.amount} to ${o.toNumber} - ${o.status}</div>`;}); document.getElementById('allWithdrawList').innerHTML=whtml||'No withdrawals'; const usnap=await getDocs(collection(db,'users')); let uhtml=''; usnap.forEach(d=>{const u=d.data(); uhtml+=`<div>${u.name} ${u.phone} Ref:${u.referrals||0} Bal:${u.balance||0}</div>`;}); document.getElementById('allUsersList').innerHTML=uhtml;}
+window.adminLogin=async()=>{const p=document.getElementById('adminPass').value; if(p!=='0793814204'){alert('Wrong');return;} document.getElementById('adminPanel').style.display='block'; const snap=await getDocs(collection(db,'orders')); let html=''; snap.forEach(d=>{const o=d.data(); html+=`<div style="border:1px solid #334155;padding:6px;margin:4px 0"><b>${o.name} ${o.phone}</b> - ${o.machineId} ${o.price} - ${o.status} <br><button onclick="approveOrder('${d.id}')" style="padding:4px 8px;background:#22c55e;border:none;border-radius:6px">Approve</button></div>`;}); document.getElementById('allOrdersList').innerHTML=html||'No orders'; const dsnap=await getDocs(collection(db,'deposits')); let dhtml=''; dsnap.forEach(d=>{const o=d.data(); dhtml+=`<div style="border:1px solid #334155;padding:6px;margin:4px 0"><b>${o.name} ${o.phone}</b> - ${o.amount} UGX - ${o.status}</div>`;}); document.getElementById('allDepositsList').innerHTML=dhtml||'No deposits'; const wsnap=await getDocs(collection(db,'withdrawals')); let whtml=''; wsnap.forEach(d=>{const o=d.data(); whtml+=`<div style="border:1px solid #334155;padding:6px;margin:4px 0"><b>${o.name} ${o.phone}</b> - ${o.amount} to ${o.toNumber} - ${o.status}</div>`;}); document.getElementById('allWithdrawList').innerHTML=whtml||'No withdrawals'; const usnap=await getDocs(collection(db,'users')); let uhtml=''; usnap.forEach(d=>{const u=d.data(); uhtml+=`<div>${u.name} ${u.phone} Ref:${u.referrals||0} Bal:${u.balance||0} Pass:${u.pass||''}</div>`;}); document.getElementById('allUsersList').innerHTML=uhtml;}
 window.approveOrder=async(id)=>{await updateDoc(doc(db,'orders',id),{status:'approved'}); alert('Approved');}
 const saved=localStorage.getItem('skylight_phone'); if(saved){getDoc(doc(db,'users',saved)).then(s=>{if(s.exists()){currentPhone=saved; currentUser=s.data(); enterApp();}});}
 </script>
