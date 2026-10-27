@@ -3,44 +3,43 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Skylight Uganda - Premium Admire V19</title>
+<title>Skylight - Admire V19.1 Fixed</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#0b1120;color:#e2e8f0;font-family:system-ui;padding-bottom:90px}
-.header{text-align:center;padding:16px 10px;background:#0f172a}
-.logo{width:70px;height:70px;background:#facc15;border-radius:50%;margin:0 auto;display:flex;align-items:center;justify-content:center;font-size:36px;box-shadow:0 0 20px #facc1580}
-.top-tabs{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:12px}
-.pill{padding:8px 14px;border-radius:20px;background:#1e293b;border:none;color:#94a3b8;font-size:11px;font-weight:700}
+body{margin:0;background:#0b1120;color:#e2e8f0;font-family:system-ui;padding-bottom:85px}
+.header{text-align:center;padding:14px 10px;background:#0f172a}
+.logo{width:68px;height:68px;background:#facc15;border-radius:50%;margin:0 auto;display:flex;align-items:center;justify-content:center;font-size:34px}
+.top-tabs{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin-top:10px}
+.pill{padding:7px 13px;border-radius:20px;background:#1e293b;border:none;color:#94a3b8;font-size:11px;font-weight:700}
 .pill.active{background:#facc15;color:#000}
 .card{background:#131c2f;margin:10px;border-radius:18px;padding:14px;border:1px solid #1e293b}
 .green-card{background:#22c55e;border-radius:14px;padding:12px;display:flex;justify-content:space-between;align-items:center;color:#fff}
 .machine-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .machine-box{background:#0f172a;border-radius:14px;overflow:hidden;border:1px solid #1e293b}
-.machine-img{height:130px;background:#000;display:flex;align-items:center;justify-content:center;color:#facc15;font-weight:900}
-.machine-info{padding:8px}
-.yellow-tag{background:#facc15;color:#000;font-size:9px;padding:3px 7px;border-radius:10px;font-weight:800;display:inline-block}
+.machine-img{height:125px;background:#000;display:flex;align-items:center;justify-content:center;color:#22d3ee;font-weight:900}
 .btn{width:100%;padding:12px;background:#facc15;color:#000;border:none;border-radius:10px;font-weight:800;margin-top:8px}
 .btn-green{background:#22c55e;color:#fff}
-.btn-dark{background:#1e293b;color:#94a3b8}
 .small{color:#64748b;font-size:11px}
 input{width:100%;padding:12px;border-radius:10px;border:none;background:#0f172a;color:#fff;margin:6px 0}
-.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#0f172a;display:flex;justify-content:space-around;padding:8px 0 10px;border-top:1px solid #1e293b;z-index:999}
-.nav-item{font-size:9px;color:#475569;text-align:center;flex:1}
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#0f172a;display:flex;justify-content:space-around;padding:10px 0 12px;border-top:1px solid #1e293b;z-index:999}
+.nav-item{font-size:10px;color:#475569;text-align:center;flex:1;line-height:1.2}
 .nav-item.active{color:#facc15}
 .tab-content{display:none}
 .tab-content.active{display:block}
-.avatar{width:60px;height:60px;background:#facc15;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-weight:900;font-size:22px;position:relative}
-.avatar .tick{position:absolute;bottom:-2px;right:-2px;background:#22c55e;width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;border:2px solid #131c2f}
+.avatar{width:58px;height:58px;background:#facc15;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-weight:900;font-size:20px;position:relative}
 .stat-row{display:flex;justify-content:space-between;background:#0f172a;padding:10px;border-radius:10px;margin:6px 0}
 .pending{background:#facc15;color:#000;font-size:9px;padding:2px 6px;border-radius:8px;margin-left:6px}
+.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:#1e293b;color:#fff;padding:10px 18px;border-radius:20px;font-size:12px;z-index:10000;display:none;border:1px solid #facc15}
 </style>
 </head>
 <body>
 
+<div id="toast" class="toast">Copied to clipboard</div>
+
 <div class="header">
 <div class="logo">💡</div>
-<h2 style="margin:8px 0 0;color:#facc15;letter-spacing:2px">SKYLIGHT</h2>
-<div class="small" style="letter-spacing:2px">UGANDA • AI EARNING PLATFORM • ADMIRE EDITION</div>
+<h2 style="margin:6px 0 0;color:#facc15;letter-spacing:2px">SKYLIGHT</h2>
+<div class="small" style="letter-spacing:1.5px">UGANDA • AI EARNING PLATFORM • ADMIRE EDITION</div>
 <div class="top-tabs">
 <button class="pill active" onclick="openTab('machines')">MACHINES</button>
 <button class="pill" onclick="openTab('group')">GROUP</button>
@@ -53,207 +52,75 @@ input{width:100%;padding:12px;border-radius:10px;border:none;background:#0f172a;
 </div>
 </div>
 
-<!-- MACHINES TAB - EXACT AS SCREENSHOT -->
 <div id="machines" class="tab-content active">
 <div class="card">
 <div style="display:flex;gap:12px;align-items:center">
-<div class="avatar">S<div class="tick">✓</div></div>
-<div style="flex:1">
-<div style="font-weight:800">SKYLIGHT USER</div>
-<div class="small" id="userMask">Mul****son • Verified • Premium</div>
-<div style="display:flex;gap:6px;margin-top:4px">
-<span class="yellow-tag" style="background:#0f3a2a;color:#22c55e;border:1px solid #22c55e">✓ VERIFIED</span>
-<span class="yellow-tag">★ PREMIUM</span>
-</div>
-</div>
+<div class="avatar">S</div>
+<div style="flex:1"><div style="font-weight:800">SKYLIGHT USER</div><div class="small" id="uMask">Mul****son • Verified • Premium</div></div>
 <div style="text-align:right"><div class="small">Balance</div><b style="color:#facc15">0 UGX</b><div class="small" style="color:#22c55e">+0 /day</div></div>
 </div>
-
-<div class="green-card" style="margin-top:14px">
-<div><div class="small" style="color:#fff">Daily Earning • AI Powered</div><b>0 UGX /day</b><div class="small" style="color:#dcfce7">No active machines • Premium</div></div>
-<div style="background:#fff;color:#166534;padding:8px 14px;border-radius:20px;font-weight:800;font-size:12px">No machines</div>
+<div class="green-card" style="margin-top:12px"><div><div class="small" style="color:#fff">Daily Earning • AI Powered</div><b>0 UGX /day</b><div class="small" style="color:#dcfce7">No active machines • Premium</div></div><div style="background:#fff;color:#166534;padding:7px 12px;border-radius:20px;font-weight:800;font-size:11px">No machines</div></div>
 </div>
-</div>
-
-<div style="padding:0 10px">
-<div class="machine-grid">
-<div class="machine-box">
-<div class="machine-img" style="background:radial-gradient(#1e293b,#000)"> <span style="border:1px solid #22d3ee;padding:6px;background:#000;color:#22d3ee;font-size:12px">SKY AI</span> </div>
-<div class="machine-info"><span class="yellow-tag">A • PREMIUM</span><div style="font-weight:800;margin-top:6px">A-MACHINE 1</div><div style="color:#facc15;font-weight:900">2,000 UGX</div><div class="small" style="color:#22c55e">120 UGX/day x 30D • AI • Premium</div><button class="btn" onclick="buyMachine('A1')">Buy</button></div>
-</div>
-<div class="machine-box">
-<div class="machine-img" style="background:#e2e8f0;color:#000"><div style="background:#fff;padding:20px;border-radius:10px;box-shadow:0 0 10px #22d3ee inset">SKY AI</div></div>
-<div class="machine-info"><span class="yellow-tag">M • PREMIUM</span><div style="font-weight:800;margin-top:6px">M-MACHINE 1</div><div style="color:#facc15;font-weight:900">2,000 UGX</div><div class="small" style="color:#22c55e">120 UGX/day x 30D • AI • Premium</div><button class="btn" onclick="buyMachine('M1')">Buy</button></div>
-</div>
-<div class="machine-box">
-<div class="machine-img" style="background:#000">L SKY</div>
-<div class="machine-info"><span class="yellow-tag">L • PREMIUM</span><div style="font-weight:800">L-MACHINE 1</div><div style="color:#facc15;font-weight:900">5,000 UGX</div><div class="small">300/day x 30D</div><button class="btn" onclick="buyMachine('L1')">Buy</button></div>
-</div>
-<div class="machine-box">
-<div class="machine-img" style="background:#000">U SKY AI</div>
-<div class="machine-info"><span class="yellow-tag">U • PREMIUM</span><div style="font-weight:800">U-MACHINE 1</div><div style="color:#facc15;font-weight:900">10,000 UGX</div><div class="small">650/day x 30D</div><button class="btn" onclick="buyMachine('U1')">Buy</button></div>
-</div>
-</div>
-</div>
+<div style="padding:0 10px"><div class="machine-grid">
+<div class="machine-box"><div class="machine-img">SKY AI - A</div><div style="padding:8px"><span style="background:#facc15;color:#000;font-size:9px;padding:3px 6px;border-radius:8px;font-weight:800">A • PREMIUM</span><div style="font-weight:800;margin-top:4px">A-MACHINE 1</div><div style="color:#facc15;font-weight:900">2,000 UGX</div><div class="small" style="color:#22c55e">120/day x 30D • AI</div><button class="btn" onclick="buy('A1')">Buy</button></div></div>
+<div class="machine-box"><div class="machine-img" style="color:#fff">SKY AI - M</div><div style="padding:8px"><span style="background:#facc15;color:#000;font-size:9px;padding:3px 6px;border-radius:8px;font-weight:800">M • PREMIUM</span><div style="font-weight:800;margin-top:4px">M-MACHINE 1</div><div style="color:#facc15;font-weight:900">2,000 UGX</div><div class="small" style="color:#22c55e">120/day x 30D • AI</div><button class="btn" onclick="buy('M1')">Buy</button></div></div>
+</div></div>
 </div>
 
-<!-- GROUP TAB -->
 <div id="group" class="tab-content">
-<div class="card">
-<h4 style="margin:0">Groups • Premium</h4>
-<div style="display:flex;justify-content:space-between;margin-top:10px">
-<div><div class="small">Balance</div><b style="color:#facc15">0 UGX</b><div class="small" style="color:#22c55e">+0 /day</div></div>
-<div style="text-align:right"><div class="small">Team</div><b id="groupTeam">0</b></div>
+<div class="card"><h4 style="margin:0">Groups • Premium</h4><div style="display:flex;justify-content:space-between;margin-top:8px"><div><div class="small">Balance</div><b style="color:#facc15">0 UGX</b><div class="small" style="color:#22c55e">+0 /day</div></div><div><div class="small">Team</div><b id="gTeam">0</b></div></div><div style="margin-top:12px;background:#0f172a;padding:12px;border-radius:12px"><div style="font-weight:700">💰 Deposit • MTN MoMo</div><div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px"><div><div class="small">Send to</div><b style="color:#facc15">0793814204</b></div><button style="background:#22c55e;color:#fff;border:none;padding:8px 14px;border-radius:20px;font-weight:800" onclick="copyMoMo()">Copy</button></div><div style="display:flex;gap:8px;margin-top:8px"><input id="depAmt" placeholder="Amount UGX" style="flex:1"><button style="background:#22c55e;color:#fff;border:none;padding:10px 16px;border-radius:20px;font-weight:800" onclick="paid()">I Paid ✓</button></div><div style="margin-top:8px"><b style="font-size:12px">Deposit History</b><div class="small">No deposits yet • Premium</div></div></div></div>
 </div>
 
-<div style="margin-top:12px;background:#0f172a;padding:12px;border-radius:12px">
-<div style="font-weight:700">💰 Deposit • MTN MoMo</div>
-<div style="display:flex;justify-content:space-between;align-items:center;margin-top:8px">
-<div><div class="small">Send to</div><b style="color:#facc15">0793814204</b></div>
-<button style="background:#22c55e;color:#fff;border:none;padding:8px 14px;border-radius:20px;font-weight:800" onclick="navigator.clipboard.writeText('0793814204');alert('Copied 0793814204')">Copy</button>
-</div>
-<div style="display:flex;gap:8px;margin-top:8px">
-<input id="depAmt" placeholder="Amount UGX" style="flex:1">
-<button class="btn-green" style="padding:10px 16px;border-radius:20px;border:none;font-weight:800;color:#fff" onclick="paid()">I Paid ✓</button>
-</div>
-<div style="margin-top:10px"><b style="font-size:12px">Deposit History</b><div class="small">No deposits yet • Premium</div></div>
-</div>
-
-<div style="margin-top:12px">
-<div style="font-weight:700">⚙️ My Machines</div>
-<div class="stat-row"><span>VIP1 - 2000 UGX <span class="pending">PENDING</span></span><span class="small">140 UGX/day • Premium</span></div>
-<div class="stat-row"><span>M1 - 2000 UGX <span class="pending">PENDING</span></span><span class="small">120 UGX/day • Premium</span></div>
-<div class="stat-row"><span>VIP1 - 2000 UGX <span class="pending">PENDING</span></span><span class="small">140 UGX/day • Premium</span></div>
-</div>
-</div>
-<div class="card">
-<h4>My Team • 10% Bonus</h4>
-<div id="myTeamList" class="small">No team yet - Use TEAM tab Copy Link</div>
-</div>
-</div>
-
-<!-- WITHDRAW TAB - EXACT -->
 <div id="withdraw" class="tab-content">
-<div class="card">
-<div style="display:flex;justify-content:space-between"><span class="small">Balance</span><b style="color:#22c55e">0 UGX</b></div>
-<input placeholder="Amount • Min 1000 UGX" id="wAmt2">
-<input id="wName" value="Mulyatha Benson" placeholder="Name">
-<div class="small" style="margin:6px 0">✓ Min 1000 UGX • ✓ 0% Fee • ✓ ~10 min • ✓ Premium Fast</div>
-<button class="btn-green btn" onclick="doWithdrawPremium()">Withdraw Now • Premium</button>
-</div>
-<div class="card">
-<h4>History • Premium</h4>
-<div style="background:#0f172a;padding:10px;border-radius:10px"><div class="small">No withdrawals yet • Premium</div></div>
-</div>
+<div class="card"><div style="display:flex;justify-content:space-between"><span class="small">Balance</span><b style="color:#22c55e">0 UGX</b></div><input placeholder="Amount • Min 1000 UGX" id="wAmt"><input id="wName" value="Mulyatha Benson"><div class="small" style="margin:6px 0">✓ Min 1000 • ✓ 0% Fee • ✓ ~10 min • ✓ Premium Fast</div><button class="btn-green btn" onclick="withdrawNow()">Withdraw Now • Premium</button></div>
+<div class="card"><h4>History • Premium</h4><div style="background:#0f172a;padding:10px;border-radius:10px"><div class="small">No withdrawals yet • Premium</div></div></div>
 </div>
 
-<!-- TEAM TAB - INVITE WITH COPY LINK -->
 <div id="team" class="tab-content">
-<div class="card" style="text-align:center">
-<div style="font-size:28px">☀️</div>
-<div style="color:#facc15;font-weight:900">TEAM • 5 FOUNDERS GOLD</div>
-<div class="small">Admire Edition • 10% Bonus • Copy Link Working</div>
-<div style="display:flex;justify-content:space-between;margin-top:10px">
-<div class="small">Team: <b id="teamCount" style="color:#facc15">0</b></div>
-<div class="small">Code: <b id="goldCode" style="color:#22c55e">5FOUNDERS-GOLD</b></div>
-</div>
-<div style="background:#0f172a;padding:10px;border-radius:10px;margin-top:10px;word-break:break-all">
-<div class="small" style="color:#22c55e" id="inviteLink">https://benytskylight-crypto.github.io/t-crypto.github.io/?ref=5FOUNDERS-GOLD</div>
-</div>
-<button class="btn" onclick="copyInvite()">📋 Copy Link • Earn 10%</button>
-<button class="btn" style="background:#25D366;color:#fff" onclick="shareWA()">Share WhatsApp</button>
-<div style="margin-top:12px;background:#0f172a;padding:12px;border-radius:12px;border:1px solid #22c55e">
-<div class="small">Official MoMo</div>
-<div style="display:flex;justify-content:space-between;align-items:center"><b style="color:#facc15;font-size:20px">0793814204</b><button onclick="navigator.clipboard.writeText('0793814204');alert('Copied 0793814204')" style="background:#22c55e;border:none;color:#fff;padding:6px 12px;border-radius:8px;font-weight:800">Copy</button></div>
-</div>
-</div>
+<div class="card" style="text-align:center"><div style="font-size:28px">☀️</div><div style="color:#facc15;font-weight:900">TEAM • 5 FOUNDERS GOLD</div><div class="small">Admire Edition • 10% Bonus</div><div style="background:#0f172a;padding:10px;border-radius:10px;margin-top:10px;word-break:break-all"><div class="small" style="color:#22c55e" id="invLink">https://benytskylight-crypto.github.io/t-crypto.github.io/?ref=5FOUNDERS-GOLD</div></div><button class="btn" onclick="copyInvite()">📋 Copy Link • Earn 10%</button><button class="btn" style="background:#25D366;color:#fff" onclick="shareWA()">Share WhatsApp</button><div style="margin-top:10px;background:#0f172a;padding:12px;border-radius:12px;border:1px solid #22c55e"><div class="small">Official MoMo</div><div style="display:flex;justify-content:space-between;align-items:center"><b style="color:#facc15;font-size:20px">0793814204</b><button onclick="copyMoMo()" style="background:#22c55e;border:none;color:#fff;padding:6px 12px;border-radius:8px;font-weight:800">Copy</button></div></div></div>
 </div>
 
-<!-- PROFILE TAB - EXACT -->
-<div id="profile" class="tab-content">
-<div class="card">
-<h4>Profile • Premium</h4>
-<div style="text-align:center">
-<div class="avatar" style="margin:0 auto">S<div class="tick">✓</div></div>
-<div style="font-weight:800;margin-top:8px">SKYLIGHT USER</div>
-<div class="small" id="profileMask">Mul****son • Premium • Verified</div>
-<div style="display:flex;gap:6px;justify-content:center;margin-top:6px">
-<span class="yellow-tag" style="background:#0f3a2a;color:#22c55e;border:1px solid #22c55e">✓ VERIFIED • PREMIUM</span>
-<span class="yellow-tag">★ ADMIRE EDITION</span>
-</div>
-</div>
-<div style="display:flex;justify-content:space-between;margin-top:12px">
-<div><div class="small">Balance • Premium</div><b style="color:#facc15">0 UGX</b><div class="small">Deposited: 0 UGX • Premium</div></div>
-<div style="text-align:right"><div class="small">Team</div><b>Team • Premium</b></div>
-</div>
-<div style="margin-top:12px"><div style="font-size:12px;font-weight:700">✏️ Change Name • Premium</div><input placeholder="Change Display Name • Premium" id="changeName"></div>
-<div style="margin-top:12px"><div style="font-size:12px;font-weight:700">🔒 Security • Premium</div><input placeholder="Current password"><input placeholder="New password • Min 6"><button class="btn">Update Password • Premium</button></div>
-</div>
-</div>
-
-<div id="rules" class="tab-content"><div class="card"><h4>Rules • Premium</h4><div class="small" style="line-height:1.7">1. Min deposit 2000 UGX to 0793814204<br>2. Daily 20% profit AI powered<br>3. Team 10% bonus instant<br>4. Min withdraw 1000 UGX<br>5. Gold codes hide numbers<br>6. No self-refer<br>7. 5 Founders Gold Premium<br>8. Support 24/7</div></div></div>
-<div id="support" class="tab-content"><div class="card"><h4>Support • Premium</h4><button class="btn" style="background:#25D366;color:#fff" onclick="window.open('https://wa.me/256793814204','_blank')">WhatsApp CEO 0793814204</button><button class="btn btn-dark" onclick="window.open('https://t.me/skylightuganda','_blank')">Telegram Channel</button><button class="btn btn-dark" onclick="window.open('https://whatsapp.com/channel/0029Vb...','_blank')">WhatsApp Channel</button></div></div>
-<div id="admin" class="tab-content"><div class="card"><h4>Admin • Premium</h4><div class="small">Official: 0793814204 • CEO Map Active • Anti self-ref ON • Gold codes private</div></div></div>
+<div id="profile" class="tab-content"><div class="card"><h4>Profile • Premium</h4><div style="text-align:center"><div class="avatar" style="margin:0 auto">S</div><div style="font-weight:800;margin-top:8px">SKYLIGHT USER</div><div class="small" id="pMask">Mul****son • Premium • Verified</div></div><div style="margin-top:12px"><div style="font-size:12px;font-weight:700">✏️ Change Name • Premium</div><input placeholder="Change Display Name • Premium" id="cName"></div><div style="margin-top:12px"><div style="font-size:12px;font-weight:700">🔒 Security • Premium</div><input placeholder="Current password"><input placeholder="New password • Min 6"><button class="btn">Update Password • Premium</button></div></div></div>
+<div id="rules" class="tab-content"><div class="card"><h4>Rules • Premium</h4><div class="small" style="line-height:1.7">1. Min 2000 UGX to 0793814204<br>2. Daily 20% AI<br>3. Team 10% instant<br>4. Min withdraw 1000<br>5. Gold codes private<br>6. 5 Founders Gold</div></div></div>
+<div id="support" class="tab-content"><div class="card"><h4>Support • Premium</h4><button class="btn" style="background:#25D366;color:#fff" onclick="window.open('https://wa.me/256793814204','_blank')">WhatsApp CEO 0793814204</button><button class="btn" style="background:#1e293b;color:#fff;margin-top:6px" onclick="window.open('https://t.me/skylightuganda','_blank')">Telegram Channel</button></div></div>
+<div id="admin" class="tab-content"><div class="card"><h4>Admin • Premium</h4><div class="small">Official 0793814204 • CEO Active</div></div></div>
 
 <div class="bottom-nav">
-<div class="nav-item active" id="nav-machines" onclick="openTab('machines')">🏠<br>Home</div>
-<div class="nav-item" id="nav-group" onclick="openTab('group')">👥<br>Group</div>
-<div class="nav-item" id="nav-withdraw" onclick="openTab('withdraw')">💸<br>Withdraw</div>
-<div class="nav-item" id="nav-support" onclick="openTab('support')">💬<br>Support</div>
-<div class="nav-item" id="nav-profile" onclick="openTab('profile')">👤<br>Profile</div>
+<div class="nav-item active" onclick="openTab('machines')"><div style="font-size:18px">🏠</div>Home</div>
+<div class="nav-item" onclick="openTab('group')"><div style="font-size:18px">👥</div>Group</div>
+<div class="nav-item" onclick="openTab('withdraw')"><div style="font-size:18px">💸</div>Withdraw</div>
+<div class="nav-item" onclick="openTab('support')"><div style="font-size:18px">💬</div>Support</div>
+<div class="nav-item" onclick="openTab('profile')"><div style="font-size:18px">👤</div>Profile</div>
 </div>
 
 <script>
 const OFF='0793814204';
-const ceoMap={'0793814204':'5FOUNDERS-GOLD','0779434443':'GOLD-4443','0765864451':'FOUNDER-002'};
-const rev={'5FOUNDERS-GOLD':'0793814204','GOLD-4443':'0779434443','FOUNDER-002':'0765864451'};
+const ceoMap={'0793814204':'5FOUNDERS-GOLD','0779434443':'GOLD-4443'};
+const rev={'5FOUNDERS-GOLD':'0793814204','GOLD-4443':'0779434443'};
 let cur=localStorage.getItem('skylight_phone')||OFF;
-function refresh(){
- let code=ceoMap[cur]||'GOLD-'+cur.slice(-4);
- document.getElementById('goldCode').innerText=code;
- document.getElementById('teamCount').innerText='1';
- document.getElementById('groupTeam').innerText='1';
- document.getElementById('inviteLink').innerText=`https://benytskylight-crypto.github.io/t-crypto.github.io/?ref=${code}`;
- document.getElementById('userMask').innerText=cur.slice(0,3)+'****'+cur.slice(-3)+' • Verified • Premium';
- document.getElementById('profileMask').innerText=cur.slice(0,3)+'****son • Premium • Verified';
-}
+function showToast(t){let el=document.getElementById('toast');el.innerText=t;el.style.display='block';setTimeout(()=>el.style.display='none',2000);}
+function refresh(){let code=ceoMap[cur]||'GOLD-'+cur.slice(-4);document.getElementById('invLink').innerText=`https://benytskylight-crypto.github.io/t-crypto.github.io/?ref=${code}`;document.getElementById('uMask').innerText=cur.slice(0,3)+'****son • Verified • Premium';document.getElementById('pMask').innerText=cur.slice(0,3)+'****son • Premium • Verified';}
 refresh();
 function openTab(id){
  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
  document.querySelectorAll('.top-tabs .pill').forEach(p=>p.classList.remove('active'));
  document.querySelectorAll('.bottom-nav .nav-item').forEach(n=>n.classList.remove('active'));
  document.getElementById(id).classList.add('active');
- let topBtn=document.querySelector(`.top-tabs .pill[onclick="openTab('${id}')"]`);
- if(topBtn) topBtn.classList.add('active');
- let nav=document.getElementById('nav-'+id);
- if(nav) nav.classList.add('active');
- else{
-   if(id==='team') document.getElementById('nav-group').classList.add('active');
-   if(id==='rules'||id==='support'||id==='admin') document.getElementById('nav-support').classList.add('active');
-   if(id==='machines') document.getElementById('nav-machines').classList.add('active');
- }
+ let top=document.querySelector(`.top-tabs .pill[onclick="openTab('${id}')"]`);if(top)top.classList.add('active');
+ if(id==='machines') document.querySelectorAll('.bottom-nav .nav-item')[0].classList.add('active');
+ if(id==='group'||id==='team') document.querySelectorAll('.bottom-nav .nav-item')[1].classList.add('active');
+ if(id==='withdraw') document.querySelectorAll('.bottom-nav .nav-item')[2].classList.add('active');
+ if(id==='support'||id==='rules'||id==='admin') document.querySelectorAll('.bottom-nav .nav-item')[3].classList.add('active');
+ if(id==='profile') document.querySelectorAll('.bottom-nav .nav-item')[4].classList.add('active');
  window.scrollTo(0,0);
 }
-function copyInvite(){
- let link=`https://benytskylight-crypto.github.io/t-crypto.github.io/?ref=${cur}`;
- navigator.clipboard.writeText(link);
- alert('✅ COPY LINK SUCCESS!\nGold: '+(ceoMap[cur]||'GOLD')+'\nLink copied - Number hidden!\nPaste to WhatsApp earn 10%!');
-}
-function shareWA(){
- let link=`https://benytskylight-crypto.github.io/t-crypto.github.io/?ref=${cur}`;
- window.open(`https://wa.me/?text=${encodeURIComponent('☀️ SKYLIGHT UGANDA ADMIRE EDITION - 20% Daily! Min 2000 UGX MoMo: 0793814204 Link: '+link)}`,'_blank');
-}
-(function(){
- let p=new URLSearchParams(location.search);
- let r=p.get('ref');
- if(!r) return;
- let real=rev[r]||r;
- if(cur && real===cur) return;
- localStorage.setItem('skylight_ref',real);
-})();
-function buyMachine(m){alert(`Buy ${m} - Send 2000 UGX to 0793814204 then click I Paid in Group tab!`);openTab('group');}
-function paid(){let a=document.getElementById('depAmt').value;if(!a){alert('Enter amount');return;}alert(`✅ Deposit ${a} UGX recorded! Send screenshot to WhatsApp 0793814204 to activate machine!`);}
-function doWithdrawPremium(){let a=document.getElementById('wAmt2').value;if(!a||a<1000){alert('Min 1000 UGX');return;}alert(`✅ Withdraw ${a} UGX request - Admin 0793814204 will send in 10 mins Premium Fast!`);}
+function copyMoMo(){navigator.clipboard.writeText('0793814204');showToast('Copied 0793814204');}
+function copyInvite(){let link=`https://benytskylight-crypto.github.io/t-crypto.github.io/?ref=${cur}`;navigator.clipboard.writeText(link);showToast('Copied to clipboard');}
+function shareWA(){let link=`https://benytskylight-crypto.github.io/t-crypto.github.io/?ref=${cur}`;window.open(`https://wa.me/?text=${encodeURIComponent('☀️ SKYLIGHT ADMIRE 20% Daily! MoMo: 0793814204 Link: '+link)}`,'_blank');}
+function buy(m){alert(`Buy ${m} - Send to 0793814204 then I Paid in Group!`);openTab('group');}
+function paid(){let a=document.getElementById('depAmt').value;if(!a){alert('Enter amount');return;}alert(`Deposit ${a} UGX - Send screenshot to 0793814204`);}
+function withdrawNow(){let a=document.getElementById('wAmt').value;if(!a||a<1000){alert('Min 1000');return;}alert(`Withdraw ${a} UGX - Admin 0793814204 will send!`);}
+(function(){let p=new URLSearchParams(location.search);let r=p.get('ref');if(!r)return;let real=rev[r]||r;if(cur&&real===cur)return;localStorage.setItem('skylight_ref',real);})();
 </script>
 </body>
- </html>
+</html>
