@@ -2,152 +2,175 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Skylight Uganda - 5 Founders Gold V18.4</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0">
+<title>Skylight Uganda - Classic V18.5</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#0b1220;color:#fff;font-family:system-ui;padding-bottom:130px;overflow-x:hidden}
-.header{text-align:center;padding:16px;background:#111827}
-.logo{width:70px;height:70px;background:#facc15;border-radius:50%;margin:0 auto;display:flex;align-items:center;justify-content:center;font-size:34px}
-h1{color:#facc15;margin:6px 0 0;font-size:24px}
-.tabs{display:flex;gap:5px;flex-wrap:wrap;justify-content:center;padding:10px}
-.tab{padding:7px 11px;border-radius:20px;background:#1e293b;border:none;color:#fff;font-size:11px;font-weight:700}
-.tab.active{background:#facc15;color:#000}
-.card{background:#1e293b;margin:10px;border-radius:18px;padding:14px;border:1px solid #2a3a52}
+body{margin:0;background:#0b1220;color:#fff;font-family:system-ui;padding-bottom:90px}
+.header{text-align:center;padding:14px;background:#111827;position:sticky;top:0;z-index:100}
+.logo{width:60px;height:60px;background:#facc15;border-radius:50%;margin:0 auto;display:flex;align-items:center;justify-content:center;font-size:30px}
+.card{background:#1e293b;margin:12px;border-radius:16px;padding:14px;border:1px solid #2a3a52}
 .small{color:#94a3b8;font-size:11px}
-.btn{width:100%;padding:14px;background:#22c55e;color:#fff;border:none;border-radius:12px;font-weight:800;margin-top:8px}
+.btn{width:100%;padding:14px;background:#22c55e;color:#fff;border:none;border-radius:12px;font-weight:800;margin-top:8px;cursor:pointer}
 .btn-gold{background:#facc15;color:#000}
-.invite-box{background:linear-gradient(135deg,#0f172a,#1e293b);border:1.5px solid #facc15;border-radius:16px;padding:14px;text-align:center}
-.code-badge{background:#facc15;color:#000;padding:7px 14px;border-radius:20px;font-weight:900;display:inline-block;margin:8px 0}
-.masked-link{background:#0f172a;padding:10px;border-radius:10px;margin:8px 0;word-break:break-all;border:1px dashed #334155}
-.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#111827;display:flex;justify-content:space-around;padding:12px 0 16px 0;border-top:1px solid #1e293b;z-index:1000;height:72px}
-.nav-item{font-size:10px;color:#94a3b8;text-align:center;padding:5px 8px;flex:1;cursor:pointer}
+.invite-box{background:linear-gradient(135deg,#0f172a,#1e293b);border:1.5px solid #facc15;border-radius:14px;padding:12px;text-align:center}
+.masked{font-size:11px;color:#22c55e;word-break:break-all;background:#0f172a;padding:8px;border-radius:8px;margin:6px 0}
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#111827;display:flex;justify-content:space-around;padding:10px 0 14px;border-top:1px solid #1e293b;z-index:999}
+.nav-item{font-size:10px;color:#64748b;text-align:center;flex:1;padding:4px;cursor:pointer}
 .nav-item.active{color:#facc15}
-input{width:100%;padding:11px;border-radius:10px;border:none;background:#0f172a;color:#fff;margin:5px 0}
-.auto-popup{position:fixed;bottom:85px;left:8px;right:8px;background:#22c55e;color:#fff;padding:14px;border-radius:14px;text-align:center;z-index:9999;font-weight:800;box-shadow:0 4px 20px rgba(0,0,0,.5);max-height:30vh;overflow-y:auto}
+.tab-content{display:none}
+.tab-content.active{display:block}
+input{width:100%;padding:12px;border-radius:10px;border:none;background:#0f172a;color:#fff;margin:6px 0}
+.stat{display:flex;justify-content:space-between;background:#0f172a;padding:10px;border-radius:10px;margin:6px 0}
 </style>
 </head>
 <body>
 
 <div class="header">
 <div class="logo">☀️</div>
-<h1>SKYLIGHT UGANDA</h1>
-<div class="small">5 FOUNDERS GOLD • KAMPALA • V18.4 UNSTUCK</div>
-<div class="tabs">
-<button class="tab">MACHINES</button>
-<button class="tab">GROUP</button>
-<button class="tab">WITHDRAW</button>
-<button class="tab active">TEAM</button>
-<button class="tab">PROFILE</button>
-<button class="tab">RULES</button>
-<button class="tab">SUPPORT</button>
-</div>
+<h3 style="margin:4px;color:#facc15">SKYLIGHT UGANDA</h3>
+<div class="small">5 FOUNDERS GOLD • Classic V18.5 • Secure</div>
 </div>
 
+<!-- HOME TAB -->
+<div id="home" class="tab-content active">
 <div class="card">
-<h3 style="margin:0 0 8px">👤 Register / Login Test</h3>
-<input id="regName" placeholder="Name e.g. Masereka Benard">
-<input id="regPhone" placeholder="Phone e.g. 0745064119">
-<button class="btn btn-gold" onclick="registerV18()">Register + Trigger Auto Welcome Bot</button>
-<div class="small" style="margin-top:8px">V18.4 Fixed: Bottom nav unstuck, numbers hidden</div>
+<h3>💰 Dashboard</h3>
+<div class="stat"><span>Balance</span><b style="color:#facc15">0 UGX</b></div>
+<div class="stat"><span>Today Profit (20%)</span><b style="color:#22c55e">0 UGX</b></div>
+<div class="stat"><span>Team Bonus (10%)</span><b style="color:#22c55e">0 UGX</b></div>
+<div class="small" style="margin-top:8px">Deposit to 0793814204 to start earning daily</div>
 </div>
-
 <div class="card">
-<div style="text-align:center">
-<div style="font-size:30px">☀️</div>
-<div style="color:#facc15;font-weight:900">TEAM • 5 FOUNDERS</div>
-<div class="small">Bonus Rate 10% • Private Links • V18.4</div>
+<h4 style="margin:0">👤 Quick Register</h4>
+<input id="rName" placeholder="Name: Masereka Benard">
+<input id="rPhone" placeholder="Phone: 0745064119">
+<button class="btn btn-gold" onclick="doRegister()">Register Now</button>
+</div>
 </div>
 
-<div style="display:flex;justify-content:space-between;background:#0f172a;padding:10px;border-radius:12px;margin:10px 0">
-<div><div class="small">Team Size</div><b style="color:#facc15">0 Members</b></div>
-<div><div class="small">Your Code</div><b id="displayCode" style="color:#22c55e">5FOUNDERS-GOLD</b></div>
+<!-- GROUP TAB -->
+<div id="group" class="tab-content">
+<div class="card">
+<h3>👥 My Group</h3>
+<div class="stat"><span>Team Size</span><b id="tSize">1 Member</b></div>
+<div class="stat"><span>Your Gold Code</span><b id="tCode" style="color:#facc15">5FOUNDERS-GOLD</b></div>
+<div id="teamList" style="margin-top:10px;font-size:13px">
+<div style="background:#0f172a;padding:8px;border-radius:8px">• Masereka Benard - 0745064119 - Active</div>
+</div>
+</div>
 </div>
 
-<div class="invite-box">
-<div style="color:#facc15;font-weight:900">🔗 YOUR GOLD INVITE LINK</div>
-<div class="small" style="margin:4px 0">Number Hidden • Secure</div>
-<div class="masked-link">
-<div style="color:#22c55e;font-size:11px;font-weight:700" id="maskedLink">https://benytskylight-crypto.github.io/t-crypto.github.io/?ref=5FOUNDERS-GOLD</div>
+<!-- WITHDRAW TAB -->
+<div id="withdraw" class="tab-content">
+<div class="card">
+<h3>💸 Withdraw</h3>
+<div class="small">Min withdraw 1000 UGX • Instant to MoMo</div>
+<input id="wAmount" placeholder="Amount e.g. 2000">
+<input id="wPhone" placeholder="MoMo number">
+<button class="btn" onclick="doWithdraw()">Request Withdraw</button>
+<div class="small" style="margin-top:10px">Withdraws processed by Admin 0793814204 within 5 mins</div>
 </div>
-<div style="color:#22c55e;font-size:10px">✅ Private • Auto Welcome Enabled</div>
+<div class="card">
+<h4>📜 History</h4>
+<div class="small">No withdrawals yet. Deposit first.</div>
+</div>
 </div>
 
-<button class="btn" onclick="copyInviteV18()">Copy Invite Link • Earn 10%</button>
+<!-- SUPPORT TAB -->
+<div id="support" class="tab-content">
+<div class="card">
+<h3>💬 Support - 5 Founders</h3>
+<div class="stat"><span>Official MoMo / CEO</span><b style="color:#facc15">0793814204</b></div>
+<div class="small">Deposit here • 24/7 Support</div>
+<button class="btn" onclick="window.open('https://wa.me/256793814204','_blank')">WhatsApp CEO: 0793814204</button>
+<button class="btn btn-gold" style="margin-top:8px" onclick="window.open('https://wa.me/256779434443','_blank')">WhatsApp Support 2</button>
+</div>
+</div>
 
-<div style="margin-top:14px;background:#0f172a;padding:12px;border-radius:12px;border:1.5px solid #22c55e">
+<!-- TEAM TAB - MAIN INVITE -->
+<div id="team" class="tab-content">
+<div class="card" style="text-align:center">
+<div style="font-size:28px">☀️</div>
+<div style="color:#facc15;font-weight:900">TEAM • 5 FOUNDERS GOLD</div>
+<div class="small">Bonus 10% • Private Gold Codes</div>
+<div class="stat"><span>Team</span><b id="teamSize2">0 Members</b></div>
+<div class="stat"><span>Your Code</span><b id="myCode2" style="color:#22c55e">5FOUNDERS-GOLD</b></div>
+
+<div class="invite-box" style="margin-top:10px">
+<div style="color:#facc15;font-weight:800;font-size:13px">🔗 YOUR PRIVATE INVITE LINK</div>
+<div class="masked" id="myLink">https://benytskylight-crypto.github.io/t-crypto.github.io/?ref=5FOUNDERS-GOLD</div>
+<div class="small">✅ Number hidden • Secure</div>
+</div>
+<button class="btn" onclick="copyLink()">Copy Invite Link • Earn 10%</button>
+
+<div style="margin-top:12px;background:#0f172a;padding:12px;border-radius:12px;border:1.5px solid #22c55e">
 <div class="small">Send to • Official • 5 Founders Gold</div>
 <div style="display:flex;justify-content:space-between;align-items:center">
-<b style="color:#facc15;font-size:22px">0793814204</b>
-<button onclick="navigator.clipboard.writeText('0793814204');alert('Official MoMo 0793814204 copied!')" style="padding:8px 12px;background:#22c55e;color:#fff;border:none;border-radius:8px;font-weight:800">Copy</button>
+<b style="color:#facc15;font-size:20px">0793814204</b>
+<button onclick="navigator.clipboard.writeText('0793814204');alert('Copied 0793814204')" style="padding:7px 12px;background:#22c55e;color:#fff;border:none;border-radius:8px;font-weight:800">Copy</button>
 </div>
-<div class="small" style="color:#22c55e">Official Receiving • Deposit here • Min 2000 UGX</div>
+<div class="small" style="color:#22c55e">Official • Min 2000 UGX</div>
+</div>
 </div>
 </div>
 
+<!-- BOTTOM NAV - CLASSIC NO ALERTS -->
 <div class="bottom-nav">
-<div class="nav-item" onclick="alert('Home')"><div>🏠</div>Home</div>
-<div class="nav-item" onclick="alert('Group')"><div>👥</div>Group</div>
-<div class="nav-item" onclick="alert('Withdraw')"><div>💸</div>Withdraw</div>
-<div class="nav-item" onclick="alert('Support')"><div>💬</div>Support</div>
-<div class="nav-item active" onclick="alert('Team')"><div>👤</div>Team</div>
+<div class="nav-item active" id="n-home" onclick="openTab('home')"><div>🏠</div>Home</div>
+<div class="nav-item" id="n-group" onclick="openTab('group')"><div>👥</div>Group</div>
+<div class="nav-item" id="n-withdraw" onclick="openTab('withdraw')"><div>💸</div>Withdraw</div>
+<div class="nav-item" id="n-support" onclick="openTab('support')"><div>💬</div>Support</div>
+<div class="nav-item" id="n-team" onclick="openTab('team')"><div>👤</div>Team</div>
 </div>
 
 <script>
-// V18.4 CONFIG - FINAL - BOTTOM NAV FIXED
-const OFFICIAL_MOMO = '0793814204';
-const ceoMap = {'0793814204':'5FOUNDERS-GOLD','0779434443':'GOLD-4443','0765864451':'FOUNDER-002'};
-const reverseMap = {'5FOUNDERS-GOLD':'0793814204','GOLD-4443':'0779434443','FOUNDER-002':'0765864451'};
+const OFFICIAL='0793814204';
+const ceoMap={'0793814204':'5FOUNDERS-GOLD','0779434443':'GOLD-4443','0765864451':'FOUNDER-002'};
+const rev={'5FOUNDERS-GOLD':'0793814204','GOLD-4443':'0779434443','FOUNDER-002':'0765864451'};
+let curPhone=localStorage.getItem('skylight_phone')||OFFICIAL;
+let myC=ceoMap[curPhone]||'GOLD-'+curPhone.slice(-4);
+document.getElementById('tCode').innerText=myC;
+document.getElementById('myCode2').innerText=myC;
+document.getElementById('myLink').innerText=`https://benytskylight-crypto.github.io/t-crypto.github.io/?ref=${myC}`;
 
-let userPhone = localStorage.getItem('skylight_phone') || OFFICIAL_MOMO;
-let myCode = ceoMap[userPhone] || 'GOLD-' + userPhone.slice(-4);
-let realLink = `https://benytskylight-crypto.github.io/t-crypto.github.io/?ref=${userPhone}`;
-let masked = `https://benytskylight-crypto.github.io/t-crypto.github.io/?ref=${myCode}`;
-
-document.getElementById('displayCode').innerText = myCode;
-document.getElementById('maskedLink').innerText = masked;
-
-window.copyInviteV18 = ()=>{navigator.clipboard.writeText(realLink);alert('✅ Copied: '+myCode+'\nLink: '+masked+'\nNumber Hidden!');};
-
-// SAVE REF - ANTI SELF-REF V18.4
+function openTab(id){
+ document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+ document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ document.getElementById('n-'+id).classList.add('active');
+}
+function copyLink(){
+ let link=`https://benytskylight-crypto.github.io/t-crypto.github.io/?ref=${curPhone}`;
+ navigator.clipboard.writeText(link);
+ alert('✅ Invite Copied:\n'+myC+'\nPrivate link secure!');
+}
 (function(){
-  let p=new URLSearchParams(window.location.search);
-  let r=p.get('ref');
-  if(!r) return;
-  let real=reverseMap[r]||r;
-  let cur=localStorage.getItem('skylight_phone');
-  if(cur && real===cur) return;
-  localStorage.setItem('skylight_ref',real);
+ let p=new URLSearchParams(location.search);
+ let r=p.get('ref');
+ if(!r) return;
+ let real=rev[r]||r;
+ let cur=localStorage.getItem('skylight_phone');
+ if(cur && real===cur) return;
+ localStorage.setItem('skylight_ref',real);
 })();
-
-// AUTO WELCOME BOT V18.4
-function registerV18(){
-  let name=document.getElementById('regName').value || 'Masereka Benard';
-  let phone=document.getElementById('regPhone').value || '0745064119';
-  if(phone.length<10){alert('Enter valid phone');return;}
-  
-  let storedRef=localStorage.getItem('skylight_ref')||OFFICIAL_MOMO;
-  let realRef=reverseMap[storedRef]||storedRef;
-  if(realRef===phone) realRef=OFFICIAL_MOMO;
-  
-  localStorage.setItem('skylight_phone',phone);
-  localStorage.setItem('skylight_name',name);
-  
-  let welcome=`Hello ${name} 👋%0A%0AWelcome to SKYLIGHT UGANDA - 5 Founders Gold ☀️%0A%0A✅ Phone: ${phone}%0A✅ Gold Code: GOLD-${phone.slice(-4)}%0A✅ Referred by: ${realRef}%0A%0ATo START EARNING:%0A1️⃣ Send deposit to Official MoMo:%0A👉 *${OFFICIAL_MOMO}*%0A2️⃣ Send screenshot here%0A3️⃣ We activate in 5 mins!%0A%0AMin: 2000 UGX | Daily 20% | Withdraw 1000%0A%0AReply YES for help!`;
-  let waLink=`https://wa.me/256${phone.slice(-9)}?text=${welcome}`;
-  
-  // Remove old popup if exists
-  let old=document.querySelector('.auto-popup');
-  if(old) old.remove();
-  
-  let popup=document.createElement('div');
-  popup.className='auto-popup';
-  popup.innerHTML=`🎉 NEW USER: ${name}<br>${phone} - Ref: ${realRef}<br><a href="${waLink}" target="_blank" style="background:#fff;color:#22c55e;padding:8px 16px;border-radius:20px;display:inline-block;margin-top:8px;text-decoration:none;font-weight:900">👉 Send Welcome WhatsApp</a><br><div style="font-size:11px;margin-top:8px;background:#0002;padding:4px;border-radius:10px" onclick="this.parentElement.remove()">Close X</div>`;
-  document.body.appendChild(popup);
-  
-  alert(`✅ Registered: ${name}\nPhone: ${phone}\nRef: ${realRef}\n\nV18.4: Bottom nav fixed - Green button above nav!`);
+function doRegister(){
+ let name=document.getElementById('rName').value||'Masereka Benard';
+ let phone=document.getElementById('rPhone').value||'0745064119';
+ if(phone.length<10){alert('Enter valid phone');return;}
+ let ref=localStorage.getItem('skylight_ref')||OFFICIAL;
+ let real=rev[ref]||ref;
+ if(real===phone) real=OFFICIAL;
+ localStorage.setItem('skylight_phone',phone);
+ curPhone=phone;
+ alert(`✅ Welcome ${name}!\nPhone: ${phone}\nRef: ${real}\n\nDeposit to ${OFFICIAL} to activate!`);
+ openTab('team');
+}
+function doWithdraw(){
+ let amt=document.getElementById('wAmount').value;
+ if(!amt||amt<1000){alert('Min 1000 UGX');return;}
+ alert(`✅ Withdraw Request: ${amt} UGX\nTo: ${document.getElementById('wPhone').value}\n\nAdmin will send from ${OFFICIAL} in 5 mins!`);
 }
 </script>
-
 </body>
 </html>
