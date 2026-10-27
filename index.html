@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Skylight Uganda - 5 Founders Gold V18.3</title>
+<title>Skylight Uganda - 5 Founders Gold V18.4</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#0b1220;color:#fff;font-family:system-ui;padding-bottom:90px}
+body{margin:0;background:#0b1220;color:#fff;font-family:system-ui;padding-bottom:130px;overflow-x:hidden}
 .header{text-align:center;padding:16px;background:#111827}
 .logo{width:70px;height:70px;background:#facc15;border-radius:50%;margin:0 auto;display:flex;align-items:center;justify-content:center;font-size:34px}
 h1{color:#facc15;margin:6px 0 0;font-size:24px}
@@ -20,11 +20,11 @@ h1{color:#facc15;margin:6px 0 0;font-size:24px}
 .invite-box{background:linear-gradient(135deg,#0f172a,#1e293b);border:1.5px solid #facc15;border-radius:16px;padding:14px;text-align:center}
 .code-badge{background:#facc15;color:#000;padding:7px 14px;border-radius:20px;font-weight:900;display:inline-block;margin:8px 0}
 .masked-link{background:#0f172a;padding:10px;border-radius:10px;margin:8px 0;word-break:break-all;border:1px dashed #334155}
-.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#111827;display:flex;justify-content:space-around;padding:9px 0;border-top:1px solid #1e293b;z-index:100}
-.nav-item{font-size:10px;color:#94a3b8;text-align:center}
+.bottom-nav{position:fixed;bottom:0;left:0;right:0;background:#111827;display:flex;justify-content:space-around;padding:12px 0 16px 0;border-top:1px solid #1e293b;z-index:1000;height:72px}
+.nav-item{font-size:10px;color:#94a3b8;text-align:center;padding:5px 8px;flex:1;cursor:pointer}
 .nav-item.active{color:#facc15}
 input{width:100%;padding:11px;border-radius:10px;border:none;background:#0f172a;color:#fff;margin:5px 0}
-.auto-popup{position:fixed;bottom:80px;left:8px;right:8px;background:#22c55e;color:#fff;padding:14px;border-radius:14px;text-align:center;z-index:9999;font-weight:800;box-shadow:0 4px 20px rgba(0,0,0,.5)}
+.auto-popup{position:fixed;bottom:85px;left:8px;right:8px;background:#22c55e;color:#fff;padding:14px;border-radius:14px;text-align:center;z-index:9999;font-weight:800;box-shadow:0 4px 20px rgba(0,0,0,.5);max-height:30vh;overflow-y:auto}
 </style>
 </head>
 <body>
@@ -32,7 +32,7 @@ input{width:100%;padding:11px;border-radius:10px;border:none;background:#0f172a;
 <div class="header">
 <div class="logo">☀️</div>
 <h1>SKYLIGHT UGANDA</h1>
-<div class="small">5 FOUNDERS GOLD • KAMPALA • V18.3 AUTO-BOT</div>
+<div class="small">5 FOUNDERS GOLD • KAMPALA • V18.4 UNSTUCK</div>
 <div class="tabs">
 <button class="tab">MACHINES</button>
 <button class="tab">GROUP</button>
@@ -49,14 +49,14 @@ input{width:100%;padding:11px;border-radius:10px;border:none;background:#0f172a;
 <input id="regName" placeholder="Name e.g. Masereka Benard">
 <input id="regPhone" placeholder="Phone e.g. 0745064119">
 <button class="btn btn-gold" onclick="registerV18()">Register + Trigger Auto Welcome Bot</button>
-<div class="small" style="margin-top:8px">Test with 0745064119 - See auto bot in action!</div>
+<div class="small" style="margin-top:8px">V18.4 Fixed: Bottom nav unstuck, numbers hidden</div>
 </div>
 
 <div class="card">
 <div style="text-align:center">
 <div style="font-size:30px">☀️</div>
 <div style="color:#facc15;font-weight:900">TEAM • 5 FOUNDERS</div>
-<div class="small">Bonus Rate 10% • Private Links</div>
+<div class="small">Bonus Rate 10% • Private Links • V18.4</div>
 </div>
 
 <div style="display:flex;justify-content:space-between;background:#0f172a;padding:10px;border-radius:12px;margin:10px 0">
@@ -83,23 +83,18 @@ input{width:100%;padding:11px;border-radius:10px;border:none;background:#0f172a;
 </div>
 <div class="small" style="color:#22c55e">Official Receiving • Deposit here • Min 2000 UGX</div>
 </div>
-
-<div style="margin-top:10px;background:#0f172a;padding:10px;border-radius:10px">
-<div class="small">Support Contacts (Private)</div>
-<div style="font-size:12px">0779434443 • 0765864451 • 0793814204</div>
-</div>
 </div>
 
 <div class="bottom-nav">
-<div class="nav-item">🏠<br>Home</div>
-<div class="nav-item">👥<br>Group</div>
-<div class="nav-item">💸<br>Withdraw</div>
-<div class="nav-item">💬<br>Support</div>
-<div class="nav-item active">👤<br>Team</div>
+<div class="nav-item" onclick="alert('Home')"><div>🏠</div>Home</div>
+<div class="nav-item" onclick="alert('Group')"><div>👥</div>Group</div>
+<div class="nav-item" onclick="alert('Withdraw')"><div>💸</div>Withdraw</div>
+<div class="nav-item" onclick="alert('Support')"><div>💬</div>Support</div>
+<div class="nav-item active" onclick="alert('Team')"><div>👤</div>Team</div>
 </div>
 
 <script>
-// V18.3 CONFIG - FINAL
+// V18.4 CONFIG - FINAL - BOTTOM NAV FIXED
 const OFFICIAL_MOMO = '0793814204';
 const ceoMap = {'0793814204':'5FOUNDERS-GOLD','0779434443':'GOLD-4443','0765864451':'FOUNDER-002'};
 const reverseMap = {'5FOUNDERS-GOLD':'0793814204','GOLD-4443':'0779434443','FOUNDER-002':'0765864451'};
@@ -112,49 +107,47 @@ let masked = `https://benytskylight-crypto.github.io/t-crypto.github.io/?ref=${m
 document.getElementById('displayCode').innerText = myCode;
 document.getElementById('maskedLink').innerText = masked;
 
-window.copyInviteV18 = ()=>{navigator.clipboard.writeText(realLink);alert('✅ Copied: '+myCode+'\nNumber Hidden!');};
+window.copyInviteV18 = ()=>{navigator.clipboard.writeText(realLink);alert('✅ Copied: '+myCode+'\nLink: '+masked+'\nNumber Hidden!');};
 
-// SAVE REF - ANTI SELF-REF V18.3
+// SAVE REF - ANTI SELF-REF V18.4
 (function(){
   let p=new URLSearchParams(window.location.search);
   let r=p.get('ref');
   if(!r) return;
   let real=reverseMap[r]||r;
   let cur=localStorage.getItem('skylight_phone');
-  if(cur && real===cur) return; // block self-ref
+  if(cur && real===cur) return;
   localStorage.setItem('skylight_ref',real);
 })();
 
-// AUTO WELCOME BOT V18.3
+// AUTO WELCOME BOT V18.4
 function registerV18(){
   let name=document.getElementById('regName').value || 'Masereka Benard';
   let phone=document.getElementById('regPhone').value || '0745064119';
   if(phone.length<10){alert('Enter valid phone');return;}
   
-  // ANTI SELF-REF LOGIC
   let storedRef=localStorage.getItem('skylight_ref')||OFFICIAL_MOMO;
   let realRef=reverseMap[storedRef]||storedRef;
-  if(realRef===phone) realRef=OFFICIAL_MOMO; // Fix self-ref like 0745064119 ref 0745064119
+  if(realRef===phone) realRef=OFFICIAL_MOMO;
   
   localStorage.setItem('skylight_phone',phone);
   localStorage.setItem('skylight_name',name);
   
-  // ADMIN ALERT TEXT
-  console.log(`NEW USER: ${name} - ${phone} - Ref: ${realRef}`);
-  
-  // WELCOME TEXT FOR USER
   let welcome=`Hello ${name} 👋%0A%0AWelcome to SKYLIGHT UGANDA - 5 Founders Gold ☀️%0A%0A✅ Phone: ${phone}%0A✅ Gold Code: GOLD-${phone.slice(-4)}%0A✅ Referred by: ${realRef}%0A%0ATo START EARNING:%0A1️⃣ Send deposit to Official MoMo:%0A👉 *${OFFICIAL_MOMO}*%0A2️⃣ Send screenshot here%0A3️⃣ We activate in 5 mins!%0A%0AMin: 2000 UGX | Daily 20% | Withdraw 1000%0A%0AReply YES for help!`;
   let waLink=`https://wa.me/256${phone.slice(-9)}?text=${welcome}`;
   
-  // SHOW AUTO POPUP FOR ADMIN TO SEND
+  // Remove old popup if exists
+  let old=document.querySelector('.auto-popup');
+  if(old) old.remove();
+  
   let popup=document.createElement('div');
   popup.className='auto-popup';
-  popup.innerHTML=`🎉 NEW USER: ${name}<br>${phone} - Ref: ${realRef}<br><a href="${waLink}" target="_blank" style="background:#fff;color:#22c55e;padding:8px 16px;border-radius:20px;display:inline-block;margin-top:8px;text-decoration:none;font-weight:900">👉 Send Welcome WhatsApp</a><br><div style="font-size:10px;margin-top:6px" onclick="this.parentElement.remove()">Close X</div>`;
+  popup.innerHTML=`🎉 NEW USER: ${name}<br>${phone} - Ref: ${realRef}<br><a href="${waLink}" target="_blank" style="background:#fff;color:#22c55e;padding:8px 16px;border-radius:20px;display:inline-block;margin-top:8px;text-decoration:none;font-weight:900">👉 Send Welcome WhatsApp</a><br><div style="font-size:11px;margin-top:8px;background:#0002;padding:4px;border-radius:10px" onclick="this.parentElement.remove()">Close X</div>`;
   document.body.appendChild(popup);
   
-  alert(`✅ Registered: ${name}\nPhone: ${phone}\nRef: ${realRef} (Self-ref fixed!)\n\nGreen button at bottom - Click to send welcome!`);
+  alert(`✅ Registered: ${name}\nPhone: ${phone}\nRef: ${realRef}\n\nV18.4: Bottom nav fixed - Green button above nav!`);
 }
-
 </script>
+
 </body>
 </html>
