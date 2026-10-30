@@ -3,119 +3,84 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SKYLIGHT UGANDA V31.2</title>
+<title>SKYLIGHT UGANDA V37 CLEAN</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
-body{background:#0f172a;color:#e2e8f0}
-.input{background:#1e293b;border:1px solid #334155;border-radius:12px;padding:12px;width:100%}
+body{background:#0f172a;color:#e2e8f0;font-family:Inter,system-ui}
+.card{background:#1e293b;border:1px solid #334155}
+.small{font-size:11px}
 </style>
 </head>
-<body class="pb-24">
-<!-- Header -->
-<div class="bg-slate-900 p-4 flex justify-between items-center sticky top-0 z-10 border-b border-slate-800">
+<body class="pb-20">
+<div class="bg-slate-900 p-4 sticky top-0 z-20 border-b border-slate-800 flex justify-between items-center">
 <div class="flex items-center gap-3">
-<div class="w-10 h-10 bg-yellow-400 rounded-xl flex items-center justify-center font-black text-black text-xl">S</div>
-<div><h1 class="font-bold leading-none">SKYLIGHT UGANDA</h1><p class="text-xs text-gray-400">V31.2 • Portfolio Tracker • Clean • Kampala</p></div>
+<div class="w-10 h-10 bg-yellow-400 rounded-xl flex items-center justify-center font-black text-black">S</div>
+<div>
+<div class="font-bold">SKYLIGHT UGANDA</div>
+<div class="logo-sub text-[10px] text-gray-400">SKYLIGHT UGANDA • 6% Daily • VIP 10% • Expiry 30D • Secure • Kampala • LIVE</div>
 </div>
-<div class="bg-green-900 text-green-400 px-3 py-1 rounded-full text-xs">● LIVE</div>
 </div>
-
-<div class="max-w-md mx-auto p-4">
-<!-- My Portfolio Header -->
-<div class="flex justify-between items-center mb-4 mt-2">
-<h2 class="font-bold">My Portfolio</h2>
-<span class="bg-green-600 text-xs px-3 py-1 rounded-full">● LOCAL LIVE TRACKING</span>
+<span class="bg-green-900 text-green-400 px-2 py-1 rounded-full text-[10px]">● LIVE</span>
 </div>
 
-<!-- Stats -->
-<div id="stats" class="grid grid-cols-2 gap-3 mb-6">
-<div class="bg-slate-800 p-4 rounded-xl"><p class="text-xs text-gray-400">Invested</p><h3 class="font-bold" id="tInvested">UGX 0</h3></div>
-<div class="bg-slate-800 p-4 rounded-xl"><p class="text-xs text-gray-400">Current Value</p><h3 class="font-bold text-green-400" id="tCurrent">UGX 0</h3></div>
-</div>
+<div class="max-w-md mx-auto p-3">
+<!-- Monthly Rewards CLEAN -->
+<div id="monthlyRewards"></div>
 
-<!-- Add Real Investment -->
-<div class="bg-slate-800 rounded-2xl p-5 mb-6">
-<h3 class="font-bold">Add Real Investment</h3>
-<p class="text-xs text-gray-400 mb-4">Track SACCO, land, business — no fake 6% daily</p>
-
-<input id="invName" class="input mb-3" placeholder="e.g. SACCO Mukono, Plot Buikwe">
-<div class="grid grid-cols-2 gap-3 mb-3">
-<input id="invInvested" type="number" class="input" placeholder="Invested UGX">
-<input id="invCurrent" type="number" class="input" placeholder="Current Value">
+<!-- Investment -->
+<div class="card rounded-2xl p-4 mb-4">
+<h3 class="font-bold text-sm">Add Real Investment</h3>
+<p class="small text-gray-400 mb-3">Track SACCO, land, business — verified portfolio</p>
+<input id="invName" placeholder="e.g. SACCO Mukono, Plot Buikwe" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-sm mb-2">
+<div class="grid grid-cols-2 gap-2 mb-2">
+<input id="invInvested" type="number" placeholder="Invested UGX" class="bg-slate-900 border border-slate-700 rounded-xl p-3 text-sm">
+<input id="invCurrent" type="number" placeholder="Current Value UGX" class="bg-slate-900 border border-slate-700 rounded-xl p-3 text-sm">
 </div>
-<select id="invType" class="input mb-3">
-<option value="Savings / SACCO">Savings / SACCO</option>
-<option value="Land / Plot">Land / Plot</option>
-<option value="Business">Business</option>
-<option value="Boda / Transport">Boda / Transport</option>
-<option value="Agriculture">Agriculture</option>
-<option value="Other">Other</option>
+<select id="invType" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-sm mb-2">
+<option>Savings / SACCO</option><option>Land / Plot</option><option>Business</option><option>Boda</option><option>Agriculture</option>
 </select>
-<select id="invGrowth" class="input mb-3">
-<option value="">Growth Type</option>
-<option value="Appreciation">Appreciation</option>
-<option value="Monthly Profit">Monthly Profit</option>
-<option value="Rental Income">Rental Income</option>
-</select>
-<input id="invNotes" class="input mb-4" placeholder="Notes / Receipt No">
-<button onclick="addPortfolio()" class="w-full bg-yellow-400 text-black font-bold py-3 rounded-xl">+ Add to Portfolio</button>
+<input id="invNotes" placeholder="Receipt No / Notes" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-sm mb-3">
+<button onclick="addInv()" class="w-full bg-yellow-400 text-black font-black py-3 rounded-xl text-sm">+ Add to Portfolio</button>
 </div>
 
-<!-- List -->
-<div id="portfolioList" class="space-y-3 mb-6"></div>
-
-<!-- Growth Chart -->
-<div class="bg-slate-800 rounded-2xl p-5">
-<div class="flex justify-between mb-3"><h3 class="font-bold text-sm">Growth Chart</h3><span class="text-xs text-gray-400">Invested vs Current</span></div>
-<canvas id="chart" height="160" class="w-full bg-slate-900 rounded-xl"></canvas>
-</div>
-
-<div class="mt-6 text-center">
-<p class="text-xs text-gray-500">Your Link: <span id="refLink" class="text-yellow-400"></span></p>
-<button onclick="copyRef()" class="mt-2 text-xs bg-slate-700 px-4 py-2 rounded-full">Copy Referral Link</button>
-</div>
-</div>
-
-<!-- Bottom Nav -->
-<div class="fixed bottom-0 left-0 right-0 bg-slate-900 border-t border-slate-800 flex justify-around py-3 max-w-md mx-auto">
-<button class="text-yellow-400 text-xs">🏠<br>Home</button>
-<button class="text-gray-400 text-xs">📞<br>Support</button>
-<button class="text-gray-400 text-xs">📖<br>Rules</button>
-<button class="text-gray-400 text-xs">🔒<br>Admin</button>
+<div id="list" class="space-y-2"></div>
+<div id="adminRewards" class="mt-6"></div>
 </div>
 
 <script>
-let portfolio = JSON.parse(localStorage.getItem('skylight_ug_v31') || '[]');
-const getRef = () => { let r = new URLSearchParams(location.search).get('ref') || localStorage.getItem('ref') || 'SKY-H6T0XX'; localStorage.setItem('ref', r); return r; }
-const ref = getRef();
-document.getElementById('refLink').innerText = location.origin + location.pathname + '?ref=' + ref;
+let data = JSON.parse(localStorage.getItem('sky37')||'[]');
+let rewards = [
+{name:'Top Investor - Mukono', bonus:500, month:'Oct 2026'},
+{name:'SACCO Star - Buikwe', bonus:500, month:'Oct 2026'},
+{name:'Growth Leader', bonus:500, month:'Oct 2026'}
+];
 
-function render(){
-let inv=0, cur=0; let html='';
-portfolio.forEach((p,i)=>{
-inv+=Number(p.invested); cur+=Number(p.current);
-html+=`<div class="bg-slate-800 p-4 rounded-xl flex justify-between"><div><h4 class="font-bold text-sm">${p.name}</h4><p class="text-xs text-gray-400">${p.type} • ${p.notes}</p></div><div class="text-right"><p class="text-xs">UGX ${Number(p.current).toLocaleString()}</p><p class="text-xs ${p.current>=p.invested?'text-green-400':'text-red-400'}">${p.current>=p.invested?'+':''}${(((p.current-p.invested)/p.invested*100)||0).toFixed(1)}%</p><button onclick="del(${i})" class="text-xs text-red-400 mt-1">Delete</button></div></div>`;
+function renderRewards(){
+let html = `<div style="background:rgba(31,41,55,.8);border:1px solid rgba(250,204,21,.2);border-radius:14px;padding:12px;margin-bottom:12px"><div style="display:flex;justify-content:space-between;align-items:center"><div><b style="color:#facc15;font-size:13px">🏆 Monthly Rewards • ${new Date().toLocaleString('default',{month:'long',year:'numeric'})}</b><div class="small" style="color:#9ca3af;margin-top:4px">Top investors this month • Bonus goes to PROFIT • Admin approved</div></div><div style="text-align:right"><span style="background:linear-gradient(135deg,#facc15,#eab308);color:#000;padding:4px 10px;border-radius:20px;font-size:10px;font-weight:900">LIVE</span></div></div></div>`;
+html += `<div style="background:linear-gradient(135deg,rgba(34,197,94,.12),rgba(22,163,74,.06));border:1px solid rgba(34,197,94,.25);border-radius:12px;padding:10px;margin-bottom:12px;display:flex;gap:8px;align-items:center"><span style="font-size:20px">🎁</span><div><div style="font-weight:900;color:#22c55e;font-size:12px">Rewards Available</div><div style="font-size:10px;color:#d1d5db">Tap APPROVE to claim bonus to PROFIT • Kampala Uganda</div></div></div>`;
+rewards.forEach(r=>{
+html+=`<div style="background:#1e293b;border:1px solid #334155;border-radius:14px;padding:12px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center"><div><b style="font-size:13px">${r.name}</b><div class="small text-gray-400">+${r.bonus} UGX Bonus • ${r.month}</div></div><button onclick="approveReward('${r.name}',${r.bonus})" style="background:#facc15;color:#000;font-weight:900;padding:8px 14px;border-radius:20px;font-size:11px">APPROVE UPGRADE</button></div>`;
 });
-document.getElementById('portfolioList').innerHTML = html || '<p class="text-center text-gray-500 text-sm">No investments yet — Add your SACCO, land first</p>';
-document.getElementById('tInvested').innerText='UGX '+inv.toLocaleString();
-document.getElementById('tCurrent').innerText='UGX '+cur.toLocaleString();
-localStorage.setItem('skylight_ug_v31', JSON.stringify(portfolio));
-drawChart();
+document.getElementById('monthlyRewards').innerHTML = html;
+
+let adminHtml = `<div style="padding:12px"><b style="color:#facc15">🏆 Monthly Rewards • ${new Date().toLocaleString('default',{month:'long',year:'numeric'})}</b><div class="small text-gray-400">Top investors • Bonus to PROFIT</div></div>`;
+adminHtml += rewards.map(r=>`<div style="background:#1e293b;margin:8px;border-radius:12px;padding:10px;display:flex;justify-content:space-between"><span style="font-size:12px">${r.name} - ${r.bonus} UGX</span><span style="color:#22c55e;font-size:11px">● Ready</span></div>`).join('');
+document.getElementById('adminRewards').innerHTML = adminHtml;
 }
-function addPortfolio(){
-const name=document.getElementById('invName').value, invested=document.getElementById('invInvested').value, current=document.getElementById('invCurrent').value, type=document.getElementById('invType').value, notes=document.getElementById('invNotes').value;
-if(!name||!invested) return alert('Add name and Invested UGX');
-portfolio.push({name, invested, current: current||invested, type, notes});
-document.getElementById('invName').value='';document.getElementById('invInvested').value='';document.getElementById('invCurrent').value='';document.getElementById('invNotes').value='';
-render();
+
+function renderList(){
+let h=''; data.forEach((p,i)=>{h+=`<div class="card rounded-xl p-3 flex justify-between"><div><b class="text-sm">${p.name}</b><div class="small text-gray-400">${p.type}</div></div><div class="text-right"><div class="text-sm">UGX ${p.current}</div><button onclick="data.splice(${i},1);save()" class="small text-red-400">Delete</button></div></div>`});
+document.getElementById('list').innerHTML = h || '<p class="small text-center text-gray-500 py-4">No investments yet</p>';
 }
-function del(i){ portfolio.splice(i,1); render(); }
-function copyRef(){ navigator.clipboard.writeText(document.getElementById('refLink').innerText); alert('Copied to clipboard.'); }
-function drawChart(){
-const c=document.getElementById('chart'), ctx=c.getContext('2d'); ctx.clearRect(0,0,c.width,c.height);
-if(portfolio.length==0) return; ctx.strokeStyle='#facc15'; ctx.beginPath(); portfolio.forEach((p,i)=>{let x=i/(portfolio.length-1||1)*c.width, y=c.height - (p.current/Math.max(...portfolio.map(x=>x.current),1))*c.height*0.8; i==0?ctx.moveTo(x,y):ctx.lineTo(x,y)}); ctx.stroke();
+function addInv(){
+let n=document.getElementById('invName').value, inv=document.getElementById('invInvested').value, cur=document.getElementById('invCurrent').value, t=document.getElementById('invType').value;
+if(!n||!inv) return alert('Enter name and invested');
+data.push({name:n,invested:inv,current:cur||inv,type:t}); save();
 }
-render();
+function save(){ localStorage.setItem('sky37',JSON.stringify(data)); renderList(); document.getElementById('invName').value=''; document.getElementById('invInvested').value=''; document.getElementById('invCurrent').value=''; }
+function approveReward(name,bonus){ alert(`✅ ${name}: +${bonus} UGX approved to PROFIT!`); }
+
+renderRewards(); renderList();
 </script>
 </body>
 </html>
