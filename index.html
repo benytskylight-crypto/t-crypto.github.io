@@ -3,84 +3,159 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SKYLIGHT UGANDA V37 CLEAN</title>
+<title>SKYLIGHT UGANDA V37.1 CLEAN</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
 body{background:#0f172a;color:#e2e8f0;font-family:Inter,system-ui}
 .card{background:#1e293b;border:1px solid #334155}
 .small{font-size:11px}
+.input{background:#0f172a;border:1px solid #334155;border-radius:12px;padding:12px;width:100%;font-size:13px}
 </style>
 </head>
-<body class="pb-20">
+<body class="pb-24">
+<!-- HEADER CLEAN -->
 <div class="bg-slate-900 p-4 sticky top-0 z-20 border-b border-slate-800 flex justify-between items-center">
 <div class="flex items-center gap-3">
-<div class="w-10 h-10 bg-yellow-400 rounded-xl flex items-center justify-center font-black text-black">S</div>
+<div class="w-10 h-10 bg-yellow-400 rounded-xl flex items-center justify-center font-black text-black text-xl">S</div>
 <div>
-<div class="font-bold">SKYLIGHT UGANDA</div>
-<div class="logo-sub text-[10px] text-gray-400">SKYLIGHT UGANDA • 6% Daily • VIP 10% • Expiry 30D • Secure • Kampala • LIVE</div>
+<div class="font-bold text-sm">SKYLIGHT UGANDA</div>
+<div class="text-[10px] text-gray-400">SKYLIGHT UGANDA • 6% Daily • VIP 10% • Expiry 30D • Secure • Kampala • LIVE</div>
 </div>
 </div>
-<span class="bg-green-900 text-green-400 px-2 py-1 rounded-full text-[10px]">● LIVE</span>
+<span class="bg-green-900 text-green-400 px-3 py-1 rounded-full text-[10px]">● LIVE</span>
 </div>
 
 <div class="max-w-md mx-auto p-3">
-<!-- Monthly Rewards CLEAN -->
+<!-- MONTHLY REWARDS CLEAN PROFESSIONAL -->
 <div id="monthlyRewards"></div>
 
-<!-- Investment -->
+<!-- ADD INVESTMENT -->
 <div class="card rounded-2xl p-4 mb-4">
 <h3 class="font-bold text-sm">Add Real Investment</h3>
 <p class="small text-gray-400 mb-3">Track SACCO, land, business — verified portfolio</p>
-<input id="invName" placeholder="e.g. SACCO Mukono, Plot Buikwe" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-sm mb-2">
+<input id="invName" placeholder="e.g. SACCO Mukono, Plot Buikwe" class="input mb-2">
 <div class="grid grid-cols-2 gap-2 mb-2">
-<input id="invInvested" type="number" placeholder="Invested UGX" class="bg-slate-900 border border-slate-700 rounded-xl p-3 text-sm">
-<input id="invCurrent" type="number" placeholder="Current Value UGX" class="bg-slate-900 border border-slate-700 rounded-xl p-3 text-sm">
+<input id="invInvested" type="number" placeholder="Invested UGX" class="input">
+<input id="invCurrent" type="number" placeholder="Current Value UGX" class="input">
 </div>
-<select id="invType" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-sm mb-2">
-<option>Savings / SACCO</option><option>Land / Plot</option><option>Business</option><option>Boda</option><option>Agriculture</option>
+<select id="invType" class="input mb-2">
+<option>Savings / SACCO</option>
+<option>Land / Plot</option>
+<option>Business</option>
+<option>Boda / Transport</option>
+<option>Agriculture</option>
+<option>Other</option>
 </select>
-<input id="invNotes" placeholder="Receipt No / Notes" class="w-full bg-slate-900 border border-slate-700 rounded-xl p-3 text-sm mb-3">
+<input id="invNotes" placeholder="Receipt No / Notes" class="input mb-3">
 <button onclick="addInv()" class="w-full bg-yellow-400 text-black font-black py-3 rounded-xl text-sm">+ Add to Portfolio</button>
 </div>
 
-<div id="list" class="space-y-2"></div>
-<div id="adminRewards" class="mt-6"></div>
+<div id="list" class="space-y-2 mb-6"></div>
+
+<!-- WITHDRAWALS COLORED -->
+<div class="card rounded-2xl p-4 mb-6">
+<div class="flex justify-between items-center mb-3">
+<h3 class="font-bold text-sm">💸 Withdrawals</h3>
+<span class="text-[10px] bg-slate-900 px-2 py-1 rounded-full text-gray-400">LIVE DB: skylight-ug</span>
+</div>
+<div class="grid grid-cols-3 gap-2 mb-3 text-center">
+<div class="bg-slate-900 rounded-xl p-2"><p class="small text-gray-400">Pending</p><h4 id="wPending" class="font-bold text-yellow-400">0</h4></div>
+<div class="bg-slate-900 rounded-xl p-2"><p class="small text-gray-400">Approved</p><h4 id="wApproved" class="font-bold text-green-400">0</h4></div>
+<div class="bg-slate-900 rounded-xl p-2"><p class="small text-gray-400">Total</p><h4 id="wTotal" class="font-bold text-sm">UGX 0</h4></div>
+</div>
+<input id="wAmount" type="number" placeholder="Amount UGX (Min 10,000)" class="input mb-2">
+<select id="wMethod" class="input mb-3">
+<option>MTN Mobile Money</option>
+<option>Airtel Money</option>
+<option>Bank Transfer</option>
+</select>
+<button onclick="requestWithdraw()" class="w-full bg-yellow-400 text-black font-black py-3 rounded-xl text-sm mb-4">Request Withdrawal</button>
+<div id="withdrawalList" class="space-y-2"></div>
+</div>
+
+<!-- ADMIN REWARDS -->
+<div id="adminRewards" class="card rounded-2xl p-2 mb-6"></div>
+
+<div class="text-center pb-4">
+<p class="small text-gray-500">Your Link: <span id="refLink" class="text-yellow-400 break-all"></span></p>
+<button onclick="copyRef()" class="mt-2 text-[11px] bg-slate-800 px-4 py-2 rounded-full">Copy Referral Link</button>
+</div>
+</div>
+
+<!-- BOTTOM NAV -->
+<div class="fixed bottom-0 left-0 right-0 bg-slate-900 border-t border-slate-800 flex justify-around py-3 max-w-md mx-auto">
+<button class="text-yellow-400 text-[11px]">🏠<br>Home</button>
+<button class="text-gray-400 text-[11px]">📞<br>Support</button>
+<button class="text-gray-400 text-[11px]">📖<br>Rules</button>
+<button class="text-gray-400 text-[11px]">🔒<br>Admin</button>
 </div>
 
 <script>
 let data = JSON.parse(localStorage.getItem('sky37')||'[]');
+let withdrawals = JSON.parse(localStorage.getItem('sky37_withdrawals')||'[]');
 let rewards = [
 {name:'Top Investor - Mukono', bonus:500, month:'Oct 2026'},
 {name:'SACCO Star - Buikwe', bonus:500, month:'Oct 2026'},
-{name:'Growth Leader', bonus:500, month:'Oct 2026'}
+{name:'Growth Leader - Kampala', bonus:500, month:'Oct 2026'}
 ];
+const getRef = () => { let r=new URLSearchParams(location.search).get('ref')||localStorage.getItem('ref')||'SKY-H6T0XX'; localStorage.setItem('ref',r); return r; };
+document.getElementById('refLink').innerText = location.origin + location.pathname + '?ref=' + getRef();
 
 function renderRewards(){
-let html = `<div style="background:rgba(31,41,55,.8);border:1px solid rgba(250,204,21,.2);border-radius:14px;padding:12px;margin-bottom:12px"><div style="display:flex;justify-content:space-between;align-items:center"><div><b style="color:#facc15;font-size:13px">🏆 Monthly Rewards • ${new Date().toLocaleString('default',{month:'long',year:'numeric'})}</b><div class="small" style="color:#9ca3af;margin-top:4px">Top investors this month • Bonus goes to PROFIT • Admin approved</div></div><div style="text-align:right"><span style="background:linear-gradient(135deg,#facc15,#eab308);color:#000;padding:4px 10px;border-radius:20px;font-size:10px;font-weight:900">LIVE</span></div></div></div>`;
+let m = new Date().toLocaleString('default',{month:'long',year:'numeric'});
+let html = `<div style="background:rgba(31,41,55,.9);border:1px solid rgba(250,204,21,.2);border-radius:14px;padding:12px;margin-bottom:12px"><div style="display:flex;justify-content:space-between;align-items:center"><div><b style="color:#facc15;font-size:13px">🏆 Monthly Rewards • ${m}</b><div class="small" style="color:#9ca3af;margin-top:4px">Top investors this month • Bonus goes to PROFIT • Admin approved</div></div><div><span style="background:linear-gradient(135deg,#facc15,#eab308);color:#000;padding:4px 10px;border-radius:20px;font-size:10px;font-weight:900">LIVE</span></div></div></div>`;
 html += `<div style="background:linear-gradient(135deg,rgba(34,197,94,.12),rgba(22,163,74,.06));border:1px solid rgba(34,197,94,.25);border-radius:12px;padding:10px;margin-bottom:12px;display:flex;gap:8px;align-items:center"><span style="font-size:20px">🎁</span><div><div style="font-weight:900;color:#22c55e;font-size:12px">Rewards Available</div><div style="font-size:10px;color:#d1d5db">Tap APPROVE to claim bonus to PROFIT • Kampala Uganda</div></div></div>`;
 rewards.forEach(r=>{
 html+=`<div style="background:#1e293b;border:1px solid #334155;border-radius:14px;padding:12px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center"><div><b style="font-size:13px">${r.name}</b><div class="small text-gray-400">+${r.bonus} UGX Bonus • ${r.month}</div></div><button onclick="approveReward('${r.name}',${r.bonus})" style="background:#facc15;color:#000;font-weight:900;padding:8px 14px;border-radius:20px;font-size:11px">APPROVE UPGRADE</button></div>`;
 });
 document.getElementById('monthlyRewards').innerHTML = html;
 
-let adminHtml = `<div style="padding:12px"><b style="color:#facc15">🏆 Monthly Rewards • ${new Date().toLocaleString('default',{month:'long',year:'numeric'})}</b><div class="small text-gray-400">Top investors • Bonus to PROFIT</div></div>`;
-adminHtml += rewards.map(r=>`<div style="background:#1e293b;margin:8px;border-radius:12px;padding:10px;display:flex;justify-content:space-between"><span style="font-size:12px">${r.name} - ${r.bonus} UGX</span><span style="color:#22c55e;font-size:11px">● Ready</span></div>`).join('');
+let adminHtml = `<div style="padding:12px"><b style="color:#facc15;font-size:13px">🏆 Monthly Rewards • ${m}</b><div class="small text-gray-400">Top investors • Bonus to PROFIT</div></div>`;
+adminHtml += rewards.map(r=>`<div style="background:#0f172a;margin:6px;border-radius:10px;padding:10px;display:flex;justify-content:space-between;border:1px solid #334155"><span style="font-size:12px">${r.name} - ${r.bonus} UGX</span><span style="color:#22c55e;font-size:11px">● Ready</span></div>`).join('');
 document.getElementById('adminRewards').innerHTML = adminHtml;
 }
-
 function renderList(){
-let h=''; data.forEach((p,i)=>{h+=`<div class="card rounded-xl p-3 flex justify-between"><div><b class="text-sm">${p.name}</b><div class="small text-gray-400">${p.type}</div></div><div class="text-right"><div class="text-sm">UGX ${p.current}</div><button onclick="data.splice(${i},1);save()" class="small text-red-400">Delete</button></div></div>`});
-document.getElementById('list').innerHTML = h || '<p class="small text-center text-gray-500 py-4">No investments yet</p>';
+let h=''; data.forEach((p,i)=>{h+=`<div class="card rounded-xl p-3 flex justify-between"><div><b class="text-sm">${p.name}</b><div class="small text-gray-400">${p.type} • ${p.notes||''}</div></div><div class="text-right"><div class="text-sm">UGX ${Number(p.current).toLocaleString()}</div><button onclick="delInv(${i})" class="small text-red-400">Delete</button></div></div>`});
+document.getElementById('list').innerHTML = h || '<p class="small text-center text-gray-500 py-4">No investments yet — Add SACCO first</p>';
 }
 function addInv(){
-let n=document.getElementById('invName').value, inv=document.getElementById('invInvested').value, cur=document.getElementById('invCurrent').value, t=document.getElementById('invType').value;
-if(!n||!inv) return alert('Enter name and invested');
-data.push({name:n,invested:inv,current:cur||inv,type:t}); save();
+let n=document.getElementById('invName').value, inv=document.getElementById('invInvested').value, cur=document.getElementById('invCurrent').value||inv, t=document.getElementById('invType').value, notes=document.getElementById('invNotes').value;
+if(!n||!inv) return alert('Enter name and invested UGX');
+data.push({name:n, invested:inv, current:cur, type:t, notes:notes}); save();
 }
-function save(){ localStorage.setItem('sky37',JSON.stringify(data)); renderList(); document.getElementById('invName').value=''; document.getElementById('invInvested').value=''; document.getElementById('invCurrent').value=''; }
+function delInv(i){ data.splice(i,1); save(); }
+function save(){ localStorage.setItem('sky37',JSON.stringify(data)); renderList(); document.getElementById('invName').value=''; document.getElementById('invInvested').value=''; document.getElementById('invCurrent').value=''; document.getElementById('invNotes').value=''; }
 function approveReward(name,bonus){ alert(`✅ ${name}: +${bonus} UGX approved to PROFIT!`); }
+function copyRef(){ navigator.clipboard.writeText(document.getElementById('refLink').innerText); alert('Copied to clipboard'); }
 
-renderRewards(); renderList();
+// WITHDRAWALS COLORED
+function renderWithdrawals(){
+let html=''; let pending=0, approved=0, total=0;
+withdrawals.forEach((w,i)=>{
+total+=Number(w.amount);
+if(w.status==='Pending') pending++;
+if(w.status==='Approved') approved++;
+let color = w.status==='Approved' ? 'border-green-500 bg-green-900/20 text-green-400' : w.status==='Pending' ? 'border-yellow-500 bg-yellow-900/20 text-yellow-400' : 'border-red-500 bg-red-900/20 text-red-400';
+let dot = w.status==='Approved' ? '🟢' : w.status==='Pending' ? '🟡' : '🔴';
+html+=`<div style="border:1px solid" class="rounded-xl p-3 flex justify-between items-center ${color}"><div><b class="text-sm">${dot} UGX ${Number(w.amount).toLocaleString()}</b><div class="small opacity-80">${w.method} • ${w.date}</div></div><div class="text-right"><span class="text-[10px] font-black px-2 py-1 rounded-full bg-black/30">${w.status}</span>${w.status==='Pending'?`<br><div class="mt-1 flex gap-1"><button onclick="approveW(${i})" class="text-[10px] bg-green-600 text-white px-2 py-1 rounded-full">APPROVE</button><button onclick="rejectW(${i})" class="text-[10px] bg-red-600 text-white px-2 py-1 rounded-full">REJECT</button></div>`:''}</div></div>`;
+});
+document.getElementById('withdrawalList').innerHTML = html || '<p class="small text-center text-gray-500 py-3">No withdrawals yet</p>';
+document.getElementById('wPending').innerText = pending;
+document.getElementById('wApproved').innerText = approved;
+document.getElementById('wTotal').innerText = 'UGX ' + total.toLocaleString();
+localStorage.setItem('sky37_withdrawals', JSON.stringify(withdrawals));
+}
+function requestWithdraw(){
+let a=document.getElementById('wAmount').value, m=document.getElementById('wMethod').value;
+if(!a || Number(a)<10000) return alert('Min withdrawal UGX 10,000');
+withdrawals.unshift({amount:a, method:m, status:'Pending', date:new Date().toLocaleDateString()});
+document.getElementById('wAmount').value=''; renderWithdrawals();
+alert('✅ Withdrawal requested — Pending approval');
+}
+function approveW(i){ withdrawals[i].status='Approved'; renderWithdrawals(); }
+function rejectW(i){ withdrawals[i].status='Rejected'; renderWithdrawals(); }
+
+renderRewards(); renderList(); renderWithdrawals();
 </script>
 </body>
 </html>
