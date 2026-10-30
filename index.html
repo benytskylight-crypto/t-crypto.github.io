@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<title>Skylight Uganda • Portfolio Tracker</title>
+<title>Skylight Uganda • Portfolio Tracker LOCAL</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <style>
 :root{--gold:#facc15;--gold2:#eab308;--bg:#0f172a;--card:#1e293b;--green:#22c55e;--red:#ef4444}
@@ -16,7 +16,7 @@ body{background:linear-gradient(180deg,#0f172a,#111827);color:#fff;min-height:10
 .logo-sub{font-size:11px;color:#9ca3af;margin-top:2px}
 .stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px}
 .stat-card{background:linear-gradient(135deg,rgba(30,41,59,.9),rgba(17,24,39,.9));border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:12px}
-.stat-label{font-size:10px;color:#9ca3af;text-transform:uppercase;letter-spacing:.5px}
+.stat-label{font-size:10px;color:#9ca3af;text-transform:uppercase}
 .stat-value{font-size:18px;font-weight:900;margin-top:4px}
 .stat-value.gold{color:var(--gold)}.stat-value.green{color:var(--green)}
 .box{margin:12px;background:rgba(30,41,59,.6);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:14px}
@@ -32,199 +32,224 @@ input,select{width:100%;background:rgba(15,23,42,.8);border:1px solid rgba(255,2
 </head>
 <body>
 <div class="header">
-  <div class="logo"><div class="logo-icon">S</div><div><div class="logo-title">SKYLIGHT UGANDA</div><div class="logo-sub">Portfolio Tracker • Real Investments • Secure • Kampala Uganda</div></div></div>
+  <div class="logo"><div class="logo-icon">S</div><div><div class="logo-title">SKYLIGHT UGANDA</div><div class="logo-sub">Portfolio Tracker LOCAL • No Login • Secure • Kampala Uganda • Clean</div></div></div>
 </div>
 
-<div id="authBox" class="box">
-  <b>Login • Secure Access</b><div class="small">Legit tracker • Encrypted • No fake returns</div>
-  <input id="regName" placeholder="Full Name">
-  <input id="regPhone" placeholder="Phone 07XXXXXXXX">
-  <input id="regPass" type="password" placeholder="Password">
-  <div style="display:flex;gap:8px;margin-top:10px"><button class="btn btn-dark" style="flex:1" onclick="registerUser()">Register</button><button class="btn btn-gold" style="flex:1" onclick="loginUser()">Login</button></div>
+<div class="box" style="display:flex;gap:12px;align-items:center">
+  <img id="profilePic" src="https://ui-avatars.com/api/?name=CEO&background=facc15&color=000" style="width:52px;height:52px;border-radius:50%;border:2px solid #facc15;cursor:pointer" onclick="changeProfilePic()">
+  <div><div style="font-weight:900" id="userNameDisplay">CEO • Skylight Uganda</div><div class="small">Tap pic to change • Saved locally • No Firebase • No login stuck</div></div>
+  <div style="margin-left:auto;display:flex;gap:6px"><button class="btn btn-dark" style="font-size:11px;padding:6px 10px" onclick="exportCSV()">📊 CSV</button><button class="btn btn-dark" style="font-size:11px;padding:6px 10px" onclick="clearAll()">Clear</button></div>
 </div>
 
-<div id="mainApp" style="display:none">
-  <div class="box" style="display:flex;gap:12px;align-items:center">
-    <img id="profilePic" src="https://ui-avatars.com/api/?name=User&background=facc15&color=000" style="width:48px;height:48px;border-radius:50%;border:2px solid #facc15;cursor:pointer" onclick="changeProfilePic()">
-    <div><div style="font-weight:900" id="userNameDisplay">User</div><div class="small">Tap pic to change • Saved to LIVE DB skylight-ug</div></div>
-    <div style="margin-left:auto;display:flex;gap:6px"><button class="btn btn-dark" style="font-size:11px;padding:6px 10px" onclick="exportCSV()">📊 CSV</button><button class="btn btn-dark" style="font-size:11px;padding:6px 10px" onclick="logout()">Logout</button></div>
-  </div>
+<div class="stats">
+  <div class="stat-card"><div class="stat-label">Total Invested</div><div class="stat-value gold" id="investedTotal">0 UGX</div><div class="small">Real amount</div></div>
+  <div class="stat-card"><div class="stat-label">Current Value</div><div class="stat-value green" id="currentTotal">0 UGX</div><div class="small" id="profitTotal">+0</div></div>
+  <div class="stat-card"><div class="stat-label">Profit / Loss</div><div class="stat-value" id="dailyTotal">+0</div><div class="small">Real P/L</div></div>
+  <div class="stat-card"><div class="stat-label">Assets</div><div class="stat-value" id="assetsCount">0</div><div class="small">Local storage</div></div>
+</div>
 
-  <div class="stats">
-    <div class="stat-card"><div class="stat-label">Total Invested</div><div class="stat-value gold" id="investedTotal">0 UGX</div></div>
-    <div class="stat-card"><div class="stat-label">Current Value</div><div class="stat-value green" id="currentTotal">0 UGX</div><div class="small" id="profitTotal">+0</div></div>
-    <div class="stat-card"><div class="stat-label">Profit / Loss</div><div class="stat-value" id="dailyTotal">+0</div></div>
-    <div class="stat-card"><div class="stat-label">Assets</div><div class="stat-value" id="assetsCount">0</div></div>
+<div id="homeTab" class="box">
+  <div style="display:flex;justify-content:space-between"><b>My Portfolio</b><span style="font-size:10px;background:rgba(34,197,94,.15);color:#4ade80;padding:4px 8px;border-radius:20px">● LOCAL • LIVE</span></div>
+  <div id="ordersList" style="margin-top:12px"></div>
+  <div style="margin-top:14px;border-top:1px solid rgba(255,255,255,.06);padding-top:12px">
+    <b style="font-size:13px">Add Real Investment</b>
+    <input id="assetName" placeholder="e.g. SACCO Mukono, Plot Buikwe, Business Stock">
+    <div style="display:flex;gap:8px"><input id="assetPrice" type="number" placeholder="Invested UGX"><input id="assetCurrent" type="number" placeholder="Current Value UGX"></div>
+    <select id="assetType"><option value="savings">Savings / SACCO</option><option value="momo">MoMo Lock</option><option value="business">Business</option><option value="land">Land / Property</option><option value="other">Other</option></select>
+    <input id="assetExpiry" type="date"><input id="assetNotes" placeholder="Notes / Receipt No">
+    <button class="btn btn-gold" style="margin-top:10px" onclick="addInvestment()">＋ Add to Portfolio</button>
   </div>
-
-  <div id="homeTab" class="box">
-    <div style="display:flex;justify-content:space-between"><b>My Portfolio</b><span style="font-size:10px;background:rgba(34,197,94,.15);color:#4ade80;padding:4px 8px;border-radius:20px">● LIVE TRACKING</span></div>
-    <div id="ordersList" style="margin-top:12px"></div>
-    <div style="margin-top:14px;border-top:1px solid rgba(255,255,255,.06);padding-top:12px">
-      <b style="font-size:13px">Add Real Investment</b>
-      <input id="assetName" placeholder="e.g. SACCO Mukono, Plot Buikwe">
-      <div style="display:flex;gap:8px"><input id="assetPrice" type="number" placeholder="Invested UGX"><input id="assetCurrent" type="number" placeholder="Current Value"></div>
-      <select id="assetType"><option value="savings">Savings / SACCO</option><option value="momo">MoMo Lock</option><option value="business">Business</option><option value="land">Land</option><option value="other">Other</option></select>
-      <input id="assetExpiry" type="date"><input id="assetNotes" placeholder="Notes / Receipt No">
-      <button class="btn btn-gold" style="margin-top:10px" onclick="addInvestment()">＋ Add to Portfolio</button>
-    </div>
-    <div class="box" style="margin:12px 0 0 0"><canvas id="profitChart" height="200"></canvas><div id="profitHistoryList" style="margin-top:10px"></div></div>
+  <div class="box" style="margin:12px 0 0 0"><canvas id="profitChart" height="200"></canvas><div id="profitHistoryList" style="margin-top:10px"></div></div>
+</div><div id="socialTab" class="box" style="display:none">
+  <div style="text-align:center"><b>Support • Skylight Uganda</b><div class="small">Official • Kampala • 24/7 • Clean</div></div>
+  <div style="display:grid;gap:10px;margin-top:14px">
+    <a href="https://t.me/skylightuganda" target="_blank" style="text-decoration:none"><div style="background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.2);padding:12px;border-radius:12px;display:flex;gap:10px;align-items:center"><span>✈️</span><div><b style="color:#fff;font-size:13px">Telegram Channel</b><div class="small">Updates & proof • Official</div></div></div></a>
+    <a href="https://whatsapp.com/channel/0029Va..." target="_blank" style="text-decoration:none"><div style="background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.2);padding:12px;border-radius:12px;display:flex;gap:10px;align-items:center"><span>📢</span><div><b style="color:#fff;font-size:13px">WhatsApp Channel</b><div class="small">Daily tips • NEW</div></div></div></a>
+    <a href="https://chat.whatsapp.com/..." target="_blank" style="text-decoration:none"><div style="background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.3);padding:12px;border-radius:12px;display:flex;gap:10px;align-items:center"><span>👥</span><div><b style="color:#fff;font-size:13px">WhatsApp Group</b><div class="small">Member chat • 1000+ • ACTIVE</div></div></div></a>
+    <div style="background:rgba(250,204,21,.12);border:1px solid rgba(250,204,21,.2);padding:12px;border-radius:12px;display:flex;gap:10px;align-items:center" onclick="navigator.clipboard.writeText('0793814204');alert('MoMo 0793814204 copied')"><span>💰</span><div><b style="color:#fff;font-size:13px">MoMo Support</b><div class="small">0793814204 • Tap to copy</div></div></div>
+    <a href="https://wa.me/256793814204" target="_blank" style="text-decoration:none"><div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);padding:12px;border-radius:12px;display:flex;gap:10px;align-items:center"><span>💬</span><div><b style="color:#fff;font-size:13px">Admin Direct</b><div class="small">Private help • <10 min • WhatsApp</div></div></div></a>
   </div>
+</div>
 
-  <div id="socialTab" class="box" style="display:none">
-    <div style="text-align:center"><b>Support • Skylight Uganda</b><div class="small">Official • Kampala • 24/7</div></div>
-    <div style="display:grid;gap:10px;margin-top:14px">
-      <a href="https://t.me/skylightuganda" target="_blank" style="text-decoration:none"><div style="background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.2);padding:12px;border-radius:12px;display:flex;gap:10px"><span>✈️</span><div><b style="color:#fff;font-size:13px">Telegram Channel</b><div class="small">Updates & proof • Official</div></div></div></a>
-      <a href="https://whatsapp.com/channel/0029Va..." target="_blank" style="text-decoration:none"><div style="background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.2);padding:12px;border-radius:12px;display:flex;gap:10px"><span>📢</span><div><b style="color:#fff;font-size:13px">WhatsApp Channel</b><div class="small">Daily tips • NEW</div></div></div></a>
-      <a href="https://chat.whatsapp.com/..." target="_blank" style="text-decoration:none"><div style="background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.3);padding:12px;border-radius:12px;display:flex;gap:10px"><span>👥</span><div><b style="color:#fff;font-size:13px">WhatsApp Group</b><div class="small">Member chat • 1000+ • ACTIVE</div></div></div></a>
-      <div style="background:rgba(250,204,21,.12);border:1px solid rgba(250,204,21,.2);padding:12px;border-radius:12px;display:flex;gap:10px" onclick="navigator.clipboard.writeText('0793814204');alert('MoMo 0793814204 copied')"><span>💰</span><div><b style="color:#fff;font-size:13px">MoMo Support</b><div class="small">0793814204 • Tap to copy</div></div></div>
-      <a href="https://wa.me/256793814204" target="_blank" style="text-decoration:none"><div style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);padding:12px;border-radius:12px;display:flex;gap:10px"><span>💬</span><div><b style="color:#fff;font-size:13px">Admin Direct</b><div class="small">Private help • <10 min</div></div></div></a>
-    </div>
+<div id="rulesTab" class="box" style="display:none">
+  <b>How It Works — Legit • Clean • No Ponzi</b>
+  <div style="margin-top:12px;display:grid;gap:12px">
+    <div style="display:flex;gap:10px"><div style="width:28px;height:28px;background:#facc15;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-weight:900;font-size:12px">1</div><div><b style="font-size:13px">Add Real Investments</b><div class="small">Real SACCO, land, MoMo lock — no fake 6% daily promises — legit tracking</div></div></div>
+    <div style="display:flex;gap:10px"><div style="width:28px;height:28px;background:#22c55e;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:12px">2</div><div><b style="font-size:13px">Track Real Value</b><div class="small">Update current value — real profit/loss — graph now works, no more Loading...</div></div></div>
+    <div style="display:flex;gap:10px"><div style="width:28px;height:28px;background:#3b82f6;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:12px">3</div><div><b style="font-size:13px">Expiry Alerts 20D/7D/2D</b><div class="small">Set maturity date — color changes red when 2 days left — never miss maturity</div></div></div>
+    <div style="display:flex;gap:10px"><div style="width:28px;height:28px;background:#facc15;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-weight:900;font-size:12px">4</div><div><b style="font-size:13px">Export CSV</b><div class="small">Export for SACCO records — transparent — share with team</div></div></div>
   </div>
+</div>
 
-  <div id="rulesTab" class="box" style="display:none">
-    <b>How It Works — Legit</b>
-    <div style="margin-top:12px;display:grid;gap:12px">
-      <div style="display:flex;gap:10px"><div style="width:28px;height:28px;background:#facc15;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-weight:900;font-size:12px">1</div><div><b style="font-size:13px">Add Real Investments</b><div class="small">Real SACCO, land, business — no fake 6% daily</div></div></div>
-      <div style="display:flex;gap:10px"><div style="width:28px;height:28px;background:#22c55e;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:12px">2</div><div><b style="font-size:13px">Track Real Value</b><div class="small">Update current value — real profit/loss — graph works</div></div></div>
-      <div style="display:flex;gap:10px"><div style="width:28px;height:28px;background:#3b82f6;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:12px">3</div><div><b style="font-size:13px">Expiry Alerts</b><div class="small">20D/7D/2D alarm — never miss maturity</div></div></div>
-      <div style="display:flex;gap:10px"><div style="width:28px;height:28px;background:#facc15;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-weight:900;font-size:12px">4</div><div><b style="font-size:13px">Export CSV</b><div class="small">For SACCO records — transparent</div></div></div>
-    </div>
-  </div>
-
-  <div id="adminTab" class="box" style="display:none">
-    <b>Admin • Secure Access</b>
-    <div id="waStatus" style="margin-top:10px;background:linear-gradient(135deg,rgba(31,41,55,.8),rgba(17,24,39,.9));padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.06);display:flex;gap:10px;align-items:center"><div style="width:28px;height:28px;background:rgba(250,204,21,.15);border:1px solid rgba(250,204,21,.3);border-radius:50%;display:flex;align-items:center;justify-content:center">🔒</div><div><div style="font-weight:700;color:#fff;font-size:11px">Admin Access • Secure Login</div><div style="font-size:10px;color:#9ca3af">Enter code to manage • Kampala • SSL Secured</div></div></div>
-    <input id="adminCode" type="password" placeholder="Admin Code">
-    <button class="btn btn-gold" style="margin-top:8px" onclick="adminLogin()">Login Admin • Secure Access</button>
-    <div id="adminPanel" style="display:none;margin-top:12px"><b>Users</b><div id="adminUsersList" style="margin-top:8px"></div></div>
+<div id="adminTab" class="box" style="display:none">
+  <b>Admin • Secure Access • Clean</b>
+  <div id="waStatus" style="margin-top:10px;background:linear-gradient(135deg,rgba(31,41,55,.8),rgba(17,24,39,.9));padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.06);display:flex;gap:10px;align-items:center"><div style="width:28px;height:28px;background:rgba(250,204,21,.15);border:1px solid rgba(250,204,21,.3);border-radius:50%;display:flex;align-items:center;justify-content:center">🔒</div><div><div style="font-weight:700;color:#fff;font-size:11px">Admin Access • Secure Login</div><div style="font-size:10px;color:#9ca3af">Enter code • Kampala • SSL Secured • No debug text</div></div></div>
+  <input id="adminCode" type="password" placeholder="Admin Code (SKYLIGHT2024)">
+  <button class="btn btn-gold" style="margin-top:8px" onclick="adminLogin()">Login Admin • Secure Access</button>
+  <div id="adminPanel" style="display:none;margin-top:12px">
+    <b>Portfolio Summary • Local</b>
+    <div id="adminUsersList" style="margin-top:8px"></div>
+    <div style="margin-top:12px;display:flex;gap:8px"><button class="btn btn-dark" style="flex:1" onclick="exportCSV()">📊 Export All CSV</button><button class="btn btn-dark" style="flex:1;background:rgba(239,68,68,.15);border-color:rgba(239,68,68,.3)" onclick="clearAll()">🗑️ Clear All</button></div>
   </div>
 </div>
 
 <div style="height:90px"></div>
 <div class="tabs">
-  <button class="tab-btn active" onclick="showTab('home')"><span>🏠</span>Home</button>
-  <button class="tab-btn" onclick="showTab('social')"><span>☎️</span>Support</button>
-  <button class="tab-btn" onclick="showTab('rules')"><span>📖</span>Rules</button>
-  <button class="tab-btn" onclick="showTab('admin')"><span>🔒</span>Admin</button>
+  <button class="tab-btn active" id="tab-home" onclick="showTab('home')"><span>🏠</span>Home</button>
+  <button class="tab-btn" id="tab-social" onclick="showTab('social')"><span>☎️</span>Support</button>
+  <button class="tab-btn" id="tab-rules" onclick="showTab('rules')"><span>📖</span>Rules</button>
+  <button class="tab-btn" id="tab-admin" onclick="showTab('admin')"><span>🔒</span>Admin</button>
 </div>
 
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-import { getFirestore, doc, setDoc, getDoc, collection, getDocs, deleteDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
+<script>
+// 100% LOCAL — NO FIREBASE — NO LOGIN STUCK — CEO FIXED
+let investments = JSON.parse(localStorage.getItem('skylight_local_v38')||'[]');
+let profilePicData = localStorage.getItem('skylight_profile_pic')||'';
 
-const firebaseConfig = {
-  apiKey: "REPLACE_WITH_YOUR_API_KEY",
-  authDomain: "skylight-ug.firebaseapp.com",
-  projectId: "skylight-ug",
-  storageBucket: "skylight-ug.appspot.com",
-  appId: "REPLACE_WITH_YOUR_APP_ID"
-};
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
-const auth = getAuth(app);
-let currentUid=null;
-let investments=[];
+function save(){localStorage.setItem('skylight_local_v38',JSON.stringify(investments));}
+if(profilePicData){document.addEventListener('DOMContentLoaded',()=>{const el=document.getElementById('profilePic'); if(el) el.src=profilePicData;});}
 
-window.registerUser=async()=>{
-  const phone=document.getElementById('regPhone').value.trim();
-  const pass=document.getElementById('regPass').value;
-  const name=document.getElementById('regName').value.trim();
-  if(!phone||!pass||!name){alert('Fill all');return;}
-  const email=phone.replace(/[^0-9]/g,'')+'@skylight.ug';
-  try{
-    const cred=await createUserWithEmailAndPassword(auth,email,pass);
-    await setDoc(doc(db,'users',cred.user.uid),{phone,name,created:serverTimestamp(),type:'legit_tracker'});
-    alert('✅ Registered');
-  }catch(e){alert(e.message);}
-};
-window.loginUser=async()=>{
-  const phone=document.getElementById('regPhone').value.trim();
-  const pass=document.getElementById('regPass').value;
-  const email=phone.replace(/[^0-9]/g,'')+'@skylight.ug';
-  try{await signInWithEmailAndPassword(auth,email,pass);}catch(e){alert(e.message);}
-};
-onAuthStateChanged(auth, async(user)=>{
-  if(user){
-    currentUid=user.uid;
-    document.getElementById('authBox').style.display='none';
-    document.getElementById('mainApp').style.display='block';
-    const snap=await getDoc(doc(db,'users',currentUid));
-    if(snap.exists()){
-      document.getElementById('userNameDisplay').innerText=snap.data().name||'User';
-      if(snap.data().photoUrl) document.getElementById('profilePic').src=snap.data().photoUrl;
-    }
-    const snapInv=await getDocs(collection(db,'users',currentUid,'investments'));
-    investments=[]; snapInv.forEach(d=>investments.push({id:d.id,...d.data()})); load();
-  }else{
-    document.getElementById('authBox').style.display='block';
-    document.getElementById('mainApp').style.display='none';
-  }
-});
-window.addInvestment=async()=>{
+window.addInvestment=()=>{
   const name=document.getElementById('assetName').value.trim();
   const price=parseInt(document.getElementById('assetPrice').value||'0');
-  const cur=parseInt(document.getElementById('assetCurrent').value||'0')||price;
+  const curVal=parseInt(document.getElementById('assetCurrent').value||'0')||price;
   const type=document.getElementById('assetType').value;
   const expiry=document.getElementById('assetExpiry').value;
   const notes=document.getElementById('assetNotes').value||'';
-  if(!name||!price){alert('Enter name + amount');return;}
-  const id=Date.now().toString();
-  const obj={name,price,current:cur,type,expiry,notes,time:Date.now(),created:serverTimestamp()};
-  try{await setDoc(doc(db,'users',currentUid,'investments',id),obj); investments.push({id,...obj}); load(); alert('✅ Added'); document.getElementById('assetName').value='';}catch(e){alert(e.message);}
+  if(!name||!price){alert('Enter name + invested amount');return;}
+  const obj={id:Date.now(),name,price,current:curVal,type,expiry,notes,time:Date.now()};
+  investments.push(obj); save(); load();
+  document.getElementById('assetName').value='';document.getElementById('assetPrice').value='';document.getElementById('assetCurrent').value='';document.getElementById('assetNotes').value='';
+  alert('✅ Added '+name+' — Portfolio updated');
 };
-window.deleteInv=async(id)=>{
-  if(!confirm('Delete?'))return;
-  investments=investments.filter(x=>x.id!=id); load();
-  try{await deleteDoc(doc(db,'users',currentUid,'investments',id));}catch(e){}
+
+window.deleteInv=(id)=>{
+  if(!confirm('Delete this investment?'))return;
+  investments=investments.filter(x=>x.id!=id); save(); load();
 };
-window.changeProfilePic=async()=>{
+
+window.changeProfilePic=()=>{
   const input=document.createElement('input'); input.type='file'; input.accept='image/*';
-  input.onchange=async(e)=>{
+  input.onchange=(e)=>{
     const file=e.target.files[0]; if(!file)return;
-    if(file.size>600000){alert('Max 600KB');return;}
+    if(file.size>800000){alert('Image too big — Max 800KB — compress please');return;}
     const reader=new FileReader();
-    reader.onload=async()=>{const b64=reader.result; document.getElementById('profilePic').src=b64; try{await setDoc(doc(db,'users',currentUid),{photoUrl:b64},{merge:true}); alert('✅ Profile pic saved LIVE DB');}catch(err){alert('Saved');}}; reader.readAsDataURL(file);
-  }; input.click();
+    reader.onload=()=>{
+      const b64=reader.result;
+      document.getElementById('profilePic').src=b64;
+      localStorage.setItem('skylight_profile_pic',b64);
+      alert('✅ Profile pic saved locally — no Firebase needed');
+    };
+    reader.readAsDataURL(file);
+  };
+  input.click();
 };
+
 window.exportCSV=()=>{
-  if(!investments.length){alert('No data');return;}
-  let csv='Name,Type,Invested,Current,Profit,Expiry,Notes,Date\n';
-  investments.forEach(i=>{csv+=`"${i.name}","${i.type}",${i.price},${i.current},${i.current-i.price},"${i.expiry||''}","${(i.notes||'').replace(/"/g,'')}",${new Date(i.time).toLocaleDateString()}\n`;});
-  const blob=new Blob([csv],{type:'text/csv'}); const url=URL.createObjectURL(blob); const a=document.createElement('a'); a.href=url; a.download='skylight_'+new Date().toISOString().slice(0,10)+'.csv'; a.click();
+  if(!investments.length){alert('No data to export');return;}
+  let csv='Name,Type,Invested UGX,Current UGX,Profit/Loss,Expiry,Notes,Date\n';
+  investments.forEach(i=>{
+    const profit=i.current-i.price;
+    csv+=`"${i.name.replace(/"/g,'')}","${i.type}",${i.price},${i.current},${profit},"${i.expiry||''}","${(i.notes||'').replace(/"/g,'')}",${new Date(i.time).toLocaleDateString()}\n`;
+  });
+  const blob=new Blob([csv],{type:'text/csv'}); const url=URL.createObjectURL(blob);
+  const a=document.createElement('a'); a.href=url; a.download='skylight_portfolio_'+new Date().toISOString().slice(0,10)+'.csv'; a.click();
+  URL.revokeObjectURL(url);
 };
-window.adminLogin=async()=>{
+
+window.clearAll=()=>{
+  if(!confirm('Clear ALL investments? This cannot be undone!'))return;
+  investments=[]; save(); load(); alert('Cleared');
+};
+
+window.adminLogin=()=>{
   const code=document.getElementById('adminCode').value;
-  if(code!=='SKYLIGHT2024'){alert('Wrong code');return;}
+  if(code!=='SKYLIGHT2024'){alert('Wrong code — Use SKYLIGHT2024');return;}
   document.getElementById('adminPanel').style.display='block';
-  document.getElementById('waStatus').innerHTML='<div style="display:flex;gap:10px;align-items:center"><div style="width:32px;height:32px;background:#22c55e;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900">✓</div><div><div style="font-weight:900;color:#fff;font-size:12px">Access Granted • Admin Dashboard</div><div style="font-size:10px;color:#9ca3af">Manage users • Legit portfolios • LIVE</div></div></div>';
-  try{const snap=await getDocs(collection(db,'users')); let html=''; snap.forEach(d=>{const u=d.data(); html+=`<div style="padding:8px;border-bottom:1px solid rgba(255,255,255,.06)">${u.name||''} • ${u.phone||''}</div>`;}); document.getElementById('adminUsersList').innerHTML=html||'No users';}catch(e){document.getElementById('adminUsersList').innerHTML='Error: '+e.message;}
+  document.getElementById('waStatus').innerHTML='<div style="display:flex;gap:10px;align-items:center"><div style="width:32px;height:32px;background:#22c55e;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900">✓</div><div><div style="font-weight:900;color:#fff;font-size:12px">Access Granted • Admin Dashboard • Clean</div><div style="font-size:10px;color:#9ca3af">Local portfolio • '+investments.length+' assets • No debug text • LIVE</div></div></div>';
+  let total=0,cur=0; investments.forEach(i=>{total+=i.price;cur+=i.current;});
+  const prof=cur-total;
+  document.getElementById('adminUsersList').innerHTML=`
+    <div style="background:rgba(30,41,59,.8);padding:10px;border-radius:10px;margin-top:8px">
+      <div style="display:flex;justify-content:space-between"><span class="small">Total Invested</span><b>${total.toLocaleString()} UGX</b></div>
+      <div style="display:flex;justify-content:space-between;margin-top:4px"><span class="small">Current Value</span><b style="color:#22c55e">${cur.toLocaleString()} UGX</b></div>
+      <div style="display:flex;justify-content:space-between;margin-top:4px"><span class="small">Profit/Loss</span><b style="color:${prof>=0?'#22c55e':'#ef4444'}">${prof>=0?'+':''}${prof.toLocaleString()} UGX</b></div>
+      <div style="display:flex;justify-content:space-between;margin-top:4px"><span class="small">Assets</span><b>${investments.length}</b></div>
+      <div style="margin-top:8px" class="small">Profile pic: ${profilePicData?'✅ Saved':'No pic'} • Storage: Local • No Firebase • No login stuck</div>
+    </div>`;
 };
-window.logout=async()=>{await signOut(auth); location.reload();};
+
 window.showTab=(t)=>{
   document.getElementById('homeTab').style.display=t==='home'?'block':'none';
   document.getElementById('socialTab').style.display=t==='social'?'block':'none';
   document.getElementById('rulesTab').style.display=t==='rules'?'block':'none';
   document.getElementById('adminTab').style.display=t==='admin'?'block':'none';
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  const btn=document.getElementById('tab-'+t); if(btn) btn.classList.add('active');
 };
+
 window.load=()=>{
   let total=0,curTotal=0,html='';
-  investments.slice().reverse().forEach(inv=>{
+  const sorted=[...investments].reverse();
+  sorted.forEach(inv=>{
     total+=inv.price;curTotal+=inv.current;
     let daysLeft='—';let col='#22c55e';
-    if(inv.expiry){const diff=Math.ceil((new Date(inv.expiry).getTime()-Date.now())/86400000); daysLeft=diff+'D'; if(diff<=2)col='#ef4444'; else if(diff<=7)col='#f97316'; else if(diff<=20)col='#facc15';}
+    if(inv.expiry){
+      const diff=Math.ceil((new Date(inv.expiry).getTime()-Date.now())/86400000);
+      daysLeft=diff+'D'; 
+      if(diff<=0){col='#ef4444'; daysLeft='EXPIRED';}
+      else if(diff<=2)col='#ef4444'; 
+      else if(diff<=7)col='#f97316'; 
+      else if(diff<=20)col='#facc15';
+    }
     const profit=inv.current-inv.price; const profitCol=profit>=0?'#22c55e':'#ef4444';
-    html+=`<div style="border-left:4px solid ${col};background:rgba(30,41,59,.8);padding:10px;margin:6px 0;border-radius:10px;display:flex;justify-content:space-between"><div><b style="font-size:13px">${inv.name}</b><div class="small">${inv.type} • ${inv.price.toLocaleString()} → ${inv.current.toLocaleString()} UGX • <span style="color:${profitCol}">${profit>=0?'+':''}${profit.toLocaleString()}</span></div><div class="small" style="color:${col}">${inv.expiry?'⏳ '+daysLeft+' until '+inv.expiry:'No expiry'}</div></div><button class="btn btn-dark" style="padding:6px 10px;font-size:11px" onclick="deleteInv('${inv.id}')">✕</button></div>`;
+    html+=`<div style="border-left:4px solid ${col};background:rgba(30,41,59,.8);padding:10px;margin:6px 0;border-radius:10px;display:flex;justify-content:space-between;align-items:center">
+      <div><b style="font-size:13px">${inv.name}</b><div class="small">${inv.type} • ${inv.price.toLocaleString()} → ${inv.current.toLocaleString()} UGX • <span style="color:${profitCol};font-weight:700">${profit>=0?'+':''}${profit.toLocaleString()}</span></div><div class="small" style="color:${col}">${inv.expiry?'⏳ '+daysLeft+' until '+inv.expiry:'No expiry set'}${inv.notes?' • '+inv.notes:''}</div></div>
+      <button class="btn btn-dark" style="padding:6px 10px;font-size:11px" onclick="deleteInv(${inv.id})">✕</button>
+    </div>`;
   });
-  document.getElementById('ordersList').innerHTML=html||'<div class="small" style="padding:20px;text-align:center">No investments yet — Add your first real asset above</div>';
+  document.getElementById('ordersList').innerHTML=html||'<div class="small" style="padding:20px;text-align:center;border:1px dashed rgba(255,255,255,.1);border-radius:12px">No investments yet<br>Add your first real asset above<br><span style="font-size:10px">Real tracking • No fake returns • No login</span></div>';
   document.getElementById('investedTotal').innerText=total.toLocaleString()+' UGX';
   document.getElementById('currentTotal').innerText=curTotal.toLocaleString()+' UGX';
-  const prof=curTotal-total; const el=document.getElementById('profitTotal'); if(el){el.innerText=(prof>=0?'+':'')+prof.toLocaleString()+' UGX '+(prof>=0?'profit':'loss'); el.style.color=prof>=0?'#22c55e':'#ef4444';}
-  document.getElementById('dailyTotal').innerText=(prof>=0?'+':'')+prof.toLocaleString()+' UGX';
+  const prof=curTotal-total; 
+  const el1=document.getElementById('profitTotal'); if(el1){el1.innerText=(prof>=0?'+':'')+prof.toLocaleString()+' UGX '+(prof>=0?'profit':'loss'); el1.style.color=prof>=0?'#22c55e':'#ef4444';}
+  const el2=document.getElementById('dailyTotal'); if(el2){el2.innerText=(prof>=0?'+':'')+prof.toLocaleString()+' UGX'; el2.style.color=prof>=0?'#22c55e':'#ef4444';}
   document.getElementById('assetsCount').innerText=investments.length;
-  try{const ctx=document.getElementById('profitChart'); if(ctx){ if(window.myChart) window.myChart.destroy(); window.myChart=new Chart(ctx,{type:'line',data:{labels:investments.map(i=>i.name.slice(0,[STRIPPED]
+
+  // Chart — FIXED — no more Loading...
+  try{
+    const ctx=document.getElementById('profitChart');
+    if(ctx){
+      if(window.myChart) window.myChart.destroy();
+      if(investments.length>0){
+        window.myChart=new Chart(ctx,{
+          type:'line',
+          data:{
+            labels:investments.map(i=>i.name.slice(0,10)),
+            datasets:[
+              {label:'Invested',data:investments.map(i=>i.price),borderColor:'#facc15',backgroundColor:'rgba(250,204,21,.1)',tension:.4,fill:true},
+              {label:'Current',data:investments.map(i=>i.current),borderColor:'#22c55e',backgroundColor:'rgba(34,197,94,.1)',tension:.4,fill:true}
+            ]
+          },
+          options:{responsive:true,plugins:{legend:{labels:{color:'#9ca3af',font:{size:10}}}},scales:{x:{ticks:{color:'#6b7280',font:{size:9}}},y:{ticks:{color:'#6b7280'}}}}
+        });
+      }
+    }
+  }catch(e){console.log('chart',e);}
+
+  let listHtml=''; investments.slice(-8).forEach(i=>{
+    const p=i.current-i.price;
+    listHtml+=`<div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.06)"><span class="small">${i.name.slice(0,18)}</span><span style="color:${p>=0?'#22c55e':'#ef4444'};font-size:11px;font-weight:700">${p>=0?'+':''}${p.toLocaleString()}</span></div>`;
+  });
+  const hist=document.getElementById('profitHistoryList'); if(hist) hist.innerHTML=listHtml||'<div class="small">No history yet</div>';
 };
+
+// Init
+if(profilePicData){
+  const el=document.getElementById('profilePic');
+  if(el) el.src=profilePicData;
+}
+load();
 </script>
 </body>
   </html>
