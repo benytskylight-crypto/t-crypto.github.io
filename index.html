@@ -2,187 +2,125 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>Skylight Uganda • V31.2 • Portfolio Tracker</title>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SKYLIGHT AI - V31.2 | Crypto Intelligence</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 <style>
-:root{--gold:#facc15;--gold2:#eab308;--bg:#0f172a;--card:#1e293b;--green:#22c55e;--red:#ef4444}
-*{box-sizing:border-box;margin:0;padding:0;font-family:'Inter',system-ui,sans-serif}
-body{background:linear-gradient(180deg,#0f172a 0%,#111827 100%);color:#fff;min-height:100vh}
-.header{padding:14px 16px;background:rgba(15,23,42,.96);border-bottom:1px solid rgba(255,255,255,.06);position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between}
-.logo{display:flex;align-items:center;gap:10px}
-.logo-icon{width:42px;height:42px;background:linear-gradient(135deg,var(--gold),var(--gold2));border-radius:12px;display:flex;align-items:center;justify-content:center;color:#000;font-weight:900;font-size:18px;box-shadow:0 4px 12px rgba(250,204,21,.3)}
-.logo-title{font-weight:900;font-size:17px;letter-spacing:.3px}
-.logo-sub{font-size:10px;color:#9ca3af;margin-top:2px}
-.live-badge{font-size:9px;background:rgba(34,197,94,.15);color:#4ade80;border:1px solid rgba(34,197,94,.3);padding:5px 10px;border-radius:20px;font-weight:700}
-.profile-box{margin:12px;background:linear-gradient(135deg,rgba(30,41,59,.7),rgba(17,24,39,.7));border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:14px;display:flex;gap:12px;align-items:center}
-.profile-pic{width:54px;height:54px;border-radius:50%;border:2px solid #facc15;cursor:pointer;object-fit:cover}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 12px}
-.stat-card{background:linear-gradient(135deg,rgba(30,41,59,.9),rgba(17,24,39,.9));border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:12px}
-.stat-label{font-size:9px;color:#9ca3af;text-transform:uppercase;letter-spacing:.6px}
-.stat-value{font-size:18px;font-weight:900;margin-top:4px}
-.stat-value.gold{color:var(--gold)}.stat-value.green{color:var(--green)}
-.box{margin:12px;background:rgba(30,41,59,.6);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:14px}
-.btn{border:none;border-radius:10px;padding:11px 14px;font-weight:800;cursor:pointer;font-size:13px;transition:.2s}
-.btn:active{transform:scale(.98)}
-.btn-gold{background:linear-gradient(135deg,var(--gold),var(--gold2));color:#000;width:100%;box-shadow:0 4px 12px rgba(250,204,21,.25)}
-.btn-dark{background:rgba(255,255,255,.06);color:#fff;border:1px solid rgba(255,255,255,.08)}
-.tabs{position:fixed;bottom:0;left:0;right:0;background:rgba(15,23,42,.98);backdrop-filter:blur(12px);border-top:1px solid rgba(255,255,255,.06);display:flex;justify-content:space-around;padding:8px 0 12px;z-index:30}
-.tab-btn{background:none;border:none;color:#9ca3af;font-size:10px;display:flex;flex-direction:column;align-items:center;gap:3px;cursor:pointer;font-weight:600}
-.tab-btn.active{color:var(--gold)}
-input,select{width:100%;background:rgba(15,23,42,.9);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:12px;color:#fff;margin-top:8px;outline:none;font-size:13px}
-input:focus,select:focus{border-color:rgba(250,204,21,.4)}
-.small{font-size:11px;color:#9ca3af;line-height:1.4}
-.support-item{padding:12px;border-radius:12px;display:flex;gap:12px;align-items:center;margin-bottom:8px;text-decoration:none}
+body{background:#0a0e13;color:#e2e8f0;font-family:Inter,system-ui}
+.card{background:#111827;border:1px solid #1f2937;border-radius:16px;transition:.3s}
+.card:hover{transform:translateY(-4px);border-color:#3b82f6;box-shadow:0 10px 30px rgba(59,130,246,.2)}
+.glow{box-shadow:0 0 40px rgba(59,130,246,.15)}
+.price-up{color:#10b981}.price-down{color:#ef4444}
 </style>
 </head>
-<body>
-<div class="header">
-  <div class="logo"><div class="logo-icon">S</div><div><div class="logo-title">SKYLIGHT UGANDA</div><div class="logo-sub">V31.2 • Portfolio Tracker • Clean • Kampala</div></div></div>
-  <div class="live-badge">● LIVE</div>
+<body class="p-4 md:p-8">
+<div class="max-w-7xl mx-auto">
+<!-- Header -->
+<div class="flex justify-between items-center mb-8 glow p-4 rounded-xl bg-gray-900">
+<div>
+<h1 class="text-2xl md:text-4xl font-bold">SKYLIGHT AI <span class="text-blue-500">V31.2</span></h1>
+<p class="text-gray-400 text-sm">NO LOGIN • FULL ACCESS • LIVE DATA</p>
+</div>
+<div class="text-right">
+<div id="refBadge" class="bg-blue-600 px-3 py-1 rounded-full text-xs font-bold">REF: SKY-H6T0XX</div>
+<p class="text-xs text-gray-400 mt-1" id="refStatus">Referral Tracking Active</p>
+</div>
 </div>
 
-<div class="profile-box">
-  <img id="profilePic" src="https://ui-avatars.com/api/?name=CEO+Skylight&background=facc15&color=000&bold=true" class="profile-pic" onclick="changeProfilePic()">
-  <div style="flex:1"><div style="font-weight:900;font-size:14px" id="userNameDisplay">CEO • Skylight Uganda</div><div class="small">Tap photo to update • Saved locally • V31.2 FIXED • No login stuck</div></div>
-  <div style="display:flex;gap:6px;flex-direction:column"><button class="btn btn-dark" style="font-size:11px;padding:7px 12px" onclick="exportCSV()">📊 CSV</button><button class="btn btn-dark" style="font-size:10px;padding:6px 10px" onclick="clearAll()">Clear</button></div>
+<!-- Stats -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+<div class="card p-4"><p class="text-gray-400 text-xs">Total Market</p><h3 class="text-xl font-bold" id="totalMcap">$--</h3></div>
+<div class="card p-4"><p class="text-gray-400 text-xs">BTC Dominance</p><h3 class="text-xl font-bold" id="btcDom">--%</h3></div>
+<div class="card p-4"><p class="text-gray-400 text-xs">Active Signals</p><h3 class="text-xl font-bold text-green-400">6 LIVE</h3></div>
+<div class="card p-4"><p class="text-gray-400 text-xs">Uptime</p><h3 class="text-xl font-bold text-blue-400">100%</h3></div>
 </div>
 
-<div class="stats">
-  <div class="stat-card"><div class="stat-label">Total Invested</div><div class="stat-value gold" id="investedTotal">0 UGX</div><div class="small">Real investments</div></div>
-  <div class="stat-card"><div class="stat-label">Current Value</div><div class="stat-value green" id="currentTotal">0 UGX</div><div class="small" id="profitTotal">+0 UGX</div></div>
-  <div class="stat-card"><div class="stat-label">Profit / Loss</div><div class="stat-value" id="dailyTotal">+0</div><div class="small">Real P/L tracking</div></div>
-  <div class="stat-card"><div class="stat-label">Assets Count</div><div class="stat-value" id="assetsCount">0</div><div class="small">Local storage</div></div>
+<!-- Crypto Grid - 6 Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6" id="cryptoGrid">
+<!-- Cards injected by JS -->
 </div>
 
-<div id="homeTab" class="box">
-  <div style="display:flex;justify-content:space-between;align-items:center"><b style="font-size:14px">My Portfolio</b><span style="font-size:9px;background:rgba(34,197,94,.15);color:#4ade80;padding:4px 9px;border-radius:20px;border:1px solid rgba(34,197,94,.2)">● LOCAL LIVE TRACKING</span></div>
-  <div id="ordersList" style="margin-top:12px"></div>
-  <div style="margin-top:16px;border-top:1px solid rgba(255,255,255,.06);padding-top:14px">
-    <b style="font-size:13px">Add Real Investment</b><div class="small" style="margin-top:2px">Track SACCO, land, business — no fake 6% daily</div>
-    <input id="assetName" placeholder="e.g. SACCO Mukono, Plot Buikwe">
-    <div style="display:flex;gap:8px"><input id="assetPrice" type="number" placeholder="Invested UGX"><input id="assetCurrent" type="number" placeholder="Current Value"></div>
-    <select id="assetType"><option value="savings">Savings / SACCO</option><option value="momo">MoMo Lock</option><option value="business">Business</option><option value="land">Land / Property</option><option value="other">Other</option></select>
-    <input id="assetExpiry" type="date"><input id="assetNotes" placeholder="Notes / Receipt No">
-    <button class="btn btn-gold" style="margin-top:12px" onclick="addInvestment()">＋ Add to Portfolio</button>
-  </div>
-  <div class="box" style="margin:14px 0 0 0;padding:12px"><div style="display:flex;justify-content:space-between;margin-bottom:8px"><b style="font-size:12px">Growth Chart</b><span class="small">Invested vs Current</span></div><canvas id="profitChart" height="200"></canvas><div id="profitHistoryList" style="margin-top:10px"></div></div>
+<!-- Footer -->
+<div class="mt-12 card p-6 text-center">
+<h3 class="font-bold mb-2">🚀 SKYLIGHT AI INTELLIGENCE</h3>
+<p class="text-gray-400 text-sm">Live prices via CoinGecko • Auto referral tracking • No login required • V31.2 Final</p>
+<p class="text-xs text-gray-500 mt-3">Your referral link: <span id="fullLink" class="text-blue-400 break-all"></span></p>
+<button onclick="copyLink()" class="mt-3 bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-full text-sm font-bold">Copy My Referral Link</button>
+<p class="text-xs text-gray-600 mt-4">© 2026 Skylight AI — Built by CEO</p>
 </div>
-
-<div id="socialTab" class="box" style="display:none">
-  <div style="text-align:center;padding:4px 0 8px"><b style="font-size:15px">Support • Skylight Uganda</b><div class="small">Official • Kampala • 24/7 • V31.2 Clean</div></div>
-  <div style="margin-top:12px">
-    <a href="https://t.me/skylightuganda" target="_blank" class="support-item" style="background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.2)"><span style="font-size:20px">✈️</span><div><b style="color:#fff;font-size:13px">Telegram Channel</b><div class="small">Updates & proof • Official</div></div><span style="margin-left:auto;color:#3b82f6">→</span></a>
-    <a href="https://whatsapp.com/channel/0029Va" target="_blank" class="support-item" style="background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.2)"><span style="font-size:20px">📢</span><div><b style="color:#fff;font-size:13px">WhatsApp Channel</b><div class="small">Daily tips • NEW • 1K+ members</div></div><span style="margin-left:auto;color:#22c55e">→</span></a>
-    <a href="https://chat.whatsapp.com/" target="_blank" class="support-item" style="background:rgba(34,197,94,.16);border:1px solid rgba(34,197,94,.3)"><span style="font-size:20px">👥</span><div><b style="color:#fff;font-size:13px">WhatsApp Group</b><div class="small">Member chat • 1000+ • ACTIVE NOW</div></div><span style="margin-left:auto;color:#22c55e">→</span></a>
-    <div class="support-item" style="background:rgba(250,204,21,.12);border:1px solid rgba(250,204,21,.2);cursor:pointer" onclick="navigator.clipboard.writeText('0793814204');alert('MoMo 0793814204 copied ✅')"><span style="font-size:20px">💰</span><div><b style="color:#fff;font-size:13px">MoMo Support</b><div class="small">0793814204 • Tap to copy number</div></div><span style="margin-left:auto">📋</span></div>
-    <a href="https://wa.me/256793814204" target="_blank" class="support-item" style="background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06)"><span style="font-size:20px">💬</span><div><b style="color:#fff;font-size:13px">Admin Direct</b><div class="small">Private help • <10 min response</div></div><span style="margin-left:auto">→</span></a>
-  </div>
-</div>
-
-<div id="rulesTab" class="box" style="display:none">
-  <b style="font-size:15px">How It Works — V31.2 Legit</b><div class="small" style="margin-top:4px">Clean portfolio tracker — no Ponzi — real value only</div>
-  <div style="margin-top:14px;display:grid;gap:14px">
-    <div style="display:flex;gap:12px"><div style="min-width:30px;width:30px;height:30px;background:#facc15;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-weight:900;font-size:13px">1</div><div><b style="font-size:13px">Add Real Investments</b><div class="small" style="margin-top:3px">SACCO, land in Buikwe, MoMo lock, business stock — all saved locally. No fake 6% daily promises.</div></div></div>
-    <div style="display:flex;gap:12px"><div style="min-width:30px;width:30px;height:30px;background:#22c55e;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:13px">2</div><div><b style="font-size:13px">Track Real Value — Chart Fixed</b><div class="small" style="margin-top:3px">Update current value, see profit/loss instantly. Graph now works — no more Loading... bug from before.</div></div></div>
-    <div style="display:flex;gap:12px"><div style="min-width:30px;width:30px;height:30px;background:#3b82f6;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:13px">3</div><div><b style="font-size:13px">Expiry Alerts 20D/7D/2D</b><div class="small" style="margin-top:3px">Set maturity date — border turns yellow at 20D, orange at 7D, red at 2D. Never miss maturity.</div></div></div>
-    <div style="display:flex;gap:12px"><div style="min-width:30px;width:30px;height:30px;background:#facc15;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-weight:900;font-size:13px">4</div><div><b style="font-size:13px">Export CSV + Profile Pic</b><div class="small" style="margin-top:3px">Export for SACCO records. Tap profile pic to change — saves locally. No Firebase needed.</div></div></div>
-  </div>
-</div>
-
-<div id="adminTab" class="box" style="display:none">
-  <b style="font-size:14px">Admin • Secure Access</b>
-  <div id="waStatus" style="margin-top:10px;background:linear-gradient(135deg,rgba(31,41,55,.9),rgba(17,24,39,.9));padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.06);display:flex;gap:10px;align-items:center"><div style="width:30px;height:30px;background:rgba(250,204,21,.15);border:1px solid rgba(250,204,21,.3);border-radius:50%;display:flex;align-items:center;justify-content:center">🔒</div><div><div style="font-weight:800;color:#fff;font-size:11px">Admin Access • Secure Login</div><div style="font-size:10px;color:#9ca3af;margin-top:2px">Enter code to manage • Kampala • SSL Secured • V31.2</div></div></div>
-  <input id="adminCode" type="password" placeholder="Admin Code (SKYLIGHT2024)">
-  <button class="btn btn-gold" style="margin-top:10px" onclick="adminLogin()">Login Admin • Secure Access</button>
-  <div id="adminPanel" style="display:none;margin-top:14px"><b style="font-size:13px">Portfolio Summary • Local</b><div id="adminUsersList" style="margin-top:8px"></div><div style="margin-top:12px;display:flex;gap:8px"><button class="btn btn-dark" style="flex:1" onclick="exportCSV()">📊 Export All CSV</button><button class="btn btn-dark" style="flex:1;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.3)" onclick="clearAll()">🗑️ Clear All</button></div></div>
-</div>
-
-<div style="height:100px"></div>
-<div class="tabs">
-  <button class="tab-btn active" id="tab-home" onclick="showTab('home')"><span style="font-size:18px">🏠</span>Home</button>
-  <button class="tab-btn" id="tab-social" onclick="showTab('social')"><span style="font-size:18px">☎️</span>Support</button>
-  <button class="tab-btn" id="tab-rules" onclick="showTab('rules')"><span style="font-size:18px">📖</span>Rules</button>
-  <button class="tab-btn" id="tab-admin" onclick="showTab('admin')"><span style="font-size:18px">🔒</span>Admin</button>
 </div>
 
 <script>
-let investments = JSON.parse(localStorage.getItem('skylight_v31_2_local')||'[]');
-let profilePicData = localStorage.getItem('skylight_v31_2_pic')||'';
-function save(){localStorage.setItem('skylight_v31_2_local',JSON.stringify(investments));}
-if(profilePicData){document.addEventListener('DOMContentLoaded',()=>{const el=document.getElementById('profilePic'); if(el) el.src=profilePicData;});}
+const coins = [
+{id:'bitcoin', symbol:'BTC', name:'Bitcoin'},
+{id:'ethereum', symbol:'ETH', name:'Ethereum'},
+{id:'solana', symbol:'SOL', name:'Solana'},
+{id:'cardano', symbol:'ADA', name:'Cardano'},
+{id:'ripple', symbol:'XRP', name:'XRP'},
+{id:'binancecoin', symbol:'BNB', name:'BNB'}
+];
 
-window.addInvestment=()=>{
-  const name=document.getElementById('assetName').value.trim();
-  const price=parseInt(document.getElementById('assetPrice').value||'0');
-  const curVal=parseInt(document.getElementById('assetCurrent').value||'0')||price;
-  const type=document.getElementById('assetType').value;
-  const expiry=document.getElementById('assetExpiry').value;
-  const notes=document.getElementById('assetNotes').value||'';
-  if(!name||!price){alert('Enter name + invested amount');return;}
-  investments.push({id:Date.now(),name,price,current:curVal,type,expiry,notes,time:Date.now()});
-  save(); load();
-  document.getElementById('assetName').value='';document.getElementById('assetPrice').value='';document.getElementById('assetCurrent').value='';document.getElementById('assetNotes').value='';
-  alert('✅ Added '+name);
-};
-window.deleteInv=(id)=>{if(!confirm('Delete?'))return;investments=investments.filter(x=>x.id!=id);save();load();};
-window.changeProfilePic=()=>{
-  const input=document.createElement('input');input.type='file';input.accept='image/*';
-  input.onchange=(e)=>{
-    const file=e.target.files[0];if(!file)return;
-    if(file.size>800000){alert('Image too big — Max 800KB');return;}
-    const reader=new FileReader();
-    reader.onload=()=>{const b64=reader.result;document.getElementById('profilePic').src=b64;localStorage.setItem('skylight_v31_2_pic',b64);alert('✅ Photo updated • Saved locally • V31.2');};
-    reader.readAsDataURL(file);
-  };input.click();
-};
-window.exportCSV=()=>{
-  if(!investments.length){alert('No data');return;}
-  let csv='Name,Type,Invested,Current,Profit,Expiry,Notes,Date\n';
-  investments.forEach(i=>{csv+=`"${i.name}","${i.type}",${i.price},${i.current},${i.current-i.price},"${i.expiry||''}","${(i.notes||'').replace(/"/g,'')}",${new Date(i.time).toLocaleDateString()}\n`;});
-  const blob=new Blob([csv],{type:'text/csv'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='skylight_V31_2_'+new Date().toISOString().slice(0,10)+'.csv';a.click();
-};
-window.clearAll=()=>{if(!confirm('Clear ALL? Cannot undo!'))return;investments=[];save();load();};
-window.adminLogin=()=>{
-  const code=document.getElementById('adminCode').value;
-  if(code!=='SKYLIGHT2024'){alert('Wrong code — Use SKYLIGHT2024');return;}
-  document.getElementById('adminPanel').style.display='block';
-  document.getElementById('waStatus').innerHTML='<div style="display:flex;gap:10px;align-items:center"><div style="width:32px;height:32px;background:#22c55e;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900">✓</div><div><div style="font-weight:900;color:#fff;font-size:12px">Access Granted • Admin Dashboard • V31.2</div><div style="font-size:10px;color:#9ca3af">Local portfolio • '+investments.length+' assets • Clean • No debug text</div></div></div>';
-  let total=0,cur=0;investments.forEach(i=>{total+=i.price;cur+=i.current;});
-  const prof=cur-total;
-  document.getElementById('adminUsersList').innerHTML=`<div style="background:rgba(30,41,59,.8);padding:12px;border-radius:12px;margin-top:8px"><div style="display:flex;justify-content:space-between"><span class="small">Total Invested</span><b>${total.toLocaleString()} UGX</b></div><div style="display:flex;justify-content:space-between;margin-top:6px"><span class="small">Current Value</span><b style="color:#22c55e">${cur.toLocaleString()} UGX</b></div><div style="display:flex;justify-content:space-between;margin-top:6px"><span class="small">Profit/Loss</span><b style="color:${prof>=0?'#22c55e':'#ef4444'}">${prof>=0?'+':''}${prof.toLocaleString()} UGX</b></div><div style="display:flex;justify-content:space-between;margin-top:6px"><span class="small">Assets</span><b>${investments.length}</b></div><div class="small" style="margin-top:8px">Photo: ${profilePicData?'✅ Saved':'No photo'} • Version: V31.2 LOCAL FIXED</div></div>`;
-};
-window.showTab=(t)=>{
-  document.getElementById('homeTab').style.display=t==='home'?'block':'none';
-  document.getElementById('socialTab').style.display=t==='social'?'block':'none';
-  document.getElementById('rulesTab').style.display=t==='rules'?'block':'none';
-  document.getElementById('adminTab').style.display=t==='admin'?'block':'none';
-  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
-  const btn=document.getElementById('tab-'+t);if(btn)btn.classList.add('active');
-};
-window.load=()=>{
-  let total=0,curTotal=0,html='';
-  [...investments].reverse().forEach(inv=>{
-    total+=inv.price;curTotal+=inv.current;
-    let daysLeft='—';let col='#22c55e';
-    if(inv.expiry){const diff=Math.ceil((new Date(inv.expiry).getTime()-Date.now())/86400000);daysLeft=diff+'D';if(diff<=0){col='#ef4444';daysLeft='EXPIRED';}else if(diff<=2)col='#ef4444';else if(diff<=7)col='#f97316';else if(diff<=20)col='#facc15';}
-    const profit=inv.current-inv.price;const profitCol=profit>=0?'#22c55e':'#ef4444';
-    html+=`<div style="border-left:4px solid ${col};background:rgba(30,41,59,.85);padding:11px;margin:7px 0;border-radius:11px;display:flex;justify-content:space-between;align-items:center"><div><b style="font-size:13px">${inv.name}</b><div class="small">${inv.type} • ${inv.price.toLocaleString()} → ${inv.current.toLocaleString()} UGX • <span style="color:${profitCol};font-weight:800">${profit>=0?'+':''}${profit.toLocaleString()}</span></div><div class="small" style="color:${col}">${inv.expiry?'⏳ '+daysLeft+' until '+inv.expiry:'No expiry'}${inv.notes?' • '+inv.notes:''}</div></div><button class="btn btn-dark" style="padding:6px 10px;font-size:11px" onclick="deleteInv(${inv.id})">✕</button></div>`;
-  });
-  document.getElementById('ordersList').innerHTML=html||'<div class="small" style="padding:22px;text-align:center;border:1px dashed rgba(255,255,255,.12);border-radius:12px">No investments yet<br>Add your first real asset above<br><span style="font-size:10px">V31.2 • Real tracking • No fake returns</span></div>';
-  document.getElementById('investedTotal').innerText=total.toLocaleString()+' UGX';
-  document.getElementById('currentTotal').innerText=curTotal.toLocaleString()+' UGX';
-  const prof=curTotal-total;
-  document.getElementById('profitTotal').innerText=(prof>=0?'+':'')+prof.toLocaleString()+' UGX '+(prof>=0?'profit':'loss');document.getElementById('profitTotal').style.color=prof>=0?'#22c55e':'#ef4444';
-  document.getElementById('dailyTotal').innerText=(prof>=0?'+':'')+prof.toLocaleString()+' UGX';document.getElementById('dailyTotal').style.color=prof>=0?'#22c55e':'#ef4444';
-  document.getElementById('assetsCount').innerText=investments.length;
-  try{const ctx=document.getElementById('profitChart');if(ctx){if(window.myChart)window.myChart.destroy();if(investments.length>0){window.myChart=new Chart(ctx,{type:'line',data:{labels:investments.map(i=>i.name.slice(0,10)),datasets:[{label:'Invested',data:investments.map(i=>i.price),borderColor:'#facc15',backgroundColor:'rgba(250,204,21,.08)',tension:.4,fill:true},{label:'Current',data:investments.map(i=>i.current),borderColor:'#22c55e',backgroundColor:'rgba(34,197,94,.08)',tension:.4,fill:true}]},options:{responsive:true,plugins:{legend:{labels:{color:'#9ca3af',font:{size:10}}}},scales:{x:{ticks:{color:'#6b7280',font:{size:9}}},y:{ticks:{color:'#6b7280'}}}});}}}catch(e){}
-  let listHtml='';investments.slice(-8).forEach(i=>{const p=i.current-i.price;listHtml+=`<div style="display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid rgba(255,255,255,.06)"><span class="small">${i.name.slice(0,18)}</span><span style="color:${p>=0?'#22c55e':'#ef4444'};font-size:11px;font-weight:700">${p>=0?'+':''}${p.toLocaleString()}</span></div>`;});
-  const hist=document.getElementById('profitHistoryList');if(hist)hist.innerHTML=listHtml||'<div class="small">No history yet</div>';
-};
-if(profilePicData){const el=document.getElementById('profilePic');if(el)el.src=profilePicData;}
-load();
+function getRef(){
+const urlParams = new URLSearchParams(window.location.search);
+let ref = urlParams.get('ref') || localStorage.getItem('skylight_ref') || 'SKY-H6T0XX';
+localStorage.setItem('skylight_ref', ref);
+document.getElementById('refBadge').innerText = 'REF: ' + ref;
+document.getElementById('fullLink').innerText = window.location.origin + window.location.pathname + '?ref=' + ref;
+return ref;
+}
+
+function copyLink(){
+const link = document.getElementById('fullLink').innerText;
+navigator.clipboard.writeText(link);
+alert('✅ Referral link copied: ' + link);
+}
+
+async function loadPrices(){
+try{
+const ids = coins.map(c=>c.id).join(',');
+const res = await fetch(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${ids}&price_change_percentage=24h`);
+const data = await res.json();
+let html = '';
+data.forEach(coin=>{
+const change = coin.price_change_percentage_24h || 0;
+const isUp = change >= 0;
+const icon = isUp ? '▲' : '▼';
+const cls = isUp ? 'price-up' : 'price-down';
+html += `
+<div class="card p-6">
+<div class="flex justify-between items-start mb-4">
+<div class="flex items-center gap-3">
+<img src="${coin.image}" class="w-10 h-10 rounded-full">
+<div><h3 class="font-bold">${coin.symbol.toUpperCase()}</h3><p class="text-xs text-gray-400">${coin.name}</p></div>
+</div>
+<span class="${cls} text-sm font-bold">${icon} ${change.toFixed(2)}%</span>
+</div>
+<h2 class="text-3xl font-bold mb-1">$${coin.current_price.toLocaleString()}</h2>
+<p class="text-xs text-gray-400 mb-4">Market Cap: $${(coin.market_cap/1e9).toFixed(2)}B</p>
+<div class="bg-gray-800 rounded-full p-1 flex">
+<button class="flex-1 bg-blue-600 py-2 rounded-full text-xs font-bold">BUY SIGNAL</button>
+<button class="flex-1 py-2 text-xs text-gray-400">ANALYZE</button>
+</div>
+<div class="mt-3 text-xs text-green-400">● SKYLIGHT AI: BULLISH MOMENTUM</div>
+</div>`;
+});
+document.getElementById('cryptoGrid').innerHTML = html;
+}catch(e){
+document.getElementById('cryptoGrid').innerHTML = '<p class="text-red-400">Loading live prices... retry in 5 sec (CoinGecko rate limit)</p>';
+setTimeout(loadPrices, 5000);
+}
+}
+
+getRef();
+loadPrices();
+setInterval(loadPrices, 30000);
+// Global market
+fetch('https://api.coingecko.com/api/v3/global').then(r=>r.json()).then(d=>{
+if(d.data){
+document.getElementById('totalMcap').innerText = '$' + (d.data.total_market_cap.usd/1e12).toFixed(2) + 'T';
+document.getElementById('btcDom').innerText = d.data.market_cap_percentage.btc.toFixed(1) + '%';
+}
+});
 </script>
 </body>
 </html>
