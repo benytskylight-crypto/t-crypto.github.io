@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://benytskylight-crypto.github.io/t-crypto.github.io/sitemap.xml
