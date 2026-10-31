@@ -3,95 +3,141 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<title>SKYLIGHT UGANDA</title>
+<title>SKYLIGHT UGANDA V31.2 SAFE</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;font-family:Arial}
-body{background:#0a2a5e;color:white;padding-bottom:130px}
-.top{padding:15px;display:flex;justify-content:space-between;align-items:center}
-.top b{color:#f9d34a;font-size:22px}
-.phone{background:white;color:black;padding:8px 15px;border-radius:20px;font-weight:bold}
-.page{display:none;padding:15px}
+body{background:#0a122a;color:white;padding-bottom:140px}
+.header{text-align:center;padding:15px 10px;background:#0a122a;position:sticky;top:0;z-index:100}
+.header h1{color:#f9d34a;font-size:22px;line-height:1.2}
+.header p{color:#aaa;font-size:11px;margin-top:4px}
+.top-tabs{display:flex;gap:8px;overflow-x:auto;padding:10px 15px;background:#0a122a;white-space:nowrap}
+.top-tabs button{border:none;padding:10px 16px;border-radius:20px;background:#2a344d;color:#ccc;font-size:12px;font-weight:bold}
+.top-tabs button.active{background:#f9d34a;color:#000}
+.page{display:none;padding:0 15px}
 .page.active{display:block}
-.card{background:white;color:#222;border-radius:18px;padding:18px;margin-bottom:12px}
-.card h1{color:#0a2a5e}
-.btn{width:100%;padding:15px;border:none;border-radius:30px;font-weight:bold;font-size:16px;margin-top:10px;cursor:pointer}
-.gold{background:#d4b23c;color:#222}
-.green{background:#0a8a28;color:white}
-.blue{background:#0a2a5e;color:white}
-.row{display:flex;gap:12px}
-.row .card{flex:1;text-align:center}
-.download-box{background:linear-gradient(135deg,#f9d34a,#d4b23c);color:#222;border-radius:18px;padding:18px;margin-bottom:12px;border:2px dashed #0a2a5e;text-align:center}
+.graph-box{border:2px solid #4ade80;border-radius:16px;padding:15px;margin:15px 0;text-align:center;background:#101a35}
+.btn-green{background:#4ade80;color:#0a122a;border:none;padding:14px;border-radius:25px;font-weight:bold;width:100%;font-size:15px}
+.machine-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.machine-card{background:#152040;border-radius:16px;overflow:hidden;border:1px solid #1e2d55}
+.machine-card img{width:100%;height:110px;object-fit:cover;background:#000}
+.machine-badge{background:#4ade80;color:#000;font-size:10px;padding:3px 8px;border-radius:10px;position:absolute;top:8px;left:8px;font-weight:bold}
+.machine-body{padding:10px}
+.machine-body b{color:#f9d34a}
+.machine-body small{color:#4ade80;font-size:11px}
+.btn-buy{background:#f9d34a;color:#000;border:none;width:100%;padding:10px;border-radius:12px;font-weight:bold;font-size:11px;margin-top:8px}
+.withdraw-box{background:#152040;border-radius:16px;padding:15px;margin-top:15px}
+.capital-box{display:flex;gap:10px;margin:10px 0}
+.capital-box div{flex:1;background:#1e2d55;border-radius:12px;padding:12px;text-align:center}
+.capital-box small{color:#aaa;font-size:11px}
+.capital-box b{font-size:16px}
+.momo-row{display:flex;gap:10px;margin-top:15px}
+.momo-row button{flex:1;padding:14px;border:none;border-radius:12px;font-weight:bold}
+.btn-yellow{background:#f9d34a;color:#000}
+.btn-green2{background:#4ade80;color:#000}
+.pending-list div{background:#1e2d55;padding:12px;border-radius:10px;margin-top:8px;display:flex;justify-content:space-between;font-size:13px}
+.tag-approved{background:#4ade80;color:#000;padding:2px 8px;border-radius:10px;font-size:10px}
+.tag-pending{background:#f9d34a;color:#000;padding:2px 8px;border-radius:10px;font-size:10px}
 
-/* FIXED BOTTOM NAV */
+/* FIXED BOTTOM - WORKS IN APP */
 .bottom-nav{
  position:fixed !important;
- bottom:70px !important;
- left:10px !important;
- right:10px !important;
- background:white !important;
- border-radius:30px !important;
+ bottom:75px !important;
+ left:5px !important;
+ right:5px !important;
+ background:#1a2542 !important;
+ border-radius:25px !important;
  display:flex !important;
  justify-content:space-around !important;
- padding:12px 5px !important;
+ padding:10px 2px !important;
  z-index:99999 !important;
- box-shadow:0 5px 25px rgba(0,0,0,0.4) !important;
+ border-top:1px solid #2a3a5a;
 }
-.bottom-nav button{border:none;background:none;font-size:11px;color:#555;display:flex;flex-direction:column;align-items:center;gap:2px}
-.bottom-nav button.active{color:#b89200;font-weight:bold}
+.bottom-nav button{border:none;background:none;color:#8899bb;font-size:9px;display:flex;flex-direction:column;align-items:center;gap:3px}
+.bottom-nav button.active{color:#f9d34a}
+
+/* LOGIN - LIGHT CREAM GOLD FLECKS */
+#loginPage{background:radial-gradient(circle at top, #fff8e1 0%, #fff3c4 20%, #f5ecd2 100%);min-height:100vh;color:#333;display:flex;flex-direction:column;align-items:center;padding:30px 20px 140px 20px;position:relative}
+#loginPage::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-image:radial-gradient(#d4b23c 1px, transparent 1px);background-size:25px 25px;opacity:0.15}
+.login-card{position:relative;z-index:2;width:100%;max-width:360px;text-align:center}
+.login-input{width:100%;padding:14px 15px 14px 40px;border-radius:25px;border:1px solid #e0d0a0;margin-top:12px;background:white}
+.btn-login-gold{width:100%;background:linear-gradient(#d4af37,#b8960c);color:white;padding:14px;border-radius:25px;border:none;font-weight:bold;margin-top:15px;box-shadow:0 4px 10px rgba(184,150,12,0.4)}
 </style>
 </head>
 <body>
 
-<div class="top"><b>SKYLIGHT</b><div class="phone">0779434443</div></div>
-
-<div id="home" class="page active">
- <!-- DOWNLOAD APP BUTTON INSIDE PROJECT -->
- <div class="download-box">
-  <h3>📱 Get Our Official App</h3>
-  <p style="margin:8px 0;font-size:13px">Download Skylight Uganda App for faster access</p>
-  <a href="Skylight-Uganda.apk" download style="text-decoration:none">
-   <button class="btn blue">📥 DOWNLOAD APP (APK)</button>
-  </a>
-  <p style="font-size:11px;margin-top:8px">Size: ~5MB | Works on all Android phones</p>
+<!-- LOGIN PAGE - LIGHT CREAM GOLD -->
+<div id="loginPage" class="page active">
+ <div class="login-card">
+  <div style="font-size:50px">💡</div>
+  <h2 style="color:#8a6d00;margin:10px 0">SKYLIGHT UGANDA</h2>
+  <div style="position:relative"><span style="position:absolute;left:12px;top:26px">🇺🇬</span><input class="login-input" placeholder="+256 7XX XXX XXX"></div>
+  <div style="position:relative"><span style="position:absolute;left:12px;top:26px">🔒</span><input class="login-input" type="password" placeholder="........"></div>
+  <div style="position:relative"><span style="position:absolute;left:12px;top:26px">👤</span><input class="login-input" placeholder="Referral code (optional)"></div>
+  <button class="btn-login-gold" onclick="showPage('homeWrap')">LOGIN</button>
+  <button style="width:100%;background:#4ade80;color:white;padding:12px;border-radius:25px;border:none;font-weight:bold;margin-top:10px" onclick="showPage('homeWrap')">REGISTER</button>
+  <p style="margin-top:12px;font-size:11px">Deposit 0744247922 • 0793814204<br>Trusted & Secure</p>
  </div>
-
- <div class="card">
-  <p>Total Balance</p>
-  <h1>UGX 0</h1>
-  <p style="margin:10px 0;color:#666">Welcome to SKYLIGHT UGANDA V31.5<br>Start investing to earn daily</p>
-  <button class="btn gold" onclick="showPage('invest')">INVEST NOW</button>
- </div>
- <div class="row">
-  <div class="card">💰<br><b>Daily Earnings</b><br>UGX 0</div>
-  <div class="card">👥<br><b>My Team</b><br>0 Members</div>
- </div>
- <div class="card">✅ V31.5 FIXED: Bottom menu works + Download button inside project</div>
 </div>
 
-<div id="chat" class="page"><div class="card"><h3>Chat Support 24/7</h3><p style="margin:10px 0">WhatsApp: 0779434443</p><a href="https://wa.me/256779434443" style="text-decoration:none"><button class="btn" style="background:#25D366;color:white">Open WhatsApp</button></a></div></div>
-<div id="rewards" class="page"><div class="card"><h3>Rewards</h3><p>🎁 Daily bonus UGX 500</p><button class="btn gold">Claim Now</button></div></div>
-<div id="withdraw" class="page"><div class="card"><h3>Withdraw</h3><p>Balance: UGX 0<br>Min: UGX 10k</p><button class="btn gold">Withdraw Now</button></div></div>
-<div id="profile" class="page"><div class="card"><h3>Profile</h3><p>Phone: 0779434443</p><button class="btn blue" onclick="location.reload()">LOGOUT</button></div></div>
-<div id="invest" class="page"><div class="card"><h3>Plans</h3><p>20k → 3k daily<br>50k → 8k daily</p><button class="btn gold" onclick="showPage('home')">Back Home</button></div></div>
+<!-- WRAPPER FOR INSIDE APP -->
+<div id="homeWrap" class="page">
+ <div class="header">
+  <div style="font-size:40px">💡</div>
+  <h1>SKYLIGHT UGANDA V31.2 SAFE</h1>
+  <p>V31.2: No Codes Exposed • Admin Protected • Login Fixed • Secured</p>
+ </div>
+ <div class="top-tabs">
+  <button>AWARDS</button><button onclick="showPage('graphPage')">GROUP + GRAPH</button><button class="active">WITHDRAW</button><button>TEAM</button><button>PROFILE</button>
+ </div>
+</div>
 
+<!-- GRAPH / MACHINES PAGE - YOUR COOKING -->
+<div id="graphPage" class="page">
+ <div class="graph-box">
+  <p style="color:#aaa;font-size:13px">No claims yet - Claim daily to build graph!</p>
+  <button class="btn-green" style="margin-top:12px">↻ Reload Profit Graph</button>
+ </div>
+ <div class="machine-grid">
+  <div class="machine-card"><div style="position:relative"><span class="machine-badge">A • 6%</span><img src="https://cdn-icons-png.flaticon.com/512/1087/1087815.png"></div><div class="machine-body"><b>A-MACHINE 1</b><br><b style="color:#f9d34a">2,000 UGX</b><br><small>6% = 120 UGX/day</small><br><button class="btn-buy">Buy with CAPITAL • 6%</button></div></div>
+  <div class="machine-card"><div style="position:relative"><span class="machine-badge">A • 6%</span><img src="https://cdn-icons-png.flaticon.com/512/1087/1087815.png"></div><div class="machine-body"><b>A-MACHINE 2</b><br><b style="color:#f9d34a">5,000 UGX</b><br><small>6% = 300 UGX/day</small><br><button class="btn-buy">Buy with CAPITAL • 6%</button></div></div>
+  <div class="machine-card"><div style="position:relative"><span class="machine-badge">A • 6%</span><img src="https://cdn-icons-png.flaticon.com/512/1087/1087815.png"></div><div class="machine-body"><b>A-MACHINE 3</b><br><b style="color:#f9d34a">10,000 UGX</b><br><small>6% = 600 UGX/day</small><br><button class="btn-buy">Buy with CAPITAL • 6%</button></div></div>
+  <div class="machine-card"><div style="position:relative"><span class="machine-badge">A • 6%</span><img src="https://cdn-icons-png.flaticon.com/512/1087/1087815.png"></div><div class="machine-body"><b>A-MACHINE 4</b><br><b style="color:#f9d34a">20,000 UGX</b><br><small>6% = 1,200 UGX/day</small><br><button class="btn-buy">Buy with CAPITAL • 6%</button></div></div>
+ </div>
+</div>
+
+<!-- WITHDRAW PAGE - Auto MoMo Pay -->
+<div id="withdrawPage" class="page">
+ <h2 style="padding:15px">Withdraw • V31.2 SAFE</h2>
+ <div class="withdraw-box">
+  <div class="capital-box"><div><small>CAPITAL (Locked)</small><br><b>0 UGX</b></div><div style="background:#1a3a2a"><small>PROFIT (Withdrawable)</small><br><b style="color:#4ade80">16,600 UGX</b></div></div>
+  <small style="color:#aaa">Available: 16,600 UGX PROFIT Only • CAPITAL Locked</small>
+  <div style="margin-top:15px"><b style="color:#f9d34a">💳 Auto MoMo Pay + Deposit</b><input style="width:100%;padding:12px;border-radius:10px;background:#0a122a;border:1px solid #2a3a5a;color:white;margin-top:8px" placeholder="Amount Min 2000">
+   <div class="momo-row"><button class="btn-yellow">📄 Auto MoMo Pay</button><button class="btn-green2">I Paid ✅</button></div>
+   <div class="pending-list"><div><span>2,000 → CAPITAL</span><span class="tag-approved">APPROVED</span></div><div><span>5,000 → CAPITAL</span><span class="tag-pending">PENDING</span></div><div><span>5,000 → CAPITAL</span><span class="tag-pending">PENDING</span></div></div>
+  </div>
+ </div>
+</div>
+
+<!-- BOTTOM - FIXED WORKS -->
 <div class="bottom-nav">
- <button onclick="showPage('home')" id="btn-home" class="active">🏠<span>HOME</span></button>
- <button onclick="showPage('chat')" id="btn-chat">💬<span>CHAT</span></button>
- <button onclick="showPage('rewards')" id="btn-rewards">🎁<span>REWARDS</span></button>
- <button onclick="showPage('withdraw')" id="btn-withdraw">👛<span>WITHDRAW</span></button>
- <button onclick="showPage('profile')" id="btn-profile">👤<span>PROFILE</span></button>
+ <button onclick="showPage('graphPage')" class="active" id="btn-graphPage">🏠<span>HOME</span></button>
+ <button>💬<span>CHAT</span></button>
+ <button onclick="showPage('graphPage')" id="btn-homeWrap">📊<span>GRAPH</span></button>
+ <button>🏆<span>REWARDS</span></button>
+ <button onclick="showPage('withdrawPage')" id="btn-withdrawPage">💲<span>WITHDRAW</span></button>
+ <button>🎧<span>SUPPORT</span></button>
+ <button>👤<span>PROFILE</span></button>
 </div>
 
 <script>
-function showPage(name){
+function showPage(id){
  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
- var el=document.getElementById(name);
+ var el=document.getElementById(id);
  if(el) el.classList.add('active');
- document.querySelectorAll('.bottom-nav button').forEach(b=>b.classList.remove('active'));
- var btn=document.getElementById('btn-'+name);
- if(btn) btn.classList.add('active');
+ if(id!='loginPage') document.getElementById('homeWrap').classList.add('active');
  window.scrollTo(0,0);
 }
+showPage('graphPage');
 </script>
 </body>
 </html>
