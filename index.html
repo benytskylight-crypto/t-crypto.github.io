@@ -1,130 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-<title>Skylight Uganda - Professional</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>SKYLIGHT UGANDA - V31.2</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0}body{background:#0b1220;color:#e2e8f0;font-family:system-ui,sans-serif;padding-bottom:80px}
-.card{background:#111c2f;border:1px solid #1e293b;border-radius:14px;padding:14px;margin:10px}
-.b-yellow{background:#facc15;color:#000;padding:12px;border-radius:10px;border:none;font-weight:800;width:100%}
-.b-green{background:#16a34a;color:#fff;padding:12px;border-radius:10px;border:none;font-weight:800;width:100%}
-input{width:100%;padding:12px;background:#0f172a;border:1px solid #334155;border-radius:10px;color:#fff;margin:6px 0}
-.nav{position:fixed;bottom:0;left:0;right:0;background:#0f172a;border-top:1px solid #1e293b;display:flex;justify-content:space-around;padding:6px 0;z-index:99}
-.nav div{text-align:center;font-size:8px;color:#94a3b8;cursor:pointer}.nav div.active{color:#facc15}
-.top{display:flex;align-items:center;justify-content:center;flex-direction:column;padding:16px;background:linear-gradient(180deg,#111c2f,#0b1220)}
-.machine{background:#0f172a;border:1px solid #334155;border-radius:12px;padding:10px;margin:8px 0;display:flex;justify-content:space-between;align-items:center}
-.circle{width:74px;height:74px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap');
+* { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif; }
+body {
+  background: radial-gradient(ellipse at top, #2a4b9a 0%, #0a2e6b 40%, #08255a 100%);
+  min-height:100vh;
+  display:flex; justify-content:center;
+  overflow-x:hidden;
+}
+.app {
+  width:100%; max-width:430px; min-height:100vh;
+  background: radial-gradient(ellipse at 30% 10%, rgba(60,100,200,0.8) 0%, transparent 50%),
+              radial-gradient(ellipse at 70% 90%, rgba(30,60,150,0.6) 0%, transparent 40%),
+              linear-gradient(180deg, #14367a 0%, #0e2f6e 100%);
+  position:relative; padding:20px 20px 100px 20px;
+  overflow:hidden;
+}
+.app::before{
+  content:""; position:absolute; inset:0;
+  background-image: 
+    radial-gradient(2px 2px at 20% 30%, #fff, transparent),
+    radial-gradient(2px 2px at 40% 70%, #5aa0ff, transparent),
+    radial-gradient(1px 1px at 90% 40%, #ffd700, transparent),
+    radial-gradient(2px 2px at 10% 80%, #fff, transparent),
+    radial-gradient(1.5px 1.5px at 80% 20%, #ffd700, transparent);
+  background-repeat:repeat; background-size:200px 200px;
+  opacity:0.6; pointer-events:none;
+}
+/* Bulb */
+.bulb-wrap { display:flex; flex-direction:column; align-items:center; margin-top:15px; position:relative; z-index:2; }
+.bulb {
+  width:220px; height:280px; position:relative;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.4));
+}
+.bulb img { width:100%; height:100%; object-fit:contain; }
+.glow-ring {
+  position:absolute; top:5%; left:50%; transform:translateX(-50%);
+  width:260px; height:260px; border-radius:50%;
+  background: radial-gradient(circle, rgba(255,215,0,0.25) 0%, transparent 70%);
+  filter: blur(2px);
+}
+.sparkles {
+  position:absolute; inset:-20px;
+  background: radial-gradient(circle at 30% 30%, rgba(255,215,0,0.8) 0 1px, transparent 2px),
+              radial-gradient(circle at 70% 20%, rgba(255,255,255,0.8) 0 1px, transparent 2px);
+  animation: twinkle 3s infinite alternate;
+}
+@keyframes twinkle { 0%{opacity:0.5} 100%{opacity:1} }
+
+.title {
+  margin-top:10px; font-family:'Playfair Display', serif;
+  font-size:32px; letter-spacing:2px; font-weight:700;
+  background: linear-gradient(180deg, #ffeaa0 0%, #d4af37 50%, #aa8530 100%);
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent;
+  text-align:center; text-shadow:0 2px 10px rgba(212,175,55,0.4);
+  z-index:2; position:relative;
+}
+/* Inputs */
+.form { margin-top:25px; display:flex; flex-direction:column; gap:14px; position:relative; z-index:2; }
+.pill {
+  background:#fff; border-radius:50px; height:58px;
+  display:flex; align-items:center; padding:0 18px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.8);
+  border:1px solid rgba(255,255,255,0.8);
+}
+.pill .icon { width:42px; height:42px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; }
+.flag-icon {
+  background: url('https://flagcdn.com/w80/ug.png') center/cover; border:2px solid #fff;
+  box-shadow:0 2px 6px rgba(0,0,0,0.2);
+}
+.pill input { flex:1; border:none; outline:none; font-size:15px; margin-left:12px; color:#333; background:transparent; }
+.pill input::placeholder { color:#888; }
+
+.btn-gold {
+  height:58px; border-radius:50px; border:none;
+  background: linear-gradient(180deg, #f6d78a 0%, #d4af37 20%, #b8941f 50%, #d4af37 80%, #e8c765 100%);
+  color:#6b4a00; font-size:20px; font-weight:700; letter-spacing:3px;
+  box-shadow:0 6px 0 #8a6d1a, 0 12px 20px rgba(0,0,0,0.3), inset 0 1px 1px rgba(255,255,255,0.8);
+  text-shadow:0 1px 0 rgba(255,255,255,0.6);
+  cursor:pointer; position:relative;
+}
+.btn-gold:active { transform:translateY(4px); box-shadow:0 2px 0 #8a6d1a, 0 6px 10px rgba(0,0,0,0.3); }
+
+.btn-green {
+  height:58px; border-radius:50px; border:none;
+  background: linear-gradient(180deg, #3da75a 0%, #2e8b4a 100%);
+  color:#fff; font-size:16px; font-weight:600; letter-spacing:1px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.25);
+  cursor:pointer;
+}
+
+.trusted { text-align:center; color:rgba(255,255,255,0.9); font-size:13px; margin:22px 0 14px 0; letter-spacing:0.5px; position:relative; z-index:2; }
+.grid {
+  display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px; position:relative; z-index:2;
+}
+.card {
+  background:#fff; border-radius:16px; padding:14px 6px 10px 6px; text-align:center;
+  box-shadow:0 8px 16px rgba(0,0,0,0.15);
+}
+.card .gicon { font-size:26px; color:#c9a227; margin-bottom:6px; }
+.card p { font-size:11px; font-weight:600; color:#222; line-height:1.2; }
+
+/* Bottom Nav */
+.bottom-nav {
+  position:fixed; bottom:14px; left:50%; transform:translateX(-50%);
+  width:calc(100% - 24px); max-width:400px;
+  background:#fff; border-radius:50px; height:68px;
+  display:flex; justify-content:space-around; align-items:center;
+  box-shadow:0 10px 30px rgba(0,0,0,0.3); z-index:10;
+}
+.nav-item { display:flex; flex-direction:column; align-items:center; font-size:10px; font-weight:600; color:#888; gap:2px; }
+.nav-item.active { color:#b8941f; }
+.nav-item .nicon { font-size:22px; }
 </style>
 </head>
 <body>
-<div class="top">
-<div style="width:60px;height:60px;background:#facc15;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:30px">💡</div>
-<h2 style="color:#facc15;margin-top:8px">SKYLIGHT UGANDA</h2>
-<p style="font-size:10px;color:#94a3b8">Professional Trading Platform • Secure • Trusted</p>
+<div class="app">
+  <div class="bulb-wrap">
+    <div class="glow-ring"></div>
+    <div class="bulb">
+      <!-- Replace with your bulb PNG if you have -->
+      <div style="width:100%;height:100%;background:radial-gradient(circle at center, #fff8a0 0%, #ffd700 20%, transparent 60%);border-radius:50% 50% 50% 50% / 60% 60% 40% 40%;display:flex;align-items:center;justify-content:center;font-size:90px;box-shadow:0 0 60px #ffd700, inset 0 0 40px #fff;">💡</div>
+      <div class="sparkles"></div>
+    </div>
+    <div class="title">SKYLIGHT UGANDA</div>
+  </div>
+
+  <div class="form">
+    <div class="pill">
+      <div class="icon flag-icon"></div>
+      <input type="tel" placeholder="+256 7XX XXX XXX" value="+256 7XX XXX XXX">
+    </div>
+    <div class="pill">
+      <div class="icon">🔒</div>
+      <input type="password" placeholder="••••••••" value="••••••••">
+    </div>
+    <div class="pill">
+      <div class="icon">🏷️</div>
+      <input type="text" placeholder="Referral code (Optional)">
+    </div>
+
+    <button class="btn-gold" onclick="handleLogin()">LOGIN</button>
+    <button class="btn-green" onclick="handleRegister()">REGISTER</button>
+  </div>
+
+  <div class="trusted">Trusted & Secure</div>
+  <div class="grid">
+    <div class="card"><div class="gicon">🛡️</div><p>Secure Payment</p></div>
+    <div class="card"><div class="gicon">✅</div><p>Verified</p></div>
+    <div class="card"><div class="gicon">⚡</div><p>Fast Withdraw</p></div>
+    <div class="card"><div class="gicon">🎧</div><p>24/7 Support</p></div>
+    <div class="card"><div class="gicon">🔰</div><p>SSL Encrypted</p></div>
+    <div class="card"><div class="gicon">🪪</div><p>KYC Protected</p></div>
+  </div>
 </div>
 
-<div id="authDiv" class="card">
-<h3>Login / Register</h3>
-<input id="phone" placeholder="07XXXXXXXX"><input id="pass" type="password" placeholder="Password">
-<input id="ref" placeholder="Referral code (optional)">
-<div style="display:flex;gap:8px;margin-top:8px"><button class="b-yellow" onclick="doLogin()">LOGIN</button><button class="b-green" onclick="doReg()">REGISTER</button></div>
-<p style="font-size:10px;color:#94a3b8;margin-top:6px;text-align:center">Deposit: <b style="color:#ff4444">0744247922</b> • <b style="color:#facc15">0793814204</b></p>
+<div class="bottom-nav">
+  <div class="nav-item active"><div class="nicon">🏠</div>HOME</div>
+  <div class="nav-item"><div class="nicon">💬</div>CHAT</div>
+  <div class="nav-item"><div class="nicon">🎁</div>REWARDS</div>
+  <div class="nav-item"><div class="nicon">👛</div>WITHDRAW</div>
+  <div class="nav-item"><div class="nicon">👤</div>PROFILE</div>
 </div>
 
-<div id="mainDiv" style="display:none">
-<div class="card" style="display:flex;gap:10px;justify-content:space-between">
-<div><div style="font-size:10px;color:#94a3b8">CAPITAL</div><b id="capTxt">0 UGX</b></div>
-<div><div style="font-size:10px;color:#94a3b8">PROFIT</div><b id="profTxt" style="color:#22c55e">0 UGX</b></div>
-<div style="display:flex;align-items:center"><div id="profilePic" style="width:42px;height:42px;background:#facc15;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#000;font-weight:900;cursor:pointer" onclick="document.getElementById('picInput').click()">S</div><input type="file" id="picInput" accept="image/*" style="display:none"></div>
-</div>
+<script>
+// V31.2 - Full Logic
+const API_BASE = "https://your-api.skylight.ug/api"; // change to your backend
 
-<div class="card"><div style="font-size:12px;font-weight:800;color:#facc15">📊 Live Feed</div><div id="globalFeed" style="max-height:160px;overflow-y:auto"></div></div>
+function handleLogin(){
+  const phone = document.querySelector('input[type=tel]').value;
+  const pass = document.querySelector('input[type=password]').value;
+  if(!phone || !pass){ alert('Enter phone and password'); return; }
+  console.log('V31.2 LOGIN', phone);
+  // fetch(API_BASE+'/login', {method:'POST', body:JSON.stringify({phone, password:pass})})
+  alert('V31.2 Login -> '+phone);
+}
+function handleRegister(){
+  const phone = document.querySelector('input[type=tel]').value;
+  const referral = document.querySelector('input[type=text]').value;
+  console.log('V31.2 REGISTER', phone, referral);
+  alert('V31.2 Register -> '+phone);
+}
 
-<div class="card"><h3 style="color:#facc15">Mining Machines • 20 DAYS</h3><div id="machinesList"></div></div>
-
-<div class="card">
-<h3>Withdraw • Profit Only</h3>
-<div style="background:#0f172a;border:1px dashed #ff4444;border-radius:10px;padding:10px;text-align:center;margin-bottom:10px">
-<div style="font-size:10px;color:#94a3b8">Official Deposit Numbers</div>
-<b style="color:#ff4444;font-size:13px">0744247922 Airtel</b><br>
-<b style="color:#facc15;font-size:13px">0793814204 MTN</b>
-<div style="font-size:8px;color:#94a3b8;margin-top:4px">MTN→Airtel *165*1*1* • Airtel→Airtel *185*1*1*</div>
-</div>
-<input id="depAmt" placeholder="Amount Min 2000" type="number">
-<div style="display:flex;gap:8px;margin:8px 0">
-<button style="flex:1;background:#facc15;color:#000;padding:10px;border-radius:10px;border:none;font-weight:800;font-size:11px" onclick="autoPay('0744247922')">📱 Airtel Pay<br><span style="font-size:7px">*165*1*1*0744247922</span></button>
-<button style="flex:1;background:#ff8800;color:#000;padding:10px;border-radius:10px;border:none;font-weight:800;font-size:11px" onclick="autoPay('0793814204')">💰 MTN Pay<br><span style="font-size:7px">*165*1*1*0793814204</span></button>
-</div>
-<button class="b-green" onclick="submitDep()">I Paid ✅</button>
-<div id="depList"></div>
-<hr style="margin:12px 0;border-color:#1e293b">
-<input id="witAmt" placeholder="Withdraw Amount Min 2000" type="number">
-<button class="b-green" onclick="submitWit()">Withdraw Profit</button>
-<div id="witList"></div>
-</div>
-
-<div class="card"><h3>Your Investments • 20 Days</h3><div style="font-size:11px;color:#22c55e" id="dailyTxt"></div><div id="ordersList"></div><div style="font-size:9px;color:#94a3b8">After 20 days capital returns to balance automatically.</div></div>
-
-<div class="card"><h3>🏆 Monthly Rewards</h3><div style="font-size:10px;color:#94a3b8">Admin Managed Rewards • Top investors get bonus to balance.</div><div id="rewardList"></div></div>
-
-<!-- CONTACTS & SOCIALS FINAL -->
-<div class="card">
-<h3 style="color:#facc15;font-size:13px">📞 Contacts & Socials</h3>
-<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px;justify-content:center">
-<div class="circle" style="background:#ff0000;color:#fff" onclick="autoPay('0744247922')"><span>📱</span><b style="font-size:7px">Airtel</b><span style="font-size:6px">0744247922</span></div>
-<div class="circle" style="background:#facc15;color:#000" onclick="autoPay('0793814204')"><span>💰</span><b style="font-size:7px">MTN Pay</b><span style="font-size:6px">0793814204</span></div>
-<div class="circle" style="background:#16a34a;color:#fff" onclick="window.open('https://wa.me/256765864451','_blank')"><span>💬</span><b style="font-size:7px">Support</b><span style="font-size:6px">0765864451</span></div>
-<div class="circle" style="background:#229ED9;color:#fff" onclick="window.open('https://t.me/+vyEcluEH54c0NTk0','_blank')"><span>✈️</span><b style="font-size:7px">Telegram</b><span style="font-size:6px">Join</span></div>
-<div class="circle" style="background:#25D366;color:#fff" onclick="window.open('https://whatsapp.com/channel/0029VbDQSYt8KMqcfkfWTU0W','_blank')"><span>📢</span><b style="font-size:7px">Channel</b><span style="font-size:6px">Updates</span></div>
-<div class="circle" style="background:#075E54;color:#fff" onclick="window.open('https://chat.whatsapp.com/BNeCwxPjLk95w3QejfjjM6?s=cl&p=a&iam=2','_blank')"><span>👥</span><b style="font-size:7px">Group</b><span style="font-size:6px">Community</span></div>
-</div>
-<p style="font-size:10px;color:#94a3b8;margin-top:10px;text-align:center">
-Deposit: <b style="color:#ff4444">0744247922</b> • <b style="color:#facc15">0793814204</b><br>
-Support WhatsApp: <b style="color:#22c55e">+256765864451</b><br>
-<a href="https://t.me/+vyEcluEH54c0NTk0" style="color:#229ED9">Telegram</a> • <a href="https://whatsapp.com/channel/0029VbDQSYt8KMqcfkfWTU0W" style="color:#25D366">Channel</a> • <a href="https://chat.whatsapp.com/BNeCwxPjLk95w3QejfjjM6?s=cl&p=a&iam=2" style="color:#075E54">Group</a>
-</p>
-</div>
-
-<div id="adminPanel" style="display:none" class="card" style="border:2px solid #facc15">
-<h3 style="color:#facc15">🔐 Admin • Secret Only</h3>
-<input id="admPhone" placeholder="User phone 07..."><input id="admBonus" placeholder="Bonus amount" type="number">
-<button class="b-yellow" onclick="giveBonus()">GIVE BONUS NOW</button>
-<hr style="margin:10px 0"><h4>Pending Deposits</h4><div id="adminDepList"></div>
-</div>
-
-</div>
-
-<div class="nav">
-<div class="active">HOME</div><div>CHAT</div><div>GRAPH</div><div>REWARDS</div><div>WITHDRAW</div><div>SUPPORT</div><div>PROFILE</div>
-</div>
-
-<script type="module">
-import {initializeApp} from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js';
-import {getFirestore,doc,getDoc,setDoc,updateDoc,collection,query,where,getDocs,addDoc,orderBy,limit} from 'https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js';
-const firebaseConfig={apiKey:"AIzaSy...",authDomain:"skylight-ug.firebaseapp.com",projectId:"skylight-ug"};
-const app=initializeApp(firebaseConfig);const db=getFirestore(app);
-window.db=db;window.doc=doc;window.getDoc=getDoc;window.setDoc=setDoc;window.updateDoc=updateDoc;window.collection=collection;window.query=query;window.where=where;window.getDocs=getDocs;window.addDoc=addDoc;window.orderBy=orderBy;window.limit=limit;
-window.clean=p=>{let s=(p||'').replace(/\D/g,'');if(s.startsWith('0'))s='256'+s.slice(1);return s;};
-let curPhone='',curUser={};
-const machines=[{id:'M1',name:'Starter',price:2000,daily:120,rate:6},{id:'M2',name:'Basic',price:5000,daily:350,rate:7},{id:'M3',name:'Pro',price:10000,daily:800,rate:8},{id:'M4',name:'Elite',price:20000,daily:1800,rate:9}];
-function renderMach(){let h='';machines.forEach(m=>{h+=`<div class="machine"><div><b style="font-size:12px">${m.name} ${m.id}</b><div style="font-size:10px;color:#94a3b8">${m.price} UGX • ${m.rate}% = ${m.daily}/day • 20 DAYS</div></div><button class="b-yellow" style="width:auto;padding:8px 14px;font-size:11px" onclick="buyM('${m.id}')">BUY</button></div>`});document.getElementById('machinesList').innerHTML=h;}renderMach();
-window.updBal=()=>{document.getElementById('capTxt').innerText=(curUser.capital||0).toLocaleString()+' UGX';document.getElementById('profTxt').innerText=(curUser.profit||0).toLocaleString()+' UGX';};
-window.doLogin=async()=>{let ph=clean(document.getElementById('phone').value);let pw=document.getElementById('pass').value;if(!ph||!pw){toast('Enter phone+pass');return;}let snap=await getDoc(doc(db,'users',ph));if(!snap.exists()){toast('Not registered');return;}if(snap.data().password!==pw){toast('Wrong password');return;}curPhone=ph;curUser=snap.data();curUser.phone=ph;document.getElementById('authDiv').style.display='none';document.getElementById('mainDiv').style.display='block';updBal();loadGlobalFeed();loadOrders();loadDeps();loadWits();postActivity((curUser.name||ph)+' invested in Skylight Uganda');if(window.location.search.includes('admin=skylight2025')){document.getElementById('adminPanel').style.display='block';loadAdmin();}};
-window.doReg=async()=>{let ph=clean(document.getElementById('phone').value);let pw=document.getElementById('pass').value;if(!ph||pw.length<4){toast('Phone and 4+ pass');return;}let ex=await getDoc(doc(db,'users',ph));if(ex.exists()){toast('Already exists, login');return;}let ref=document.getElementById('ref').value;await setDoc(doc(db,'users',ph),{phone:ph,password:pw,capital:0,profit:0,name:ph.slice(-4),ref:clean(ref)||'',created:Date.now()});toast('Registered, login now');};
-window.buyM=async(id)=>{let m=machines.find(x=>x.id==id);if(!m)return;if((curUser.capital||0)<m.price){toast('Insufficient capital');return;}try{await updateDoc(doc(db,'users',curPhone),{capital:(curUser.capital||0)-m.price});await addDoc(collection(db,'orders'),{phone:curPhone,machineId:m.id,price:m.price,daily:m.daily,expiry:Date.now()+20*86400000,status:'approved',time:Date.now()});curUser.capital-=m.price;updBal();loadOrders();toast('Bought '+m.id+' 20 days');postActivity((curUser.name||curPhone)+' bought '+m.id);}catch(e){toast(e.message);}};
-window.loadOrders=async()=>{try{let q=query(collection(db,'orders'),where('phone','==',curPhone));let snap=await getDocs(q);let html='',daily=0,expiredRefund=0,now=Date.now();for(let ds of snap.docs){let o=ds.data(),oid=ds.id,exp=o.expiry||0,isExp=exp&&now>exp&&o.status=='approved';if(isExp){try{let uRef=doc(db,'users',curPhone);let uSnap=await getDoc(uRef);let curCap=uSnap.data().capital||0;await updateDoc(uRef,{capital:curCap+(o.price||0)});await updateDoc(doc(db,'orders',oid),{status:'expired'});curUser.capital=curCap+(o.price||0);updBal();expiredRefund+=(o.price||0);html+=`<div style="border:1px solid #22c55e;padding:8px;margin:5px 0;border-radius:8px;background:rgba(34,197,94,0.1)"><b style="font-size:11px;color:#22c55e">✅ EXPIRED ${o.machineId} — ${o.price} UGX to Capital</b></div>`;}catch(e){}}else if(o.status=='approved'){daily+=o.daily||0;let left=Math.ceil((exp-now)/86400000);if(left<0)left=0;html+=`<div style="border:1px solid #334155;padding:8px;margin:5px 0;border-radius:8px"><b style="font-size:11px">${o.machineId} — ${o.price} UGX</b><div style="font-size:9px;color:#22c55e">${left} days left of 20 • +${o.daily}/day Profit</div><div style="width:100%;height:4px;background:#0f172a;border-radius:2px;margin-top:4px"><div style="width:${((20-left)/20*100)}%;height:100%;background:#facc15;border-radius:2px"></div></div></div>`;}}document.getElementById('ordersList').innerHTML=html||'No investments';document.getElementById('dailyTxt').innerText='+'+daily.toLocaleString()+' UGX/day to Profit';if(expiredRefund>0)toast('✅ '+expiredRefund.toLocaleString()+' UGX expired → Capital');}catch(e){document.getElementById('ordersList').innerText=e.message;}};
-window.autoPay=(num)=>{let amt=document.getElementById('depAmt')?.value;if(!amt||parseInt(amt)<2000){toast('Enter amount min 2000 first');return;}let ussd=`*165*1*1*${num}*${amt}#`;let tel=`tel:${encodeURIComponent(ussd)}`;if(confirm(`Send ${amt} UGX to ${num}?\nCode: ${ussd}\nOK=Dialer`)){window.location.href=tel;}else{navigator.clipboard.writeText(ussd).then(()=>toast('Copied '+ussd));}};
-window.submitDep=async()=>{let amt=parseInt(document.getElementById('depAmt').value);if(!amt||amt<2000){toast('Min 2000');return;}await addDoc(collection(db,'deposits'),{phone:curPhone,amount:amt,status:'pending',time:Date.now(),momo:'0744247922-0793814204'});toast('Deposit pending');loadDeps();};
-window.loadDeps=async()=>{let q=query(collection(db,'deposits'),where('phone','==',curPhone),orderBy('time','desc'),limit(10));let snap=await getDocs(q);let h='';snap.forEach(d=>{let o=d.data();h+=`<div style="font-size:10px;border-bottom:1px solid #1e293b;padding:4px">${o.amount} → CAPITAL <span style="background:${o.status=='approved'?'#16a34a':'#facc15'};color:#000;padding:2px 6px;border-radius:10px">${o.status}</span></div>`});document.getElementById('depList').innerHTML=h;};
-window.submitWit=async()=>{let amt=parseInt(document.getElementById('witAmt').value);if(!amt||amt<2000){toast('Min 2000');return;}if((curUser.profit||0)<amt){toast('Insufficient profit');return;}await addDoc(collection(db,'withdraws'),{phone:curPhone,amount:amt,status:'pending',time:Date.now()});toast('Withdraw pending');loadWits();};
-window.loadWits=async()=>{let q=query(collection(db,'withdraws'),where('phone','==',curPhone),orderBy('time','desc'),limit(10));let snap=await getDocs(q);let h='';snap.forEach(d=>{let o=d.data();h+=`<div style="font-size:10px;border-bottom:1px solid #1e293b;padding:4px">${o.amount} UGX <span style="background:${o.status=='approved'?'#16a34a':'#facc15'};color:#000;padding:2px 6px;border-radius:10px">${o.status}</span></div>`});document.getElementById('witList').innerHTML=h;};
-window.loadGlobalFeed=async()=>{try{let q=query(collection(db,'activity'),orderBy('time','desc'),limit(15));let snap=await getDocs(q);let seen=new Set(),html='';snap.forEach(d=>{let a=d.data();if(!a.time||!a.msg)return;let key=a.phone+'_'+a.msg.substring(0,20);if(seen.has(key))return;seen.add(key);if(Date.now()-a.time>48*3600*1000)return;let time=new Date(a.time).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'});let icon='🌟';if(a.msg.includes('bought'))icon='💰';html+=`<div style="padding:6px 0;border-bottom:1px solid #1e293b;display:flex;gap:8px"><span style="font-size:10px;color:#facc15">${time}</span><span style="font-size:11px;color:#e2e8f0">${icon} ${a.msg}</span></div>`});document.getElementById('globalFeed').innerHTML=html||'No activity';}catch(e){}};
-window.postActivity=async(msg)=>{try{let last=localStorage.getItem('lastActivity_'+curPhone);if(last&&Date.now()-parseInt(last)<60000)return;localStorage.setItem('lastActivity_'+curPhone,Date.now()+'');await addDoc(collection(db,'activity'),{phone:curPhone,msg:msg,time:Date.now()});}catch(e){}};
-window.giveBonus=async()=>{let ph=clean(document.getElementById('admPhone').value);let amt=parseInt(document.getElementById('admBonus').value);if(!ph||!amt){toast('Enter phone+bonus');return;}if(!window.location.search.includes('admin=skylight2025')){toast('Secret required');return;}let uRef=doc(db,'users',ph);let snap=await getDoc(uRef);if(!snap.exists()){toast('User not found');return;}await updateDoc(uRef,{profit:(snap.data().profit||0)+amt});await addDoc(collection(db,'activity'),{phone:ph,msg:`🏆 Received ${amt} UGX bonus!`,time:Date.now()});toast('Bonus given '+ph);};
-window.loadAdmin=async()=>{let depQ=query(collection(db,'deposits'),where('status','==','pending'),limit(20));let depSnap=await getDocs(depQ);let h='';depSnap.forEach(d=>{let o=d.data();h+=`<div style="font-size:11px;padding:6px;border:1px solid #334155;margin:4px 0;border-radius:8px">${o.phone} ${o.amount} <button class="b-green" style="padding:4px 8px;width:auto" onclick="approveDep('${d.id}','${o.phone}',${o.amount})">Approve</button></div>`});document.getElementById('adminDepList').innerHTML=h;};
-window.approveDep=async(id,ph,amt)=>{let uRef=doc(db,'users',ph);let snap=await getDoc(uRef);await updateDoc(uRef,{capital:(snap.data().capital||0)+amt});await updateDoc(doc(db,'deposits',id),{status:'approved'});toast('Approved '+amt+' to '+ph);loadAdmin();};
-window.toast=m=>{let d=document.createElement('div');d.style.cssText='position:fixed;top:20px;left:50%;transform:translateX(-50%);background:#facc15;color:#000;padding:10px 20px;border-radius:20px;font-weight:800;z-index:999';d.innerText=m;document.body.appendChild(d);setTimeout(()=>d.remove(),3000);};
-document.getElementById('picInput').addEventListener('change',function(){let file=this.files[0];if(!file)return;let r=new FileReader();r.onload=async e=>{try{await updateDoc(doc(db,'users',curPhone),{profilePic:e.target.result});document.getElementById('profilePic').innerHTML=`<img src="${e.target.result}" style="width:100%;height:100%;object-fit:cover;border-radius:50%">`;toast('Photo updated');}catch(err){toast(err.message);}};r.readAsDataURL(file);});
+// Add sparkle particles dynamically for premium feel
+setInterval(()=>{
+  const dot = document.createElement('div');
+  dot.style.position='absolute';
+  dot.style.left=Math.random()*100+'%';
+  dot.style.top=Math.random()*100+'%';
+  dot.style.width='2px'; dot.style.height='2px';
+  dot.style.background='#ffd700'; dot.style.borderRadius='50%';
+  dot.style.boxShadow='0 0 6px #ffd700';
+  dot.style.opacity='0.8';
+  document.querySelector('.app').appendChild(dot);
+  setTimeout(()=>dot.remove(), 3000);
+}, 150);
 </script>
 </body>
 </html>
