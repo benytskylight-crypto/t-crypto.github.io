@@ -6,7 +6,7 @@
 <title>SKYLIGHT UGANDA</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;font-family:Arial}
-body{background:#0a2a5e;color:white;padding-bottom:120px}
+body{background:#0a2a5e;color:white;padding-bottom:130px}
 .top{padding:15px;display:flex;justify-content:space-between;align-items:center}
 .top b{color:#f9d34a;font-size:22px}
 .phone{background:white;color:black;padding:8px 15px;border-radius:20px;font-weight:bold}
@@ -14,13 +14,15 @@ body{background:#0a2a5e;color:white;padding-bottom:120px}
 .page.active{display:block}
 .card{background:white;color:#222;border-radius:18px;padding:18px;margin-bottom:12px}
 .card h1{color:#0a2a5e}
-.btn{width:100%;padding:15px;border:none;border-radius:30px;font-weight:bold;font-size:16px;margin-top:10px}
+.btn{width:100%;padding:15px;border:none;border-radius:30px;font-weight:bold;font-size:16px;margin-top:10px;cursor:pointer}
 .gold{background:#d4b23c;color:#222}
 .green{background:#0a8a28;color:white}
+.blue{background:#0a2a5e;color:white}
 .row{display:flex;gap:12px}
 .row .card{flex:1;text-align:center}
+.download-box{background:linear-gradient(135deg,#f9d34a,#d4b23c);color:#222;border-radius:18px;padding:18px;margin-bottom:12px;border:2px dashed #0a2a5e;text-align:center}
 
-/* FIXED BOTTOM NAV - WORKS IN APP */
+/* FIXED BOTTOM NAV */
 .bottom-nav{
  position:fixed !important;
  bottom:70px !important;
@@ -34,11 +36,7 @@ body{background:#0a2a5e;color:white;padding-bottom:120px}
  z-index:99999 !important;
  box-shadow:0 5px 25px rgba(0,0,0,0.4) !important;
 }
-.bottom-nav button{
- border:none;background:none;
- font-size:11px;color:#555;
- display:flex;flex-direction:column;align-items:center;gap:2px
-}
+.bottom-nav button{border:none;background:none;font-size:11px;color:#555;display:flex;flex-direction:column;align-items:center;gap:2px}
 .bottom-nav button.active{color:#b89200;font-weight:bold}
 </style>
 </head>
@@ -47,27 +45,35 @@ body{background:#0a2a5e;color:white;padding-bottom:120px}
 <div class="top"><b>SKYLIGHT</b><div class="phone">0779434443</div></div>
 
 <div id="home" class="page active">
+ <!-- DOWNLOAD APP BUTTON INSIDE PROJECT -->
+ <div class="download-box">
+  <h3>📱 Get Our Official App</h3>
+  <p style="margin:8px 0;font-size:13px">Download Skylight Uganda App for faster access</p>
+  <a href="Skylight-Uganda.apk" download style="text-decoration:none">
+   <button class="btn blue">📥 DOWNLOAD APP (APK)</button>
+  </a>
+  <p style="font-size:11px;margin-top:8px">Size: ~5MB | Works on all Android phones</p>
+ </div>
+
  <div class="card">
   <p>Total Balance</p>
   <h1>UGX 0</h1>
-  <p style="margin:10px 0;color:#666">Welcome to SKYLIGHT UGANDA V31.4<br>Start investing to earn daily</p>
+  <p style="margin:10px 0;color:#666">Welcome to SKYLIGHT UGANDA V31.5<br>Start investing to earn daily</p>
   <button class="btn gold" onclick="showPage('invest')">INVEST NOW</button>
  </div>
  <div class="row">
   <div class="card">💰<br><b>Daily Earnings</b><br>UGX 0</div>
   <div class="card">👥<br><b>My Team</b><br>0 Members</div>
  </div>
- <div class="card">✅ Login Success!<br>V31.4 Bottom FIXED. Bulb working.</div>
- <button class="btn green" onclick="location.reload()">LOGOUT</button>
+ <div class="card">✅ V31.5 FIXED: Bottom menu works + Download button inside project</div>
 </div>
 
-<div id="chat" class="page"><div class="card"><h3>Chat Support 24/7</h3><p style="margin:10px 0">WhatsApp us: 0779434443</p><a href="https://wa.me/256779434443" style="text-decoration:none"><button class="btn" style="background:#25D366;color:white">Open WhatsApp Chat</button></a></div></div>
-<div id="rewards" class="page"><div class="card"><h3>Rewards</h3><p>🎁 Daily bonus: UGX 500 — Check in daily to claim!</p><button class="btn gold">Claim Now</button></div></div>
-<div id="withdraw" class="page"><div class="card"><h3>Withdraw</h3><p>Balance: UGX 0<br>Min: UGX 10,000<br>Charge: 10%</p><button class="btn gold">Withdraw Now</button></div></div>
-<div id="profile" class="page"><div class="card"><h3>Profile</h3><p>Phone: 0779434443<br>Verified Member</p><button class="btn" style="background:#0a2a5e;color:white" onclick="location.reload()">LOGOUT</button></div></div>
-<div id="invest" class="page"><div class="card"><h3>Investment Plans</h3><p>Plan 1: UGX 20k → UGX 3k daily<br>Plan 2: UGX 50k → UGX 8k daily</p><button class="btn gold" onclick="showPage('home')">Back to Home</button></div></div>
+<div id="chat" class="page"><div class="card"><h3>Chat Support 24/7</h3><p style="margin:10px 0">WhatsApp: 0779434443</p><a href="https://wa.me/256779434443" style="text-decoration:none"><button class="btn" style="background:#25D366;color:white">Open WhatsApp</button></a></div></div>
+<div id="rewards" class="page"><div class="card"><h3>Rewards</h3><p>🎁 Daily bonus UGX 500</p><button class="btn gold">Claim Now</button></div></div>
+<div id="withdraw" class="page"><div class="card"><h3>Withdraw</h3><p>Balance: UGX 0<br>Min: UGX 10k</p><button class="btn gold">Withdraw Now</button></div></div>
+<div id="profile" class="page"><div class="card"><h3>Profile</h3><p>Phone: 0779434443</p><button class="btn blue" onclick="location.reload()">LOGOUT</button></div></div>
+<div id="invest" class="page"><div class="card"><h3>Plans</h3><p>20k → 3k daily<br>50k → 8k daily</p><button class="btn gold" onclick="showPage('home')">Back Home</button></div></div>
 
-<!-- BOTTOM MENU - NOW WORKS -->
 <div class="bottom-nav">
  <button onclick="showPage('home')" id="btn-home" class="active">🏠<span>HOME</span></button>
  <button onclick="showPage('chat')" id="btn-chat">💬<span>CHAT</span></button>
