@@ -1,14 +1,19 @@
 {
-  "name": "SKYLIGHT UGANDA",
-  "short_name": "SKYLIGHT",
-  "description": "SKYLIGHT UGANDA - Trusted & Secure Investment",
-  "start_url": "./index.html",
+  "name": "Skylight Uganda Finance - Deposit Income",
+  "short_name": "Skylight",
+  "description": "Deposit 2000 UGX → Buy Machine → 30D Locked → 6% Daily → Withdraw to MoMo",
+  "start_url": "https://benytskylight-crypto.github.io/t-crypto.github.io/",
   "display": "standalone",
-  "background_color": "#0a2e6b",
-  "theme_color": "#0a2e6b",
+  "background_color": "#0f172a",
+  "theme_color": "#facc15",
   "icons": [
     {
-      "src": "./bulb.jpg",
+      "src": "https://benytskylight-crypto.github.io/t-crypto.github.io/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://benytskylight-crypto.github.io/t-crypto.github.io/logo.png",
       "sizes": "512x512",
       "type": "image/png"
     }
