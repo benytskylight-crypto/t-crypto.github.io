@@ -1,0 +1,16 @@
+{
+  "name": "SKYLIGHT UGANDA",
+  "short_name": "SKYLIGHT",
+  "description": "SKYLIGHT UGANDA - Trusted & Secure Investment",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0a2e6b",
+  "theme_color": "#0a2e6b",
+  "icons": [
+    {
+      "src": "./bulb.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
