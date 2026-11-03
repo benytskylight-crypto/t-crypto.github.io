@@ -3,141 +3,108 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SKYLIGHT UGANDA - SOCIAL</title>
+<title>SKYLIGHT UGANDA</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif;}
-body{background:#0a0a0f;color:#fff;padding-bottom:90px;}
+body{background:#0a0a0f;color:#fff;padding-bottom:100px;}
 .header{padding:20px 15px;display:flex;justify-content:space-between;align-items:center;}
-.refer-banner{background:linear-gradient(90deg,#0f1f3a,#1a2a4a);margin:15px;padding:16px;border-radius:18px;display:flex;justify-content:space-between;align-items:center;border:1px solid #FFD700;box-shadow:0 0 20px rgba(255,215,0,0.2);position:relative;overflow:hidden;}
-.refer-banner::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(45deg,transparent,rgba(255,215,0,0.1),transparent);animation:shine 3s infinite;}
-@keyframes shine{0%{transform:translateX(-100%)}100%{transform:translateX(100%)}}
-.code-box{background:#2a2a3a;padding:10px 16px;border-radius:12px;font-weight:bold;letter-spacing:1px;border:1px solid #444;display:flex;align-items:center;gap:8px;transition:all 0.3s ease;}
-.copy-btn{background:#333;border:none;padding:10px 14px;border-radius:10px;color:white;cursor:pointer;font-weight:bold;transition:all 0.3s ease;}
+.refer-banner{background:linear-gradient(90deg,#0f1f3a,#1a2a4a);margin:15px;padding:16px;border-radius:18px;display:flex;justify-content:space-between;align-items:center;border:1px solid #FFD700;box-shadow:0 0 20px rgba(255,215,0,0.2);}
+.code-box{background:#2a2a3a;padding:10px 16px;border-radius:12px;font-weight:bold;border:1px solid #444;transition:all 0.3s;}
+.copy-btn{background:#333;border:none;padding:10px 14px;border-radius:10px;color:white;cursor:pointer;font-weight:bold;}
 .card{background:#1e1e28;margin:15px;padding:16px;border-radius:16px;display:flex;align-items:center;justify-content:space-between;border:1px solid #222;}
 .card-telegram{border:1px solid #2AABEE;box-shadow:0 0 15px rgba(42,171,238,0.25);}
 .icon{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;}
 .telegram-icon{background:#2AABEE;}
 .whatsapp-icon{background:#25D366;}
-.badge{padding:5px 12px;border-radius:20px;font-size:11px;margin-top:6px;display:inline-block;background:#2a2a3a;}
+.badge{padding:5px 12px;border-radius:20px;font-size:11px;margin-top:6px;display:inline-block;}
 .badge-blue{border:1px solid #2AABEE;color:#2AABEE;animation:pulse-blue 2s infinite;}
 .badge-green{border:1px solid #25D366;color:#25D366;}
 @keyframes pulse-blue{0%{box-shadow:0 0 0 0 rgba(42,171,238,0.7)}70%{box-shadow:0 0 0 12px rgba(42,171,238,0)}100%{box-shadow:0 0 0 0 rgba(42,171,238,0)}}
-.pulse-wrap{animation:pulse-ring 2s infinite;border-radius:50%;padding:3px;border:2px solid #2AABEE;}
-@keyframes pulse-ring{0%{box-shadow:0 0 0 0 rgba(42,171,238,0.7)}70%{box-shadow:0 0 0 15px rgba(42,171,238,0)}100%{box-shadow:0 0 0 0 rgba(42,171,238,0)}}
 @keyframes btn-pop{0%{transform:scale(1)}50%{transform:scale(1.2)}100%{transform:scale(1)}}
-.btn{padding:12px 20px;border-radius:25px;border:none;font-weight:bold;cursor:pointer;white-space:nowrap;}
-.btn-blue{background:#2AABEE;color:white;box-shadow:0 0 15px #2AABEE;animation:btn-glow 2s infinite;}
-@keyframes btn-glow{0%,100%{box-shadow:0 0 10px #2AABEE}50%{box-shadow:0 0 25px #2AABEE}}
+.btn{padding:12px 20px;border-radius:25px;border:none;font-weight:bold;cursor:pointer;}
+.btn-blue{background:#2AABEE;color:white;}
 .btn-green-outline{background:transparent;border:1px solid #25D366;color:#25D366;padding:10px 18px;border-radius:25px;font-weight:bold;cursor:pointer;}
 .tabs{display:flex;gap:8px;margin:15px;overflow:auto;}
-.tab{background:#2d2d3a;padding:8px 16px;border-radius:20px;font-size:12px;color:#aaa;white-space:nowrap;}
+.tab{background:#2d2d3a;padding:8px 16px;border-radius:20px;font-size:12px;color:#aaa;}
 .tab-active{background:#FFEB3B;color:#000;font-weight:bold;}
-.bottom-nav{display:flex;justify-content:space-around;background:#12121a;padding:12px 0;position:fixed;bottom:0;width:100%;border-top:1px solid #222;}
-.bottom-nav span{font-size:11px;color:#666;text-align:center;}
-.bottom-nav .active{color:#FFEB3B;}
-.copied-msg{color:#25D366;font-size:12px;margin-top:6px;display:none;animation:fadeIn 0.3s ease;}
-@keyframes fadeIn{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+
+/* FIXED BOTTOM NAV - NOT STUCK */
+.bottom-nav{display:flex;justify-content:space-around;background:#12121a;padding:12px 0 18px 0;position:fixed;bottom:0;left:0;width:100%;z-index:9999;border-top:1px solid #222;}
+.bottom-nav span{font-size:11px;color:#666;text-align:center;cursor:pointer;padding:8px 12px;border-radius:10px;transition:all 0.2s;}
+.bottom-nav span:active{transform:scale(0.9);background:#1e1e28;}
+.bottom-nav .active{color:#FFEB3B;background:#1e1e28;}
 </style>
 </head>
-<body>
-
-<div class="header">
-  <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:28px;">☀️</span><div><b style="font-size:20px;">SKYLIGHT<br>UGANDA</b></div></div>
+<body><div class="header">
+  <div style="display:flex;align-items:center;gap:10px;"><span style="font-size:28px;">☀️</span><div><b>SKYLIGHT<br>UGANDA</b></div></div>
   <div style="display:flex;gap:15px;font-size:20px;">🔔 👤</div>
 </div>
 
-<!-- REFERRAL WITH COPY SUCCESS ANIMATION -->
 <div class="refer-banner">
-  <div>
-    <b>🎁 Refer & Earn 5% Bonus</b><br>
-    <small style="color:#aaa;">Your referral code — copied!</small>
-    <div id="copiedMsg" class="copied-msg">Copied to clipboard • share to earn rewards ✨</div>
-  </div>
-  <div style="display:flex;gap:8px;align-items:center;z-index:1;">
+  <div><b>🎁 Refer & Earn 5%</b><br><small style="color:#aaa;">Your code</small></div>
+  <div style="display:flex;gap:8px;align-items:center;">
     <div id="refCodeBox" class="code-box">SKY-H6T0XX</div>
     <button id="copyBtn" class="copy-btn" onclick="copyCode()">📋 Copy</button>
   </div>
 </div>
 
-<div style="margin:15px;background:#1e1e28;padding:14px;border-radius:14px;display:flex;align-items:center;gap:12px;">
+<div style="margin:15px;background:#1e1e28;padding:14px;border-radius:14px;display:flex;gap:12px;align-items:center;">
   <span style="background:#FFD700;padding:8px;border-radius:50%;">🔒</span>
-  <div><b>Secure 30D Locked Finance</b><br><small style="color:#888;">Earn up to 5% • Funds locked 30 days</small></div>
-  <span style="margin-left:auto;">🔒</span>
+  <div><b>Secure 30D Locked Finance</b><br><small style="color:#888;">Earn up to 5%</small></div>
 </div>
 
 <div class="tabs">
-  <span class="tab">WALLET</span><span class="tab">TEAM</span><span class="tab tab-active">SOCIAL</span><span class="tab">PROFILE</span><span class="tab">ADMIN</span>
+  <span class="tab">WALLET</span><span class="tab">TEAM</span><span class="tab tab-active">SOCIAL</span><span class="tab">PROFILE</span>
 </div>
 
-<div style="padding:0 15px;"><b style="font-size:22px;">SOCIAL</b><br><small style="color:#888;">Connect with SKYLIGHT UGANDA community</small></div>
+<div style="padding:0 15px;"><b style="font-size:22px;">SOCIAL</b><br><small style="color:#888;">Connect community</small></div>
 
-<!-- TELEGRAM - FIXED LINK -->
 <div class="card card-telegram">
   <div style="display:flex;align-items:center;">
-    <div class="pulse-wrap"><div class="icon telegram-icon">✈️</div></div>
-    <div style="margin-left:12px;">
-      <b>Telegram Channel</b><br>
-      <span class="badge badge-blue">👥 12.4k members • Live</span><br>
-      <small style="color:#25D366;">Live • Active now</small>
-    </div>
+    <div class="icon telegram-icon">✈️</div>
+    <div style="margin-left:12px;"><b>Telegram Channel</b><br><span class="badge badge-blue">👥 12.4k • Live</span></div>
   </div>
-  <button class="btn btn-blue" onclick="window.open('https://t.me/+vyEcluEH54c0NTk0','_blank')">Join Telegram • Verify Real</button>
+  <button class="btn btn-blue" onclick="window.open('https://t.me/+vyEcluEH54c0NTk0','_blank')">Join Telegram</button>
 </div>
 
 <div class="card">
-  <div style="display:flex;align-items:center;">
-    <div class="icon whatsapp-icon">💬</div>
-    <div style="margin-left:12px;"><b>WhatsApp Channel</b><br><span class="badge badge-green">8.9k followers</span><br><small style="color:#888;">Official announcements</small></div>
-  </div>
-  <button class="btn-green-outline" onclick="window.open('https://whatsapp.com/channel/0029VaYourLink','_blank')">Join ></button>
+  <div style="display:flex;align-items:center;"><div class="icon whatsapp-icon">💬</div><div style="margin-left:12px;"><b>WhatsApp Channel</b><br><span class="badge badge-green">8.9k</span></div></div>
+  <button class="btn-green-outline">Join ></button>
 </div>
 
 <div class="card">
-  <div style="display:flex;align-items:center;">
-    <div class="icon whatsapp-icon">👥</div>
-    <div style="margin-left:12px;"><b>WhatsApp Group</b><br><span class="badge badge-green">5.2k members</span><br><small style="color:#25D366;">Open • 47 online now</small></div>
-  </div>
-  <button class="btn-green-outline" onclick="window.open('https://chat.whatsapp.com/YourGroupLink','_blank')">Join ></button>
+  <div style="display:flex;align-items:center;"><div class="icon whatsapp-icon">👥</div><div style="margin-left:12px;"><b>WhatsApp Group</b><br><span class="badge badge-green">5.2k</span></div></div>
+  <button class="btn-green-outline">Join ></button>
 </div>
 
-<div style="margin:15px;background:#1e1e28;padding:15px;border-radius:16px;">
-  <b>🛡️ Verification</b><br><br>
-  <div style="display:flex;gap:10px;align-items:center;"><span style="background:#25D366;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;">✔</span><div><b>Community Verified</b><br><small style="color:#aaa;">Official SKYLIGHT UGANDA social channels verified</small><br><span style="background:#25D366;color:white;padding:3px 10px;border-radius:8px;font-size:11px;">Verified</span> <small>24 Sept 2024</small></div></div>
-</div>
-
+<!-- FIXED BOTTOM - CLICKABLE NOW -->
 <div class="bottom-nav">
-  <span>🏠<br>HOME</span><span>📈<br>FINANCE</span><span class="active">⭐<br>SOCIAL</span><span>👤<br>PROFILE</span>
-</div>
-
-<script>
+  <span onclick="goPage('home')">🏠<br>HOME</span>
+  <span onclick="goPage('finance')">📈<br>FINANCE</span>
+  <span class="active">⭐<br>SOCIAL</span>
+  <span onclick="goPage('profile')">👤<br>PROFILE</span>
+</div><script>
 function copyCode(){
   navigator.clipboard.writeText("SKY-H6T0XX");
   const box = document.getElementById("refCodeBox");
   const btn = document.getElementById("copyBtn");
-  const msg = document.getElementById("copiedMsg");
-  // Success animation
-  box.style.border = "1px solid #25D366";
-  box.style.color = "#FFD700";
   box.innerHTML = "SKY-H6T0XX ✔";
-  box.style.animation = "btn-pop 0.4s ease";
+  box.style.border = "1px solid #25D366";
   btn.innerHTML = "Copied! ✔";
   btn.style.background = "#25D366";
-  btn.style.color = "white";
   btn.style.animation = "btn-pop 0.4s ease";
-  msg.style.display = "block";
-  
   setTimeout(()=>{
-    box.style.border = "1px solid #444";
-    box.style.color = "white";
     box.innerHTML = "SKY-H6T0XX";
-    box.style.animation = "none";
+    box.style.border = "1px solid #444";
     btn.innerHTML = "📋 Copy";
     btn.style.background = "#333";
     btn.style.animation = "none";
-    msg.style.display = "none";
-  }, 2500);
+  },2000);
+}
+function goPage(p){
+  alert("Going to "+p+" - connect your pages here CEO");
+  // window.location.href = p+'.html';
 }
 </script>
-
 </body>
 </html>
