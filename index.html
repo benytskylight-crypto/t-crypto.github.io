@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>SKYLIGHT UGANDA V33.3</title>
 <style>
-*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif;-webkit-tap-highlight-color:transparent;}
-body{background:#0a0a0f;color:#fff;overflow-y:auto;height:auto;padding-bottom:0;}
+*{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif;}
+body{background:#0a0a0f;color:#fff;overflow-y:auto;height:auto;}
 .header{padding:18px 15px;display:flex;justify-content:space-between;align-items:center;background:#0f0f1a;border-bottom:1px solid #222;}
-.refer-banner{background:linear-gradient(90deg,#0f1f3a,#1a2a4a);margin:15px;padding:16px;border-radius:18px;display:flex;justify-content:space-between;align-items:center;border:1px solid #FFD700;box-shadow:0 0 15px rgba(255,215,0,0.15);}
+.refer-banner{background:linear-gradient(90deg,#0f1f3a,#1a2a4a);margin:15px;padding:16px;border-radius:18px;display:flex;justify-content:space-between;align-items:center;border:1px solid #FFD700;}
 .code-box{background:#2a2a3a;padding:10px 14px;border-radius:10px;font-weight:bold;border:1px solid #555;font-size:13px;}
 .copy-btn{background:#FFD700;color:#000;border:none;padding:10px 14px;border-radius:10px;font-weight:bold;cursor:pointer;}
 .balance-card{background:linear-gradient(135deg,#1a1a2e,#16213e);margin:15px;padding:20px;border-radius:20px;border:1px solid #2a2a4a;}
@@ -19,6 +19,7 @@ body{background:#0a0a0f;color:#fff;overflow-y:auto;height:auto;padding-bottom:0;
 .btn-withdraw{background:#2a2a3a;color:#fff;border:1px solid #444;}
 .card{background:#1e1e28;margin:12px 15px;padding:16px;border-radius:16px;display:flex;align-items:center;justify-content:space-between;border:1px solid #222;}
 .card-telegram{border:1px solid #2AABEE;}
+.download-card{background:linear-gradient(90deg,#FFD700,#FFA500);margin:15px;padding:18px;border-radius:18px;color:#000;display:flex;justify-content:space-between;align-items:center;}
 .icon{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;}
 .telegram-icon{background:#2AABEE;}
 .whatsapp-icon{background:#25D366;}
@@ -41,20 +42,14 @@ body{background:#0a0a0f;color:#fff;overflow-y:auto;height:auto;padding-bottom:0;
 .team-stat{display:flex;justify-content:space-around;background:#1e1e28;margin:15px;padding:15px;border-radius:14px;}
 .team-stat div{text-align:center;}
 .team-stat b{color:#FFD700;font-size:18px;}
-.bottom-nav{display:flex;justify-content:space-around;background:#12121a;padding:14px 0 16px 0;position:relative;width:100%;margin-top:30px;border-top:1px solid #222;z-index:10;}
+.bottom-nav{display:flex;justify-content:space-around;background:#12121a;padding:14px 0 16px 0;position:relative;width:100%;margin-top:30px;border-top:1px solid #222;}
 .bottom-nav span{font-size:11px;color:#666;text-align:center;cursor:pointer;line-height:16px;}
 .bottom-nav .active{color:#FFEB3B;}
 input{width:100%;padding:14px;background:#2a2a3a;border:1px solid #333;border-radius:12px;color:#fff;margin-top:10px;}
 </style>
 </head>
 <body>
-
-<div class="header">
-<div style="display:flex;align-items:center;gap:10px;"><span style="font-size:26px;">☀️</span><div><b>SKYLIGHT<br>UGANDA</b><small style="display:block;color:#FFD700;font-size:10px;">V33.3</small></div></div>
-<div style="display:flex;gap:12px;font-size:20px;">🔔 👤</div>
-</div>
-
-<!-- TABS -->
+<div class="header"><div style="display:flex;align-items:center;gap:10px;"><span style="font-size:26px;">☀️</span><div><b>SKYLIGHT<br>UGANDA</b><small style="display:block;color:#FFD700;font-size:10px;">V33.3</small></div></div><div style="display:flex;gap:12px;font-size:20px;">🔔 👤</div></div>
 <div class="tabs">
 <button class="tab tab-active" onclick="showPage('wallet',this)">WALLET</button>
 <button class="tab" onclick="showPage('finance',this)">FINANCE</button>
@@ -63,28 +58,13 @@ input{width:100%;padding:14px;background:#2a2a3a;border:1px solid #333;border-ra
 <button class="tab" onclick="showPage('profile',this)">PROFILE</button>
 </div>
 
-<!-- WALLET PAGE -->
 <div id="page-wallet" class="page page-active">
-<div class="refer-banner">
-<div><b>🎁 Refer & Earn 5%</b><br><small style="color:#aaa;">Your code</small></div>
-<div style="display:flex;gap:8px;align-items:center;">
-<div id="refCodeBox" class="code-box">SKY-H6T0XX</div>
-<button id="copyBtn" class="copy-btn" onclick="copyCode()">Copy</button>
-</div>
-</div>
-<div class="balance-card">
-<small style="color:#aaa;">Total Balance</small>
-<div class="amount">UGX 2,450,000</div>
-<small style="color:#888;">≈ $ 650 USDT</small>
-<div class="action-row">
-<button class="action-btn btn-deposit">+ Deposit</button>
-<button class="action-btn btn-withdraw">Withdraw</button>
-</div>
-</div>
+<div class="refer-banner"><div><b>🎁 Refer & Earn 5%</b><br><small style="color:#aaa;">Your code</small></div><div style="display:flex;gap:8px;align-items:center;"><div id="refCodeBox" class="code-box">SKY-H6T0XX</div><button id="copyBtn" class="copy-btn" onclick="copyCode()">Copy</button></div></div>
+<div class="balance-card"><small style="color:#aaa;">Total Balance</small><div class="amount">UGX 2,450,000</div><small style="color:#888;">≈ $ 650 USDT</small><div class="action-row"><button class="action-btn btn-deposit">+ Deposit</button><button class="action-btn btn-withdraw">Withdraw</button></div></div>
+<div class="download-card"><div><b style="font-size:16px;">📱 Download SKYLIGHT App</b><br><small>Install APK for fast access</small></div><button onclick="downloadApp()" style="background:#000;color:#FFD700;padding:12px 20px;border-radius:25px;border:none;font-weight:bold;cursor:pointer;">⬇️ APK</button></div>
 <div class="card"><div><b>💰 Earnings Today</b><br><small style="color:#888;">Interest + Referral</small></div><b style="color:#25D366;">+ UGX 45,000</b></div>
 </div>
 
-<!-- FINANCE PAGE -->
 <div id="page-finance" class="page">
 <div class="card" style="border:1px solid #FFD700;"><div style="display:flex;align-items:center;"><div class="icon lock-icon">🔒</div><div style="margin-left:12px;"><b>Secure Locked Finance</b><br><small style="color:#888;">Earn up to 12% in 90D</small></div></div><span class="badge badge-gold">Safe</span></div>
 <div class="finance-grid">
@@ -95,30 +75,26 @@ input{width:100%;padding:14px;background:#2a2a3a;border:1px solid #333;border-ra
 </div>
 </div>
 
-<!-- TEAM PAGE -->
 <div id="page-team" class="page">
-<div class="team-stat">
-<div><b>42</b><br><small>Total Team</small></div><div><b>12</b><br><small>Active Today</small></div><div><b>UGX 320k</b><br><small>Team Earn</small></div>
-</div>
+<div class="team-stat"><div><b>42</b><br><small>Total Team</small></div><div><b>12</b><br><small>Active Today</small></div><div><b>UGX 320k</b><br><small>Team Earn</small></div></div>
 <div class="card"><div><b>Level 1 - Direct (15)</b><br><small style="color:#888;">5% Commission</small></div><b style="color:#FFD700;">UGX 180k</b></div>
 <div class="card"><div><b>Level 2 - Indirect (18)</b><br><small style="color:#888;">2% Commission</small></div><b style="color:#FFD700;">UGX 95k</b></div>
 <div class="card"><div><b>Level 3 - Extended (9)</b><br><small style="color:#888;">1% Commission</small></div><b style="color:#FFD700;">UGX 45k</b></div>
 </div>
 
-<!-- SOCIAL PAGE -->
 <div id="page-social" class="page">
 <div style="padding:0 15px;margin-bottom:10px;"><b style="font-size:20px;">SOCIAL</b><br><small style="color:#888;">Connect community</small></div>
+<div class="download-card"><div><b style="font-size:16px;">📱 Download App</b><br><small>Get APK direct</small></div><button onclick="downloadApp()" style="background:#000;color:#FFD700;padding:12px 20px;border-radius:25px;border:none;font-weight:bold;cursor:pointer;">⬇️ Download</button></div>
 <div class="card card-telegram"><div style="display:flex;align-items:center;"><div class="icon telegram-icon">✈️</div><div style="margin-left:12px;"><b>Telegram Channel</b><br><span class="badge badge-blue">👥 12.4k • Live</span></div></div><button class="btn btn-blue" onclick="window.open('https://t.me/+vyEcluEH54c0NTk0','_blank')">Join Telegram</button></div>
 <div class="card"><div style="display:flex;align-items:center;"><div class="icon whatsapp-icon">💬</div><div style="margin-left:12px;"><b>WhatsApp Channel</b><br><span class="badge badge-green">8.9k</span></div></div><button class="btn-green-outline">Join ></button></div>
 <div class="card"><div style="display:flex;align-items:center;"><div class="icon whatsapp-icon">👥</div><div style="margin-left:12px;"><b>WhatsApp Group</b><br><span class="badge badge-green">5.2k</span></div></div><button class="btn-green-outline">Join ></button></div>
 </div>
 
-<!-- PROFILE PAGE -->
 <div id="page-profile" class="page">
 <div class="card" style="flex-direction:column;align-items:flex-start;"><b>👤 CEO Profile</b><br><input placeholder="Full Name - BENYT"><input placeholder="Phone +256..."><input placeholder="Email"><br><button class="action-btn btn-deposit" style="width:100%;">Save KYC</button></div>
+<div class="download-card" style="margin-top:20px;"><div><b>📥 APK Download Link</b><br><small>https://benytskylight-crypto.github.io/t-crypto.github.io/SkylightUganda.apk</small></div></div>
 </div>
 
-<!-- BOTTOM NAV - NOT STUCK -->
 <div class="bottom-nav">
 <span class="active" onclick="showPage('wallet',document.querySelectorAll('.tab')[0])">🏠<br>HOME</span>
 <span onclick="showPage('finance',document.querySelectorAll('.tab')[1])">📈<br>FINANCE</span>
@@ -133,19 +109,14 @@ document.querySelectorAll('.page').forEach(p=>p.classList.remove('page-active'))
 document.getElementById('page-'+id).classList.add('page-active');
 document.querySelectorAll('.tab').forEach(t=>t.classList.remove('tab-active'));
 if(tabEl) tabEl.classList.add('tab-active');
-document.querySelectorAll('.bottom-nav span').forEach(s=>s.classList.remove('active'));
 let map={wallet:0,finance:1,team:2,social:3,profile:4};
 let idx=map[id];
+document.querySelectorAll('.bottom-nav span').forEach(s=>s.classList.remove('active'));
 if(idx!==undefined) document.querySelectorAll('.bottom-nav span')[idx].classList.add('active');
 window.scrollTo(0,0);
 }
-function copyCode(){
-navigator.clipboard.writeText("SKY-H6T0XX");
-let box=document.getElementById("refCodeBox");
-let btn=document.getElementById("copyBtn");
-box.innerText="Copied ✔"; btn.innerText="Done ✔";
-setTimeout(()=>{box.innerText="SKY-H6T0XX";btn.innerText="Copy";},2000);
-}
+function copyCode(){navigator.clipboard.writeText("SKY-H6T0XX");let box=document.getElementById("refCodeBox");let btn=document.getElementById("copyBtn");box.innerText="Copied ✔";btn.innerText="Done ✔";setTimeout(()=>{box.innerText="SKY-H6T0XX";btn.innerText="Copy";},2000);}
+function downloadApp(){window.open('https://benytskylight-crypto.github.io/t-crypto.github.io/SkylightUganda.apk','_blank'); alert('Downloading SKYLIGHT APK... If not started, upload APK file named SkylightUganda.apk to your GitHub repo');}
 </script>
 </body>
-</html>
+  </html>
