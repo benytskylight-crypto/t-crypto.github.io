@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>SKYLIGHT UGANDA V33.5 MACHINES</title>
+<title>SKYLIGHT UGANDA V33.3</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif;}
 body{background:#0a0a0f;color:#fff;overflow-y:auto;}
@@ -18,29 +18,34 @@ body{background:#0a0a0f;color:#fff;overflow-y:auto;}
 .btn-deposit{background:#FFD700;color:#000;}
 .btn-withdraw{background:#2a2a3a;color:#fff;border:1px solid #444;}
 .card{background:#1e1e28;margin:12px 15px;padding:16px;border-radius:16px;display:flex;align-items:center;justify-content:space-between;border:1px solid #222;}
+.card-telegram{border:1px solid #2AABEE;}
 .download-card{background:linear-gradient(90deg,#FFD700,#FFA500);margin:15px;padding:18px;border-radius:18px;color:#000;display:flex;justify-content:space-between;align-items:center;}
 .icon{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;}
-.telegram-icon{background:#2AABEE;} .whatsapp-icon{background:#25D366;} .lock-icon{background:#FFD700;color:#000;}
-.badge{padding:4px 10px;border-radius:20px;font-size:11px;margin-top:4px;display:inline-block;}
+.telegram-icon{background:#2AABEE;}
+.whatsapp-icon{background:#25D366;}
+.lock-icon{background:#FFD700;color:#000;}
 .tabs{display:flex;gap:8px;margin:15px;overflow:auto;}
 .tab{padding:8px 18px;border-radius:20px;font-size:12px;color:#aaa;background:#2d2d3a;border:none;cursor:pointer;white-space:nowrap;}
 .tab-active{background:#FFEB3B;color:#000;font-weight:bold;}
-.page{display:none;padding-bottom:20px;} .page-active{display:block;}
+.page{display:none;padding-bottom:20px;}
+.page-active{display:block;}
 .team-stat{display:flex;justify-content:space-around;background:#1e1e28;margin:15px;padding:15px;border-radius:14px;}
-.team-stat div{text-align:center;} .team-stat b{color:#FFD700;font-size:18px;}
+.team-stat div{text-align:center;}
+.team-stat b{color:#FFD700;font-size:18px;}
 .bottom-nav{display:flex;justify-content:space-around;background:#12121a;padding:14px 0 16px 0;width:100%;margin-top:30px;border-top:1px solid #222;}
-.bottom-nav span{font-size:11px;color:#666;text-align:center;cursor:pointer;} .bottom-nav .active{color:#FFEB3B;}
+.bottom-nav span{font-size:11px;color:#666;text-align:center;cursor:pointer;}
+.bottom-nav .active{color:#FFEB3B;}
 .machine-grid{display:grid;grid-template-columns:1fr;gap:12px;margin:15px;}
 .machine-card{background:#1e1e28;padding:16px;border-radius:16px;border:1px solid #333;display:flex;gap:14px;align-items:center;}
-.machine-card img{width:70px;height:70px;border-radius:12px;background:#2a2a3a;}
-.machine-info{flex:1;} .machine-info b{color:#FFD700;}
+.machine-info{flex:1;}
+.machine-info b{color:#FFD700;}
 .progress{background:#2a2a3a;height:6px;border-radius:10px;margin-top:6px;overflow:hidden;}
 .progress div{height:100%;background:#FFD700;}
 input{width:100%;padding:14px;background:#2a2a3a;border:1px solid #333;border-radius:12px;color:#fff;margin-top:10px;}
 </style>
 </head>
 <body>
-<div class="header"><div style="display:flex;align-items:center;gap:10px;"><span style="font-size:26px;">☀️</span><div><b>SKYLIGHT<br>UGANDA</b><small style="display:block;color:#FFD700;font-size:10px;">V33.5 MACHINES</small></div></div><div style="display:flex;gap:12px;font-size:20px;">🔔 👤</div></div>
+<div class="header"><div style="display:flex;align-items:center;gap:10px;"><span style="font-size:26px;">☀️</span><div><b>SKYLIGHT<br>UGANDA</b><small style="display:block;color:#FFD700;font-size:10px;">V33.3 ORIGINAL</small></div></div><div style="display:flex;gap:12px;font-size:20px;">🔔 👤</div></div>
 <div class="tabs">
 <button class="tab tab-active" onclick="showPage('wallet',this)">WALLET</button>
 <button class="tab" onclick="showPage('finance',this)">FINANCE</button>
@@ -68,7 +73,7 @@ input{width:100%;padding:14px;background:#2a2a3a;border:1px solid #333;border-ra
 </div>
 
 <div id="page-machines" class="page">
-<div style="padding:0 15px;"><b style="font-size:20px;">⚙️ My Machines</b><br><small style="color:#888;">Mining income daily</small></div>
+<div style="padding:0 15px;"><b style="font-size:20px;">⚙️ My Machines</b><br><small style="color:#888;">Mining income daily - Your original machines</small></div>
 <div class="machine-grid">
 <div class="machine-card"><div style="width:70px;height:70px;border-radius:12px;background:#2a2a3a;display:flex;align-items:center;justify-content:center;font-size:30px;">⛏️</div><div class="machine-info"><b>SKY-Mini Miner</b><br><small>Price: UGX 50,000 | Income: UGX 2,500/day</small><div class="progress"><div style="width:70%;"></div></div><small>Validity: 30 Days | Running</small></div><button class="action-btn btn-deposit" style="flex:0;padding:8px 14px;">Active</button></div>
 <div class="machine-card"><div style="width:70px;height:70px;border-radius:12px;background:#2a2a3a;display:flex;align-items:center;justify-content:center;font-size:30px;">⚡</div><div class="machine-info"><b>SKY-Power S1</b><br><small>Price: UGX 150,000 | Income: UGX 9,000/day</small><div class="progress"><div style="width:45%;"></div></div><small>Validity: 60 Days | Running</small></div><button class="action-btn btn-deposit" style="flex:0;padding:8px 14px;">Active</button></div>
@@ -87,7 +92,7 @@ input{width:100%;padding:14px;background:#2a2a3a;border:1px solid #333;border-ra
 <div id="page-social" class="page">
 <div style="padding:0 15px;margin-bottom:10px;"><b style="font-size:20px;">SOCIAL</b><br><small style="color:#888;">Connect community</small></div>
 <div class="download-card"><div><b>📱 Download App</b><br><small>33MB direct download</small></div><button onclick="downloadApp()" style="background:#000;color:#FFD700;padding:12px 20px;border-radius:25px;border:none;font-weight:bold;cursor:pointer;">⬇️ Download</button></div>
-<div class="card"><div style="display:flex;align-items:center;"><div class="icon telegram-icon">✈️</div><div style="margin-left:12px;"><b>Telegram Channel</b><br><span style="border:1px solid #2AABEE;color:#2AABEE;padding:3px 8px;border-radius:20px;font-size:11px;">👥 12.4k</span></div></div><button style="background:#2AABEE;color:white;padding:11px 18px;border-radius:25px;border:none;font-weight:bold;" onclick="window.open('https://t.me/+vyEcluEH54c0NTk0','_blank')">Join</button></div>
+<div class="card card-telegram"><div style="display:flex;align-items:center;"><div class="icon telegram-icon">✈️</div><div style="margin-left:12px;"><b>Telegram Channel</b><br><span style="border:1px solid #2AABEE;color:#2AABEE;padding:3px 8px;border-radius:20px;font-size:11px;">👥 12.4k</span></div></div><button style="background:#2AABEE;color:white;padding:11px 18px;border-radius:25px;border:none;font-weight:bold;" onclick="window.open('https://t.me/+vyEcluEH54c0NTk0','_blank')">Join</button></div>
 <div class="card"><div style="display:flex;align-items:center;"><div class="icon whatsapp-icon">💬</div><div style="margin-left:12px;"><b>WhatsApp Channel</b><br><span style="border:1px solid #25D366;color:#25D366;padding:3px 8px;border-radius:20px;font-size:11px;">8.9k</span></div></div><button style="background:transparent;border:1px solid #25D366;color:#25D366;padding:9px 16px;border-radius:25px;font-weight:bold;">Join</button></div>
 </div>
 
@@ -110,14 +115,10 @@ document.querySelectorAll('.page').forEach(p=>p.classList.remove('page-active'))
 document.getElementById('page-'+id).classList.add('page-active');
 document.querySelectorAll('.tab').forEach(t=>t.classList.remove('tab-active'));
 if(tabEl) tabEl.classList.add('tab-active');
-let map={wallet:0,finance:1,machines:2,team:3,social:4,profile:5};
-let idx=map[id];
-document.querySelectorAll('.bottom-nav span').forEach(s=>s.classList.remove('active'));
-if(idx!==undefined && idx<5) document.querySelectorAll('.bottom-nav span')[idx].classList.add('active');
 window.scrollTo(0,0);
 }
 function copyCode(){navigator.clipboard.writeText("SKY-H6T0XX");let box=document.getElementById("refCodeBox");let btn=document.getElementById("copyBtn");box.innerText="Copied ✔";btn.innerText="Done ✔";setTimeout(()=>{box.innerText="SKY-H6T0XX";btn.innerText="Copy";},2000);}
 function downloadApp(){window.location.href='https://files.appsgeyser.com/_Skylight_Uganda_20351804.apk';}
 </script>
 </body>
-</html>
+  </html>
