@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>SKYLIGHT UGANDA V33.4</title>
+<title>SKYLIGHT UGANDA V33.5 MACHINES</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif;}
-body{background:#0a0a0f;color:#fff;overflow-y:auto;height:auto;}
+body{background:#0a0a0f;color:#fff;overflow-y:auto;}
 .header{padding:18px 15px;display:flex;justify-content:space-between;align-items:center;background:#0f0f1a;border-bottom:1px solid #222;}
 .refer-banner{background:linear-gradient(90deg,#0f1f3a,#1a2a4a);margin:15px;padding:16px;border-radius:18px;display:flex;justify-content:space-between;align-items:center;border:1px solid #FFD700;}
-.code-box{background:#2a2a3a;padding:10px 14px;border-radius:10px;font-weight:bold;border:1px solid #555;font-size:13px;}
+.code-box{background:#2a2a3a;padding:10px 14px;border-radius:10px;font-weight:bold;border:1px solid #555;}
 .copy-btn{background:#FFD700;color:#000;border:none;padding:10px 14px;border-radius:10px;font-weight:bold;cursor:pointer;}
 .balance-card{background:linear-gradient(135deg,#1a1a2e,#16213e);margin:15px;padding:20px;border-radius:20px;border:1px solid #2a2a4a;}
 .amount{font-size:32px;font-weight:bold;color:#FFD700;margin:8px 0;}
@@ -18,41 +18,33 @@ body{background:#0a0a0f;color:#fff;overflow-y:auto;height:auto;}
 .btn-deposit{background:#FFD700;color:#000;}
 .btn-withdraw{background:#2a2a3a;color:#fff;border:1px solid #444;}
 .card{background:#1e1e28;margin:12px 15px;padding:16px;border-radius:16px;display:flex;align-items:center;justify-content:space-between;border:1px solid #222;}
-.card-telegram{border:1px solid #2AABEE;}
 .download-card{background:linear-gradient(90deg,#FFD700,#FFA500);margin:15px;padding:18px;border-radius:18px;color:#000;display:flex;justify-content:space-between;align-items:center;}
 .icon{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;}
-.telegram-icon{background:#2AABEE;}
-.whatsapp-icon{background:#25D366;}
-.lock-icon{background:#FFD700;color:#000;}
+.telegram-icon{background:#2AABEE;} .whatsapp-icon{background:#25D366;} .lock-icon{background:#FFD700;color:#000;}
 .badge{padding:4px 10px;border-radius:20px;font-size:11px;margin-top:4px;display:inline-block;}
-.badge-blue{border:1px solid #2AABEE;color:#2AABEE;}
-.badge-green{border:1px solid #25D366;color:#25D366;}
-.badge-gold{border:1px solid #FFD700;color:#FFD700;}
-.btn{padding:11px 18px;border-radius:25px;border:none;font-weight:bold;cursor:pointer;font-size:13px;}
-.btn-blue{background:#2AABEE;color:white;}
-.btn-green-outline{background:transparent;border:1px solid #25D366;color:#25D366;padding:9px 16px;border-radius:25px;font-weight:bold;cursor:pointer;}
-.finance-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:15px;}
-.finance-box{background:#1e1e28;padding:16px;border-radius:16px;border:1px solid #333;text-align:center;}
-.finance-box h3{color:#FFD700;font-size:20px;}
 .tabs{display:flex;gap:8px;margin:15px;overflow:auto;}
 .tab{padding:8px 18px;border-radius:20px;font-size:12px;color:#aaa;background:#2d2d3a;border:none;cursor:pointer;white-space:nowrap;}
 .tab-active{background:#FFEB3B;color:#000;font-weight:bold;}
-.page{display:none;padding-bottom:20px;}
-.page-active{display:block;}
+.page{display:none;padding-bottom:20px;} .page-active{display:block;}
 .team-stat{display:flex;justify-content:space-around;background:#1e1e28;margin:15px;padding:15px;border-radius:14px;}
-.team-stat div{text-align:center;}
-.team-stat b{color:#FFD700;font-size:18px;}
-.bottom-nav{display:flex;justify-content:space-around;background:#12121a;padding:14px 0 16px 0;position:relative;width:100%;margin-top:30px;border-top:1px solid #222;}
-.bottom-nav span{font-size:11px;color:#666;text-align:center;cursor:pointer;line-height:16px;}
-.bottom-nav .active{color:#FFEB3B;}
+.team-stat div{text-align:center;} .team-stat b{color:#FFD700;font-size:18px;}
+.bottom-nav{display:flex;justify-content:space-around;background:#12121a;padding:14px 0 16px 0;width:100%;margin-top:30px;border-top:1px solid #222;}
+.bottom-nav span{font-size:11px;color:#666;text-align:center;cursor:pointer;} .bottom-nav .active{color:#FFEB3B;}
+.machine-grid{display:grid;grid-template-columns:1fr;gap:12px;margin:15px;}
+.machine-card{background:#1e1e28;padding:16px;border-radius:16px;border:1px solid #333;display:flex;gap:14px;align-items:center;}
+.machine-card img{width:70px;height:70px;border-radius:12px;background:#2a2a3a;}
+.machine-info{flex:1;} .machine-info b{color:#FFD700;}
+.progress{background:#2a2a3a;height:6px;border-radius:10px;margin-top:6px;overflow:hidden;}
+.progress div{height:100%;background:#FFD700;}
 input{width:100%;padding:14px;background:#2a2a3a;border:1px solid #333;border-radius:12px;color:#fff;margin-top:10px;}
 </style>
 </head>
 <body>
-<div class="header"><div style="display:flex;align-items:center;gap:10px;"><span style="font-size:26px;">☀️</span><div><b>SKYLIGHT<br>UGANDA</b><small style="display:block;color:#FFD700;font-size:10px;">V33.4 FIXED</small></div></div><div style="display:flex;gap:12px;font-size:20px;">🔔 👤</div></div>
+<div class="header"><div style="display:flex;align-items:center;gap:10px;"><span style="font-size:26px;">☀️</span><div><b>SKYLIGHT<br>UGANDA</b><small style="display:block;color:#FFD700;font-size:10px;">V33.5 MACHINES</small></div></div><div style="display:flex;gap:12px;font-size:20px;">🔔 👤</div></div>
 <div class="tabs">
 <button class="tab tab-active" onclick="showPage('wallet',this)">WALLET</button>
 <button class="tab" onclick="showPage('finance',this)">FINANCE</button>
+<button class="tab" onclick="showPage('machines',this)">MACHINES</button>
 <button class="tab" onclick="showPage('team',this)">TEAM</button>
 <button class="tab" onclick="showPage('social',this)">SOCIAL</button>
 <button class="tab" onclick="showPage('profile',this)">PROFILE</button>
@@ -60,18 +52,28 @@ input{width:100%;padding:14px;background:#2a2a3a;border:1px solid #333;border-ra
 
 <div id="page-wallet" class="page page-active">
 <div class="refer-banner"><div><b>🎁 Refer & Earn 5%</b><br><small style="color:#aaa;">Your code</small></div><div style="display:flex;gap:8px;align-items:center;"><div id="refCodeBox" class="code-box">SKY-H6T0XX</div><button id="copyBtn" class="copy-btn" onclick="copyCode()">Copy</button></div></div>
-<div class="balance-card"><small style="color:#aaa;">Total Balance</small><div class="amount">UGX 2,450,000</div><small style="color:#888;">≈ $ 650 USDT</small><div class="action-row"><button class="action-btn btn-deposit">+ Deposit</button><button class="action-btn btn-withdraw">Withdraw</button></div></div>
-<div class="download-card"><div><b style="font-size:16px;">📱 Download SKYLIGHT App</b><br><small>33.4 MB • Direct Install</small></div><button onclick="downloadApp()" style="background:#000;color:#FFD700;padding:12px 20px;border-radius:25px;border:none;font-weight:bold;cursor:pointer;">⬇️ APK</button></div>
+<div class="balance-card"><small>Total Balance</small><div class="amount">UGX 2,450,000</div><small>≈ $ 650 USDT</small><div class="action-row"><button class="action-btn btn-deposit">+ Deposit</button><button class="action-btn btn-withdraw">Withdraw</button></div></div>
+<div class="download-card"><div><b>📱 Download SKYLIGHT App</b><br><small>33.4 MB • Direct Install</small></div><button onclick="downloadApp()" style="background:#000;color:#FFD700;padding:12px 20px;border-radius:25px;border:none;font-weight:bold;cursor:pointer;">⬇️ APK</button></div>
 <div class="card"><div><b>💰 Earnings Today</b><br><small style="color:#888;">Interest + Referral</small></div><b style="color:#25D366;">+ UGX 45,000</b></div>
 </div>
 
 <div id="page-finance" class="page">
-<div class="card" style="border:1px solid #FFD700;"><div style="display:flex;align-items:center;"><div class="icon lock-icon">🔒</div><div style="margin-left:12px;"><b>Secure Locked Finance</b><br><small style="color:#888;">Earn up to 12% in 90D</small></div></div><span class="badge badge-gold">Safe</span></div>
-<div class="finance-grid">
-<div class="finance-box"><small>30 Days</small><h3>5%</h3><small>Earn</small><br><button class="action-btn btn-deposit" style="margin-top:10px;width:100%;">Lock Now</button></div>
-<div class="finance-box"><small>60 Days</small><h3>9%</h3><small>Earn</small><br><button class="action-btn btn-deposit" style="margin-top:10px;width:100%;">Lock Now</button></div>
-<div class="finance-box"><small>90 Days</small><h3>12%</h3><small>Earn</small><br><button class="action-btn btn-deposit" style="margin-top:10px;width:100%;">Lock Now</button></div>
-<div class="finance-box"><small>Flexible</small><h3>2%</h3><small>Daily</small><br><button class="action-btn btn-withdraw" style="margin-top:10px;width:100%;">Start</button></div>
+<div class="card" style="border:1px solid #FFD700;"><div style="display:flex;align-items:center;"><div class="icon lock-icon">🔒</div><div style="margin-left:12px;"><b>Secure Locked Finance</b><br><small style="color:#888;">Earn up to 12% in 90D</small></div></div><span style="padding:4px 10px;border-radius:20px;font-size:11px;border:1px solid #FFD700;color:#FFD700;">Safe</span></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:15px;">
+<div style="background:#1e1e28;padding:16px;border-radius:16px;border:1px solid #333;text-align:center;"><small>30 Days</small><h3 style="color:#FFD700;">5%</h3><small>Earn</small><br><button class="action-btn btn-deposit" style="margin-top:10px;width:100%;">Lock Now</button></div>
+<div style="background:#1e1e28;padding:16px;border-radius:16px;border:1px solid #333;text-align:center;"><small>60 Days</small><h3 style="color:#FFD700;">9%</h3><small>Earn</small><br><button class="action-btn btn-deposit" style="margin-top:10px;width:100%;">Lock Now</button></div>
+<div style="background:#1e1e28;padding:16px;border-radius:16px;border:1px solid #333;text-align:center;"><small>90 Days</small><h3 style="color:#FFD700;">12%</h3><small>Earn</small><br><button class="action-btn btn-deposit" style="margin-top:10px;width:100%;">Lock Now</button></div>
+<div style="background:#1e1e28;padding:16px;border-radius:16px;border:1px solid #333;text-align:center;"><small>Flexible</small><h3 style="color:#FFD700;">2%</h3><small>Daily</small><br><button class="action-btn btn-withdraw" style="margin-top:10px;width:100%;">Start</button></div>
+</div>
+</div>
+
+<div id="page-machines" class="page">
+<div style="padding:0 15px;"><b style="font-size:20px;">⚙️ My Machines</b><br><small style="color:#888;">Mining income daily</small></div>
+<div class="machine-grid">
+<div class="machine-card"><div style="width:70px;height:70px;border-radius:12px;background:#2a2a3a;display:flex;align-items:center;justify-content:center;font-size:30px;">⛏️</div><div class="machine-info"><b>SKY-Mini Miner</b><br><small>Price: UGX 50,000 | Income: UGX 2,500/day</small><div class="progress"><div style="width:70%;"></div></div><small>Validity: 30 Days | Running</small></div><button class="action-btn btn-deposit" style="flex:0;padding:8px 14px;">Active</button></div>
+<div class="machine-card"><div style="width:70px;height:70px;border-radius:12px;background:#2a2a3a;display:flex;align-items:center;justify-content:center;font-size:30px;">⚡</div><div class="machine-info"><b>SKY-Power S1</b><br><small>Price: UGX 150,000 | Income: UGX 9,000/day</small><div class="progress"><div style="width:45%;"></div></div><small>Validity: 60 Days | Running</small></div><button class="action-btn btn-deposit" style="flex:0;padding:8px 14px;">Active</button></div>
+<div class="machine-card"><div style="width:70px;height:70px;border-radius:12px;background:#2a2a3a;display:flex;align-items:center;justify-content:center;font-size:30px;">🚀</div><div class="machine-info"><b>SKY-Pro Max</b><br><small>Price: UGX 500,000 | Income: UGX 35,000/day</small><div class="progress"><div style="width:10%;"></div></div><small>Validity: 90 Days | Buy Now</small></div><button class="action-btn btn-withdraw" style="flex:0;padding:8px 14px;border:1px solid #FFD700;color:#FFD700;">Buy</button></div>
+<div class="machine-card"><div style="width:70px;height:70px;border-radius:12px;background:#2a2a3a;display:flex;align-items:center;justify-content:center;font-size:30px;">👑</div><div class="machine-info"><b>SKY-Ultimate</b><br><small>Price: UGX 1,500,000 | Income: UGX 120,000/day</small><div class="progress"><div style="width:0%;"></div></div><small>Validity: 120 Days | Buy Now</small></div><button class="action-btn btn-withdraw" style="flex:0;padding:8px 14px;border:1px solid #FFD700;color:#FFD700;">Buy</button></div>
 </div>
 </div>
 
@@ -84,23 +86,22 @@ input{width:100%;padding:14px;background:#2a2a3a;border:1px solid #333;border-ra
 
 <div id="page-social" class="page">
 <div style="padding:0 15px;margin-bottom:10px;"><b style="font-size:20px;">SOCIAL</b><br><small style="color:#888;">Connect community</small></div>
-<div class="download-card"><div><b style="font-size:16px;">📱 Download App</b><br><small>33MB direct download</small></div><button onclick="downloadApp()" style="background:#000;color:#FFD700;padding:12px 20px;border-radius:25px;border:none;font-weight:bold;cursor:pointer;">⬇️ Download</button></div>
-<div class="card card-telegram"><div style="display:flex;align-items:center;"><div class="icon telegram-icon">✈️</div><div style="margin-left:12px;"><b>Telegram Channel</b><br><span class="badge badge-blue">👥 12.4k • Live</span></div></div><button class="btn btn-blue" onclick="window.open('https://t.me/+vyEcluEH54c0NTk0','_blank')">Join Telegram</button></div>
-<div class="card"><div style="display:flex;align-items:center;"><div class="icon whatsapp-icon">💬</div><div style="margin-left:12px;"><b>WhatsApp Channel</b><br><span class="badge badge-green">8.9k</span></div></div><button class="btn-green-outline">Join ></button></div>
-<div class="card"><div style="display:flex;align-items:center;"><div class="icon whatsapp-icon">👥</div><div style="margin-left:12px;"><b>WhatsApp Group</b><br><span class="badge badge-green">5.2k</span></div></div><button class="btn-green-outline">Join ></button></div>
+<div class="download-card"><div><b>📱 Download App</b><br><small>33MB direct download</small></div><button onclick="downloadApp()" style="background:#000;color:#FFD700;padding:12px 20px;border-radius:25px;border:none;font-weight:bold;cursor:pointer;">⬇️ Download</button></div>
+<div class="card"><div style="display:flex;align-items:center;"><div class="icon telegram-icon">✈️</div><div style="margin-left:12px;"><b>Telegram Channel</b><br><span style="border:1px solid #2AABEE;color:#2AABEE;padding:3px 8px;border-radius:20px;font-size:11px;">👥 12.4k</span></div></div><button style="background:#2AABEE;color:white;padding:11px 18px;border-radius:25px;border:none;font-weight:bold;" onclick="window.open('https://t.me/+vyEcluEH54c0NTk0','_blank')">Join</button></div>
+<div class="card"><div style="display:flex;align-items:center;"><div class="icon whatsapp-icon">💬</div><div style="margin-left:12px;"><b>WhatsApp Channel</b><br><span style="border:1px solid #25D366;color:#25D366;padding:3px 8px;border-radius:20px;font-size:11px;">8.9k</span></div></div><button style="background:transparent;border:1px solid #25D366;color:#25D366;padding:9px 16px;border-radius:25px;font-weight:bold;">Join</button></div>
 </div>
 
 <div id="page-profile" class="page">
 <div class="card" style="flex-direction:column;align-items:flex-start;"><b>👤 CEO Profile</b><br><input placeholder="Full Name - BENYT"><input placeholder="Phone +256..."><input placeholder="Email"><br><button class="action-btn btn-deposit" style="width:100%;">Save KYC</button></div>
-<div class="download-card" style="margin-top:20px;flex-direction:column;align-items:flex-start;gap:10px;"><b>📥 Your APK Links</b><small style="word-break:break-all;">1. Direct: files.appsgeyser.com/_Skylight_Uganda_20351804.apk<br>2. Website: benytskylight-crypto.github.io/t-crypto.github.io/</small><button onclick="downloadApp()" style="background:#000;color:#FFD700;padding:12px 20px;border-radius:25px;border:none;font-weight:bold;width:100%;">⬇️ Download Now (33MB)</button></div>
+<div class="download-card" style="flex-direction:column;align-items:flex-start;gap:10px;"><b>📥 Your APK Links</b><small>Direct working link inside app</small><button onclick="downloadApp()" style="background:#000;color:#FFD700;padding:12px 20px;border-radius:25px;border:none;font-weight:bold;width:100%;">⬇️ Download Now (33MB)</button></div>
 </div>
 
 <div class="bottom-nav">
 <span class="active" onclick="showPage('wallet',document.querySelectorAll('.tab')[0])">🏠<br>HOME</span>
 <span onclick="showPage('finance',document.querySelectorAll('.tab')[1])">📈<br>FINANCE</span>
-<span onclick="showPage('team',document.querySelectorAll('.tab')[2])">👥<br>TEAM</span>
-<span onclick="showPage('social',document.querySelectorAll('.tab')[3])">⭐<br>SOCIAL</span>
-<span onclick="showPage('profile',document.querySelectorAll('.tab')[4])">👤<br>PROFILE</span>
+<span onclick="showPage('machines',document.querySelectorAll('.tab')[2])">⛏️<br>MACHINES</span>
+<span onclick="showPage('team',document.querySelectorAll('.tab')[3])">👥<br>TEAM</span>
+<span onclick="showPage('social',document.querySelectorAll('.tab')[4])">⭐<br>SOCIAL</span>
 </div>
 
 <script>
@@ -109,10 +110,10 @@ document.querySelectorAll('.page').forEach(p=>p.classList.remove('page-active'))
 document.getElementById('page-'+id).classList.add('page-active');
 document.querySelectorAll('.tab').forEach(t=>t.classList.remove('tab-active'));
 if(tabEl) tabEl.classList.add('tab-active');
-let map={wallet:0,finance:1,team:2,social:3,profile:4};
+let map={wallet:0,finance:1,machines:2,team:3,social:4,profile:5};
 let idx=map[id];
 document.querySelectorAll('.bottom-nav span').forEach(s=>s.classList.remove('active'));
-if(idx!==undefined) document.querySelectorAll('.bottom-nav span')[idx].classList.add('active');
+if(idx!==undefined && idx<5) document.querySelectorAll('.bottom-nav span')[idx].classList.add('active');
 window.scrollTo(0,0);
 }
 function copyCode(){navigator.clipboard.writeText("SKY-H6T0XX");let box=document.getElementById("refCodeBox");let btn=document.getElementById("copyBtn");box.innerText="Copied ✔";btn.innerText="Done ✔";setTimeout(()=>{box.innerText="SKY-H6T0XX";btn.innerText="Copy";},2000);}
