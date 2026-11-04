@@ -1,21 +1,9 @@
 {
-  "name": "Skylight Uganda Finance - Deposit Income",
+  "name": "Skylight Uganda V33.7 FINAL",
   "short_name": "Skylight",
-  "description": "Deposit 2000 UGX → Buy Machine → 30D Locked → 6% Daily → Withdraw to MoMo",
-  "start_url": "https://benytskylight-crypto.github.io/t-crypto.github.io/",
+  "start_url": "/?v=37",
   "display": "standalone",
-  "background_color": "#0f172a",
+  "background_color": "#0a0a0f",
   "theme_color": "#facc15",
-  "icons": [
-    {
-      "src": "https://benytskylight-crypto.github.io/t-crypto.github.io/logo.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "https://benytskylight-crypto.github.io/t-crypto.github.io/logo.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ]
+  "icons": [{"src":"icon.png","sizes":"512x512","type":"image/png"}]
 }
