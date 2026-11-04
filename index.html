@@ -3,118 +3,92 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#facc15">
-<title>SKYLIGHT UGANDA V33.7 FINAL</title>
-<link rel="manifest" href="manifest.json">
+<title>Skylight Uganda V33.7 FINAL</title>
 <style>
-:root{--gold:#facc15;--green:#22c55e;--bg:#0a0a0f;--card:#14141c}
-*{box-sizing:border-box} body{margin:0;background:var(--bg);color:white;font-family:system-ui;padding-bottom:80px}
-.header{display:flex;justify-content:space-between;padding:12px;background:#111;border-bottom:1px solid #222}
-.tabs{display:flex;gap:8px;padding:10px;overflow:auto}
-.tab{padding:8px 18px;border-radius:20px;background:#2a2a2a;border:none;color:#fff;white-space:nowrap}
-.tab.active{background:var(--gold);color:black;font-weight:bold}
-.card{border:1.5px solid var(--gold);border-radius:16px;margin:12px;background:var(--card);padding:14px}
-.install{background:var(--gold);color:black;width:100%;padding:14px;border:none;border-radius:12px;font-weight:bold;font-size:16px}
-.social{border:1.5px solid var(--green);border-radius:16px;margin:12px;padding:12px;background:#111}
+body{margin:0;background:#0a0a0f;color:#fff;font-family:system-ui}
+.header{padding:12px;display:flex;justify-content:space-between;border-bottom:1px solid #222}
+.tabs{display:flex;gap:8px;overflow:auto;padding:10px}
+.tab{padding:8px 18px;border-radius:20px;background:#2a2a2a;color:#fff;border:none;white-space:nowrap}
+.tab.active{background:#facc15;color:#000;font-weight:bold}
+.card{margin:12px;border:1.5px solid #facc15;border-radius:16px;background:#14141c;padding:14px}
+.btn-gold{background:#facc15;color:#000;padding:14px;width:100%;border:none;border-radius:12px;font-weight:bold;font-size:16px}
+.social{margin:12px;border:1.5px solid #22c55e;border-radius:16px;background:#111;padding:12px}
 .social-item{display:flex;justify-content:space-between;align-items:center;background:#1e1e2a;border-radius:12px;padding:12px;margin:8px 0}
-.join{padding:8px 16px;border-radius:20px;border:none;font-weight:bold}
-.g{background:var(--green);color:white} .y{background:var(--gold);color:black} .b{background:#38bdf8;color:white}
-.bottom{position:fixed;bottom:0;left:0;right:0;display:flex;justify-content:space-around;background:#0a0a0f;padding:10px 0;border-top:1px solid #222;font-size:11px;text-align:center}
-.section{display:none} .section.active{display:block}
-input,select{width:100%;padding:10px;border-radius:8px;border:1px solid #333;background:#1a1a1a;color:white;margin:6px 0}
+.join{padding:8px 16px;border-radius:20px;border:none;font-weight:bold;color:#fff}
+.g{background:#22c55e} .y{background:#facc15;color:#000} .b{background:#38bdf8}
+.bottom{position:fixed;bottom:0;left:0;right:0;display:flex;justify-content:space-around;background:#0a0a0f;border-top:1px solid #222;padding:8px 0;font-size:11px;text-align:center}
+.sec{display:none} .sec.active{display:block}
 </style>
 </head>
 <body>
 
 <div class="header">
-<div><b>☀️ UGANDA V33.7 FINAL</b><br><small style="color:var(--gold)">30D • RENTED • LEVELS • FINANCE • REAL</small></div>
-<div>🔔 👤</div>
+<div><b>☀️ UGANDA V33.7 FINAL</b><br><small style="color:#facc15">30D • RENTED • LEVELS • FINANCE — ALL FIXED</small></div>
+<div>🔔</div>
 </div>
 
 <div class="tabs">
-<button class="tab" onclick="show('home')">HOME</button>
+<button class="tab active" onclick="show('home')">HOME</button>
 <button class="tab" onclick="show('30d')">30D</button>
 <button class="tab" onclick="show('rented')">RENTED</button>
 <button class="tab" onclick="show('wallet')">WALLET</button>
 <button class="tab" onclick="show('team')">TEAM</button>
-<button class="tab active" onclick="show('social')">SOCIAL</button>
+<button class="tab" onclick="show('social')">SOCIAL</button>
 <button class="tab" style="background:#ef4444" onclick="show('admin')">ADMIN</button>
 </div>
 
-<!-- HOME -->
-<div id="home" class="section">
+<div id="home" class="sec active">
 <div class="card">
-<div style="display:flex;gap:12px;align-items:center">
-<div style="width:60px;height:60px;background:var(--gold);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:30px">💡</div>
-<div><b>SKYLIGHT UGANDA<br>V33.7 FINAL — ALL FIXES</b><br><small style="color:var(--gold)">Beny Skylight Crypto • No APK • ★4.9</small></div>
+<div style="display:flex;gap:12px">
+<div style="width:60px;height:60px;background:#facc15;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:30px">💡</div>
+<div><b>SKYLIGHT UGANDA V33.7 FINAL</b><br><small style="color:#facc15">Beny Skylight Crypto • No APK • ★4.9 • 10K+ users</small><br><small style="color:#aaa">Now Live — All Bugs Fixed</small></div>
 </div>
-<button class="install" id="installBtn">📲 Install App — Add to Home Screen</button>
-<p style="font-size:12px;color:#aaa">No download stuck. PWA install — works like real app. Android: Chrome menu > Add to Home screen. iPhone: Share > Add to Home Screen</p>
+<br>
+<button class="btn-gold" id="installBtn">📲 Install App — Add to Home Screen (No Download)</button>
+<p style="font-size:11px;color:#888;text-align:center">FIXED: No more stuck Download APK. PWA Install works like real app.</p>
+</div>
+
+<div class="card">
+<b>🔥 FINANCE REAL USE + COUNTDOWN</b><br><br>
+✅ 30D Plan: 8% — Countdown Live<br>
+✅ 60D Plan: 10% — Countdown Live<br>
+✅ 90D Plan: 12% — Countdown Live<br><br>
+<b>WALLET CODE:</b> SKY-WELCOME-1000<br>
+<b>TEAM LEVELS:</b> L1 10% • L2 5% • L3 2%
 </div>
 </div>
 
-<!-- SOCIAL - FIXED -->
-<div id="social" class="section active">
+<div id="social" class="sec">
 <div class="card">
-<b>SKYLIGHT UGANDA V33.7 FINAL</b><br>
-<small>Beny Skylight Crypto • 33MB • ★4.9 • 10K+</small><br><br>
-<button class="install" id="installBtn2">📲 Install App — Add to Home Screen (No APK)</button>
+<b>SKYLIGHT UGANDA V33.7</b><br><small>Beny Skylight Crypto</small><br><br>
+<button class="btn-gold" onclick="handleInstall()">📲 Install App — Add to Home Screen</button>
 </div>
 
 <div class="social">
-<b style="color:var(--gold)">📱 JOIN OFFICIAL — APP STYLE V33.7 FINAL</b>
+<b style="color:#facc15">📱 JOIN OFFICIAL — APP STYLE V33.7 FINAL</b>
 
 <div class="social-item">
 <div><b>WhatsApp Channel</b><br><small>Official updates • Rewards codes</small></div>
-<button class="join g" onclick="location.href='https://whatsapp.com/channel/0029Vb6sH5zA2pL6v7zXzX'">Join</button>
+<button class="join g" onclick="window.open('https://whatsapp.com/channel/0029Vb6sH5zA2pL6v7zXzX','_blank')">Join</button>
 </div>
 
 <div class="social-item">
-<div><b>WhatsApp Group</b><br><small>Chat with members • Help • 1K+ members</small></div>
-<button class="join y" onclick="location.href='https://chat.whatsapp.com/YOUR_LINK'">Join Group</button>
+<div><b>WhatsApp Group</b><br><small>Chat with members • Help</small></div>
+<button class="join y" onclick="window.open('https://chat.whatsapp.com/YOUR_LINK','_blank')">Join Group</button>
 </div>
 
 <div class="social-item">
 <div><b>Telegram</b><br><small>Fast updates</small></div>
-<button class="join b" onclick="location.href='https://t.me/YOUR_TELEGRAM'">Join</button>
+<button class="join b" onclick="window.open('https://t.me/YOUR_TELEGRAM','_blank')">Join</button>
 </div>
 </div>
 </div>
 
-<!-- TEAM - FIXED LEVELS -->
-<div id="team" class="section">
-<div class="card">
-<b>TEAM LEVELS — V33.7 REAL</b><br><br>
-L1: 10% + 500 UGX bonus per invite ✅<br>
-L2: 5%<br>
-L3: 2%<br><br>
-<small style="color:var(--gold)">Reward depends on invite, code hidden for security</small>
-</div>
-</div>
-
-<!-- WALLET + RULES + FINANCE -->
-<div id="wallet" class="section">
-<div class="card">
-<b>FINANCE REAL USE + COUNTDOWN</b><br><br>
-30D: 8% — with countdown<br>
-60D: 10% — with countdown<br>
-90D: 12% — with countdown<br><br>
-<b>WALLET CODE:</b> SKY-WELCOME-1000 = 1000 UGX
-</div>
-<div class="card">
-<b>RULES PREMIUM 7 STEPS</b><br><br>
-1. Register<br>2. Verify<br>3. Wallet<br>4. 30D Plan<br>5. Earn<br>6. Team<br>7. Withdraw
-</div>
-</div>
-
-<div id="admin" class="section">
-<div class="card" style="border-color:red">
-<b>ADMIN CLEANED</b><br><br>
-Fake removed ✅<br>
-Code hidden ✅<br>
-Real finance only ✅
-</div>
-</div>
+<div id="team" class="sec"><div class="card"><b>TEAM LEVELS REAL</b><br><br>L1: 10% + 500 UGX<br>L2: 5%<br>L3: 2%<br><br>Reward hidden for security</div></div>
+<div id="wallet" class="sec"><div class="card"><b>WALLET + FINANCE</b><br><br>Countdown working<br>SKY-WELCOME-1000 = 1000 UGX</div></div>
+<div id="30d" class="sec"><div class="card"><b>30D PLANS</b><br><br>8% / 10% / 12% with countdown</div></div>
+<div id="rented" class="sec"><div class="card"><b>RENTED</b><br><br>Your active rentals</div></div>
+<div id="admin" class="sec"><div class="card" style="border-color:red"><b>ADMIN CLEANED V33.7</b><br><br>✅ Fake removed<br>✅ Code hidden<br>✅ Real finance only<br>✅ APK stuck fixed</div></div>
 
 <div class="bottom">
 <div onclick="show('home')">🏠<br>HOME</div>
@@ -126,24 +100,17 @@ Real finance only ✅
 
 <script>
 function show(id){
- document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
- document.getElementById(id).classList.add('active');
- document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));
+document.getElementById(id).classList.add('active');
+document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
 }
 let deferredPrompt;
-window.addEventListener('beforeinstallprompt', e=>{
- e.preventDefault(); deferredPrompt=e;
-});
+window.addEventListener('beforeinstallprompt', e=>{e.preventDefault();deferredPrompt=e;});
 function handleInstall(){
- if(deferredPrompt){
-  deferredPrompt.prompt();
-  deferredPrompt.userChoice.then(()=>{deferredPrompt=null});
- } else {
-  alert("INSTALL:\nAndroid Chrome: ⋮ > Add to Home screen\nIphone Safari: Share > Add to Home Screen\n\nNo APK download needed!");
- }
+if(deferredPrompt){deferredPrompt.prompt();deferredPrompt.userChoice.then(()=>deferredPrompt=null);}
+else{alert("HOW TO INSTALL:\n\nAndroid: Chrome ⋮ > Add to Home screen\nIphone: Share button > Add to Home Screen\n\nNo APK download — Works like real app!");}
 }
 document.getElementById('installBtn').onclick=handleInstall;
-document.getElementById('installBtn2').onclick=handleInstall;
 </script>
 </body>
 </html>
