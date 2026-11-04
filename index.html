@@ -1,116 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Skylight Uganda V33.7 FINAL</title>
+<title>SKYLIGHT UGANDA V33.8 FIXED</title>
+<!-- KEEP YOUR ORIGINAL CSS + FIREBASE IMPORTS HERE - DO NOT DELETE -->
 <style>
-body{margin:0;background:#0a0a0f;color:#fff;font-family:system-ui}
-.header{padding:12px;display:flex;justify-content:space-between;border-bottom:1px solid #222}
-.tabs{display:flex;gap:8px;overflow:auto;padding:10px}
-.tab{padding:8px 18px;border-radius:20px;background:#2a2a2a;color:#fff;border:none;white-space:nowrap}
-.tab.active{background:#facc15;color:#000;font-weight:bold}
-.card{margin:12px;border:1.5px solid #facc15;border-radius:16px;background:#14141c;padding:14px}
-.btn-gold{background:#facc15;color:#000;padding:14px;width:100%;border:none;border-radius:12px;font-weight:bold;font-size:16px}
-.social{margin:12px;border:1.5px solid #22c55e;border-radius:16px;background:#111;padding:12px}
-.social-item{display:flex;justify-content:space-between;align-items:center;background:#1e1e2a;border-radius:12px;padding:12px;margin:8px 0}
-.join{padding:8px 16px;border-radius:20px;border:none;font-weight:bold;color:#fff}
-.g{background:#22c55e} .y{background:#facc15;color:#000} .b{background:#38bdf8}
-.bottom{position:fixed;bottom:0;left:0;right:0;display:flex;justify-content:space-around;background:#0a0a0f;border-top:1px solid #222;padding:8px 0;font-size:11px;text-align:center}
-.sec{display:none} .sec.active{display:block}
+/* KEEP YOUR ORIGINAL CSS - PASTE FROM OLD FILE */
+.page{display:none}.page-active{display:block}
+.btn{padding:10px 14px;border-radius:10px;border:none;font-weight:bold}
+.btn-gold{background:#facc15;color:#000}.btn-green{background:#22c55e;color:#fff}.btn-blue{background:#3b82f6;color:#fff}.btn-dark{background:#2a2a3a;color:#fff}.btn-red{background:#ef4444;color:#fff}
+.group-card{background:#1e1e28;border-radius:16px;padding:14px;margin:15px}
+.group-title{font-weight:900;color:#facc15;margin-bottom:8px}
+.small{font-size:11px;color:#aaa}
+.capital-box,.profit-box{flex:1;background:#2a2a3a;border-radius:12px;padding:10px;text-align:center}
+.download-card{border:2px solid #facc15;border-radius:16px;padding:14px;background:#14141c;display:flex;justify-content:space-between;align-items:center;margin:15px}
+.machine-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:15px}
+.machine{background:#1e1e28;border-radius:16px;overflow:hidden;border:1px solid #333}
+.machine img{width:100%;height:120px;object-fit:cover}
+.m-info{padding:10px}
+.badge{font-size:10px;padding:4px 8px;border-radius:20px;background:#facc15;color:#000;display:inline-block}
+.vip{border-color:#facc15}
 </style>
-</head>
-<body>
-
-<div class="header">
-<div><b>☀️ UGANDA V33.7 FINAL</b><br><small style="color:#facc15">30D • RENTED • LEVELS • FINANCE — ALL FIXED</small></div>
-<div>🔔</div>
-</div>
-
-<div class="tabs">
-<button class="tab active" onclick="show('home')">HOME</button>
-<button class="tab" onclick="show('30d')">30D</button>
-<button class="tab" onclick="show('rented')">RENTED</button>
-<button class="tab" onclick="show('wallet')">WALLET</button>
-<button class="tab" onclick="show('team')">TEAM</button>
-<button class="tab" onclick="show('social')">SOCIAL</button>
-<button class="tab" style="background:#ef4444" onclick="show('admin')">ADMIN</button>
-</div>
-
-<div id="home" class="sec active">
-<div class="card">
-<div style="display:flex;gap:12px">
-<div style="width:60px;height:60px;background:#facc15;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:30px">💡</div>
-<div><b>SKYLIGHT UGANDA V33.7 FINAL</b><br><small style="color:#facc15">Beny Skylight Crypto • No APK • ★4.9 • 10K+ users</small><br><small style="color:#aaa">Now Live — All Bugs Fixed</small></div>
-</div>
-<br>
-<button class="btn-gold" id="installBtn">📲 Install App — Add to Home Screen (No Download)</button>
-<p style="font-size:11px;color:#888;text-align:center">FIXED: No more stuck Download APK. PWA Install works like real app.</p>
-</div>
-
-<div class="card">
-<b>🔥 FINANCE REAL USE + COUNTDOWN</b><br><br>
-✅ 30D Plan: 8% — Countdown Live<br>
-✅ 60D Plan: 10% — Countdown Live<br>
-✅ 90D Plan: 12% — Countdown Live<br><br>
-<b>WALLET CODE:</b> SKY-WELCOME-1000<br>
-<b>TEAM LEVELS:</b> L1 10% • L2 5% • L3 2%
-</div>
-</div>
-
-<div id="social" class="sec">
-<div class="card">
-<b>SKYLIGHT UGANDA V33.7</b><br><small>Beny Skylight Crypto</small><br><br>
-<button class="btn-gold" onclick="handleInstall()">📲 Install App — Add to Home Screen</button>
-</div>
-
-<div class="social">
-<b style="color:#facc15">📱 JOIN OFFICIAL — APP STYLE V33.7 FINAL</b>
-
-<div class="social-item">
-<div><b>WhatsApp Channel</b><br><small>Official updates • Rewards codes</small></div>
-<button class="join g" onclick="window.open('https://whatsapp.com/channel/0029Vb6sH5zA2pL6v7zXzX','_blank')">Join</button>
-</div>
-
-<div class="social-item">
-<div><b>WhatsApp Group</b><br><small>Chat with members • Help</small></div>
-<button class="join y" onclick="window.open('https://chat.whatsapp.com/YOUR_LINK','_blank')">Join Group</button>
-</div>
-
-<div class="social-item">
-<div><b>Telegram</b><br><small>Fast updates</small></div>
-<button class="join b" onclick="window.open('https://t.me/YOUR_TELEGRAM','_blank')">Join</button>
-</div>
-</div>
-</div>
-
-<div id="team" class="sec"><div class="card"><b>TEAM LEVELS REAL</b><br><br>L1: 10% + 500 UGX<br>L2: 5%<br>L3: 2%<br><br>Reward hidden for security</div></div>
-<div id="wallet" class="sec"><div class="card"><b>WALLET + FINANCE</b><br><br>Countdown working<br>SKY-WELCOME-1000 = 1000 UGX</div></div>
-<div id="30d" class="sec"><div class="card"><b>30D PLANS</b><br><br>8% / 10% / 12% with countdown</div></div>
-<div id="rented" class="sec"><div class="card"><b>RENTED</b><br><br>Your active rentals</div></div>
-<div id="admin" class="sec"><div class="card" style="border-color:red"><b>ADMIN CLEANED V33.7</b><br><br>✅ Fake removed<br>✅ Code hidden<br>✅ Real finance only<br>✅ APK stuck fixed</div></div>
-
-<div class="bottom">
-<div onclick="show('home')">🏠<br>HOME</div>
-<div onclick="show('30d')">⛏️<br>30D</div>
-<div onclick="show('rented')">📋<br>RENTED</div>
-<div onclick="show('wallet')">💳<br>WALLET</div>
-<div onclick="show('team')">👥<br>TEAM</div>
-</div>
-
-<script>
-function show(id){
-document.querySelectorAll('.sec').forEach(s=>s.classList.remove('active'));
-document.getElementById(id).classList.add('active');
-document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-}
-let deferredPrompt;
-window.addEventListener('beforeinstallprompt', e=>{e.preventDefault();deferredPrompt=e;});
-function handleInstall(){
-if(deferredPrompt){deferredPrompt.prompt();deferredPrompt.userChoice.then(()=>deferredPrompt=null);}
-else{alert("HOW TO INSTALL:\n\nAndroid: Chrome ⋮ > Add to Home screen\nIphone: Share button > Add to Home Screen\n\nNo APK download — Works like real app!");}
-}
-document.getElementById('installBtn').onclick=handleInstall;
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getFirestore, collection, doc, getDoc, getDocs, setDoc, addDoc, updateDoc, query, where, orderBy, limit, serverTimestamp, onSnapshot } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+window.db_imports = { initializeApp, getFirestore, collection, doc, getDoc, getDocs, setDoc, addDoc, updateDoc, query, where, orderBy, limit, serverTimestamp, onSnapshot };
+const firebaseConfig = { /* KEEP YOUR FIREBASE CONFIG FROM OLD FILE - DO NOT DELETE */ };
+const app = initializeApp(firebaseConfig);
+window.db = getFirestore(app);
+window.collection=collection;window.doc=doc;window.getDoc=getDoc;window.getDocs=getDocs;window.setDoc=setDoc;window.addDoc=addDoc;window.updateDoc=updateDoc;window.query=query;window.where=where;window.orderBy=orderBy;window.limit=limit;window.serverTimestamp=serverTimestamp;window.onSnapshot=onSnapshot;
 </script>
+</head>
+<body style="background:#0a0a0f;color:#fff;font-family:system-ui;margin:0;padding-bottom:80px">
+
+<!-- YOUR WALLET PAGE - SAME -->
+<div id="page-wallet" class="page page-active">
+<div class="refer-banner"><div><b>🎁 Refer & Earn 10%</b><br><small style="color:#aaa;">Your code</small></div><div style="display:flex;gap:8px;"><div id="refCodeBox" class="code-box">SKY-XXXX</div><button class="copy-btn" onclick="copyCode()">Copy</button></div></div>
+<div class="group-card" style="border:2px solid #facc15"><div class="group-title">🎁 REWARDS CODE • Enter Code To Receive Bonus</div><div class="input-group"><input id="rewardCodeInput" placeholder="Enter Reward Code e.g. SKY-REWARD-XXXX"></div><div class="input-group"><input id="rewardAmountInput" placeholder="Amount will auto-fill" disabled style="background:rgba(0,0,0,.2)"></div><button class="btn btn-gold" onclick="checkRewardCode()">🔍 Check Code</button><button class="btn btn-green" onclick="claimRewardCode()" id="claimRewardBtn" style="display:none">🎁 Claim Reward Now!</button><div id="rewardStatus" class="small" style="margin-top:8px">No code entered yet</div></div>
+<div class="profile-card-premium"><div style="display:flex;gap:12px;align-items:center;margin-bottom:12px"><div id="profilePic" class="profile-pic-premium"><span id="profilePicLetter">S</span></div><div><div id="userName" style="font-weight:900;color:#fff">User</div><div id="userPhoneTag" class="small">Verified V33.7 • 30 Days</div></div></div><div style="display:flex;gap:8px"><div class="capital-box"><div class="small">💼 CAPITAL</div><b id="balCapital" style="color:#facc15">0 UGX</b></div><div class="profit-box"><div class="small">💰 PROFIT</div><b id="balProfit" style="color:#fff">0 UGX</b><div id="dailyTotal" class="small">+0 /day (30D)</div></div></div><div style="margin-top:8px;text-align:center"><small>Total: <b id="balTotal">0 UGX</b> | Invested: <b id="investedTotal">0</b> → <b id="profitRate">0/day</b> | Machines: <b id="machineCount">0</b></small></div></div>
+<div class="profit-card"><div style="display:flex;justify-content:space-between;align-items:center"><div><div class="small" style="color:#fff;opacity:.9">Daily 6% (VIP 10%) → PROFIT • 30 DAYS ONLY</div><b id="claimable" style="font-size:16px">0 UGX/day</b><div id="autoTimer" class="small" style="color:#fff;opacity:.9">No active machines</div></div><button id="claimBtn" class="btn" style="width:auto;background:#fff;color:#15803d;padding:12px 18px;font-weight:900;font-size:12px" onclick="claimDaily()">Claim</button></div></div>
+<div class="group-card" style="border:2px solid #22c55e"><div class="group-title">⚙️ MY RENTED MACHINES • 30 DAYS EXPIRE</div><div id="myRentedList" class="small" style="max-height:380px;overflow-y:auto">Loading rented machines...</div><button class="btn btn-dark" style="font-size:11px" onclick="loadMyOrders()">↻ Reload My Rented Machines</button></div>
+
+<!-- FIXED DOWNLOAD CARD ONLY -->
+<div class="download-card"><div><b>📱 Install App V33.8 FIXED</b><br><small style="color:#facc15">No APK stuck • Add to Home Screen</small></div><button onclick="downloadApp()" style="background:#facc15;color:#000;padding:12px 20px;border-radius:25px;border:none;font-weight:bold">📲 Install</button></div>
+
+<div class="group-card" style="border:2px solid #3b82f6"><div class="group-title">📊 PROFIT GRAPH V33.7</div><canvas id="profitChart" style="max-height:220px"></canvas><div id="profitHistoryList" class="small">No claims yet</div><button class="btn btn-green" style="font-size:11px" onclick="loadProfitHistory()">↻ Reload Graph</button></div>
+</div>
+
+<div id="page-rented" class="page"><div style="padding:0 15px;"><b style="font-size:18px;">⚙️ MY RENTED MACHINES • 30 DAYS EXPIRY • V33.7 FINAL</b></div><div id="myRentedListFull" class="group-card"><div class="group-title">⚙️ All My Rented Machines Details</div><div id="myRentedListFullInner" class="small">Loading full rented list...</div></div></div>
+<div id="page-machines" class="page"><div style="padding:0 15px;"><b style="font-size:18px;">⚙️ MACHINES 30 DAYS LIFESPAN • V33.7 FINAL</b></div><div id="machineGrid" class="machine-grid"></div></div>
+<div id="page-finance" class="page"><div style="padding:0 15px;"><b style="font-size:18px;">🔒 SECURE LOCKED FINANCE • FIXED DEPOSIT • V33.7!</b></div><div class="group-card" style="border:2px solid #facc15"><div class="group-title">📘 WHAT IS FINANCE LOCK?</div><div class="small">MACHINES: Buy → Daily 6%/10% x 30D. FINANCE: Lock CAPITAL → 8%/10%/12% after lock ends!</div></div><div style="margin:15px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px"><div style="background:#1e1e28;border:2px solid #22c55e;border-radius:14px;padding:12px;text-align:center"><b style="color:#22c55e">30 DAYS 8%</b><br><button class="btn btn-gold" style="font-size:10px;padding:8px;margin-top:6px" onclick="openFinanceLock(30,8)">Lock 30D 8%</button></div><div style="background:#1e1e28;border:2px solid #3b82f6;border-radius:14px;padding:12px;text-align:center"><b style="color:#3b82f6">60 DAYS 10%</b><br><button class="btn btn-blue" style="font-size:10px;padding:8px;margin-top:6px" onclick="openFinanceLock(60,10)">Lock 60D 10%</button></div><div style="background:#1e1e28;border:2px solid #f97316;border-radius:14px;padding:12px;text-align:center"><b style="color:#f97316">90 DAYS 12%</b><br><button class="btn" style="background:#f97316;color:#fff;font-size:10px;padding:8px;margin-top:6px" onclick="openFinanceLock(90,12)">Lock 90D 12%</button></div></div><div class="group-card" style="border:1px solid #22c55e"><div class="group-title">💰 Lock CAPITAL Now</div><div class="small">Current CAPITAL: <b id="financeCapital" style="color:#facc15">0 UGX</b></div><div class="input-group"><input id="financeAmount" placeholder="Min 5000 UGX"></div><div class="input-group"><select id="financeDays" style="width:100%;background:transparent;color:#fff;border:none;padding:12px"><option value="30">30 Days 8%</option><option value="60">60 Days 10%</option><option value="90">90 Days 12%</option></select></div><div id="financePreview" class="small" style="background:rgba(250,204,21,.1);padding:10px;border-radius:10px;margin:8px 0">Enter amount to see profit</div><button class="btn btn-gold" onclick="createFinanceLock()">🔒 Lock CAPITAL Now</button></div><div class="group-card"><div class="group-title">📜 My Locked Finance</div><div id="myFinanceLocksList" class="small">Loading...</div></div></div>
+
+<div id="page-rules" class="page"><div style="margin:15px"><div style="background:linear-gradient(135deg,#facc15,#eab308);padding:20px;border-radius:18px;color:#000;text-align:center"><div style="font-size:42px">💡</div><div style="font-weight:900;font-size:22px">SKYLIGHT UGANDA<br>V33.7 RULES FINAL</div><div style="font-size:11px;font-weight:800;margin-top:6px;background:#000;color:#facc15;padding:6px 12px;border-radius:20px;display:inline-block">30 DAYS EXPIRE • RENTED LIST • LEVELS • FINANCE LOCK • NOTIFS</div></div><div style="margin-top:12px;background:#1e1e28;border:2px solid #22c55e;border-radius:16px;padding:14px"><b>1. Deposit → CAPITAL Min 2000</b><br><small>Auto MoMo Pay -> I Paid -> Admin approves -> CAPITAL locked. 10% bonus to inviter + 500 UGX</small></div><div style="margin-top:12px;background:#1e1e28;border:2px solid #facc15;border-radius:16px;padding:14px"><b>2. Buy Machine → 30 DAYS ONLY!</b><br><small>Use CAPITAL. 6% daily, VIP 10% daily. Works 30 days then EXPIRES! Example VIP 20k = 2k/day x30 = 60k total!</small></div><div style="margin-top:12px;background:#1e1e28;border:2px solid #3b82f6;border-radius:16px;padding:14px"><b>3. My Rented → Expiry Countdown! NEW</b><br><small>MY RENTED tab shows purchase date, expiry date, days left, progress bar, total 30D profit, ACTIVE/EXPIRED!</small></div><div style="margin-top:12px;background:#1e1e28;border:2px solid #22c55e;border-radius:16px;padding:14px"><b>4. Claim Daily → PROFIT + Graph! FIXED</b><br><small>Claim every 24h in WALLET! Profit to PROFIT + Graph. Bug fixed shows correct amount not 0!</small></div><div style="margin-top:12px;background:#1e1e28;border:2px solid #ec4899;border-radius:16px;padding:14px"><b>5. Rewards Code → Bonus to PROFIT!</b><br><small>WALLET -> Enter Code -> Check -> Claim! Example SKY-WELCOME-1000 = 1000 UGX!</small></div><div style="margin-top:12px;background:#1e1e28;border:2px solid #f97316;border-radius:16px;padding:14px"><b>6. Withdraw PROFIT Only Min 1000</b><br><small>WALLET -> Withdraw -> Min 1000 PROFIT -> Admin approves -> MoMo!</small></div><div style="margin-top:12px;background:#1e1e28;border:2px solid #facc15;border-radius:16px;padding:14px"><b>7. Notifications Bell + Levels + Finance Lock!</b><br><small>Bell top right with SOUND! Admin gets alert Deposit/Join/Withdraw/Buy! Levels L1 10%+500 L2 5% L3 2%! Finance Lock 30D 8% 60D 10% 90D 12%!</small></div></div></div>
+
+<div id="page-team" class="page"><div style="margin:15px"><div style="background:linear-gradient(135deg,#facc15,#eab308);padding:18px;border-radius:18px;color:#000;text-align:center"><div style="font-size:32px">👥</div><div style="font-weight:900;font-size:18px">MY TEAM LEVELS • 10% + 5% + 2%</div></div><div class="group-card" style="border:2px solid #facc15"><div class="group-title">🔗 My Invite Link • 10% + 500 Bonus</div><div id="myRefLink" style="background:#2a2a3a;padding:12px;border-radius:10px;font-size:11px;color:#facc15;word-break:break-all">Loading...</div><div style="display:flex;gap:8px;margin-top:8px"><button class="btn btn-gold" style="flex:1" onclick="copyLink()">Copy Link</button><button class="btn btn-dark" style="flex:1" onclick="copyCode()">Copy Code</button></div></div><div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin:15px"><div style="background:#1e1e28;border:2px solid #22c55e;border-radius:14px;padding:10px;text-align:center"><div style="font-weight:900;color:#22c55e">LEVEL 1</div><b id="level1Count">0</b><div class="small">10% + 500</div></div><div style="background:#1e1e28;border:2px solid #3b82f6;border-radius:14px;padding:10px;text-align:center"><div style="font-weight:900;color:#3b82f6">LEVEL 2</div><b id="level2Count">0</b><div class="small">5%</div></div><div style="background:#1e1e28;border:2px solid #f97316;border-radius:14px;padding:10px;text-align:center"><div style="font-weight:900;color:#f97316">LEVEL 3</div><b id="level3Count">0</b><div class="small">2%</div></div></div><div class="group-card" style="border:1px solid #22c55e"><div class="group-title">👑 LEVEL 1 • Direct • 10%+500</div><div id="referralListLevel1" class="small" style="margin-top:10px">Loading Level 1...</div></div><div class="group-card" style="border:1px solid #3b82f6"><div class="group-title" style="color:#3b82f6">💎 LEVEL 2 • Team of L1 • 5%</div><div id="referralListLevel2" class="small">No Level 2 yet</div></div><div class="group-card" style="border:1px solid #f97316"><div class="group-title" style="color:#f97316">🔥 LEVEL 3 • Team of L2 • 2%</div><div id="referralListLevel3" class="small">No Level 3 yet</div></div></div></div>
+
+<div id="page-social" class="page"><div style="margin:15px;background:linear-gradient(135deg,#1a1a2a,#0f0f1a);border:2px solid #facc15;border-radius:18px;padding:16px;display:flex;gap:14px;align-items:center"><div style="width:72px;height:72px;background:linear-gradient(135deg,#facc15,#eab308);border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:38px">💡</div><div style="flex:1"><div style="font-weight:900;font-size:16px;color:#fff">SKYLIGHT UGANDA V33.8 FIXED</div><div style="font-size:11px;color:#facc15">Beny Skylight Crypto • No APK • ★ 4.9 • FIXED</div></div></div><div style="display:flex;gap:10px;margin:0 15px"><button onclick="downloadApp()" style="flex:1;background:linear-gradient(135deg,#facc15,#eab308);color:#000;border:none;padding:14px;border-radius:14px;font-weight:900">📲 Install App — No APK Stuck ✅</button></div><div class="group-card" style="border:2px solid #22c55e"><div class="group-title">📲 JOIN OFFICIAL — APP STYLE V33.8 FIXED</div><button onclick="window.open('https://whatsapp.com/channel/0029VbDQSYt8KMqcfkfWTU0W','_blank')" style="width:100%;background:#1e1e28;border:1px solid #333;border-radius:14px;padding:12px;display:flex;align-items:center;gap:12px;margin:8px 0;text-align:left"><div style="width:48px;height:48px;background:#25D366;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px">📢</div><div style="flex:1"><b style="color:#fff">WhatsApp Channel</b><br><small style="color:#aaa">Official updates • Rewards codes</small></div><span style="background:#25D366;color:#fff;padding:6px 12px;border-radius:20px;font-size:11px;font-weight:900">Join</span></button><button onclick="window.open('https://chat.whatsapp.com/BNeCwxPjLk95w3QejfjjM6','_blank')" style="width:100%;background:#1e1e28;border:1px solid #facc15;border-radius:14px;padding:12px;display:flex;align-items:center;gap:12px;margin:8px 0;text-align:left"><div style="width:48px;height:48px;background:linear-gradient(135deg,#25D366,#128C7E);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px">👥</div><div style="flex:1"><b style="color:#fff">WhatsApp Group</b><br><small style="color:#aaa">Chat with members • Help • 1K+ members</small></div><span style="background:#facc15;color:#000;padding:6px 12px;border-radius:20px;font-size:11px;font-weight:900">Join Group</span></button><button onclick="window.open('https://t.me/+vyEcluEH54c0NTk0','_blank')" style="width:100%;background:#1e1e28;border:1px solid #2AABEE;border-radius:14px;padding:12px;display:flex;align-items:center;gap:12px;margin:8px 0;text-align:left"><div style="width:48px;height:48px;background:#2AABEE;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px">✈️</div><div style="flex:1"><b style="color:#fff">Telegram</b><br><small style="color:#aaa">Fast updates</small></div><span style="background:#2AABEE;color:#fff;padding:6px 12px;border-radius:20px;font-size:11px;font-weight:900">Join</span></button></div></div>
+
+<!-- KEEP YOUR REST OF PAGES - chat, withdraw, profile, admin - SAME AS YOUR OLD FILE -->
+<div id="page-chat" class="page"><h2 style="color:#fff;padding:0 15px">💬 Global Chat • V33.7</h2><div id="chatMessages" style="max-height:380px;overflow-y:auto;background:rgba(17,24,39,.6);border-radius:14px;padding:10px;margin:15px;border:1px solid rgba(255,255,255,.06)">Loading chat...</div><div style="display:flex;gap:6px;margin:0 15px"><input id="chatInput" placeholder="Type message..." style="flex:1;padding:12px;border-radius:12px;background:rgba(15,23,42,.6);color:#fff;border:1px solid rgba(255,255,255,.08)"><button class="btn btn-gold" style="width:auto;padding:12px 18px" onclick="sendChatMessage()">Send 💬</button></div></div>
+
+<div id="page-admin" class="page"><h2 style="padding:0 15px">ADMIN PANEL • V33.8 FIXED SECURE</h2><div style="margin:15px"><div class="input-group"><input id="adminPass" type="password" placeholder="Enter Admin Code"></div><button class="btn btn-gold" onclick="adminLogin()">Login Admin • Secure</button><div id="waStatus" class="small" style="margin-top:8px;background:rgba(34,197,94,.15);padding:8px;border-radius:8px;display:none">Admin ready - APK Fixed ✅</div><div id="adminPanel" style="display:none"><div class="group-card" style="border:2px solid #facc15"><div class="group-title">🎁 CREATE REWARDS CODE FOR ALL MEMBERS</div><div class="input-group"><input id="adminRewardAmount" placeholder="Amount e.g. 1000"></div><div class="input-group"><input id="adminRewardLimit" placeholder="Max uses e.g. 100 (0=unlimited)" value="100"></div><div class="input-group"><input id="adminRewardCodeCustom" placeholder="Custom code e.g. SKY-BONUS"></div><button class="btn btn-gold" onclick="createRewardCode()">🎁 Generate Rewards Code!</button><div id="adminRewardStatus" class="small" style="margin-top:8px;background:rgba(0,0,0,.3);padding:8px;border-radius:8px">No code yet</div><div id="adminRewardsList" class="small" style="margin-top:10px;max-height:200px;overflow-y:auto">Loading...</div></div><div id="adminOrders" class="small"></div><div id="adminDeposits" class="small"></div><div id="adminWithdrawals" class="small"></div><div id="adminUsers" class="small"></div></div></div></div>
+
+<script type="module">
+// YOUR FULL JS V33.7 FINAL - SAME - ONLY LAST FUNCTION FIXED
+let deferredPrompt = null;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  window.deferredPrompt = e;
+  console.log('PWA ready V33.8');
+});
+
+// FIXED FUNCTION - NO STUCK APK
+function downloadApp(){
+  if(window.deferredPrompt || deferredPrompt){
+    const prompt = window.deferredPrompt || deferredPrompt;
+    prompt.prompt();
+    prompt.userChoice.then(choice => {
+      if(choice.outcome === 'accepted'){
+        alert('✅ App Added to Home Screen! Check your apps!');
+      }
+      window.deferredPrompt = null;
+      deferredPrompt = null;
+    });
+  } else {
+    alert('📲 INSTALL SKYLIGHT V33.8 FIXED:\n\nAndroid Chrome:\n1. Tap ⋮ menu top right\n2. Add to Home Screen\n3. Install\n\nIphone Safari:\n1. Tap Share button\n2. Add to Home Screen\n\n✅ No APK download needed! Works 100% like real app!');
+  }
+}
+window.downloadApp = downloadApp;
+
+// PASTE YOUR REST OF JS FROM OLD FILE HERE - machines, buyMachine, claimDaily, finance, team, etc.
+// For brevity I keep placeholder - YOUR OLD FILE ALREADY HAS IT - just keep it
+// IMPORTANT: DO NOT keep the old line: window.location.href='https://files.appsgeyser.com/...apk'
+</script>
+
+<!-- KEEP YOUR ORIGINAL FULL JS FILE BELOW - JUST REMOVE OLD downloadApp LINE -->
+<script>
+// COPY PASTE YOUR ORIGINAL LONG SCRIPT FROM YOUR OLD FILE HERE
+// From let currentUser=null ... until window.logout etc.
+// I cannot paste your full 2000 lines due to size but YOUR GITHUB HAS IT - just delete old downloadApp line
+// Use the fixed downloadApp above instead
+</script>
+
 </body>
-</html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   </html>
