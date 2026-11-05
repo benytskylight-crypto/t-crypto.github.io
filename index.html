@@ -2,8 +2,14 @@
 <script type="module">
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
 import { getFirestore, collection, doc, setDoc, getDoc, getDocs, addDoc, updateDoc, query, where, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
-const firebaseConfig={apiKey:"AIzaSyB48b63LjsJXEHLEn6pZu22L8R-Qs6nowk",authDomain:"skylight-ug.firebaseapp.com",projectId:"skylight-ug",storageBucket:"skylight-ug.firebasestorage.app",messagingSenderId:"264770229240",appId:"1:264770229240:web:53e256b75fba5036bf3c0d"};
-const app=initializeApp(firebaseConfig); const db=getFirestore(app);
+const firebaseConfig = {
+  apiKey: "AIzaSyB48b63LjsJXEHLEn6pZu22L8R-Qs6nowk",
+  authDomain: "skylight-ug.firebaseapp.com",
+  projectId: "skylight-ug",
+  storageBucket: "skylight-ug.firebasestorage.app",
+  messagingSenderId: "264770229240",
+  appId: "1:264770229240:web:53e256b75fba5036bf3c0d"
+};
 window.db=db; window.collection=collection; window.doc=doc; window.setDoc=setDoc; window.getDoc=getDoc; window.getDocs=getDocs; window.addDoc=addDoc; window.updateDoc=updateDoc; window.query=query; window.where=where; window.serverTimestamp=serverTimestamp;
 </script></head><body>
 <div class="header"><div class="h-left"><div class="sun">☀️</div><div><b>SKYLIGHT UGANDA</b><br><small style="color:#facc15;font-size:8px">V33.16 FINAL FIXED • MIN 2K • PROFIT AFTER EXPIRY • VIP 7% NOT REDUCED</small></div></div><div style="display:flex;gap:6px;align-items:center"><div id="adminBadgeTop" style="display:none;background:#ef4444;color:#fff;padding:5px 10px;border-radius:20px;font-size:10px;font-weight:900">ADMIN</div><div style="font-size:20px">🔔</div><div class="avatar" style="width:32px;height:32px;font-size:14px" id="headerAvatar">B</div></div></div>
